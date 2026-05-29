@@ -7,7 +7,7 @@ import {
 import { calcVolatility, volatilityTier, writeVerdict } from '@/lib/volatility';
 import { SAMPLE_CENTURIES } from '@/data/sample';
 
-// -- Weight mapping -------------------------------------------------------------
+// ── Weight mapping ─────────────────────────────────────────────────────────────
 const WEIGHT_VALUES = [30, 22, 18, 14, 10, 6];
 
 const CRITERIA = [
@@ -37,7 +37,7 @@ function getActivePreset(order) {
   return Object.entries(PRESET_ORDERS).find(([, o]) => o.join() === order.join())?.[0] ?? null;
 }
 
-// -- Header Banner --------------------------------------------------------------
+// ── Header Banner ──────────────────────────────────────────────────────────────
 function HeaderBanner() {
   return (
     <svg viewBox="0 0 390 188" width="100%" xmlns="http://www.w3.org/2000/svg" style={{ display:'block' }}>
@@ -66,7 +66,7 @@ function HeaderBanner() {
       <line x1="36" y1="36" x2="172" y2="36" stroke="#3A6A3A" strokeWidth="0.8"/>
       <circle cx="195" cy="36" r="3" fill="#C9533A"/>
       <line x1="218" y1="36" x2="354" y2="36" stroke="#3A6A3A" strokeWidth="0.8"/>
-      <text x="195" y="55" textAnchor="middle" fill="#4A8A4A" fontSize="9" fontWeight="500" letterSpacing="4" fontFamily="sans-serif">* TEST CRICKET *</text>
+      <text x="195" y="55" textAnchor="middle" fill="#4A8A4A" fontSize="9" fontWeight="500" letterSpacing="4" fontFamily="sans-serif">● TEST CRICKET ●</text>
       <text x="195" y="83" textAnchor="middle" fill="#F0E6C8" fontSize="25" fontWeight="500" letterSpacing="9" fontFamily="sans-serif">TONS OF</text>
       <text x="195" y="114" textAnchor="middle" fill="#F0E6C8" fontSize="33" fontWeight="500" letterSpacing="2" fontFamily="sans-serif">CONSEQUENCE</text>
       <line x1="36" y1="126" x2="178" y2="126" stroke="#3A6A3A" strokeWidth="0.8"/>
@@ -77,7 +77,7 @@ function HeaderBanner() {
   );
 }
 
-// -- Onboarding Screen ----------------------------------------------------------
+// ── Onboarding Screen ──────────────────────────────────────────────────────────
 function OnboardingScreen({ order, setOrder, onSubmit }) {
   const dragRef  = useRef({ active: false, fromIdx: -1 });
   const [draggingIdx, setDraggingIdx] = useState(-1);
@@ -133,7 +133,7 @@ function OnboardingScreen({ order, setOrder, onSubmit }) {
         </div>
         <div style={{ fontSize:11, color:'var(--text-muted)', lineHeight:1.7 }}>
           Drag to rank these six factors in order of importance.<br/>
-          Your #1 choice carries 30% of the final score -- your #6 carries 6%.
+          Your #1 choice carries 30% of the final score — your #6 carries 6%.
         </div>
       </div>
 
@@ -215,14 +215,14 @@ function OnboardingScreen({ order, setOrder, onSubmit }) {
           color:'#F5EDD8', fontSize:11, fontWeight:500, letterSpacing:'2px',
           padding:14, borderRadius:4, cursor:'pointer',
         }}>
-          SEE MY RANKINGS -&gt;
+          SEE MY RANKINGS →
         </button>
       </div>
     </div>
   );
 }
 
-// -- Result Badge ---------------------------------------------------------------
+// ── Result Badge ───────────────────────────────────────────────────────────────
 function ResultBadge({ result }) {
   const r = (result || '').toLowerCase();
   const style = r === 'win'  ? { border:'0.5px solid #3A7A3A', color:'#7ACA7A' }
@@ -235,7 +235,7 @@ function ResultBadge({ result }) {
   );
 }
 
-// -- Tag Chip -------------------------------------------------------------------
+// ── Tag Chip ───────────────────────────────────────────────────────────────────
 function Tag({ text }) {
   return (
     <span style={{ fontSize:9, background:'rgba(255,255,255,0.07)', color:'#8AAA7A', padding:'2px 6px', borderRadius:2 }}>
@@ -244,7 +244,7 @@ function Tag({ text }) {
   );
 }
 
-// -- Score Display (detail view) ------------------------------------------------
+// ── Score Display (detail view) ────────────────────────────────────────────────
 function ScoreDisplay({ score, compact }) {
   const col = scoreColor(score);
   return (
@@ -256,7 +256,7 @@ function ScoreDisplay({ score, compact }) {
   );
 }
 
-// -- Weighting Strip (results screen) ------------------------------------------
+// ── Weighting Strip (results screen) ──────────────────────────────────────────
 function WeightingStrip({ order, onChange }) {
   const colors = ['var(--text-primary)', '#8ABA8A', '#6A9A6A', '#5A8A5A', '#4A7A4A', '#3A6A3A'];
   return (
@@ -266,19 +266,19 @@ function WeightingStrip({ order, onChange }) {
         const c = CRITERIA.find(x => x.key === key);
         return (
           <span key={key} style={{ fontSize:10, color: colors[i] }}>
-            {i + 1}. {c.name} ({WEIGHT_VALUES[i]}%){i < 5 && <span style={{ color:'var(--text-dim)', marginLeft:8 }}>.</span>}
+            {i + 1}. {c.name} ({WEIGHT_VALUES[i]}%){i < 5 && <span style={{ color:'var(--text-dim)', marginLeft:8 }}>·</span>}
           </span>
         );
       })}
       <div style={{ flex:1 }}/>
       <span onClick={onChange} style={{ fontSize:9, border:'0.5px solid var(--border-accent)', color:'var(--text-muted)', padding:'4px 10px', borderRadius:2, letterSpacing:'1px', cursor:'pointer', whiteSpace:'nowrap' }}>
-        CHANGE ^
+        CHANGE ↑
       </span>
     </div>
   );
 }
 
-// -- Rankings Card --------------------------------------------------------------
+// ── Rankings Card ──────────────────────────────────────────────────────────────
 function RankCard({ c, rank, onClick, isCompared, onToggleCompare, viewMode }) {
   const vol = calcVolatility(c);
   const vt  = volatilityTier(vol.volatility);
@@ -322,7 +322,7 @@ function RankCard({ c, rank, onClick, isCompared, onToggleCompare, viewMode }) {
         </div>
         <div style={{ display:'flex', gap:3, flexWrap:'wrap' }}>
           {(c.tags || []).slice(0, 2).map(t => <Tag key={t} text={t} />)}
-          <span style={{ fontSize:9, color:'var(--text-muted)' }}>vs {c.opponent} . {c.year}</span>
+          <span style={{ fontSize:9, color:'var(--text-muted)' }}>vs {c.opponent} · {c.year}</span>
         </div>
       </div>
 
@@ -348,18 +348,53 @@ function RankCard({ c, rank, onClick, isCompared, onToggleCompare, viewMode }) {
         onClick={e => { e.stopPropagation(); onToggleCompare(c.id); }}
         style={{ width:20, height:20, flexShrink:0, border:`1px solid ${isCompared ? '#A88800' : 'var(--border-strong)'}`, background: isCompared ? '#A88800' : 'transparent', display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer', borderRadius:3, fontSize:10, color:'#000', fontWeight:500 }}
       >
-        {isCompared ? 'v' : ''}
+        {isCompared ? '✓' : ''}
       </div>
     </div>
   );
 }
 
-// -- Main App -------------------------------------------------------------------
+// ── Era filter helper ──────────────────────────────────────────────────────────
+const ERA_OPTS = [
+  { value: 'All',       label: 'All Eras' },
+  { value: 'pre1960',   label: 'Pre-1960' },
+  { value: '1960-1989', label: '1960 – 1989' },
+  { value: '1990-2009', label: '1990 – 2009' },
+  { value: '2010+',     label: '2010+' },
+];
+const SCORE_OPTS = [
+  { value: 'All',     label: 'All Scores' },
+  { value: '100-149', label: '100 – 149' },
+  { value: '150-199', label: '150 – 199' },
+  { value: '200+',    label: '200+' },
+];
+
+function eraMatch(year, era) {
+  if (era === 'All')       return true;
+  if (era === 'pre1960')   return year < 1960;
+  if (era === '1960-1989') return year >= 1960 && year <= 1989;
+  if (era === '1990-2009') return year >= 1990 && year <= 2009;
+  if (era === '2010+')     return year >= 2010;
+  return true;
+}
+
+function scoreMatch(runs, range) {
+  if (range === 'All')     return true;
+  if (range === '100-149') return runs >= 100 && runs <= 149;
+  if (range === '150-199') return runs >= 150 && runs <= 199;
+  if (range === '200+')    return runs >= 200;
+  return true;
+}
+
+const PAGE_SIZE = 50;
+
+// ── Main App ───────────────────────────────────────────────────────────────────
 function TonsApp() {
   const [screen,        setScreen]        = useState('onboard');  // 'onboard' | 'results'
   const [criteriaOrder, setCriteriaOrder] = useState([...DEFAULT_ORDER]);
-  const [filterPlayer,  setFilterPlayer]  = useState('All');
   const [filterCountry, setFilterCountry] = useState('All');
+  const [filterEra,     setFilterEra]     = useState('All');
+  const [filterScore,   setFilterScore]   = useState('All');
   const [sortBy,        setSortBy]        = useState('toc');
   const [viewMode,      setViewMode]      = useState('rankings');
   const [searchQuery,   setSearchQuery]   = useState('');
@@ -367,19 +402,20 @@ function TonsApp() {
   const [compareList,   setCompareList]   = useState([]);
   const [compareMode,   setCompareMode]   = useState(false);
   const [copied,        setCopied]        = useState(false);
+  const [visibleCount,  setVisibleCount]  = useState(PAGE_SIZE);
   const searchRef = useRef(null);
   const centuries = SAMPLE_CENTURIES;
 
   const weights = useMemo(() => buildWeights(criteriaOrder), [criteriaOrder]);
 
-  const players   = useMemo(() => ['All', ...[...new Set(centuries.map(c => c.player))].sort()], []);
   const countries = useMemo(() => ['All', ...[...new Set(centuries.map(c => c.country))].sort()], []);
 
   const ranked = useMemo(() => {
     const q = searchQuery.toLowerCase().trim();
     let list = centuries
-      .filter(c => filterPlayer  === 'All' || c.player  === filterPlayer)
       .filter(c => filterCountry === 'All' || c.country === filterCountry)
+      .filter(c => eraMatch(c.year, filterEra))
+      .filter(c => scoreMatch(c.runs, filterScore))
       .filter(c => {
         if (!q) return true;
         return (
@@ -396,13 +432,30 @@ function TonsApp() {
     if (sortBy === 'runs') list.sort((a, b) => b.runs - a.runs);
     if (sortBy === 'year') list.sort((a, b) => b.year - a.year);
     return list;
-  }, [weights, filterPlayer, filterCountry, sortBy, searchQuery, centuries]);
+  }, [weights, filterCountry, filterEra, filterScore, sortBy, searchQuery, centuries]);
 
-  const divisive = useMemo(() =>
-    centuries.map(c => ({ ...c, toc: calcToc(c, weights), vol: calcVolatility(c) }))
-      .sort((a, b) => b.vol.volatility - a.vol.volatility),
-    [weights, centuries]
-  );
+  // Reset visible count when filters change
+  useEffect(() => { setVisibleCount(PAGE_SIZE); }, [filterCountry, filterEra, filterScore, sortBy, searchQuery]);
+
+  const divisive = useMemo(() => {
+    const q = searchQuery.toLowerCase().trim();
+    return centuries
+      .filter(c => filterCountry === 'All' || c.country === filterCountry)
+      .filter(c => eraMatch(c.year, filterEra))
+      .filter(c => scoreMatch(c.runs, filterScore))
+      .filter(c => {
+        if (!q) return true;
+        return (
+          c.player.toLowerCase().includes(q) ||
+          c.opponent.toLowerCase().includes(q) ||
+          c.venue.toLowerCase().includes(q) ||
+          String(c.year).includes(q) ||
+          (c.tags || []).some(t => t.toLowerCase().includes(q))
+        );
+      })
+      .map(c => ({ ...c, toc: calcToc(c, weights), vol: calcVolatility(c) }))
+      .sort((a, b) => b.vol.volatility - a.vol.volatility);
+  }, [weights, filterCountry, filterEra, filterScore, searchQuery, centuries]);
 
   function toggleCompare(id) {
     setCompareList(p => p.includes(id) ? p.filter(x => x !== id) : p.length < 3 ? [...p, id] : p);
@@ -441,7 +494,7 @@ function TonsApp() {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  // -- Onboarding --------------------------------------------------------------
+  // ── Onboarding ──────────────────────────────────────────────────────────────
   if (screen === 'onboard') {
     return (
       <OnboardingScreen
@@ -452,7 +505,7 @@ function TonsApp() {
     );
   }
 
-  // -- Detail View -------------------------------------------------------------
+  // ── Detail View ─────────────────────────────────────────────────────────────
   if (selected) {
     const c      = { ...selected, toc: calcToc(selected, weights) };
     const totalW = Object.values(weights).reduce((a,b) => a+b, 0);
@@ -464,7 +517,7 @@ function TonsApp() {
         <WeightingStrip order={criteriaOrder} onChange={() => setScreen('onboard')} />
         <div style={{ maxWidth:860, margin:'0 auto', padding:'20px 14px' }}>
           <button onClick={() => setSelected(null)} style={{ background:'transparent', border:'0.5px solid var(--border-strong)', color:'var(--text-muted)', cursor:'pointer', fontSize:10, marginBottom:16, padding:'5px 12px', letterSpacing:'1px', fontWeight:500, textTransform:'uppercase', borderRadius:3 }}>
-            &lt;- BACK TO RANKINGS
+            ← BACK TO RANKINGS
           </button>
           <div style={{ display:'grid', gridTemplateColumns:'1fr 260px', gap:16, alignItems:'start' }}>
             <div>
@@ -474,7 +527,7 @@ function TonsApp() {
                   <span style={{ fontSize:18, color:'var(--accent-red)', fontWeight:500 }}>{c.runs}{c.notOut?'*':''}</span>
                   <ResultBadge result={c.matchResult} />
                 </div>
-                <div style={{ fontSize:11, color:'var(--text-muted)', marginBottom:10 }}>vs {c.opponent} . {c.venue} . {c.year}</div>
+                <div style={{ fontSize:11, color:'var(--text-muted)', marginBottom:10 }}>vs {c.opponent} · {c.venue} · {c.year}</div>
                 <div style={{ display:'flex', gap:4, flexWrap:'wrap' }}>{(c.tags||[]).map(t => <Tag key={t} text={t} />)}</div>
               </div>
 
@@ -517,7 +570,7 @@ function TonsApp() {
               <div style={{ height:12 }}/>
               <div style={{ background:'var(--bg-panel)', border:'0.5px solid var(--border-strong)', borderRadius:5, padding:14 }}>
                 <div style={{ fontSize:9, color:'var(--text-dim)', letterSpacing:'2px', textTransform:'uppercase', marginBottom:12 }}>Match Stats</div>
-                {[['Runs',`${c.runs}${c.notOut?'*':''}`],['Balls',c.balls??'--'],['Result',(c.matchResult||'').toUpperCase()]].map(([l,v]) => (
+                {[['Runs',`${c.runs}${c.notOut?'*':''}`],['Balls',c.balls??'—'],['Result',(c.matchResult||'').toUpperCase()]].map(([l,v]) => (
                   <div key={l} style={{ display:'flex', justifyContent:'space-between', padding:'7px 0', borderBottom:'0.5px solid var(--border-default)' }}>
                     <span style={{ color:'var(--text-muted)', fontSize:11 }}>{l}</span>
                     <span style={{ color:'var(--text-primary)', fontWeight:500, fontSize:12 }}>{v}</span>
@@ -531,7 +584,7 @@ function TonsApp() {
     );
   }
 
-  // -- Compare View ------------------------------------------------------------
+  // ── Compare View ────────────────────────────────────────────────────────────
   if (compareMode && compareItems.length >= 2) {
     const verdict = writeVerdict(compareItems[0], compareItems[1], weights);
     return (
@@ -539,7 +592,7 @@ function TonsApp() {
         <HeaderBanner />
         <WeightingStrip order={criteriaOrder} onChange={() => setScreen('onboard')} />
         <div style={{ maxWidth:860, margin:'0 auto', padding:'20px 14px' }}>
-          <button onClick={() => setCompareMode(false)} style={{ background:'transparent', border:'0.5px solid var(--border-strong)', color:'var(--text-muted)', cursor:'pointer', fontSize:10, marginBottom:16, padding:'5px 12px', letterSpacing:'1px', borderRadius:3 }}>&lt;- BACK</button>
+          <button onClick={() => setCompareMode(false)} style={{ background:'transparent', border:'0.5px solid var(--border-strong)', color:'var(--text-muted)', cursor:'pointer', fontSize:10, marginBottom:16, padding:'5px 12px', letterSpacing:'1px', borderRadius:3 }}>← BACK</button>
           <div style={{ background:'var(--bg-panel)', border:'0.5px solid var(--border-strong)', borderRadius:5, padding:16, marginBottom:20 }}>
             <div style={{ fontSize:9, color:'var(--text-dim)', letterSpacing:'2px', textTransform:'uppercase', marginBottom:10 }}>THE VERDICT</div>
             <p style={{ color:'var(--text-primary)', fontSize:14, lineHeight:1.8, margin:'0 0 12px', fontWeight:500 }}>{verdict.verdict}</p>
@@ -558,7 +611,7 @@ function TonsApp() {
                 <div style={{ textAlign:'center', marginBottom:14 }}>
                   <div style={{ fontSize:22, fontWeight:500, color:'var(--text-primary)', marginBottom:4 }}>{c.player}</div>
                   <div style={{ color:'var(--accent-red)', fontSize:28, fontWeight:500, lineHeight:1 }}>{c.runs}{c.notOut?'*':''}</div>
-                  <div style={{ color:'var(--text-muted)', fontSize:10, marginBottom:10 }}>vs {c.opponent} . {c.year}</div>
+                  <div style={{ color:'var(--text-muted)', fontSize:10, marginBottom:10 }}>vs {c.opponent} · {c.year}</div>
                   <ScoreDisplay score={c.toc} compact />
                 </div>
                 {LEVERS.map(lev => (
@@ -585,7 +638,7 @@ function TonsApp() {
     );
   }
 
-  // -- Results Screen ----------------------------------------------------------
+  // ── Results Screen ──────────────────────────────────────────────────────────
   const activeList = viewMode === 'divisive' ? divisive : ranked;
 
   return (
@@ -609,17 +662,17 @@ function TonsApp() {
       <div style={{ maxWidth:860, margin:'0 auto' }}>
         {/* Search */}
         <div style={{ background:'var(--bg-subtle)', border:'0.5px solid var(--border-strong)', borderRadius:4, padding:'8px 12px', display:'flex', alignItems:'center', gap:8, margin:'12px 14px' }}>
-          <span style={{ color:'var(--text-dim)', fontSize:13 }}>?</span>
+          <span style={{ color:'var(--text-dim)', fontSize:13 }}>⌕</span>
           <input
             ref={searchRef}
             type="text"
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
-            placeholder="Search player, venue, year..."
+            placeholder="Search player, opponent, venue, year, tags..."
             style={{ background:'transparent', border:'none', outline:'none', color:'var(--text-primary)', fontSize:12, letterSpacing:'0.3px', width:'100%' }}
           />
           {searchQuery && (
-            <button onClick={() => setSearchQuery('')} style={{ background:'none', border:'none', color:'var(--text-muted)', cursor:'pointer', fontSize:16 }}>x</button>
+            <button onClick={() => setSearchQuery('')} style={{ background:'none', border:'none', color:'var(--text-muted)', cursor:'pointer', fontSize:16 }}>×</button>
           )}
         </div>
 
@@ -635,20 +688,26 @@ function TonsApp() {
         </div>
 
         {/* Filter row */}
-        <div style={{ display:'flex', gap:8, padding:'0 14px 10px', alignItems:'center', flexWrap:'wrap' }}>
-          <select value={filterPlayer} onChange={e => setFilterPlayer(e.target.value)} style={{ background:'var(--bg-subtle)', border:'0.5px solid var(--border-strong)', color:'#6A9A6A', fontSize:11, padding:'5px 24px 5px 8px', borderRadius:3 }}>
-            {players.map(p => <option key={p}>{p}</option>)}
-          </select>
-          <select value={filterCountry} onChange={e => setFilterCountry(e.target.value)} style={{ background:'var(--bg-subtle)', border:'0.5px solid var(--border-strong)', color:'#6A9A6A', fontSize:11, padding:'5px 24px 5px 8px', borderRadius:3 }}>
+        <div style={{ display:'flex', gap:6, padding:'0 14px 10px', alignItems:'center', flexWrap:'wrap' }}>
+          <select value={filterCountry} onChange={e => setFilterCountry(e.target.value)} style={{ background:'var(--bg-subtle)', border:'0.5px solid var(--border-strong)', color:'#6A9A6A', fontSize:11, padding:'5px 8px', borderRadius:3 }}>
             {countries.map(c => <option key={c}>{c}</option>)}
           </select>
-          <select value={sortBy} onChange={e => setSortBy(e.target.value)} style={{ background:'var(--bg-subtle)', border:'0.5px solid var(--border-strong)', color:'#6A9A6A', fontSize:11, padding:'5px 24px 5px 8px', borderRadius:3 }}>
+          <select value={filterEra} onChange={e => setFilterEra(e.target.value)} style={{ background:'var(--bg-subtle)', border:'0.5px solid var(--border-strong)', color:'#6A9A6A', fontSize:11, padding:'5px 8px', borderRadius:3 }}>
+            {ERA_OPTS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+          </select>
+          <select value={filterScore} onChange={e => setFilterScore(e.target.value)} style={{ background:'var(--bg-subtle)', border:'0.5px solid var(--border-strong)', color:'#6A9A6A', fontSize:11, padding:'5px 8px', borderRadius:3 }}>
+            {SCORE_OPTS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+          </select>
+          <select value={sortBy} onChange={e => setSortBy(e.target.value)} style={{ background:'var(--bg-subtle)', border:'0.5px solid var(--border-strong)', color:'#6A9A6A', fontSize:11, padding:'5px 8px', borderRadius:3 }}>
             <option value="toc">TaC Score</option>
             <option value="runs">Runs Scored</option>
             <option value="year">Year (Recent First)</option>
           </select>
           <div style={{ flex:1 }}/>
-          <span onClick={copyShareLink} style={{ fontSize:9, color:'var(--text-dim)', letterSpacing:'1px', cursor:'pointer' }}>{copied ? 'v COPIED' : 'SHARE'}</span>
+          <span style={{ fontSize:9, color:'var(--text-dim)', letterSpacing:'0.5px', whiteSpace:'nowrap' }}>
+            {(viewMode === 'rankings' ? ranked : divisive).length.toLocaleString()} innings
+          </span>
+          <span onClick={copyShareLink} style={{ fontSize:9, color:'var(--text-dim)', letterSpacing:'1px', cursor:'pointer', marginLeft:8 }}>{copied ? '✓ COPIED' : 'SHARE'}</span>
           <span onClick={downloadCSV} style={{ fontSize:9, color:'var(--text-dim)', letterSpacing:'1px', cursor:'pointer', marginLeft:8 }}>CSV</span>
         </div>
 
@@ -660,7 +719,7 @@ function TonsApp() {
               <div style={{ color:'var(--text-muted)', fontSize:12 }}>Try a different search or clear your filters.</div>
             </div>
           )}
-          {activeList.map((c, i) => (
+          {activeList.slice(0, visibleCount).map((c, i) => (
             <RankCard
               key={c.id}
               c={c}
@@ -671,17 +730,27 @@ function TonsApp() {
               onToggleCompare={toggleCompare}
             />
           ))}
+          {visibleCount < activeList.length && (
+            <div style={{ textAlign:'center', paddingTop:12 }}>
+              <button
+                onClick={() => setVisibleCount(v => v + PAGE_SIZE)}
+                style={{ background:'transparent', border:'0.5px solid var(--border-accent)', color:'var(--text-muted)', padding:'8px 24px', borderRadius:3, cursor:'pointer', fontSize:10, letterSpacing:'1.5px', fontWeight:500 }}
+              >
+                LOAD MORE ({(activeList.length - visibleCount).toLocaleString()} remaining)
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
 }
 
-// -- Export ---------------------------------------------------------------------
+// ── Export ─────────────────────────────────────────────────────────────────────
 export default function Page() {
   return (
     <Suspense fallback={
-      <div style={{ background:'#162E20', minHeight:'100vh', display:'flex', alignItems:'center', justifyContent:'center', color:'|#4A7A4A', fontFamily:'system-ui,sans-serif', fontSize:12, letterSpacing:'2px' }}>
+      <div style={{ background:'#162E20', minHeight:'100vh', display:'flex', alignItems:'center', justifyContent:'center', color:'#4A7A4A', fontFamily:'system-ui,sans-serif', fontSize:12, letterSpacing:'2px' }}>
         LOADING...
       </div>
     }>
