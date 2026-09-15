@@ -35,10 +35,12 @@ Scoped to a rolling 70-day window no earlier than the static dataset's own
 generation date, and deduped by natural key, so it can never collide with or
 duplicate the curated historical set.
 
-**One manual step required:** the cron route is protected by a `CRON_SECRET` env
-var (Vercel sends it automatically as a bearer token to your own cron jobs) — add
-one in Vercel's project settings → Environment Variables. Without it, the endpoint
-still works but is unauthenticated.
+**One manual step required:** the cron route requires a `CRON_SECRET` env var
+(Vercel sends it automatically as a bearer token to your own cron jobs) — add
+one in Vercel's project settings → Environment Variables. It fails closed:
+without it, the endpoint refuses every request, including Vercel's own monthly
+trigger, rather than running unauthenticated. `scripts/unblock-deploy.sh` walks
+through setting it.
 
 ## Local development
 

@@ -182,7 +182,14 @@ server.tool(
       return { content: [{ type: 'text', text: JSON.stringify({ error: 'Need at least 2 valid ids.' }) }] };
     }
     const w = resolveWeights({ weights, preset });
-    const verdict = writeVerdict(items[0], items[1], w);
+    // The written verdict is head-to-head by design (see writeVerdict), so
+    // with 3 items it's between the top two by score on these weights —
+    // never silently between whichever two happened to be listed first.
+    const ranked = [...items].sort((a, b) => calcToc(b, w) - calcToc(a, w));
+    const verdict = writeVerdict(ranked[0], ranked[1], w);
+    if (ranked.length > 2) {
+      verdict.verdict += ` (${ranked[2].player}'s ${ranked[2].runs}${ranked[2].notOut ? '*' : ''} placed third on these weights, ${Math.round((calcToc(ranked[0], w) - calcToc(ranked[2], w)) * 10) / 10} points off the top.)`;
+    }
     return {
       content: [{
         type: 'text',

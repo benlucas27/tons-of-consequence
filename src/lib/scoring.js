@@ -53,5 +53,4 @@ export function decodeWeights(str) {
   return w;
 }
 
-export const FLAGS = {AUS:'🇦🇺',ENG:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',WI:'🏝️',IND:'🇮🇳',SA:'🇿🇦',PAK:'🇵🇰',NZ:'🇳🇿',SL:'🇱🇰',ZIM:'🇿🇼',BAN:'🇧🇩',AFG:'🇦🇫',IRE:'🇮🇪'};
-export const NATIONS = {AUS:'Australia',ENG:'England',WI:'West Indies',IND:'India',SA:'South Africa',PAK:'Pakistan',NZ:'New Zealand',SL:'Sri Lanka',ZIM:'Zimbabwe',BAN:'Bangladesh',AFG:'Afghanistan',IRE:'Ireland'};
+export { FLAGS, NATIONS } from './countries';

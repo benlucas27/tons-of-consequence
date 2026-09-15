@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 import { fetchRecentCenturies, naturalKey } from '@/lib/cricsheet';
 import { scoreLevers, writeStory, tagsFor } from '@/lib/heuristics';
+import { teamCodeFor } from '@/lib/countries';
 
 export const maxDuration = 60;
 export const dynamic = 'force-dynamic';
@@ -15,16 +16,19 @@ export const dynamic = 'force-dynamic';
  * so they land in the existing /admin/score editorial queue.
  *
  * Auth: Vercel Cron sends `Authorization: Bearer $CRON_SECRET` automatically
- * when CRON_SECRET is set as a project env var. Reject anything else so this
- * can't be used to spam the database or trigger unnecessary Cricsheet fetches.
+ * when CRON_SECRET is set as a project env var. Fails closed: an unset
+ * secret rejects every request (including Vercel's own cron trigger) rather
+ * than running unauthenticated, since this endpoint fetches a third-party
+ * archive and writes to the database on every call.
  */
 export async function GET(request) {
   const secret = process.env.CRON_SECRET;
-  if (secret) {
-    const auth = request.headers.get('authorization');
-    if (auth !== `Bearer ${secret}`) {
-      return Response.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+  if (!secret) {
+    return Response.json({ error: 'CRON_SECRET is not configured — refusing to run unauthenticated.' }, { status: 500 });
+  }
+  const auth = request.headers.get('authorization');
+  if (auth !== `Bearer ${secret}`) {
+    return Response.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -64,7 +68,7 @@ export async function GET(request) {
   }
 
   const rows = fresh.map((c) => {
-    const levers = scoreLevers(c, TEAM_CODE_FOR(c.opponentTeam));
+    const levers = scoreLevers(c, teamCodeFor(c.opponentTeam));
     return {
       player: c.player,
       country: c.country,
@@ -95,15 +99,4 @@ export async function GET(request) {
   }
 
   return Response.json({ ok: true, found: candidates.length, inserted: rows.length });
-}
-
-// Same team-code table as cricsheet.js; opponent arrives as a full team
-// name from Cricsheet, so map it before rivalry-checking in scoreLevers.
-const TEAM_CODES = {
-  Australia: 'AUS', England: 'ENG', 'West Indies': 'WI', India: 'IND',
-  'South Africa': 'SA', Pakistan: 'PAK', 'New Zealand': 'NZ', 'Sri Lanka': 'SL',
-  Zimbabwe: 'ZIM', Bangladesh: 'BAN', Afghanistan: 'AFG', Ireland: 'IRE',
-};
-function TEAM_CODE_FOR(teamName) {
-  return TEAM_CODES[teamName] || teamName;
 }

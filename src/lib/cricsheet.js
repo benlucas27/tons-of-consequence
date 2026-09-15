@@ -13,17 +13,12 @@
 
 import AdmZip from 'adm-zip';
 import { naturalKey } from './naturalKey';
+import { TEAM_NAME_TO_CODE } from './countries';
 
 const ARCHIVE_URL = 'https://cricsheet.org/downloads/tests_json.zip';
 
 export const PIPELINE_FLOOR = '2026-04-20';
 const WINDOW_DAYS = 70;
-
-const TEAM_CODE = {
-  Australia: 'AUS', England: 'ENG', 'West Indies': 'WI', India: 'IND',
-  'South Africa': 'SA', Pakistan: 'PAK', 'New Zealand': 'NZ', 'Sri Lanka': 'SL',
-  Zimbabwe: 'ZIM', Bangladesh: 'BAN', Afghanistan: 'AFG', Ireland: 'IRE',
-};
 
 function windowStart() {
   const d = new Date();
@@ -77,7 +72,7 @@ function extractCenturiesFromMatch(match) {
 
       results.push({
         player: batter,
-        country: TEAM_CODE[team] || team,
+        country: TEAM_NAME_TO_CODE[team] || team,
         opponentTeam: opponent,
         opponent,
         runs: r,
