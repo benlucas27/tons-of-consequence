@@ -3,7 +3,13 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// Supabase is an enhancement layer, not a hard requirement — the static
+// dataset always renders on its own. Guard client creation so a missing/
+// misconfigured env (local dev without .env.local, a broken preview deploy)
+// degrades to "no live data" instead of crashing the whole build.
+export const supabase = (supabaseUrl && supabaseAnonKey)
+  ? createClient(supabaseUrl, supabaseAnonKey)
+  : null;
 
 /**
  * Fetch all centuries from Supabase with optional filters.
@@ -18,6 +24,7 @@ export async function fetchCenturies({
   maxYear = 2030,
   limit = 5000
 } = {}) {
+  if (!supabase) return null;
   let query = supabase
     .from('centuries')
     .select('*')
@@ -39,6 +46,22 @@ export async function fetchCenturies({
   }
 
   return data;
+}
+
+/**
+ * Fetch the full live `centuries` table for the client-side overlay
+ * (see mergeLiveOverlay in src/data/sample.js consumers). Read-only,
+ * fails soft — any error just means the site falls back to the static
+ * dataset, which is always shipped regardless.
+ */
+export async function fetchAllLiveCenturies() {
+  if (!supabase) return [];
+  const { data, error } = await supabase.from('centuries').select('*').limit(20000);
+  if (error) {
+    console.error('Supabase overlay fetch failed:', error.message);
+    return [];
+  }
+  return (data || []).map(mapDbToInnings);
 }
 
 /**

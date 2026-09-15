@@ -6,6 +6,8 @@ import {
 } from '@/lib/scoring';
 import { calcVolatility, volatilityTier, writeVerdict } from '@/lib/volatility';
 import { SAMPLE_CENTURIES } from '@/data/sample';
+import { fetchAllLiveCenturies } from '@/lib/supabase';
+import { mergeLiveOverlay } from '@/lib/liveOverlay';
 
 // ── Weight mapping ─────────────────────────────────────────────────────────────
 const WEIGHT_VALUES = [30, 22, 18, 14, 10, 6];
@@ -404,11 +406,25 @@ function TonsApp() {
   const [copied,        setCopied]        = useState(false);
   const [visibleCount,  setVisibleCount]  = useState(PAGE_SIZE);
   const searchRef = useRef(null);
-  const centuries = SAMPLE_CENTURIES;
+  const [centuries, setCenturies] = useState(SAMPLE_CENTURIES);
+
+  // Progressive enhancement: render instantly from the bundled static
+  // dataset, then merge in the live Supabase table (editorial fixes +
+  // new centuries from the monthly pipeline) once it arrives. Fails soft —
+  // if Supabase is unreachable or unconfigured, the static list stands.
+  useEffect(() => {
+    let cancelled = false;
+    fetchAllLiveCenturies().then((live) => {
+      if (!cancelled && live.length) {
+        setCenturies((prev) => mergeLiveOverlay(prev, live));
+      }
+    }).catch(() => {});
+    return () => { cancelled = true; };
+  }, []);
 
   const weights = useMemo(() => buildWeights(criteriaOrder), [criteriaOrder]);
 
-  const countries = useMemo(() => ['All', ...[...new Set(centuries.map(c => c.country))].sort()], []);
+  const countries = useMemo(() => ['All', ...[...new Set(centuries.map(c => c.country))].sort()], [centuries]);
 
   const ranked = useMemo(() => {
     const q = searchQuery.toLowerCase().trim();

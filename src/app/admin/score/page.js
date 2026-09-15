@@ -211,6 +211,11 @@ export default function EditorialScorePage() {
   useEffect(() => {
     async function loadQueue() {
       setLoading(true);
+      if (!supabase) {
+        console.error('Supabase is not configured (missing env vars).');
+        setLoading(false);
+        return;
+      }
       // Load innings that are heuristic-only (not yet editorially reviewed)
       // Priority: highest runs first (most famous innings first)
       const { data, error } = await supabase
@@ -268,7 +273,7 @@ export default function EditorialScorePage() {
 
   // ── Save to Supabase ─────────────────────────────────────
   async function saveAndNext() {
-    if (!current) return;
+    if (!current || !supabase) return;
     setSaving(true);
     const tagArray = tags.split(',').map(t => t.trim()).filter(Boolean);
     const { error } = await supabase
