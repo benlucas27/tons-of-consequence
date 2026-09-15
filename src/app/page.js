@@ -219,6 +219,12 @@ function OnboardingScreen({ order, setOrder, onSubmit }) {
         }}>
           SEE MY RANKINGS →
         </button>
+        <a href="/quiz" style={{
+          display:'block', textAlign:'center', marginTop:14,
+          fontSize:10, color:'var(--text-muted)', letterSpacing:'1px', textDecoration:'none',
+        }}>
+          Not sure? Take the 60-second Pub Test instead →
+        </a>
       </div>
     </div>
   );
@@ -535,7 +541,7 @@ function TonsApp() {
           <button onClick={() => setSelected(null)} style={{ background:'transparent', border:'0.5px solid var(--border-strong)', color:'var(--text-muted)', cursor:'pointer', fontSize:10, marginBottom:16, padding:'5px 12px', letterSpacing:'1px', fontWeight:500, textTransform:'uppercase', borderRadius:3 }}>
             ← BACK TO RANKINGS
           </button>
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 260px', gap:16, alignItems:'start' }}>
+          <div className="detail-grid" style={{ alignItems:'start' }}>
             <div>
               <div style={{ background:'var(--bg-panel)', border:'0.5px solid var(--border-strong)', borderRadius:5, padding:16, marginBottom:12 }}>
                 <div style={{ display:'flex', alignItems:'baseline', gap:10, marginBottom:10 }}>
@@ -621,7 +627,7 @@ function TonsApp() {
               ))}
             </div>
           </div>
-          <div style={{ display:'grid', gridTemplateColumns:`repeat(${compareItems.length},1fr)`, gap:12 }}>
+          <div className="compare-grid" style={{ display:'grid', gridTemplateColumns:`repeat(${compareItems.length},1fr)`, gap:12 }}>
             {compareItems.map(c => (
               <div key={c.id} style={{ background:'var(--bg-panel)', border:'0.5px solid var(--border-strong)', borderRadius:5, padding:14 }}>
                 <div style={{ textAlign:'center', marginBottom:14 }}>

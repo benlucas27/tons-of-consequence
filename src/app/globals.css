@@ -64,3 +64,20 @@ input[type="number"] { -moz-appearance: textfield; }
 .fade-in { animation: fadeIn 0.2s ease forwards; }
 
 ::placeholder { color: var(--text-dim); }
+
+/* Responsive layout overrides — the rest of the app is inline-styled, but
+   inline styles can't respond to a media query, so these two grids (the
+   only fixed-column layouts in the app) get a class instead. */
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 16px;
+}
+@media (max-width: 700px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+  .compare-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

@@ -10,13 +10,6 @@ export const metadata = {
     description: 'Not all hundreds are created equal.',
     url: 'https://tons-of-consequence.vercel.app',
     siteName: 'Tons of Consequence',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-      },
-    ],
     locale: 'en_AU',
     type: 'website',
   },
@@ -24,12 +17,11 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Tons of Consequence',
     description: 'Not all hundreds are created equal.',
-    images: ['/og-image.png'],
-  },
-  icons: {
-    icon: '/favicon.ico',
   },
 };
+// og:image and favicon come from opengraph-image.js / icon.svg (Next.js
+// file conventions) — no need to reference files under public/, which
+// doesn't exist in this repo.
 
 export default function RootLayout({ children }) {
   return (
