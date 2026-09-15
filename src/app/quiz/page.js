@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * TONS OF CONSEQUENCE â The Pub Test
+ * TONS OF CONSEQUENCE — The Pub Test
  * ====================================
  * 6 either/or questions that derive the user's weighting profile
  * and reveal their persona before dropping them into the rankings.
@@ -13,11 +13,11 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { encodeWeights } from '@/lib/scoring';
 
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 // QUESTIONS
 // Each answer shifts lever weights by the delta values.
 // Deltas are applied on top of DEFAULT_WEIGHTS.
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 
 const QUESTIONS = [
   {
@@ -25,26 +25,26 @@ const QUESTIONS = [
     question: "A batter scores 200* in a dead rubber nobody watched. Another scores 104 that wins the Ashes on the final ball. Which is the greater innings?",
     a: {
       text: "The 200*. Runs are runs.",
-      emoji: "ð",
+      emoji: "📊",
       delta: { matchImpact: -8, conditions: +4, clutchness: -6, narrative: +4, historicalWeight: +3, perceivedGreatness: +3 },
     },
     b: {
       text: "The 104. Context is everything.",
-      emoji: "ð¯",
+      emoji: "🎯",
       delta: { matchImpact: +8, conditions: -2, clutchness: +6, narrative: +2, historicalWeight: -4, perceivedGreatness: -5 },
     },
   },
   {
     id: 2,
-    question: "Steve Smith scores 144 at Edgbaston â thirteen months after the sandpaper scandal, to a standing ovation. Or Ricky Ponting scores the same 144 in the same match, unremarkably. Same innings, different man. Does the story change the score?",
+    question: "Steve Smith scores 144 at Edgbaston — thirteen months after the sandpaper scandal, to a standing ovation. Or Ricky Ponting scores the same 144 in the same match, unremarkably. Same innings, different man. Does the story change the score?",
     a: {
       text: "Yes. The story is part of the innings.",
-      emoji: "âï¸",
+      emoji: "✍️",
       delta: { matchImpact: -4, conditions: -2, clutchness: 0, narrative: +12, historicalWeight: +2, perceivedGreatness: +2 },
     },
     b: {
       text: "No. The scorebook doesn't care.",
-      emoji: "ð",
+      emoji: "📐",
       delta: { matchImpact: +4, conditions: +4, clutchness: +4, narrative: -12, historicalWeight: +0, perceivedGreatness: +2 },
     },
   },
@@ -53,26 +53,26 @@ const QUESTIONS = [
     question: "Bradman scores 334 against a mediocre England attack on a flat MCG pitch. Or a lower-order batter scores 110 on a raging turner against a prime West Indies pace quartet in a must-win match. Whose innings matters more?",
     a: {
       text: "Bradman. The scale is incomparable.",
-      emoji: "ðï¸",
+      emoji: "🏛️",
       delta: { matchImpact: -2, conditions: -8, clutchness: -4, narrative: +4, historicalWeight: +8, perceivedGreatness: +6 },
     },
     b: {
       text: "The 110. That was genuinely harder.",
-      emoji: "ð©ï¸",
+      emoji: "🌩️",
       delta: { matchImpact: +4, conditions: +8, clutchness: +6, narrative: +2, historicalWeight: -8, perceivedGreatness: -6 },
     },
   },
   {
     id: 4,
-    question: "Australia need 308 in the fourth innings. Last recognised batsman at the crease. The team around them collapses. They score 153* and win. Or: they score 153 in the first innings of a comfortable team victory. Same runs â different moment.",
+    question: "Australia need 308 in the fourth innings. Last recognised batsman at the crease. The team around them collapses. They score 153* and win. Or: they score 153 in the first innings of a comfortable team victory. Same runs — different moment.",
     a: {
       text: "The chase. Pressure reveals everything.",
-      emoji: "â¡",
+      emoji: "⚡",
       delta: { matchImpact: +6, conditions: +2, clutchness: +10, narrative: +2, historicalWeight: -4, perceivedGreatness: -2 },
     },
     b: {
       text: "First innings. Setting the foundation is underrated.",
-      emoji: "ð§±",
+      emoji: "🧱",
       delta: { matchImpact: +4, conditions: +2, clutchness: -10, narrative: +4, historicalWeight: +2, perceivedGreatness: -2 },
     },
   },
@@ -81,12 +81,12 @@ const QUESTIONS = [
     question: "Viv Richards scores 291 at The Oval weeks after Tony Greig says he'll make West Indies 'grovel'. It's political, furious, loaded with meaning. Or: a technically perfect 291 by a neutral player in a forgettable series. Same score.",
     a: {
       text: "Richards. The meaning matters.",
-      emoji: "â",
+      emoji: "✊",
       delta: { matchImpact: -2, conditions: 0, clutchness: 0, narrative: +14, historicalWeight: +4, perceivedGreatness: +4 },
     },
     b: {
       text: "The technically perfect one. Purity counts.",
-      emoji: "ð",
+      emoji: "📐",
       delta: { matchImpact: +4, conditions: +6, clutchness: +2, narrative: -14, historicalWeight: -4, perceivedGreatness: -4 },
     },
   },
@@ -95,28 +95,28 @@ const QUESTIONS = [
     question: "Final question. Be honest with yourself. You're watching cricket with a mate and an innings finishes. What are you most likely to say?",
     a: {
       text: "\"That won them the game. That's what matters.\"",
-      emoji: "ð",
+      emoji: "🏆",
       delta: { matchImpact: +8, conditions: +2, clutchness: +4, narrative: -6, historicalWeight: -4, perceivedGreatness: -4 },
     },
     b: {
       text: "\"Mate, do you know the story of how he got here?\"",
-      emoji: "ðº",
+      emoji: "🍺",
       delta: { matchImpact: -6, conditions: -2, clutchness: -2, narrative: +10, historicalWeight: +4, perceivedGreatness: +4 },
     },
   },
 ];
 
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 // PERSONA DEFINITIONS
 // Matched based on final weight distribution
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 
 const PERSONAS = [
   {
     id: 'purist',
     name: 'The Purist',
-    emoji: 'ð',
-    tagline: 'What happened on the pitch â nothing else.',
+    emoji: '📐',
+    tagline: 'What happened on the pitch — nothing else.',
     description: 'You don\'t care about the backstory, the politics, or who was watching. You want to know: how hard was it to score those runs, and what did they do to the match? The pitch doesn\'t lie.',
     colour: '#38bde8',
     match: w => w.conditions >= 22 && w.clutchness >= 20 && w.narrative <= 14,
@@ -124,7 +124,7 @@ const PERSONAS = [
   {
     id: 'romantic',
     name: 'The Romantic',
-    emoji: 'âï¸',
+    emoji: '✍️',
     tagline: 'Stories and tears over numbers.',
     description: 'Scorebooks are incomplete documents. The number on the board tells you nothing about the 13 months of recovery, the crowd holding its breath, or what it meant to the person holding the bat. You\'re here for all of it.',
     colour: '#d08840',
@@ -133,16 +133,16 @@ const PERSONAS = [
   {
     id: 'analyst',
     name: 'The Analyst',
-    emoji: 'ð',
+    emoji: '📊',
     tagline: 'Context and difficulty above all.',
-    description: 'The conditions, the bowling attack, the pitch â these are the variables that separate a great innings from a great score. You\'d rather see 104 against a prime West Indies attack than 380 against Zimbabwe. Degree of difficulty is everything.',
+    description: 'The conditions, the bowling attack, the pitch — these are the variables that separate a great innings from a great score. You\'d rather see 104 against a prime West Indies attack than 380 against Zimbabwe. Degree of difficulty is everything.',
     colour: '#38bde8',
     match: w => w.matchImpact >= 30 && w.conditions >= 26,
   },
   {
     id: 'patriot',
-    name: 'The Patriot ð¦ðº',
-    emoji: 'ð¦',
+    name: 'The Patriot 🇦🇺',
+    emoji: '🦘',
     tagline: 'Australia first, everywhere else second.',
     description: 'You appreciate great cricket wherever it comes from. You\'re just more likely to notice when it\'s green and gold. Ashes matches earn extra weight. A win in the Caribbean earns extra weight. The baggy green earns extra weight.',
     colour: '#f5c800',
@@ -151,7 +151,7 @@ const PERSONAS = [
   {
     id: 'clutch',
     name: 'The Believer',
-    emoji: 'â¡',
+    emoji: '⚡',
     tagline: 'Pressure is the only real test.',
     description: 'Hundreds scored in comfortable positions don\'t impress you. You want last-wicket stands, fourth-innings chases, must-win matches. The best innings are the ones where failure wasn\'t an option.',
     colour: '#e8382e',
@@ -160,9 +160,9 @@ const PERSONAS = [
   {
     id: 'default',
     name: 'The Balanced Observer',
-    emoji: 'ð',
+    emoji: '🏏',
     tagline: 'You\'re open to a good argument from any direction.',
-    description: 'You see value in all of it â the story, the context, the conditions, the moment. You don\'t want to overweight any single dimension. That makes you the most dangerous person to argue with at the pub.',
+    description: 'You see value in all of it — the story, the context, the conditions, the moment. You don\'t want to overweight any single dimension. That makes you the most dangerous person to argue with at the pub.',
     colour: '#2dd65a',
     match: () => true, // fallback
   },
@@ -172,9 +172,9 @@ function getPersona(weights) {
   return PERSONAS.find(p => p.match(weights)) || PERSONAS[PERSONAS.length - 1];
 }
 
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 // APPLY DELTAS TO BASE WEIGHTS
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 
 const BASE_WEIGHTS = {
   matchImpact: 20, conditions: 15, clutchness: 20,
@@ -190,9 +190,9 @@ function applyDeltas(answers) {
   });
   return w;
 }
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 // STYLES
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 
 const C = {
   bg: '#0d0d14', card: '#14141f', inset: '#0a0a10',
@@ -201,9 +201,9 @@ const C = {
   white: '#f0f0f8', off: '#c0c0d0', dim: '#707088', faint: '#404058',
 };
 
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 // COMPONENT
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 
 export default function PubTestQuiz() {
   const router = useRouter();
@@ -228,7 +228,7 @@ export default function PubTestQuiz() {
       setChosen(null);
 
       if (step >= QUESTIONS.length) {
-        // Final answer â compute persona
+        // Final answer — compute persona
         const finalWeights = applyDeltas(newAnswers);
         const p = getPersona(finalWeights);
         setPersona(p);
@@ -245,12 +245,12 @@ export default function PubTestQuiz() {
     router.push(`/?w=${encoded}&from=quiz`);
   }
 
-  // ââ INTRO âââââââââââââââââââââââââââââââââââââââââââââââââ
+  // ── INTRO ─────────────────────────────────────────────────
   if (step === 0) {
     return (
       <div style={{ background: C.bg, minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 28, fontFamily: 'system-ui, sans-serif' }}>
         <div style={{ maxWidth: 560, textAlign: 'center' }}>
-          <div style={{ fontSize: 56, marginBottom: 16 }}>ð</div>
+          <div style={{ fontSize: 56, marginBottom: 16 }}>🏏</div>
           <h1 style={{ color: C.white, fontSize: 38, fontWeight: 900, letterSpacing: -1, textTransform: 'uppercase', lineHeight: 1.1, margin: '0 0 12px' }}>
             THE PUB TEST
           </h1>
@@ -258,7 +258,7 @@ export default function PubTestQuiz() {
             What kind of cricket fan are you?
           </p>
           <p style={{ color: C.off, fontSize: 15, lineHeight: 1.8, margin: '0 0 36px' }}>
-            Six questions. No right answers. At the end, your own personal ranking of every Test century ever scored â built around your values, not ours.
+            Six questions. No right answers. At the end, your own personal ranking of every Test century ever scored — built around your values, not ours.
           </p>
           <button
             onClick={() => setStep(1)}
@@ -280,14 +280,14 @@ export default function PubTestQuiz() {
               width: '100%',
             }}
           >
-            SKIP â TAKE ME STRAIGHT TO THE RANKINGS
+            SKIP — TAKE ME STRAIGHT TO THE RANKINGS
           </button>
         </div>
       </div>
     );
   }
 
-  // ââ PERSONA REVEAL ââââââââââââââââââââââââââââââââââââââââ
+  // ── PERSONA REVEAL ────────────────────────────────────────
   if (step === QUESTIONS.length + 1 && persona) {
     return (
       <div style={{ background: C.bg, minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 28, fontFamily: 'system-ui, sans-serif' }}>
@@ -312,12 +312,12 @@ export default function PubTestQuiz() {
               Your Weighting Profile
             </div>
             {weights && [
-              ['ð¯ Match Impact',           weights.matchImpact,       '#f5c800'],
-              ['ð©ï¸ Conditions & Opposition', weights.conditions,         '#38bde8'],
-              ['â¡ Clutchness',              weights.clutchness,         '#e8382e'],
-              ['ð Narrative',              weights.narrative,          '#d08840'],
-              ['ðï¸ Historical Weight',      weights.historicalWeight,   '#a06ee8'],
-              ['â­ Perceived Greatness',    weights.perceivedGreatness, '#2dd65a'],
+              ['🎯 Match Impact',           weights.matchImpact,       '#f5c800'],
+              ['🌩️ Conditions & Opposition', weights.conditions,         '#38bde8'],
+              ['⚡ Clutchness',              weights.clutchness,         '#e8382e'],
+              ['📖 Narrative',              weights.narrative,          '#d08840'],
+              ['🏛️ Historical Weight',      weights.historicalWeight,   '#a06ee8'],
+              ['⭐ Perceived Greatness',    weights.perceivedGreatness, '#2dd65a'],
             ].map(([name, val, col]) => (
               <div key={name} style={{ marginBottom: 10 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
@@ -340,7 +340,7 @@ export default function PubTestQuiz() {
               display: 'block', width: '100%', marginBottom: 14,
             }}
           >
-            SEE YOUR RANKING â
+            SEE YOUR RANKING →
           </button>
           <button
             onClick={() => { setStep(0); setAnswers([]); setChosen(null); }}
@@ -357,7 +357,7 @@ export default function PubTestQuiz() {
     );
   }
 
-  // ââ QUESTION ââââââââââââââââââââââââââââââââââââââââââââââ
+  // ── QUESTION ──────────────────────────────────────────────
   return (
     <div style={{ background: C.bg, minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 28, fontFamily: 'system-ui, sans-serif' }}>
       <div style={{ maxWidth: 620, width: '100%' }}>
@@ -422,7 +422,7 @@ export default function PubTestQuiz() {
             onClick={() => router.push('/')}
             style={{ background: 'transparent', border: 'none', color: C.faint, cursor: 'pointer', fontSize: 11, fontWeight: 600 }}
           >
-            Skip quiz â go straight to rankings
+            Skip quiz — go straight to rankings
           </button>
         </div>
       </div>

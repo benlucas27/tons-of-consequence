@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * TONS OF CONSEQUENCE â Editorial Scoring Tool
+ * TONS OF CONSEQUENCE — Editorial Scoring Tool
  * =============================================
  * Admin interface for reviewing and scoring innings.
  * Surfaces Wikipedia source material, auto-detects narrative signals,
@@ -10,26 +10,26 @@
  * Route: /admin/score
  *
  * Keyboard shortcuts:
- *   S / Enter  â Save & next
- *   N          â Skip to next (no save)
- *   P          â Previous innings
- *   1â9        â Quick-set Narrative score (Ã10)
+ *   S / Enter  → Save & next
+ *   N          → Skip to next (no save)
+ *   P          → Previous innings
+ *   1–9        → Quick-set Narrative score (×10)
  */
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { supabase, mapDbToInnings } from '@/lib/supabase';
 
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 // NARRATIVE SIGNALS
 // Each signal has a name, description, and point value (added to Narrative score)
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 
 const NARRATIVE_SIGNALS = [
   { key: 'debut',       label: 'Debut',                 desc: 'Test debut, first Ashes, maiden century on major ground', pts: 18 },
   { key: 'farewell',    label: 'Farewell',               desc: 'Final innings, retirement match, last Test', pts: 16 },
   { key: 'comeback',    label: 'Comeback',               desc: 'Return after injury, scandal, loss of form, or selection exile', pts: 22 },
   { key: 'adversity',   label: 'Physical adversity',     desc: 'Playing through injury, illness, grief, or extreme physical hardship', pts: 20 },
-  { key: 'political',   label: 'Political / cultural weight', desc: 'Innings carrying meaning beyond cricket â race, identity, nationhood', pts: 18 },
+  { key: 'political',   label: 'Political / cultural weight', desc: 'Innings carrying meaning beyond cricket — race, identity, nationhood', pts: 18 },
   { key: 'record',      label: 'Record-breaking',        desc: 'World record, national record, or significant milestone', pts: 14 },
   { key: 'rivalry',     label: 'Ashes / major rivalry',  desc: 'Ashes Test, or similarly loaded bilateral rivalry', pts: 10 },
   { key: 'decider',     label: 'Series decider',         desc: 'Must-win match, series on the line, final Test of a series', pts: 12 },
@@ -52,9 +52,9 @@ function calcSignalScore(signals, signalDefs, base = 30) {
   return Math.min(98, base + total);
 }
 
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 // WIKIPEDIA ENRICHMENT
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 
 async function fetchWikipedia(playerName) {
   try {
@@ -81,9 +81,9 @@ async function fetchWikipedia(playerName) {
   }
 }
 
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 // COLOURS
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 
 const C = {
   bg:      '#0d0d14',
@@ -107,9 +107,9 @@ const label = {
   display: 'block', marginBottom: 6,
 };
 
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 // SIGNAL CHECKLIST
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 
 function SignalChecklist({ signals, setSignals, defs, title, proposedScore }) {
   return (
@@ -117,7 +117,7 @@ function SignalChecklist({ signals, setSignals, defs, title, proposedScore }) {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
         <span style={label}>{title}</span>
         <span style={{ color: C.gold, fontWeight: 900, fontSize: 18 }}>
-          â {proposedScore}
+          → {proposedScore}
         </span>
       </div>
       {defs.map(s => (
@@ -142,9 +142,9 @@ function SignalChecklist({ signals, setSignals, defs, title, proposedScore }) {
   );
 }
 
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 // SCORE SLIDER
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 
 function ScoreSlider({ label: lbl, value, onChange, color = C.gold }) {
   return (
@@ -176,9 +176,9 @@ function ScoreSlider({ label: lbl, value, onChange, color = C.gold }) {
   );
 }
 
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 // MAIN EDITORIAL PAGE
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────
 
 export default function EditorialScorePage() {
   const [queue,      setQueue]      = useState([]);
@@ -207,7 +207,7 @@ export default function EditorialScorePage() {
   const proposedNarrative  = calcSignalScore(narSignals,   NARRATIVE_SIGNALS,  30);
   const proposedGreatness  = calcSignalScore(greatSignals, GREATNESS_SIGNALS,  25);
 
-  // ââ Load queue from Supabase âââââââââââââââââââââââââââââ
+  // ── Load queue from Supabase ─────────────────────────────
   useEffect(() => {
     async function loadQueue() {
       setLoading(true);
@@ -231,7 +231,7 @@ export default function EditorialScorePage() {
     loadQueue();
   }, []);
 
-  // ââ Load innings into form when queue index changes ââââââ
+  // ── Load innings into form when queue index changes ──────
   const current = queue[queueIdx];
 
   useEffect(() => {
@@ -257,7 +257,7 @@ export default function EditorialScorePage() {
     });
   }, [queueIdx, current?.id]);
 
-  // ââ Auto-apply proposed signal scores âââââââââââââââââââ
+  // ── Auto-apply proposed signal scores ───────────────────
   useEffect(() => {
     setNarrative(proposedNarrative);
   }, [proposedNarrative]);
@@ -266,7 +266,7 @@ export default function EditorialScorePage() {
     setGreatness(proposedGreatness);
   }, [proposedGreatness]);
 
-  // ââ Save to Supabase âââââââââââââââââââââââââââââââââââââ
+  // ── Save to Supabase ─────────────────────────────────────
   async function saveAndNext() {
     if (!current) return;
     setSaving(true);
@@ -300,7 +300,7 @@ export default function EditorialScorePage() {
     }
   }
 
-  // ââ Keyboard shortcuts âââââââââââââââââââââââââââââââââââ
+  // ── Keyboard shortcuts ───────────────────────────────────
   useEffect(() => {
     function onKey(e) {
       // Don't trigger shortcuts when typing in textarea
@@ -313,9 +313,9 @@ export default function EditorialScorePage() {
     return () => window.removeEventListener('keydown', onKey);
   }, [queue, queueIdx, narrative, greatness, matchImpact, conditions, clutchness, historical, story, tags]);
 
-  // âââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  // ─────────────────────────────────────────────────────────
   // RENDER
-  // âââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  // ─────────────────────────────────────────────────────────
 
   if (loading) {
     return (
@@ -329,7 +329,7 @@ export default function EditorialScorePage() {
     return (
       <div style={{ background: C.bg, minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'system-ui, sans-serif' }}>
         <div style={{ textAlign: 'center' }}>
-          <div style={{ color: C.green, fontSize: 48, marginBottom: 16 }}>â</div>
+          <div style={{ color: C.green, fontSize: 48, marginBottom: 16 }}>✓</div>
           <div style={{ color: C.white, fontSize: 20, fontWeight: 900 }}>All innings reviewed!</div>
           <div style={{ color: C.dim, marginTop: 8 }}>Nothing left in the queue.</div>
         </div>
@@ -343,16 +343,16 @@ export default function EditorialScorePage() {
   return (
     <div style={{ background: C.bg, minHeight: '100vh', color: C.white, fontFamily: 'system-ui, sans-serif' }}>
 
-      {/* ââ Top bar ââ */}
+      {/* ── Top bar ── */}
       <div style={{ background: C.card, borderBottom: `3px solid ${C.red}`, padding: '10px 28px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 100 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-          <div style={{ background: C.red, borderRadius: 4, padding: '4px 8px', fontSize: 18 }}>ð</div>
+          <div style={{ background: C.red, borderRadius: 4, padding: '4px 8px', fontSize: 18 }}>🏏</div>
           <div>
             <span style={{ color: C.white, fontWeight: 900, fontSize: 16, textTransform: 'uppercase', letterSpacing: -0.5 }}>
               Editorial Scoring
             </span>
             <span style={{ color: C.dim, fontSize: 11, marginLeft: 12 }}>
-              {progress} / {queue.length} reviewed Â· {remaining} remaining
+              {progress} / {queue.length} reviewed · {remaining} remaining
             </span>
           </div>
         </div>
@@ -363,10 +363,10 @@ export default function EditorialScorePage() {
         </div>
 
         <div style={{ display: 'flex', gap: 8 }}>
-          <button onClick={() => setQueueIdx(i => Math.max(i - 1, 0))} style={btnStyle} title="Previous (P)">â PREV</button>
-          <button onClick={() => setQueueIdx(i => Math.min(i + 1, queue.length - 1))} style={btnStyle} title="Skip (N)">SKIP â</button>
+          <button onClick={() => setQueueIdx(i => Math.max(i - 1, 0))} style={btnStyle} title="Previous (P)">← PREV</button>
+          <button onClick={() => setQueueIdx(i => Math.min(i + 1, queue.length - 1))} style={btnStyle} title="Skip (N)">SKIP →</button>
           <button onClick={saveAndNext} disabled={saving} style={{ ...btnStyle, background: saved ? C.green : C.gold, color: '#000', fontWeight: 900 }} title="Save & Next (S)">
-            {saving ? 'SAVING...' : saved ? 'â SAVED' : 'SAVE & NEXT (S)'}
+            {saving ? 'SAVING...' : saved ? '✓ SAVED' : 'SAVE & NEXT (S)'}
           </button>
         </div>
       </div>
@@ -374,7 +374,7 @@ export default function EditorialScorePage() {
       {current && (
         <div style={{ maxWidth: 1400, margin: '0 auto', padding: '24px 28px', display: 'grid', gridTemplateColumns: '1fr 380px 300px', gap: 20, alignItems: 'start' }}>
 
-          {/* ââ LEFT: Innings info + story editor ââ */}
+          {/* ── LEFT: Innings info + story editor ── */}
           <div>
             {/* Innings header */}
             <div style={{ ...cardStyle, borderTop: `4px solid ${C.gold}`, marginBottom: 16 }}>
@@ -387,7 +387,7 @@ export default function EditorialScorePage() {
                     {current.player}
                   </div>
                   <div style={{ color: C.dim, fontSize: 13, marginTop: 4 }}>
-                    vs {current.opponent} Â· {current.ground} Â· {current.year}
+                    vs {current.opponent} · {current.ground} · {current.year}
                   </div>
                   {current.series && (
                     <div style={{ color: C.faint, fontSize: 11, marginTop: 2, textTransform: 'uppercase', letterSpacing: 1 }}>
@@ -412,10 +412,10 @@ export default function EditorialScorePage() {
               {/* Quick stats */}
               <div style={{ display: 'flex', gap: 20, marginTop: 16, paddingTop: 16, borderTop: `1px solid ${C.border}` }}>
                 {[
-                  ['Balls', current.balls ?? 'â'],
-                  ['Minutes', current.minutes ?? 'â'],
-                  ['Innings', current.innings_number ?? 'â'],
-                  ['Result', current.match_result?.toUpperCase() ?? 'â'],
+                  ['Balls', current.balls ?? '—'],
+                  ['Minutes', current.minutes ?? '—'],
+                  ['Innings', current.innings_number ?? '—'],
+                  ['Result', current.match_result?.toUpperCase() ?? '—'],
                 ].map(([l, v]) => (
                   <div key={l}>
                     <div style={{ color: C.faint, fontSize: 9, fontWeight: 700, letterSpacing: 1 }}>{l}</div>
@@ -427,7 +427,7 @@ export default function EditorialScorePage() {
 
             {/* Story editor */}
             <div style={cardStyle}>
-              <span style={label}>Story (2â4 sentences)</span>
+              <span style={label}>Story (2–4 sentences)</span>
               <p style={{ color: C.faint, fontSize: 11, lineHeight: 1.6, marginBottom: 10 }}>
                 Write the human story of this innings. What was at stake, what made it remarkable, why it matters. This appears in the detail view. Aim for the kind of sentence you'd say to a mate at the pub.
               </p>
@@ -435,7 +435,7 @@ export default function EditorialScorePage() {
                 ref={storyRef}
                 value={story}
                 onChange={e => setStory(e.target.value)}
-                placeholder="e.g. 'Waugh's unbeaten 200 in Jamaica against Ambrose, Walsh and Bishop â the most feared pace attack in the world...'"
+                placeholder="e.g. 'Waugh's unbeaten 200 in Jamaica against Ambrose, Walsh and Bishop — the most feared pace attack in the world...'"
                 style={{
                   width: '100%', minHeight: 120,
                   background: C.inset, border: `1px solid ${C.border}`,
@@ -445,7 +445,7 @@ export default function EditorialScorePage() {
                 }}
               />
               <div style={{ color: C.faint, fontSize: 10, marginTop: 6 }}>
-                {story.length} chars Â· {story.split(/\s+/).filter(Boolean).length} words
+                {story.length} chars · {story.split(/\s+/).filter(Boolean).length} words
               </div>
             </div>
 
@@ -464,23 +464,23 @@ export default function EditorialScorePage() {
                 }}
               />
               <p style={{ color: C.faint, fontSize: 10, marginTop: 6, lineHeight: 1.5 }}>
-                3â5 short tags. These appear on the ranking card. Be specific.
+                3–5 short tags. These appear on the ranking card. Be specific.
               </p>
             </div>
 
             {/* All six lever scores */}
             <div style={{ ...cardStyle, marginTop: 14 }}>
               <span style={label}>All Lever Scores</span>
-              <ScoreSlider label="ð¯ Match Impact"             value={matchImpact}  onChange={setMatchImpact}  color="#f5c800" />
+              <ScoreSlider label="🎯 Match Impact"             value={matchImpact}  onChange={setMatchImpact}  color="#f5c800" />
               <ScoreSlider label="ð©à¸ Conditions & Opposition" value={conditions}   onChange={setConditions}   color="#38bde8" />
-              <ScoreSlider label="â¡ Clutchness"              value={clutchness}   onChange={setClutchness}   color="#e8382e" />
-              <ScoreSlider label="ð Narrative"              value={narrative}    onChange={setNarrative}    color="#d08840" />
-              <ScoreSlider label="ðï¸ Historical Weight"      value={historical}   onChange={setHistorical}   color="#a06ee8" />
-              <ScoreSlider label="â­ Perceived Greatness"    value={greatness}    onChange={setGreatness}    color="#2dd65a" />
+              <ScoreSlider label="⚡ Clutchness"              value={clutchness}   onChange={setClutchness}   color="#e8382e" />
+              <ScoreSlider label="📖 Narrative"              value={narrative}    onChange={setNarrative}    color="#d08840" />
+              <ScoreSlider label="🏛️ Historical Weight"      value={historical}   onChange={setHistorical}   color="#a06ee8" />
+              <ScoreSlider label="⭐ Perceived Greatness"    value={greatness}    onChange={setGreatness}    color="#2dd65a" />
             </div>
           </div>
 
-          {/* ââ MIDDLE: Signal checklists ââ */}
+          {/* ── MIDDLE: Signal checklists ── */}
           <div>
             <div style={cardStyle}>
               <div style={{ marginBottom: 16 }}>
@@ -530,7 +530,7 @@ export default function EditorialScorePage() {
             </div>
           </div>
 
-          {/* ââ RIGHT: Wikipedia source material ââ */}
+          {/* ── RIGHT: Wikipedia source material ── */}
           <div>
             <div style={{ ...cardStyle, position: 'sticky', top: 80 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
@@ -538,7 +538,7 @@ export default function EditorialScorePage() {
                 {wiki?.url && (
                   <a href={wiki.url} target="_blank" rel="noopener noreferrer"
                     style={{ color: C.sky, fontSize: 10, fontWeight: 700, letterSpacing: 1 }}>
-                    OPEN WIKI â
+                    OPEN WIKI ↗
                   </a>
                 )}
               </div>
@@ -556,11 +556,11 @@ export default function EditorialScorePage() {
                   Search manually:{' '}
                   <a href={`https://en.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(current?.player)}`}
                     target="_blank" rel="noopener noreferrer"
-                    style={{ color: C.sky }}>Wikipedia â</a>
-                  {' Â· '}
+                    style={{ color: C.sky }}>Wikipedia ↗</a>
+                  {' · '}
                   <a href={`https://www.espncricinfo.com/search?search=${encodeURIComponent(current?.player)}`}
                     target="_blank" rel="noopener noreferrer"
-                    style={{ color: C.sky }}>Cricinfo â</a>
+                    style={{ color: C.sky }}>Cricinfo ↗</a>
                 </div>
               )}
 
@@ -575,15 +575,15 @@ export default function EditorialScorePage() {
                     {wiki.extract}
                   </div>
                   <div style={{ display: 'flex', gap: 8, marginTop: 12 }}>
-                    <a href={wiki.url} target="_blank" rel="noopener noreferrer" style={{ color: C.sky, fontSize: 10, fontWeight: 700 }}>WIKIPEDIA â</a>
-                    <span style={{ color: C.faint }}>Â·</span>
+                    <a href={wiki.url} target="_blank" rel="noopener noreferrer" style={{ color: C.sky, fontSize: 10, fontWeight: 700 }}>WIKIPEDIA ↗</a>
+                    <span style={{ color: C.faint }}>·</span>
                     <a href={`https://www.espncricinfo.com/search?search=${encodeURIComponent(current?.player)}`}
                       target="_blank" rel="noopener noreferrer"
-                      style={{ color: C.sky, fontSize: 10, fontWeight: 700 }}>CRICINFO â</a>
-                    <span style={{ color: C.faint }}>Â·</span>
+                      style={{ color: C.sky, fontSize: 10, fontWeight: 700 }}>CRICINFO ↗</a>
+                    <span style={{ color: C.faint }}>·</span>
                     <a href={`https://www.google.com/search?q=${encodeURIComponent(current?.player + ' ' + current?.runs + ' vs ' + current?.opponent + ' ' + current?.year)}`}
                       target="_blank" rel="noopener noreferrer"
-                      style={{ color: C.sky, fontSize: 10, fontWeight: 700 }}>GOOGLE â</a>
+                      style={{ color: C.sky, fontSize: 10, fontWeight: 700 }}>GOOGLE ↗</a>
                   </div>
                 </>
               )}

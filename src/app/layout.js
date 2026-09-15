@@ -1,9 +1,9 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Tons of Consequence â The Definitive Ranking of Test Cricket Centuries',
+  title: 'Tons of Consequence — The Definitive Ranking of Test Cricket Centuries',
   description:
-    'Not all hundreds are created equal. Rank every Test cricket century by what it actually meant â adjust the weightings, find your own truth.',
+    'Not all hundreds are created equal. Rank every Test cricket century by what it actually meant — adjust the weightings, find your own truth.',
   openGraph: {
     title: 'Tons of Consequence',
     description: 'Not all hundreds are created equal.',

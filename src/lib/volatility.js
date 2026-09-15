@@ -1,5 +1,5 @@
 /**
- * Tons of Consequence â Volatility Engine
+ * Tons of Consequence — Volatility Engine
  * =========================================
  * Measures how much an innings' rank shifts across different
  * weighting perspectives. High volatility = "divisive innings" =
@@ -21,7 +21,7 @@ export function scoreAcrossPresets(innings) {
 
 /**
  * Calculate the volatility of an innings across all preset weightings.
- * Returns a 0â100 volatility score and the full spread.
+ * Returns a 0–100 volatility score and the full spread.
  *
  * High volatility = the weighting profile dramatically changes whether
  * this innings is seen as great. These are the "it depends" innings.
@@ -35,7 +35,7 @@ export function calcVolatility(innings) {
   const max    = Math.max(...values);
   const spread = max - min;
 
-  // Normalise to 0â100 (max possible spread is ~60 points)
+  // Normalise to 0–100 (max possible spread is ~60 points)
   const volatility = Math.round(Math.min(100, (spread / 60) * 100));
 
   const bestFor  = scores.reduce((a, b) => a.score > b.score ? a : b);
@@ -115,11 +115,11 @@ export function writeVerdict(inningsA, inningsB, weights) {
 
   let verdict;
   if (margin < 1) {
-    verdict = `Dead heat â on your settings, ${inningsA.player}'s ${runDesc(inningsA)} and ${inningsB.player}'s ${runDesc(inningsB)} are essentially tied. The pub argument is yours to resolve.`;
+    verdict = `Dead heat — on your settings, ${inningsA.player}'s ${runDesc(inningsA)} and ${inningsB.player}'s ${runDesc(inningsB)} are essentially tied. The pub argument is yours to resolve.`;
   } else if (margin < 4) {
-    verdict = `Narrow call. ${winner.player}'s ${runDesc(winner)} edges it by ${margin} points â largely on ${leverName} (${winnerLever} vs ${loserLever}). Plenty of room for a second opinion.`;
+    verdict = `Narrow call. ${winner.player}'s ${runDesc(winner)} edges it by ${margin} points — largely on ${leverName} (${winnerLever} vs ${loserLever}). Plenty of room for a second opinion.`;
   } else {
-    verdict = `On your settings, ${winner.player}'s ${runDesc(winner)} wins clearly â ${margin} points clear, with a decisive advantage in ${leverName} (${winnerLever} vs ${loserLever}). ${loser.player}'s ${runDesc(loser)} would need you to weight ${margin < 8 ? 'a couple of' : 'very different'} levers differently to change that verdict.`;
+    verdict = `On your settings, ${winner.player}'s ${runDesc(winner)} wins clearly — ${margin} points clear, with a decisive advantage in ${leverName} (${winnerLever} vs ${loserLever}). ${loser.player}'s ${runDesc(loser)} would need you to weight ${margin < 8 ? 'a couple of' : 'very different'} levers differently to change that verdict.`;
   }
 
   return {
