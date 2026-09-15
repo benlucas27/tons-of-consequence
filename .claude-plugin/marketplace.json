@@ -1,0 +1,20 @@
+{
+  "name": "tons-of-consequence-marketplace",
+  "owner": {
+    "name": "Ben Lucas",
+    "url": "https://github.com/benlucas27"
+  },
+  "description": "The Tons of Consequence Claude plugin — query the Test cricket centuries ranking model from chat.",
+  "version": "1.0.0",
+  "plugins": [
+    {
+      "name": "tons-of-consequence",
+      "source": "./claude-plugin",
+      "description": "Rank, compare, and explore every Test cricket century using the Tons of Consequence model, with your own weightings, right from chat.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Ben Lucas"
+      }
+    }
+  ]
+}

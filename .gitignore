@@ -1,5 +1,5 @@
-# dependencies
-/node_modules
+# dependencies (any depth — includes claude-plugin/mcp-server/node_modules)
+node_modules/
 
 # next.js build output
 /.next/
