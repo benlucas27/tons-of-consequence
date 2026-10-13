@@ -45,6 +45,12 @@ New centuries come from [Cricsheet](https://cricsheet.org)'s open ball-by-ball d
 - `scripts/backfill-results.mjs` fills in match results for older rows where Cricsheet can match them.
 - `scripts/export-plugin-data.mjs` refreshes the Claude plugin's bundled copy of the data.
 
+**A refresh only ever covers new games.** It looks back over the last couple of months, adds
+centuries from games the site does not have yet, and settles the result of any game that was still
+being played. It never reworks historical innings. (`add-new-centuries.mjs` refuses a start date
+before the original data ends.) Cleaning up older rows, such as `backfill-results.mjs`, is a
+separate one-off job and is not part of a refresh.
+
 New rows get automatic estimates for the six criteria (`src/lib/heuristics.js`). They are
 placeholders until someone scores them properly.
 

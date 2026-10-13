@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 /**
+ * ONE-OFF CLEANUP for historical rows. It is not part of the monthly refresh, which only ever
+ * covers new games (see add-new-centuries.mjs).
+ *
  * Fills in match results for centuries whose result is "unknown" (most of the original
  * Statsguru rows) using Cricsheet's ball-by-ball archive, which covers the modern era.
  * A row is only changed when exactly one Cricsheet century matches it (same player,
