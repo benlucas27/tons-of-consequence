@@ -13,8 +13,8 @@ One of the six named dimensions an innings is scored on: Match Impact, Condition
 _Avoid_: factor, category, dimension, criterion.
 
 **Weighting Profile**:
-A reader's personal judgement of how much each lever should count, expressed as six percentages that sum to 100. Two readers looking at the same innings' lever values can reach different ToC Scores because their weighting profiles differ.
-_Avoid_: weights (fine in code; in domain language, name the whole set).
+A reader's personal judgement of what matters, expressed as an order of the six levers: first place carries 30%, then 22, 18, 14, 10 and 6. Two readers looking at the same innings' lever values can reach different ToC Scores because their orders differ.
+_Avoid_: weights (fine in code; in domain language, name the whole order).
 
 **ToC Score**:
 The single number produced by combining an innings' lever values with a weighting profile: the weighted average, 0-100. Not intrinsic to the innings — it only exists in combination with a weighting profile.
@@ -37,8 +37,16 @@ How much an innings' ToC Score swings across different Weighting Profiles (measu
 _Avoid_: volatility (used in code identifiers; in domain language, say divisiveness).
 
 **Review Status**:
-Where an innings sits in the path from first entering the dataset to being fully human-considered: freshly computed and untouched, awaiting a human reviewer, or reviewed and finalized by one. An innings' lever values and story are provisional until it reaches the reviewed state.
-_Avoid_: score_status (the field name; the domain concept is Review Status regardless of what a column is called).
+Whether an innings' lever values and story were set by a person or estimated automatically from the scorecard. An automatic estimate is a placeholder until someone scores the innings properly.
+_Avoid_: score_status (the old database field name).
+
+**Featured Innings**:
+The one innings shown in the Latest-century card at the top of the rankings, chosen by hand. It is usually the most newsworthy recent century.
+_Avoid_: spotlight (fine in code), highlight.
+
+**In Progress**:
+The label on an innings whose Test has not finished, so its match result is not yet known. The innings itself (runs, balls) is final.
+_Avoid_: live (fine in code), ongoing.
 
 **Story**:
 The two-to-four sentence account of what made a specific innings remarkable — what was at stake and what happened. Written or approved by a human reviewer; distinct from the lever values, which are numeric.

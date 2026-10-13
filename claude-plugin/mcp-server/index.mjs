@@ -36,7 +36,7 @@ function applyFilters(list, { country, era, minRuns, maxRuns, query }) {
     if (minRuns != null && c.runs < minRuns) return false;
     if (maxRuns != null && c.runs > maxRuns) return false;
     if (q) {
-      const hay = [c.player, c.opponent, c.venue, c.series, ...(c.tags || [])].join(' ').toLowerCase();
+      const hay = [c.name, c.player, c.opponent, c.venue, c.series, ...(c.tags || [])].join(' ').toLowerCase();
       if (!hay.includes(q)) return false;
     }
     return true;
@@ -46,7 +46,7 @@ function applyFilters(list, { country, era, minRuns, maxRuns, query }) {
 function summarize(c, weights) {
   return {
     id: c.id,
-    player: c.player,
+    player: c.name || c.player,
     country: c.country,
     countryName: NATIONS[c.country] || c.country,
     runs: c.runs,
@@ -146,7 +146,7 @@ server.tool(
     let c = id != null ? BY_ID.get(id) : null;
     if (!c && player) {
       const p = player.toLowerCase();
-      c = CENTURIES.find((x) => x.player.toLowerCase().includes(p) && (year == null || x.year === year));
+      c = CENTURIES.find((x) => ((x.name || x.player).toLowerCase().includes(p) || x.player.toLowerCase().includes(p)) && (year == null || x.year === year));
     }
     if (!c) {
       return { content: [{ type: 'text', text: JSON.stringify({ error: 'No matching century found. Try rank_centuries with a query first to find the id.' }) }] };
@@ -188,7 +188,7 @@ server.tool(
     const ranked = [...items].sort((a, b) => calcToc(b, w) - calcToc(a, w));
     const verdict = writeVerdict(ranked[0], ranked[1], w);
     if (ranked.length > 2) {
-      verdict.verdict += ` (${ranked[2].player}'s ${ranked[2].runs}${ranked[2].notOut ? '*' : ''} placed third on these weights, ${Math.round((calcToc(ranked[0], w) - calcToc(ranked[2], w)) * 10) / 10} points off the top.)`;
+      verdict.verdict += ` (${ranked[2].name || ranked[2].player}'s ${ranked[2].runs}${ranked[2].notOut ? '*' : ''} placed third on these weights, ${Math.round((calcToc(ranked[0], w) - calcToc(ranked[2], w)) * 10) / 10} points off the top.)`;
     }
     return {
       content: [{

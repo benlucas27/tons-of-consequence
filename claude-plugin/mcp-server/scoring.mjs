@@ -87,14 +87,15 @@ export function writeVerdict(a, b, weights) {
   }
   const leverName = LEVER_INFO[biggestGapKey]?.name || biggestGapKey;
   const runDesc = (x) => `${x.runs}${x.notOut ? '*' : ''}`;
+  const who = (x) => x.name || x.player;
 
   let verdict;
   if (margin < 1) {
-    verdict = `Dead heat — ${a.player}'s ${runDesc(a)} and ${b.player}'s ${runDesc(b)} are essentially tied on these weights.`;
+    verdict = `Dead heat — ${who(a)}'s ${runDesc(a)} and ${who(b)}'s ${runDesc(b)} are essentially tied on these weights.`;
   } else if (margin < 4) {
-    verdict = `Narrow call: ${winner.player}'s ${runDesc(winner)} edges it by ${margin} points, largely on ${leverName}.`;
+    verdict = `Narrow call: ${who(winner)}'s ${runDesc(winner)} edges it by ${margin} points, largely on ${leverName}.`;
   } else {
-    verdict = `Clear result: ${winner.player}'s ${runDesc(winner)} wins by ${margin} points, with a decisive advantage in ${leverName}.`;
+    verdict = `Clear result: ${who(winner)}'s ${runDesc(winner)} wins by ${margin} points, with a decisive advantage in ${leverName}.`;
   }
-  return { winner: winner.player, loser: loser.player, tocA, tocB, margin, biggestGapLever: leverName, verdict };
+  return { winner: who(winner), loser: who(loser), tocA, tocB, margin, biggestGapLever: leverName, verdict };
 }

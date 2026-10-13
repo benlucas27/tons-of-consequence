@@ -1,3 +1,7 @@
+---
+status: superseded by ADR-0004
+---
+
 # Merge a live Supabase overlay over the static dataset, rather than reading Supabase directly or regenerating the static file in CI
 
 The site's static dataset (`src/data/sample.js`) and its Supabase `centuries` table had drifted apart: the table existed only for editorial review and was never known to be complete or trustworthy as a standalone source. Two more direct options were available — switch the homepage to query Supabase as its only source, or add a build step that regenerates `sample.js` from Supabase — but both assume the table is safe to depend on wholesale, which was never verified.

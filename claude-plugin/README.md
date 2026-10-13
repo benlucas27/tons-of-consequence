@@ -45,6 +45,9 @@ npm install
 node test-client.mjs   # exercises every tool against the bundled dataset
 ```
 
-The dataset (`mcp-server/data/centuries.json`) is a point-in-time export of the main
-site's dataset. It isn't kept live-synced automatically — re-export it from
-`src/data/sample.js` in the main repo when you want to refresh it.
+The dataset (`mcp-server/data/centuries.json`) is a point-in-time export of the site's data. It is
+not kept in sync automatically. From the repo root, refresh it with:
+
+```
+node scripts/export-plugin-data.mjs
+```

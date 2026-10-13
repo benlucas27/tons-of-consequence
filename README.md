@@ -1,79 +1,84 @@
 # Tons of Consequence
 
-The definitive ranking of every Test cricket century — scored by a weighted model
-across six levers (Match Impact, Clutchness, Narrative, Conditions & Opposition,
-Historical Weight, Perceived Greatness) that you control. Set your own weightings,
-find your own truth.
+The definitive ranking of every Test cricket century, scored by a weighted model across six
+criteria (Match Impact, Clutchness, Narrative, Conditions & Opposition, Historical Weight,
+Perceived Greatness). Readers put the six in order of importance; every innings is re-ranked
+their way.
 
 Live at [tons-of-consequence.vercel.app](https://tons-of-consequence.vercel.app).
 
 ## How it's built
 
-Next.js 14 app router, deployed on Vercel, auto-deploying from `main`.
+Next.js 14 (app router), deployed on Vercel from `main`. There is no database: the data lives in
+the repo and a deploy publishes it.
 
-**Data layers** (this is the part worth understanding before changing anything):
+- `src/data/sample.js` is the dataset, one row per innings (4,600+). The original rows came from
+  ESPNcricinfo Statsguru; newer rows come from Cricsheet or are written by hand.
+- `src/data/player-names.js` maps the dataset's initials-style names ("JE Root") to the names
+  fans use ("Joe Root"). Add a player there and all their innings update.
+- `src/lib/scoring.js` is the scoring model. A weighting is an *order* of the six criteria
+  (30, 22, 18, 14, 10, 6 percent), which is why it fits in a link (`?o=na,hi,mi,...`).
+- `src/lib/dataset.js` prepares the data: display names, permalinks, rankings, filters.
+- Pages: `/` rankings (and the front door for first-time readers), `/innings/<id>-<name>-<runs>-<year>`
+  one innings with its own link and social preview image, `/quiz` the Pub Test, `/about`.
 
-1. `src/data/sample.js` — a static, git-committed baseline of ~4,600 centuries
-   scraped from ESPNcricinfo Statsguru. This is what renders instantly on page load.
-2. A Supabase `centuries` table — the live/editable layer. The homepage fetches it
-   on load and merges it over the static baseline (matched by player/year/runs/
-   opponent): edited stories and lever scores from editorial review show up
-   automatically, and brand-new centuries get appended. If Supabase is unreachable
-   or unconfigured, the site just falls back to the static baseline — this overlay
-   is always a soft enhancement, never a hard dependency.
-3. `/admin/score` — an internal editorial tool. It queues up any century with
-   `score_status` of `heuristic` or `pipeline` (i.e. not yet human-reviewed), shows
-   Wikipedia source material, and lets a reviewer set real lever scores and write
-   the story text.
+### Featuring an innings
 
-**Monthly refresh pipeline** (`src/app/api/cron/refresh-centuries/route.js`,
-scheduled in `vercel.json`): pulls newly played Test centuries from
-[Cricsheet](https://cricsheet.org)'s open ball-by-ball archive, scores them with a
-rough heuristic (`src/lib/heuristics.js`), and inserts them into Supabase with
-`score_status: 'pipeline'` — landing them straight in the `/admin/score` queue.
-Scoped to a rolling 70-day window no earlier than the static dataset's own
-generation date, and deduped by natural key, so it can never collide with or
-duplicate the curated historical set.
+The "Latest century" card shows the row with `featured: true` (at most one; a test enforces it).
+Its `spotlight` field holds the card text. An innings that is still being played carries
+`matchResult: "live"`, shown as "In progress".
 
-**One manual step required:** the cron route requires a `CRON_SECRET` env var
-(Vercel sends it automatically as a bearer token to your own cron jobs) — add
-one in Vercel's project settings → Environment Variables. It fails closed:
-without it, the endpoint refuses every request, including Vercel's own monthly
-trigger, rather than running unauthenticated. `scripts/unblock-deploy.sh` walks
-through setting it.
+## Keeping the data up to date
 
-## Local development
+New centuries come from [Cricsheet](https://cricsheet.org)'s open ball-by-ball data.
+
+- **Automatically:** `.github/workflows/monthly-update.yml` runs on the 2nd of each month, adds new
+  centuries, settles any finished "live" matches, runs the tests and the build, and commits the
+  result. A deploy follows. It can also be run by hand from the GitHub Actions tab.
+- **By hand:**
+  ```
+  node scripts/add-new-centuries.mjs            # preview
+  node scripts/add-new-centuries.mjs --write    # add them
+  ```
+- Cricsheet publishes a match a few days after it finishes, so a very recent innings (like one from
+  a Test still under way) has to be added by hand, with its match notes checked against reports.
+- `scripts/backfill-results.mjs` fills in match results for older rows where Cricsheet can match them.
+- `scripts/export-plugin-data.mjs` refreshes the Claude plugin's bundled copy of the data.
+
+New rows get automatic estimates for the six criteria (`src/lib/heuristics.js`). They are
+placeholders until someone scores them properly.
+
+## Development
 
 ```
 npm install
-cp .env.local.example .env.local   # fill in Supabase creds, or leave blank
 npm run dev
+npm test        # scoring, links, and data integrity (duplicates, ranges, names)
+npm run lint
 ```
-
-Leaving the Supabase env vars blank is fine — the site just runs on the static
-dataset only, which is the same graceful-degradation path production uses if
-Supabase is ever unreachable.
 
 ## The Claude plugin
 
-[`claude-plugin/`](./claude-plugin) is a self-contained Claude Code plugin that
-bundles its own copy of the dataset and scoring model, exposing tools to rank,
-compare, and explore centuries from chat. This repo also serves as its own plugin
-marketplace (`.claude-plugin/marketplace.json`):
+[`claude-plugin/`](./claude-plugin) is a self-contained Claude Code plugin with its own copy of the
+data and scoring model, exposing tools to rank, compare and explore centuries from chat. This repo
+is also its own plugin marketplace (`.claude-plugin/marketplace.json`):
 
 ```
 /plugin marketplace add benlucas27/tons-of-consequence
 /plugin install tons-of-consequence@tons-of-consequence-marketplace
 ```
 
-See [`claude-plugin/README.md`](./claude-plugin/README.md) for details.
+See [`claude-plugin/README.md`](./claude-plugin/README.md).
+
+## Decisions
+
+Architecture decisions are recorded in [`docs/adr/`](./docs/adr), and the project's vocabulary in
+[`CONTEXT.md`](./CONTEXT.md).
 
 ## Known follow-ups
 
-- No custom domain is connected yet (`tonsofconsequence.com` was referenced in
-  metadata but was never actually added in Vercel) — that's a purchase/DNS decision
-  for a human, not something to automate.
-- Next.js is pinned to the latest `14.2.x` patch (`14.2.35`) to close a batch of
-  CVEs npm audit flagged; a Next 15/16 major upgrade is a good next step but is a
-  bigger, breaking change worth doing deliberately rather than unattended.
-- The plugin's dataset is a point-in-time export, not live-synced to Supabase.
+- No custom domain yet (`tonsofconsequence.com` was never connected in Vercel).
+- Next.js is on the last 14.2 patch. A move to a newer major version is worth doing deliberately.
+- Vercel still holds three unused environment variables (`CRON_SECRET` and the two `NEXT_PUBLIC_SUPABASE_*`
+  ones) from the retired database setup. They can be deleted.
+- Full names cover the 294 most prolific players. Others still show initials.
