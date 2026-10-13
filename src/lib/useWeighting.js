@@ -26,8 +26,9 @@ export function useWeighting() {
     setState({ order: next, explicit: true });
     try { window.localStorage.setItem(KEY, formatOrder(next)); } catch { /* private mode */ }
     const url = new URL(window.location.href);
-    if (sameOrder(next, DEFAULT_ORDER)) url.searchParams.delete('o');
-    else url.searchParams.set('o', formatOrder(next));
+    url.searchParams.delete('o');
+    // Append by hand so the commas stay readable in a shared link (URLSearchParams would write %2C).
+    if (!sameOrder(next, DEFAULT_ORDER)) url.search = `${url.search ? `${url.search}&` : '?'}o=${formatOrder(next)}`;
     window.history.replaceState(null, '', url);
   }, []);
 

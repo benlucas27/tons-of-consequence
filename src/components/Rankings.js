@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useWeighting } from '@/lib/useWeighting';
 import { rankAll, applyFilters, COUNTRIES, ERAS, SCORE_BANDS } from '@/lib/dataset';
-import { calcVolatility, volatilityTier } from '@/lib/volatility';
+import { calcVolatility } from '@/lib/volatility';
 import { NATIONS, weightsFromOrder } from '@/lib/scoring';
 import { PERSONA_BY_ID } from '@/lib/quiz';
 import { copyText, toast } from '@/lib/clientUtils';
@@ -56,7 +56,7 @@ export default function Rankings() {
   const filtered = useMemo(() => applyFilters(ranked, { country, era, band, query }), [ranked, country, era, band, query]);
   const divisive = useMemo(() => {
     if (view !== 'divisive') return null;
-    return filtered.map((c) => ({ c, v: calcVolatility(c).volatility })).sort((a, b) => b.v - a.v || b.c.toc - a.c.toc);
+    return filtered.map((c) => ({ c, v: calcVolatility(c) })).sort((a, b) => b.v.volatility - a.v.volatility || b.c.toc - a.c.toc);
   }, [view, filtered]);
   const list = useMemo(() => {
     if (divisive) return divisive.map((x) => x.c);
@@ -194,7 +194,7 @@ export default function Rankings() {
                 picked={picks.includes(c.id)}
                 pickDisabled={picks.length >= 3}
                 onPick={togglePick}
-                note={divById ? `${volatilityTier(divById.get(c.id)).label}, ${divById.get(c.id)}` : null}
+                note={divById ? `Swings ${divById.get(c.id).spread} points (${divById.get(c.id).min} to ${divById.get(c.id).max})` : null}
               />
             ))}
           </ol>
