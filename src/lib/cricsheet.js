@@ -21,7 +21,9 @@ export const PIPELINE_FLOOR = '2026-04-20';
 const WINDOW_DAYS = 70;
 
 function windowStart(since) {
-  if (since) return since > PIPELINE_FLOOR ? since : PIPELINE_FLOOR;
+  // An explicit `since` is honoured as given (backfills need to reach back past the floor);
+  // the floor only bounds the default rolling window used by the monthly update.
+  if (since) return since;
   const d = new Date();
   d.setDate(d.getDate() - WINDOW_DAYS);
   const iso = d.toISOString().slice(0, 10);

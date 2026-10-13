@@ -14,7 +14,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import path from 'node:path';
-import { fetchRecentCenturies, naturalKey } from '../src/lib/cricsheet.js';
+import { fetchRecentCenturies, naturalKey, PIPELINE_FLOOR } from '../src/lib/cricsheet.js';
 import { scoreLevers, writeStory, tagsFor } from '../src/lib/heuristics.js';
 import { teamCodeFor } from '../src/lib/countries.js';
 
@@ -23,6 +23,11 @@ const dataFile = path.join(root, 'src/data/sample.js');
 const write = process.argv.includes('--write');
 const sinceArg = process.argv.find((a) => a.startsWith('--since='));
 const since = sinceArg ? sinceArg.split('=')[1] : undefined;
+
+if (since && since < PIPELINE_FLOOR) {
+  console.error(`Refusing --since=${since}: the dataset's own rows end at ${PIPELINE_FLOOR}, and older Cricsheet names can differ from them, which would create duplicates.`);
+  process.exit(1);
+}
 
 const { SAMPLE_CENTURIES } = await import(pathToFileURL(dataFile).href);
 const existing = new Set(SAMPLE_CENTURIES.map(naturalKey));
