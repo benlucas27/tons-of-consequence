@@ -1,8 +1,0 @@
-{
-  "crons": [
-    {
-      "path": "/api/cron/refresh-centuries",
-      "schedule": "0 3 1 * *"
-    }
-  ]
-}
