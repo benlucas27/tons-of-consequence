@@ -10,7 +10,7 @@
  * the original heuristic-scored historical dataset).
  */
 
-import { NATIONS } from './countries';
+import { NATIONS } from './countries.js';
 
 const RIVALRIES = new Set([
   'AUS-ENG', 'ENG-AUS',       // The Ashes

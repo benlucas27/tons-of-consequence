@@ -12,8 +12,8 @@
  */
 
 import AdmZip from 'adm-zip';
-import { naturalKey } from './naturalKey';
-import { TEAM_NAME_TO_CODE } from './countries';
+import { naturalKey } from './naturalKey.js';
+import { TEAM_NAME_TO_CODE } from './countries.js';
 
 const ARCHIVE_URL = 'https://cricsheet.org/downloads/tests_json.zip';
 
@@ -36,6 +36,7 @@ function extractCenturiesFromMatch(match) {
 
   const year = parseInt(dates[0].slice(0, 4), 10);
   const venue = info.venue || '';
+  const city = info.city || '';
   const series = info.event?.name || '';
   const outcome = info.outcome || {};
   const results = [];
@@ -78,6 +79,7 @@ function extractCenturiesFromMatch(match) {
         balls: balls[batter] || 0,
         notOut: !out.has(batter),
         venue,
+        city,
         year,
         series,
         matchResult,
