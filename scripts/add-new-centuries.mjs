@@ -62,15 +62,25 @@ const rows = fresh.map((c) => {
   };
 });
 
+// Matches that were still being played when an innings was entered carry matchResult "live".
+// Once Cricsheet has the finished match, settle the result.
+const settled = SAMPLE_CENTURIES.filter((c) => c.matchResult === 'live')
+  .map((row) => ({ row, hit: candidates.find((x) => naturalKey(x) === naturalKey(row)) }))
+  .filter((x) => x.hit);
+
 console.log(`${candidates.length} centuries found, ${candidates.length - fresh.length} already in the dataset, ${rows.length} new.`);
 for (const r of rows) console.log(`  ${r.year} ${r.player} ${r.runs}${r.notOut ? '*' : ''} v ${r.opponent}, ${r.venue} (${r.matchResult})`);
+for (const { row, hit } of settled) console.log(`  result now known: #${row.id} ${row.player} ${row.runs} v ${row.opponent} ${row.year} -> ${hit.matchResult} (worth a look at its Match Impact score)`);
 
 if (!write) {
-  if (rows.length) console.log('\nPreview only. Re-run with --write to add them.');
-} else if (rows.length) {
-  const src = readFileSync(dataFile, 'utf8').trimEnd();
+  if (rows.length || settled.length) console.log('\nPreview only. Re-run with --write to apply.');
+} else if (rows.length || settled.length) {
+  let src = readFileSync(dataFile, 'utf8').trimEnd();
   if (!src.endsWith('];')) throw new Error('Unexpected end of sample.js; refusing to edit.');
+  for (const { row, hit } of settled) {
+    src = src.split('\n').map((line) => (line.trimStart().startsWith(`{id:${row.id},`) ? line.replace('matchResult:"live"', `matchResult:"${hit.matchResult}"`) : line)).join('\n');
+  }
   const body = src.slice(0, -2).trimEnd();
-  writeFileSync(dataFile, body + ',\n' + rows.map((r) => '  ' + obj(r)).join(',\n') + '\n];\n');
-  console.log(`\nAdded ${rows.length} to ${path.relative(root, dataFile)}.`);
+  writeFileSync(dataFile, rows.length ? body + ',\n' + rows.map((r) => '  ' + obj(r)).join(',\n') + '\n];\n' : body + '\n];\n');
+  console.log(`\nAdded ${rows.length} and settled ${settled.length} result(s) in ${path.relative(root, dataFile)}.`);
 }
