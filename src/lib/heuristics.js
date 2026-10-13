@@ -10,6 +10,8 @@
  * the original heuristic-scored historical dataset).
  */
 
+import { NATIONS } from './countries';
+
 const RIVALRIES = new Set([
   'AUS-ENG', 'ENG-AUS',       // The Ashes
   'IND-AUS', 'AUS-IND',       // Border-Gavaskar Trophy
@@ -76,25 +78,15 @@ export function scoreLevers(c, opponentCode) {
   return { matchImpact, conditions, clutchness, narrative, historicalWeight, perceivedGreatness };
 }
 
-function inningsDescriptor(c) {
-  if (c.runs >= 300) return 'a monumental triple-century';
-  if (c.runs >= 200) return 'a commanding double-century';
-  if (c.runs >= 150) return 'a substantial hundred';
-  return 'a century';
-}
-
 export function writeStory(c) {
-  const chase = c.inningsNumber >= 3;
-  const outcome = c.matchResult === 'win' ? 'a win' : c.matchResult === 'loss' ? 'a loss' : 'a draw';
-  const notOutClause = c.notOut ? ', unbeaten,' : '';
-  const chaseClause = chase ? `, batting second time round, ` : ' ';
-
-  return (
-    `${c.player} made ${inningsDescriptor(c)}${notOutClause} of ${c.runs}` +
-    `${c.notOut ? '*' : ''} off ${c.balls || '—'} balls against ${c.opponent}` +
-    `${chaseClause}at ${c.venue} in ${c.year}, in a match that finished in ${outcome} for ${c.country}. ` +
-    `Pulled in by the monthly data refresh — awaiting editorial review for the full story.`
-  );
+  const team = NATIONS[c.country] || c.country;
+  const runs = `${c.runs}${c.notOut ? '*' : ''}`;
+  const balls = c.balls ? ` off ${c.balls} balls` : '';
+  const late = c.inningsNumber >= 3 ? ', in the second half of the match' : '';
+  const outcome = c.matchResult === 'win' ? `${team} went on to win the match.`
+    : c.matchResult === 'loss' ? `It wasn't enough: ${team} lost the match.`
+    : 'The match was drawn.';
+  return `${c.player} made ${runs}${balls} against ${c.opponent} at ${c.venue} in ${c.year}${late}. ${outcome}`;
 }
 
 export function tagsFor(c) {
@@ -103,6 +95,5 @@ export function tagsFor(c) {
   else if (c.runs >= 200) tags.push('Double Century');
   if (c.inningsNumber >= 3) tags.push('Second Innings');
   if (c.notOut) tags.push('Not Out');
-  tags.push('Pipeline');
   return tags;
 }

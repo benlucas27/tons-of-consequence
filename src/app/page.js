@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect, useRef, Suspense } from 'react';
 import {
-  LEVERS, calcToc, scoreColor, scoreTier, FLAGS, NATIONS,
+  LEVERS, calcToc, scoreColor, scoreTier, FLAGS, NATIONS, displayName,
 } from '@/lib/scoring';
 import { calcVolatility, volatilityTier, writeVerdict } from '@/lib/volatility';
 import { SAMPLE_CENTURIES } from '@/data/sample';
@@ -233,12 +233,15 @@ function OnboardingScreen({ order, setOrder, onSubmit }) {
 // ── Result Badge ───────────────────────────────────────────────────────────────
 function ResultBadge({ result }) {
   const r = (result || '').toLowerCase();
+  // Most historical rows have no recorded result; showing "UNKNOWN" on every card is noise.
+  if (!r || r === 'unknown') return null;
   const style = r === 'win'  ? { border:'0.5px solid #3A7A3A', color:'#7ACA7A' }
               : r === 'draw' ? { border:'0.5px solid #6A6030', color:'#BABA60' }
+              : r === 'live' ? { border:'0.5px solid #4A7A9A', color:'#8ABADA' }
               :                { border:'0.5px solid #7A3030', color:'#CA7A7A' };
   return (
     <span style={{ fontSize:9, padding:'1px 5px', borderRadius:2, letterSpacing:'0.5px', ...style }}>
-      {r.toUpperCase()}
+      {r === 'live' ? 'IN PROGRESS' : r.toUpperCase()}
     </span>
   );
 }
@@ -324,7 +327,7 @@ function RankCard({ c, rank, onClick, isCompared, onToggleCompare, viewMode }) {
       {/* Main info */}
       <div style={{ flex:1, minWidth:0 }}>
         <div style={{ display:'flex', alignItems:'baseline', gap:6, flexWrap:'wrap', marginBottom:4 }}>
-          <span style={{ fontSize:13, fontWeight:500, color:'var(--text-primary)', letterSpacing:'0.2px' }}>{c.player}</span>
+          <span style={{ fontSize:13, fontWeight:500, color:'var(--text-primary)', letterSpacing:'0.2px' }}>{displayName(c)}</span>
           <span style={{ fontSize:12, color:'var(--accent-red)', fontWeight:500 }}>{c.runs}{c.notOut ? '*' : ''}</span>
           <ResultBadge result={c.matchResult} />
         </div>
@@ -441,6 +444,7 @@ function TonsApp() {
       .filter(c => {
         if (!q) return true;
         return (
+          displayName(c).toLowerCase().includes(q) ||
           c.player.toLowerCase().includes(q) ||
           c.opponent.toLowerCase().includes(q) ||
           c.venue.toLowerCase().includes(q) ||
@@ -468,6 +472,7 @@ function TonsApp() {
       .filter(c => {
         if (!q) return true;
         return (
+          displayName(c).toLowerCase().includes(q) ||
           c.player.toLowerCase().includes(q) ||
           c.opponent.toLowerCase().includes(q) ||
           c.venue.toLowerCase().includes(q) ||
@@ -499,7 +504,7 @@ function TonsApp() {
     const list = viewMode === 'divisive' ? divisive : ranked;
     const headers = ['Rank','Player','Country','Runs','Not Out','Opponent','Venue','Year','Result','ToC Score'].join(',');
     const rows = list.map((c, i) =>
-      [i+1,`"${c.player}"`,c.country,c.runs,c.notOut?'*':'',`"${c.opponent}"`,`"${c.venue}"`,c.year,c.matchResult,c.toc].join(',')
+      [i+1,`"${displayName(c)}"`,c.country,c.runs,c.notOut?'*':'',`"${c.opponent}"`,`"${c.venue}"`,c.year,c.matchResult,c.toc].join(',')
     );
     const blob = new Blob([[headers,...rows].join('\n')], { type:'text/csv' });
     const link = document.createElement('a');
@@ -545,7 +550,7 @@ function TonsApp() {
             <div>
               <div style={{ background:'var(--bg-panel)', border:'0.5px solid var(--border-strong)', borderRadius:5, padding:16, marginBottom:12 }}>
                 <div style={{ display:'flex', alignItems:'baseline', gap:10, marginBottom:10 }}>
-                  <span style={{ fontSize:22, fontWeight:500, color:'var(--text-primary)' }}>{c.player}</span>
+                  <span style={{ fontSize:22, fontWeight:500, color:'var(--text-primary)' }}>{displayName(c)}</span>
                   <span style={{ fontSize:18, color:'var(--accent-red)', fontWeight:500 }}>{c.runs}{c.notOut?'*':''}</span>
                   <ResultBadge result={c.matchResult} />
                 </div>
@@ -592,7 +597,7 @@ function TonsApp() {
               <div style={{ height:12 }}/>
               <div style={{ background:'var(--bg-panel)', border:'0.5px solid var(--border-strong)', borderRadius:5, padding:14 }}>
                 <div style={{ fontSize:9, color:'var(--text-dim)', letterSpacing:'2px', textTransform:'uppercase', marginBottom:12 }}>Match Stats</div>
-                {[['Runs',`${c.runs}${c.notOut?'*':''}`],['Balls',c.balls??'—'],['Result',(c.matchResult||'').toUpperCase()]].map(([l,v]) => (
+                {[['Runs',`${c.runs}${c.notOut?'*':''}`],['Balls',c.balls??'—'],['Result',({win:'WIN',draw:'DRAW',loss:'LOSS',live:'IN PROGRESS'})[(c.matchResult||'').toLowerCase()] ?? '—']].map(([l,v]) => (
                   <div key={l} style={{ display:'flex', justifyContent:'space-between', padding:'7px 0', borderBottom:'0.5px solid var(--border-default)' }}>
                     <span style={{ color:'var(--text-muted)', fontSize:11 }}>{l}</span>
                     <span style={{ color:'var(--text-primary)', fontWeight:500, fontSize:12 }}>{v}</span>
@@ -621,7 +626,7 @@ function TonsApp() {
             <div style={{ display:'flex', gap:20 }}>
               {compareItems.map(c => (
                 <div key={c.id} style={{ display:'flex', alignItems:'center', gap:8 }}>
-                  <span style={{ color:'var(--text-primary)', fontSize:13, fontWeight:500 }}>{c.player} {c.runs}{c.notOut?'*':''}</span>
+                  <span style={{ color:'var(--text-primary)', fontSize:13, fontWeight:500 }}>{displayName(c)} {c.runs}{c.notOut?'*':''}</span>
                   <span style={{ color:scoreColor(c.toc), fontWeight:500, fontSize:16 }}>{c.toc}</span>
                 </div>
               ))}
@@ -631,7 +636,7 @@ function TonsApp() {
             {compareItems.map(c => (
               <div key={c.id} style={{ background:'var(--bg-panel)', border:'0.5px solid var(--border-strong)', borderRadius:5, padding:14 }}>
                 <div style={{ textAlign:'center', marginBottom:14 }}>
-                  <div style={{ fontSize:22, fontWeight:500, color:'var(--text-primary)', marginBottom:4 }}>{c.player}</div>
+                  <div style={{ fontSize:22, fontWeight:500, color:'var(--text-primary)', marginBottom:4 }}>{displayName(c)}</div>
                   <div style={{ color:'var(--accent-red)', fontSize:28, fontWeight:500, lineHeight:1 }}>{c.runs}{c.notOut?'*':''}</div>
                   <div style={{ color:'var(--text-muted)', fontSize:10, marginBottom:10 }}>vs {c.opponent} · {c.year}</div>
                   <ScoreDisplay score={c.toc} compact />

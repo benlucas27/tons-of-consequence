@@ -70,6 +70,7 @@ export async function fetchAllLiveCenturies() {
 export function mapDbToInnings(row) {
   return {
     id:                row.id,
+    scoreStatus:       row.score_status,
     player:            row.player,
     country:           row.country,
     runs:              row.runs,

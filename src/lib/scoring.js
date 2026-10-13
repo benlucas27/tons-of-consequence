@@ -26,6 +26,9 @@ export function calcToc(innings, weights) {
   return Math.round(Object.keys(weights).reduce((acc,k) => acc+((innings.levers[k]||0)*weights[k])/total, 0)*10)/10;
 }
 
+// Statsguru-style initials names ("MT Renshaw") are the dataset's key; fullName is the nicer display form when we have one.
+export const displayName = (c) => c.fullName || c.player;
+
 export function scoreColor(s) {
   if (s>=90) return '#f5c800';
   if (s>=82) return '#2dd65a';

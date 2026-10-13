@@ -20,7 +20,8 @@ const ARCHIVE_URL = 'https://cricsheet.org/downloads/tests_json.zip';
 export const PIPELINE_FLOOR = '2026-04-20';
 const WINDOW_DAYS = 70;
 
-function windowStart() {
+function windowStart(since) {
+  if (since) return since > PIPELINE_FLOOR ? since : PIPELINE_FLOOR;
   const d = new Date();
   d.setDate(d.getDate() - WINDOW_DAYS);
   const iso = d.toISOString().slice(0, 10);
@@ -38,12 +39,10 @@ function extractCenturiesFromMatch(match) {
   const series = info.event?.name || '';
   const outcome = info.outcome || {};
   const results = [];
-  const inningsCountByTeam = {};
 
-  for (const inn of match.innings || []) {
+  for (const [idx, inn] of (match.innings || []).entries()) {
     const team = inn.team;
-    inningsCountByTeam[team] = (inningsCountByTeam[team] || 0) + 1;
-    const inningsNumber = inningsCountByTeam[team];
+    const inningsNumber = idx + 1; // position in the match, 1-4
     const opponent = (info.teams || []).find((t) => t !== team);
 
     const runs = {};
@@ -95,12 +94,12 @@ function extractCenturiesFromMatch(match) {
  * within the recent rolling window. Caller is responsible for deduping
  * against already-stored rows before inserting anything.
  */
-export async function fetchRecentCenturies() {
+export async function fetchRecentCenturies({ since } = {}) {
   const res = await fetch(ARCHIVE_URL);
   if (!res.ok) throw new Error(`Cricsheet fetch failed: ${res.status}`);
   const buf = Buffer.from(await res.arrayBuffer());
   const zip = new AdmZip(buf);
-  const cutoff = windowStart();
+  const cutoff = windowStart(since);
 
   const centuries = [];
   for (const entry of zip.getEntries()) {

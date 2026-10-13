@@ -6,7 +6,7 @@
  * the ones that start the best arguments.
  */
 
-import { calcToc, PRESETS } from './scoring';
+import { calcToc, PRESETS, displayName } from './scoring';
 
 /**
  * Calculate an innings' ToC score under every preset weighting.
@@ -115,11 +115,11 @@ export function writeVerdict(inningsA, inningsB, weights) {
 
   let verdict;
   if (margin < 1) {
-    verdict = `Dead heat — on your settings, ${inningsA.player}'s ${runDesc(inningsA)} and ${inningsB.player}'s ${runDesc(inningsB)} are essentially tied. The pub argument is yours to resolve.`;
+    verdict = `Dead heat — on your settings, ${displayName(inningsA)}'s ${runDesc(inningsA)} and ${displayName(inningsB)}'s ${runDesc(inningsB)} are essentially tied. The pub argument is yours to resolve.`;
   } else if (margin < 4) {
-    verdict = `Narrow call. ${winner.player}'s ${runDesc(winner)} edges it by ${margin} points — largely on ${leverName} (${winnerLever} vs ${loserLever}). Plenty of room for a second opinion.`;
+    verdict = `Narrow call. ${displayName(winner)}'s ${runDesc(winner)} edges it by ${margin} points — largely on ${leverName} (${winnerLever} vs ${loserLever}). Plenty of room for a second opinion.`;
   } else {
-    verdict = `On your settings, ${winner.player}'s ${runDesc(winner)} wins clearly — ${margin} points clear, with a decisive advantage in ${leverName} (${winnerLever} vs ${loserLever}). ${loser.player}'s ${runDesc(loser)} would need you to weight ${margin < 8 ? 'a couple of' : 'very different'} levers differently to change that verdict.`;
+    verdict = `On your settings, ${displayName(winner)}'s ${runDesc(winner)} wins clearly — ${margin} points clear, with a decisive advantage in ${leverName} (${winnerLever} vs ${loserLever}). ${displayName(loser)}'s ${runDesc(loser)} would need you to weight ${margin < 8 ? 'a couple of' : 'very different'} levers differently to change that verdict.`;
   }
 
   return {
