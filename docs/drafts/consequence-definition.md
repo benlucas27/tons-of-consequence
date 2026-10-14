@@ -30,7 +30,7 @@ scorecard. There is no points total and no bar. Yes to all three, and the answer
 3. **Did the hundred change it?** One of four scenarios:
    - **Chased it down**: a hundred in a winning fourth-innings chase.
    - **Saved the match**: a hundred in a draw that needed saving.
-   - **Rescued the innings**: in at 3 or more down with the team still under 120, or 4 or more wickets fell around him while
+   - **Rescued the innings**: in at 3 or more down with the team still under 100, or 4 or more wickets fell around him while
      the team was under 200.
    - **Carried the innings**: 40% or more of the team's runs.
 
@@ -62,9 +62,9 @@ Otherwise it is **"a good ton"**, and the first "no" says why (lost, dead rubber
 
 ## Still to settle (the numbers inside the rules)
 
-1. **Rescue thresholds** (3 down under 120; 4 wickets around him under 200). Too loose and every first-innings hundred in
+1. **Rescue thresholds** (SETTLED: 3 down under 100; 4 wickets around him under 200). Too loose and every first-innings hundred in
    a wobble counts.
-2. **Carry share** (40%). Opener or tail-ender, 40% means different things.
+2. **Carry share** (SETTLED at 40%; 30% would pass 32% of all hundreds). Opener or tail-ender, 40% means different things.
 3. **A saved draw:** behind on entry, following on, or 3rd/4th innings with under a 150 lead.
 4. **Two-Test series:** the second Test is always a decider, so New Zealand hundreds get "live" more often.
 5. **Heroic losses** (Astle 222, Sangakkara 192 chasing 500): a separate "heroic loss" label, or nothing?

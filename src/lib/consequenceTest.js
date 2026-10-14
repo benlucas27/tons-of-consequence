@@ -13,7 +13,7 @@
 export const CARRY_SHARE = 0.4; // scoring 40% or more of the team's runs counts as carrying the innings
 export const ALREADY_WON_LEAD = 250; // a lead this big on entry means the match was already safe
 export const RESCUE_WICKETS = 3; // three or more down...
-export const RESCUE_SCORE = 120; // ...with the team still under this on entry
+export const RESCUE_SCORE = 100; // ...with the team still under this on entry
 export const COLLAPSE_AROUND = 4; // or this many wickets fell around him while the team was under 200
 
 const SCENARIOS = {
