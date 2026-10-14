@@ -1,6 +1,6 @@
 /**
  * Hand-written rulings. The Consequence Test is a first pass on the scorecard; where common sense disagrees, a ruling here wins. Readers see the note, not who made the call.
- * Key: "Display name|runs|year". verdict: 'yes' | 'no'; scenario (for a yes): the named scenario. note: one plain sentence shown as the reason ("Ben's call").
+ * Key: "Display name|runs|year". verdict: 'yes' | 'no'; scenario (for a yes): the named scenario. note: one plain sentence shown as the reason. Readers see the note, never who made the call.
  */
 export const CONSEQUENCE_OVERRIDES = {
   'Joe Root|109|2021': {
