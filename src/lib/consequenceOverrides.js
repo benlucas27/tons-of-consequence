@@ -1,6 +1,6 @@
 import { CONSEQUENCE_OVERRIDES } from '../data/consequence-overrides.js';
 
-/** Applies Ben's call, if there is one, on top of the test's verdict. Returns the verdict unchanged otherwise. */
+/** Applies a hand-written ruling, if there is one, on top of the test's verdict. Only the reasoning is shown to readers, never who made the call. */
 export function withOverride(verdict, name, runs, year) {
   const o = CONSEQUENCE_OVERRIDES[`${name}|${runs}|${year}`];
   if (!o) return verdict;
