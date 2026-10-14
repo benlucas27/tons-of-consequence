@@ -33,6 +33,9 @@ jobs:
       - name: Refresh career figures for the preset comparisons
         run: node scripts/build-careers.mjs
 
+      - name: Refresh the Consequence Test verdicts
+        run: node scripts/build-consequence.mjs --download
+
       # Cleanup: compare the dataset with the ball-by-ball archive and report what needs a person's attention.
       # This never blocks the update; it files (or refreshes) one open issue labelled "data-audit".
       - name: Audit the data against the archive
@@ -62,13 +65,13 @@ jobs:
 
       - name: Commit and publish
         run: |
-          if git diff --quiet -- src/data/sample.js src/data/careers.js; then
+          if git diff --quiet -- src/data/sample.js src/data/careers.js src/data/consequence.js; then
             echo "Nothing new this month."
             exit 0
           fi
           git config user.name "tons-of-consequence-bot"
           git config user.email "tons-of-consequence-bot@users.noreply.github.com"
           { echo "data: monthly update"; echo; cat update.log; } > commit-message.txt
-          git add src/data/sample.js src/data/careers.js
+          git add src/data/sample.js src/data/careers.js src/data/consequence.js
           git commit -F commit-message.txt
           git push

@@ -583,3 +583,24 @@ body[data-door="1"] .s-bar { display: none; }
 .don-card-tab tr.mine td { color: var(--ink); background: var(--panel-2); }
 .don-src { font: 400 12px/1.6 var(--ui); color: var(--ink-3); margin: 8px 0 0; }
 .don-src a { color: var(--sky); }
+.toc-q, .toc-sc { display: grid; gap: 8px; }
+.toc-board { width: 100%; border-collapse: collapse; font: 500 15px var(--ui); }
+.toc-board th, .toc-board td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line-soft); }
+.toc-board a { color: var(--sky); text-decoration: none; }
+.toc-list { list-style: none; padding: 0; display: grid; gap: 0; }
+.toc-list li { padding: 16px 0 16px 14px; border-top: 1px solid var(--line-soft); border-left: 3px solid var(--line); }
+.toc-list li.toc-yes { border-left-color: var(--ball); }
+.toc-list h3 { font: 700 24px/1.1 var(--display); text-transform: uppercase; margin: 0 0 4px; }
+.toc-list h3 a { text-decoration: none; }
+.toc-list h3 small { font: 500 14px var(--ui); color: var(--ink-3); text-transform: none; }
+.toc-list p { margin: 0; font: 400 16px/1.5 var(--prose); color: var(--ink-2); }
+.toc-list p.toc-na { color: var(--ink-3); }
+.s-more { position: relative; }
+.s-more summary { list-style: none; cursor: pointer; padding: 6px 0; border-bottom: 2px solid transparent; font: inherit; }
+.s-more summary::-webkit-details-marker { display: none; }
+.s-more summary::after { content: ' \25BE'; font-size: 11px; }
+.s-more summary:hover, .s-more[open] summary, .s-more summary[aria-current="page"] { color: var(--ink); }
+.s-more summary[aria-current="page"] { border-color: var(--ball); }
+.s-more > div { position: absolute; right: 0; top: 36px; min-width: 180px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 6px; display: grid; z-index: 30; }
+.s-more > div a { padding: 10px 12px; border-radius: 6px; border-bottom: 0; }
+.s-more > div a:hover { background: var(--panel-2); }
