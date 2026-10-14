@@ -40,6 +40,10 @@ Dataset against archive, same innings:
 Mostly 2024 to 2025 (Afghanistan and Zimbabwe series among them) and 2006. These can't be tested until the match is
 available from another source.
 
+**Why some are missing:** Cricsheet withholds all matches involving the Afghanistan men's team (13 Tests) under its own
+policy (https://cricsheet.org/withheld-matches). So **the monthly refresh can never add a new Afghan century**. Those need
+a manual source, and anything the Consequence Test needs from the match record can't be measured for them.
+
 ## 5. One person under more than one name (17 people)
 For example Brian Lara ("Brian Lara" and "BC Lara"), Don Bradman ("Don Bradman" and "DG Bradman"), Mark Taylor, Michael
 Clarke, Matthew Hayden. Anything that counts per player has to treat them as one. Same fix as 1.
@@ -55,7 +59,11 @@ Only the 294 most prolific players have a full name. A leaderboard of batters wo
 The Consequence Test already copes (it finds a series from the two teams and the dates), but it should be checked by hand
 against a few well-known series.
 
-## 8. Coverage of the archive
+## 8. Licence
+Cricsheet's data is under the ODC Attribution licence: it can be used freely provided it is credited. The site credits
+Cricsheet in the footer and on the how-it-works page; keep it that way, and repeat it on the privacy page and in any listing.
+
+## 9. Coverage of the archive
 Close to complete from about 2006, patchy for 2001 to 2005 (about half the Tests), and absent before 2001. Any measure
 that needs the match record can only be run on roughly 1,700 of the 4,627 hundreds today.
 
