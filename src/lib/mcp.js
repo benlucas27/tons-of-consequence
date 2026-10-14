@@ -18,7 +18,8 @@ import { COMPARE_SETS, setById, compareCareers, CAREERS_AS_OF } from './careerCo
 import { videoFor, watchUrl } from './videos.js';
 import { momentsFor, clock, watchUrl as podcastUrl, episodeLabel } from './helloSport.js';
 import { SITE_URL } from './site.js';
-import { verdictOf, wherePlayed, BATTERS } from './consequence.js';
+import { verdictOf, wherePlayed } from './consequence.js';
+import { batterRecords, parseRecordsQuestion } from './records.js';
 import { tierOfOpponent, tierName, WHERE_LABEL } from './matchFacts.js';
 
 const LEVER_KEYS = LEVERS.map((l) => l.key);
@@ -114,6 +115,20 @@ export function createServer() {
   }, async ({ question, preset, order, australianBonus }) => {
     const w = resolveWeighting({ preset, order, australianBonus });
     if (w.error) return problem(w.error);
+    const counting = parseRecordsQuestion(question);
+    if (counting) {
+      let found;
+      try { found = batterRecords({ limit: 10, ...counting.filters }, SITE_URL); } catch (e) { return problem(e.message); }
+      if (found.results.length) {
+        return text({
+          kind: 'records',
+          headline: counting.interpreted,
+          understoodAs: counting.interpreted,
+          note: 'Counts cover hundreds in the database. Tons of consequence and where it was played are only known where we have a match record, so check measuredForConsequence.',
+          ...found,
+        });
+      }
+    }
     const a = answer(question, w.order, { bias: w.bias });
     const base = { understoodAs: a.interpreted, assumptions: (a.assumed || []).map((x) => `Took "${x.said}" to mean ${x.player.name}; others: ${x.others.map((o) => o.name).join(', ')}`), notes: a.notes || [], weighting: weightingNote(a.order, a.bias) };
     const out = { kind: a.kind, headline: a.headline, ...base };
@@ -256,49 +271,13 @@ export function createServer() {
       limit: z.number().int().min(1).max(50).default(10),
     },
     annotations: readOnly('Batter records and leaderboards'),
-  }, async ({ batter, opposition, oppositionTier, where, result, tonOfConsequence, since, until, country, sortBy, limit }) => {
-    const cc = country ? countryCode(country) : null;
-    if (country && !cc) return problem(`Unknown country "${country}".`);
-    const wantWhere = where ? { home: 'H', away: 'A', neutral: 'N' }[where] : null;
-    const needle = batter ? batter.toLowerCase().trim() : null;
-    const people = BATTERS.filter((b) => !needle || b.name.toLowerCase() === needle || b.name.toLowerCase().includes(needle));
-    if (batter && people.length === 0) return problem(`No batter matching "${batter}".`);
-    const rows = [];
-    for (const b of people) {
-      const matching = b.innings.filter((c) => {
-        if (cc && c.country !== cc) return false;
-        if (opposition && c.opponent.toLowerCase() !== opposition.toLowerCase()) return false;
-        if (oppositionTier && tierOfOpponent(c.opponent) !== oppositionTier) return false;
-        if (since != null && c.year < since) return false;
-        if (until != null && c.year > until) return false;
-        if (wantWhere && wherePlayed(c.id) !== wantWhere) return false;
-        if (result && c.matchResult !== result) return false;
-        if (tonOfConsequence != null) { const v = verdictOf(c.id); if (!v || v.passes !== tonOfConsequence) return false; }
-        return true;
-      });
-      if (!matching.length) continue;
-      const known = matching.filter((c) => ['win', 'draw', 'loss'].includes(c.matchResult));
-      const won = known.filter((c) => c.matchResult === 'win').length;
-      const measured = matching.filter((c) => verdictOf(c.id));
-      rows.push({
-        batter: b.name,
-        country: matching[0].country,
-        hundreds: matching.length,
-        tonsOfConsequence: measured.filter((c) => verdictOf(c.id).passes).length,
-        measuredForConsequence: measured.length,
-        results: { known: known.length, won, drawn: known.filter((c) => c.matchResult === 'draw').length, lost: known.filter((c) => c.matchResult === 'loss').length },
-        winRate: known.length >= 5 ? Math.round((100 * won) / known.length) : null,
-        url: `${SITE_URL}/tons-of-consequence/${b.slug}`,
-      });
-    }
-    const key = { hundreds: (r) => r.hundreds, tonsOfConsequence: (r) => r.tonsOfConsequence, winRate: (r) => r.winRate ?? -1 }[sortBy || 'hundreds'];
-    rows.sort((a, b) => key(b) - key(a) || b.hundreds - a.hundreds);
+  }, async (args) => {
+    let found;
+    try { found = batterRecords({ ...args, sortBy: args.sortBy || 'hundreds', limit: args.limit ?? 10 }, SITE_URL); } catch (e) { return problem(e.message); }
     return text({
       note: 'Counts cover hundreds in the database. Tons of consequence and where it was played are only known where we have a match record, so check measuredForConsequence. A win rate needs at least five known results.',
-      filters: { batter, opposition, oppositionTier, where, result, tonOfConsequence, since, until, country },
-      results: rows.slice(0, limit ?? 10),
-      shown: Math.min(rows.length, limit ?? 10),
-      matchingBatters: rows.length,
+      filters: { ...args },
+      ...found,
     });
   });
 
