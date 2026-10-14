@@ -20,7 +20,8 @@ import { momentsFor, clock, watchUrl as podcastUrl, episodeLabel } from './hello
 import { SITE_URL } from './site.js';
 import { verdictOf, wherePlayed } from './consequence.js';
 import { batterRecords, parseRecordsQuestion } from './records.js';
-import { tierOfOpponent, tierName, WHERE_LABEL } from './matchFacts.js';
+import { oppositionLabel, otherHundredsLabel, WHERE_LABEL } from './matchFacts.js';
+import { INNINGS_FACTS } from '../data/innings-facts.js';
 
 const LEVER_KEYS = LEVERS.map((l) => l.key);
 const PRESET_NAMES = Object.keys(PRESETS);
@@ -235,7 +236,8 @@ export function createServer() {
       minutes: c.minutes || null,
       series: c.series || null,
       story: c.story || null,
-      opposition: tierName(tierOfOpponent(c.opponent)),
+      opposition: oppositionLabel(c.opponent),
+      otherHundreds: otherHundredsLabel(INNINGS_FACTS[c.id]),
       playedAt: WHERE_LABEL[wherePlayed(c.id)] || null,
       tonOfConsequence: (() => { const v = verdictOf(c.id); return v ? { answer: v.passes ? 'yes' : 'no', scenario: v.scenario, reason: v.because } : { answer: 'not enough match data yet' }; })(),
       matchNotes: c.facts || [],

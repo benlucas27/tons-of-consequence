@@ -12,4 +12,15 @@ const TIER_OF = { England: 1, Australia: 1, India: 1, 'New Zealand': 2, 'South A
 export const tierOfOpponent = (opponent) => TIER_OF[opponent] || 4;
 export const tierName = (n) => TIERS[n - 1].name;
 
+/** The opposition with its tier, e.g. "South Africa (second tier)". */
+export const oppositionLabel = (opponent) => `${opponent} (${tierName(tierOfOpponent(opponent)).toLowerCase()})`;
+
+/** The other hundreds in the innings and in the match, from the per-hundred facts [pos, innings, balls, inningsOthers, matchOthers]. */
+export function otherHundredsLabel(f) {
+  if (!f) return null;
+  const [, , , inn, match] = f;
+  if (!match) return 'None';
+  return `${inn ? `${inn} in this innings` : 'None in this innings'}, ${match} in the match`;
+}
+
 export const WHERE_LABEL = { H: 'At home', A: 'Away', N: 'Neutral ground' };
