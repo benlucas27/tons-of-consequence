@@ -487,11 +487,11 @@ body[data-door="1"] .s-bar { display: none; }
 .steps b, .prose .conn-note b { color: var(--ink); font-weight: 500; }
 .eg-plain { list-style: none; padding: 0; }
 .eg-plain li { border-left: 3px solid var(--ball); padding-left: 14px; font: 400 17px/1.5 var(--prose); color: var(--ink); }
-.tools { margin: 0; display: grid; }
-.tools div { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 12px; padding: 10px 0; border-top: 1px solid var(--line-soft); }
-.tools dt code { font: 600 13px var(--ui); color: var(--sky); }
-.tools dd { margin: 0; font: 400 16px/1.5 var(--ui); color: var(--ink-2); }
-@media (max-width: 600px) { .tools div { grid-template-columns: 1fr; gap: 2px; } .copyfield { flex-direction: column; align-items: stretch; } }
+.conn-tools { margin: 0; display: grid; }
+.conn-tools div { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 12px; padding: 10px 0; border-top: 1px solid var(--line-soft); }
+.conn-tools dt code { font: 600 13px var(--ui); color: var(--sky); }
+.conn-tools dd { margin: 0; font: 400 16px/1.5 var(--ui); color: var(--ink-2); }
+@media (max-width: 600px) { .conn-tools div { grid-template-columns: 1fr; gap: 2px; } .copyfield { flex-direction: column; align-items: stretch; } }
 
 /* ---------- career comparison ---------- */
 .career-view { display: grid; gap: 22px; }
