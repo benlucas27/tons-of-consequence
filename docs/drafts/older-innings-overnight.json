@@ -1,0 +1,709 @@
+[
+ {
+  "id": 1142,
+  "innings": "Brian Lara 153* v Australia, Bridgetown 1999",
+  "match": "3rd Test, 26-30 Mar 1999",
+  "result": "West Indies won by 1 wicket (chasing about 308-311; sources differ)",
+  "series_going_in": "1-1, live",
+  "innings_of_match": "4th",
+  "entry_state": "Not stated by the sources I opened",
+  "verdict": "yes",
+  "confidence": "high",
+  "reason": "A fourth-innings chase won by one wicket with the series level.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Australian_cricket_team_in_the_West_Indies_in_1998%E2%80%9399",
+   "https://www.windiescricket.com/news/brian-lara-unforgettable-west-indian-innings/"
+  ],
+  "flags": "Target quoted as 308, 310 and 311 by different sources."
+ },
+ {
+  "id": 413,
+  "innings": "Steve Waugh 200 v West Indies, Kingston 1995",
+  "match": "4th Test (decider)",
+  "result": "Australia won by an innings and 53 runs",
+  "series_going_in": "1-1, decider",
+  "innings_of_match": "1st",
+  "entry_state": "3 down, under 100 either way (a Cricket Australia piece says 3-73; another account 3-37)",
+  "verdict": "yes",
+  "confidence": "high",
+  "reason": "Rescued the innings with 3 down early in a series decider, and the team won.",
+  "sources": [
+   "https://www.cricket.com.au/news/3276066/australia-beat-west-indies-1995-test-series-victory-dawn-of-a-golden-age-australian-cricket-mark-taylor-waugh-warne",
+   "https://www.wisden.com/cricket-news/bob-simpson-doesnt-get-credit-story-behind-steve-waughs-200-v-west-indies"
+  ],
+  "flags": "Entry score differs between sources (73 vs 37); both are 3 down and under 100."
+ },
+ {
+  "id": 1075,
+  "innings": "Ricky Ponting 156 v England, Old Trafford 2005",
+  "match": "3rd Test",
+  "result": "Drawn, Australia chasing 423 and surviving",
+  "series_going_in": "1-0 to England going in? (series level at 1-1 after this Test)",
+  "innings_of_match": "4th",
+  "entry_state": "Not stated",
+  "verdict": "yes",
+  "confidence": "high",
+  "reason": "Saved the match in the fourth innings of a live series.",
+  "sources": [
+   "https://www.wisden.com/cricket-news/pontings-156-wisdens-test-innings-of-the-2000s-no-3",
+   "https://www.cricket.com.au/news/ricky-ponting-ashes-australia-england-old-trafford-manchester-2005-on-this-day-best-test-innings-156/2018-08-15"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 9,
+  "innings": "Hanif Mohammad 337 v West Indies, Bridgetown 1958",
+  "match": "1st Test",
+  "result": "Drawn; Pakistan followed on 473 behind and made 657/8 declared",
+  "series_going_in": "0-0",
+  "innings_of_match": "3rd",
+  "entry_state": "Following on, 473 behind",
+  "verdict": "yes",
+  "confidence": "high",
+  "reason": "Saved the match after following on 473 behind.",
+  "sources": [
+   "https://www.icc-cricket.com/hall-of-fame/hall-of-famers/hall-of-famer-hanif-mohammad",
+   "https://en.wikipedia.org/wiki/Pakistani_cricket_team_in_the_West_Indies_in_1957%E2%80%9358"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 38,
+  "innings": "Viv Richards 291 v England, The Oval 1976",
+  "match": "5th Test",
+  "result": "West Indies won by 231 runs",
+  "series_going_in": "West Indies 2-0 up with this the last Test (inferred from the 3rd and 4th Tests being wins and a final 3-0)",
+  "innings_of_match": "1st",
+  "entry_state": "Not stated",
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "Probably a dead rubber: with two wins from four and one Test left, West Indies had won the series. Check the series table.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/West_Indian_cricket_team_in_England_in_1976",
+   "https://www.icc-cricket.com/hall-of-fame/hall-of-famers/hall-of-famer-viv-richards"
+  ],
+  "flags": "Series state is inferred, not stated."
+ },
+ {
+  "id": 191,
+  "innings": "George Headley 223 v England, Kingston 1930",
+  "match": "4th Test (timeless), 3-12 Apr 1930",
+  "result": "Drawn by arrangement on the ninth day; England 849 and 272/9d, West Indies 286 and 408/5",
+  "series_going_in": "1-1, last Test",
+  "innings_of_match": "3rd (West Indies following on)",
+  "entry_state": "Not stated",
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "Saved the match after following on 563 behind.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/English_cricket_team_in_the_West_Indies_in_1929%E2%80%9330"
+  ],
+  "flags": "One source."
+ },
+ {
+  "id": 213,
+  "innings": "Bill Edrich 219 v South Africa, Durban 1939",
+  "match": "5th (timeless) Test",
+  "result": "Drawn by agreement after nine days; England 654/5 chasing 696",
+  "series_going_in": "England 1-0 up, last Test",
+  "innings_of_match": "4th",
+  "entry_state": "Not stated",
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "A fourth-innings chase that ended in a draw; by our written rule that counts as saved, though England were never in danger.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/English_cricket_team_in_South_Africa_in_1938%E2%80%9339",
+   "https://en.wikipedia.org/wiki/Timeless_Test"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 334,
+  "innings": "Adam Gilchrist 204* v South Africa, Johannesburg 2002",
+  "match": "1st Test",
+  "result": "Australia won by an innings and 360 runs",
+  "series_going_in": "0-0",
+  "innings_of_match": "1st",
+  "entry_state": "About 5 down around 330 (a 317 stand for the sixth wicket)",
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "Came in at a healthy score and made 31% of 652.",
+  "sources": [
+   "https://www.cricket.com.au/news/adam-gilchrist-australia-south-africa-double-century-204-johannesburg-martyn-hayden-mcgrath-warne/2018-02-23",
+   "https://en.wikipedia.org/wiki/Australian_cricket_team_in_South_Africa_in_2001%E2%80%9302"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 7,
+  "innings": "Len Hutton 364 v Australia, The Oval 1938",
+  "match": "5th Test",
+  "result": "England won by an innings and 579 runs",
+  "series_going_in": "Australia 1-0 up (series finished 1-1; inferred)",
+  "innings_of_match": "1st",
+  "entry_state": "Not stated by the sources opened (he opened)",
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "Carried the innings with 40.3% of 903 and levelled the series, but it is borderline on the 40% share and the entry is unconfirmed.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Australian_cricket_team_in_England_in_1938",
+   "https://www.icc-cricket.com/hall-of-fame/hall-of-famers/hall-of-famer-len-hutton"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 204,
+  "innings": "Sunil Gavaskar 221 v England, The Oval 1979",
+  "match": "4th Test",
+  "result": "Drawn; India chasing 438 reached 429/8",
+  "series_going_in": "England 1-0 up, last Test",
+  "innings_of_match": "4th",
+  "entry_state": "Not stated",
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "A fourth-innings chase that fell nine runs short and drew. India were not in danger of losing, so this is a rule-based yes only.",
+  "sources": [
+   "https://www.icc-cricket.com/news/classic-knocks-sunil-gavaskar",
+   "https://en.wikipedia.org/wiki/Indian_cricket_team_in_England_in_1979"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 1275,
+  "innings": "Adam Gilchrist 149* v Pakistan, Hobart 1999",
+  "match": "2nd Test",
+  "result": "Australia won a chase of 369",
+  "series_going_in": "1-0 to Australia",
+  "innings_of_match": "4th",
+  "entry_state": "126 for 5",
+  "verdict": "yes",
+  "confidence": "high",
+  "reason": "Rescued a chase from 126 for 5 and won.",
+  "sources": [
+   "https://www.wisden.com/cricket-news/wisdens-test-innings-of-the-1990s-no-4-adam-gilchrists-149",
+   "https://www.cricket.com.au/news/justin-langer-1999-hobart-test-pakistan-australia-partnership-record-finest-moment-gilchrist/2017-04-06"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 245,
+  "innings": "Gordon Greenidge 214* v England, Lord's 1984",
+  "match": "2nd Test",
+  "result": "West Indies won by 9 wickets chasing 342",
+  "series_going_in": "West Indies 1-0 up (inferred)",
+  "innings_of_match": "4th",
+  "entry_state": "Opened; Haynes out at 57 (not on the page opened)",
+  "verdict": "yes",
+  "confidence": "high",
+  "reason": "Chased down 342 in a live series.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/West_Indian_cricket_team_in_England_in_1984",
+   "https://www.wisden.com/cricket-features/lithe-debonair-and-quite-brilliant-the-west-indies-class-of-1984"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 510,
+  "innings": "Stan McCabe 189* v South Africa, Johannesburg 1935",
+  "match": "2nd Test, 24-28 Dec 1935",
+  "result": "Drawn; Australia 250 and 274/2 chasing about 399",
+  "series_going_in": "Australia 1-0 up",
+  "innings_of_match": "4th",
+  "entry_state": "Not stated",
+  "verdict": "yes",
+  "confidence": "low",
+  "reason": "A fourth-innings 189* of 274/2 in a drawn live Test. Entry unknown.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Australian_cricket_team_in_South_Africa_in_1935%E2%80%9336"
+  ],
+  "flags": "One source."
+ },
+ {
+  "id": 43,
+  "innings": "Peter May 285* v West Indies, Edgbaston 1957",
+  "match": "1st Test",
+  "result": "Drawn; England 186 then 583/4 declared after trailing by 288",
+  "series_going_in": "0-0",
+  "innings_of_match": "3rd",
+  "entry_state": "Behind by 288",
+  "verdict": "yes",
+  "confidence": "high",
+  "reason": "Saved the match after trailing by 288.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/West_Indian_cricket_team_in_England_in_1957"
+  ],
+  "flags": "One source. The 411 stand with Cowdrey is not on the page opened."
+ },
+ {
+  "id": 3,
+  "innings": "Brian Lara 375 v England, St John's 1994",
+  "match": "5th Test",
+  "result": "Not stated by the sources opened (a draw per other accounts)",
+  "series_going_in": "Not stated",
+  "innings_of_match": "Not stated",
+  "entry_state": "Not stated",
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "Only the record (breaking Sobers' 365*, which had stood 36 years) is confirmed.",
+  "sources": [
+   "https://www.icc-cricket.com/news/400-brilliant-bridgetown-and-eclipsing-sobers-10-of-the-best-from-lara",
+   "https://www.cricket.com.au/news/3304888"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 6,
+  "innings": "Garfield Sobers 365* v Pakistan, Kingston 1958",
+  "match": "3rd Test",
+  "result": "West Indies won by an innings and 174 runs (790/3d)",
+  "series_going_in": "West Indies 1-0 up (inferred)",
+  "innings_of_match": "Not stated",
+  "entry_state": "Not stated",
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "Made 46% of 790 but the entry score is not in the sources opened.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Pakistani_cricket_team_in_the_West_Indies_in_1957%E2%80%9358",
+   "https://www.wisden.com/wisden-cricketers-almanack/sir-garfield-sobers-crickets-finest-all-round-player-almanack"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 511,
+  "innings": "Bruce Mitchell 189* v England, The Oval 1947",
+  "match": "5th Test",
+  "result": "Drawn; South Africa 423/7 in the fourth innings",
+  "series_going_in": "England 3-0 up (inferred)",
+  "innings_of_match": "4th",
+  "entry_state": "Not stated",
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "Probably a dead rubber: England had won 3 of the first 4.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/South_African_cricket_team_in_England_in_1947"
+  ],
+  "flags": "One source; series state is inferred."
+ },
+ {
+  "id": 18,
+  "innings": "Andy Sandham 325 v West Indies, Kingston 1930",
+  "match": "4th Test (timeless)",
+  "result": "Drawn; England 849 and 272/9d",
+  "series_going_in": "1-1, last Test",
+  "innings_of_match": "1st",
+  "entry_state": "Not stated",
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "England were never in danger and he made 38% of 849.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/English_cricket_team_in_the_West_Indies_in_1929%E2%80%9330"
+  ],
+  "flags": "One source."
+ },
+ {
+  "id": 588,
+  "innings": "Arthur Morris 182 v England, Headingley 1948",
+  "match": "4th Test",
+  "result": "Australia won by 7 wickets chasing 404",
+  "series_going_in": "Australia 2-0 up (inferred)",
+  "innings_of_match": "4th",
+  "entry_state": "Not stated",
+  "verdict": "yes",
+  "confidence": "high",
+  "reason": "A fourth-innings chase of 404, a world-record chase at the time.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Australian_cricket_team_in_England_in_1948"
+  ],
+  "flags": "One source."
+ },
+ {
+  "id": 202,
+  "innings": "Nathan Astle 222 v England, Christchurch 2002",
+  "match": "1st Test",
+  "result": "New Zealand lost by 98 runs chasing 550",
+  "series_going_in": "0-0",
+  "innings_of_match": "4th",
+  "entry_state": "Not stated",
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/English_cricket_team_in_New_Zealand_in_2001%E2%80%9302",
+   "https://en.wikipedia.org/wiki/Nathan_Astle"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 970,
+  "innings": "Joe Darling 160 v England, Sydney 1898",
+  "match": "5th Test",
+  "result": "Australia won by 6 wickets",
+  "series_going_in": "Australia 3-1 up (series decided)",
+  "innings_of_match": "Not stated",
+  "entry_state": "Not stated",
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "Probably a dead rubber: Australia had won 3 of the first 4 (the Wikipedia page opened gave only the first Test).",
+  "sources": [
+   "https://en.wikipedia.org/wiki/English_cricket_team_in_Australia_in_1897%E2%80%9398"
+  ],
+  "flags": "One source. The page showed Darling made 101 in the first Test and 160 in the fifth."
+ },
+ {
+  "id": 35,
+  "innings": "Martin Crowe 299 v Sri Lanka, Wellington 1991",
+  "match": "1st Test",
+  "result": "Drawn; New Zealand 174 then 671/4, Sri Lanka 497",
+  "series_going_in": "0-0",
+  "innings_of_match": "3rd",
+  "entry_state": "Behind by 323",
+  "verdict": "yes",
+  "confidence": "high",
+  "reason": "Saved the match after trailing by 323.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Sri_Lankan_cricket_team_in_New_Zealand_in_1990%E2%80%9391"
+  ],
+  "flags": "One source."
+ },
+ {
+  "id": 215,
+  "innings": "Mark Taylor 219 v England, Trent Bridge 1989",
+  "match": "5th Test",
+  "result": "Australia won by an innings and 180 runs",
+  "series_going_in": "Australia 3-0 up (series decided)",
+  "innings_of_match": "1st",
+  "entry_state": "Opened",
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "Dead rubber: Australia had already won the Ashes.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Australian_cricket_team_in_England_in_1989",
+   "https://www.wisden.com/wisden-cricketers-almanack/how-a-young-mark-taylor-dominated-england-on-his-maiden-ashes-tour-almanack"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 72,
+  "innings": "Dennis Amiss 262* v West Indies, Kingston 1974",
+  "match": "2nd Test",
+  "result": "Drawn; England 353 and 432/9 against West Indies 583/9d",
+  "series_going_in": "West Indies 1-0 up",
+  "innings_of_match": "4th",
+  "entry_state": "Behind by 230 on first innings",
+  "verdict": "yes",
+  "confidence": "high",
+  "reason": "Saved the match after trailing by 230 on first innings.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/English_cricket_team_in_the_West_Indies_in_1973%E2%80%9374"
+  ],
+  "flags": "One source."
+ },
+ {
+  "id": 670,
+  "innings": "Bevan Congdon 176 v England, Trent Bridge 1973",
+  "match": "1st Test",
+  "result": "New Zealand lost by 38 runs chasing 479",
+  "series_going_in": "0-0",
+  "innings_of_match": "4th",
+  "entry_state": "Not stated",
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/New_Zealand_cricket_team_in_England_in_1973"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 25,
+  "innings": "Bob Simpson 311 v England, Old Trafford 1964",
+  "match": "4th Test",
+  "result": "Drawn; Australia 656/8d, England 611",
+  "series_going_in": "Australia 1-0 up",
+  "innings_of_match": "1st",
+  "entry_state": "Not stated",
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "Australia were never in danger.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Australian_cricket_team_in_England_in_1964"
+  ],
+  "flags": "One source."
+ },
+ {
+  "id": 28,
+  "innings": "Bob Cowper 307 v England, Melbourne 1966",
+  "match": "2nd Test",
+  "result": "Drawn",
+  "series_going_in": "0-0",
+  "innings_of_match": "1st",
+  "entry_state": "Not stated",
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "Only the draw is confirmed; no totals on the page opened.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/English_cricket_team_in_Australia_in_1965%E2%80%9366"
+  ],
+  "flags": "One source."
+ },
+ {
+  "id": 714,
+  "innings": "Derek Randall 174 v Australia, Melbourne 1977 (Centenary Test)",
+  "match": "Centenary Test",
+  "result": "Australia won by 45 runs; England made 417 chasing 463",
+  "series_going_in": "Not part of a series",
+  "innings_of_match": "4th",
+  "entry_state": "Not stated",
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Centenary_Test"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 1579,
+  "innings": "Jack Brown 140 v Australia, Melbourne 1895",
+  "match": "5th Test (decider)",
+  "result": "England won by 6 wickets chasing 297",
+  "series_going_in": "2-2, decider",
+  "innings_of_match": "4th",
+  "entry_state": "Not stated",
+  "verdict": "yes",
+  "confidence": "high",
+  "reason": "Chased down 297 in a series decider.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/English_cricket_team_in_Australia_in_1894%E2%80%9395"
+  ],
+  "flags": "One source."
+ },
+ {
+  "id": 159,
+  "innings": "Dudley Nourse 231 v Australia, Johannesburg 1935",
+  "match": "2nd Test",
+  "result": "Drawn; South Africa 157 then 491",
+  "series_going_in": "Australia 1-0 up",
+  "innings_of_match": "3rd",
+  "entry_state": "Behind by 93",
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "Saved the match after trailing by 93 on first innings.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Australian_cricket_team_in_South_Africa_in_1935%E2%80%9336"
+  ],
+  "flags": "One source."
+ },
+ {
+  "id": 8,
+  "innings": "Sanath Jayasuriya 340 v India, Colombo 1997",
+  "match": "1st Test",
+  "result": "Drawn; Sri Lanka 952/6d",
+  "series_going_in": "0-0",
+  "innings_of_match": "1st",
+  "entry_state": "Not stated",
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "Sri Lanka were never in danger.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Indian_cricket_team_in_Sri_Lanka_in_1997"
+  ],
+  "flags": "One source. The 576 stand with Mahanama is not stated on the page opened."
+ },
+ {
+  "id": 1209,
+  "innings": "Neil Harvey 151* v South Africa, Durban 1950",
+  "match": "3rd Test",
+  "result": "Australia won by 5 wickets chasing 336",
+  "series_going_in": "Australia 2-0 up",
+  "innings_of_match": "4th",
+  "entry_state": "Not stated",
+  "verdict": "yes",
+  "confidence": "high",
+  "reason": "A fourth-innings chase of 336 won with the series still open.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Australian_cricket_team_in_South_Africa_in_1949%E2%80%9350"
+  ],
+  "flags": "One source."
+ },
+ {
+  "id": 14,
+  "innings": "Graham Gooch 333 v India, Lord's 1990",
+  "match": "1st Test",
+  "result": "England won by 247 runs",
+  "series_going_in": "0-0",
+  "innings_of_match": "1st",
+  "entry_state": "Not stated by the sources opened (he opened)",
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "Carried the innings with 51% of 653/4, assuming he came in under 100.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Indian_cricket_team_in_England_in_1990",
+   "https://www.wisden.com/wisden-cricketers-almanack/england-india-lords-1990"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 44,
+  "innings": "VVS Laxman 281 v Australia, Kolkata 2001",
+  "match": "2nd Test",
+  "result": "India won by 171 runs after following on",
+  "series_going_in": "Australia 1-0 up",
+  "innings_of_match": "3rd (following on)",
+  "entry_state": "Following on, 274 behind",
+  "verdict": "yes",
+  "confidence": "high",
+  "reason": "Rescued a follow-on and won the match.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Australian_cricket_team_in_India_in_2000%E2%80%9301",
+   "https://www.wisden.com/cricket-news/wisdens-test-innings-of-the-2000s-no-1-vvs-laxmans-281"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 41,
+  "innings": "RE Foster 287 v Australia, Sydney 1903",
+  "match": "1st Test (timeless)",
+  "result": "England won by 5 wickets",
+  "series_going_in": "0-0",
+  "innings_of_match": "2nd",
+  "entry_state": "Not stated",
+  "verdict": "yes",
+  "confidence": "low",
+  "reason": "Made about half of England's 577 in a win; entry unknown.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/English_cricket_team_in_Australia_in_1903%E2%80%9304"
+  ],
+  "flags": "One source."
+ },
+ {
+  "id": 32,
+  "innings": "Lawrence Rowe 302 v England, Bridgetown 1974",
+  "match": "3rd Test",
+  "result": "Drawn; West Indies 596/8d",
+  "series_going_in": "West Indies 1-0 up",
+  "innings_of_match": "1st",
+  "entry_state": "Not stated",
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "West Indies were never in danger.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/English_cricket_team_in_the_West_Indies_in_1973%E2%80%9374"
+  ],
+  "flags": "One source."
+ },
+ {
+  "id": 51,
+  "innings": "Gary Kirsten 275 v England, Durban 1999",
+  "match": "3rd Test",
+  "result": "Drawn; South Africa followed on 156 then 572/7",
+  "series_going_in": "South Africa 1-0 up",
+  "innings_of_match": "3rd (following on)",
+  "entry_state": "Following on",
+  "verdict": "yes",
+  "confidence": "high",
+  "reason": "Saved the match after following on.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/English_cricket_team_in_South_Africa_in_1999%E2%80%932000",
+   "https://www.wisden.com/wisden-cricketers-almanack/gary-kirsten-more-functional-than-festive-almanack"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 1826,
+  "innings": "Herbert Sutcliffe 135 v Australia, Melbourne 1928",
+  "match": "3rd Test",
+  "result": "England won by 3 wickets chasing 332",
+  "series_going_in": "England 2-0 up (inferred)",
+  "innings_of_match": "4th",
+  "entry_state": "Not stated",
+  "verdict": "yes",
+  "confidence": "high",
+  "reason": "A fourth-innings chase on a deteriorating pitch with the series still open.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/English_cricket_team_in_Australia_in_1928%E2%80%9329"
+  ],
+  "flags": "One source."
+ },
+ {
+  "id": 17,
+  "innings": "Inzamam-ul-Haq 329 v New Zealand, Lahore 2002",
+  "match": "1st Test",
+  "result": "Pakistan won by an innings and 324 runs",
+  "series_going_in": "0-0",
+  "innings_of_match": "1st",
+  "entry_state": "Not stated",
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "51% of 643, but where he came in is not stated.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/New_Zealand_cricket_team_in_Pakistan_in_2002"
+  ],
+  "flags": "One source."
+ },
+ {
+  "id": 2192,
+  "innings": "Jack Hobbs 126* v Australia, Melbourne 1912",
+  "match": "2nd Test",
+  "result": "England won by 8 wickets chasing 219",
+  "series_going_in": "Australia 1-0 up",
+  "innings_of_match": "4th",
+  "entry_state": "Not stated",
+  "verdict": "yes",
+  "confidence": "high",
+  "reason": "Won a chase of 219 with the series open.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/English_cricket_team_in_Australia_in_1911%E2%80%9312"
+  ],
+  "flags": "One source."
+ },
+ {
+  "id": 552,
+  "innings": "Mike Atherton 185* v South Africa, Johannesburg 1995",
+  "match": "2nd Test",
+  "result": "Drawn; England 351/5 chasing 479",
+  "series_going_in": "0-0",
+  "innings_of_match": "4th",
+  "entry_state": "Not stated",
+  "verdict": "yes",
+  "confidence": "high",
+  "reason": "Saved the match in the fourth innings.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/English_cricket_team_in_South_Africa_in_1995%E2%80%9396",
+   "https://www.wisden.com/series/new-zealand-vs-west-indies-m-2025/cricket-features/where-do-greaves-and-roach-rank-the-top-15-match-saving-acts-in-test-cricket-history"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 1583,
+  "innings": "Wally Hammond 140 v South Africa, Durban 1939",
+  "match": "5th (timeless) Test",
+  "result": "Drawn",
+  "series_going_in": "England 1-0 up",
+  "innings_of_match": "1st",
+  "entry_state": "Not stated",
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "A first-innings hundred in a match England were never in danger of losing; not researched further.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/English_cricket_team_in_South_Africa_in_1938%E2%80%9339"
+  ],
+  "flags": "One source."
+ },
+ {
+  "id": 2145,
+  "innings": "Herbert Sutcliffe 127 v Australia, Melbourne 1925",
+  "match": "Not matched",
+  "result": "Not matched",
+  "series_going_in": "",
+  "innings_of_match": "",
+  "entry_state": "",
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "The page opened gives Sutcliffe 143 at Melbourne in the fourth Test (Feb 1925) and 127 in the second Test. Our row (127, 1925, Melbourne) may mix them up.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/English_cricket_team_in_Australia_in_1924%E2%80%9325"
+  ],
+  "flags": "Disagrees with our data; not changed."
+ }
+]

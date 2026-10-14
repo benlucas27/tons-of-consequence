@@ -21,6 +21,7 @@ import { canonicalPlayer } from '../src/data/name-aliases.js';
 import { ALL } from '../src/lib/dataset.js';
 import { displayName } from '../src/lib/scoring.js';
 import { DON } from '../src/data/the-don.js';
+import { OLDER_RULINGS } from '../src/data/older-rulings.js';
 import { COMPARE_SETS } from '../src/data/compare-sets.js';
 import { tierOfOpponent } from '../src/lib/matchFacts.js';
 import { countVenues, wherePlayed } from '../src/lib/hostOf.js';
@@ -76,6 +77,9 @@ for (const d of DON) {
   where[row.id] = ['Trent Bridge', "Lord's", 'Headingley', 'The Oval'].includes(d.venue) ? 'A' : 'H'; // Australia batting: away in England, home in Australia
   don++;
 }
+
+// older hundreds with no ball-by-ball record, ruled by hand from the sourced review (src/data/older-rulings.js)
+for (const [id, v] of Object.entries(OLDER_RULINGS)) if (!out[id]) out[id] = v;
 
 const ids = Object.keys(out).map(Number).sort((a, b) => a - b);
 const lines = ids.map((id) => `  ${id}: ${JSON.stringify(out[id])},`);
