@@ -148,3 +148,17 @@ test('movement is measured against the Default ranking', () => {
   assert.equal(movementOf(moved), defaultRankOf(1) - moved.rank);
   assert.ok(movementOf(moved) > 50, 'Lara 400* should climb a long way under the Romantic');
 });
+
+import { inventedSentences, scrub } from '../src/lib/storyCheck.js';
+
+test('no story names bowlers from the old generator\'s era-blind guesses', () => {
+  const bad = ALL.filter((c) => inventedSentences(c.story).length).map((c) => `#${c.id} ${c.name} ${c.runs} (${c.year})`);
+  assert.deepEqual(bad.slice(0, 5), [], `${bad.length} stories still name invented bowlers`);
+});
+
+test('scrubbing removes only the invented sentence', () => {
+  const story = 'The dictionary definition of a long innings: RE Foster, 287, against Australia in 1903, at Sydney. Facing Lillee and Thomson, the score never came free.';
+  assert.equal(scrub(story), 'The dictionary definition of a long innings: RE Foster, 287, against Australia in 1903, at Sydney.');
+  assert.equal(scrub('Facing Australia and England in a Test, he scored runs.'), null); // teams, not bowlers
+  assert.equal(scrub('A plain story with no names.'), null);
+});
