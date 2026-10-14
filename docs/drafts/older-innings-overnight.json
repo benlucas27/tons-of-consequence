@@ -705,5 +705,37 @@
    "https://en.wikipedia.org/wiki/English_cricket_team_in_Australia_in_1924%E2%80%9325"
   ],
   "flags": "Disagrees with our data; not changed."
+ },
+ {
+  "id": 318,
+  "innings": "Patsy Hendren 205* v West Indies, Port of Spain 1930",
+  "match": "2nd Test, 1-6 Feb 1930",
+  "result": "England won by 167 runs after trailing by 46 on first innings (208 and 425/8d against 254 and 212)",
+  "series_going_in": "0-0",
+  "innings_of_match": "3rd",
+  "entry_state": "Not stated",
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "Made 205 of England's 425 (48%) in the second innings after England had trailed, and the team won.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/English_cricket_team_in_the_West_Indies_in_1929%E2%80%9330"
+  ],
+  "flags": "One source. Entry score not stated."
+ },
+ {
+  "id": 2359,
+  "innings": "Jack Hobbs 123 v Australia, Adelaide 1921",
+  "match": "3rd Test (timeless), 14-20 Jan 1921",
+  "result": "Australia won by 119 runs; England 447 and 370",
+  "series_going_in": "Australia 2-0 up",
+  "innings_of_match": "4th",
+  "entry_state": "Not stated",
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/English_cricket_team_in_Australia_in_1920%E2%80%9321"
+  ],
+  "flags": "One source. The Wikipedia biography describes this innings differently from the scorecard."
  }
 ]

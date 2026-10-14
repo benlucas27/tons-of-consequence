@@ -47,4 +47,5 @@ export const OLDER_RULINGS = {
   1826: [1, "Chased it down", "England won by 3 wickets chasing 332. Series going in: England 2-0 up."],
   2145: [0, null, "No match record could be matched to this score."],
   2192: [1, "Chased it down", "England won by 8 wickets chasing 219. Series going in: Australia 1-0 up."],
+  2359: [0, null, "England lost by 119 runs. Series going in: Australia 2-0 up."],
 };

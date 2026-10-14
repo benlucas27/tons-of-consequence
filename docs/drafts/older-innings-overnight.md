@@ -2,7 +2,7 @@
 
 Branch `older-innings`, nothing pushed. For each of the highest-ranked hundreds with no match record (before 2006), the match facts from sources I opened and a proposed Consequence Test verdict. **You rule on each.** I could not open Cricinfo or ESPN (their terms forbid automated access), so most facts come from Wikipedia tour pages plus one more source where I found one.
 
-**Done: 43 innings. Yes 25, no 13, cannot tell 5.** Not researched from the top-45 list: Patsy Hendren 205* (1930) and Jack Hobbs 123 (1921).
+**Done: 43 innings. Yes 25, no 13, cannot tell 5.** All 45 of the top-45 list are now covered (Hendren and Hobbs 123 were added after the first pass).
 
 ## What was hard
 - Wikipedia's tour pages give totals, results and series order, but almost never the score when the batter came in, so many entries cannot say whether it was a rescue or a carry.
@@ -275,3 +275,15 @@ Branch `older-innings`, nothing pushed. For each of the highest-ranked hundreds 
 - Series going in: . Innings of the match: . Entry: .
 - Why: The page opened gives Sutcliffe 143 at Melbourne in the fourth Test (Feb 1925) and 127 in the second Test. Our row (127, 1925, Melbourne) may mix them up. Note: Disagrees with our data; not changed.
 - Sources: https://en.wikipedia.org/wiki/English_cricket_team_in_Australia_in_1924%E2%80%9325
+
+### Patsy Hendren 205* v West Indies, Port of Spain 1930 (id 318) — YES (medium)
+- Match: 2nd Test, 1-6 Feb 1930. England won by 167 runs after trailing by 46 on first innings (208 and 425/8d against 254 and 212).
+- Series going in: 0-0. Innings of the match: 3rd. Entry: Not stated.
+- Why: Made 205 of England's 425 (48%) in the second innings after England had trailed, and the team won. Note: One source. Entry score not stated.
+- Sources: https://en.wikipedia.org/wiki/English_cricket_team_in_the_West_Indies_in_1929%E2%80%9330
+
+### Jack Hobbs 123 v Australia, Adelaide 1921 (id 2359) — NO (high)
+- Match: 3rd Test (timeless), 14-20 Jan 1921. Australia won by 119 runs; England 447 and 370.
+- Series going in: Australia 2-0 up. Innings of the match: 4th. Entry: Not stated.
+- Why: A loss never counts. Note: One source. The Wikipedia biography describes this innings differently from the scorecard.
+- Sources: https://en.wikipedia.org/wiki/English_cricket_team_in_Australia_in_1920%E2%80%9321

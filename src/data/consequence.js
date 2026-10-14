@@ -991,6 +991,7 @@ export const CONSEQUENCE = {
   2355: [0,null,"The team lost."],
   2356: [0,null,"The team lost."],
   2357: [0,null,"The team lost."],
+  2359: [0,null,"England lost by 119 runs. Series going in: Australia 2-0 up."],
   2361: [0,null,"A dead rubber: the series was already decided."],
   2395: [1,"Chased it down","He made it in a winning chase."],
   2396: [0,null,"No: he came in comfortably and the team did not depend on him."],
