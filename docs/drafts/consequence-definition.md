@@ -72,7 +72,7 @@ Otherwise it is **"a good ton"**, and the first "no" says why (lost, dead rubber
 
 ## How the rulings work (from the 126-entry review, 14 Oct 2026)
 
-- Near-misses were ruled one by one with the scorecard in front of us: 125 of 126 so far, 62 yes and 63 no.
+- Near-misses were ruled one by one with the scorecard in front of us: 125 of 126 so far, 64 yes and 61 no.
 - **Other hundreds in the match are a consideration, not a rule.** A hundred counts for more when it is the only one in
   the match, but a shared hundred can still be a ton of consequence (37 of the yes rulings had a team-mate's hundred).
   A fixed "no if shared" rule agreed with the rulings only 68 times in 121, so it is shown as a fact on each innings and
