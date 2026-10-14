@@ -14,6 +14,7 @@ import {
 } from './scoring.js';
 import { calcVolatility, volatilityTier } from './volatility.js';
 import { answer, compareInnings, searchInnings, EXAMPLE_QUESTIONS } from './ask.js';
+import { COMPARE_SETS, setById, compareCareers, CAREERS_AS_OF } from './careerCompare.js';
 import { videoFor, watchUrl } from './videos.js';
 import { SITE_URL } from './site.js';
 
@@ -255,6 +256,29 @@ export function createServer() {
       underEachPreset: cmp.presets.map((p) => `${p.name}: ${p.margin < 0.1 ? 'level' : `${(p.aWins ? cmp.a : cmp.b).name} by ${p.margin}`}`),
       innings: items.map((c) => summary(c, w.order, w.bias)),
       weighting: weightingNote(w.order, w.bias),
+    });
+  });
+
+  server.registerTool('compare_careers', {
+    title: 'Compare whole careers',
+    description: `Compare whole Test careers side by side for a preset group of players. Gives the numbers from every innings (runs, average, strike rate, hundreds, fifties, how often a fifty becomes a hundred, innings per hundred) and how their hundreds rank on the weighting, with who leads on each measure. Presets: ${COMPARE_SETS.map((s) => `${s.id} (${s.name}: ${s.players.map((p) => p.name).join(', ')})`).join('; ')}.`,
+    inputSchema: { set: z.enum(COMPARE_SETS.map((s) => s.id)).default(COMPARE_SETS[0].id), ...weightingShape },
+    annotations: READ_ONLY,
+  }, async ({ set, preset, order, australianBonus }) => {
+    const w = resolveWeighting({ preset, order, australianBonus });
+    if (w.error) return problem(w.error);
+    const r = compareCareers(setById(set), w.order, w.bias);
+    const table = (rows) => rows.map((row) => ({ measure: row.label, values: Object.fromEntries(r.players.map((p, i) => [p.name, row.display[i]])), leader: row.leaders.map((i) => r.players[i].name) }));
+    return text({
+      set: r.set.name,
+      careerFiguresUpTo: CAREERS_AS_OF,
+      summary: r.summary,
+      measuresLed: Object.fromEntries(r.leads.map((l) => [l.name, l.count])),
+      theNumbers: table(r.numbers),
+      theRanking: table(r.ranking),
+      bestInnings: Object.fromEntries(r.players.map((p) => [p.name, p.innings.slice(0, 3).map((c) => summary(c, w.order, w.bias))])),
+      weighting: weightingNote(w.order, w.bias),
+      notes: ['Average is runs per dismissal.', 'Career figures come from ball-by-record data (Cricsheet); each player\'s hundreds match the ranking exactly.'],
     });
   });
 

@@ -10,7 +10,7 @@ An unofficial, opinionated ranking of every Test century. The tools talk to the 
 ## How to use it
 
 1. For an open question in plain English, call `ask` first. It reports how it understood the question, so check that and say so if it guessed (for example which Smith).
-2. For lists with filters, use `rank_centuries`. For one innings in full, use `get_century`. For a head to head, use `compare_centuries`. If you are unsure what a tool accepts, call `list_options`.
+2. For lists with filters, use `rank_centuries`. For one innings in full, use `get_century`. For a head to head, use `compare_centuries`. To compare whole careers (the Big Four of Smith, Kohli, Root and Williamson), use `compare_careers`. If you are unsure what a tool accepts, call `list_options`.
 3. Always say which weighting the scores are on. There are five presets: Default, Purist, Analyst, Patriot and Romantic. A weighting is an order of six criteria, not a set of percentages.
 4. Link to an innings with the `url` the tools return.
 

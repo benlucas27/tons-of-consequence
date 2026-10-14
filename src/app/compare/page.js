@@ -2,8 +2,8 @@ import { Suspense } from 'react';
 import CompareBuilder from '@/components/CompareBuilder';
 
 export const metadata = {
-  title: 'Compare two innings',
-  description: 'Pick any two Test centuries and see which one wins on your weighting, how the verdict holds under every preset, and the six criteria side by side.',
+  title: 'Compare innings and careers',
+  description: 'Pick any two Test centuries for a verdict on your weighting, or compare whole careers, starting with The Big Four: Smith, Kohli, Root and Williamson.',
 };
 
 export default function Page() {

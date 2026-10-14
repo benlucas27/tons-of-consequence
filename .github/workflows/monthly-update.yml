@@ -29,19 +29,22 @@ jobs:
       - name: Add new centuries and settle finished matches
         run: node scripts/add-new-centuries.mjs --write | tee update.log
 
+      - name: Refresh career figures for the preset comparisons
+        run: node scripts/build-careers.mjs
+
       # Nothing is published unless the data checks and the build both pass.
       - run: npm test
       - run: npm run build
 
       - name: Commit and publish
         run: |
-          if git diff --quiet -- src/data/sample.js; then
+          if git diff --quiet -- src/data/sample.js src/data/careers.js; then
             echo "Nothing new this month."
             exit 0
           fi
           git config user.name "tons-of-consequence-bot"
           git config user.email "tons-of-consequence-bot@users.noreply.github.com"
           { echo "data: monthly update"; echo; cat update.log; } > commit-message.txt
-          git add src/data/sample.js
+          git add src/data/sample.js src/data/careers.js
           git commit -F commit-message.txt
           git push

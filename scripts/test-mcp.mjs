@@ -19,7 +19,7 @@ console.log(`connected to ${url} (${client.getServerVersion()?.name} ${client.ge
 if (client.getInstructions()) console.log(`instructions: ${client.getInstructions().slice(0, 90)}...`);
 
 const { tools } = await client.listTools();
-check(tools.length === 6, `six tools offered: ${tools.map((t) => t.name).join(', ')}`);
+check(tools.length === 7, `seven tools offered: ${tools.map((t) => t.name).join(', ')}`);
 check(tools.every((t) => t.annotations?.readOnlyHint), 'every tool is marked read-only');
 
 const call = async (name, args) => {
@@ -32,6 +32,8 @@ const rank = await call('rank_centuries', { preset: 'Patriot', limit: 3 });
 check(!rank.error && rank.data.results[0].country === 'Australia', `rank (Patriot): ${rank.data?.results.map((r) => `${r.player} ${r.runs}`).join(', ')}`);
 const one = await call('get_century', { player: 'Matt Renshaw', runs: 190 });
 check(!one.error && one.data.id === 4599 && one.data.video?.url, `get_century: ${one.data?.player} ${one.data?.runs}, rank ${one.data?.rank}, video ${one.data?.video?.channel}`);
+const careers = await call('compare_careers', {});
+check(!careers.error && careers.data.set === 'The Big Four' && careers.data.theNumbers.length > 5, `compare_careers: ${careers.data?.summary?.[0]?.slice(0, 80)}...`);
 const bad = await call('rank_centuries', { country: 'Atlantis' });
 check(bad.error, 'a bad country is refused politely');
 

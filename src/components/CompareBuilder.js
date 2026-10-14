@@ -11,6 +11,8 @@ import { tierOf } from '@/lib/scoring';
 import WeightNote from './WeightNote';
 import BiasNote from './BiasNote';
 import CompareResult from './CompareResult';
+import CareerCompare from './CareerCompare';
+import { COMPARE_SETS, setById } from '@/lib/careerCompare';
 
 const PAIRS = [
   [['Lara', 153, 1999], ['Stokes', 135, 2019]],
@@ -99,6 +101,8 @@ export default function CompareBuilder() {
   const idParam = (k) => { const n = Number(params.get(k)); return Number.isFinite(n) && byId.has(n) ? n : null; };
   const [a, setA] = useState(() => idParam('a'));
   const [b, setB] = useState(() => idParam('b'));
+  const [setId, setSetId] = useState(() => (setById(params.get('set')) ? params.get('set') : null));
+  const careerSet = setId ? setById(setId) : null;
 
   const left = a != null ? byId.get(a) : null;
   const right = b != null ? byId.get(b) : null;
@@ -113,6 +117,10 @@ export default function CompareBuilder() {
     setUrlParam('a', String(x));
     setUrlParam('b', String(y));
   }
+  function chooseSet(id) {
+    setSetId(id);
+    setUrlParam('set', id || '');
+  }
   async function share() {
     const ok = await copyText(window.location.href);
     toast(ok ? 'Link copied. It carries both innings and your weighting.' : 'Copy the address from your browser bar.');
@@ -121,10 +129,32 @@ export default function CompareBuilder() {
   return (
     <div className="page-pad ask">
       <header className="ask-head">
-        <h1>Compare two innings</h1>
-        <p>Pick any two Test hundreds. You get a verdict on your weighting, how it holds up under the five presets, and the six criteria side by side.</p>
+        <h1>{careerSet ? 'Compare careers' : 'Compare two innings'}</h1>
+        <p>{careerSet
+          ? 'Whole careers side by side: the numbers from every innings, and how their hundreds rank on your weighting.'
+          : 'Pick any two Test hundreds. You get a verdict on your weighting, how it holds up under the five presets, and the six criteria side by side.'}</p>
       </header>
 
+      <div className="tabs" role="group" aria-label="What to compare" style={{ justifySelf: 'start' }}>
+        <button type="button" aria-pressed={!careerSet} onClick={() => chooseSet(null)}>Two innings</button>
+        <button type="button" aria-pressed={Boolean(careerSet)} onClick={() => chooseSet(careerSet ? careerSet.id : COMPARE_SETS[0].id)}>Career presets</button>
+      </div>
+
+      {careerSet ? (
+        <>
+          <div className="chips" role="group" aria-label="Preset comparisons">
+            {COMPARE_SETS.map((s) => (
+              <button key={s.id} type="button" className="chip" aria-pressed={s.id === careerSet.id} onClick={() => chooseSet(s.id)}>{s.name}</button>
+            ))}
+          </div>
+          <p className="preset-note">{careerSet.blurb}</p>
+          <WeightNote order={order} bias={bias} />
+          <BiasNote bias={bias} />
+          <div className="cmp-actions"><button type="button" className="btn" onClick={share}>Copy link</button></div>
+          <CareerCompare set={careerSet} order={order} bias={bias} />
+        </>
+      ) : (
+      <>
       <div className="pickers">
         <Picker label="First innings" selected={left} otherId={b} order={order} bias={bias} onPick={(id) => set('a', id)} onClear={() => set('a', null)} />
         <span className="vs" aria-hidden="true">vs</span>
@@ -153,6 +183,8 @@ export default function CompareBuilder() {
             ))}
           </div>
         </section>
+      )}
+      </>
       )}
     </div>
   );

@@ -19,10 +19,10 @@ const call = async (client, name, args = {}) => {
   return { isError: Boolean(res.isError), body, data: res.isError ? null : JSON.parse(body) };
 };
 
-test('the connector offers six read-only tools', async () => {
+test('the connector offers seven read-only tools', async () => {
   const client = await connect();
   const { tools } = await client.listTools();
-  assert.deepEqual(tools.map((t) => t.name).sort(), ['ask', 'compare_centuries', 'get_century', 'list_options', 'most_divisive', 'rank_centuries']);
+  assert.deepEqual(tools.map((t) => t.name).sort(), ['ask', 'compare_careers', 'compare_centuries', 'get_century', 'list_options', 'most_divisive', 'rank_centuries']);
   for (const t of tools) {
     assert.equal(t.annotations?.readOnlyHint, true, `${t.name} must be read-only`);
     assert.ok(t.description.length > 40);
@@ -111,4 +111,18 @@ test('weightings resolve sensibly', () => {
   assert.equal(resolveWeighting({ preset: 'Patriot', australianBonus: false }).bias, null);
   assert.equal(resolveWeighting({ preset: 'Purist', australianBonus: true }).bias, 'au');
   assert.ok(resolveWeighting({ preset: 'Nope' }).error);
+});
+
+test('compare_careers gives the Big Four numbers, ranking and leaders', async () => {
+  const client = await connect();
+  const { data } = await call(client, 'compare_careers', {});
+  assert.equal(data.set, 'The Big Four');
+  assert.equal(Object.keys(data.measuresLed).length, 4);
+  const hundreds = data.theNumbers.find((m) => m.measure === 'Hundreds');
+  assert.equal(hundreds.values['Joe Root'], '41');
+  assert.ok(data.theNumbers.find((m) => m.measure === 'Average').values['Steve Smith']);
+  assert.ok(data.summary.length >= 2);
+  assert.equal(data.bestInnings['Kane Williamson'].length, 3);
+  const patriot = (await call(client, 'compare_careers', { preset: 'Patriot' })).data;
+  assert.match(patriot.weighting.australianBonus, /\+5/);
 });

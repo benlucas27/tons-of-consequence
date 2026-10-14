@@ -28,7 +28,7 @@ the repo and a deploy publishes it.
 - `src/lib/ball.js` draws the cricket-ball mark once, for the header, favicon and share images.
 - Pages: `/` rankings (and the front door for first-time readers), `/search` ask a question by typing or
   speaking (the browser's own speech recognition; the microphone hides itself where unsupported),
-  `/compare` pick any two innings for a verdict, `/innings/<id>-<name>-<runs>-<year>` one innings with its
+  `/compare` pick any two innings for a verdict, or switch to Career presets to compare whole careers (The Big Four to start), `/innings/<id>-<name>-<runs>-<year>` one innings with its
   own link and social preview image, `/quiz` the Pub Test (eight questions, four answers each, one per persona; each persona hands you into a
   preset), `/about`. When the weighting is not Default, rows show ▲ and ▼ for how far each innings has
   moved from its Default rank.
@@ -38,6 +38,15 @@ the repo and a deploy publishes it.
 The "Latest century" card shows the row with `featured: true` (at most one; a test enforces it).
 Its `spotlight` field holds the card text. An innings that is still being played carries
 `matchResult: "live"`, shown as "In progress".
+
+### Career comparisons
+
+`src/data/compare-sets.js` lists the preset career comparisons on the Compare page (so far The Big Four: Smith,
+Kohli, Root, Williamson). The dataset holds only centuries, so the figures that need every innings (average, strike
+rate, fifties, how often a fifty becomes a hundred) are worked out from Cricsheet's ball-by-ball archive by
+`node scripts/build-careers.mjs` and saved to `src/data/careers.js`. The script refuses to save if a player's
+hundreds in the archive disagree with the centuries in the dataset, and the monthly update re-runs it. To add a
+comparison, add an entry (players are matched by name and team code, and by their Cricsheet ID) and run the script.
 
 ### Videos
 

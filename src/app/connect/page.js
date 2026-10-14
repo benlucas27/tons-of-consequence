@@ -14,6 +14,7 @@ const EXAMPLES = [
   'Which hundreds do people argue about most?',
   "Tell me the story behind Matt Renshaw's 190 and how it ranks.",
   'Compare Lara 153, Stokes 135 and Waugh 200. Does the verdict hold under every preset?',
+  'Compare the Big Four, Smith, Kohli, Root and Williamson. Who converts fifties into hundreds best?',
 ];
 
 const TOOLS = [
@@ -21,6 +22,7 @@ const TOOLS = [
   ['rank_centuries', 'Ranks innings under a preset or your own weighting, with filters.'],
   ['get_century', 'Everything about one innings: story, scores, rank under every preset, video.'],
   ['compare_centuries', 'Head to head, with a verdict and whether it holds under every preset.'],
+  ['compare_careers', 'Whole careers side by side, such as the Big Four: averages, conversion of fifties, and how their hundreds rank.'],
   ['most_divisive', 'The innings people disagree about most.'],
   ['list_options', 'How the model works: criteria, presets, the Australian bonus.'],
 ];

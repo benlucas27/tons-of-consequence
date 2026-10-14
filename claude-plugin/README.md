@@ -35,6 +35,7 @@ The same connector works in the Claude app and on claude.ai (Free, Pro, Max, Tea
 | `rank_centuries` | Ranks innings under a preset or your own order, with filters |
 | `get_century` | One innings in full: story, scores, rank under every preset, video |
 | `compare_centuries` | Head to head, with a verdict and whether it holds under every preset |
+| `compare_careers` | Whole careers side by side (The Big Four): averages, conversion of fifties, how their hundreds rank |
 | `most_divisive` | The innings people disagree about most |
 | `list_options` | How the model works: criteria, presets, the Australian bonus |
 

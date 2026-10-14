@@ -66,3 +66,7 @@ How many places an innings has moved from its rank on the Default weighting, sho
 **Connector**:
 The read-only service at `/mcp` that lets Claude query the ranking: the same data and scoring as the site, nothing written. Anyone with a Claude account can add it by URL (see `/connect`). The Claude Code plugin is a wrapper around it.
 _Avoid_: API (it is not for general programs), plugin (the plugin is one way to reach the connector).
+
+**Career comparison**:
+A preset group of players compared by whole career on the Compare page (The Big Four first). Two kinds of measure: the numbers (from every innings, such as average and how often a fifty becomes a hundred) and the ranking (from their hundreds on the reader's weighting). Each measure's leader is shown, and the verdict only states who leads on what.
+_Avoid_: rivalry, head-to-head (that is two innings).
