@@ -19,8 +19,9 @@ console.log(`connected to ${url} (${client.getServerVersion()?.name} ${client.ge
 if (client.getInstructions()) console.log(`instructions: ${client.getInstructions().slice(0, 90)}...`);
 
 const { tools } = await client.listTools();
-check(tools.length === 7, `seven tools offered: ${tools.map((t) => t.name).join(', ')}`);
+check(tools.length === 8, `eight tools offered: ${tools.map((t) => t.name).join(', ')}`);
 check(tools.every((t) => t.annotations?.readOnlyHint), 'every tool is marked read-only');
+check(tools.every((t) => t.annotations?.title), 'every tool has annotations.title');
 
 const call = async (name, args) => {
   const r = await client.callTool({ name, arguments: args });
@@ -28,6 +29,8 @@ const call = async (name, args) => {
 };
 const ask = await call('ask', { question: 'who has the better test hundred, ricky ponting or steve smith?' });
 check(!ask.error && ask.data.kind === 'compare' && ask.data.innings.length === 2, `ask: ${ask.data?.headline}`);
+const records = await call('batter_records', { sortBy: 'tonsOfConsequence', limit: 3 });
+check(!records.error && records.data.results.length === 3, `batter_records: ${records.data?.results.map((r) => `${r.batter} ${r.tonsOfConsequence}`).join(', ')}`);
 const rank = await call('rank_centuries', { preset: 'Patriot', limit: 3 });
 check(!rank.error && rank.data.results[0].country === 'Australia', `rank (Patriot): ${rank.data?.results.map((r) => `${r.player} ${r.runs}`).join(', ')}`);
 const one = await call('get_century', { player: 'Matt Renshaw', runs: 190 });
