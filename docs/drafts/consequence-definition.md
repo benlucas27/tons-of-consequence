@@ -70,6 +70,15 @@ Otherwise it is **"a good ton"**, and the first "no" says why (lost, dead rubber
 - **Planned page:** per batter, a breakdown of every century (match details and why it was or wasn't a ton of
   consequence), with counts, on the Tons of Consequence page.
 
+## How the rulings work (from the 126-entry review, 14 Oct 2026)
+
+- Near-misses were ruled one by one with the scorecard in front of us: 125 of 126 so far, 62 yes and 63 no.
+- **Other hundreds in the match are a consideration, not a rule.** A hundred counts for more when it is the only one in
+  the match, but a shared hundred can still be a ton of consequence (37 of the yes rulings had a team-mate's hundred).
+  A fixed "no if shared" rule agreed with the rulings only 68 times in 121, so it is shown as a fact on each innings and
+  weighed by judgement.
+- Much of it is feel, and the page says so. Each ruling carries a one-line reason; readers see the reason, not who decided.
+
 ## What it can and can't see
 
 - It needs the ball-by-ball record. Cricsheet is close to complete from about **2006**, patchy for 2001 to 2005, absent

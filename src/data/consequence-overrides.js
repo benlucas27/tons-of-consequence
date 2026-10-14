@@ -135,4 +135,8 @@ export const CONSEQUENCE_OVERRIDES = {
   "Virat Kohli|136|2019": { verdict: 'no' },
   "Virender Sehwag|109|2010": { verdict: 'no' },
   "WP Saha|104|2016": { verdict: 'no' },
+  "Ajinkya Rahane|112|2020": { verdict: 'yes', scenario: "Rescued the innings", note: "Came in in at 2-61, team 134 behind, made 34% of the team's 326 in a live series; India won by 8 wickets.", draft: true },
+  "Kumar Sangakkara|287|2006": { verdict: 'yes', scenario: "Carried the innings", note: "Came in in at 1-6, team 163 behind, made 38% of the team's 756 in a live series; Sri Lanka won by an innings and 153 runs.", draft: true },
+  "Marcus Trescothick|219|2003": { verdict: 'yes', scenario: "Carried the innings", note: "Came in in at 0-0, team 484 behind, made 36% of the team's 604 in a live series; England won by 9 wickets.", draft: true },
+  "Ajinkya Rahane|126|2015": { verdict: 'no' },
 };
