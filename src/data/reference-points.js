@@ -87,7 +87,7 @@ export const REFERENCE_POINTS = {
    "lost": 3
   },
   "measured": 33,
-  "tons": 9,
+  "tons": 5,
   "byTier": [
    9,
    6,
@@ -96,13 +96,13 @@ export const REFERENCE_POINTS = {
   ],
   "tonsByTier": [
    1,
-   2,
-   5,
-   1
+   1,
+   3,
+   0
   ],
   "away": 11,
   "home": 20,
-  "awayTons": 1
+  "awayTons": 0
  },
  "Alastair Cook|ENG": {
   "hundreds": 33,
@@ -191,7 +191,7 @@ export const REFERENCE_POINTS = {
    "lost": 0
   },
   "measured": 23,
-  "tons": 7,
+  "tons": 3,
   "byTier": [
    10,
    2,
@@ -199,14 +199,14 @@ export const REFERENCE_POINTS = {
    4
   ],
   "tonsByTier": [
-   4,
    2,
    1,
+   0,
    0
   ],
   "away": 13,
   "home": 8,
-  "awayTons": 5
+  "awayTons": 2
  },
  "Ricky Ponting|AUS": {
   "hundreds": 41,
@@ -217,7 +217,7 @@ export const REFERENCE_POINTS = {
    "lost": 1
   },
   "measured": 17,
-  "tons": 6,
+  "tons": 3,
   "byTier": [
    16,
    10,
@@ -226,13 +226,13 @@ export const REFERENCE_POINTS = {
   ],
   "tonsByTier": [
    0,
-   3,
+   2,
    1,
-   2
+   0
   ],
   "away": 6,
   "home": 11,
-  "awayTons": 3
+  "awayTons": 1
  },
  "Rahul Dravid|IND": {
   "hundreds": 36,
@@ -321,7 +321,7 @@ export const REFERENCE_POINTS = {
    "lost": 3
   },
   "measured": 21,
-  "tons": 5,
+  "tons": 4,
   "byTier": [
    16,
    9,
@@ -331,7 +331,7 @@ export const REFERENCE_POINTS = {
   "tonsByTier": [
    2,
    2,
-   1,
+   0,
    0
   ],
   "away": 6,
@@ -347,7 +347,7 @@ export const REFERENCE_POINTS = {
    "lost": 5
   },
   "measured": 24,
-  "tons": 7,
+  "tons": 3,
   "byTier": [
    13,
    6,
@@ -355,14 +355,14 @@ export const REFERENCE_POINTS = {
    4
   ],
   "tonsByTier": [
-   3,
    2,
+   0,
    1,
-   1
+   0
   ],
   "away": 10,
   "home": 4,
-  "awayTons": 4
+  "awayTons": 2
  },
  "Babar Azam|PAK": {
   "hundreds": 9,
@@ -399,7 +399,7 @@ export const REFERENCE_POINTS = {
    "lost": 4
   },
   "measured": 28,
-  "tons": 8,
+  "tons": 4,
   "byTier": [
    16,
    4,
@@ -407,14 +407,14 @@ export const REFERENCE_POINTS = {
    3
   ],
   "tonsByTier": [
-   6,
+   3,
    1,
-   1,
+   0,
    0
   ],
   "away": 10,
   "home": 16,
-  "awayTons": 4
+  "awayTons": 2
  },
  "AB de Villiers|SA": {
   "hundreds": 22,
@@ -425,7 +425,7 @@ export const REFERENCE_POINTS = {
    "lost": 1
   },
   "measured": 21,
-  "tons": 6,
+  "tons": 4,
   "byTier": [
    11,
    0,
@@ -433,9 +433,9 @@ export const REFERENCE_POINTS = {
    0
   ],
   "tonsByTier": [
-   5,
+   4,
    0,
-   1,
+   0,
    0
   ],
   "away": 7,
@@ -477,7 +477,7 @@ export const REFERENCE_POINTS = {
    "lost": 0
   },
   "measured": 12,
-  "tons": 6,
+  "tons": 5,
   "byTier": [
    8,
    1,
@@ -487,7 +487,7 @@ export const REFERENCE_POINTS = {
   "tonsByTier": [
    4,
    0,
-   2,
+   1,
    0
   ],
   "away": 0,
@@ -555,7 +555,7 @@ export const REFERENCE_POINTS = {
    "lost": 1
   },
   "measured": 23,
-  "tons": 6,
+  "tons": 4,
   "byTier": [
    10,
    5,
@@ -564,8 +564,8 @@ export const REFERENCE_POINTS = {
   ],
   "tonsByTier": [
    3,
-   2,
    1,
+   0,
    0
   ],
   "away": 8,
