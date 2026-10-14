@@ -60,7 +60,7 @@ for (const m of matches) {
   for (const h of inMatch) {
     const row = rowFor(h);
     if (!row) continue;
-    const v = withOverride(consequenceTest({ ...h, stakes: st?.stakes || 'single' }), row.name, row.runs, row.year);
+    const v = withOverride(consequenceTest({ ...h, stakes: st?.stakes || 'single' }), row.name, row.runs, row.year, row.id);
     out[row.id] = [v.passes ? 1 : 0, v.passes ? v.scenario : null, v.because];
     where[row.id] = wherePlayed(m, venueCounts, h.team);
     facts[row.id] = [h.position, h.inningsNo, h.ballsTo100, inMatch.filter((x) => x !== h && x.inningsNo === h.inningsNo).length, inMatch.length - 1];
