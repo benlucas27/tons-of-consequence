@@ -63,7 +63,7 @@ export default function ConnectPage() {
       </ul>
 
       <h2>What Claude can do with it</h2>
-      <dl className="tools">
+      <dl className="conn-tools">
         {TOOLS.map(([name, what]) => (
           <div key={name}><dt><code>{name}</code></dt><dd>{what}</dd></div>
         ))}
