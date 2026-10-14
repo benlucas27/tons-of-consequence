@@ -56,7 +56,12 @@ test('every preset comparison has figures that agree with the ranking dataset', 
       const career = CAREERS[`${p.name}|${p.country}`];
       assert.ok(career, `no career figures for ${p.name}: run node scripts/build-careers.mjs`);
       const inDataset = ALL.filter((c) => c.name === p.name && c.country === p.country).length;
-      assert.equal(career.hundreds, inDataset, `${p.name}: ${career.hundreds} hundreds in the archive but ${inDataset} in the dataset`);
+      if (career.partial) {
+        // a career that began before the archive is complete: fewer hundreds in the archive is expected, and it is flagged
+        assert.ok(career.hundreds < inDataset && career.datasetHundreds === inDataset, `${p.name}: partial flag does not match the dataset`);
+      } else {
+        assert.equal(career.hundreds, inDataset, `${p.name}: ${career.hundreds} hundreds in the archive but ${inDataset} in the dataset`);
+      }
       assert.ok(career.innings > career.notOuts && career.runs > 0 && career.matches > 0);
     }
   }

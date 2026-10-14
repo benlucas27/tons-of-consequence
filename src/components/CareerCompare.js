@@ -76,8 +76,13 @@ export default function CareerCompare({ set, order, bias }) {
         </div>
       </section>
 
+      {r.partials.length > 0 && (
+        <p className="src">
+          † Partial figures: ball-by-ball records are complete only from about 2006, so for {r.partials.map((x) => `${x.name} (${x.archive} of ${x.total} hundreds covered)`).join(', ')} the career numbers cover only part of the career. They are shown for context and never counted as leading. The ranking and &ldquo;what their hundreds did&rdquo; sections use every hundred.
+        </p>
+      )}
       <p className="src">
-        Career figures come from ball-by-ball records (Cricsheet) up to {r.asOf}. Each player&rsquo;s hundreds match the ranking&rsquo;s centuries exactly. The average is runs per dismissal, and a retired-hurt batter counts as not out.
+        Career figures come from ball-by-ball records (Cricsheet) up to {r.asOf}. Hundreds are checked against the ranking&rsquo;s centuries. The average is runs per dismissal, and a retired-hurt batter counts as not out.
         Where a player is lit gold, they lead on that measure.
       </p>
     </section>

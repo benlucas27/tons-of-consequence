@@ -103,5 +103,707 @@ export const REFERENCE_POINTS = {
   "away": 11,
   "home": 20,
   "awayTons": 1
+ },
+ "Alastair Cook|ENG": {
+  "hundreds": 33,
+  "results": {
+   "known": 33,
+   "won": 17,
+   "drawn": 11,
+   "lost": 5
+  },
+  "measured": 33,
+  "tons": 6,
+  "byTier": [
+   12,
+   5,
+   14,
+   2
+  ],
+  "tonsByTier": [
+   4,
+   1,
+   1,
+   0
+  ],
+  "away": 17,
+  "home": 15,
+  "awayTons": 4
+ },
+ "David Warner|AUS": {
+  "hundreds": 26,
+  "results": {
+   "known": 26,
+   "won": 18,
+   "drawn": 5,
+   "lost": 3
+  },
+  "measured": 26,
+  "tons": 4,
+  "byTier": [
+   7,
+   10,
+   7,
+   2
+  ],
+  "tonsByTier": [
+   2,
+   1,
+   1,
+   0
+  ],
+  "away": 5,
+  "home": 20,
+  "awayTons": 1
+ },
+ "Rohit Sharma|IND": {
+  "hundreds": 12,
+  "results": {
+   "known": 12,
+   "won": 12,
+   "drawn": 0,
+   "lost": 0
+  },
+  "measured": 12,
+  "tons": 4,
+  "byTier": [
+   5,
+   3,
+   4,
+   0
+  ],
+  "tonsByTier": [
+   2,
+   1,
+   1,
+   0
+  ],
+  "away": 2,
+  "home": 10,
+  "awayTons": 0
+ },
+ "Graeme Smith|SA": {
+  "hundreds": 27,
+  "results": {
+   "known": 23,
+   "won": 14,
+   "drawn": 9,
+   "lost": 0
+  },
+  "measured": 23,
+  "tons": 7,
+  "byTier": [
+   10,
+   2,
+   11,
+   4
+  ],
+  "tonsByTier": [
+   4,
+   2,
+   1,
+   0
+  ],
+  "away": 13,
+  "home": 8,
+  "awayTons": 5
+ },
+ "Ricky Ponting|AUS": {
+  "hundreds": 41,
+  "results": {
+   "known": 18,
+   "won": 13,
+   "drawn": 4,
+   "lost": 1
+  },
+  "measured": 17,
+  "tons": 6,
+  "byTier": [
+   16,
+   10,
+   13,
+   2
+  ],
+  "tonsByTier": [
+   0,
+   3,
+   1,
+   2
+  ],
+  "away": 6,
+  "home": 11,
+  "awayTons": 3
+ },
+ "Rahul Dravid|IND": {
+  "hundreds": 36,
+  "results": {
+   "known": 16,
+   "won": 7,
+   "drawn": 6,
+   "lost": 3
+  },
+  "measured": 16,
+  "tons": 2,
+  "byTier": [
+   9,
+   8,
+   13,
+   6
+  ],
+  "tonsByTier": [
+   0,
+   0,
+   2,
+   0
+  ],
+  "away": 9,
+  "home": 7,
+  "awayTons": 2
+ },
+ "Kumar Sangakkara|SL": {
+  "hundreds": 38,
+  "results": {
+   "known": 29,
+   "won": 12,
+   "drawn": 13,
+   "lost": 4
+  },
+  "measured": 29,
+  "tons": 7,
+  "byTier": [
+   9,
+   7,
+   13,
+   9
+  ],
+  "tonsByTier": [
+   2,
+   3,
+   2,
+   0
+  ],
+  "away": 11,
+  "home": 16,
+  "awayTons": 3
+ },
+ "Jacques Kallis|SA": {
+  "hundreds": 45,
+  "results": {
+   "known": 28,
+   "won": 14,
+   "drawn": 11,
+   "lost": 3
+  },
+  "measured": 28,
+  "tons": 2,
+  "byTier": [
+   20,
+   6,
+   15,
+   4
+  ],
+  "tonsByTier": [
+   0,
+   1,
+   1,
+   0
+  ],
+  "away": 12,
+  "home": 14,
+  "awayTons": 0
+ },
+ "Mahela Jayawardene|SL": {
+  "hundreds": 34,
+  "results": {
+   "known": 21,
+   "won": 11,
+   "drawn": 7,
+   "lost": 3
+  },
+  "measured": 21,
+  "tons": 5,
+  "byTier": [
+   16,
+   9,
+   3,
+   6
+  ],
+  "tonsByTier": [
+   2,
+   2,
+   1,
+   0
+  ],
+  "away": 6,
+  "home": 14,
+  "awayTons": 1
+ },
+ "Younis Khan|PAK": {
+  "hundreds": 34,
+  "results": {
+   "known": 24,
+   "won": 12,
+   "drawn": 7,
+   "lost": 5
+  },
+  "measured": 24,
+  "tons": 7,
+  "byTier": [
+   13,
+   6,
+   11,
+   4
+  ],
+  "tonsByTier": [
+   3,
+   2,
+   1,
+   1
+  ],
+  "away": 10,
+  "home": 4,
+  "awayTons": 4
+ },
+ "Babar Azam|PAK": {
+  "hundreds": 9,
+  "results": {
+   "known": 9,
+   "won": 4,
+   "drawn": 3,
+   "lost": 2
+  },
+  "measured": 9,
+  "tons": 2,
+  "byTier": [
+   3,
+   2,
+   3,
+   1
+  ],
+  "tonsByTier": [
+   1,
+   0,
+   1,
+   0
+  ],
+  "away": 2,
+  "home": 6,
+  "awayTons": 1
+ },
+ "Hashim Amla|SA": {
+  "hundreds": 28,
+  "results": {
+   "known": 28,
+   "won": 16,
+   "drawn": 8,
+   "lost": 4
+  },
+  "measured": 28,
+  "tons": 8,
+  "byTier": [
+   16,
+   4,
+   5,
+   3
+  ],
+  "tonsByTier": [
+   6,
+   1,
+   1,
+   0
+  ],
+  "away": 10,
+  "home": 16,
+  "awayTons": 4
+ },
+ "AB de Villiers|SA": {
+  "hundreds": 22,
+  "results": {
+   "known": 21,
+   "won": 16,
+   "drawn": 4,
+   "lost": 1
+  },
+  "measured": 21,
+  "tons": 6,
+  "byTier": [
+   11,
+   0,
+   11,
+   0
+  ],
+  "tonsByTier": [
+   5,
+   0,
+   1,
+   0
+  ],
+  "away": 7,
+  "home": 12,
+  "awayTons": 2
+ },
+ "Harry Brook|ENG": {
+  "hundreds": 10,
+  "results": {
+   "known": 10,
+   "won": 7,
+   "drawn": 0,
+   "lost": 3
+  },
+  "measured": 10,
+  "tons": 3,
+  "byTier": [
+   2,
+   3,
+   5,
+   0
+  ],
+  "tonsByTier": [
+   0,
+   2,
+   1,
+   0
+  ],
+  "away": 7,
+  "home": 3,
+  "awayTons": 3
+ },
+ "Travis Head|AUS": {
+  "hundreds": 12,
+  "results": {
+   "known": 12,
+   "won": 11,
+   "drawn": 1,
+   "lost": 0
+  },
+  "measured": 12,
+  "tons": 6,
+  "byTier": [
+   8,
+   1,
+   3,
+   0
+  ],
+  "tonsByTier": [
+   4,
+   0,
+   2,
+   0
+  ],
+  "away": 0,
+  "home": 10,
+  "awayTons": 0
+ },
+ "Marnus Labuschagne|AUS": {
+  "hundreds": 11,
+  "results": {
+   "known": 11,
+   "won": 8,
+   "drawn": 1,
+   "lost": 2
+  },
+  "measured": 11,
+  "tons": 1,
+  "byTier": [
+   3,
+   2,
+   6,
+   0
+  ],
+  "tonsByTier": [
+   1,
+   0,
+   0,
+   0
+  ],
+  "away": 2,
+  "home": 9,
+  "awayTons": 1
+ },
+ "Yashasvi Jaiswal|IND": {
+  "hundreds": 7,
+  "results": {
+   "known": 7,
+   "won": 6,
+   "drawn": 0,
+   "lost": 1
+  },
+  "measured": 7,
+  "tons": 4,
+  "byTier": [
+   5,
+   0,
+   2,
+   0
+  ],
+  "tonsByTier": [
+   3,
+   0,
+   1,
+   0
+  ],
+  "away": 4,
+  "home": 3,
+  "awayTons": 2
+ },
+ "Kevin Pietersen|ENG": {
+  "hundreds": 23,
+  "results": {
+   "known": 23,
+   "won": 11,
+   "drawn": 11,
+   "lost": 1
+  },
+  "measured": 23,
+  "tons": 6,
+  "byTier": [
+   10,
+   5,
+   8,
+   0
+  ],
+  "tonsByTier": [
+   3,
+   2,
+   1,
+   0
+  ],
+  "away": 8,
+  "home": 15,
+  "awayTons": 2
+ },
+ "Michael Clarke|AUS": {
+  "hundreds": 28,
+  "results": {
+   "known": 27,
+   "won": 16,
+   "drawn": 8,
+   "lost": 3
+  },
+  "measured": 27,
+  "tons": 4,
+  "byTier": [
+   14,
+   9,
+   5,
+   0
+  ],
+  "tonsByTier": [
+   1,
+   3,
+   0,
+   0
+  ],
+  "away": 10,
+  "home": 17,
+  "awayTons": 1
+ },
+ "Quinton de Kock|SA": {
+  "hundreds": 6,
+  "results": {
+   "known": 6,
+   "won": 5,
+   "drawn": 0,
+   "lost": 1
+  },
+  "measured": 6,
+  "tons": 1,
+  "byTier": [
+   3,
+   0,
+   3,
+   0
+  ],
+  "tonsByTier": [
+   0,
+   0,
+   1,
+   0
+  ],
+  "away": 3,
+  "home": 3,
+  "awayTons": 1
+ },
+ "Rishabh Pant|IND": {
+  "hundreds": 8,
+  "results": {
+   "known": 8,
+   "won": 2,
+   "drawn": 1,
+   "lost": 5
+  },
+  "measured": 8,
+  "tons": 1,
+  "byTier": [
+   6,
+   1,
+   0,
+   1
+  ],
+  "tonsByTier": [
+   1,
+   0,
+   0,
+   0
+  ],
+  "away": 6,
+  "home": 2,
+  "awayTons": 0
+ },
+ "Adam Gilchrist|AUS": {
+  "hundreds": 17,
+  "results": {
+   "known": 9,
+   "won": 7,
+   "drawn": 1,
+   "lost": 1
+  },
+  "measured": 7,
+  "tons": 1,
+  "byTier": [
+   5,
+   6,
+   4,
+   2
+  ],
+  "tonsByTier": [
+   0,
+   0,
+   0,
+   1
+  ],
+  "away": 3,
+  "home": 4,
+  "awayTons": 1
+ },
+ "BJ Watling|NZ": {
+  "hundreds": 8,
+  "results": {
+   "known": 8,
+   "won": 6,
+   "drawn": 2,
+   "lost": 0
+  },
+  "measured": 8,
+  "tons": 3,
+  "byTier": [
+   3,
+   0,
+   2,
+   3
+  ],
+  "tonsByTier": [
+   2,
+   0,
+   1,
+   0
+  ],
+  "away": 4,
+  "home": 4,
+  "awayTons": 1
+ },
+ "Jos Buttler|ENG": {
+  "hundreds": 2,
+  "results": {
+   "known": 2,
+   "won": 0,
+   "drawn": 1,
+   "lost": 1
+  },
+  "measured": 2,
+  "tons": 0,
+  "byTier": [
+   1,
+   0,
+   1,
+   0
+  ],
+  "tonsByTier": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "away": 0,
+  "home": 2,
+  "awayTons": 0
+ },
+ "Ben Stokes|ENG": {
+  "hundreds": 14,
+  "results": {
+   "known": 14,
+   "won": 6,
+   "drawn": 5,
+   "lost": 3
+  },
+  "measured": 14,
+  "tons": 3,
+  "byTier": [
+   6,
+   5,
+   3,
+   0
+  ],
+  "tonsByTier": [
+   1,
+   1,
+   1,
+   0
+  ],
+  "away": 5,
+  "home": 9,
+  "awayTons": 0
+ },
+ "Ben Duckett|ENG": {
+  "hundreds": 7,
+  "results": {
+   "known": 7,
+   "won": 4,
+   "drawn": 0,
+   "lost": 3
+  },
+  "measured": 7,
+  "tons": 1,
+  "byTier": [
+   2,
+   1,
+   2,
+   2
+  ],
+  "tonsByTier": [
+   1,
+   0,
+   0,
+   0
+  ],
+  "away": 3,
+  "home": 4,
+  "awayTons": 0
+ },
+ "Ollie Pope|ENG": {
+  "hundreds": 9,
+  "results": {
+   "known": 9,
+   "won": 8,
+   "drawn": 0,
+   "lost": 1
+  },
+  "measured": 9,
+  "tons": 1,
+  "byTier": [
+   2,
+   2,
+   3,
+   2
+  ],
+  "tonsByTier": [
+   1,
+   0,
+   0,
+   0
+  ],
+  "away": 3,
+  "home": 6,
+  "awayTons": 1
  }
 };

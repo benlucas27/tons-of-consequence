@@ -85,17 +85,22 @@ const REFERENCE = [
   { key: 'away', label: 'Hundreds away from home', get: (p) => (p.ref ? p.ref.away : null), fmt: (v, p) => `${v} of ${p.ref.home + p.ref.away}`, scored: false, note: 'Where we have the match record' },
 ];
 
-function buildRows(defs, players) {
+// Career figures for a player whose career began before ball-by-ball records are complete cover only part of it, so
+// they are shown with a dagger and never lead.
+const isPartial = (p) => Boolean(p.career.partial);
+
+function buildRows(defs, players, partialAware = false) {
   return defs.map((d) => {
     const values = players.map((p) => d.get(p));
-    const present = values.filter((v) => v != null);
+    const eligible = values.map((v, i) => (partialAware && isPartial(players[i]) ? null : v));
+    const present = eligible.filter((v) => v != null);
     let leaders = [];
     if (d.scored && present.length) {
       const best = d.better === 'low' ? Math.min(...present) : Math.max(...present);
-      leaders = values.map((v, i) => (v === best ? i : -1)).filter((i) => i >= 0);
+      leaders = eligible.map((v, i) => (v === best ? i : -1)).filter((i) => i >= 0);
       if (leaders.length === players.length) leaders = []; // an all-way tie has no leader
     }
-    return { key: d.key, label: d.label, phrase: d.phrase || d.label.toLowerCase(), note: d.note || null, scored: d.scored, better: d.better || null, values, display: values.map((v, i) => (v == null ? '-' : d.fmt(v, players[i]))), leaders };
+    return { key: d.key, label: d.label, phrase: d.phrase || d.label.toLowerCase(), note: d.note || null, scored: d.scored, better: d.better || null, values, display: values.map((v, i) => (v == null ? '-' : d.fmt(v, players[i]) + (partialAware && isPartial(players[i]) ? ' †' : ''))), leaders };
   });
 }
 
@@ -115,7 +120,7 @@ function describe(rows, players, section) {
 export function compareCareers(set, order, bias = null) {
   const ranked = rankAll(order, bias);
   const players = set.players.map((p) => profile(p, ranked));
-  const numbers = buildRows(NUMBERS, players);
+  const numbers = buildRows(NUMBERS, players, true);
   const ranking = buildRows(RANKING, players);
   const reference = buildRows(REFERENCE, players);
   const scored = [...numbers, ...ranking, ...reference].filter((r) => r.scored);
@@ -128,5 +133,6 @@ export function compareCareers(set, order, bias = null) {
     describe(reference.filter((r) => r.scored), players, 'On what their hundreds did'),
     top > 0 ? `Across all ${scored.length} measures, ${join(overall)} ${overall.length > 1 ? 'share the most leads' : 'leads on the most'} (${top}).` : '',
   ].filter(Boolean);
-  return { set, players, numbers, ranking, reference, leads, measures: scored.length, summary, asOf: CAREERS_AS_OF };
+  const partials = players.filter(isPartial).map((p) => ({ name: p.name, archive: p.career.hundreds, total: p.career.datasetHundreds }));
+  return { set, players, partials, numbers, ranking, reference, leads, measures: scored.length, summary, asOf: CAREERS_AS_OF };
 }

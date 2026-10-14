@@ -50,11 +50,15 @@ for (const p of players) {
   const c = careers[p.cricsheet];
   if (!c) { console.log(`MISSING ${p.name}: no matches found for id ${p.cricsheet}`); ok = false; continue; }
   const inDataset = ALL.filter((x) => x.name === p.name && x.country === p.country).length;
-  const agree = inDataset === c.hundreds;
+  // Cricsheet is complete only from about 2006 (patchy 2001-05, none before), so a career that starts earlier is partial:
+  // the archive may hold fewer hundreds than the dataset, never more.
+  const earliest = Math.min(...ALL.filter((x) => x.name === p.name && x.country === p.country).map((x) => x.year));
+  const partial = earliest < 2006 && c.hundreds < inDataset;
+  const agree = inDataset === c.hundreds || partial;
   if (!agree) ok = false;
   const d = derived(c);
-  console.log(`${agree ? 'ok  ' : 'FAIL'} ${p.name.padEnd(16)} ${c.matches} Tests, ${c.innings} inns, ${c.runs} runs, avg ${d.average}, ${c.hundreds} hundreds (dataset ${inDataset}), ${c.fifties} fifties, converts ${d.conversion}%`);
-  result[`${p.name}|${p.country}`] = { ...c, name: p.name };
+  console.log(`${agree ? (partial ? 'part' : 'ok  ') : 'FAIL'} ${p.name.padEnd(16)} ${c.matches} Tests, ${c.innings} inns, ${c.runs} runs, avg ${d.average}, ${c.hundreds} hundreds (dataset ${inDataset}), ${c.fifties} fifties, converts ${d.conversion}%`);
+  result[`${p.name}|${p.country}`] = { ...c, name: p.name, ...(partial ? { partial: true, datasetHundreds: inDataset } : {}) };
 }
 console.log(`${matches} men's Tests read; archive runs to ${latest}`);
 if (!ok) { console.error('The figures disagree with the dataset, so nothing was written.'); process.exit(1); }
