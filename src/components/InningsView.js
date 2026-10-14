@@ -11,6 +11,7 @@ import { fmt1, ord, runsText, RESULT_LABEL } from '@/lib/format';
 import { WeightBar, Legend } from './WeightPanel';
 import { ResultTag } from './RankRow';
 import VideoCard from './VideoCard';
+import HelloSportMoments from './HelloSportMoments';
 import BiasNote from './BiasNote';
 import { SITE_URL } from '@/lib/site';
 
@@ -67,6 +68,7 @@ export default function InningsView({ id }) {
           </div>
 
           <VideoCard id={c.id} name={c.name} />
+          <HelloSportMoments inningsId={c.id} />
 
           {c.facts && (
             <section>

@@ -16,6 +16,7 @@ import { calcVolatility, volatilityTier } from './volatility.js';
 import { answer, compareInnings, searchInnings, EXAMPLE_QUESTIONS } from './ask.js';
 import { COMPARE_SETS, setById, compareCareers, CAREERS_AS_OF } from './careerCompare.js';
 import { videoFor, watchUrl } from './videos.js';
+import { momentsFor, clock, watchUrl as podcastUrl, episodeLabel } from './helloSport.js';
 import { SITE_URL } from './site.js';
 
 const LEVER_KEYS = LEVERS.map((l) => l.key);
@@ -226,6 +227,7 @@ export function createServer() {
       }),
       divisiveness: { score: vol.volatility, label: volatilityTier(vol.volatility).label, scoreRange: [vol.min, vol.max] },
       video: video ? { description: video.note, channel: video.channel, minutes: video.mins, covers: video.kind === 'match' ? 'the whole Test' : 'this innings', url: watchUrl(video.yt) } : null,
+      helloSport: momentsFor(c.id).map((m) => ({ episode: episodeLabel(m), startsAt: clock(m.start), url: podcastUrl(m.youtubeId, m.start), note: m.note })),
       weighting: weightingNote(w.order, w.bias),
     });
   });
