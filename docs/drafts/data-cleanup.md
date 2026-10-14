@@ -4,7 +4,7 @@ From `node scripts/audit-archive.mjs <folder>`, which compares the ranking datas
 (895 men's Tests, 2001 to September 2026). It reads files only and changes nothing. Do this before the Consequence Test
 is run on the whole database, because the test joins the two sources by player, runs, year and opponent.
 
-## 1. Names that do not match (23 hundreds)
+## 1. Names that do not match (23 hundreds, including three Agha Salman)
 The archive spells some names differently from the dataset, so the join misses them. All are the same people:
 
 | Archive | Dataset |
@@ -22,8 +22,8 @@ The archive spells some names differently from the dataset, so the join misses t
 Store that ID on every row, then one rename can never break a join again.
 
 ## 2. A century missing from the dataset (at least 1)
-Ross Taylor's **154\*** v England, Napier, March 2008 is in the archive but not in the dataset (the dataset has his 120 at
-Hamilton in the same series). The original list is therefore not guaranteed complete.
+Ross Taylor's **154\*** v England, Old Trafford, May 2008 is in the archive but not in the dataset (the dataset has his 120
+at Hamilton earlier the same year). The original list is therefore not guaranteed complete.
 **Fix:** run the same comparison for the whole archive period and add what is missing. Pre-2001 needs a second source.
 
 ## 3. Results that disagree (4 of 1,715)

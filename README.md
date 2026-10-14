@@ -73,6 +73,13 @@ New centuries come from [Cricsheet](https://cricsheet.org)'s open ball-by-ball d
   a Test still under way) has to be added by hand, with its match notes checked against reports.
 - `scripts/backfill-results.mjs` fills in match results for older rows where Cricsheet can match them.
 
+- **Monthly cleanup:** the same workflow compares the dataset with the ball-by-ball archive
+  (`scripts/audit-archive.mjs`) and files or refreshes one GitHub issue labelled `data-audit` listing what needs a
+  person: names spelled differently in the two sources, centuries that look missing, and match results that disagree.
+  It closes the issue when the list is empty. It never blocks the update. A scheduled Claude task works through the issue
+  on a branch each month (it never pushes). Cricsheet withholds Afghanistan men's Tests by policy, so new Afghan
+  centuries have to be added by hand. See `docs/drafts/data-cleanup.md`.
+
 **A refresh only ever covers new games.** It looks back over the last couple of months, adds
 centuries from games the site does not have yet, and settles the result of any game that was still
 being played. It never reworks historical innings. (`add-new-centuries.mjs` refuses a start date

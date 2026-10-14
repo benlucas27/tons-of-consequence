@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: monthly-update
@@ -31,6 +32,29 @@ jobs:
 
       - name: Refresh career figures for the preset comparisons
         run: node scripts/build-careers.mjs
+
+      # Cleanup: compare the dataset with the ball-by-ball archive and report what needs a person's attention.
+      # This never blocks the update; it files (or refreshes) one open issue labelled "data-audit".
+      - name: Audit the data against the archive
+        id: audit
+        continue-on-error: true
+        run: node scripts/audit-archive.mjs --download --markdown > audit.md
+
+      - name: Report the audit
+        if: steps.audit.outcome == 'success'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          N=$(sed -n 's/^<!-- findings: \([0-9]*\) -->.*/\1/p' audit.md | head -1)
+          gh label create data-audit --description "Monthly data audit" --color 0e8a16 2>/dev/null || true
+          EXISTING=$(gh issue list --label data-audit --state open --json number --jq '.[0].number // empty')
+          if [ "${N:-0}" -gt 0 ]; then
+            if [ -n "$EXISTING" ]; then gh issue edit "$EXISTING" --body-file audit.md
+            else gh issue create --title "Monthly data audit: things to fix" --label data-audit --body-file audit.md; fi
+          elif [ -n "$EXISTING" ]; then
+            gh issue close "$EXISTING" --comment "All clear in this month's audit."
+          fi
 
       # Nothing is published unless the data checks and the build both pass.
       - run: npm test
