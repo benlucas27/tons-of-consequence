@@ -139,4 +139,5 @@ export const CONSEQUENCE_OVERRIDES = {
   "Kumar Sangakkara|287|2006": { verdict: 'yes', scenario: "Carried the innings", note: "Came in at 1-6, team 163 behind, made 38% of the team's 756 in a live series; Sri Lanka won by an innings and 153 runs.", draft: true },
   "Marcus Trescothick|219|2003": { verdict: 'yes', scenario: "Carried the innings", note: "Came in at 0-0, team 484 behind, made 36% of the team's 604 in a live series; England won by 9 wickets.", draft: true },
   "Ajinkya Rahane|126|2015": { verdict: 'no' },
+  "Kevin Pietersen|226|2007": { verdict: 'no' },
 };
