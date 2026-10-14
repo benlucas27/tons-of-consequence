@@ -564,3 +564,22 @@ body[data-door="1"] .s-bar { display: none; }
 .hs-episode .hs-origin { margin-top: 12px; }
 .hs-tons { font: 500 14px/1.5 var(--ui); color: var(--ink-3); margin: 0 0 6px; }
 .hs-tons a { color: var(--sky); }
+.don-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 18px 0; }
+.don-stats div { border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; background: var(--panel); }
+.don-stats b { display: block; font: 700 34px/1 var(--display); text-transform: uppercase; }
+.don-stats span { font: 400 14px/1.4 var(--ui); color: var(--ink-3); }
+.don-rates { width: 100%; border-collapse: collapse; font: 500 15px var(--ui); }
+.don-rates th, .don-rates td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line-soft); }
+.don-list { list-style: none; padding: 0; display: grid; gap: 0; }
+.don-card { padding: 20px 0; border-top: 1px solid var(--line-soft); }
+.don-card h3 { font: 700 28px/1.1 var(--display); text-transform: uppercase; margin: 0 0 4px; }
+.don-card h3 small { font: 500 14px var(--ui); color: var(--ink-3); text-transform: none; }
+.don-meta { font: 500 13px/1.5 var(--ui); color: var(--ink-3); margin: 0 0 8px; }
+.don-verdict { margin: 0 0 8px; font: 400 16px/1.5 var(--ui); }
+.don-v-yes b { color: var(--sky); }
+.don-story { font: 400 17px/1.55 var(--prose); color: var(--ink-2); max-width: 64ch; margin: 0 0 10px; }
+.don-card-tab { width: 100%; border-collapse: collapse; font: 400 13px var(--ui); }
+.don-card-tab td { padding: 4px 8px; border-bottom: 1px solid var(--line-soft); color: var(--ink-3); vertical-align: top; }
+.don-card-tab tr.mine td { color: var(--ink); background: var(--panel-2); }
+.don-src { font: 400 12px/1.6 var(--ui); color: var(--ink-3); margin: 8px 0 0; }
+.don-src a { color: var(--sky); }

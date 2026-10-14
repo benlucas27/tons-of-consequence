@@ -8,6 +8,7 @@ const NAV = [
   { href: '/', label: 'Rankings' },
   { href: '/search', label: 'Search' },
   { href: '/compare', label: 'Compare' },
+  { href: '/the-don', label: 'The Don' },
   { href: '/?view=divisive', label: 'Most divisive' },
   { href: '/quiz', label: 'Pub Test' },
   { href: '/connect', label: 'Connect to Claude' },
