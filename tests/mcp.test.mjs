@@ -19,13 +19,14 @@ const call = async (client, name, args = {}) => {
   return { isError: Boolean(res.isError), body, data: res.isError ? null : JSON.parse(body) };
 };
 
-test('the connector offers seven read-only tools', async () => {
+test('the connector offers eight read-only tools', async () => {
   const client = await connect();
   const { tools } = await client.listTools();
-  assert.deepEqual(tools.map((t) => t.name).sort(), ['ask', 'compare_careers', 'compare_centuries', 'get_century', 'list_options', 'most_divisive', 'rank_centuries']);
+  assert.deepEqual(tools.map((t) => t.name).sort(), ['ask', 'batter_records', 'compare_careers', 'compare_centuries', 'get_century', 'list_options', 'most_divisive', 'rank_centuries']);
   for (const t of tools) {
     assert.equal(t.annotations?.readOnlyHint, true, `${t.name} must be read-only`);
     assert.ok(t.description.length > 40);
+    assert.ok(t.annotations?.title, `${t.name} needs annotations.title`);
   }
 });
 
@@ -125,4 +126,20 @@ test('compare_careers gives the Big Four numbers, ranking and leaders', async ()
   assert.equal(data.bestInnings['Kane Williamson'].length, 3);
   const patriot = (await call(client, 'compare_careers', { preset: 'Patriot' })).data;
   assert.match(patriot.weighting.australianBonus, /\+5/);
+});
+
+test('batter_records answers the aggregate questions', async () => {
+  const client = await connect();
+  const don = (await call(client, 'batter_records', { batter: 'Don Bradman' })).data.results[0];
+  assert.equal(don.hundreds, 29);
+  assert.equal(don.tonsOfConsequence, 12);
+  assert.deepEqual([don.results.won, don.results.drawn, don.results.lost], [23, 4, 2]);
+  const top = (await call(client, 'batter_records', { sortBy: 'tonsOfConsequence', limit: 3 })).data.results;
+  assert.ok(top[0].tonsOfConsequence >= top[1].tonsOfConsequence);
+  const strong = (await call(client, 'batter_records', { oppositionTier: 1, limit: 5 })).data;
+  assert.equal(strong.results.length, 5);
+  const away = (await call(client, 'batter_records', { where: 'away', batter: 'Steve Smith' })).data.results[0];
+  assert.ok(away.hundreds > 5);
+  const bad = await call(client, 'batter_records', { batter: 'Nobody Atall' });
+  assert.equal(bad.isError, true);
 });

@@ -18,7 +18,7 @@ import { COMPARE_SETS, setById, compareCareers, CAREERS_AS_OF } from './careerCo
 import { videoFor, watchUrl } from './videos.js';
 import { momentsFor, clock, watchUrl as podcastUrl, episodeLabel } from './helloSport.js';
 import { SITE_URL } from './site.js';
-import { verdictOf, wherePlayed } from './consequence.js';
+import { verdictOf, wherePlayed, BATTERS } from './consequence.js';
 import { tierOfOpponent, tierName, WHERE_LABEL } from './matchFacts.js';
 
 const LEVER_KEYS = LEVERS.map((l) => l.key);
@@ -36,6 +36,7 @@ Link to an innings with the url field when you mention it. For an open question 
 const text = (value) => ({ content: [{ type: 'text', text: typeof value === 'string' ? value : JSON.stringify(value) }] });
 const problem = (message) => ({ isError: true, content: [{ type: 'text', text: message }] });
 const READ_ONLY = { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false };
+const readOnly = (title) => ({ ...READ_ONLY, title });
 
 const weightingShape = {
   preset: z.enum(PRESET_NAMES).optional().describe(`Which point of view to score on. One of: ${PRESET_NAMES.join(', ')}. Default if omitted.`),
@@ -109,7 +110,7 @@ export function createServer() {
     title: 'Ask a question about Test centuries',
     description: 'Answer a plain-English question about Test centuries using the ranking, for example "who has the better hundred, Ponting or Smith?", "best centuries by India since 2010" or "most clutch hundreds in a lost Test". It understands players, countries, grounds, years, scores and what the reader cares about, and it reports how it understood the question. Try this first for open questions.',
     inputSchema: { question: z.string().min(2).max(400), ...weightingShape },
-    annotations: READ_ONLY,
+    annotations: readOnly('Ask a question about Test centuries'),
   }, async ({ question, preset, order, australianBonus }) => {
     const w = resolveWeighting({ preset, order, australianBonus });
     if (w.error) return problem(w.error);
@@ -160,7 +161,7 @@ export function createServer() {
       limit: z.number().int().min(1).max(50).default(10),
       offset: z.number().int().min(0).default(0),
     },
-    annotations: READ_ONLY,
+    annotations: readOnly('Rank Test centuries'),
   }, async (args) => {
     const w = resolveWeighting(args);
     if (w.error) return problem(w.error);
@@ -204,7 +205,7 @@ export function createServer() {
       runs: z.number().int().optional(),
       ...weightingShape,
     },
-    annotations: READ_ONLY,
+    annotations: readOnly('Get one innings in full'),
   }, async (args) => {
     const w = resolveWeighting(args);
     if (w.error) return problem(w.error);
@@ -237,6 +238,70 @@ export function createServer() {
     });
   });
 
+
+  server.registerTool('batter_records', {
+    title: 'Batter records and leaderboards',
+    description: 'Count and rank batters by their Test hundreds, with filters, for questions like "who has the most hundreds against strong opposition?", "most hundreds away from home", "who has the most tons of consequence?" or "how often does Australia win when Smith scores a hundred?". Each row gives the hundreds that match, how many were tons of consequence, and the team results (won, drawn, lost, win rate) where the result is known. Give a batter for one record, or leave it out for a leaderboard. Opposition tiers: 1 England, Australia, India; 2 New Zealand, South Africa; 3 Sri Lanka, West Indies, Pakistan; 4 everyone else. Where it was played, and tons of consequence, are known only for hundreds with a match record (mostly 2006 on, plus Bradman).',
+    inputSchema: {
+      batter: z.string().optional().describe('A batter, such as "Steve Smith". Omit for a leaderboard.'),
+      opposition: z.string().optional().describe('Only hundreds against this team, such as "Australia".'),
+      oppositionTier: z.number().int().min(1).max(4).optional().describe('Only hundreds against this tier of opposition (1 is the top tier).'),
+      where: z.enum(['home', 'away', 'neutral']).optional().describe('Only hundreds at home, away or on neutral ground.'),
+      result: z.enum(['win', 'draw', 'loss']).optional().describe('Only hundreds in matches the batter’s side won, drew or lost.'),
+      tonOfConsequence: z.boolean().optional().describe('true: only tons of consequence. false: only good tons that were not.'),
+      since: z.number().int().optional().describe('From this year.'),
+      until: z.number().int().optional().describe('Up to this year.'),
+      country: z.string().optional().describe('Batting side, code or name.'),
+      sortBy: z.enum(['hundreds', 'tonsOfConsequence', 'winRate']).default('hundreds'),
+      limit: z.number().int().min(1).max(50).default(10),
+    },
+    annotations: readOnly('Batter records and leaderboards'),
+  }, async ({ batter, opposition, oppositionTier, where, result, tonOfConsequence, since, until, country, sortBy, limit }) => {
+    const cc = country ? countryCode(country) : null;
+    if (country && !cc) return problem(`Unknown country "${country}".`);
+    const wantWhere = where ? { home: 'H', away: 'A', neutral: 'N' }[where] : null;
+    const needle = batter ? batter.toLowerCase().trim() : null;
+    const people = BATTERS.filter((b) => !needle || b.name.toLowerCase() === needle || b.name.toLowerCase().includes(needle));
+    if (batter && people.length === 0) return problem(`No batter matching "${batter}".`);
+    const rows = [];
+    for (const b of people) {
+      const matching = b.innings.filter((c) => {
+        if (cc && c.country !== cc) return false;
+        if (opposition && c.opponent.toLowerCase() !== opposition.toLowerCase()) return false;
+        if (oppositionTier && tierOfOpponent(c.opponent) !== oppositionTier) return false;
+        if (since != null && c.year < since) return false;
+        if (until != null && c.year > until) return false;
+        if (wantWhere && wherePlayed(c.id) !== wantWhere) return false;
+        if (result && c.matchResult !== result) return false;
+        if (tonOfConsequence != null) { const v = verdictOf(c.id); if (!v || v.passes !== tonOfConsequence) return false; }
+        return true;
+      });
+      if (!matching.length) continue;
+      const known = matching.filter((c) => ['win', 'draw', 'loss'].includes(c.matchResult));
+      const won = known.filter((c) => c.matchResult === 'win').length;
+      const measured = matching.filter((c) => verdictOf(c.id));
+      rows.push({
+        batter: b.name,
+        country: matching[0].country,
+        hundreds: matching.length,
+        tonsOfConsequence: measured.filter((c) => verdictOf(c.id).passes).length,
+        measuredForConsequence: measured.length,
+        results: { known: known.length, won, drawn: known.filter((c) => c.matchResult === 'draw').length, lost: known.filter((c) => c.matchResult === 'loss').length },
+        winRate: known.length >= 5 ? Math.round((100 * won) / known.length) : null,
+        url: `${SITE_URL}/tons-of-consequence/${b.slug}`,
+      });
+    }
+    const key = { hundreds: (r) => r.hundreds, tonsOfConsequence: (r) => r.tonsOfConsequence, winRate: (r) => r.winRate ?? -1 }[sortBy || 'hundreds'];
+    rows.sort((a, b) => key(b) - key(a) || b.hundreds - a.hundreds);
+    return text({
+      note: 'Counts cover hundreds in the database. Tons of consequence and where it was played are only known where we have a match record, so check measuredForConsequence. A win rate needs at least five known results.',
+      filters: { batter, opposition, oppositionTier, where, result, tonOfConsequence, since, until, country },
+      results: rows.slice(0, limit ?? 10),
+      shown: Math.min(rows.length, limit ?? 10),
+      matchingBatters: rows.length,
+    });
+  });
+
   server.registerTool('compare_centuries', {
     title: 'Compare innings head to head',
     description: 'Compare two or three innings under a weighting and get a written verdict on which wins and why, plus whether the verdict holds under every preset. Give ids, or short names like "Lara 153" or "Stokes 135 2019".',
@@ -245,7 +310,7 @@ export function createServer() {
       innings: z.array(z.string().min(2)).max(3).optional().describe('Short descriptions such as "Lara 153" or "Ponting 156 2005"'),
       ...weightingShape,
     },
-    annotations: READ_ONLY,
+    annotations: readOnly('Compare innings head to head'),
   }, async ({ ids, innings, preset, order, australianBonus }) => {
     const w = resolveWeighting({ preset, order, australianBonus });
     if (w.error) return problem(w.error);
@@ -270,7 +335,7 @@ export function createServer() {
     title: 'Compare whole careers',
     description: `Compare whole Test careers side by side for a preset group of players. Gives the numbers from every innings (runs, average, strike rate, hundreds, fifties, how often a fifty becomes a hundred, innings per hundred) and how their hundreds rank on the weighting, with who leads on each measure. Presets: ${COMPARE_SETS.map((s) => `${s.id} (${s.name}: ${s.players.map((p) => p.name).join(', ')})`).join('; ')}.`,
     inputSchema: { set: z.enum(COMPARE_SETS.map((s) => s.id)).default(COMPARE_SETS[0].id), ...weightingShape },
-    annotations: READ_ONLY,
+    annotations: readOnly('Compare whole careers'),
   }, async ({ set, preset, order, australianBonus }) => {
     const w = resolveWeighting({ preset, order, australianBonus });
     if (w.error) return problem(w.error);
@@ -298,7 +363,7 @@ export function createServer() {
       minRuns: z.number().int().optional(),
       limit: z.number().int().min(1).max(30).default(10),
     },
-    annotations: READ_ONLY,
+    annotations: readOnly('Most divisive innings'),
   }, async ({ country, era, minRuns, limit }) => {
     const cc = country ? countryCode(country) : null;
     if (country && !cc) return problem(`Unknown country "${country}".`);
@@ -319,7 +384,7 @@ export function createServer() {
     title: 'How the model works',
     description: 'Explains the model: the six criteria, how a weighting works, the five presets (and the Australian bonus), the tiers, and the valid filter values. Call this if you are unsure what to pass to another tool.',
     inputSchema: {},
-    annotations: READ_ONLY,
+    annotations: readOnly('How the model works'),
   }, async () => text({
     about: `An unofficial ranking of ${TOTAL.toLocaleString()} Test centuries. A weighting is an order of the six criteria: ${RANK_WEIGHTS.join(', ')} percent from first to last.`,
     site: SITE_URL,
