@@ -1,50 +1,72 @@
 import Link from 'next/link';
-import { MOMENTS, ORIGIN, episodeLabel, clock, watchUrl } from '@/lib/helloSport';
-import { BY_ID, inningsPath, TOTAL } from '@/lib/dataset';
+import { MOMENTS, EPISODES, ORIGIN, episodeLabel, clock, watchUrl } from '@/lib/helloSport';
+import { BY_ID, inningsPath } from '@/lib/dataset';
 import { runsText } from '@/lib/format';
 
 export const metadata = {
-  title: 'Hello Sport on the innings',
-  description: 'Every moment the Hello Sport hosts talk about a Test innings, tagged to the innings and timestamped, plus where "tons of consequence" came from.',
+  title: 'Hello Sport cricket chat: an archive',
+  description: 'An archive of the moments the Hello Sport hosts talk about Test hundreds and tons of consequence, timestamped so you can hear them, and tagged to the innings.',
 };
 
-const KIND = { innings: 'Innings', historic: 'Older innings, mentioned', career: 'Career', concept: 'The idea' };
+const KIND = { innings: 'Innings', historic: 'Older innings, mentioned', career: 'Career', concept: 'Tons of consequence' };
+
+/** The moments grouped by episode, newest episode first, each group in the order the hosts get to them. */
+function byEpisode() {
+  const groups = new Map();
+  for (const m of MOMENTS) {
+    if (!groups.has(m.youtubeId)) groups.set(m.youtubeId, { youtubeId: m.youtubeId, date: m.date, moments: [] });
+    // the episode that has its own timestamped list below doesn't also need the one-line concept row
+    if (m.type === 'concept' && m.youtubeId === ORIGIN.youtubeId) continue;
+    groups.get(m.youtubeId).moments.push(m);
+  }
+  const list = [...groups.values()];
+  list.forEach((g) => g.moments.sort((a, b) => a.start - b.start));
+  return list.sort((a, b) => b.date.localeCompare(a.date));
+}
 
 export default function HelloSportPage() {
-  const sorted = [...MOMENTS].sort((a, b) => b.date.localeCompare(a.date) || a.start - b.start);
+  const groups = byEpisode();
   return (
     <article className="prose hs-page">
-      <h1>Hello Sport on the innings</h1>
-      <p className="lede">The Hello Sport hosts talk about Test innings all the time. This page collects the moments, tagged to the innings in Tons of Consequence and timestamped, so you can hear what they said.</p>
-      <p className="conn-note">Independent and unofficial: not made or endorsed by Hello Sport. Scores shown are from our database of {TOTAL.toLocaleString()} Test hundreds. This is a work in progress: more episodes are being added.</p>
+      <h1>Hello Sport cricket chat: an archive</h1>
+      <p className="lede">An archive of the moments the Hello Sport hosts talk about Test hundreds and tons of consequence. Each one has the timestamp, so you can hear what they said, and is tagged to the innings in Tons of Consequence where there is one.</p>
+      <p className="conn-note">Independent and unofficial: not made or endorsed by Hello Sport. Scores shown are from our own database, not from the episodes. {MOMENTS.length} moments from {groups.length} episodes so far, with more being added.</p>
 
-      <h2>Where &ldquo;tons of consequence&rdquo; came from</h2>
-      <p>On Hello Sport {ORIGIN.episode}{ORIGIN.published ? `, published ${ORIGIN.published}` : ''}, the hosts asked a question: is every hundred a ton <em>of consequence</em>? A hundred made under zero pressure is a good ton, but not one that mattered to the match. They asked for a formula that could tell the two apart. That is what this site is trying to answer.</p>
-      <ul className="hs-origin">
-        {ORIGIN.points.map((p) => (
-          <li key={p.start}>
-            <a href={watchUrl(ORIGIN.youtubeId, p.start)} target="_blank" rel="noopener noreferrer">{clock(p.start)}{p.end ? ` to ${clock(p.end)}` : ''}</a>
-            <span>{p.text}</span>
-          </li>
-        ))}
-      </ul>
-
-      <h2>Every moment so far</h2>
-      <ul className="hs-all">
-        {sorted.map((m) => {
-          const c = m.inningsId ? BY_ID.get(m.inningsId) : null;
-          return (
-            <li key={`${m.youtubeId}-${m.start}-${m.player}`}>
-              <div className="hs-when">
-                <b>{c ? <Link href={inningsPath(c)}>{c.name} {runsText(c)}</Link> : m.player}</b>
-                <span>{c ? `v ${c.opponent}, ${c.venue}, ${c.year}` : (KIND[m.type] || '')}</span>
-              </div>
-              <p>{m.note}</p>
-              <a className="link-btn" href={watchUrl(m.youtubeId, m.start)} target="_blank" rel="noopener noreferrer">{episodeLabel(m)}, from {clock(m.start)}</a>
-            </li>
-          );
-        })}
-      </ul>
+      {groups.map((g) => {
+        const ep = EPISODES[g.youtubeId];
+        const label = episodeLabel(g.moments[0]);
+        const extra = g.youtubeId === ORIGIN.youtubeId ? ORIGIN.points : [];
+        return (
+          <section key={g.youtubeId} className="hs-episode" aria-label={label}>
+            <h2>{label}</h2>
+            <ul className="hs-all">
+              {g.moments.map((m) => {
+                const c = m.inningsId ? BY_ID.get(m.inningsId) : null;
+                return (
+                  <li key={`${m.start}-${m.player}`}>
+                    <div className="hs-when">
+                      <b>{c ? <Link href={inningsPath(c)}>{c.name} {runsText(c)}</Link> : m.type === 'concept' ? KIND.concept : m.player}</b>
+                      <span>{c ? `v ${c.opponent}, ${c.venue}, ${c.year}` : (KIND[m.type] || '')}</span>
+                    </div>
+                    <p>{m.note}</p>
+                    <a className="link-btn" href={watchUrl(m.youtubeId, m.start)} target="_blank" rel="noopener noreferrer">Listen from {clock(m.start)}</a>
+                  </li>
+                );
+              })}
+            </ul>
+            {extra.length > 0 && (
+              <ul className="hs-origin" aria-label="More from this episode">
+                {extra.map((p) => (
+                  <li key={p.start}>
+                    <a href={watchUrl(ep?.youtubeId || g.youtubeId, p.start)} target="_blank" rel="noopener noreferrer">{clock(p.start)}{p.end ? ` to ${clock(p.end)}` : ''}</a>
+                    <span>{p.text}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
+        );
+      })}
     </article>
   );
 }

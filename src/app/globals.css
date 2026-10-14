@@ -559,3 +559,6 @@ body[data-door="1"] .s-bar { display: none; }
 .skel { background: linear-gradient(90deg, var(--panel), var(--panel-2), var(--panel)); background-size: 200% 100%; animation: skel 1.4s infinite; border-radius: 8px; }
 @keyframes skel { to { background-position: -200% 0; } }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+.hs-episode { margin-top: 28px; }
+.hs-episode h2 { font: 700 22px/1.2 var(--display); text-transform: uppercase; margin: 0 0 4px; }
+.hs-episode .hs-origin { margin-top: 12px; }
