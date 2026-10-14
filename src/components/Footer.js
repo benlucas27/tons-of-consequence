@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="foot">
       <span>Tons of Consequence. Every Test century, scored by what it meant.</span>
       <span>
-        Data from ESPNcricinfo Statsguru and <a href="https://cricsheet.org">Cricsheet</a>. <Link href="/about">How it works</Link> · <Link href="/connect">Connect to Claude</Link> · <Link href="/hello-sport">Hello Sport</Link> · <Link href="/privacy">Privacy</Link>
+        Data from ESPNcricinfo Statsguru and <a href="https://cricsheet.org">Cricsheet</a>. <Link href="/about">How it works</Link> · <Link href="/connect">Connect to Claude</Link> · <Link href="/hello-sport">Hello Cricket</Link> · <Link href="/privacy">Privacy</Link>
       </span>
     </footer>
   );

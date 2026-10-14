@@ -4,7 +4,7 @@ import { BY_ID, inningsPath } from '@/lib/dataset';
 import { runsText } from '@/lib/format';
 
 export const metadata = {
-  title: 'Hello Sport Cricketing Archive',
+  title: 'Hello Cricket',
   description: 'An archive of the moments the Hello Sport hosts talk about Test hundreds and tons of consequence, timestamped so you can hear them, and tagged to the innings.',
 };
 
@@ -28,8 +28,8 @@ export default function HelloSportPage() {
   const groups = byEpisode();
   return (
     <article className="prose hs-page">
-      <h1>Hello Sport Cricketing Archive</h1>
-      <p className="lede">An archive of the moments the Hello Sport hosts talk about Test hundreds and tons of consequence. Each one has the timestamp, so you can hear what they said, and is tagged to the innings in Tons of Consequence where there is one.</p>
+      <h1>Hello Cricket</h1>
+      <p className="lede">A Hello Sport cricketing archive: the moments the Hello Sport hosts talk about Test hundreds and tons of consequence. Each one has the timestamp, so you can hear what they said, and is tagged to the innings in Tons of Consequence where there is one.</p>
       <p className="conn-note">Independent and unofficial: not made or endorsed by Hello Sport. Scores shown are from our own database, not from the episodes. {MOMENTS.length} moments from {groups.length} episodes so far, with more being added.</p>
 
       {groups.map((g) => {

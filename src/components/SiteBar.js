@@ -6,14 +6,14 @@ import Logo from './Logo';
 
 const NAV = [
   { href: '/', label: 'Rankings' },
-  { href: '/tons-of-consequence', label: 'Tons of Consequence' },
+  { href: '/tons-of-consequence', label: 'ToCs' },
   { href: '/compare', label: 'Compare' },
   { href: '/search', label: 'Search' },
   { href: '/the-don', label: 'The Don' },
   { href: '/quiz', label: 'Pub Test' },
 ];
 const MORE = [
-  { href: '/hello-sport', label: 'Hello Sport' },
+  { href: '/hello-sport', label: 'Hello Cricket' },
   { href: '/connect', label: 'Connect to Claude' },
   { href: '/about', label: 'About' },
   { href: '/privacy', label: 'Privacy' },
