@@ -8,6 +8,6 @@ import { factsStory } from './factsStory.js';
  */
 export function storyStatus(c) {
   if ((c.sourceLinks && c.sourceLinks.length >= 2) || c.sources) return 'sourced';
-  if (c.story === factsStory(c)) return 'facts';
+  if (c.story === factsStory(c) || c.story === factsStory({ ...c, name: c.player })) return 'facts';
   return 'unsourced';
 }

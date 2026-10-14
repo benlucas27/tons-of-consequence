@@ -1,0 +1,3362 @@
+[
+ {
+  "player": "AB de Villiers",
+  "country": "SA",
+  "hundreds": 22,
+  "proposal": null,
+  "why": "known by its initials on Wikipedia too, left as is"
+ },
+ {
+  "player": "VVS Laxman",
+  "country": "IND",
+  "hundreds": 17,
+  "proposal": null,
+  "why": "known by its initials on Wikipedia too, left as is"
+ },
+ {
+  "player": "KL Rahul",
+  "country": "IND",
+  "hundreds": 11,
+  "proposal": null,
+  "why": "known by its initials on Wikipedia too, left as is"
+ },
+ {
+  "player": "BJ Watling",
+  "country": "NZ",
+  "hundreds": 8,
+  "proposal": null,
+  "why": "known by its initials on Wikipedia too, left as is"
+ },
+ {
+  "player": "MS Dhoni",
+  "country": "IND",
+  "hundreds": 6,
+  "proposal": null,
+  "why": "known by its initials on Wikipedia too, left as is"
+ },
+ {
+  "player": "JF Reid",
+  "country": "NZ",
+  "hundreds": 6,
+  "proposal": "John Fulton Reid",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/John_Fulton_Reid"
+ },
+ {
+  "player": "JP Duminy",
+  "country": "SA",
+  "hundreds": 6,
+  "proposal": null,
+  "why": "ambiguous: JP Duminy, Jacobus Duminy"
+ },
+ {
+  "player": "CAG Russell",
+  "country": "ENG",
+  "hundreds": 5,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "BW Luckhurst",
+  "country": "ENG",
+  "hundreds": 4,
+  "proposal": "Brian Luckhurst",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Brian_Luckhurst"
+ },
+ {
+  "player": "GRJ Matthews",
+  "country": "AUS",
+  "hundreds": 4,
+  "proposal": "Greg Matthews",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Greg_Matthews"
+ },
+ {
+  "player": "RB McCosker",
+  "country": "AUS",
+  "hundreds": 4,
+  "proposal": "Rick McCosker",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Rick_McCosker"
+ },
+ {
+  "player": "LRD Mendis",
+  "country": "SL",
+  "hundreds": 4,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "BF Hastings",
+  "country": "NZ",
+  "hundreds": 4,
+  "proposal": "Brian Hastings",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Brian_Hastings"
+ },
+ {
+  "player": "MS Wade",
+  "country": "AUS",
+  "hundreds": 4,
+  "proposal": "Matthew Wade",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Matthew_Wade"
+ },
+ {
+  "player": "AF Rae",
+  "country": "WI",
+  "hundreds": 4,
+  "proposal": "Allan Rae",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Allan_Rae_(cricketer)"
+ },
+ {
+  "player": "PWA Mulder",
+  "country": "SA",
+  "hundreds": 3,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "GT Dowling",
+  "country": "NZ",
+  "hundreds": 3,
+  "proposal": "Graham Dowling",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Graham_Dowling"
+ },
+ {
+  "player": "EAB Rowan",
+  "country": "SA",
+  "hundreds": 3,
+  "proposal": "Eric Rowan",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Eric_Rowan"
+ },
+ {
+  "player": "SG Barnes",
+  "country": "AUS",
+  "hundreds": 3,
+  "proposal": "Sid Barnes",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Sid_Barnes"
+ },
+ {
+  "player": "L Vincent",
+  "country": "NZ",
+  "hundreds": 3,
+  "proposal": "Lou Vincent",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Lou_Vincent"
+ },
+ {
+  "player": "MS Sinclair",
+  "country": "NZ",
+  "hundreds": 3,
+  "proposal": "Mathew Sinclair",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Mathew_Sinclair"
+ },
+ {
+  "player": "JO Holder",
+  "country": "WI",
+  "hundreds": 3,
+  "proposal": "Jason Holder",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jason_Holder"
+ },
+ {
+  "player": "J Ryder",
+  "country": "AUS",
+  "hundreds": 3,
+  "proposal": "Jack Ryder",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jack_Ryder_(cricketer)"
+ },
+ {
+  "player": "G Fowler",
+  "country": "ENG",
+  "hundreds": 3,
+  "proposal": "Graeme Fowler",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Graeme_Fowler"
+ },
+ {
+  "player": "JD Ryder",
+  "country": "NZ",
+  "hundreds": 3,
+  "proposal": "Jesse Ryder",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jesse_Ryder"
+ },
+ {
+  "player": "MTG Elliott",
+  "country": "AUS",
+  "hundreds": 3,
+  "proposal": "Matthew Elliott",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Matthew_Elliott_(cricketer)"
+ },
+ {
+  "player": "JW Burke",
+  "country": "AUS",
+  "hundreds": 3,
+  "proposal": "Jim Burke",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jim_Burke_(cricketer)"
+ },
+ {
+  "player": "MJ Guptill",
+  "country": "NZ",
+  "hundreds": 3,
+  "proposal": "Martin Guptill",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Martin_Guptill"
+ },
+ {
+  "player": "DT Lindsay",
+  "country": "SA",
+  "hundreds": 3,
+  "proposal": "Denis Lindsay",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Denis_Lindsay_(cricketer)"
+ },
+ {
+  "player": "MR Marsh",
+  "country": "AUS",
+  "hundreds": 3,
+  "proposal": "Mitchell Marsh",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Mitchell_Marsh"
+ },
+ {
+  "player": "J Darling",
+  "country": "AUS",
+  "hundreds": 3,
+  "proposal": "Joe Darling",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Joe_Darling"
+ },
+ {
+  "player": "HH Dippenaar",
+  "country": "SA",
+  "hundreds": 3,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "JV Coney",
+  "country": "NZ",
+  "hundreds": 3,
+  "proposal": "Jeremy Coney",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jeremy_Coney"
+ },
+ {
+  "player": "KS Duleepsinhji",
+  "country": "ENG",
+  "hundreds": 3,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "MW Goodwin",
+  "country": "ZIM",
+  "hundreds": 3,
+  "proposal": "Murray Goodwin",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Murray_Goodwin"
+ },
+ {
+  "player": "WU Tharanga",
+  "country": "SL",
+  "hundreds": 3,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "A Shrewsbury snr",
+  "country": "ENG",
+  "hundreds": 3,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "WR Endean",
+  "country": "SA",
+  "hundreds": 3,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "BA Edgar",
+  "country": "NZ",
+  "hundreds": 3,
+  "proposal": "Bruce Edgar",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Bruce_Edgar"
+ },
+ {
+  "player": "PJ Hughes",
+  "country": "AUS",
+  "hundreds": 3,
+  "proposal": "Phillip Hughes",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Phillip_Hughes"
+ },
+ {
+  "player": "AT Carey",
+  "country": "AUS",
+  "hundreds": 3,
+  "proposal": "Alex Carey",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Alex_Carey"
+ },
+ {
+  "player": "HDRL Thirimanne",
+  "country": "SL",
+  "hundreds": 3,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "VM Merchant",
+  "country": "IND",
+  "hundreds": 3,
+  "proposal": "Vijay Merchant",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Vijay_Merchant"
+ },
+ {
+  "player": "PA Jaques",
+  "country": "AUS",
+  "hundreds": 3,
+  "proposal": "Phil Jaques",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Phil_Jaques"
+ },
+ {
+  "player": "RA Woolmer",
+  "country": "ENG",
+  "hundreds": 3,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "PS McDonnell",
+  "country": "AUS",
+  "hundreds": 3,
+  "proposal": "Percy McDonnell",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Percy_McDonnell"
+ },
+ {
+  "player": "C Kelleway",
+  "country": "AUS",
+  "hundreds": 3,
+  "proposal": "Charlie Kelleway",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Charlie_Kelleway"
+ },
+ {
+  "player": "MJ Greatbatch",
+  "country": "NZ",
+  "hundreds": 3,
+  "proposal": "Mark Greatbatch",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Mark_Greatbatch"
+ },
+ {
+  "player": "GM Ritchie",
+  "country": "AUS",
+  "hundreds": 3,
+  "proposal": "Greg Ritchie",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Greg_Ritchie"
+ },
+ {
+  "player": "KC Bland",
+  "country": "SA",
+  "hundreds": 3,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "RS Bopara",
+  "country": "ENG",
+  "hundreds": 3,
+  "proposal": "Ravi Bopara",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Ravi_Bopara"
+ },
+ {
+  "player": "JK Silva",
+  "country": "SL",
+  "hundreds": 3,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "BW Sinclair",
+  "country": "NZ",
+  "hundreds": 3,
+  "proposal": "Barry Sinclair",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Barry_Sinclair"
+ },
+ {
+  "player": "TW Hayward",
+  "country": "ENG",
+  "hundreds": 3,
+  "proposal": "Tom Hayward",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Tom_Hayward"
+ },
+ {
+  "player": "R Subba Row",
+  "country": "ENG",
+  "hundreds": 3,
+  "proposal": "Raman Subba Row",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Raman_Subba_Row"
+ },
+ {
+  "player": "D Ganga",
+  "country": "WI",
+  "hundreds": 3,
+  "proposal": "Daren Ganga",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Daren_Ganga"
+ },
+ {
+  "player": "KOA Powell",
+  "country": "WI",
+  "hundreds": 3,
+  "proposal": "Kieran Powell",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Kieran_Powell"
+ },
+ {
+  "player": "RJ Burns",
+  "country": "ENG",
+  "hundreds": 3,
+  "proposal": "Rory Burns",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Rory_Burns"
+ },
+ {
+  "player": "RS Kaluwitharana",
+  "country": "SL",
+  "hundreds": 3,
+  "proposal": "Romesh Kaluwitharana",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Romesh_Kaluwitharana"
+ },
+ {
+  "player": "RW Marsh",
+  "country": "AUS",
+  "hundreds": 3,
+  "proposal": "Rod Marsh",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Rod_Marsh"
+ },
+ {
+  "player": "ML Jaisimha",
+  "country": "IND",
+  "hundreds": 3,
+  "proposal": "M. L. Jaisimha",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/M._L._Jaisimha"
+ },
+ {
+  "player": "JJ Crowe",
+  "country": "NZ",
+  "hundreds": 3,
+  "proposal": "Jeff Crowe",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jeff_Crowe"
+ },
+ {
+  "player": "SO Dowrich",
+  "country": "WI",
+  "hundreds": 3,
+  "proposal": "Shane Dowrich",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Shane_Dowrich"
+ },
+ {
+  "player": "RP Arnold",
+  "country": "SL",
+  "hundreds": 3,
+  "proposal": "Russel Arnold",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Russel_Arnold"
+ },
+ {
+  "player": "GE Tyldesley",
+  "country": "ENG",
+  "hundreds": 3,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "R Benaud",
+  "country": "AUS",
+  "hundreds": 3,
+  "proposal": "Richie Benaud",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Richie_Benaud"
+ },
+ {
+  "player": "MJK Smith",
+  "country": "ENG",
+  "hundreds": 3,
+  "proposal": "M. J. K. Smith",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/M._J._K._Smith"
+ },
+ {
+  "player": "JM Parker",
+  "country": "NZ",
+  "hundreds": 3,
+  "proposal": "John Parker",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/John_Parker_(New_Zealand_cricketer)"
+ },
+ {
+  "player": "RH Catterall",
+  "country": "SA",
+  "hundreds": 3,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "RD Jacobs",
+  "country": "WI",
+  "hundreds": 3,
+  "proposal": "Ridley Jacobs",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Ridley_Jacobs"
+ },
+ {
+  "player": "JN Rhodes",
+  "country": "SA",
+  "hundreds": 3,
+  "proposal": "Jonty Rhodes",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jonty_Rhodes"
+ },
+ {
+  "player": "SC Cook",
+  "country": "SA",
+  "hundreds": 3,
+  "proposal": "Stephen Cook",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Stephen_Cook_(cricketer)"
+ },
+ {
+  "player": "WP Saha",
+  "country": "IND",
+  "hundreds": 3,
+  "proposal": "Wriddhiman Saha",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Wriddhiman_Saha"
+ },
+ {
+  "player": "BM McMillan",
+  "country": "SA",
+  "hundreds": 3,
+  "proposal": "Brian McMillan",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Brian_McMillan"
+ },
+ {
+  "player": "DJ Bravo",
+  "country": "WI",
+  "hundreds": 3,
+  "proposal": null,
+  "why": "ambiguous: Dwayne Bravo, Darren Bravo"
+ },
+ {
+  "player": "J Blackwood",
+  "country": "WI",
+  "hundreds": 3,
+  "proposal": "Jermaine Blackwood",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jermaine_Blackwood"
+ },
+ {
+  "player": "RL Dias",
+  "country": "SL",
+  "hundreds": 3,
+  "proposal": "Roy Dias",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Roy_Dias"
+ },
+ {
+  "player": "KR Rutherford",
+  "country": "NZ",
+  "hundreds": 3,
+  "proposal": "Ken Rutherford",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Ken_Rutherford_(cricketer)"
+ },
+ {
+  "player": "JH Sinclair",
+  "country": "SA",
+  "hundreds": 3,
+  "proposal": "Jimmy Sinclair",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jimmy_Sinclair_(cricketer)"
+ },
+ {
+  "player": "LC Braund",
+  "country": "ENG",
+  "hundreds": 3,
+  "proposal": "Len Braund",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Len_Braund"
+ },
+ {
+  "player": "GS Dinusha",
+  "country": "SL",
+  "hundreds": 3,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "A Sandham",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Andy Sandham",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Andy_Sandham"
+ },
+ {
+  "player": "BA Young",
+  "country": "NZ",
+  "hundreds": 2,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "RD Rickelton",
+  "country": "SA",
+  "hundreds": 2,
+  "proposal": "Ryan Rickelton",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Ryan_Rickelton"
+ },
+ {
+  "player": "WL Murdoch",
+  "country": "AUS",
+  "hundreds": 2,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "KR Mayers",
+  "country": "WI",
+  "hundreds": 2,
+  "proposal": "Kyle Mayers",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Kyle_Mayers"
+ },
+ {
+  "player": "CA Roach",
+  "country": "WI",
+  "hundreds": 2,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "AD Gaekwad",
+  "country": "IND",
+  "hundreds": 2,
+  "proposal": "Anshuman Gaekwad",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Anshuman_Gaekwad"
+ },
+ {
+  "player": "BK Kunderan",
+  "country": "IND",
+  "hundreds": 2,
+  "proposal": "Budhi Kunderan",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Budhi_Kunderan"
+ },
+ {
+  "player": "S Wettimuny",
+  "country": "SL",
+  "hundreds": 2,
+  "proposal": "Sidath Wettimuny",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Sidath_Wettimuny"
+ },
+ {
+  "player": "JL Smith",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Jamie Smith",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jamie_Smith_(cricketer)"
+ },
+ {
+  "player": "W Rhodes",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Wilfred Rhodes",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Wilfred_Rhodes"
+ },
+ {
+  "player": "T de Zorzi",
+  "country": "SA",
+  "hundreds": 2,
+  "proposal": "Tony de Zorzi",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Tony_de_Zorzi"
+ },
+ {
+  "player": "KS Ranjitsinhji",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "AE Stoddart",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Andrew Stoddart",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Andrew_Stoddart"
+ },
+ {
+  "player": "IDS Smith",
+  "country": "NZ",
+  "hundreds": 2,
+  "proposal": "Ian Smith",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Ian_Smith_(New_Zealand_cricketer)"
+ },
+ {
+  "player": "R Edwards",
+  "country": "AUS",
+  "hundreds": 2,
+  "proposal": "Ross Edwards",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Ross_Edwards_(cricketer)"
+ },
+ {
+  "player": "WG Grace",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "W. G. Grace",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/W._G._Grace"
+ },
+ {
+  "player": "GJ Cosier",
+  "country": "AUS",
+  "hundreds": 2,
+  "proposal": "Gary Cosier",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Gary_Cosier"
+ },
+ {
+  "player": "JKC Holt",
+  "country": "WI",
+  "hundreds": 2,
+  "proposal": "John Holt",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/John_Holt_(cricketer)"
+ },
+ {
+  "player": "A Symonds",
+  "country": "AUS",
+  "hundreds": 2,
+  "proposal": "Andrew Symonds",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Andrew_Symonds"
+ },
+ {
+  "player": "HJH Marshall",
+  "country": "NZ",
+  "hundreds": 2,
+  "proposal": "Hamish Marshall",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Hamish_Marshall"
+ },
+ {
+  "player": "WB Phillips",
+  "country": "AUS",
+  "hundreds": 2,
+  "proposal": "Wayne B. Phillips",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Wayne_B._Phillips"
+ },
+ {
+  "player": "CT Radley",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Clive Radley",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Clive_Radley"
+ },
+ {
+  "player": "KLT Arthurton",
+  "country": "WI",
+  "hundreds": 2,
+  "proposal": "Keith Arthurton",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Keith_Arthurton"
+ },
+ {
+  "player": "MR Ramprakash",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Mark Ramprakash",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Mark_Ramprakash"
+ },
+ {
+  "player": "MDKJ Perera",
+  "country": "SL",
+  "hundreds": 2,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "JC Buttler",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Jos Buttler",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jos_Buttler"
+ },
+ {
+  "player": "JW Zulch",
+  "country": "SA",
+  "hundreds": 2,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "RES Wyatt",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "CJ Tavare",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "AG Steel",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "A. G. Steel",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/A._G._Steel"
+ },
+ {
+  "player": "GC White",
+  "country": "SA",
+  "hundreds": 2,
+  "proposal": "Gordon White",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Gordon_White_(cricketer)"
+ },
+ {
+  "player": "KK Jennings",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Keaton Jennings",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Keaton_Jennings"
+ },
+ {
+  "player": "RA Duff",
+  "country": "AUS",
+  "hundreds": 2,
+  "proposal": "Reggie Duff",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Reggie_Duff"
+ },
+ {
+  "player": "AF Kippax",
+  "country": "AUS",
+  "hundreds": 2,
+  "proposal": "Alan Kippax",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Alan_Kippax"
+ },
+ {
+  "player": "CB Fry",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "C. B. Fry",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/C._B._Fry"
+ },
+ {
+  "player": "S Ramesh",
+  "country": "IND",
+  "hundreds": 2,
+  "proposal": "Sadagoppan Ramesh",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Sadagoppan_Ramesh"
+ },
+ {
+  "player": "FA Iredale",
+  "country": "AUS",
+  "hundreds": 2,
+  "proposal": "Frank Iredale",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Frank_Iredale"
+ },
+ {
+  "player": "BA Richards",
+  "country": "SA",
+  "hundreds": 2,
+  "proposal": "Barry Richards",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Barry_Richards"
+ },
+ {
+  "player": "C Milburn",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Colin Milburn",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Colin_Milburn"
+ },
+ {
+  "player": "BJ Bennett",
+  "country": "ZIM",
+  "hundreds": 2,
+  "proposal": "Brian Bennett",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Brian_Bennett_(cricketer)"
+ },
+ {
+  "player": "AJ Watkins",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Allan Watkins",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Allan_Watkins"
+ },
+ {
+  "player": "JDS Neesham",
+  "country": "NZ",
+  "hundreds": 2,
+  "proposal": "James Neesham",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/James_Neesham"
+ },
+ {
+  "player": "CS Dempster",
+  "country": "NZ",
+  "hundreds": 2,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "BH Valentine",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Bryan Valentine",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Bryan_Valentine"
+ },
+ {
+  "player": "TG McIntosh",
+  "country": "NZ",
+  "hundreds": 2,
+  "proposal": "Tim McIntosh",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Tim_McIntosh_(cricketer)"
+ },
+ {
+  "player": "PG Fulton",
+  "country": "NZ",
+  "hundreds": 2,
+  "proposal": "Peter Fulton",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Peter_Fulton"
+ },
+ {
+  "player": "DP Sibley",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Dom Sibley",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Dom_Sibley"
+ },
+ {
+  "player": "JDB Robertson",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Jack Robertson",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jack_Robertson_(English_cricketer)"
+ },
+ {
+  "player": "R Abel",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "AL Logie",
+  "country": "WI",
+  "hundreds": 2,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "EJG Morgan",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Eoin Morgan",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Eoin_Morgan"
+ },
+ {
+  "player": "CJ Barnett",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Charlie Barnett",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Charlie_Barnett_(cricketer)"
+ },
+ {
+  "player": "RC Russell",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "J Dyson",
+  "country": "AUS",
+  "hundreds": 2,
+  "proposal": "John Dyson",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/John_Dyson_(Australian_cricketer)"
+ },
+ {
+  "player": "BR Knight",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Barry Knight",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Barry_Knight_(cricketer)"
+ },
+ {
+  "player": "AP Sheahan",
+  "country": "AUS",
+  "hundreds": 2,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "KG Viljoen",
+  "country": "SA",
+  "hundreds": 2,
+  "proposal": "Ken Viljoen",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Ken_Viljoen"
+ },
+ {
+  "player": "BR Taylor",
+  "country": "NZ",
+  "hundreds": 2,
+  "proposal": "Bruce Taylor",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Bruce_Taylor_(New_Zealand_cricketer)"
+ },
+ {
+  "player": "KAR Hodge",
+  "country": "WI",
+  "hundreds": 2,
+  "proposal": "Kavem Hodge",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Kavem_Hodge"
+ },
+ {
+  "player": "DG Phadkar",
+  "country": "IND",
+  "hundreds": 2,
+  "proposal": "Dattu Phadkar",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Dattu_Phadkar"
+ },
+ {
+  "player": "K Srikkanth",
+  "country": "IND",
+  "hundreds": 2,
+  "proposal": "Krishnamachari Srikkanth",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Krishnamachari_Srikkanth"
+ },
+ {
+  "player": "NE Bonner",
+  "country": "WI",
+  "hundreds": 2,
+  "proposal": "Nkrumah Bonner",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Nkrumah_Bonner"
+ },
+ {
+  "player": "G Gunn",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "George Gunn",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/George_Gunn_(cricketer)"
+ },
+ {
+  "player": "T Stubbs",
+  "country": "SA",
+  "hundreds": 2,
+  "proposal": "Tristan Stubbs",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Tristan_Stubbs"
+ },
+ {
+  "player": "FM Engineer",
+  "country": "IND",
+  "hundreds": 2,
+  "proposal": "Farokh Engineer",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Farokh_Engineer"
+ },
+ {
+  "player": "BD Julien",
+  "country": "WI",
+  "hundreds": 2,
+  "proposal": "Bernard Julien",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Bernard_Julien"
+ },
+ {
+  "player": "KA Edwards",
+  "country": "WI",
+  "hundreds": 2,
+  "proposal": "Kirk Edwards",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Kirk_Edwards"
+ },
+ {
+  "player": "C de Grandhomme",
+  "country": "NZ",
+  "hundreds": 2,
+  "proposal": "Colin de Grandhomme",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Colin_de_Grandhomme"
+ },
+ {
+  "player": "PA Gibb",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Paul Gibb",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Paul_Gibb"
+ },
+ {
+  "player": "SM Warnapura",
+  "country": "SL",
+  "hundreds": 2,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "JM Gregory",
+  "country": "AUS",
+  "hundreds": 2,
+  "proposal": "Jack Gregory",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jack_Gregory_(cricketer)"
+ },
+ {
+  "player": "AMJ Hilditch",
+  "country": "AUS",
+  "hundreds": 2,
+  "proposal": "Andrew Hilditch",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Andrew_Hilditch"
+ },
+ {
+  "player": "J Moroney",
+  "country": "AUS",
+  "hundreds": 2,
+  "proposal": "Jack Moroney",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jack_Moroney"
+ },
+ {
+  "player": "RR Lindwall",
+  "country": "AUS",
+  "hundreds": 2,
+  "proposal": "Ray Lindwall",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Ray_Lindwall"
+ },
+ {
+  "player": "S Ranatunga",
+  "country": "SL",
+  "hundreds": 2,
+  "proposal": "Sanjeeva Ranatunga",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Sanjeeva_Ranatunga"
+ },
+ {
+  "player": "SV Carlisle",
+  "country": "ZIM",
+  "hundreds": 2,
+  "proposal": "Stuart Carlisle",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Stuart_Carlisle"
+ },
+ {
+  "player": "EL Dalton",
+  "country": "SA",
+  "hundreds": 2,
+  "proposal": "Eric Dalton",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Eric_Dalton"
+ },
+ {
+  "player": "NRD Compton",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Nick Compton",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Nick_Compton"
+ },
+ {
+  "player": "CE Pellew",
+  "country": "AUS",
+  "hundreds": 2,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "W Watson",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Willie Watson",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Willie_Watson_(English_cricketer)"
+ },
+ {
+  "player": "V Pollard",
+  "country": "NZ",
+  "hundreds": 2,
+  "proposal": "Vic Pollard",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Vic_Pollard"
+ },
+ {
+  "player": "BP Nash",
+  "country": "WI",
+  "hundreds": 2,
+  "proposal": "Brendan Nash",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Brendan_Nash"
+ },
+ {
+  "player": "BT Foakes",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Ben Foakes",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Ben_Foakes"
+ },
+ {
+  "player": "R Illingworth",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": null,
+  "why": "ambiguous: Ray Illingworth, Richard Illingworth"
+ },
+ {
+  "player": "S Mushtaq Ali",
+  "country": "IND",
+  "hundreds": 2,
+  "proposal": "Syed Mushtaq Ali",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Syed_Mushtaq_Ali"
+ },
+ {
+  "player": "AB Williams",
+  "country": "WI",
+  "hundreds": 2,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "SAR Silva",
+  "country": "SL",
+  "hundreds": 2,
+  "proposal": "Somachandra de Silva",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Somachandra_de_Silva"
+ },
+ {
+  "player": "SM Pollock",
+  "country": "SA",
+  "hundreds": 2,
+  "proposal": "Shaun Pollock",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Shaun_Pollock"
+ },
+ {
+  "player": "NT Paranavitana",
+  "country": "SL",
+  "hundreds": 2,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "SS Das",
+  "country": "IND",
+  "hundreds": 2,
+  "proposal": "Shiv Sunder Das",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Shiv_Sunder_Das"
+ },
+ {
+  "player": "AC Parore",
+  "country": "NZ",
+  "hundreds": 2,
+  "proposal": "Adam Parore",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Adam_Parore"
+ },
+ {
+  "player": "PSP Handscomb",
+  "country": "AUS",
+  "hundreds": 2,
+  "proposal": "Peter Handscomb",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Peter_Handscomb"
+ },
+ {
+  "player": "GS Ramchand",
+  "country": "IND",
+  "hundreds": 2,
+  "proposal": "Gulabrai Ramchand",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Gulabrai_Ramchand"
+ },
+ {
+  "player": "JM Parks",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Jim Parks",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jim_Parks_(cricketer%2C_born_1931)"
+ },
+ {
+  "player": "H Graham",
+  "country": "AUS",
+  "hundreds": 2,
+  "proposal": "Harry Graham",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Harry_Graham_(cricketer)"
+ },
+ {
+  "player": "MD Bell",
+  "country": "NZ",
+  "hundreds": 2,
+  "proposal": "Matthew Bell",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Matthew_Bell_(cricketer)"
+ },
+ {
+  "player": "TM Moody",
+  "country": "AUS",
+  "hundreds": 2,
+  "proposal": "Tom Moody",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Tom_Moody"
+ },
+ {
+  "player": "TG Evans",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "ADR Campbell",
+  "country": "ZIM",
+  "hundreds": 2,
+  "proposal": "Alistair Campbell",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Alistair_Campbell_(cricketer)"
+ },
+ {
+  "player": "P Willey",
+  "country": "ENG",
+  "hundreds": 2,
+  "proposal": "Peter Willey",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Peter_Willey"
+ },
+ {
+  "player": "SMH Kirmani",
+  "country": "IND",
+  "hundreds": 2,
+  "proposal": "Syed Kirmani",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Syed_Kirmani"
+ },
+ {
+  "player": "KK Nair",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Karun Nair",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Karun_Nair"
+ },
+ {
+  "player": "RE Foster",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "R. E. Foster",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/R._E._Foster"
+ },
+ {
+  "player": "SFAF Bacchus",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "RWT Key",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "DS Atkinson",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Denis Atkinson",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Denis_Atkinson"
+ },
+ {
+  "player": "D Lloyd",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "David Lloyd",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/David_Lloyd_(cricketer)"
+ },
+ {
+  "player": "T Chanderpaul",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Tagenarine Chanderpaul",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Tagenarine_Chanderpaul"
+ },
+ {
+  "player": "MP Donnelly",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "Martin Donnelly",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Martin_Donnelly_(sportsman)"
+ },
+ {
+  "player": "KNM Fernando",
+  "country": "SL",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "BJ Hodge",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Brad Hodge",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Brad_Hodge"
+ },
+ {
+  "player": "DSBP Kuruppu",
+  "country": "SL",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "JN Gillespie",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Jason Gillespie",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jason_Gillespie"
+ },
+ {
+  "player": "GB Legge",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Geoffrey Legge",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Geoffrey_Legge"
+ },
+ {
+  "player": "RW Barber",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "TW Jarvis",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "Terry Jarvis",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Terry_Jarvis"
+ },
+ {
+  "player": "HD Rutherford",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "Hamish Rutherford",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Hamish_Rutherford"
+ },
+ {
+  "player": "SCJ Broad",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Stuart Broad",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Stuart_Broad"
+ },
+ {
+  "player": "C Bannerman",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Charles Bannerman",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Charles_Bannerman"
+ },
+ {
+  "player": "A Jackson",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Archie Jackson",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Archie_Jackson"
+ },
+ {
+  "player": "CA Best",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "ML Apte",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Madhav Apte",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Madhav_Apte"
+ },
+ {
+  "player": "TMK Mawoyo",
+  "country": "ZIM",
+  "hundreds": 1,
+  "proposal": "Tino Mawoyo",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Tino_Mawoyo"
+ },
+ {
+  "player": "AJ Hall",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "ambiguous: Andrew Hall, Alf Hall"
+ },
+ {
+  "player": "G Giffen",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "George Giffen",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/George_Giffen"
+ },
+ {
+  "player": "AJ Pithey",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "T Taibu",
+  "country": "ZIM",
+  "hundreds": 1,
+  "proposal": "Tatenda Taibu",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Tatenda_Taibu"
+ },
+ {
+  "player": "LG Pretorius",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": "Lhuan-dre Pretorius",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Lhuan-dre_Pretorius"
+ },
+ {
+  "player": "LPC Silva",
+  "country": "SL",
+  "hundreds": 1,
+  "proposal": "Lanka de Silva",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Lanka_de_Silva"
+ },
+ {
+  "player": "CN Frank",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": "Charlie Frank",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Charlie_Frank"
+ },
+ {
+  "player": "WK Lees",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "Warren Lees",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Warren_Lees"
+ },
+ {
+  "player": "NR Mongia",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Nayan Mongia",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Nayan_Mongia"
+ },
+ {
+  "player": "SN Khan",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Sarfaraz Khan",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Sarfaraz_Khan_(cricketer)"
+ },
+ {
+  "player": "G Ulyett",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "George Ulyett",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/George_Ulyett"
+ },
+ {
+  "player": "M Kaif",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Mohammad Kaif",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Mohammad_Kaif"
+ },
+ {
+  "player": "VS Ransford",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Vernon Ransford",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Vernon_Ransford"
+ },
+ {
+  "player": "DW Hookes",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "David Hookes",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/David_Hookes"
+ },
+ {
+  "player": "GHS Trott",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "FL Fane",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Frederick Fane",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Frederick_Fane"
+ },
+ {
+  "player": "AL Wadekar",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Ajit Wadekar",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Ajit_Wadekar"
+ },
+ {
+  "player": "J Benaud",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "John Benaud",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/John_Benaud"
+ },
+ {
+  "player": "IJ Siedle",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "JT Brown",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Jack Brown",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jack_Brown_(cricketer)"
+ },
+ {
+  "player": "SC Griffith",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "DJ Malan",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Dawid Malan",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Dawid_Malan"
+ },
+ {
+  "player": "VY Richardson",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Vic Richardson",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Vic_Richardson"
+ },
+ {
+  "player": "CR Woakes",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Chris Woakes",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Chris_Woakes"
+ },
+ {
+  "player": "KH Weekes",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Ken Weekes",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Ken_Weekes"
+ },
+ {
+  "player": "FG Mann",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Frank Mann",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Frank_Mann_(cricketer)"
+ },
+ {
+  "player": "A Turner",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Alan Turner",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Alan_Turner_(cricketer)"
+ },
+ {
+  "player": "EJM Cowan",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Ed Cowan",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Ed_Cowan"
+ },
+ {
+  "player": "H Wood",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "TE Bailey",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Trevor Bailey",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Trevor_Bailey"
+ },
+ {
+  "player": "W Barnes",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "JJ Lyons",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Jack Lyons",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jack_Lyons_(cricketer)"
+ },
+ {
+  "player": "PP Shaw",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Prithvi Shaw",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Prithvi_Shaw"
+ },
+ {
+  "player": "MA Noble",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Monty Noble",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Monty_Noble"
+ },
+ {
+  "player": "CJ Richards",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "PF Warner",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Pelham Warner",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Pelham_Warner"
+ },
+ {
+  "player": "JA Raval",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "Jeet Raval",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jeet_Raval"
+ },
+ {
+  "player": "HGO Owen-Smith",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "KD Karthik",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "GJ Bonnor",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "George Bonnor",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/George_Bonnor"
+ },
+ {
+  "player": "TS Worthington",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "RG Archer",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Ron Archer",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Ron_Archer"
+ },
+ {
+  "player": "HH Streak",
+  "country": "ZIM",
+  "hundreds": 1,
+  "proposal": "Heath Streak",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Heath_Streak"
+ },
+ {
+  "player": "KE Rigg",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Keith Rigg",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Keith_Rigg"
+ },
+ {
+  "player": "DR Jardine",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Douglas Jardine",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Douglas_Jardine"
+ },
+ {
+  "player": "SD Robson",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Sam Robson",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Sam_Robson"
+ },
+ {
+  "player": "KL Hutchings",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Kenneth Hutchings",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Kenneth_Hutchings"
+ },
+ {
+  "player": "MJ Santner",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "Mitchell Santner",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Mitchell_Santner"
+ },
+ {
+  "player": "PGV van der Bijl",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": "Pieter van der Bijl",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Pieter_van_der_Bijl"
+ },
+ {
+  "player": "WW Wade",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "EDAS McMorris",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Easton McMorris",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Easton_McMorris"
+ },
+ {
+  "player": "AR Lewis",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "MLC Foster",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Maurice Foster",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Maurice_Foster_(West_Indian_cricketer)"
+ },
+ {
+  "player": "RG Samuels",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Robert Samuels",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Robert_Samuels_(cricketer)"
+ },
+ {
+  "player": "DC Jurel",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Dhruv Jurel",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Dhruv_Jurel"
+ },
+ {
+  "player": "TP Horan",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Tom Horan",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Tom_Horan"
+ },
+ {
+  "player": "AJL Hill",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Allen Hill",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Allen_Hill_(cricketer)"
+ },
+ {
+  "player": "S Amarnath",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Surinder Amarnath",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Surinder_Amarnath"
+ },
+ {
+  "player": "CS Serjeant",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Craig Serjeant",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Craig_Serjeant"
+ },
+ {
+  "player": "FR Martin",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "MG Johnson",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Mitchell Johnson",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Mitchell_Johnson"
+ },
+ {
+  "player": "CWJ Athey",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "XC Balaskas",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": "Xen Balaskas",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Xen_Balaskas"
+ },
+ {
+  "player": "RG Nadkarni",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "JEC Franklin",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "James Franklin",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/James_Franklin_(cricketer)"
+ },
+ {
+  "player": "GOB Allen",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Gubby Allen",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Gubby_Allen"
+ },
+ {
+  "player": "CC Depeiaza",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Clairmonte Depeiaza",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Clairmonte_Depeiaza"
+ },
+ {
+  "player": "PM Toohey",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Peter Toohey",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Peter_Toohey"
+ },
+ {
+  "player": "J Briggs",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Johnny Briggs",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Johnny_Briggs_(cricketer)"
+ },
+ {
+  "player": "APF Chapman",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "C White",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Craig White",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Craig_White"
+ },
+ {
+  "player": "BJ Curran",
+  "country": "ZIM",
+  "hundreds": 1,
+  "proposal": "Ben Curran",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Ben_Curran"
+ },
+ {
+  "player": "SA Thomson",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "Shane Thomson",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Shane_Thomson"
+ },
+ {
+  "player": "IT Shillingford",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Irvine Shillingford",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Irvine_Shillingford"
+ },
+ {
+  "player": "M Prabhakar",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Manoj Prabhakar",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Manoj_Prabhakar"
+ },
+ {
+  "player": "SK Raina",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Suresh Raina",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Suresh_Raina"
+ },
+ {
+  "player": "RH Spooner",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Reggie Spooner",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Reggie_Spooner"
+ },
+ {
+  "player": "JWHT Douglas",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Johnny Douglas",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Johnny_Douglas"
+ },
+ {
+  "player": "RT Latham",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "Rod Latham",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Rod_Latham"
+ },
+ {
+  "player": "L Amarnath",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Lala Amarnath",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Lala_Amarnath"
+ },
+ {
+  "player": "CL Badcock",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "MA Vermeulen",
+  "country": "ZIM",
+  "hundreds": 1,
+  "proposal": "Mark Vermeulen",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Mark_Vermeulen"
+ },
+ {
+  "player": "KJ O'Brien",
+  "country": "IRE",
+  "hundreds": 1,
+  "proposal": "Kevin O'Brien",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Kevin_O'Brien_(cricketer)"
+ },
+ {
+  "player": "AAP Atkinson",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "WW Read",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "A Ward",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Alan Ward",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Alan_Ward_(cricketer)"
+ },
+ {
+  "player": "JWH Makepeace",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "JE Mills",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "JFM Morrison",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "John Morrison",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/John_Morrison_(cricketer)"
+ },
+ {
+  "player": "CC Lewis",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Chris Lewis",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Chris_Lewis_(cricketer)"
+ },
+ {
+  "player": "MJ Hartigan",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "WA Hadlee",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "Walter Hadlee",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Walter_Hadlee"
+ },
+ {
+  "player": "CJ Anderson",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "Corey Anderson",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Corey_Anderson_(cricketer)"
+ },
+ {
+  "player": "DAS Gunaratne",
+  "country": "SL",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "BP Patel",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Brijesh Patel",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Brijesh_Patel"
+ },
+ {
+  "player": "A Ratra",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Ajay Ratra",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Ajay_Ratra"
+ },
+ {
+  "player": "PW Sherwell",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": "Percy Sherwell",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Percy_Sherwell"
+ },
+ {
+  "player": "BH Pairaudeau",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Bruce Pairaudeau",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Bruce_Pairaudeau"
+ },
+ {
+  "player": "JD Campbell",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "John Campbell",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/John_Campbell_(cricketer)"
+ },
+ {
+  "player": "HR Adhikari",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Hemu Adhikari",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Hemu_Adhikari"
+ },
+ {
+  "player": "KR Patterson",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Kurtis Patterson",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Kurtis_Patterson"
+ },
+ {
+  "player": "JW Hearne",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "J. W. Hearne",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/J._W._Hearne"
+ },
+ {
+  "player": "AFG Griffith",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Adrian Griffith",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Adrian_Griffith_(cricketer)"
+ },
+ {
+  "player": "CB Wishart",
+  "country": "ZIM",
+  "hundreds": 1,
+  "proposal": "Craig Wishart",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Craig_Wishart"
+ },
+ {
+  "player": "K Nitish Kumar Reddy",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "NV Knight",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Nick Knight",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Nick_Knight_(cricketer)"
+ },
+ {
+  "player": "CE McLeod",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Charlie McLeod",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Charlie_McLeod"
+ },
+ {
+  "player": "HSTL Hendry",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Hunter Hendry",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Hunter_Hendry"
+ },
+ {
+  "player": "AG Ganteaume",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Andy Ganteaume",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Andy_Ganteaume"
+ },
+ {
+  "player": "RS Modi",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Rusi Modi",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Rusi_Modi"
+ },
+ {
+  "player": "AA Baig",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Abbas Ali Baig",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Abbas_Ali_Baig"
+ },
+ {
+  "player": "TL Goddard",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": "Trevor Goddard",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Trevor_Goddard_(cricketer)"
+ },
+ {
+  "player": "JT Murray",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "John Murray",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/John_Murray_(cricketer%2C_born_1935)"
+ },
+ {
+  "player": "CM Spearman",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "Craig Spearman",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Craig_Spearman"
+ },
+ {
+  "player": "TR Gripper",
+  "country": "ZIM",
+  "hundreds": 1,
+  "proposal": "Trevor Gripper",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Trevor_Gripper"
+ },
+ {
+  "player": "AW Nourse",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "SN McGregor",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "PJ Sharpe",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Phil Sharpe",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Phil_Sharpe_(cricketer)"
+ },
+ {
+  "player": "GH Vihari",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "SSJ Brooks",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Shamarh Brooks",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Shamarh_Brooks"
+ },
+ {
+  "player": "C Campher",
+  "country": "IRE",
+  "hundreds": 1,
+  "proposal": "Curtis Campher",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Curtis_Campher"
+ },
+ {
+  "player": "DJ Insole",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Doug Insole",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Doug_Insole"
+ },
+ {
+  "player": "A Kumble",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Anil Kumble",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Anil_Kumble"
+ },
+ {
+  "player": "RH Shodhan",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "JG Bracewell",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "John Bracewell",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/John_Bracewell"
+ },
+ {
+  "player": "PV Simmons",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Phil Simmons",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Phil_Simmons"
+ },
+ {
+  "player": "DG Bedingham",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": "David Bedingham",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/David_Bedingham"
+ },
+ {
+  "player": "AB Agarkar",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Ajit Agarkar",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Ajit_Agarkar"
+ },
+ {
+  "player": "EH Bowley",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "AG Chipperfield",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Arthur Chipperfield",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Arthur_Chipperfield"
+ },
+ {
+  "player": "ARA Murray",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": "Anton Murray",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Anton_Murray"
+ },
+ {
+  "player": "PT Barton",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "Paul Barton",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Paul_Barton"
+ },
+ {
+  "player": "MC Carew",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "DJ Richardson",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": "Dave Richardson",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Dave_Richardson_(South_African_cricketer)"
+ },
+ {
+  "player": "DG Brownlie",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "Dean Brownlie",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Dean_Brownlie"
+ },
+ {
+  "player": "ARS Silva",
+  "country": "SL",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "ambiguous: Ashley de Silva, Aravinda de Silva"
+ },
+ {
+  "player": "S Muthusamy",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": "Senuran Muthusamy",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Senuran_Muthusamy"
+ },
+ {
+  "player": "JM Taylor",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "RWV Robins",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "PL Winslow",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": "Paul Winslow",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Paul_Winslow_(cricketer)"
+ },
+ {
+  "player": "NJ Contractor",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Nari Contractor",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Nari_Contractor"
+ },
+ {
+  "player": "FCM Alexander",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "PL Symcox",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": "Pat Symcox",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Pat_Symcox"
+ },
+ {
+  "player": "DS Smith",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Devon Smith",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Devon_Smith"
+ },
+ {
+  "player": "HH Pandya",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Hardik Pandya",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Hardik_Pandya"
+ },
+ {
+  "player": "SJ Erwee",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": "Sarel Erwee",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Sarel_Erwee"
+ },
+ {
+  "player": "LJ Tucker",
+  "country": "IRE",
+  "hundreds": 1,
+  "proposal": "Lorcan Tucker",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Lorcan_Tucker"
+ },
+ {
+  "player": "AH Bakewell",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "GM Carew",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "George Carew",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/George_Carew_(cricketer)"
+ },
+ {
+  "player": "W Place",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "RJ Christiani",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Robert Christiani",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Robert_Christiani"
+ },
+ {
+  "player": "GO Rabone",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "Geoff Rabone",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Geoff_Rabone"
+ },
+ {
+  "player": "JH Hampshire",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "John Hampshire",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/John_Hampshire"
+ },
+ {
+  "player": "RE Redmond",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "Rodney Redmond",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Rodney_Redmond"
+ },
+ {
+  "player": "NC Johnson",
+  "country": "ZIM",
+  "hundreds": 1,
+  "proposal": "Neil Johnson",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Neil_Johnson_(cricketer)"
+ },
+ {
+  "player": "A Lyth",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Adam Lyth",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Adam_Lyth"
+ },
+ {
+  "player": "FC Hayes",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Frank Hayes",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Frank_Hayes_(cricketer)"
+ },
+ {
+  "player": "PA Strang",
+  "country": "ZIM",
+  "hundreds": 1,
+  "proposal": "Paul Strang",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Paul_Strang"
+ },
+ {
+  "player": "DS Steele",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "David Steele",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/David_Steele_(cricketer)"
+ },
+ {
+  "player": "JE Taylor",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Jerome Taylor",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jerome_Taylor"
+ },
+ {
+  "player": "DJG Sammy",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Daren Sammy",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Daren_Sammy"
+ },
+ {
+  "player": "DAJ Holford",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "David Holford",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/David_Holford"
+ },
+ {
+  "player": "L Baichan",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Len Baichan",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Len_Baichan"
+ },
+ {
+  "player": "DR Smith",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Devon Smith",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Devon_Smith"
+ },
+ {
+  "player": "J Sharp",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Jack Sharp",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jack_Sharp"
+ },
+ {
+  "player": "IM Barrow",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Ivan Barrow",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Ivan_Barrow"
+ },
+ {
+  "player": "IC Davis",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Ian Davis",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Ian_Davis_(cricketer)"
+ },
+ {
+  "player": "AL Mann",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "SS Iyer",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Shreyas Iyer",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Shreyas_Iyer"
+ },
+ {
+  "player": "CL McCool",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Colin McCool",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Colin_McCool"
+ },
+ {
+  "player": "CA Milton",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "S Samarawickrama",
+  "country": "SL",
+  "hundreds": 1,
+  "proposal": "Sadeera Samarawickrama",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Sadeera_Samarawickrama"
+ },
+ {
+  "player": "GL Jessop",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Gilbert Jessop",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Gilbert_Jessop"
+ },
+ {
+  "player": "D Denton",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "David Denton",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/David_Denton_(cricketer)"
+ },
+ {
+  "player": "ML Page",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "SA Durani",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Salim Durani",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Salim_Durani"
+ },
+ {
+  "player": "PN Kirsten",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": "Peter Kirsten",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Peter_Kirsten"
+ },
+ {
+  "player": "CB Lambert",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Clayton Lambert",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Clayton_Lambert"
+ },
+ {
+  "player": "AB Barath",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Adrian Barath",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Adrian_Barath"
+ },
+ {
+  "player": "J Yadav",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Jayant Yadav",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jayant_Yadav"
+ },
+ {
+  "player": "GJ Maxwell",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Glenn Maxwell",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Glenn_Maxwell"
+ },
+ {
+  "player": "KDK Vithanage",
+  "country": "SL",
+  "hundreds": 1,
+  "proposal": "Kithuruwan Vithanage",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Kithuruwan_Vithanage"
+ },
+ {
+  "player": "SJ Snooke",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": "Stanley Snooke",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Stanley_Snooke"
+ },
+ {
+  "player": "JAJ Christy",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": "Jim Christy",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Jim_Christy_(cricketer)"
+ },
+ {
+  "player": "DM Wellham",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Dirk Wellham",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Dirk_Wellham"
+ },
+ {
+  "player": "RS Madugalle",
+  "country": "SL",
+  "hundreds": 1,
+  "proposal": "Ranjan Madugalle",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Ranjan_Madugalle"
+ },
+ {
+  "player": "PK Amre",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Pravin Amre",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Pravin_Amre"
+ },
+ {
+  "player": "PR Stirling",
+  "country": "IRE",
+  "hundreds": 1,
+  "proposal": "Paul Stirling",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Paul_Stirling"
+ },
+ {
+  "player": "W Gunn",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "William Gunn",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/William_Gunn_(cricketer)"
+ },
+ {
+  "player": "AG Cremer",
+  "country": "ZIM",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "HJH Scott",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "CMH Hathorn",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "CF Walters",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "JW Guy",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "John Guy",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/John_Guy_(New_Zealand_cricketer)"
+ },
+ {
+  "player": "BL Irvine",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "ED Solkar",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Eknath Solkar",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Eknath_Solkar"
+ },
+ {
+  "player": "IK Pathan",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Irfan Pathan",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Irfan_Pathan"
+ },
+ {
+  "player": "TR Ambrose",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Tim Ambrose",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Tim_Ambrose"
+ },
+ {
+  "player": "BOP Fernando",
+  "country": "SL",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "JP Inglis",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Josh Inglis",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Josh_Inglis"
+ },
+ {
+  "player": "KJ Arnott",
+  "country": "ZIM",
+  "hundreds": 1,
+  "proposal": "Kevin Arnott",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Kevin_Arnott_(cricketer)"
+ },
+ {
+  "player": "JR Murray",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Junior Murray",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Junior_Murray"
+ },
+ {
+  "player": "S van Zyl",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": "Stiaan van Zyl",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Stiaan_van_Zyl"
+ },
+ {
+  "player": "GE Gomez",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Gerry Gomez",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Gerry_Gomez"
+ },
+ {
+  "player": "SJE Loxton",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Sam Loxton",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Sam_Loxton"
+ },
+ {
+  "player": "LE Favell",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Les Favell",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Les_Favell"
+ },
+ {
+  "player": "PGZ Harris",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "GJ Gilmour",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Gary Gilmour",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Gary_Gilmour"
+ },
+ {
+  "player": "TJ Franklin",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "Trevor Franklin",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Trevor_Franklin_(cricketer)"
+ },
+ {
+  "player": "RW Chakabva",
+  "country": "ZIM",
+  "hundreds": 1,
+  "proposal": "Regis Chakabva",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Regis_Chakabva"
+ },
+ {
+  "player": "TB de Bruyn",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": "Theunis de Bruyn",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Theunis_de_Bruyn"
+ },
+ {
+  "player": "MW Tate",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Maurice Tate",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Maurice_Tate"
+ },
+ {
+  "player": "AG Kripal Singh",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "A. G. Kripal Singh",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/A._G._Kripal_Singh"
+ },
+ {
+  "player": "JS Solomon",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Joe Solomon",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Joe_Solomon"
+ },
+ {
+  "player": "CL King",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Collis King",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Collis_King"
+ },
+ {
+  "player": "SB Bangar",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Sanjay Bangar",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Sanjay_Bangar"
+ },
+ {
+  "player": "ML Love",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Martin Love",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Martin_Love"
+ },
+ {
+  "player": "J Da Silva",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Joshua Da Silva",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Joshua_Da_Silva"
+ },
+ {
+  "player": "C Bosch",
+  "country": "SA",
+  "hundreds": 1,
+  "proposal": "Corbin Bosch",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Corbin_Bosch"
+ },
+ {
+  "player": "AJ Richardson",
+  "country": "AUS",
+  "hundreds": 1,
+  "proposal": "Arthur Richardson",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Arthur_Richardson_(Australian_cricketer)"
+ },
+ {
+  "player": "HG Vivian",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ },
+ {
+  "player": "D Dasgupta",
+  "country": "IND",
+  "hundreds": 1,
+  "proposal": "Deep Dasgupta",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Deep_Dasgupta"
+ },
+ {
+  "player": "GO Jones",
+  "country": "ENG",
+  "hundreds": 1,
+  "proposal": "Geraint Jones",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Geraint_Jones"
+ },
+ {
+  "player": "GD Phillips",
+  "country": "NZ",
+  "hundreds": 1,
+  "proposal": "Glenn Phillips",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Glenn_Phillips_(cricketer)"
+ },
+ {
+  "player": "AA Jangoo",
+  "country": "WI",
+  "hundreds": 1,
+  "proposal": "Amir Jangoo",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Amir_Jangoo"
+ },
+ {
+  "player": "I Kaia",
+  "country": "ZIM",
+  "hundreds": 1,
+  "proposal": "Innocent Kaia",
+  "why": "Test cricketer article, same surname and first initial",
+  "source": "https://en.wikipedia.org/wiki/Innocent_Kaia"
+ },
+ {
+  "player": "LU Igalagamage",
+  "country": "SL",
+  "hundreds": 1,
+  "proposal": null,
+  "why": "no match"
+ }
+]
