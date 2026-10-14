@@ -140,4 +140,7 @@ export const CONSEQUENCE_OVERRIDES = {
   "Marcus Trescothick|219|2003": { verdict: 'yes', scenario: "Carried the innings", note: "Came in at 0-0, team 484 behind, made 36% of the team's 604 in a live series; England won by 9 wickets.", draft: true },
   "Ajinkya Rahane|126|2015": { verdict: 'no' },
   "Kevin Pietersen|226|2007": { verdict: 'no' },
+  "Don Bradman|254|1930": { verdict: 'yes', scenario: 'Set up the win', note: 'England made 425. His 254, 35% of 729 for 6, set up a seven-wicket win that levelled the series at 1-1 after Australia lost at Trent Bridge.' },
+  "Don Bradman|232|1930": { verdict: 'yes', scenario: 'Set up the win', note: 'The decider of a level series. His 232, a third of 695, set up an innings win that took the Ashes.' },
+  "Don Bradman|138|1948": { verdict: 'no', note: 'Only 27% of 509, shared with a hundred from Hassett, against an England side bowled out for 165: a good ton in a big win.' },
 };
