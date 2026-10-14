@@ -36,7 +36,7 @@ export default function Privacy() {
       <p>Cricket data comes from ESPNcricinfo&rsquo;s Statsguru and from <a href="https://cricsheet.org">Cricsheet</a>, used under the Open Data Commons Attribution licence. The scores and stories are this project&rsquo;s own opinion.</p>
 
       <h2>Contact</h2>
-      <p>Questions, corrections or requests: open an issue at <a href="https://github.com/benlucas27/tons-of-consequence/issues">github.com/benlucas27/tons-of-consequence</a>. We&rsquo;ll update this page if any of the above changes.</p>
+      <p>Questions, corrections or requests: email <a href="mailto:ben@haveaplan.xyz">ben@haveaplan.xyz</a>, or open an issue at <a href="https://github.com/benlucas27/tons-of-consequence/issues">github.com/benlucas27/tons-of-consequence</a>. We&rsquo;ll update this page if any of the above changes.</p>
     </article>
   );
 }

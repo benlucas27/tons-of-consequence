@@ -39,7 +39,7 @@ Nothing writes, so there are no `destructiveHint` tools.
 - **Categories (1 to 5):** Sports (and the closest of: Data and analytics, Entertainment). Choose from what the portal offers.
 - **Documentation URL:** `https://tons-of-consequence.vercel.app/connect`
 - **Privacy policy URL:** `https://tons-of-consequence.vercel.app/privacy`
-- **Support contact:** **[Ben to choose: an email address you are happy to publish]** (the GitHub issues page is `https://github.com/benlucas27/tons-of-consequence/issues`)
+- **Support contact:** `ben@haveaplan.xyz` (the GitHub issues page, `https://github.com/benlucas27/tons-of-consequence/issues`, is the public alternative)
 - **Icon:** `public/connector-icon.png` (512 x 512), also served at `https://tons-of-consequence.vercel.app/connector-icon.png`
 - **URL slug (permanent once published):** `tons-of-consequence`
 
@@ -53,7 +53,7 @@ Nothing writes, so there are no `destructiveHint` tools.
 ## 5. Company
 - **Company name:** Tons of Consequence (an independent project by Ben Lucas)
 - **Website:** `https://tons-of-consequence.vercel.app`
-- **Primary contact for review updates:** **[Ben: your email]**
+- **Primary contact for review updates:** ben@haveaplan.xyz
 
 ## 6. Authentication
 **No authentication.** The data is public cricket statistics and the service is read-only. (If the portal asks about
