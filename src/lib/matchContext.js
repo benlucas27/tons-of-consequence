@@ -14,7 +14,7 @@ export function inningsOf(match) {
     let wkts = 0;
     const batters = new Map();
     const touch = (name) => {
-      if (!batters.has(name)) batters.set(name, { name, entryScore: score, entryWkts: wkts, runs: 0, balls: 0, out: false, peril: 0 });
+      if (!batters.has(name)) batters.set(name, { name, order: batters.size + 1, entryScore: score, entryWkts: wkts, runs: 0, balls: 0, out: false, peril: 0 });
       return batters.get(name);
     };
     for (const over of inn.overs || []) {
@@ -28,8 +28,9 @@ export function inningsOf(match) {
           if (isDismissal(w)) {
             wkts += 1;
             touch(w.player_out).out = true;
-            // a wicket falls while the other batter is at the crease and the team is still short of 200: a collapse around him
-            if (score < 200) for (const n of [d.batter, d.non_striker]) if (n !== w.player_out) batters.get(n).peril += 1;
+            // a top-seven batter falls while the other batter is at the crease and the team is still short of 200: a collapse
+            // around him (tail-enders going does not count)
+            if (score < 200 && batters.get(w.player_out).order <= 7) for (const n of [d.batter, d.non_striker]) if (n !== w.player_out) batters.get(n).peril += 1;
           }
         }
       }

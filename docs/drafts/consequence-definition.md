@@ -54,6 +54,22 @@ Otherwise it is **"a good ton"**, and the first "no" says why (lost, dead rubber
 - **Opposition strength and home/away** are shown as **plain facts** on the innings, not part of the test and not in the
   score. See `opposition-strength.md`. Needs a definitive wording (a rank, not a raw rating).
 
+## Rule changes after the Root / Smith / Kohli review (14 Oct 2026)
+
+- **Already safe:** a lead of **200 or more** on entry means the match was not alive (was 250). Root's 180 at Lord's 2013
+  (England 233 ahead) no longer counts.
+- **A collapse around him** counts only top-seven batters falling (not tail-enders) and only if the team is under a 200 lead.
+- **Carried** also needs him to have come in with the team **under 100** (Kohli's 254* at Pune with 2-163 no longer counts;
+  Smith's 211 at Old Trafford, in at 2-28, still does).
+- **Ben's call (override):** where common sense disagrees with the scorecard, a hand-written yes or no wins, with a one-line
+  reason shown as "Ben's call" (`src/data/consequence-overrides.js`). First entry: Root 109 at Trent Bridge 2021, ended by
+  rain with India needing about 50, so the weather saved England, not the hundred. Rain-affected draws have to be
+  flagged by hand; Cricsheet does not mark them.
+- **Opposition tiers** (plain facts, not part of the test): top = England, Australia, India; next = New Zealand, South Africa;
+  then Sri Lanka, West Indies, Pakistan; everyone else below.
+- **Planned page:** per batter, a breakdown of every century (match details and why it was or wasn't a ton of
+  consequence), with counts, on the Tons of Consequence page.
+
 ## What it can and can't see
 
 - It needs the ball-by-ball record. Cricsheet is close to complete from about **2006**, patchy for 2001 to 2005, absent
