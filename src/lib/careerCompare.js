@@ -6,6 +6,7 @@
  */
 import { COMPARE_SETS } from '../data/compare-sets.js';
 import { CAREERS, CAREERS_AS_OF } from '../data/careers.js';
+import { REFERENCE_POINTS } from '../data/reference-points.js';
 import { rankAll } from './dataset.js';
 import { derived } from './careerStats.js';
 import { NATIONS } from './scoring.js';
@@ -34,6 +35,7 @@ function profile(p, ranked) {
     country: p.country,
     countryName: NATIONS[p.country] || p.country,
     career,
+    ref: REFERENCE_POINTS[`${p.name}|${p.country}`] || null,
     figures: derived(career),
     innings: mine,
     ranking: {
@@ -71,6 +73,18 @@ const RANKING = [
   { key: 'elitePct', label: 'Share of hundreds that are Elite or better', phrase: 'share of hundreds that are Elite or better', get: (p) => p.ranking.elitePct, fmt: (v) => `${v.toFixed(1)}%`, scored: true, better: 'high' },
 ];
 
+const pct = (n, of) => (of ? Math.round((100 * n) / of) : null);
+// What their hundreds did. The first three can have a leader; the rest are context, with no winner.
+const REFERENCE = [
+  { key: 'winRate', label: 'Team won when he scored a hundred', phrase: 'how often the team won when he scored a hundred', get: (p) => (p.ref ? pct(p.ref.results.won, p.ref.results.known) : null), fmt: (v, p) => `${v}% (${p.ref.results.won} of ${p.ref.results.known})`, scored: true, better: 'high', note: 'Won, of the hundreds where the result is known' },
+  { key: 'tons', label: 'Tons of consequence', phrase: 'tons of consequence', get: (p) => (p.ref ? p.ref.tons : null), fmt: (v, p) => `${v} of ${p.ref.measured}`, scored: true, better: 'high', note: 'Hundreds that won, saved or rescued a match' },
+  { key: 'tonShare', label: 'Share that were tons of consequence', phrase: 'share of hundreds that were tons of consequence', get: (p) => (p.ref ? pct(p.ref.tons, p.ref.measured) : null), fmt: (v) => `${v}%`, scored: true, better: 'high' },
+  { key: 'topTier', label: 'Hundreds against the top tier', get: (p) => (p.ref ? p.ref.byTier[0] : null), fmt: (v, p) => `${v} (${pct(v, p.ref.hundreds)}%)`, scored: false, note: 'England, Australia, India' },
+  { key: 'topTons', label: 'Tons of consequence against the top tier', get: (p) => (p.ref ? p.ref.tonsByTier[0] : null), fmt: (v) => v, scored: false },
+  { key: 'otherTier', label: 'Hundreds against the lower tier', get: (p) => (p.ref ? p.ref.byTier[2] + p.ref.byTier[3] : null), fmt: (v, p) => `${v} (${pct(v, p.ref.hundreds)}%)`, scored: false, note: 'Sri Lanka, West Indies, Pakistan and the rest' },
+  { key: 'away', label: 'Hundreds away from home', get: (p) => (p.ref ? p.ref.away : null), fmt: (v, p) => `${v} of ${p.ref.home + p.ref.away}`, scored: false, note: 'Where we have the match record' },
+];
+
 function buildRows(defs, players) {
   return defs.map((d) => {
     const values = players.map((p) => d.get(p));
@@ -103,14 +117,16 @@ export function compareCareers(set, order, bias = null) {
   const players = set.players.map((p) => profile(p, ranked));
   const numbers = buildRows(NUMBERS, players);
   const ranking = buildRows(RANKING, players);
-  const scored = [...numbers, ...ranking].filter((r) => r.scored);
+  const reference = buildRows(REFERENCE, players);
+  const scored = [...numbers, ...ranking, ...reference].filter((r) => r.scored);
   const leads = players.map((p, i) => ({ name: p.name, count: scored.filter((r) => r.leaders.includes(i)).length }));
   const top = Math.max(...leads.map((l) => l.count));
   const overall = leads.filter((l) => l.count === top).map((l) => lastName(l.name));
   const summary = [
     describe(numbers, players, 'On the numbers'),
     describe(ranking, players, 'On the ranking'),
+    describe(reference.filter((r) => r.scored), players, 'On what their hundreds did'),
     top > 0 ? `Across all ${scored.length} measures, ${join(overall)} ${overall.length > 1 ? 'share the most leads' : 'leads on the most'} (${top}).` : '',
   ].filter(Boolean);
-  return { set, players, numbers, ranking, leads, measures: scored.length, summary, asOf: CAREERS_AS_OF };
+  return { set, players, numbers, ranking, reference, leads, measures: scored.length, summary, asOf: CAREERS_AS_OF };
 }

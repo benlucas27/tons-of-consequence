@@ -312,7 +312,7 @@ export function createServer() {
 
   server.registerTool('compare_careers', {
     title: 'Compare whole careers',
-    description: `Compare whole Test careers side by side for a preset group of players. Gives the numbers from every innings (runs, average, strike rate, hundreds, fifties, how often a fifty becomes a hundred, innings per hundred) and how their hundreds rank on the weighting, with who leads on each measure. Presets: ${COMPARE_SETS.map((s) => `${s.id} (${s.name}: ${s.players.map((p) => p.name).join(', ')})`).join('; ')}.`,
+    description: `Compare whole Test careers side by side for a preset group of players. Gives the numbers from every innings (runs, average, strike rate, hundreds, fifties, how often a fifty becomes a hundred, innings per hundred) how their hundreds rank on the weighting, and what their hundreds did (how often the team won, tons of consequence, hundreds against the top tier and away from home), with who leads on each measure. Presets: ${COMPARE_SETS.map((s) => `${s.id} (${s.name}: ${s.players.map((p) => p.name).join(', ')})`).join('; ')}.`,
     inputSchema: { set: z.enum(COMPARE_SETS.map((s) => s.id)).default(COMPARE_SETS[0].id), ...weightingShape },
     annotations: readOnly('Compare whole careers'),
   }, async ({ set, preset, order, australianBonus }) => {
@@ -327,6 +327,7 @@ export function createServer() {
       measuresLed: Object.fromEntries(r.leads.map((l) => [l.name, l.count])),
       theNumbers: table(r.numbers),
       theRanking: table(r.ranking),
+      whatTheirHundredsDid: table(r.reference),
       bestInnings: Object.fromEntries(r.players.map((p) => [p.name, p.innings.slice(0, 3).map((c) => summary(c, w.order, w.bias))])),
       weighting: weightingNote(w.order, w.bias),
       notes: ['Average is runs per dismissal.', 'Career figures come from ball-by-record data (Cricsheet); each player\'s hundreds match the ranking exactly.'],

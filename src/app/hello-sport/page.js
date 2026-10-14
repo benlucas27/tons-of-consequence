@@ -30,7 +30,6 @@ export default function HelloSportPage() {
     <article className="prose hs-page">
       <h1>Hello Cricket</h1>
       <p className="lede">A Hello Sport cricketing archive: the moments the Hello Sport hosts talk about Test hundreds and tons of consequence. Each one has the timestamp, so you can hear what they said, and is tagged to the innings in Tons of Consequence where there is one.</p>
-      <p className="conn-note">Independent and unofficial: not made or endorsed by Hello Sport. Scores shown are from our own database, not from the episodes. {MOMENTS.length} moments from {groups.length} episodes so far, with more being added.</p>
 
       {groups.map((g) => {
         const ep = EPISODES[g.youtubeId];

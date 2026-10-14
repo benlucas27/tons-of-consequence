@@ -88,3 +88,13 @@ test('the ranking half follows the reader\'s weighting', () => {
   const kohli = (r) => r.players.find((p) => p.name === 'Virat Kohli').ranking.averageToc;
   assert.equal(kohli(patriot), kohli(plain));
 });
+
+test('the career presets show what their hundreds did: win rate, tons of consequence, opposition and away', () => {
+  const r = compareCareers(COMPARE_SETS[0], DEFAULT_ORDER);
+  const row = (key) => r.reference.find((x) => x.key === key);
+  const smith = r.players.findIndex((p) => p.name === 'Steve Smith');
+  assert.equal(row('winRate').display[smith], '68% (25 of 37)');
+  assert.ok(row('tons').leaders.length > 0);
+  assert.equal(row('topTier').scored, false); // context, not a contest
+  assert.equal(r.reference.length, 7);
+});

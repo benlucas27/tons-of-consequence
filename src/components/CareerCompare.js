@@ -52,6 +52,7 @@ export default function CareerCompare({ set, order, bias }) {
 
       <Table title="By the numbers" caption="Every innings, whole career" rows={r.numbers} players={r.players} />
       <Table title="By the ranking" caption="Their hundreds, on your weighting" rows={r.ranking} players={r.players} />
+      <Table title="What their hundreds did" caption="Results, tons of consequence, and who and where" rows={r.reference} players={r.players} />
 
       <section className="best-of" aria-label="Best innings">
         <h3 className="sec-t"><span>Their best innings</span><span>On your weighting</span></h3>
