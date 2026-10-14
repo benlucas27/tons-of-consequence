@@ -23,7 +23,7 @@ export default function Door({ order, bias, onChange, onDone }) {
         <WeightList order={order} onChange={onChange} />
         <div className="door-actions">
           <button type="button" className="btn primary" style={{ minHeight: 52 }} onClick={onDone}>See my rankings →</button>
-          <Link className="door-link" href="/quiz">Not sure? Take the 60-second Pub Test instead →</Link>
+          <Link className="door-link" href="/quiz">Not sure? Take the Pub Test →</Link>
         </div>
       </div>
     </div>
