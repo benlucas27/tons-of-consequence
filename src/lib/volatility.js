@@ -3,7 +3,7 @@
  * High = "it depends what you value" (the innings that start the best arguments).
  * Low = universally recognised.
  */
-import { calcToc, displayName, LEVER_BY_KEY } from './scoring.js';
+import { calcToc, displayName, LEVER_BY_KEY, applyBias, biasPoints, BIASES } from './scoring.js';
 
 // Five recognisable points of view, as free-form weights (these are separate from the reader's
 // own order-based weighting).
@@ -44,31 +44,40 @@ export function volatilityTier(v) {
 }
 
 /** A written head-to-head verdict under a given weighting. */
-export function writeVerdict(inningsA, inningsB, weights) {
-  const tocA = calcToc(inningsA, weights);
-  const tocB = calcToc(inningsB, weights);
+export function writeVerdict(inningsA, inningsB, weights, bias = null) {
+  const tocA = applyBias(calcToc(inningsA, weights), inningsA, bias);
+  const tocB = applyBias(calcToc(inningsB, weights), inningsB, bias);
   const winner = tocA >= tocB ? inningsA : inningsB;
   const loser = tocA >= tocB ? inningsB : inningsA;
   const margin = Math.abs(Math.round((tocA - tocB) * 10) / 10);
 
+  // What drove the result: the criterion that gives the winner the most weighted advantage. If the winner
+  // leads on none of them, or only wins because of the bonus, say that instead.
+  const baseEdge = winner === inningsA ? calcToc(inningsA, weights) - calcToc(inningsB, weights) : calcToc(inningsB, weights) - calcToc(inningsA, weights);
   let gapKey = null;
-  let gap = -1;
+  let best = 0;
   for (const k of Object.keys(weights)) {
-    const g = Math.abs((inningsA.levers[k] || 0) - (inningsB.levers[k] || 0));
-    if (g > gap) { gap = g; gapKey = k; }
+    const d = ((winner.levers[k] || 0) - (loser.levers[k] || 0)) * (weights[k] || 0);
+    if (d > best) { best = d; gapKey = k; }
   }
-  const lever = LEVER_BY_KEY[gapKey]?.name || gapKey;
+  const bonusGap = biasPoints(winner, bias) - biasPoints(loser, bias);
+  const bonusDecides = Boolean(bias) && bonusGap > 0 && baseEdge <= 0;
+  const bonusName = bias ? BIASES[bias].name : '';
+  const lever = bonusDecides ? bonusName : (LEVER_BY_KEY[gapKey]?.name || gapKey);
   const wv = winner.levers[gapKey] || 0;
   const lv = loser.levers[gapKey] || 0;
+  const because = bonusDecides ? `the ${bonusName}` : `${lever} (${wv} vs ${lv})`;
   const desc = (x) => `${displayName(x)}'s ${x.runs}${x.notOut ? '*' : ''}`;
 
   let verdict;
   if (margin < 1) {
     verdict = `Dead heat. On your settings, ${desc(inningsA)} and ${desc(inningsB)} are essentially tied. The pub argument is yours to resolve.`;
   } else if (margin < 4) {
-    verdict = `Narrow call. ${desc(winner)} edges it by ${margin} points, largely on ${lever} (${wv} vs ${lv}). Plenty of room for a second opinion.`;
+    verdict = `Narrow call. ${desc(winner)} edges it by ${margin} points, ${bonusDecides ? 'only because of' : 'largely on'} ${because}. Plenty of room for a second opinion.`;
   } else {
-    verdict = `On your settings, ${desc(winner)} wins clearly, ${margin} points clear, with a decisive advantage in ${lever} (${wv} vs ${lv}). ${desc(loser)} would need you to weight ${margin < 8 ? 'a couple of' : 'very different'} levers differently to change that.`;
+    verdict = `On your settings, ${desc(winner)} wins clearly, ${margin} points clear, ${bonusDecides ? 'but only because of' : 'with a decisive advantage in'} ${because}. ${desc(loser)} would need you to weight ${margin < 8 ? 'a couple of' : 'very different'} levers differently to change that.`;
   }
+  // Say so when the bonus is part of why one innings leads.
+  if (bias && bonusGap > 0 && !bonusDecides) verdict += ` The ${bonusName} gives ${displayName(winner)}'s innings ${bonusGap} more points.`;
   return { winner, loser, tocA, tocB, margin, biggestGapLever: lever, verdict };
 }

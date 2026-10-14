@@ -33,19 +33,58 @@ export const LEVER_BY_KEY = Object.fromEntries(LEVERS.map((l) => [l.key, l]));
 export const DEFAULT_ORDER = LEVERS.map((l) => l.key);
 export const RANK_WEIGHTS = [30, 22, 18, 14, 10, 6];
 
-export const PRESET_ORDERS = {
-  Default: DEFAULT_ORDER,
-  Purist: ['matchImpact', 'conditions', 'clutchness', 'historicalWeight', 'narrative', 'perceivedGreatness'],
-  Romantic: ['narrative', 'historicalWeight', 'clutchness', 'perceivedGreatness', 'matchImpact', 'conditions'],
-  Analyst: ['matchImpact', 'conditions', 'clutchness', 'narrative', 'historicalWeight', 'perceivedGreatness'],
-  Patriot: ['historicalWeight', 'clutchness', 'narrative', 'matchImpact', 'conditions', 'perceivedGreatness'],
+// A preset is an order of the six criteria and, for the Patriot, a bonus (see BIASES). Each one is a
+// distinct point of view: a test keeps them from drifting back into near-copies of each other.
+export const PRESETS = {
+  Default: {
+    order: DEFAULT_ORDER, bias: null,
+    blurb: "The model's own balance: match impact first, then clutchness and the story.",
+  },
+  Purist: {
+    order: ['conditions', 'clutchness', 'matchImpact', 'historicalWeight', 'perceivedGreatness', 'narrative'], bias: null,
+    blurb: 'How hard it was. Conditions and pressure first, the story last.',
+  },
+  Analyst: {
+    order: ['matchImpact', 'conditions', 'historicalWeight', 'clutchness', 'perceivedGreatness', 'narrative'], bias: null,
+    blurb: 'What it changed. Match impact first, then conditions, records and pressure.',
+  },
+  Patriot: {
+    order: DEFAULT_ORDER, bias: 'au',
+    blurb: 'Australia first. Every Australian innings gets a bonus, and the Border to Ponting years get more.',
+  },
+  Romantic: {
+    order: ['narrative', 'historicalWeight', 'perceivedGreatness', 'clutchness', 'matchImpact', 'conditions'], bias: null,
+    blurb: 'The story. Narrative first, then history and legend.',
+  },
 };
+export const PRESET_ORDERS = Object.fromEntries(Object.entries(PRESETS).map(([name, p]) => [name, p.order]));
+
+/**
+ * A bonus added to a score after the weighting, for presets that favour one team. It is always shown to
+ * the reader (see BiasNote) and carried in links as ?bonus=au, so a score never moves without saying why.
+ * The Australian bonus: +5 for any Australian innings, and +3 more for 1989 to 2007 (Border to Ponting).
+ */
+export const BIASES = {
+  au: {
+    id: 'au', name: 'Australian bonus', country: 'AUS', base: 5, golden: 3, from: 1989, to: 2007,
+    note: '+5 for every Australian innings, and +3 more for innings from 1989 to 2007, the Border to Ponting years.',
+  },
+};
+export const parseBias = (s) => (typeof s === 'string' && BIASES[s] ? s : null);
+export function biasPoints(innings, bias) {
+  const b = BIASES[bias];
+  if (!b || innings.country !== b.country) return 0;
+  return b.base + (innings.year >= b.from && innings.year <= b.to ? b.golden : 0);
+}
+/** A score with the bonus (if any) added. Capped at 100 so the scale still means what it says. */
+export const applyBias = (score, innings, bias) => (bias ? Math.min(100, Math.round((score + biasPoints(innings, bias)) * 10) / 10) : score);
 
 export function sameOrder(a, b) {
   return a.length === b.length && a.every((k, i) => k === b[i]);
 }
-export function activePreset(order) {
-  return Object.keys(PRESET_ORDERS).find((name) => sameOrder(PRESET_ORDERS[name], order)) || null;
+/** The preset a weighting matches, or null if it is a custom one. */
+export function activePreset(order, bias = null) {
+  return Object.keys(PRESETS).find((name) => sameOrder(PRESETS[name].order, order) && (PRESETS[name].bias || null) === (bias || null)) || null;
 }
 
 /** Weights keyed by lever, from an order of lever keys. */
@@ -70,12 +109,20 @@ export function parseOrder(str) {
   return keys;
 }
 
+/** The query string that carries a weighting in a link: '' for Default, otherwise ?o=... (and &bonus=au). */
+export function weightQuery(order, bias = null) {
+  const parts = [];
+  if (bias || !sameOrder(order, DEFAULT_ORDER)) parts.push(`o=${formatOrder(order)}`);
+  if (bias) parts.push(`bonus=${bias}`);
+  return parts.length ? `?${parts.join('&')}` : '';
+}
+
 export function calcToc(innings, weights) {
   const total = Object.values(weights).reduce((a, b) => a + b, 0);
   if (!total) return 0;
   return Math.round(Object.keys(weights).reduce((acc, k) => acc + ((innings.levers[k] || 0) * weights[k]) / total, 0) * 10) / 10;
 }
-export const tocForOrder = (innings, order) => calcToc(innings, weightsFromOrder(order));
+export const tocForOrder = (innings, order, bias = null) => applyBias(calcToc(innings, weightsFromOrder(order)), innings, bias);
 
 export const TIERS = [
   { key: 'legendary', label: 'Legendary', min: 90 },

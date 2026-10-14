@@ -3,7 +3,7 @@
  * weighting, filters. Pure functions over src/data/sample.js, usable on server and client.
  */
 import { SAMPLE_CENTURIES } from '../data/sample.js';
-import { displayName, tocForOrder, formatOrder, DEFAULT_ORDER, sameOrder } from './scoring.js';
+import { displayName, tocForOrder, formatOrder, DEFAULT_ORDER, weightQuery } from './scoring.js';
 
 export const ALL = SAMPLE_CENTURIES.map((c) => ({ ...c, name: displayName(c) }));
 export const BY_ID = new Map(ALL.map((c) => [c.id, c]));
@@ -18,29 +18,43 @@ export function parseInningsId(slug) {
   const m = /^(\d+)(?:-|$)/.exec(String(slug || ''));
   return m ? Number(m[1]) : null;
 }
-/** Path to an innings, carrying the reader's weighting when it isn't the default. */
-export function inningsPath(c, order) {
-  const base = `/innings/${inningsSlug(c)}`;
-  return order && !sameOrder(order, DEFAULT_ORDER) ? `${base}?o=${formatOrder(order)}` : base;
+/** Path to an innings, carrying the reader's weighting (and any bonus) when it isn't the default. */
+export function inningsPath(c, order, bias = null) {
+  return `/innings/${inningsSlug(c)}${order ? weightQuery(order, bias) : ''}`;
 }
 
-/** The rankings page, carrying the reader's weighting when it isn't the default. */
-export function rankingsPath(order) {
-  return order && !sameOrder(order, DEFAULT_ORDER) ? `/?o=${formatOrder(order)}` : '/';
+/** The rankings page, carrying the reader's weighting (and any bonus) when it isn't the default. */
+export function rankingsPath(order, bias = null) {
+  return order ? `/${weightQuery(order, bias)}` : '/';
 }
 
 // ---- rankings
 
-let cache = { key: null, list: null };
-/** Every innings with `toc` and `rank` under the given weighting, best first. Cached per weighting. */
-export function rankAll(order) {
-  const key = formatOrder(order);
-  if (cache.key === key) return cache.list;
-  const list = ALL.map((c) => ({ ...c, toc: tocForOrder(c, order) })).sort((a, b) => b.toc - a.toc || a.id - b.id);
+function computeRanking(order, bias) {
+  const list = ALL.map((c) => ({ ...c, toc: tocForOrder(c, order, bias) })).sort((a, b) => b.toc - a.toc || a.id - b.id);
   list.forEach((c, i) => { c.rank = i + 1; });
-  cache = { key, list };
   return list;
 }
+
+const cache = new Map();
+/** Every innings with `toc` and `rank` under the given weighting, best first. The last few weightings are kept. */
+export function rankAll(order, bias = null) {
+  const key = `${formatOrder(order)}|${bias || ''}`;
+  if (!cache.has(key)) {
+    if (cache.size >= 6) cache.delete(cache.keys().next().value);
+    cache.set(key, computeRanking(order, bias));
+  }
+  return cache.get(key);
+}
+
+let defaultRanks = null;
+/** Where an innings sits on the Default weighting. */
+export function defaultRankOf(id) {
+  if (!defaultRanks) defaultRanks = new Map(computeRanking(DEFAULT_ORDER, null).map((c) => [c.id, c.rank]));
+  return defaultRanks.get(id);
+}
+/** Places gained (positive) or lost (negative) against the Default weighting. */
+export const movementOf = (c) => defaultRankOf(c.id) - c.rank;
 
 // ---- filters
 
@@ -76,6 +90,6 @@ export function applyFilters(list, { country, era, band, query }) {
 }
 
 /** Other innings by the same person, best first under the given weighting. */
-export function otherInningsBy(c, order) {
-  return rankAll(order).filter((x) => x.id !== c.id && x.name === c.name && x.country === c.country);
+export function otherInningsBy(c, order, bias = null) {
+  return rankAll(order, bias).filter((x) => x.id !== c.id && x.name === c.name && x.country === c.country);
 }

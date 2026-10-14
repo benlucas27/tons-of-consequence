@@ -4,28 +4,30 @@ import { useMemo } from 'react';
 import Link from 'next/link';
 import { useWeighting } from '@/lib/useWeighting';
 import { rankAll, inningsPath, rankingsPath, otherInningsBy } from '@/lib/dataset';
-import { LEVER_BY_KEY, RANK_WEIGHTS, NATIONS, tierOf } from '@/lib/scoring';
+import { LEVER_BY_KEY, RANK_WEIGHTS, NATIONS, BIASES, biasPoints, tierOf } from '@/lib/scoring';
 import { calcVolatility, volatilityTier } from '@/lib/volatility';
 import { copyText, toast } from '@/lib/clientUtils';
 import { fmt1, ord, runsText, RESULT_LABEL } from '@/lib/format';
 import { WeightBar, Legend } from './WeightPanel';
 import { ResultTag } from './RankRow';
 import VideoCard from './VideoCard';
+import BiasNote from './BiasNote';
 
 export default function InningsView({ id }) {
-  const { order } = useWeighting();
-  const ranked = useMemo(() => rankAll(order), [order]);
+  const { order, bias } = useWeighting();
+  const ranked = useMemo(() => rankAll(order, bias), [order, bias]);
   const c = useMemo(() => ranked.find((x) => x.id === id), [ranked, id]);
-  const others = useMemo(() => otherInningsBy(c, order).slice(0, 6), [c, order]);
+  const others = useMemo(() => otherInningsBy(c, order, bias).slice(0, 6), [c, order, bias]);
   if (!c) return null;
 
   const tier = tierOf(c.toc);
+  const bonus = biasPoints(c, bias);
   const vol = calcVolatility(c);
   const vt = volatilityTier(vol.volatility);
   const recent = c.year >= 2020 ? ranked.filter((x) => x.year >= 2020) : null;
   const home = ranked.filter((x) => x.country === c.country);
   const sr = c.balls ? fmt1((c.runs / c.balls) * 100) : '—';
-  const shown = `tons-of-consequence.vercel.app${inningsPath(c, order)}`;
+  const shown = `tons-of-consequence.vercel.app${inningsPath(c, order, bias)}`;
 
   async function copy() {
     const ok = await copyText(`https://${shown}`);
@@ -36,7 +38,7 @@ export default function InningsView({ id }) {
     <>
       <article className="inn">
         <div className="back-wrap">
-          <Link className="back" href={rankingsPath(order)}>← Back to rankings</Link>
+          <Link className="back" href={rankingsPath(order, bias)}>← Back to rankings</Link>
         </div>
 
         <header className="hero-wrap hero">
@@ -88,6 +90,11 @@ export default function InningsView({ id }) {
                   </div>
                 );
               })}
+              {bonus > 0 && (
+                <div className="lrow bonus-row">
+                  <div className="lhead"><span className="sw" aria-hidden="true" />{BIASES[bias].name}<b>+{fmt1(bonus)}</b></div>
+                </div>
+              )}
               <div className="ltotal"><span>ToC score on your weighting</span><b>{fmt1(c.toc)}</b></div>
             </div>
           </section>
@@ -97,6 +104,7 @@ export default function InningsView({ id }) {
             <div style={{ display: 'grid', gap: 12 }}>
               <WeightBar order={order} />
               <Legend order={order} />
+              <BiasNote bias={bias} />
               <Link className="link-btn" href="/" style={{ justifySelf: 'start' }}>Change it on the rankings page</Link>
             </div>
           </section>
@@ -111,7 +119,7 @@ export default function InningsView({ id }) {
               <h2 className="sec-t">More from {c.name}</h2>
               <div className="others">
                 {others.map((o) => (
-                  <Link key={o.id} href={inningsPath(o, order)}>
+                  <Link key={o.id} href={inningsPath(o, order, bias)}>
                     <span><span className="on">{runsText(o)} v {o.opponent}</span><br /><span className="od">{[o.venue, o.year].filter(Boolean).join(' · ')} · {ord(o.rank)} overall</span></span>
                     <span className="os">{fmt1(o.toc)}</span>
                   </Link>
@@ -143,7 +151,7 @@ export default function InningsView({ id }) {
         </aside>
       </article>
       <div className="dock">
-        <Link className="btn" href={rankingsPath(order)}>Rankings</Link>
+        <Link className="btn" href={rankingsPath(order, bias)}>Rankings</Link>
         <button type="button" className="btn primary" onClick={copy}>Copy link</button>
       </div>
     </>

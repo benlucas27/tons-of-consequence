@@ -3,28 +3,46 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { QUESTIONS, getPersona, applyDeltas, orderForWeights } from '@/lib/quiz';
-import { formatOrder, LEVERS } from '@/lib/scoring';
+import { QUESTIONS, PERSONA_BY_ID, PICKS, getPersona, tally, rankingsFor } from '@/lib/quiz';
+import { formatOrder, weightQuery, PRESETS } from '@/lib/scoring';
+import { WeightBar } from '@/components/WeightPanel';
+import BiasNote from '@/components/BiasNote';
+
+const shuffled = (list) => {
+  const a = [...list];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+};
 
 export default function PubTest() {
   const router = useRouter();
-  const [step, setStep] = useState(0); // 0 intro, 1-6 questions, 7 result
-  const [answers, setAnswers] = useState([]);
+  const [step, setStep] = useState(0); // 0 intro, 1-8 questions, 9 result
+  const [answers, setAnswers] = useState([]); // the persona behind each answer chosen
+  const [layout, setLayout] = useState([]); // the shuffled answer order for each question
   const [chosen, setChosen] = useState(null);
   const [result, setResult] = useState(null);
 
   const current = QUESTIONS[step - 1];
 
-  function answer(choice) {
+  function begin() {
+    setLayout(QUESTIONS.map((q) => shuffled(q.options)));
+    setAnswers([]);
+    setResult(null);
+    setStep(1);
+  }
+
+  function answer(option) {
     if (chosen) return;
-    const next = [...answers, current[choice].delta];
-    setChosen(choice);
+    const next = [...answers, option.persona];
+    setChosen(option.persona);
     setTimeout(() => {
       setAnswers(next);
       setChosen(null);
       if (step >= QUESTIONS.length) {
-        const weights = applyDeltas(next);
-        setResult({ weights, persona: getPersona(weights) });
+        setResult({ persona: getPersona(next), counts: tally(next) });
         setStep(QUESTIONS.length + 1);
         window.scrollTo(0, 0);
       } else {
@@ -34,9 +52,13 @@ export default function PubTest() {
   }
 
   function seeRankings() {
-    const order = orderForWeights(result.weights);
-    try { window.localStorage.setItem('toc.order', formatOrder(order)); } catch { /* private mode */ }
-    router.push(`/?o=${formatOrder(order)}&from=quiz&p=${result.persona.id}`);
+    const { order, bias } = rankingsFor(result.persona);
+    try {
+      window.localStorage.setItem('toc.order', formatOrder(order));
+      if (bias) window.localStorage.setItem('toc.bias', bias); else window.localStorage.removeItem('toc.bias');
+    } catch { /* private mode */ }
+    const q = weightQuery(order, bias);
+    router.push(`/${q ? `${q}&` : '?'}from=quiz&p=${result.persona.id}`);
   }
 
   if (step === 0) {
@@ -44,9 +66,9 @@ export default function PubTest() {
       <div className="quiz">
         <div className="quiz-top"><span>The Pub Test</span></div>
         <h1>What kind of cricket fan are you?</h1>
-        <p className="lead">Six questions. No right answers. At the end you get your own ranking of every Test century, built around your values, not ours.</p>
+        <p className="lead">Eight questions, no right answers. At the end you get your own ranking of every Test century, built around what you value, not what we do.</p>
         <div className="quiz-actions">
-          <button type="button" className="btn primary" style={{ minHeight: 52 }} onClick={() => setStep(1)}>Start the Pub Test</button>
+          <button type="button" className="btn primary" style={{ minHeight: 52 }} onClick={begin}>Start the Pub Test</button>
           <Link className="btn" href="/">Skip it and go to the rankings</Link>
         </div>
       </div>
@@ -54,7 +76,8 @@ export default function PubTest() {
   }
 
   if (step === QUESTIONS.length + 1 && result) {
-    const { persona, weights } = result;
+    const { persona, counts } = result;
+    const { order, bias } = rankingsFor(persona);
     return (
       <div className="quiz">
         <div className="persona">
@@ -63,18 +86,21 @@ export default function PubTest() {
           <p className="tagline">{persona.tagline}</p>
           <p className="lead" style={{ fontSize: 17 }}>{persona.description}</p>
         </div>
-        <section className="profile" aria-label="Your weighting profile">
-          <div className="s-label"><span>Your weighting profile</span></div>
-          {LEVERS.map((l) => (
-            <div key={l.key} className="profile-row" style={{ '--c': l.color }}>
-              <div><span>{l.name}</span><b>{weights[l.key]}%</b></div>
-              <div className="track"><span style={{ width: `${(weights[l.key] / 50) * 100}%` }} /></div>
-            </div>
-          ))}
+        <section className="profile" aria-label="Your ranking">
+          <div className="s-label"><span>Your ranking: {persona.preset}</span></div>
+          <WeightBar order={order} />
+          <p className="preset-note">{PRESETS[persona.preset].blurb}</p>
+          <BiasNote bias={bias} />
+        </section>
+        <section className="picks" aria-label="How you answered">
+          <div className="s-label"><span>How you answered</span></div>
+          <p className="ans-chips">
+            {PICKS.map((id) => <b key={id}>{PERSONA_BY_ID[id].name.replace('The ', '')} {counts[id]}</b>)}
+          </p>
         </section>
         <div className="quiz-actions">
           <button type="button" className="btn primary" style={{ minHeight: 52 }} onClick={seeRankings}>See your ranking →</button>
-          <button type="button" className="btn" onClick={() => { setStep(0); setAnswers([]); setResult(null); }}>Retake the test</button>
+          <button type="button" className="btn" onClick={() => setStep(0)}>Retake the test</button>
         </div>
       </div>
     );
@@ -86,10 +112,9 @@ export default function PubTest() {
       <div className="progress" role="progressbar" aria-valuemin={0} aria-valuemax={QUESTIONS.length} aria-valuenow={step - 1}><i style={{ width: `${((step - 1) / QUESTIONS.length) * 100}%` }} /></div>
       <h1 className="q">{current.question}</h1>
       <div className="answers">
-        {['a', 'b'].map((choice) => (
-          <button key={choice} type="button" disabled={Boolean(chosen)} className={`ans${chosen === choice ? ' chosen' : ''}${chosen && chosen !== choice ? ' other' : ''}`} onClick={() => answer(choice)}>
-            <span className="em" aria-hidden="true">{current[choice].emoji}</span>
-            <span>{current[choice].text}</span>
+        {(layout[step - 1] || current.options).map((option) => (
+          <button key={option.persona} type="button" disabled={Boolean(chosen)} className={`ans${chosen === option.persona ? ' chosen' : ''}${chosen && chosen !== option.persona ? ' other' : ''}`} onClick={() => answer(option)}>
+            <span>{option.text}</span>
           </button>
         ))}
       </div>

@@ -13,7 +13,7 @@ One of the six named dimensions an innings is scored on: Match Impact, Condition
 _Avoid_: factor, category, dimension, criterion.
 
 **Weighting Profile**:
-A reader's personal judgement of what matters, expressed as an order of the six levers: first place carries 30%, then 22, 18, 14, 10 and 6. Two readers looking at the same innings' lever values can reach different ToC Scores because their orders differ.
+A reader's personal judgement of what matters, expressed as an order of the six levers: first place carries 30%, then 22, 18, 14, 10 and 6. Two readers looking at the same innings' lever values can reach different ToC Scores because their orders differ. A profile can also carry a Bonus (see below), which is always shown.
 _Avoid_: weights (fine in code; in domain language, name the whole order).
 
 **ToC Score**:
@@ -21,15 +21,19 @@ The single number produced by combining an innings' lever values with a weightin
 _Avoid_: score (too generic on its own), rank (rank is the ToC Score's position in a list, not the score itself).
 
 **Preset**:
-A named, pre-built Weighting Profile representing a recognizable point of view (e.g. "The Purist" favours Conditions and Match Impact; "The Romantic" favours Narrative). A starting point a reader can adjust from, not a fixed category readers belong to.
+A named, pre-built Weighting Profile representing a recognizable point of view. There are five: Default, Purist (how hard it was), Analyst (what it changed), Patriot (Australia first) and Romantic (the story). A starting point a reader can adjust from, not a fixed category readers belong to. A test keeps the presets clearly different from each other.
 _Avoid_: persona (see below — related but distinct), profile (ambiguous with Weighting Profile in general).
 
+**Bonus**:
+Points added to a score after the weighting, for presets that favour a team. Today only the Patriot has one: the Australian bonus, +5 for any Australian innings and +3 more for 1989 to 2007 (the Border to Ponting years). It is always shown on screen and carried in links (`bonus=au`), so a score never moves without saying why. Scores are capped at 100.
+_Avoid_: boost, handicap.
+
 **Persona**:
-The result of the Pub Test: a label and description assigned to a reader based on the Weighting Profile their quiz answers produced. Distinct from a Preset — a Persona is diagnosed from a reader's answers, a Preset is chosen off a shelf.
+The result of the Pub Test: a label and description assigned to a reader based on the answers they chose most. Distinct from a Preset — a Persona is diagnosed from a reader's answers, a Preset is chosen off a shelf.
 _Avoid_: preset, type, result.
 
 **Pub Test**:
-The six-question either/or quiz (at `/quiz`) that derives a reader's Weighting Profile from their answers to concrete dilemmas, then reveals their Persona before handing them into the rankings.
+The eight-question quiz (at `/quiz`), four answers each, one per persona. The persona a reader chose most (at least three times, and strictly ahead) is their result, otherwise the Balanced Observer. Each persona hands the reader into the matching preset before the rankings.
 _Avoid_: quiz alone (fine informally, but "Pub Test" is the proper name used in the product).
 
 **Divisiveness**:
@@ -55,3 +59,6 @@ _Avoid_: description, narrative (Narrative is already a Lever name — reusing i
 **Ask**:
 Answering a plain-English question about the innings (at `/search`) by typing or speaking. The answer says how the question was understood, so a wrong guess is visible. Distinct from the filter box on the rankings page, which only narrows the list.
 _Avoid_: search (the tab is named Search, but the thing it does is answer questions).
+
+**Movement**:
+How many places an innings has moved from its rank on the Default weighting, shown as ▲ or ▼ on rows whenever the weighting is not Default and the move is three places or more.

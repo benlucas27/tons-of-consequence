@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { LEVER_BY_KEY } from '@/lib/scoring';
+import { LEVER_BY_KEY, BIASES } from '@/lib/scoring';
 import { rankingsPath } from '@/lib/dataset';
 
 /** One line saying which weighting the page is scored on, with a way to change it. */
-export default function WeightNote({ order }) {
+export default function WeightNote({ order, bias }) {
   return (
     <p className="wnote">
       <span>Scored on your weighting:</span>
@@ -12,7 +12,8 @@ export default function WeightNote({ order }) {
           <i aria-hidden="true" />{LEVER_BY_KEY[k].short}{i < order.length - 1 ? ' ›' : ''}
         </span>
       ))}
-      <Link className="link-btn" href={rankingsPath(order)}>Change it</Link>
+      {bias && <span className="wn bonus">+ {BIASES[bias].name}</span>}
+      <Link className="link-btn" href={rankingsPath(order, bias)}>Change it</Link>
     </p>
   );
 }

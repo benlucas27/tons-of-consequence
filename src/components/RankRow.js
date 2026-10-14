@@ -12,17 +12,23 @@ export function ResultTag({ res }) {
   return null;
 }
 
-export default function RankRow({ c, position, order, picked, onPick, pickDisabled, note }) {
+export default function RankRow({ c, position, order, bias, move, picked, onPick, pickDisabled, note }) {
   const tier = tierOf(c.toc);
   return (
     <li className={`row${picked ? ' picked' : ''}`}>
       <span className={`rank${position === 1 ? ' one' : ''}`}>{position}</span>
       <div className="row-main">
         <div className="row-name">
-          <Link className="row-link" href={inningsPath(c, order)}>{c.name}</Link>
+          <Link className="row-link" href={inningsPath(c, order, bias)}>{c.name}</Link>
           <span className="runs">{runsText(c)}</span>
           <span className="cc">{c.country}</span>
           <ResultTag res={c.matchResult} />
+          {move != null && Math.abs(move) >= 3 && (
+            <span className={`mover ${move > 0 ? 'up' : 'down'}`}>
+              <span aria-hidden="true">{move > 0 ? '▲' : '▼'} {Math.abs(move)}</span>
+              <span className="sr-only">{move > 0 ? 'Up' : 'Down'} {Math.abs(move)} places on the Default weighting</span>
+            </span>
+          )}
           {videoFor(c.id) && <span className="vid-tag" title="Has a video">▶ Video</span>}
         </div>
         <div className="ctx">{context(c)}{note ? ` \u00B7 ${note}` : ''}</div>

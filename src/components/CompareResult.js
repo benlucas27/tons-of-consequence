@@ -5,12 +5,12 @@ import { inningsPath } from '@/lib/dataset';
 import { fmt1, context, runsText } from '@/lib/format';
 import { ResultTag } from './RankRow';
 
-function Card({ c, order, levers }) {
+function Card({ c, order, bias, levers }) {
   const tier = tierOf(c.toc);
   return (
     <article className="cmp-card">
       <div>
-        <h3><Link href={inningsPath(c, order)}>{c.name}</Link></h3>
+        <h3><Link href={inningsPath(c, order, bias)}>{c.name}</Link></h3>
         <div className="ctx">{context(c)} <ResultTag res={c.matchResult} /></div>
       </div>
       <div className="big">
@@ -31,7 +31,7 @@ function Card({ c, order, levers }) {
           })}
         </div>
       )}
-      <Link className="link-btn" href={inningsPath(c, order)}>Read the full story →</Link>
+      <Link className="link-btn" href={inningsPath(c, order, bias)}>Read the full story →</Link>
     </article>
   );
 }
@@ -68,9 +68,9 @@ function Tape({ a, b, order }) {
 }
 
 /** The verdict and the evidence for two or three innings. `items` need `toc` under `order`. */
-export default function CompareResult({ items, order }) {
+export default function CompareResult({ items, order, bias }) {
   const sorted = [...items].sort((x, y) => y.toc - x.toc);
-  const cmp = compareInnings(sorted[0], sorted[1], order);
+  const cmp = compareInnings(sorted[0], sorted[1], order, bias);
   const third = sorted[2];
   const two = sorted.length === 2;
   const winnerIsFirst = cmp.winner.id === cmp.a.id;
@@ -99,7 +99,7 @@ export default function CompareResult({ items, order }) {
         </ul>
       </section>
       <div className="cmp-grid" style={{ '--n': sorted.length }}>
-        {sorted.map((c) => <Card key={c.id} c={c} order={order} levers={!two} />)}
+        {sorted.map((c) => <Card key={c.id} c={c} order={order} bias={bias} levers={!two} />)}
       </div>
       {two && <Tape a={sorted[0]} b={sorted[1]} order={order} />}
     </div>

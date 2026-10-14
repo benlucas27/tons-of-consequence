@@ -5,12 +5,13 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useWeighting } from '@/lib/useWeighting';
 import { answer, EXAMPLE_QUESTIONS } from '@/lib/ask';
-import { inningsPath } from '@/lib/dataset';
+import { inningsPath, movementOf } from '@/lib/dataset';
 import { setUrlParam } from '@/lib/clientUtils';
 import { fmt1 } from '@/lib/format';
-import { DEFAULT_ORDER, formatOrder, sameOrder } from '@/lib/scoring';
+import { DEFAULT_ORDER, sameOrder, weightQuery } from '@/lib/scoring';
 import VoiceButton, { useSpeechSupport } from './VoiceButton';
 import WeightNote from './WeightNote';
+import BiasNote from './BiasNote';
 import CompareResult from './CompareResult';
 import RankRow from './RankRow';
 
@@ -41,24 +42,25 @@ function Careers({ careers }) {
   );
 }
 
-function Rows({ items, order, numbered }) {
+function Rows({ items, order, bias, numbered }) {
+  const isDefault = sameOrder(order, DEFAULT_ORDER) && !bias;
   return (
     <ol className="rows ans-rows">
-      {items.map((c, i) => <RankRow key={c.id} c={c} position={numbered ? c.rank : i + 1} order={order} />)}
+      {items.map((c, i) => <RankRow key={c.id} c={c} position={numbered ? c.rank : i + 1} order={order} bias={bias} move={isDefault ? null : movementOf(c)} />)}
     </ol>
   );
 }
 
 export default function SearchView() {
   const params = useSearchParams();
-  const { order } = useWeighting();
+  const { order, bias } = useWeighting();
   const start = params.get('q') || '';
   const speech = useSpeechSupport();
   const [text, setText] = useState(start);
   const [asked, setAsked] = useState(start);
   const [limit, setLimit] = useState(0);
 
-  const result = useMemo(() => (asked ? answer(asked, order, limit ? { limit } : {}) : null), [asked, order, limit]);
+  const result = useMemo(() => (asked ? answer(asked, order, { bias, ...(limit ? { limit } : {}) }) : null), [asked, order, bias, limit]);
 
   function run(q) {
     const t = String(q ?? text).trim();
@@ -71,7 +73,7 @@ export default function SearchView() {
 
   const showCompareLink = result?.kind === 'compare' && !result.multi;
   const compareHref = showCompareLink
-    ? `/compare?a=${result.comparison.a.id}&b=${result.comparison.b.id}${sameOrder(order, DEFAULT_ORDER) ? '' : `&o=${formatOrder(order)}`}`
+    ? `/compare?a=${result.comparison.a.id}&b=${result.comparison.b.id}${weightQuery(order, bias).replace('?', '&')}`
     : null;
 
   return (
@@ -98,7 +100,8 @@ export default function SearchView() {
         {speech && <p className="hint">Tap the microphone and say it. Your browser handles the speech, and Chrome and Safari send the audio to their own speech service to turn it into text.</p>}
       </form>
 
-      <WeightNote order={order} />
+      <WeightNote order={order} bias={bias} />
+      <BiasNote bias={bias} />
 
       {!result && (
         <section className="ask-eg" aria-label="Example questions">
@@ -132,7 +135,7 @@ export default function SearchView() {
           {result.kind === 'compare' && (
             <>
               {result.depth && <p className="ans-depth">{result.depth}</p>}
-              <CompareResult items={result.multi || [result.comparison.a, result.comparison.b]} order={result.order} />
+              <CompareResult items={result.multi || [result.comparison.a, result.comparison.b]} order={result.order} bias={result.bias} />
               {result.careers && <Careers careers={result.careers} />}
               {compareHref && <Link className="btn" href={compareHref} style={{ justifySelf: 'start' }}>Pick two different innings →</Link>}
             </>
@@ -140,15 +143,15 @@ export default function SearchView() {
 
           {result.kind === 'innings' && (
             <>
-              <Rows items={[result.innings]} order={result.order} numbered />
-              <Link className="btn" href={inningsPath(result.innings, result.order)} style={{ justifySelf: 'start' }}>Read the full story →</Link>
+              <Rows items={[result.innings]} order={result.order} bias={result.bias} numbered />
+              <Link className="btn" href={inningsPath(result.innings, result.order, result.bias)} style={{ justifySelf: 'start' }}>Read the full story →</Link>
             </>
           )}
 
           {result.kind === 'players' && (
             <>
               <Career career={result.career} />
-              {result.items.length > 0 && <Rows items={result.items} order={result.order} />}
+              {result.items.length > 0 && <Rows items={result.items} order={result.order} bias={result.bias} />}
               {result.total > result.items.length && (
                 <button type="button" className="btn" style={{ justifySelf: 'start' }} onClick={() => setLimit(result.items.length + 10)}>
                   Show more ({result.total - result.items.length} left)
@@ -159,7 +162,7 @@ export default function SearchView() {
 
           {result.kind === 'list' && (
             <>
-              <Rows items={result.items} order={result.order} />
+              <Rows items={result.items} order={result.order} bias={result.bias} />
               {result.total > result.items.length && result.items.length < 50 && (
                 <button type="button" className="btn" style={{ justifySelf: 'start' }} onClick={() => setLimit(Math.min(50, result.items.length + 10))}>
                   Show more ({Math.min(10, result.total - result.items.length)} more of {result.total.toLocaleString()})

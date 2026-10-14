@@ -91,3 +91,14 @@ test('norm strips accents, possessives and punctuation', () => {
   assert.equal(norm("Lord's  Ground!"), 'lord ground');
   assert.equal(norm('Ponting’s 156*'), 'ponting 156*');
 });
+
+test('the Australian bonus carries through the question engine and is named in verdicts', () => {
+  const plain = answer('Waugh 200 vs Smith 144', DEFAULT_ORDER);
+  const patriot = answer('Waugh 200 vs Smith 144', DEFAULT_ORDER, { bias: 'au' });
+  assert.equal(patriot.bias, 'au');
+  assert.ok(patriot.comparison.a.toc > plain.comparison.a.toc || patriot.comparison.b.toc > plain.comparison.b.toc);
+  assert.match(patriot.comparison.verdict, /Australian bonus/);
+  assert.equal(plain.bias, null);
+  const list = answer('best centuries', DEFAULT_ORDER, { bias: 'au' });
+  assert.equal(list.items[0].country, 'AUS');
+});

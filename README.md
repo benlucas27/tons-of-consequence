@@ -17,7 +17,10 @@ the repo and a deploy publishes it.
 - `src/data/player-names.js` maps the dataset's initials-style names ("JE Root") to the names
   fans use ("Joe Root"). Add a player there and all their innings update.
 - `src/lib/scoring.js` is the scoring model. A weighting is an *order* of the six criteria
-  (30, 22, 18, 14, 10, 6 percent), which is why it fits in a link (`?o=na,hi,mi,...`).
+  (30, 22, 18, 14, 10, 6 percent), which is why it fits in a link (`?o=na,hi,mi,...`). The five presets
+  (Default, Purist, Analyst, Patriot, Romantic) live there too. The Patriot is the Default order plus the
+  Australian bonus (+5 for any Australian innings, +3 more for 1989 to 2007), carried in links as
+  `&bonus=au` and always shown on screen. A test keeps every pair of presets clearly different.
 - `src/lib/dataset.js` prepares the data: display names, permalinks, rankings, filters.
 - `src/lib/ask.js` answers plain-English questions ("who has the better hundred, Ponting or Smith?",
   "best centuries by India since 2010") with no server or AI service: a small parser turns the question
@@ -26,7 +29,9 @@ the repo and a deploy publishes it.
 - Pages: `/` rankings (and the front door for first-time readers), `/search` ask a question by typing or
   speaking (the browser's own speech recognition; the microphone hides itself where unsupported),
   `/compare` pick any two innings for a verdict, `/innings/<id>-<name>-<runs>-<year>` one innings with its
-  own link and social preview image, `/quiz` the Pub Test, `/about`.
+  own link and social preview image, `/quiz` the Pub Test (eight questions, four answers each, one per persona; each persona hands you into a
+  preset), `/about`. When the weighting is not Default, rows show ▲ and ▼ for how far each innings has
+  moved from its Default rank.
 
 ### Featuring an innings
 

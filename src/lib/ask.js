@@ -7,7 +7,7 @@
  * says how the question was understood, so a wrong guess is visible rather than silent.
  */
 import { ALL, rankAll } from './dataset.js';
-import { LEVERS, LEVER_BY_KEY, NATIONS, PRESET_ORDERS, tocForOrder, weightsFromOrder } from './scoring.js';
+import { LEVERS, LEVER_BY_KEY, NATIONS, PRESETS, tocForOrder, weightsFromOrder } from './scoring.js';
 import { calcVolatility, writeVerdict } from './volatility.js';
 
 // ---- text helpers
@@ -188,8 +188,8 @@ function withLeverFirst(order, key) {
   return [key, ...order.filter((k) => k !== key)];
 }
 
-function careerOf(player, order) {
-  const ranked = rankAll(order);
+function careerOf(player, order, bias = null) {
+  const ranked = rankAll(order, bias);
   const ids = new Set(player.innings.map((c) => c.id));
   const mine = ranked.filter((c) => ids.has(c.id));
   const avg = mine.reduce((a, c) => a + c.toc, 0) / mine.length;
@@ -207,36 +207,38 @@ function careerOf(player, order) {
 }
 
 function presetCheck(a, b) {
-  return Object.entries(PRESET_ORDERS).map(([name, o]) => {
-    const ta = tocForOrder(a, o);
-    const tb = tocForOrder(b, o);
+  return Object.entries(PRESETS).map(([name, p]) => {
+    const ta = tocForOrder(a, p.order, p.bias);
+    const tb = tocForOrder(b, p.order, p.bias);
     return { name, aWins: ta >= tb, a: ta, b: tb, margin: Math.abs(Math.round((ta - tb) * 10) / 10) };
   });
 }
 
 /** Head-to-head between two innings under a weighting, with the verdict and how it holds across presets. */
-export function compareInnings(a, b, order) {
-  const ranked = rankAll(order);
+export function compareInnings(a, b, order, bias = null) {
+  const ranked = rankAll(order, bias);
   const byId = new Map(ranked.map((c) => [c.id, c]));
   const ia = byId.get(a.id);
   const ib = byId.get(b.id);
-  const v = writeVerdict(ia, ib, weightsFromOrder(order));
+  const v = writeVerdict(ia, ib, weightsFromOrder(order), bias);
   const presets = presetCheck(ia, ib);
   const winnerIsA = v.winner.id === ia.id;
   const flips = presets.filter((p) => (p.aWins !== winnerIsA) && p.margin >= 0.1).map((p) => p.name);
   const robustness = flips.length === 0
-    ? `${describe(v.winner)} wins under all five presets, so this is not just a matter of taste.`
+    ? `${describe(v.winner)} wins under all ${COUNT_WORDS[presets.length] || presets.length} presets, so this is not just a matter of taste.`
     : `${describe(v.loser)} takes it under ${flips.join(' and ')}, so this one depends on what you value.`;
   return { a: ia, b: ib, ...v, presets, flips, robustness };
 }
 
+const COUNT_WORDS = ['none', 'one', 'two', 'three', 'four', 'five', 'six', 'seven'];
+
 // ---- searching innings by name (used by the comparison picker)
 
 const STOP = new Set(['the', 'a', 'an', 'in', 'at', 'of', 'vs', 'v', 'against', 'for', 'by', 'and']);
-export function searchInnings(text, order, limit = 8) {
+export function searchInnings(text, order, limit = 8, bias = null) {
   const words = norm(text).split(' ').filter((w) => w && !STOP.has(w));
   if (!words.length) return [];
-  const ranked = rankAll(order);
+  const ranked = rankAll(order, bias);
   const out = [];
   for (const c of ranked) {
     const hay = ` ${norm([c.name, c.player, c.opponent, c.venue, c.year, c.runs + (c.notOut ? '*' : ''), c.runs, c.series].join(' '))} `;
@@ -276,6 +278,11 @@ export const EXAMPLE_QUESTIONS = [
  * 'compare' | 'players' | 'innings' | 'list' | 'none'.
  */
 export function answer(question, order, opts = {}) {
+  return { ...answerFor(question, order, opts), bias: opts.bias || null };
+}
+
+function answerFor(question, order, opts) {
+  const bias = opts.bias || null;
   const text = norm(question);
   const q = String(question || '').trim();
   if (!text) return { kind: 'none', question: q, headline: 'Ask a question about any Test century.', interpreted: [], suggestions: EXAMPLE_QUESTIONS.slice(0, 4) };
@@ -287,21 +294,21 @@ export function answer(question, order, opts = {}) {
     if (!distinct.some((d) => d.player.key === m.player.key && d.runs === m.runs)) distinct.push(m);
   }
   const assumed = distinct.filter((m) => m.assumed).map((m) => m.assumed);
-  const ranked = rankAll(order);
+  const ranked = rankAll(order, bias);
   const byId = new Map(ranked.map((c) => [c.id, c]));
 
   // ---- two or more named: a head-to-head
   const wantsCompare = hasAny(text, COMPARE_CUES) || distinct.length >= 2;
   if (distinct.length >= 2 && wantsCompare) {
     const picks = distinct.slice(0, 3).map((m) => {
-      const career = careerOf(m.player, order);
+      const career = careerOf(m.player, order, bias);
       const pinned = m.runs ? career.innings.find((c) => c.runs === m.runs) : null;
       return { m, career, innings: pinned || career.best, pinned: Boolean(pinned) };
     });
     const interpreted = picks.map((p) => (p.pinned ? `${p.career.name}'s ${runsOf(p.innings)}` : `${p.career.name}'s best hundred`));
     if (picks.length === 2) {
       const [pa, pb] = picks;
-      const cmp = compareInnings(pa.innings, pb.innings, order);
+      const cmp = compareInnings(pa.innings, pb.innings, order, bias);
       const samePlayer = pa.career.player.key === pb.career.player.key;
       let depth = null;
       if (!samePlayer && !pa.pinned && !pb.pinned) {
@@ -323,7 +330,7 @@ export function answer(question, order, opts = {}) {
     const sorted = [...picks].sort((x, y) => y.innings.toc - x.innings.toc);
     return {
       kind: 'compare', question: q, order, interpreted, assumed, multi: sorted.map((p) => p.innings), careers: null, depth: null,
-      comparison: compareInnings(sorted[0].innings, sorted[1].innings, order),
+      comparison: compareInnings(sorted[0].innings, sorted[1].innings, order, bias),
       headline: `${describe(sorted[0].innings)} comes out on top of the three.`,
     };
   }
@@ -425,12 +432,12 @@ export function answer(question, order, opts = {}) {
   const sortLabel = { toc: null, worst: 'lowest first', runs: 'most runs first', recent: 'most recent first', fastest: 'highest strike rate first', slowest: 'lowest strike rate first', divisive: 'most divisive first' }[sort];
   if (sortLabel) interpreted.push(sortLabel);
 
-  const orderedRanked = useOrder === order ? ranked : rankAll(useOrder);
+  const orderedRanked = useOrder === order ? ranked : rankAll(useOrder, bias);
 
   // ---- one player named
   if (singleMention) {
     const player = singleMention.player;
-    const career = careerOf(player, useOrder);
+    const career = careerOf(player, useOrder, bias);
     if (singleMention.runs) {
       const inn = career.innings.find((c) => c.runs === singleMention.runs);
       return {
@@ -456,7 +463,7 @@ export function answer(question, order, opts = {}) {
     // no recognised structure: treat the words as a search
     const words = tokens.filter((w) => !STOP.has(w) && !['best', 'top', 'greatest', 'centuries', 'hundreds', 'innings', 'tons', 'show', 'me', 'find', 'what', 'who', 'which', 'is', 'are', 'was', 'were', 'did', 'does', 'how', 'many', 'tell', 'about', 'cricket', 'test', 'tests', 'century', 'hundred', 'ton', 'knock', 'knocks', 'to', 'with', 'on', 'from', 'all', 'every', 'ever', 'please', 'give'].includes(w) && !/^\d+$/.test(w));
     if (words.length) {
-      const hits = searchInnings(words.join(' '), order, 400);
+      const hits = searchInnings(words.join(' '), order, 400, bias);
       if (hits.length) {
         items = hits;
         interpreted.push(`matching “${words.join(' ')}”`);

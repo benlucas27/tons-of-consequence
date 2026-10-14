@@ -9,6 +9,7 @@ import { copyText, setUrlParam, toast } from '@/lib/clientUtils';
 import { context, runsText, fmt1 } from '@/lib/format';
 import { tierOf } from '@/lib/scoring';
 import WeightNote from './WeightNote';
+import BiasNote from './BiasNote';
 import CompareResult from './CompareResult';
 
 const PAIRS = [
@@ -20,13 +21,13 @@ const PAIRS = [
 ];
 const EXAMPLES = PAIRS.map(([a, b]) => [findInnings(...a), findInnings(...b)]).filter(([a, b]) => a && b);
 
-function Picker({ label, selected, otherId, order, onPick, onClear }) {
+function Picker({ label, selected, otherId, order, bias, onPick, onClear }) {
   const uid = useId();
   const [text, setText] = useState('');
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
   const input = useRef(null);
-  const hits = useMemo(() => searchInnings(text, order, 8).filter((c) => c.id !== otherId), [text, order, otherId]);
+  const hits = useMemo(() => searchInnings(text, order, 8, bias).filter((c) => c.id !== otherId), [text, order, bias, otherId]);
 
   if (selected) {
     const tier = tierOf(selected.toc);
@@ -92,8 +93,8 @@ function Picker({ label, selected, otherId, order, onPick, onClear }) {
 
 export default function CompareBuilder() {
   const params = useSearchParams();
-  const { order } = useWeighting();
-  const ranked = useMemo(() => rankAll(order), [order]);
+  const { order, bias } = useWeighting();
+  const ranked = useMemo(() => rankAll(order, bias), [order, bias]);
   const byId = useMemo(() => new Map(ranked.map((c) => [c.id, c])), [ranked]);
   const idParam = (k) => { const n = Number(params.get(k)); return Number.isFinite(n) && byId.has(n) ? n : null; };
   const [a, setA] = useState(() => idParam('a'));
@@ -125,12 +126,13 @@ export default function CompareBuilder() {
       </header>
 
       <div className="pickers">
-        <Picker label="First innings" selected={left} otherId={b} order={order} onPick={(id) => set('a', id)} onClear={() => set('a', null)} />
+        <Picker label="First innings" selected={left} otherId={b} order={order} bias={bias} onPick={(id) => set('a', id)} onClear={() => set('a', null)} />
         <span className="vs" aria-hidden="true">vs</span>
-        <Picker label="Second innings" selected={right} otherId={a} order={order} onPick={(id) => set('b', id)} onClear={() => set('b', null)} />
+        <Picker label="Second innings" selected={right} otherId={a} order={order} bias={bias} onPick={(id) => set('b', id)} onClear={() => set('b', null)} />
       </div>
 
-      <WeightNote order={order} />
+      <WeightNote order={order} bias={bias} />
+      <BiasNote bias={bias} />
 
       {left && right ? (
         <section className="ask-result" aria-live="polite" aria-label="Verdict">
@@ -138,7 +140,7 @@ export default function CompareBuilder() {
             <button type="button" className="btn" onClick={() => setBoth(b, a)}>Swap sides</button>
             <button type="button" className="btn" onClick={share}>Copy link</button>
           </div>
-          <CompareResult items={[left, right]} order={order} />
+          <CompareResult items={[left, right]} order={order} bias={bias} />
         </section>
       ) : (
         <section className="ask-eg" aria-label="Example comparisons">

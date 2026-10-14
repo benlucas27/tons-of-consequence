@@ -4,7 +4,7 @@ import { tierOf, NATIONS } from '@/lib/scoring';
 import { fmt1, ord } from '@/lib/format';
 
 /** A headline card for the newest century. Which innings it shows is set in the data (featured: true). */
-export default function Spotlight({ ranked, order }) {
+export default function Spotlight({ ranked, order, bias }) {
   if (!FEATURED) return null;
   const f = ranked.find((x) => x.id === FEATURED.id);
   if (!f) return null;
@@ -36,7 +36,7 @@ export default function Spotlight({ ranked, order }) {
           <li><b>{ord(home.findIndex((x) => x.id === f.id) + 1)}</b> of {home.length.toLocaleString()} for {NATIONS[f.country] || f.country}</li>
         </ul>
       </div>
-      <Link className="btn primary" href={inningsPath(f, order)}>Open the innings →</Link>
+      <Link className="btn primary" href={inningsPath(f, order, bias)}>Open the innings →</Link>
     </section>
   );
 }

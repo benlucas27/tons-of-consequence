@@ -4,9 +4,9 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useWeighting } from '@/lib/useWeighting';
-import { rankAll, applyFilters, COUNTRIES, ERAS, SCORE_BANDS } from '@/lib/dataset';
+import { rankAll, applyFilters, movementOf, COUNTRIES, ERAS, SCORE_BANDS } from '@/lib/dataset';
 import { calcVolatility } from '@/lib/volatility';
-import { NATIONS, weightsFromOrder } from '@/lib/scoring';
+import { NATIONS, DEFAULT_ORDER, sameOrder } from '@/lib/scoring';
 import { PERSONA_BY_ID } from '@/lib/quiz';
 import { copyText, toast } from '@/lib/clientUtils';
 import WeightPanel from './WeightPanel';
@@ -23,7 +23,8 @@ function Chip({ on, onClick, children }) {
 
 export default function Rankings() {
   const params = useSearchParams();
-  const { order, explicit, setOrder } = useWeighting();
+  const { order, bias, explicit, setOrder } = useWeighting();
+  const isDefault = sameOrder(order, DEFAULT_ORDER) && !bias;
   const [door, setDoor] = useState(!explicit);
   const [view, setView] = useState(params.get('view') === 'divisive' ? 'divisive' : 'rankings');
   const [country, setCountry] = useState('');
@@ -52,7 +53,7 @@ export default function Rankings() {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  const ranked = useMemo(() => rankAll(order), [order]);
+  const ranked = useMemo(() => rankAll(order, bias), [order, bias]);
   const filtered = useMemo(() => applyFilters(ranked, { country, era, band, query }), [ranked, country, era, band, query]);
   const divisive = useMemo(() => {
     if (view !== 'divisive') return null;
@@ -93,11 +94,11 @@ export default function Rankings() {
   }
 
   if (door) {
-    return <Door order={order} onChange={setOrder} onDone={() => { setOrder(order); setDoor(false); window.scrollTo(0, 0); }} />;
+    return <Door order={order} bias={bias} onChange={setOrder} onDone={() => { setOrder(order, bias); setDoor(false); window.scrollTo(0, 0); }} />;
   }
 
   if (comparing && pickedItems.length >= 2) {
-    return <CompareView items={pickedItems} order={order} onBack={() => setComparing(false)} onClear={() => { setPicks([]); setComparing(false); }} />;
+    return <CompareView items={pickedItems} order={order} bias={bias} onBack={() => setComparing(false)} onClear={() => { setPicks([]); setComparing(false); }} />;
   }
 
   return (
@@ -109,8 +110,8 @@ export default function Rankings() {
             <Link className="link-btn" href="/quiz">Retake it</Link>
           </div>
         )}
-        <WeightPanel order={order} onChange={setOrder} />
-        {view === 'rankings' && !activeFilters && <Spotlight ranked={ranked} order={order} />}
+        <WeightPanel order={order} bias={bias} onChange={setOrder} />
+        {view === 'rankings' && !activeFilters && <Spotlight ranked={ranked} order={order} bias={bias} />}
 
         <div className="tools">
           <label className="search">
@@ -191,6 +192,8 @@ export default function Rankings() {
                 c={c}
                 position={i + 1}
                 order={order}
+                bias={bias}
+                move={isDefault ? null : movementOf(c)}
                 picked={picks.includes(c.id)}
                 pickDisabled={picks.length >= 3}
                 onPick={togglePick}
@@ -198,7 +201,7 @@ export default function Rankings() {
               />
             ))}
           </ol>
-          <p className="bars-note">The six bars on each row are the six criteria, in the colours above.</p>
+          <p className="bars-note">The six bars on each row are the six criteria, in the colours above.{!isDefault && ' ▲ and ▼ show how many places an innings has moved from where it sits on the Default weighting.'}</p>
           <div className="more">
             {visible < list.length && (
               <button type="button" className="btn" onClick={() => setVisible((v) => v + PAGE)}>Show {Math.min(PAGE, list.length - visible)} more</button>

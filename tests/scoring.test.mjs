@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   DEFAULT_ORDER, RANK_WEIGHTS, PRESET_ORDERS, weightsFromOrder, parseOrder, formatOrder, orderFromWeights,
-  calcToc, tocForOrder, tierOf, sameOrder, activePreset,
+  calcToc, tocForOrder, tierOf, sameOrder, activePreset, PRESETS, parseBias, biasPoints, weightQuery,
 } from '../src/lib/scoring.js';
 
 test('rank weights add up to 100', () => {
@@ -58,4 +58,41 @@ test('presets are recognised, custom orders are not', () => {
   assert.equal(activePreset(PRESET_ORDERS.Purist), 'Purist');
   assert.equal(activePreset([...DEFAULT_ORDER].reverse()), null);
   assert.ok(sameOrder(DEFAULT_ORDER, [...DEFAULT_ORDER]));
+});
+
+test('the same order can be Default or Patriot depending on the bonus', () => {
+  assert.equal(activePreset(DEFAULT_ORDER), 'Default');
+  assert.equal(activePreset(DEFAULT_ORDER, 'au'), 'Patriot');
+  assert.equal(activePreset(PRESETS.Romantic.order, 'au'), null);
+});
+
+test('the Australian bonus: +5 for any Australian innings, +3 more from 1989 to 2007', () => {
+  assert.equal(biasPoints({ country: 'AUS', year: 2026 }, 'au'), 5);
+  assert.equal(biasPoints({ country: 'AUS', year: 1989 }, 'au'), 8);
+  assert.equal(biasPoints({ country: 'AUS', year: 2007 }, 'au'), 8);
+  assert.equal(biasPoints({ country: 'AUS', year: 2008 }, 'au'), 5);
+  assert.equal(biasPoints({ country: 'AUS', year: 1988 }, 'au'), 5);
+  assert.equal(biasPoints({ country: 'ENG', year: 1995 }, 'au'), 0);
+  assert.equal(biasPoints({ country: 'AUS', year: 1995 }, null), 0);
+});
+
+test('a bonus is added after the weighting and a score never passes 100', () => {
+  const lev = (v) => ({ matchImpact: v, clutchness: v, narrative: v, conditions: v, historicalWeight: v, perceivedGreatness: v });
+  assert.equal(tocForOrder({ country: 'AUS', year: 1995, levers: lev(60) }, DEFAULT_ORDER, 'au'), 68);
+  assert.equal(tocForOrder({ country: 'AUS', year: 1995, levers: lev(60) }, DEFAULT_ORDER), 60);
+  assert.equal(tocForOrder({ country: 'ENG', year: 1995, levers: lev(60) }, DEFAULT_ORDER, 'au'), 60);
+  assert.equal(tocForOrder({ country: 'AUS', year: 1995, levers: lev(99) }, DEFAULT_ORDER, 'au'), 100);
+});
+
+test('only known bonuses are accepted from a link', () => {
+  assert.equal(parseBias('au'), 'au');
+  assert.equal(parseBias('xx'), null);
+  assert.equal(parseBias(null), null);
+  assert.equal(parseBias('<script>'), null);
+});
+
+test('a weighting query is empty for Default and always names the order when there is a bonus', () => {
+  assert.equal(weightQuery(DEFAULT_ORDER), '');
+  assert.equal(weightQuery(DEFAULT_ORDER, 'au'), '?o=mi,cl,na,co,hi,pg&bonus=au');
+  assert.equal(weightQuery(PRESETS.Purist.order), '?o=co,cl,mi,hi,pg,na');
 });

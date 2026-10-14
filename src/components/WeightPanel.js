@@ -1,7 +1,8 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import { LEVER_BY_KEY, RANK_WEIGHTS, PRESET_ORDERS, activePreset } from '@/lib/scoring';
+import { LEVER_BY_KEY, RANK_WEIGHTS, PRESETS, activePreset } from '@/lib/scoring';
+import BiasNote from './BiasNote';
 
 /** The weighting as a coloured bar, one segment per criterion, sized by its weight. */
 export function WeightBar({ order }) {
@@ -42,15 +43,18 @@ export function Legend({ order }) {
   );
 }
 
-export function PresetChips({ order, onChange }) {
-  const active = activePreset(order);
+export function PresetChips({ order, bias, onChange }) {
+  const active = activePreset(order, bias);
   return (
-    <div className="chips" role="group" aria-label="Weighting presets">
-      {Object.keys(PRESET_ORDERS).map((name) => (
-        <button key={name} type="button" className="chip" aria-pressed={active === name} onClick={() => onChange([...PRESET_ORDERS[name]])}>
-          {name}
-        </button>
-      ))}
+    <div className="preset-block">
+      <div className="chips" role="group" aria-label="Weighting presets">
+        {Object.keys(PRESETS).map((name) => (
+          <button key={name} type="button" className="chip" aria-pressed={active === name} title={PRESETS[name].blurb} onClick={() => onChange([...PRESETS[name].order], PRESETS[name].bias)}>
+            {name}
+          </button>
+        ))}
+      </div>
+      <p className="preset-note">{active ? `${active}: ${PRESETS[active].blurb}` : 'Your own order. Pick a preset to start again.'}</p>
     </div>
   );
 }
@@ -121,7 +125,7 @@ export function WeightList({ order, onChange }) {
 }
 
 /** Bar, legend, presets and an inline editor, all in one block. */
-export default function WeightPanel({ order, onChange, defaultOpen = false }) {
+export default function WeightPanel({ order, bias, onChange, defaultOpen = false }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
     <section className="weights" aria-label="Your weighting">
@@ -131,7 +135,8 @@ export default function WeightPanel({ order, onChange, defaultOpen = false }) {
       </div>
       <WeightBar order={order} />
       <Legend order={order} />
-      <PresetChips order={order} onChange={onChange} />
+      <PresetChips order={order} bias={bias} onChange={onChange} />
+      <BiasNote bias={bias} onTurnOff={() => onChange(order, null)} />
       {open && <WeightList order={order} onChange={onChange} />}
     </section>
   );
