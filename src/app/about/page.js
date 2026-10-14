@@ -34,7 +34,7 @@ export default function About() {
 
       <h2>Where the data comes from</h2>
       <ul>
-        <li>The original list of centuries comes from ESPNcricinfo&rsquo;s Statsguru.</li>
+        <li>The original list of centuries was compiled from public cricket records.</li>
         <li>New centuries, and many match results, come from <a href="https://cricsheet.org">Cricsheet</a>&rsquo;s open ball-by-ball data.</li>
         <li>Hand-written match notes are checked against published match reports.</li>
       </ul>

@@ -13,7 +13,7 @@ Next.js 14 (app router), deployed on Vercel from `main`. There is no database: t
 the repo and a deploy publishes it.
 
 - `src/data/sample.js` is the dataset, one row per innings (4,600+). The original rows came from
-  ESPNcricinfo Statsguru; newer rows come from Cricsheet or are written by hand.
+  public cricket records; newer rows come from Cricsheet or are written by hand.
 - `src/data/player-names.js` maps the dataset's initials-style names ("JE Root") to the names
   fans use ("Joe Root"). Add a player there and all their innings update.
 - `src/lib/scoring.js` is the scoring model. A weighting is an *order* of the six criteria

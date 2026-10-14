@@ -60,7 +60,7 @@ Nothing writes, so there are no `destructiveHint` tools.
 Anthropic's approval for this mode, it is not needed.)
 
 ## 7. Data handling
-- The underlying data is the project's own dataset, built from public cricket statistics: ESPNcricinfo Statsguru and
+- The underlying data is the project's own dataset, compiled from public cricket records and
   Cricsheet (Open Data Commons Attribution licence). No third-party API is called when a request is made.
 - Personal health data: no. Sponsored content: no.
 
