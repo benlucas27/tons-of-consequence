@@ -11,6 +11,7 @@ import { LEVERS, LEVER_BY_KEY, NATIONS, PRESETS, tocForOrder, weightsFromOrder }
 import { calcVolatility, writeVerdict } from './volatility.js';
 import { WHERE_PLAYED } from '../data/where-played.js';
 import { TON_IDS } from '../data/ton-ids.js';
+import { INNINGS_FACTS } from '../data/innings-facts.js';
 
 // ---- text helpers
 
@@ -45,7 +46,7 @@ for (const p of PLAYERS.values()) {
   BY_SURNAME.get(p.last).push(p);
 }
 // Surnames that are also everyday words: only count them with a first name beside them.
-const NEEDS_FIRST_NAME = new Set(['may', 'hope', 'young', 'best', 'hall', 'bell', 'cook', 'king', 'miller', 'wright', 'wood', 'border', 'major', 'short', 'strong', 'will', 'price', 'long', 'lee', 'gray', 'rose', 'dean']);
+const NEEDS_FIRST_NAME = new Set(['may', 'hope', 'young', 'best', 'hall', 'bell', 'cook', 'king', 'miller', 'wright', 'wood', 'border', 'major', 'short', 'strong', 'will', 'price', 'long', 'lee', 'gray', 'rose', 'dean', 'chase']);
 
 const byCount = (a, b) => b.innings.length - a.innings.length || a.name.localeCompare(b.name);
 
@@ -419,6 +420,23 @@ function answerFor(question, order, opts) {
   }
   if (presetUsed) interpreted.push(`${presetUsed} weighting`);
 
+  // batting position and which innings of the match, from the per-hundred facts (only hundreds with a match record)
+  let usesFacts = false;
+  if (/(?:^| )(?:opener|openers|opening batters?|opening batsmen|opening batsman|opening the batting|as an opener)(?: |$)/.test(text)) {
+    filters.push((c) => (INNINGS_FACTS[c.id]?.[0] ?? 99) <= 2);
+    interpreted.push('opening batters');
+    usesFacts = true;
+  }
+  const inningsWords = { first: 1, '1st': 1, second: 2, '2nd': 2, third: 3, '3rd': 3, fourth: 4, '4th': 4 };
+  const innMatch = /(?:^| )(first|1st|second|2nd|third|3rd|fourth|4th) innings(?: |$)/.exec(text) || (/(?:^| )(?:in a chase|chasing)(?: |$)/.test(text) ? [null, 'fourth'] : null);
+  if (innMatch) {
+    const n = inningsWords[innMatch[1]];
+    filters.push((c) => INNINGS_FACTS[c.id]?.[1] === n);
+    interpreted.push(`${innMatch[1]} innings of the match`);
+    usesFacts = true;
+  }
+  if (usesFacts) notes.push('Batting position and innings are only known for hundreds with a match record (mostly 2006 on, plus Don Bradman).');
+
   const years = findYears(text);
   if (years) {
     filters.push((c) => (years.from == null || c.year >= years.from) && (years.to == null || c.year <= years.to));
@@ -469,6 +487,7 @@ function answerFor(question, order, opts) {
 
   let sort = 'toc';
   if (hasAny(text, ['most divisive', 'divisive', 'divide opinion', 'controversial', 'most argued', 'argument', 'debated'])) sort = 'divisive';
+  else if (/(?:fastest|quickest) (?:test )?(?:hundreds?|centur(?:y|ies)|tons?)/.test(text) || /(?:^| )(?:balls to reach|balls to get to) (?:a )?(?:hundred|100)/.test(text)) sort = 'fastest100';
   else if (hasAny(text, ['fastest', 'quickest', 'quickfire', 'most aggressive'])) sort = 'fastest';
   else if (hasAny(text, ['slowest', 'grind', 'grinding'])) sort = 'slowest';
   else if (hasAny(text, ['latest', 'newest', 'most recent', 'newest first'])) sort = 'recent';
@@ -481,11 +500,12 @@ function answerFor(question, order, opts) {
     worst: (l) => [...l].reverse(),
     runs: (l) => [...l].sort((a, b) => b.runs - a.runs || b.toc - a.toc),
     recent: (l) => [...l].sort((a, b) => b.year - a.year || b.toc - a.toc),
+    fastest100: (l) => l.filter((c) => INNINGS_FACTS[c.id]?.[2]).sort((a, b) => INNINGS_FACTS[a.id][2] - INNINGS_FACTS[b.id][2] || b.toc - a.toc),
     fastest: (l) => l.filter((c) => c.balls).sort((a, b) => a.balls / a.runs - b.balls / b.runs || b.toc - a.toc),
     slowest: (l) => l.filter((c) => c.balls).sort((a, b) => b.balls / b.runs - a.balls / a.runs || b.toc - a.toc),
     divisive: (l) => l.map((c) => ({ c, v: calcVolatility(c) })).sort((a, b) => b.v.volatility - a.v.volatility || b.c.toc - a.c.toc).map((x) => x.c),
   };
-  const sortLabel = { toc: null, worst: 'lowest first', runs: 'most runs first', recent: 'most recent first', fastest: 'highest strike rate first', slowest: 'lowest strike rate first', divisive: 'most divisive first' }[sort];
+  const sortLabel = { toc: null, worst: 'lowest first', runs: 'most runs first', recent: 'most recent first', fastest100: 'fewest balls to reach 100 first', fastest: 'highest strike rate first', slowest: 'lowest strike rate first', divisive: 'most divisive first' }[sort];
   if (sortLabel) interpreted.push(sortLabel);
 
   const orderedRanked = useOrder === order ? ranked : rankAll(useOrder, bias);

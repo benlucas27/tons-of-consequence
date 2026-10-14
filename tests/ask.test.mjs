@@ -134,3 +134,14 @@ test('"how is the ToC score calculated" is explained', () => {
   assert.match(a.headline, /30%/);
   assert.notEqual(ask('how many hundreds did Don Bradman score?').kind, 'info');
 });
+
+test('openers, fourth innings and fastest hundred use the per-hundred facts', () => {
+  const a = ask('best centuries by opening batters');
+  assert.equal(a.kind, 'list');
+  assert.ok(a.interpreted.includes('opening batters'));
+  const b = ask('best fourth innings hundreds');
+  assert.ok(b.interpreted.includes('fourth innings of the match'));
+  const c = ask('who scored the fastest test hundred?');
+  assert.ok(c.interpreted.includes('fewest balls to reach 100 first'));
+  assert.notEqual(ask('tons of consequence in a chase').kind, 'players'); // "Chase" is a surname, not a player here
+});
