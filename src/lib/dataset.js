@@ -3,9 +3,13 @@
  * weighting, filters. Pure functions over src/data/sample.js, usable on server and client.
  */
 import { SAMPLE_CENTURIES } from '../data/sample.js';
+import { STORY_SOURCES } from '../data/story-sources.js';
 import { displayName, tocForOrder, formatOrder, DEFAULT_ORDER, weightQuery } from './scoring.js';
 
-export const ALL = SAMPLE_CENTURIES.map((c) => ({ ...c, name: displayName(c) }));
+export const ALL = SAMPLE_CENTURIES.map((c) => {
+  const sourced = STORY_SOURCES[c.id];
+  return { ...c, name: displayName(c), ...(sourced ? { story: sourced.story, sourceLinks: sourced.sources } : {}) };
+});
 export const BY_ID = new Map(ALL.map((c) => [c.id, c]));
 export const TOTAL = ALL.length;
 export const FEATURED = ALL.find((c) => c.featured) || null;

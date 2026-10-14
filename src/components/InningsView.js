@@ -13,6 +13,7 @@ import { ResultTag } from './RankRow';
 import VideoCard from './VideoCard';
 import HelloSportMoments from './HelloSportMoments';
 import ConsequenceNote from './ConsequenceStamp';
+import { storyStatus } from '@/lib/stories';
 import BiasNote from './BiasNote';
 import { SITE_URL } from '@/lib/site';
 
@@ -66,6 +67,10 @@ export default function InningsView({ id, consequence = null, facts = null }) {
           <div>
             {c.story ? <p className="quote">{c.story}</p> : <p className="quote muted">No written story for this innings yet.</p>}
             {c.sources && <p className="src">Sources: {c.sources}</p>}
+            {c.sourceLinks && c.sourceLinks.length > 0 && (
+              <p className="src">Sources: {c.sourceLinks.map((s, i) => <span key={s.url}>{i ? ' \u00b7 ' : ''}<a href={s.url} target="_blank" rel="noopener noreferrer">{s.label}</a></span>)}</p>
+            )}
+            {storyStatus(c) === 'unsourced' && <p className="src">Not yet sourced: this write-up is waiting for two sources.</p>}
           </div>
 
           <ConsequenceNote verdict={consequence} />
