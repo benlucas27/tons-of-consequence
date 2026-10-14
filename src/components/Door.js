@@ -13,7 +13,7 @@ export default function Door({ order, onChange, onDone }) {
         <Logo className="ball r" />
         <div className="door-eyebrow">● Test cricket ●</div>
         <h1 className="door-title"><span>Tons of</span><span>Consequence</span></h1>
-        <div className="door-tag">The definitive ranking of Test cricket centuries</div>
+        <div className="door-tag">The unofficial ranking of Test cricket centuries</div>
       </header>
       <div className="door-body">
         <h2>What matters most in a great Test innings?</h2>

@@ -51,3 +51,7 @@ _Avoid_: live (fine in code), ongoing.
 **Story**:
 The two-to-four sentence account of what made a specific innings remarkable — what was at stake and what happened. Written or approved by a human reviewer; distinct from the lever values, which are numeric.
 _Avoid_: description, narrative (Narrative is already a Lever name — reusing it for the prose would collide).
+
+**Ask**:
+Answering a plain-English question about the innings (at `/search`) by typing or speaking. The answer says how the question was understood, so a wrong guess is visible. Distinct from the filter box on the rankings page, which only narrows the list.
+_Avoid_: search (the tab is named Search, but the thing it does is answer questions).

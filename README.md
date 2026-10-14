@@ -1,6 +1,6 @@
 # Tons of Consequence
 
-The definitive ranking of every Test cricket century, scored by a weighted model across six
+The unofficial ranking of every Test cricket century, scored by a weighted model across six
 criteria (Match Impact, Clutchness, Narrative, Conditions & Opposition, Historical Weight,
 Perceived Greatness). Readers put the six in order of importance; every innings is re-ranked
 their way.
@@ -19,14 +19,29 @@ the repo and a deploy publishes it.
 - `src/lib/scoring.js` is the scoring model. A weighting is an *order* of the six criteria
   (30, 22, 18, 14, 10, 6 percent), which is why it fits in a link (`?o=na,hi,mi,...`).
 - `src/lib/dataset.js` prepares the data: display names, permalinks, rankings, filters.
-- Pages: `/` rankings (and the front door for first-time readers), `/innings/<id>-<name>-<runs>-<year>`
-  one innings with its own link and social preview image, `/quiz` the Pub Test, `/about`.
+- `src/lib/ask.js` answers plain-English questions ("who has the better hundred, Ponting or Smith?",
+  "best centuries by India since 2010") with no server or AI service: a small parser turns the question
+  into a comparison or a filtered ranking and always reports how it understood it.
+- `src/lib/ball.js` draws the cricket-ball mark once, for the header, favicon and share images.
+- Pages: `/` rankings (and the front door for first-time readers), `/search` ask a question by typing or
+  speaking (the browser's own speech recognition; the microphone hides itself where unsupported),
+  `/compare` pick any two innings for a verdict, `/innings/<id>-<name>-<runs>-<year>` one innings with its
+  own link and social preview image, `/quiz` the Pub Test, `/about`.
 
 ### Featuring an innings
 
 The "Latest century" card shows the row with `featured: true` (at most one; a test enforces it).
 Its `spotlight` field holds the card text. An innings that is still being played carries
 `matchResult: "live"`, shown as "In progress".
+
+### Videos
+
+`src/data/videos.js` links an innings to a video, keyed by innings id. Each link was checked against YouTube
+(it exists; whether the uploader allows embedding). `kind` is `innings` (about this innings) or `match`
+(highlights of the whole Test). The player is click-to-play and uses the no-cookie embed, so nothing from
+YouTube loads until a reader presses play; a video that cannot be embedded links out instead. The top 50
+innings were done first, and no innings gets a video unless one was found and checked. Many from before the
+1950s have no footage. Check for dead links with `node scripts/check-videos.mjs`.
 
 ## Keeping the data up to date
 

@@ -11,7 +11,7 @@ const prose = Newsreader({ subsets: ['latin'], weight: ['400', '500'], variable:
 export const metadata = {
   metadataBase: new URL('https://tons-of-consequence.vercel.app'),
   title: {
-    default: 'Tons of Consequence — The Definitive Ranking of Test Cricket Centuries',
+    default: 'Tons of Consequence — The Unofficial Ranking of Test Cricket Centuries',
     template: '%s | Tons of Consequence',
   },
   description:

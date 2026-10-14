@@ -2,6 +2,7 @@ import { ImageResponse } from 'next/og';
 import { BY_ID, parseInningsId, TOTAL } from '@/lib/dataset';
 import { tocForOrder, DEFAULT_ORDER, tierOf, NATIONS } from '@/lib/scoring';
 import { rankAll } from '@/lib/dataset';
+import { ballSvg } from '@/lib/ball';
 
 export const runtime = 'nodejs';
 export const size = { width: 1200, height: 630 };
@@ -23,7 +24,8 @@ export default async function Image({ params }) {
     (
       <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: '#0b1c13', border: '10px solid #2a4d3b', padding: '48px 60px', color: '#f2ead4' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 16, fontSize: 26, letterSpacing: 6, color: '#88a493' }}>
-          <div style={{ width: 34, height: 34, borderRadius: 17, background: '#a82619', display: 'flex' }} />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img alt="" width={40} height={40} src={`data:image/svg+xml;utf8,${encodeURIComponent(ballSvg(40))}`} />
           TONS OF CONSEQUENCE
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>

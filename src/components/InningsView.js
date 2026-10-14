@@ -10,6 +10,7 @@ import { copyText, toast } from '@/lib/clientUtils';
 import { fmt1, ord, runsText, RESULT_LABEL } from '@/lib/format';
 import { WeightBar, Legend } from './WeightPanel';
 import { ResultTag } from './RankRow';
+import VideoCard from './VideoCard';
 
 export default function InningsView({ id }) {
   const { order } = useWeighting();
@@ -61,6 +62,8 @@ export default function InningsView({ id }) {
             {c.story ? <p className="quote">{c.story}</p> : <p className="quote muted">No written story for this innings yet.</p>}
             {c.sources && <p className="src">Sources: {c.sources}</p>}
           </div>
+
+          <VideoCard id={c.id} name={c.name} />
 
           {c.facts && (
             <section>

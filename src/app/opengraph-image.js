@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og';
+import { ballSvg } from '@/lib/ball';
 
 export const runtime = 'edge';
 export const size = { width: 1200, height: 630 };
@@ -20,10 +21,8 @@ export default async function OgImage() {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginBottom: 24 }}>
-          <div style={{
-            width: 64, height: 64, borderRadius: '50%', background: '#9B1C1C',
-            border: '2px solid #4A0808', display: 'flex',
-          }} />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img alt="" width={72} height={72} src={`data:image/svg+xml;utf8,${encodeURIComponent(ballSvg(72))}`} />
           <div style={{ color: '#4A8A4A', fontSize: 24, letterSpacing: 8, fontWeight: 600 }}>
             TEST CRICKET
           </div>
@@ -35,7 +34,7 @@ export default async function OgImage() {
           CONSEQUENCE
         </div>
         <div style={{ display: 'flex', color: '#6A9A6A', fontSize: 26, letterSpacing: 3, marginTop: 28 }}>
-          THE DEFINITIVE RANKING OF TEST CRICKET CENTURIES
+          THE UNOFFICIAL RANKING OF TEST CRICKET CENTURIES
         </div>
       </div>
     ),

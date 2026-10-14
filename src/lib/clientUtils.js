@@ -26,3 +26,15 @@ export async function copyText(text) {
     }
   }
 }
+
+/**
+ * Sets (or, with an empty value, removes) one query parameter in the address bar without reloading.
+ * Written by hand so the commas in a shared ?o=na,hi,... weighting stay readable.
+ */
+export function setUrlParam(key, value) {
+  const url = new URL(window.location.href);
+  const kept = url.search.replace(/^\?/, '').split('&').filter((kv) => kv && !kv.startsWith(`${key}=`));
+  if (value) kept.push(`${key}=${encodeURIComponent(value).replace(/%2C/g, ',')}`);
+  url.search = kept.length ? `?${kept.join('&')}` : '';
+  window.history.replaceState(null, '', url);
+}

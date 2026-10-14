@@ -6,6 +6,8 @@ import Logo from './Logo';
 
 const NAV = [
   { href: '/', label: 'Rankings' },
+  { href: '/search', label: 'Search' },
+  { href: '/compare', label: 'Compare' },
   { href: '/?view=divisive', label: 'Most divisive' },
   { href: '/quiz', label: 'Pub Test' },
   { href: '/about', label: 'About' },
