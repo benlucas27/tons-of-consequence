@@ -143,4 +143,5 @@ export const CONSEQUENCE_OVERRIDES = {
   "Don Bradman|254|1930": { verdict: 'yes', scenario: 'Set up the win', note: 'England made 425. His 254, 35% of 729 for 6, set up a seven-wicket win that levelled the series at 1-1 after Australia lost at Trent Bridge.' },
   "Don Bradman|232|1930": { verdict: 'yes', scenario: 'Set up the win', note: 'The decider of a level series. His 232, a third of 695, set up an innings win that took the Ashes.' },
   "Don Bradman|138|1948": { verdict: 'no', note: 'Only 27% of 509, shared with a hundred from Hassett, against an England side bowled out for 165: a good ton in a big win.' },
+  "Don Bradman|270|1937": { verdict: 'no', note: 'Australia were already 221 ahead when he came in at 5 for 97, so the match was well in hand. A great innings, but not one the result depended on.' },
 };
