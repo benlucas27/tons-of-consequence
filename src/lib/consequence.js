@@ -1,6 +1,11 @@
 /** Reading the Consequence Test verdicts (src/data/consequence.js) per innings and per batter. */
 import { CONSEQUENCE } from '../data/consequence.js';
 import { ALL, slugify } from './dataset.js';
+import { WHERE_PLAYED } from '../data/where-played.js';
+import { tierOfOpponent } from './matchFacts.js';
+
+/** 'H', 'A' or 'N' for the side that scored the hundred, or undefined when we do not have the match record. */
+export const wherePlayed = (id) => WHERE_PLAYED[id];
 
 /** { passes, scenario, because } for a hundred we have measured, or null when we have no match record for it yet. */
 export function verdictOf(id) {
@@ -19,7 +24,14 @@ export const BATTERS = [...byName.entries()].map(([name, list]) => {
   const innings = [...list].sort((a, b) => a.year - b.year || a.id - b.id);
   const measured = innings.filter((c) => CONSEQUENCE[c.id]);
   const tons = measured.filter((c) => CONSEQUENCE[c.id][0] === 1);
-  return { name, slug: slugify(name), innings, hundreds: innings.length, measured: measured.length, tons: tons.length };
+  const count = (list, key) => list.reduce((acc, c) => { const k = key(c); if (k != null) acc[k] = (acc[k] || 0) + 1; return acc; }, {});
+  return {
+    name, slug: slugify(name), innings, hundreds: innings.length, measured: measured.length, tons: tons.length,
+    byTier: count(innings, (c) => tierOfOpponent(c.opponent)),
+    tonsByTier: count(tons, (c) => tierOfOpponent(c.opponent)),
+    byWhere: count(innings, (c) => WHERE_PLAYED[c.id]),
+    tonsByWhere: count(tons, (c) => WHERE_PLAYED[c.id]),
+  };
 });
 
 export const BATTER_BY_SLUG = new Map(BATTERS.map((b) => [b.slug, b]));

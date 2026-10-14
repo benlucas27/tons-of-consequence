@@ -16,7 +16,7 @@ import ConsequenceNote from './ConsequenceStamp';
 import BiasNote from './BiasNote';
 import { SITE_URL } from '@/lib/site';
 
-export default function InningsView({ id, consequence = null }) {
+export default function InningsView({ id, consequence = null, facts = null }) {
   const { order, bias } = useWeighting();
   const ranked = useMemo(() => rankAll(order, bias), [order, bias]);
   const c = useMemo(() => ranked.find((x) => x.id === id), [ranked, id]);
@@ -147,6 +147,8 @@ export default function InningsView({ id, consequence = null }) {
               <div><dt>{NATIONS[c.country] || c.country}</dt><dd>{ord(home.findIndex((x) => x.id === c.id) + 1)} of {home.length.toLocaleString()}</dd></div>
               <div><dt>Strike rate</dt><dd>{sr}</dd></div>
               <div><dt>Match</dt><dd>{RESULT_LABEL[c.matchResult] || '—'}</dd></div>
+              {facts?.tier && <div><dt>Opposition</dt><dd>{facts.tier}</dd></div>}
+              {facts?.where && <div><dt>Played</dt><dd>{facts.where}</dd></div>}
             </dl>
             <div className="linkbox">
               <button type="button" className="btn primary" onClick={copy}>Copy link to this innings</button>

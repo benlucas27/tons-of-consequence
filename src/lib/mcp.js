@@ -18,6 +18,8 @@ import { COMPARE_SETS, setById, compareCareers, CAREERS_AS_OF } from './careerCo
 import { videoFor, watchUrl } from './videos.js';
 import { momentsFor, clock, watchUrl as podcastUrl, episodeLabel } from './helloSport.js';
 import { SITE_URL } from './site.js';
+import { verdictOf, wherePlayed } from './consequence.js';
+import { tierOfOpponent, tierName, WHERE_LABEL } from './matchFacts.js';
 
 const LEVER_KEYS = LEVERS.map((l) => l.key);
 const PRESET_NAMES = Object.keys(PRESETS);
@@ -217,6 +219,9 @@ export function createServer() {
       minutes: c.minutes || null,
       series: c.series || null,
       story: c.story || null,
+      opposition: tierName(tierOfOpponent(c.opponent)),
+      playedAt: WHERE_LABEL[wherePlayed(c.id)] || null,
+      tonOfConsequence: (() => { const v = verdictOf(c.id); return v ? { answer: v.passes ? 'yes' : 'no', scenario: v.scenario, reason: v.because } : { answer: 'not enough match data yet' }; })(),
       matchNotes: c.facts || [],
       tags: c.tags || [],
       criteria: LEVERS.map((l) => ({ criterion: l.name, score: c.levers[l.key] })),

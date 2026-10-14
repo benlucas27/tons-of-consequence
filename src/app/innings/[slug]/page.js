@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation';
 import InningsView from '@/components/InningsView';
 import { BY_ID, parseInningsId, inningsSlug } from '@/lib/dataset';
 import { runsText } from '@/lib/format';
-import { verdictOf } from '@/lib/consequence';
+import { verdictOf, wherePlayed } from '@/lib/consequence';
+import { tierOfOpponent, tierName, WHERE_LABEL } from '@/lib/matchFacts';
 
 const find = (slug) => BY_ID.get(parseInningsId(slug));
 
@@ -37,7 +38,7 @@ export default function Page({ params }) {
   if (!c) notFound();
   return (
     <Suspense fallback={<Skeleton c={c} />}>
-      <InningsView id={c.id} consequence={verdictOf(c.id)} />
+      <InningsView id={c.id} consequence={verdictOf(c.id)} facts={{ tier: tierName(tierOfOpponent(c.opponent)), where: WHERE_LABEL[wherePlayed(c.id)] || null }} />
     </Suspense>
   );
 }

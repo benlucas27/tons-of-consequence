@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { LEADERS, MEASURED_TOTAL, TONS_TOTAL } from '@/lib/consequence';
 import { TOTAL } from '@/lib/dataset';
+import { TIERS } from '@/lib/matchFacts';
 
 export const metadata = {
   title: 'Tons of Consequence',
@@ -34,6 +35,12 @@ export default function TonsOfConsequence() {
       <h2>It is a test and a judgement</h2>
       <p>The questions are answered from the scorecard, so anyone can check them. But the lines are not definitive: a hundred that comes in at 3 for 106 is close enough to a rescue, while another may not be. Where the scorecard and common sense disagree, a considered ruling decides, and the reason is shown with it. Other hundreds in the same innings count for something, mostly when the hundred is the only one in the match, but they are a consideration and not a rule.</p>
       <p>The hosts of Hello Sport, where the phrase comes from, ruled Head&rsquo;s and Smith&rsquo;s dead-rubber hundreds at the SCG in 2026 as tons of consequence. We don&rsquo;t: a dead rubber is a dead rubber, whoever is batting.</p>
+
+      <h2>Who against, and where</h2>
+      <p>Two plain facts sit alongside every innings. They are not part of the test or the score. The opposition is grouped into tiers, a fixed grouping of countries and not a rating on the day, and where we have the match record we also say whether it was at home, away or on neutral ground.</p>
+      <ul>
+        {TIERS.map((t) => <li key={t.n}><b>{t.name}:</b> {t.teams}</li>)}
+      </ul>
 
       <h2>How much of the record can we measure?</h2>
       <p>The test needs the match record. Ball-by-ball data is close to complete from about 2006 and patchy before that, so we can measure {MEASURED_TOTAL.toLocaleString()} of the {TOTAL.toLocaleString()} hundreds in the database: {TONS_TOTAL.toLocaleString()} are tons of consequence. Don Bradman&rsquo;s 29 are measured by hand from the scorecards, on <Link href="/the-don">The Don</Link>. Older innings will be added as their scorecards are collected, each with its sources.</p>
