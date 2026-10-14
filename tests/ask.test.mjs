@@ -102,3 +102,35 @@ test('the Australian bonus carries through the question engine and is named in v
   const list = answer('best centuries', DEFAULT_ORDER, { bias: 'au' });
   assert.equal(list.items[0].country, 'AUS');
 });
+
+test('"in England" means where it was played, not who batted', () => {
+  const a = ask('hundreds against England in England');
+  assert.equal(a.kind, 'list');
+  assert.ok(a.items.length > 0 && a.items.every((c) => c.opponent === 'England'));
+  const b = ask('best hundreds by Australians in England');
+  assert.ok(b.items.every((c) => c.country === 'AUS' && c.opponent === 'England'));
+  const c = ask('hundreds in Pakistan by visiting players');
+  assert.ok(c.items.every((x) => x.country !== 'PAK'));
+});
+
+test('a named point of view ranks on that preset', () => {
+  const a = ask('best hundreds as a Purist would see it');
+  assert.equal(a.kind, 'list');
+  assert.ok(a.interpreted.includes('Purist weighting'));
+  assert.deepEqual(a.order, ['conditions', 'clutchness', 'matchImpact', 'historicalWeight', 'perceivedGreatness', 'narrative']);
+});
+
+test('"which hundreds were tons of consequence" lists them, and "best ever" points to the Pub Test', () => {
+  const a = ask('which hundreds were tons of consequence?');
+  assert.equal(a.kind, 'list');
+  assert.ok(a.total > 100 && a.notes.some((n) => /Tons of Consequence page/.test(n)));
+  const b = ask('what is the best test hundred ever?');
+  assert.ok(b.notes.some((n) => /Pub Test/.test(n)));
+});
+
+test('"how is the ToC score calculated" is explained', () => {
+  const a = ask('how is the ToC score calculated?');
+  assert.equal(a.kind, 'info');
+  assert.match(a.headline, /30%/);
+  assert.notEqual(ask('how many hundreds did Don Bradman score?').kind, 'info');
+});

@@ -9,6 +9,8 @@
 import { ALL, rankAll } from './dataset.js';
 import { LEVERS, LEVER_BY_KEY, NATIONS, PRESETS, tocForOrder, weightsFromOrder } from './scoring.js';
 import { calcVolatility, writeVerdict } from './volatility.js';
+import { WHERE_PLAYED } from '../data/where-played.js';
+import { TON_IDS } from '../data/ton-ids.js';
 
 // ---- text helpers
 
@@ -131,6 +133,22 @@ const VENUE_ALIASES = {
   'ssc': ['Colombo (SSC)'], colombo: ['Colombo (SSC)', 'Colombo (PSS)', 'Colombo (RPS)', 'Colombo (CCC)', 'Colombo'],
   dubai: ['Dubai (DICS)'], 'port elizabeth': ['Gqeberha'], gqeberha: ['Gqeberha'], chittagong: ['Chattogram'],
 };
+// Which country hosts each ground, worked out from the home and away record (a home hundred is hosted by the batter's
+// country, an away one by the opposition). Only grounds that appear in the match record are known.
+const CODE_OF_NAME = Object.fromEntries(Object.entries({ AUS: 'Australia', ENG: 'England', IND: 'India', WI: 'West Indies', SA: 'South Africa', PAK: 'Pakistan', NZ: 'New Zealand', SL: 'Sri Lanka', ZIM: 'Zimbabwe', BAN: 'Bangladesh', AFG: 'Afghanistan', IRE: 'Ireland' }).map(([k, v]) => [v, k]));
+const VENUE_HOST = (() => {
+  const votes = new Map();
+  for (const c of ALL) {
+    const w = WHERE_PLAYED[c.id];
+    const host = w === 'H' ? c.country : w === 'A' ? CODE_OF_NAME[c.opponent] : null;
+    if (!host || !c.venue) continue;
+    const v = votes.get(c.venue) || {};
+    v[host] = (v[host] || 0) + 1;
+    votes.set(c.venue, v);
+  }
+  return new Map([...votes].map(([venue, v]) => [venue, Object.entries(v).sort((a, b) => b[1] - a[1])[0][0]]));
+})();
+
 const KNOWN_RESULT_SHARE = Math.round((ALL.filter((c) => c.matchResult && c.matchResult !== 'unknown').length / ALL.length) * 100);
 const ALL_VENUES = [...new Set(ALL.map((c) => c.venue).filter(Boolean))];
 
@@ -277,17 +295,36 @@ export const EXAMPLE_QUESTIONS = [
  * Understands a question. Returns { kind, headline, interpreted, assumed, ... } where kind is one of
  * 'compare' | 'players' | 'innings' | 'list' | 'none'.
  */
+const filtersAny = (a, b) => a !== b;
+
 export function answer(question, order, opts = {}) {
   return { ...answerFor(question, order, opts), bias: opts.bias || null };
 }
 
+const PRESET_CUES = ['purist', 'analyst', 'patriot', 'romantic'];
+const ToC_EXPLAINER = 'Each hundred gets six scores out of 100: Match Impact, Clutchness, Narrative, Conditions & Opposition, Historical Weight and Perceived Greatness. The reader decides which matters most by putting the six in order, and first place counts for 30%, then 22, 18, 14, 10 and 6. Adding those up gives the ToC score out of 100. Purist, Analyst, Patriot and Romantic are ready-made orders, and Patriot adds a bonus for Australian innings. It is an opinionated model, so treat the scores as a view, not a fact.';
+
 function answerFor(question, order, opts) {
-  const bias = opts.bias || null;
+  let bias = opts.bias || null;
   const text = norm(question);
   const q = String(question || '').trim();
   if (!text) return { kind: 'none', question: q, headline: 'Ask a question about any Test century.', interpreted: [], suggestions: EXAMPLE_QUESTIONS.slice(0, 4) };
 
   const tokens = text.split(' ');
+
+  // "how is the ToC score calculated?"
+  if (/(?:how|what).*(?:toc|ton of consequence|score|ranking|rated|ranked|calculated|worked out|work)/.test(text) && /(?:calculat|work out|worked out|works|work|made up|decided|computed)/.test(text) && !/(?: v | vs |against)/.test(text) && !/\d{3}/.test(text)) {
+    return { kind: 'info', question: q, order, interpreted: [], headline: ToC_EXPLAINER, suggestions: EXAMPLE_QUESTIONS.slice(0, 4) };
+  }
+
+  // a named point of view: "as a Purist would see it", "with the Patriot bias", "Romantic top 5"
+  const presetName = PRESET_CUES.find((p) => has(text, p));
+  let presetUsed = null;
+  if (presetName) {
+    presetUsed = presetName[0].toUpperCase() + presetName.slice(1);
+    order = PRESETS[presetUsed].order;
+    bias = PRESETS[presetUsed].bias || null;
+  }
   const mentions = findMentions(tokens);
   const distinct = [];
   for (const m of mentions) {
@@ -341,8 +378,12 @@ function answerFor(question, order, opts) {
   const filters = [];
 
   const countries = findCountries(text);
-  let own = countries.filter((c) => !c.opponent);
-  let opp = countries.filter((c) => c.opponent);
+  // "in England", "in South Africa": where it was played, not who batted
+  const hostHits = countries.filter((c) => /(?:^| )in(?: the)? $/.test(text.slice(0, c.at)) && !c.opponent);
+  const hostCode = hostHits[0]?.code;
+  const rest = hostCode ? countries.filter((c) => c !== hostHits[0]) : countries;
+  let own = rest.filter((c) => !c.opponent);
+  let opp = rest.filter((c) => c.opponent);
   if (own.length >= 2 && !opp.length) { opp = [own[1]]; own = [own[0]]; }
   const ownCode = own[0]?.code;
   const oppCode = opp[0]?.code;
@@ -356,12 +397,27 @@ function answerFor(question, order, opts) {
     interpreted.push(`against ${OPPONENT_NAME[oppCode]}`);
   }
 
+  if (hostCode) {
+    const visiting = hasAny(text, ['visiting', 'visitors', 'overseas', 'away', 'touring']);
+    filters.push((c) => VENUE_HOST.get(c.venue) === hostCode && (!visiting || c.country !== hostCode));
+    interpreted.push(`${visiting ? 'by visiting players ' : ''}played in ${OPPONENT_NAME[hostCode]}`);
+    notes.push('Grounds are matched to a host country from the match record, so a ground that has not hosted a recorded Test since 2006 is left out.');
+  }
+
   const { venues, said } = findVenues(text);
   if (venues.length) {
     filters.push((c) => venues.includes(c.venue));
     const exact = venues.length === 1 && norm(venues[0].replace(/\(.*\)/, '')) === said[0];
     interpreted.push(`at ${exact ? venues[0] : said[0] ? (said[0].length <= 4 ? said[0].toUpperCase() : said[0].replace(/\b\w/g, (m) => m.toUpperCase())) : venues[0]}`);
   }
+
+  const wantsTons = /(?:^| )tons? of consequence(?: |$)/.test(text) && !/(?:^| )(?:how many|how often|most|fewest|percentage|share)(?: |$)/.test(text);
+  if (wantsTons) {
+    filters.push((c) => TON_IDS.has(c.id));
+    interpreted.push('tons of consequence');
+    notes.push('The full list, with the reason for each, is on the Tons of Consequence page. Only hundreds with a match record can be tested.');
+  }
+  if (presetUsed) interpreted.push(`${presetUsed} weighting`);
 
   const years = findYears(text);
   if (years) {
@@ -457,7 +513,7 @@ function answerFor(question, order, opts) {
   }
 
   // ---- a list
-  const known = filters.length > 0 || sort !== 'toc' || useOrder !== order;
+  const known = filters.length > 0 || sort !== 'toc' || useOrder !== order || Boolean(presetUsed);
   let items = SORTS[sort](apply(orderedRanked));
   if (!known) {
     // no recognised structure: treat the words as a search
@@ -474,6 +530,9 @@ function answerFor(question, order, opts) {
   }
   if (!items.length) {
     return { kind: 'none', question: q, order: useOrder, interpreted, assumed, headline: 'No innings match all of that. Try loosening one of the filters.', suggestions: EXAMPLE_QUESTIONS.slice(0, 5) };
+  }
+  if (!presetUsed && !filters.length && !filtersAny(useOrder, order) && (limit === 1 || /(?:^| )(?:top|best|greatest) ?\d*/.test(text))) {
+    notes.push('Best depends on what you value. This uses the default weighting. Take the Pub Test, or ask "as a Purist / Analyst / Patriot / Romantic would see it", to rank by your own point of view.');
   }
   const total = items.length;
   const shown = items.slice(0, limit === 1 ? 3 : limit);

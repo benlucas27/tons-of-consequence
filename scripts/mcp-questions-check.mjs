@@ -1,5 +1,5 @@
 /**
- * Runs the 64 questions in tests/mcp-questions.json through the same path the connector's `ask` tool uses and reports
+ * Runs the 62 questions in tests/mcp-questions.json through the same path the connector's `ask` tool uses and reports
  * which got a real answer and which did not. Used by tests/mcp-questions.test.mjs; run it by hand to see the detail:
  *
  *   node scripts/mcp-questions-check.mjs          # list the unanswered ones
