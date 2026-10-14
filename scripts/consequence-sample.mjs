@@ -6,7 +6,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { hundredsIn, seriesStakes } from '../src/lib/matchContext.js';
-import { consequenceTest, BAR } from '../src/lib/consequenceTest.js';
+import { consequenceTest } from '../src/lib/consequenceTest.js';
 import { ALL } from '../src/lib/dataset.js';
 import { displayName } from '../src/lib/scoring.js';
 
@@ -30,7 +30,7 @@ console.log(`${matches.length} matches, ${rows.length} hundreds in the archive, 
 const show = (r) => {
   const t = consequenceTest(r);
   const entry = `${r.entryWkts}-${r.entryScore}, lead ${r.leadOnEntry}`;
-  return { t, line: `${String(t.score).padStart(3)} ${t.passes ? 'STAMP' : '     '}  ${r.display.padEnd(17)} ${String(r.runs + (r.notOut ? '*' : '')).padEnd(5)} v ${r.opponent.padEnd(13)} ${r.year} ${r.result.padEnd(4)} inns${r.inningsNo} entry ${entry.padEnd(20)} share ${String(Math.round((r.share || 0) * 100)).padStart(2)}% ${r.stakes.padEnd(11)} [${t.parts.outcome}/${t.parts.pressure}/${t.parts.carry}/${t.parts.stakes}]` };
+  return { t, line: `${t.passes ? 'STAMP' : '     '}  ${r.display.padEnd(17)} ${String(r.runs + (r.notOut ? '*' : '')).padEnd(5)} v ${r.opponent.padEnd(13)} ${r.year} ${r.result.padEnd(4)} inns${r.inningsNo} entry ${entry.padEnd(20)} share ${String(Math.round((r.share || 0) * 100)).padStart(2)}% ${r.stakes.padEnd(11)} => ${t.passes ? t.scenario : t.because}` };
 };
 
 const calibration = [
@@ -44,18 +44,20 @@ for (const [n, runs, y] of calibration) {
 }
 
 const players = ['Joe Root', 'Steve Smith', 'Virat Kohli', 'Kane Williamson', 'Ricky Ponting'];
-console.log('\n== The five batters people argue about (hundreds that are in the ball-by-ball archive)');
 const total = Object.fromEntries(players.map((p) => [p, ALL.filter((c) => c.name === p).length]));
+console.log('\n== The five batters people argue about (hundreds that are in the ball-by-ball archive)');
 for (const p of players) {
-  const mine = rows.filter((r) => r.display === p);
-  const scored = mine.map((r) => ({ r, ...show(r) }));
-  const pass = scored.filter((x) => x.t.passes);
-  console.log(`${p}: ${mine.length} of ${total[p]} hundreds measured; ${pass.length} pass the bar of ${BAR}`);
-  if (process.argv.includes('--all')) scored.forEach((x) => console.log('   ' + x.line));
+  const mine = rows.filter((r) => r.display === p).map((r) => ({ r, ...show(r) }));
+  const pass = mine.filter((x) => x.t.passes);
+  const kinds = {};
+  pass.forEach((x) => { kinds[x.t.scenario] = (kinds[x.t.scenario] || 0) + 1; });
+  const why = {};
+  mine.filter((x) => !x.t.passes).forEach((x) => { const k = x.t.answers.find((a) => !a.yes); const key = k.question.includes('win or save') ? 'lost or not in danger' : k.question.includes('alive') ? 'dead rubber or already won' : 'came in comfortably'; why[key] = (why[key] || 0) + 1; });
+  console.log(`${p}: ${mine.length} of ${total[p]} hundreds measured; ${pass.length} are tons of consequence ${JSON.stringify(kinds)}; the rest: ${JSON.stringify(why)}`);
+  if (process.argv.includes('--all') || process.argv.includes('--' + p.split(' ')[1].toLowerCase())) mine.sort((a, b) => Number(b.t.passes) - Number(a.t.passes)).forEach((x) => console.log('   ' + x.line));
 }
-const scores = rows.map((r) => consequenceTest(r).score).sort((a, b) => a - b);
-console.log(`\nAcross all ${rows.length} measured hundreds, median score ${scores[Math.floor(scores.length / 2)]}. Share that would pass at each bar:`);
-for (const bar of [55, 60, 65, 70, 75, 80]) console.log(`   bar ${bar}: ${(100 * scores.filter((s) => s >= bar).length / scores.length).toFixed(1)}%  (${scores.filter((s) => s >= bar).length} hundreds)`);
-const bars = [60, 65, 70, 75];
-console.log('\nThe five at each bar (measured hundreds only):');
-for (const p of players) console.log('   ' + p.padEnd(16) + bars.map((b) => `bar ${b}: ${rows.filter((r) => r.display === p && consequenceTest(r).score >= b).length}`).join('   ') + `   of ${rows.filter((r) => r.display === p).length} measured`);
+const all = rows.map((r) => consequenceTest(r));
+const n = all.filter((t) => t.passes).length;
+const kinds = {};
+all.filter((t) => t.passes).forEach((t) => { kinds[t.scenario] = (kinds[t.scenario] || 0) + 1; });
+console.log(`\nAcross all ${rows.length} measured hundreds: ${n} are tons of consequence (${(100 * n / rows.length).toFixed(1)}%). ${JSON.stringify(kinds)}`);
