@@ -15,7 +15,8 @@ export const ALREADY_WON_LEAD = 200; // a lead this big on entry means the match
 export const RESCUE_WICKETS = 3; // three or more down...
 export const RESCUE_SCORE = 100; // ...with the team still under this on entry
 export const SAFE_LEAD = 200; // a collapse around him does not count once the team is already this far ahead
-export const CARRY_ENTRY = 100; // carrying the innings means he came in with the team under this
+export const CARRY_ENTRY = 100; // coming in with the team under this helps: 40% is enough
+export const CARRY_SHARE_LATE = 0.5; // coming in later, he needs half the team's runs to count as carrying it
 export const COLLAPSE_AROUND = 4; // or this many wickets fell around him while the team was under 200
 
 const SCENARIOS = {
@@ -56,7 +57,7 @@ function change(f, won) {
   if ((f.entryWkts >= RESCUE_WICKETS && f.entryScore < RESCUE_SCORE) || (f.peril >= COLLAPSE_AROUND && f.leadOnEntry < SAFE_LEAD)) {
     return { kind: 'rescue', why: f.peril >= COLLAPSE_AROUND && f.leadOnEntry < SAFE_LEAD ? `${f.peril} wickets fell around him while the team was under 200.` : `He came in at ${f.entryWkts} for ${f.entryScore}.` };
   }
-  if ((f.share ?? 0) >= CARRY_SHARE && f.entryScore < CARRY_ENTRY) return { kind: 'carried', why: `He scored ${Math.round(f.share * 100)}% of the team's runs.` };
+  if ((f.share ?? 0) >= CARRY_SHARE_LATE || ((f.share ?? 0) >= CARRY_SHARE && f.entryScore < CARRY_ENTRY)) return { kind: 'carried', why: `He scored ${Math.round(f.share * 100)}% of the team's runs.` };
   return null;
 }
 
