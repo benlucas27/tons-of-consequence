@@ -17,6 +17,7 @@ import path from 'node:path';
 import { fetchRecentCenturies, naturalKey, PIPELINE_FLOOR } from '../src/lib/cricsheet.js';
 import { scoreLevers, writeStory, tagsFor } from '../src/lib/heuristics.js';
 import { teamCodeFor } from '../src/lib/countries.js';
+import { canonicalPlayer } from '../src/data/name-aliases.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dataFile = path.join(root, 'src/data/sample.js');
@@ -44,7 +45,7 @@ const rows = fresh.map((c) => {
   const place = c.city || c.venue;
   return {
     id: nextId++,
-    player: c.player,
+    player: canonicalPlayer(c.player),
     country: c.country,
     runs: c.runs,
     balls: c.balls,

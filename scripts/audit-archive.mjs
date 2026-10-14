@@ -16,6 +16,7 @@ import AdmZip from 'adm-zip';
 import { hundredsIn } from '../src/lib/matchContext.js';
 import { ALL } from '../src/lib/dataset.js';
 import { displayName } from '../src/lib/scoring.js';
+import { canonicalPlayer } from '../src/data/name-aliases.js';
 
 const args = process.argv.slice(2);
 const markdown = args.includes('--markdown');
@@ -38,7 +39,10 @@ const lastMatch = matches.map((m) => m.info.dates?.[m.info.dates.length - 1] || 
 
 const find = (h) => {
   const full = displayName({ player: h.name });
-  return ALL.find((c) => (c.player === h.name || c.name === h.name || c.name === full) && c.runs === h.runs && c.year === h.year && c.opponent === h.opponent);
+  const known = canonicalPlayer(h.name);
+  const same = ALL.filter((c) => (c.player === h.name || c.name === h.name || c.name === full || c.player === known || c.name === known) && c.runs === h.runs && c.year === h.year && c.opponent === h.opponent);
+  // two innings by one player with the same score, year and opponent (Sehwag's two 109s v Sri Lanka in 2010): tell them apart by balls faced
+  return same.length > 1 ? same.find((c) => c.balls && h.balls && c.balls === h.balls) || same[0] : same[0];
 };
 const matched = [];
 const variants = []; // archive hundred with a dataset row that is the same innings under another spelling
