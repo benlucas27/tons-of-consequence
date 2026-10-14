@@ -62,3 +62,7 @@ _Avoid_: search (the tab is named Search, but the thing it does is answer questi
 
 **Movement**:
 How many places an innings has moved from its rank on the Default weighting, shown as ▲ or ▼ on rows whenever the weighting is not Default and the move is three places or more.
+
+**Connector**:
+The read-only service at `/mcp` that lets Claude query the ranking: the same data and scoring as the site, nothing written. Anyone with a Claude account can add it by URL (see `/connect`). The Claude Code plugin is a wrapper around it.
+_Avoid_: API (it is not for general programs), plugin (the plugin is one way to reach the connector).

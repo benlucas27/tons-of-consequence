@@ -81,10 +81,11 @@ h1, h2, h3, p { margin: 0; }
 .s-menu nav { position: absolute; right: 0; top: 52px; min-width: 200px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 6px; display: grid; z-index: 30; }
 .s-menu nav a { text-decoration: none; padding: 12px 14px; border-radius: 6px; font-weight: 500; }
 .s-menu nav a:hover, .s-menu nav a[aria-current="page"] { background: var(--panel-2); }
-@media (min-width: 920px) {
+@media (min-width: 1000px) {
   .s-nav { display: flex; }
   .s-menu { display: none; }
 }
+.s-nav { gap: clamp(16px, 2vw, 24px); }
 .s-nav a { white-space: nowrap; }
 
 /* ---------- front door ---------- */
@@ -472,6 +473,25 @@ body[data-door="1"] .s-bar { display: none; }
 .bonus-row .lhead b { color: var(--gold); }
 .bonus-row .lhead .sw { background: var(--gold); }
 .picks { display: grid; gap: 10px; }
+
+/* ---------- connect to Claude ---------- */
+.connect { gap: 16px; }
+.conn-card { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); padding: 20px; display: grid; gap: 12px; }
+.conn-card h2 { margin-top: 0; }
+.conn-note { font: 400 15px/1.55 var(--ui); color: var(--ink-3); }
+.conn-note a { color: var(--ink-2); }
+.copyfield { display: flex; gap: 10px; align-items: center; }
+.copyfield code { font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0; flex: 1; min-width: 0; font: 500 14px var(--ui); color: var(--ink); background: var(--ground); border: 1px solid var(--line-soft); border-radius: 8px; padding: 12px 14px; overflow-wrap: anywhere; }
+.steps { margin: 0; padding-left: 22px; display: grid; gap: 10px; }
+.steps li::marker { color: var(--ball); font-weight: 700; }
+.steps b, .prose .conn-note b { color: var(--ink); font-weight: 500; }
+.eg-plain { list-style: none; padding: 0; }
+.eg-plain li { border-left: 3px solid var(--ball); padding-left: 14px; font: 400 17px/1.5 var(--prose); color: var(--ink); }
+.tools { margin: 0; display: grid; }
+.tools div { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 12px; padding: 10px 0; border-top: 1px solid var(--line-soft); }
+.tools dt code { font: 600 13px var(--ui); color: var(--sky); }
+.tools dd { margin: 0; font: 400 16px/1.5 var(--ui); color: var(--ink-2); }
+@media (max-width: 600px) { .tools div { grid-template-columns: 1fr; gap: 2px; } .copyfield { flex-direction: column; align-items: stretch; } }
 
 /* ---------- footer, toast, loading ---------- */
 .foot { border-top: 1px solid var(--line-soft); padding: 22px var(--pad) calc(26px + env(safe-area-inset-bottom, 0px)); margin-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; font-size: 13px; color: var(--ink-3); max-width: 1180px; margin-inline: auto; width: 100%; }

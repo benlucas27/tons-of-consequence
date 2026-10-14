@@ -1,53 +1,45 @@
-# Tons of Consequence — Claude plugin
+# Tons of Consequence: Claude plugin
 
-Query the [Tons of Consequence](https://tons-of-consequence.vercel.app) Test cricket
-century ranking model directly from Claude — rank innings with your own weightings,
-compare two head-to-head, or find the most divisive centuries in history.
+Ask Claude about every Test cricket century and have it answer from the [Tons of Consequence](https://tons-of-consequence.vercel.app) ranking, on your own weighting.
 
-This plugin is fully self-contained: it bundles its own copy of the dataset and the
-scoring model, so it works standalone without any connection to the live site or its
-database.
+This plugin is a thin wrapper. It adds the site's live, read-only connector (`https://tons-of-consequence.vercel.app/mcp`) and a short guide that tells Claude when and how to use it. The scoring and the data live on the site, so the plugin is always current and can never disagree with the website.
 
-## Install
+## Install (Claude Code)
 
 ```
 /plugin marketplace add benlucas27/tons-of-consequence
 /plugin install tons-of-consequence@tons-of-consequence-marketplace
 ```
 
-(Requires Node.js to be available on your machine — the plugin runs a small local
-MCP server over stdio, nothing is sent to any external service.)
+Or add just the connector:
+
+```
+claude mcp add --transport http tons-of-consequence https://tons-of-consequence.vercel.app/mcp
+```
+
+## Not using Claude Code?
+
+The same connector works in the Claude app and on claude.ai (Free, Pro, Max, Team and Enterprise). Instructions are at [tons-of-consequence.vercel.app/connect](https://tons-of-consequence.vercel.app/connect).
 
 ## Try it
 
-Once installed, just ask Claude things like:
-
-- "Rank the top 10 Test centuries, weighted heavily toward narrative"
-- "What's the most divisive century of all time?"
-- "Compare Brian Lara's 153\* against Ben Stokes' 135\* at Headingley"
-- "Show me Australia's greatest centuries since 2010, sorted by clutchness"
+- "Who has the better Test hundred, Ricky Ponting or Steve Smith?"
+- "Rank the top 10 as a Romantic would, then as an Analyst. What changed?"
+- "Show me the most clutch centuries by Indian batters since 2010."
 
 ## Tools
 
 | Tool | What it does |
 |---|---|
-| `list_options` | Valid countries, eras, lever definitions, and weight presets |
-| `rank_centuries` | Rank/filter/search centuries with custom weights or a preset |
-| `get_century` | Full detail on one innings — story, levers, divisiveness |
-| `compare_centuries` | Head-to-head verdict between 2–3 innings |
-| `most_divisive` | Innings whose ranking swings most depending on what you value |
+| `ask` | Answers a plain-English question and says how it understood it |
+| `rank_centuries` | Ranks innings under a preset or your own order, with filters |
+| `get_century` | One innings in full: story, scores, rank under every preset, video |
+| `compare_centuries` | Head to head, with a verdict and whether it holds under every preset |
+| `most_divisive` | The innings people disagree about most |
+| `list_options` | How the model works: criteria, presets, the Australian bonus |
 
-## Local development
+All of them only read. They can't change a score, the data or the site.
 
-```
-cd mcp-server
-npm install
-node test-client.mjs   # exercises every tool against the bundled dataset
-```
+## For maintainers
 
-The dataset (`mcp-server/data/centuries.json`) is a point-in-time export of the site's data. It is
-not kept in sync automatically. From the repo root, refresh it with:
-
-```
-node scripts/export-plugin-data.mjs
-```
+The connector's code is in the repo, not here: `src/lib/mcp.js` (the tools) and `src/app/mcp/route.js` (the address). Its tests are `tests/mcp.test.mjs`. `node scripts/test-mcp.mjs [url]` checks a running copy, local or live. See `docs/adr/0006-the-connector-lives-on-the-site.md`.

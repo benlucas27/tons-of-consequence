@@ -63,7 +63,6 @@ New centuries come from [Cricsheet](https://cricsheet.org)'s open ball-by-ball d
 - Cricsheet publishes a match a few days after it finishes, so a very recent innings (like one from
   a Test still under way) has to be added by hand, with its match notes checked against reports.
 - `scripts/backfill-results.mjs` fills in match results for older rows where Cricsheet can match them.
-- `scripts/export-plugin-data.mjs` refreshes the Claude plugin's bundled copy of the data.
 
 **A refresh only ever covers new games.** It looks back over the last couple of months, adds
 centuries from games the site does not have yet, and settles the result of any game that was still
@@ -83,18 +82,21 @@ npm test        # scoring, links, and data integrity (duplicates, ranges, names)
 npm run lint
 ```
 
-## The Claude plugin
+## Claude connector and plugin
 
-[`claude-plugin/`](./claude-plugin) is a self-contained Claude Code plugin with its own copy of the
-data and scoring model, exposing tools to rank, compare and explore centuries from chat. This repo
-is also its own plugin marketplace (`.claude-plugin/marketplace.json`):
+The site serves a read-only connector for Claude at `/mcp` (tools in `src/lib/mcp.js`, route in
+`src/app/mcp/route.js`), built on the same data, scoring and question engine as the pages. Anyone with a
+Claude account can add it by URL; the `/connect` page has the steps. The Claude Code plugin in
+[`claude-plugin/`](./claude-plugin) is a thin wrapper that points at it. This repo is also its own plugin
+marketplace (`.claude-plugin/marketplace.json`):
 
 ```
 /plugin marketplace add benlucas27/tons-of-consequence
 /plugin install tons-of-consequence@tons-of-consequence-marketplace
 ```
 
-See [`claude-plugin/README.md`](./claude-plugin/README.md).
+Check a running copy with `node scripts/test-mcp.mjs [url]`. See [`claude-plugin/README.md`](./claude-plugin/README.md)
+and ADR-0006.
 
 ## Decisions
 

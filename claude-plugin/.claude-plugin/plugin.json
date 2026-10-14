@@ -1,16 +1,18 @@
 {
   "name": "tons-of-consequence",
-  "description": "Rank and query every Test cricket century ever scored using the Tons of Consequence model — set your own weightings for match impact, clutchness, narrative, conditions, historical weight, and perceived greatness, then rank, compare, or find the most divisive innings, right from chat.",
-  "version": "1.0.0",
+  "displayName": "Tons of Consequence",
+  "description": "Ask Claude about every Test cricket century. Rank and compare innings on your own weighting of match impact, clutchness, narrative, conditions, history and greatness, using the live Tons of Consequence ranking.",
+  "version": "2.0.0",
   "author": {
     "name": "Ben Lucas"
   },
-  "homepage": "https://tons-of-consequence.vercel.app",
+  "homepage": "https://tons-of-consequence.vercel.app/connect",
+  "repository": "https://github.com/benlucas27/tons-of-consequence",
   "keywords": ["cricket", "test-cricket", "sports", "ranking", "statistics"],
   "mcpServers": {
     "tons-of-consequence": {
-      "command": "node",
-      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-server/index.mjs"]
+      "type": "http",
+      "url": "https://tons-of-consequence.vercel.app/mcp"
     }
   }
 }

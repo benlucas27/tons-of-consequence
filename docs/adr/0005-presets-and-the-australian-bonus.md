@@ -19,5 +19,4 @@ Decided:
   matching preset. Simulation: random answers give each persona about 19 per cent and Balanced 25 per cent.
 
 **Consequences**: a weighting is now an order plus an optional bonus, so links and saved preferences carry two
-things, and every page that shows a score must pass both. The claude-plugin keeps its own free-weight presets
-(ADR-0003) and does not yet match these; bring them across if the plugin should speak the same language.
+things, and every page that shows a score must pass both. The Claude connector (ADR-0006) is served by the site, so it speaks the same presets and bonus.

@@ -1,3 +1,7 @@
+---
+status: superseded by ADR-0006
+---
+
 # Ship the Claude plugin as fully self-contained, not backed by the live Supabase instance
 
 The plugin's job is to let anyone install it and query the ranking model. Backing it with a live connection to this project's Supabase instance was the more obvious design — always-current data — but it was rejected: it would mean either shipping this project's database credentials inside a publicly distributed plugin, or standing up a public API in front of Supabase purely to serve the plugin, both real infrastructure and security commitments for a v1.

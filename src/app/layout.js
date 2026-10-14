@@ -3,13 +3,14 @@ import { Barlow_Condensed, Barlow, Newsreader } from 'next/font/google';
 import SiteBar from '@/components/SiteBar';
 import Footer from '@/components/Footer';
 import Toaster from '@/components/Toaster';
+import { SITE_URL } from '@/lib/site';
 
 const display = Barlow_Condensed({ subsets: ['latin'], weight: ['500', '600', '700'], variable: '--font-display', display: 'swap' });
 const ui = Barlow({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--font-ui', display: 'swap' });
 const prose = Newsreader({ subsets: ['latin'], weight: ['400', '500'], variable: '--font-prose', display: 'swap', adjustFontFallback: false });
 
 export const metadata = {
-  metadataBase: new URL('https://tons-of-consequence.vercel.app'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Tons of Consequence — The Unofficial Ranking of Test Cricket Centuries',
     template: '%s | Tons of Consequence',
@@ -19,7 +20,7 @@ export const metadata = {
   openGraph: {
     title: 'Tons of Consequence',
     description: 'Not all hundreds are created equal.',
-    url: 'https://tons-of-consequence.vercel.app',
+    url: SITE_URL,
     siteName: 'Tons of Consequence',
     locale: 'en_AU',
     type: 'website',

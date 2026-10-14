@@ -12,6 +12,7 @@ import { WeightBar, Legend } from './WeightPanel';
 import { ResultTag } from './RankRow';
 import VideoCard from './VideoCard';
 import BiasNote from './BiasNote';
+import { SITE_URL } from '@/lib/site';
 
 export default function InningsView({ id }) {
   const { order, bias } = useWeighting();
@@ -27,7 +28,7 @@ export default function InningsView({ id }) {
   const recent = c.year >= 2020 ? ranked.filter((x) => x.year >= 2020) : null;
   const home = ranked.filter((x) => x.country === c.country);
   const sr = c.balls ? fmt1((c.runs / c.balls) * 100) : '—';
-  const shown = `tons-of-consequence.vercel.app${inningsPath(c, order, bias)}`;
+  const shown = `${SITE_URL.replace(/^https?:\/\//, '')}${inningsPath(c, order, bias)}`;
 
   async function copy() {
     const ok = await copyText(`https://${shown}`);
