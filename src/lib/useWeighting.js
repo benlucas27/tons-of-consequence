@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { DEFAULT_ORDER, parseOrder, parseBias, formatOrder, weightQuery } from './scoring.js';
 
@@ -18,12 +18,17 @@ function readStored() {
  */
 export function useWeighting() {
   const params = useSearchParams();
+  // The first render must match the server's (which cannot see localStorage), so the saved weighting is applied just after.
   const [state, setState] = useState(() => {
     const fromUrl = parseOrder(params.get('o'));
     if (fromUrl) return { order: fromUrl, bias: parseBias(params.get('bonus')), explicit: true };
-    const stored = typeof window !== 'undefined' ? readStored() : { order: null, bias: null };
-    return { order: stored.order || DEFAULT_ORDER, bias: stored.order ? stored.bias : null, explicit: Boolean(stored.order) };
+    return { order: DEFAULT_ORDER, bias: null, explicit: false };
   });
+  useEffect(() => {
+    if (parseOrder(params.get('o'))) return;
+    const stored = readStored();
+    if (stored.order) setState({ order: stored.order, bias: stored.bias, explicit: true });
+  }, [params]);
   const current = useRef(state);
   current.current = state;
 

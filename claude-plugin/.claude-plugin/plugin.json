@@ -2,7 +2,7 @@
   "name": "tons-of-consequence",
   "displayName": "Tons of Consequence",
   "description": "Ask Claude about every Test cricket century. Rank and compare innings on your own weighting of match impact, clutchness, narrative, conditions, history and greatness, using the live Tons of Consequence ranking.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": {
     "name": "Ben Lucas"
   },
