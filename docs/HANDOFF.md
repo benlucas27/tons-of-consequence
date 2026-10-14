@@ -13,7 +13,7 @@ pages `/tons-of-consequence/<batter>`); `/the-don`; Hello Cricket (`/hello-sport
 rows; opposition tier + home/away facts; connector with eight tools (`batter_records` is new; `ask` now routes counting questions); facts-only stories;
 326 full names; data audit at 0 findings; www redirect.
 
-**NOT pushed (branch `career-reference-points`, head `049cc2f`, all tests pass):**
+**NOT pushed (branch `career-reference-points`, latest commit is the handoff doc itself, all 94 tests pass):**
 - the small edits: footer tagline removed, shorter "Not sure? Take the Pub Test →", Tons of Consequence page trimmed (the judging paragraph, the three
   questions and the "Who against, and where" tiers section are removed);
 - Hello Cricket: the "Independent and unofficial…14 moments from 7 episodes" note removed;
