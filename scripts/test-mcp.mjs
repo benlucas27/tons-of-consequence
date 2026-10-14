@@ -9,7 +9,7 @@
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
 
-const url = process.argv[2] || 'https://tons-of-consequence.vercel.app/mcp';
+const url = process.argv[2] || 'https://tonsofconsequence.com/mcp';
 let failed = 0;
 const check = (ok, what) => { console.log(`${ok ? 'ok  ' : 'FAIL'} ${what}`); if (!ok) failed++; };
 

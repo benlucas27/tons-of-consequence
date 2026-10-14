@@ -15,7 +15,7 @@ import { PLAYER_NAMES } from '../src/data/player-names.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const limit = Number(process.argv[2]) || Infinity;
-const UA = 'TonsOfConsequence/1.0 (https://tons-of-consequence.vercel.app; ben@haveaplan.xyz)';
+const UA = 'TonsOfConsequence/1.0 (https://tonsofconsequence.com; ben@haveaplan.xyz)';
 const API = 'https://en.wikipedia.org/w/api.php';
 const CAT = { AUS: 'Australia', ENG: 'England', IND: 'India', SA: 'South Africa', NZ: 'New Zealand', PAK: 'Pakistan', SL: 'Sri Lanka', WI: 'West Indies', BAN: 'Bangladesh', ZIM: 'Zimbabwe', IRE: 'Ireland', AFG: 'Afghanistan' };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

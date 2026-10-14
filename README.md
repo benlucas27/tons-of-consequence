@@ -5,7 +5,7 @@ criteria (Match Impact, Clutchness, Narrative, Conditions & Opposition, Historic
 Perceived Greatness). Readers put the six in order of importance; every innings is re-ranked
 their way.
 
-Live at [tons-of-consequence.vercel.app](https://tons-of-consequence.vercel.app).
+Live at [tonsofconsequence.com](https://tonsofconsequence.com).
 
 ## How it's built
 

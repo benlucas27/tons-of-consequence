@@ -1,8 +1,8 @@
 # Tons of Consequence: Claude plugin
 
-Ask Claude about every Test cricket century and have it answer from the [Tons of Consequence](https://tons-of-consequence.vercel.app) ranking, on your own weighting.
+Ask Claude about every Test cricket century and have it answer from the [Tons of Consequence](https://tonsofconsequence.com) ranking, on your own weighting.
 
-This plugin is a thin wrapper. It adds the site's live, read-only connector (`https://tons-of-consequence.vercel.app/mcp`) and a short guide that tells Claude when and how to use it. The scoring and the data live on the site, so the plugin is always current and can never disagree with the website.
+This plugin is a thin wrapper. It adds the site's live, read-only connector (`https://tonsofconsequence.com/mcp`) and a short guide that tells Claude when and how to use it. The scoring and the data live on the site, so the plugin is always current and can never disagree with the website.
 
 ## Install (Claude Code)
 
@@ -14,12 +14,12 @@ This plugin is a thin wrapper. It adds the site's live, read-only connector (`ht
 Or add just the connector:
 
 ```
-claude mcp add --transport http tons-of-consequence https://tons-of-consequence.vercel.app/mcp
+claude mcp add --transport http tons-of-consequence https://tonsofconsequence.com/mcp
 ```
 
 ## Not using Claude Code?
 
-The same connector works in the Claude app and on claude.ai (Free, Pro, Max, Team and Enterprise). Instructions are at [tons-of-consequence.vercel.app/connect](https://tons-of-consequence.vercel.app/connect).
+The same connector works in the Claude app and on claude.ai (Free, Pro, Max, Team and Enterprise). Instructions are at [tonsofconsequence.com/connect](https://tonsofconsequence.com/connect).
 
 ## Try it
 

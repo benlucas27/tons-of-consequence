@@ -6,13 +6,13 @@
   "author": {
     "name": "Ben Lucas"
   },
-  "homepage": "https://tons-of-consequence.vercel.app/connect",
+  "homepage": "https://tonsofconsequence.com/connect",
   "repository": "https://github.com/benlucas27/tons-of-consequence",
   "keywords": ["cricket", "test-cricket", "sports", "ranking", "statistics"],
   "mcpServers": {
     "tons-of-consequence": {
       "type": "http",
-      "url": "https://tons-of-consequence.vercel.app/mcp"
+      "url": "https://tonsofconsequence.com/mcp"
     }
   }
 }
