@@ -604,3 +604,12 @@ body[data-door="1"] .s-bar { display: none; }
 .s-more > div { position: absolute; right: 0; top: 36px; min-width: 180px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 6px; display: grid; z-index: 30; }
 .s-more > div a { padding: 10px 12px; border-radius: 6px; border-bottom: 0; }
 .s-more > div a:hover { background: var(--panel-2); }
+.toc-stamp { color: var(--ball); flex: none; transform: rotate(-8deg); }
+.toc-note { margin: 0; }
+.toc-note p { font: 400 17px/1.55 var(--prose); color: var(--ink-2); margin: 0; max-width: 62ch; }
+.toc-note p b { color: var(--ink); }
+.toc-note p a { color: var(--sky); font: 500 14px var(--ui); white-space: nowrap; }
+.toc-note-body { display: flex; gap: 18px; align-items: center; }
+.toc-note-none p { color: var(--ink-3); }
+.toc-tag { font: 700 11px/1 var(--ui); letter-spacing: .08em; color: var(--ball); border: 1.5px solid var(--ball); border-radius: 999px; padding: 3px 7px; }
+@media (max-width: 600px) { .toc-note-body { flex-direction: column; align-items: flex-start; } }

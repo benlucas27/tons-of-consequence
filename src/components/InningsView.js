@@ -12,10 +12,11 @@ import { WeightBar, Legend } from './WeightPanel';
 import { ResultTag } from './RankRow';
 import VideoCard from './VideoCard';
 import HelloSportMoments from './HelloSportMoments';
+import ConsequenceNote from './ConsequenceStamp';
 import BiasNote from './BiasNote';
 import { SITE_URL } from '@/lib/site';
 
-export default function InningsView({ id }) {
+export default function InningsView({ id, consequence = null }) {
   const { order, bias } = useWeighting();
   const ranked = useMemo(() => rankAll(order, bias), [order, bias]);
   const c = useMemo(() => ranked.find((x) => x.id === id), [ranked, id]);
@@ -66,6 +67,8 @@ export default function InningsView({ id }) {
             {c.story ? <p className="quote">{c.story}</p> : <p className="quote muted">No written story for this innings yet.</p>}
             {c.sources && <p className="src">Sources: {c.sources}</p>}
           </div>
+
+          <ConsequenceNote verdict={consequence} />
 
           <VideoCard id={c.id} name={c.name} />
           <HelloSportMoments inningsId={c.id} />

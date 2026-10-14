@@ -65,13 +65,13 @@ jobs:
 
       - name: Commit and publish
         run: |
-          if git diff --quiet -- src/data/sample.js src/data/careers.js src/data/consequence.js; then
+          if git diff --quiet -- src/data/sample.js src/data/careers.js src/data/consequence.js src/data/ton-ids.js; then
             echo "Nothing new this month."
             exit 0
           fi
           git config user.name "tons-of-consequence-bot"
           git config user.email "tons-of-consequence-bot@users.noreply.github.com"
           { echo "data: monthly update"; echo; cat update.log; } > commit-message.txt
-          git add src/data/sample.js src/data/careers.js src/data/consequence.js
+          git add src/data/sample.js src/data/careers.js src/data/consequence.js src/data/ton-ids.js
           git commit -F commit-message.txt
           git push

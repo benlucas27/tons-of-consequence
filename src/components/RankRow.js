@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { TON_IDS } from '@/data/ton-ids';
 import { tierOf, LEVERS } from '@/lib/scoring';
 import { inningsPath } from '@/lib/dataset';
 import { context, runsText, fmt1 } from '@/lib/format';
@@ -29,6 +30,7 @@ export default function RankRow({ c, position, order, bias, move, picked, onPick
               <span className="sr-only">{move > 0 ? 'Up' : 'Down'} {Math.abs(move)} places on the Default weighting</span>
             </span>
           )}
+          {TON_IDS.has(c.id) && <span className="toc-tag" title="A ton of consequence">ToC</span>}
           {videoFor(c.id) && <span className="vid-tag" title="Has a video">▶ Video</span>}
         </div>
         <div className="ctx">{context(c)}{note ? ` \u00B7 ${note}` : ''}</div>
