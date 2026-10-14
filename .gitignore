@@ -17,3 +17,4 @@ npm-debug.log*
 
 # local tool config
 .claude/
+node_modules
