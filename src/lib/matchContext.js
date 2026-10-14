@@ -23,6 +23,7 @@ export function inningsOf(match) {
         touch(d.non_striker);
         b.runs += d.runs?.batter || 0;
         if (!('wides' in (d.extras || {}))) b.balls += 1;
+        if (b.b100 == null && b.runs >= 100) b.b100 = b.balls; // balls faced when he reached 100
         score += d.runs?.total || 0;
         for (const w of d.wickets || []) {
           if (isDismissal(w)) {
@@ -73,6 +74,8 @@ export function hundredsIn(match) {
         runs: b.runs,
         notOut: !b.out,
         balls: b.balls,
+        ballsTo100: b.b100 ?? null,
+        position: b.order,
         team: inn.team,
         opponent,
         date,
