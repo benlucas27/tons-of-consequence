@@ -1261,9 +1261,9 @@ export const DON = [
   "entry": "5-97",
   "share": 48,
   "teamTotal": 564,
-  "status": "review",
+  "status": "no",
   "scenario": null,
-  "reason": "The test says no (Australia were already 221 ahead when he came in), but Australia were 0–2 down and this turned the series. Waiting for a ruling.",
+  "reason": "Australia were already 221 ahead when he came in at 5 for 97, so the match was well in hand. A great innings, but not one the result depended on.",
   "story": "Australia were 0–2 down in the series. They made 200, England were bowled out for 76, and he came in at 5 for 97 and made 270 off 375 balls in Australia's second innings of 564. Australia won by 365 runs, their first win of the series. Wikipedia reports Wisden rating the innings the best Test match innings of all time.",
   "card": [
    {

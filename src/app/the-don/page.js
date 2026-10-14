@@ -33,7 +33,7 @@ export default function TheDon() {
           ))}
         </tbody>
       </table>
-      <p className="conn-note">Bradman&rsquo;s figures are from the scorecards on this page; the others are from ball-by-ball data for every hundred in the Cricsheet archive. Independent and unofficial. Notes are written only from the linked scorecards and pages; a ruling of &ldquo;under review&rdquo; means we haven&rsquo;t decided yet.</p>
+      <p className="conn-note">Bradman&rsquo;s figures are from the scorecards on this page; the others are from ball-by-ball data for every hundred in the Cricsheet archive. Independent and unofficial. Notes are written only from the linked scorecards and pages;</p>
 
       <h2>All 29, in order</h2>
       <ol className="don-list">
