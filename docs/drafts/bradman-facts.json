@@ -1,0 +1,1908 @@
+[
+ {
+  "key": "1928-12-29",
+  "test": 3,
+  "date": "1928-12-29",
+  "runs": 112,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 6,
+  "inningsNo": 3,
+  "followOn": false,
+  "entryWkts": 4,
+  "entryScore": 143,
+  "leadOnEntry": 123,
+  "teamTotal": 351,
+  "teamWkts": 10,
+  "share": 0.319,
+  "result": "loss",
+  "stakes": "live",
+  "peril": 0,
+  "series_before": "0-2",
+  "remaining": 3,
+  "coHundredsInnings": [
+   "WM Woodfull"
+  ],
+  "res": "England won by 3 wickets",
+  "fow": [
+   [
+    1,
+    7,
+    "Richardson"
+   ],
+   [
+    2,
+    60,
+    "Hendry"
+   ],
+   [
+    3,
+    138,
+    "Kippax"
+   ],
+   [
+    4,
+    143,
+    "Ryder"
+   ],
+   [
+    5,
+    201,
+    "Woodfull"
+   ],
+   [
+    6,
+    226,
+    "Oldfield"
+   ],
+   [
+    7,
+    252,
+    "a'Beckett"
+   ],
+   [
+    8,
+    345,
+    "Bradman"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1929-03-08",
+  "test": 5,
+  "date": "1929-03-08",
+  "runs": 123,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 5,
+  "inningsNo": 2,
+  "followOn": false,
+  "entryWkts": 3,
+  "entryScore": 203,
+  "leadOnEntry": -316,
+  "teamTotal": 491,
+  "teamWkts": 10,
+  "share": 0.251,
+  "result": "win",
+  "stakes": "dead",
+  "peril": 0,
+  "series_before": "0-4",
+  "remaining": 1,
+  "coHundredsInnings": [
+   "WM Woodfull"
+  ],
+  "res": "Australia won by 5 wickets",
+  "fow": [
+   [
+    1,
+    54,
+    "Jackson"
+   ],
+   [
+    2,
+    143,
+    "Kippax"
+   ],
+   [
+    3,
+    203,
+    "Ryder"
+   ],
+   [
+    4,
+    203,
+    "Woodfull"
+   ],
+   [
+    5,
+    386,
+    "Bradman"
+   ],
+   [
+    6,
+    399,
+    "Fairfax"
+   ],
+   [
+    7,
+    409,
+    "Oldfield"
+   ],
+   [
+    8,
+    420,
+    "Oxenham"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1930-06-13",
+  "test": 1,
+  "date": "1930-06-13",
+  "runs": 131,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 3,
+  "inningsNo": 4,
+  "followOn": false,
+  "entryWkts": 1,
+  "entryScore": 12,
+  "leadOnEntry": -416,
+  "teamTotal": 335,
+  "teamWkts": 10,
+  "share": 0.391,
+  "result": "loss",
+  "stakes": "live",
+  "peril": 2,
+  "series_before": "0-0",
+  "remaining": 5,
+  "coHundredsInnings": [],
+  "res": "England won by 93 runs",
+  "fow": [
+   [
+    1,
+    12,
+    "Woodfull"
+   ],
+   [
+    2,
+    93,
+    "Ponsford"
+   ],
+   [
+    3,
+    152,
+    "Kippax"
+   ],
+   [
+    4,
+    229,
+    "Bradman"
+   ],
+   [
+    5,
+    267,
+    "McCabe"
+   ],
+   [
+    6,
+    296,
+    "Richardson"
+   ],
+   [
+    7,
+    316,
+    "Fairfax"
+   ],
+   [
+    8,
+    322,
+    "Oldfield"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1930-06-27",
+  "test": 2,
+  "date": "1930-06-27",
+  "runs": 254,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 3,
+  "inningsNo": 2,
+  "followOn": false,
+  "entryWkts": 1,
+  "entryScore": 162,
+  "leadOnEntry": -263,
+  "teamTotal": 729,
+  "teamWkts": 6,
+  "share": 0.348,
+  "result": "win",
+  "stakes": "live",
+  "peril": 0,
+  "series_before": "0-1",
+  "remaining": 4,
+  "coHundredsInnings": [
+   "WM Woodfull"
+  ],
+  "res": "Australia won by 7 wickets",
+  "fow": [
+   [
+    1,
+    162,
+    "Ponsford"
+   ],
+   [
+    2,
+    393,
+    "Woodfull"
+   ],
+   [
+    3,
+    585,
+    "Bradman"
+   ],
+   [
+    4,
+    588,
+    "Kippax"
+   ],
+   [
+    5,
+    643,
+    "Richardson"
+   ],
+   [
+    6,
+    672,
+    "McCabe"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1930-07-11",
+  "test": 3,
+  "date": "1930-07-11",
+  "runs": 334,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 3,
+  "inningsNo": 1,
+  "followOn": false,
+  "entryWkts": 1,
+  "entryScore": 2,
+  "leadOnEntry": 2,
+  "teamTotal": 566,
+  "teamWkts": 10,
+  "share": 0.59,
+  "result": "draw",
+  "stakes": "live",
+  "peril": 1,
+  "series_before": "1-1",
+  "remaining": 3,
+  "coHundredsInnings": [],
+  "res": "Match drawn",
+  "fow": [
+   [
+    1,
+    2,
+    "Jackson"
+   ],
+   [
+    2,
+    194,
+    "Woodfull"
+   ],
+   [
+    3,
+    423,
+    "Kippax"
+   ],
+   [
+    4,
+    486,
+    "McCabe"
+   ],
+   [
+    5,
+    491,
+    "Richardson"
+   ],
+   [
+    6,
+    508,
+    "Bradman"
+   ],
+   [
+    7,
+    519,
+    "Oldfield"
+   ],
+   [
+    8,
+    544,
+    "a'Beckett"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1930-08-16",
+  "test": 5,
+  "date": "1930-08-16",
+  "runs": 232,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 3,
+  "inningsNo": 2,
+  "followOn": false,
+  "entryWkts": 1,
+  "entryScore": 159,
+  "leadOnEntry": -246,
+  "teamTotal": 695,
+  "teamWkts": 10,
+  "share": 0.334,
+  "result": "win",
+  "stakes": "decider",
+  "peril": 1,
+  "series_before": "1-1",
+  "remaining": 1,
+  "coHundredsInnings": [
+   "WH Ponsford"
+  ],
+  "res": "Australia won by an innings and 39 runs",
+  "fow": [
+   [
+    1,
+    159,
+    "Ponsford"
+   ],
+   [
+    2,
+    190,
+    "Woodfull"
+   ],
+   [
+    3,
+    263,
+    "Kippax"
+   ],
+   [
+    4,
+    506,
+    "Jackson"
+   ],
+   [
+    5,
+    570,
+    "Bradman"
+   ],
+   [
+    6,
+    594,
+    "McCabe"
+   ],
+   [
+    7,
+    670,
+    "Oldfield"
+   ],
+   [
+    8,
+    684,
+    "Grimmett"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1931-01-16",
+  "test": 3,
+  "date": "1931-01-16",
+  "runs": 223,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 3,
+  "inningsNo": 1,
+  "followOn": false,
+  "entryWkts": 1,
+  "entryScore": 1,
+  "leadOnEntry": 1,
+  "teamTotal": 558,
+  "teamWkts": 10,
+  "share": 0.4,
+  "result": "win",
+  "stakes": "live",
+  "peril": 0,
+  "series_before": "2-0",
+  "remaining": 3,
+  "coHundredsInnings": [
+   "WH Ponsford"
+  ],
+  "res": "Australia won by an innings and 217 runs",
+  "fow": [
+   [
+    1,
+    1,
+    "Jackson"
+   ],
+   [
+    2,
+    230,
+    "Ponsford"
+   ],
+   [
+    3,
+    423,
+    "Kippax"
+   ],
+   [
+    4,
+    431,
+    "Bradman"
+   ],
+   [
+    5,
+    441,
+    "McCabe"
+   ],
+   [
+    6,
+    462,
+    "Woodfull"
+   ],
+   [
+    7,
+    468,
+    "Fairfax"
+   ],
+   [
+    8,
+    543,
+    "Oxenham"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1931-02-13",
+  "test": 4,
+  "date": "1931-02-13",
+  "runs": 152,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 3,
+  "inningsNo": 2,
+  "followOn": false,
+  "entryWkts": 1,
+  "entryScore": 50,
+  "leadOnEntry": -49,
+  "teamTotal": 328,
+  "teamWkts": 8,
+  "share": 0.463,
+  "result": "win",
+  "stakes": "dead",
+  "peril": 0,
+  "series_before": "3-0",
+  "remaining": 2,
+  "coHundredsInnings": [],
+  "res": "Australia won by an innings and 122 runs",
+  "fow": [
+   [
+    1,
+    50,
+    "Ponsford"
+   ],
+   [
+    2,
+    206,
+    "Woodfull"
+   ],
+   [
+    3,
+    265,
+    "Jackson"
+   ],
+   [
+    4,
+    275,
+    "McCabe"
+   ],
+   [
+    5,
+    286,
+    "Bradman"
+   ],
+   [
+    6,
+    325,
+    "Kippax"
+   ],
+   [
+    7,
+    326,
+    "Oxenham"
+   ],
+   [
+    8,
+    328,
+    "Fairfax"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1931-11-27",
+  "test": 1,
+  "date": "1931-11-27",
+  "runs": 226,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 3,
+  "inningsNo": 1,
+  "followOn": false,
+  "entryWkts": 1,
+  "entryScore": 32,
+  "leadOnEntry": 32,
+  "teamTotal": 450,
+  "teamWkts": 10,
+  "share": 0.502,
+  "result": "win",
+  "stakes": "live",
+  "peril": 1,
+  "series_before": "0-0",
+  "remaining": 5,
+  "coHundredsInnings": [],
+  "res": "Australia won by an innings and 163 runs",
+  "fow": [
+   [
+    1,
+    32,
+    "Ponsford"
+   ],
+   [
+    2,
+    195,
+    "Woodfull"
+   ],
+   [
+    3,
+    211,
+    "Kippax"
+   ],
+   [
+    4,
+    292,
+    "McCabe"
+   ],
+   [
+    5,
+    316,
+    "Nitschke"
+   ],
+   [
+    6,
+    320,
+    "Oxenham"
+   ],
+   [
+    7,
+    380,
+    "Bradman"
+   ],
+   [
+    8,
+    407,
+    "Grimmett"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1931-12-18",
+  "test": 2,
+  "date": "1931-12-18",
+  "runs": 112,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 4,
+  "inningsNo": 2,
+  "followOn": false,
+  "entryWkts": 2,
+  "entryScore": 143,
+  "leadOnEntry": -10,
+  "teamTotal": 469,
+  "teamWkts": 10,
+  "share": 0.239,
+  "result": "win",
+  "stakes": "live",
+  "peril": 0,
+  "series_before": "1-0",
+  "remaining": 4,
+  "coHundredsInnings": [
+   "KE Rigg"
+  ],
+  "res": "Australia won by an innings and 155 runs",
+  "fow": [
+   [
+    1,
+    6,
+    "Ponsford"
+   ],
+   [
+    2,
+    143,
+    "Woodfull"
+   ],
+   [
+    3,
+    254,
+    "Rigg"
+   ],
+   [
+    4,
+    347,
+    "Bradman"
+   ],
+   [
+    5,
+    432,
+    "McCabe"
+   ],
+   [
+    6,
+    433,
+    "Lee"
+   ],
+   [
+    7,
+    444,
+    "Nitschke"
+   ],
+   [
+    8,
+    457,
+    "Oldfield"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1931-12-31",
+  "test": 3,
+  "date": "1931-12-31",
+  "runs": 167,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 3,
+  "inningsNo": 3,
+  "followOn": false,
+  "entryWkts": 1,
+  "entryScore": 54,
+  "leadOnEntry": -106,
+  "teamTotal": 554,
+  "teamWkts": 10,
+  "share": 0.301,
+  "result": "win",
+  "stakes": "live",
+  "peril": 0,
+  "series_before": "2-0",
+  "remaining": 3,
+  "coHundredsInnings": [
+   "WM Woodfull"
+  ],
+  "res": "Australia won by 169 runs",
+  "fow": [
+   [
+    1,
+    54,
+    "Ponsford"
+   ],
+   [
+    2,
+    328,
+    "Bradman"
+   ],
+   [
+    3,
+    408,
+    "Woodfull"
+   ],
+   [
+    4,
+    519,
+    "Kippax"
+   ],
+   [
+    5,
+    521,
+    "McCabe"
+   ],
+   [
+    6,
+    521,
+    "Rigg"
+   ],
+   [
+    7,
+    524,
+    "Oldfield"
+   ],
+   [
+    8,
+    530,
+    "a'Beckett"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1932-01-29",
+  "test": 4,
+  "date": "1932-01-29",
+  "runs": 299,
+  "notOut": true,
+  "name": "DG Bradman",
+  "pos": 3,
+  "inningsNo": 2,
+  "followOn": false,
+  "entryWkts": 1,
+  "entryScore": 9,
+  "leadOnEntry": -299,
+  "teamTotal": 513,
+  "teamWkts": 10,
+  "share": 0.583,
+  "result": "win",
+  "stakes": "dead",
+  "peril": 3,
+  "series_before": "3-0",
+  "remaining": 2,
+  "coHundredsInnings": [],
+  "res": "Australia won by 10 wickets",
+  "fow": [
+   [
+    1,
+    9,
+    "Ponsford"
+   ],
+   [
+    2,
+    185,
+    "Woodfull"
+   ],
+   [
+    3,
+    191,
+    "Kippax"
+   ],
+   [
+    4,
+    194,
+    "McCabe"
+   ],
+   [
+    5,
+    308,
+    "Rigg"
+   ],
+   [
+    6,
+    357,
+    "Oldfield"
+   ],
+   [
+    7,
+    418,
+    "Grimmett"
+   ],
+   [
+    8,
+    421,
+    "Hunt"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1932-12-30",
+  "test": 2,
+  "date": "1932-12-30",
+  "runs": 103,
+  "notOut": true,
+  "name": "DG Bradman",
+  "pos": 4,
+  "inningsNo": 3,
+  "followOn": false,
+  "entryWkts": 2,
+  "entryScore": 27,
+  "leadOnEntry": 86,
+  "teamTotal": 191,
+  "teamWkts": 10,
+  "share": 0.539,
+  "result": "win",
+  "stakes": "live",
+  "peril": 4,
+  "series_before": "0-1",
+  "remaining": 4,
+  "coHundredsInnings": [],
+  "res": "Australia won by 111 runs",
+  "fow": [
+   [
+    1,
+    1,
+    "Fingleton"
+   ],
+   [
+    2,
+    27,
+    "O'Brien"
+   ],
+   [
+    3,
+    78,
+    "Woodfull"
+   ],
+   [
+    4,
+    81,
+    "McCabe"
+   ],
+   [
+    5,
+    135,
+    "Richardson"
+   ],
+   [
+    6,
+    150,
+    "Oldfield"
+   ],
+   [
+    7,
+    156,
+    "Grimmett"
+   ],
+   [
+    8,
+    184,
+    "Wall"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1934-07-20",
+  "test": 4,
+  "date": "1934-07-20",
+  "runs": 304,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 5,
+  "inningsNo": 2,
+  "followOn": false,
+  "entryWkts": 3,
+  "entryScore": 39,
+  "leadOnEntry": -161,
+  "teamTotal": 584,
+  "teamWkts": 10,
+  "share": 0.521,
+  "result": "draw",
+  "stakes": "live",
+  "peril": 0,
+  "series_before": "1-1",
+  "remaining": 2,
+  "coHundredsInnings": [
+   "WH Ponsford"
+  ],
+  "res": "Match drawn",
+  "fow": [
+   [
+    1,
+    37,
+    "Brown"
+   ],
+   [
+    2,
+    39,
+    "Oldfield"
+   ],
+   [
+    3,
+    39,
+    "Woodfull"
+   ],
+   [
+    4,
+    427,
+    "Ponsford"
+   ],
+   [
+    5,
+    517,
+    "McCabe"
+   ],
+   [
+    6,
+    550,
+    "Bradman"
+   ],
+   [
+    7,
+    551,
+    "Darling"
+   ],
+   [
+    8,
+    557,
+    "Chipperfield"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1934-08-18",
+  "test": 5,
+  "date": "1934-08-18",
+  "runs": 244,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 3,
+  "inningsNo": 1,
+  "followOn": false,
+  "entryWkts": 1,
+  "entryScore": 21,
+  "leadOnEntry": 21,
+  "teamTotal": 701,
+  "teamWkts": 10,
+  "share": 0.348,
+  "result": "win",
+  "stakes": "decider",
+  "peril": 0,
+  "series_before": "1-1",
+  "remaining": 1,
+  "coHundredsInnings": [
+   "WH Ponsford"
+  ],
+  "res": "Australia won by 562 runs",
+  "fow": [
+   [
+    1,
+    21,
+    "Brown"
+   ],
+   [
+    2,
+    472,
+    "Bradman"
+   ],
+   [
+    3,
+    488,
+    "McCabe"
+   ],
+   [
+    4,
+    574,
+    "Ponsford"
+   ],
+   [
+    5,
+    626,
+    "Woodfull"
+   ],
+   [
+    6,
+    631,
+    "Kippax"
+   ],
+   [
+    7,
+    638,
+    "Chipperfield"
+   ],
+   [
+    8,
+    676,
+    "Grimmett"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1937-01-01",
+  "test": 3,
+  "date": "1937-01-01",
+  "runs": 270,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 7,
+  "inningsNo": 3,
+  "followOn": false,
+  "entryWkts": 5,
+  "entryScore": 97,
+  "leadOnEntry": 221,
+  "teamTotal": 564,
+  "teamWkts": 10,
+  "share": 0.479,
+  "result": "win",
+  "stakes": "live",
+  "peril": 0,
+  "series_before": "0-2",
+  "remaining": 3,
+  "coHundredsInnings": [
+   "JHW Fingleton"
+  ],
+  "res": "Australia won by 365 runs",
+  "fow": [
+   [
+    1,
+    0,
+    "O'Reilly"
+   ],
+   [
+    2,
+    3,
+    "Fleetwood-Smith"
+   ],
+   [
+    3,
+    38,
+    "Ward"
+   ],
+   [
+    4,
+    74,
+    "Brown"
+   ],
+   [
+    5,
+    97,
+    "Rigg"
+   ],
+   [
+    6,
+    443,
+    "Fingleton"
+   ],
+   [
+    7,
+    511,
+    "McCabe"
+   ],
+   [
+    8,
+    511,
+    "Darling"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1937-01-29",
+  "test": 4,
+  "date": "1937-01-29",
+  "runs": 212,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 3,
+  "inningsNo": 3,
+  "followOn": false,
+  "entryWkts": 1,
+  "entryScore": 21,
+  "leadOnEntry": -21,
+  "teamTotal": 433,
+  "teamWkts": 10,
+  "share": 0.49,
+  "result": "win",
+  "stakes": "live",
+  "peril": 2,
+  "series_before": "1-2",
+  "remaining": 2,
+  "coHundredsInnings": [],
+  "res": "Australia won by 148 runs",
+  "fow": [
+   [
+    1,
+    21,
+    "Fingleton"
+   ],
+   [
+    2,
+    88,
+    "Brown"
+   ],
+   [
+    3,
+    197,
+    "McCabe"
+   ],
+   [
+    4,
+    237,
+    "Rigg"
+   ],
+   [
+    5,
+    372,
+    "Gregory"
+   ],
+   [
+    6,
+    422,
+    "Bradman"
+   ],
+   [
+    7,
+    426,
+    "Oldfield"
+   ],
+   [
+    8,
+    427,
+    "Chipperfield"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1937-02-26",
+  "test": 5,
+  "date": "1937-02-26",
+  "runs": 169,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 3,
+  "inningsNo": 1,
+  "followOn": false,
+  "entryWkts": 1,
+  "entryScore": 42,
+  "leadOnEntry": 42,
+  "teamTotal": 604,
+  "teamWkts": 10,
+  "share": 0.28,
+  "result": "win",
+  "stakes": "decider",
+  "peril": 1,
+  "series_before": "2-2",
+  "remaining": 1,
+  "coHundredsInnings": [
+   "SJ McCabe",
+   "CL Badcock"
+  ],
+  "res": "Australia won by an innings and 200 runs",
+  "fow": [
+   [
+    1,
+    42,
+    "Rigg"
+   ],
+   [
+    2,
+    54,
+    "Fingleton"
+   ],
+   [
+    3,
+    303,
+    "McCabe"
+   ],
+   [
+    4,
+    346,
+    "Bradman"
+   ],
+   [
+    5,
+    507,
+    "Badcock"
+   ],
+   [
+    6,
+    544,
+    "Gregory"
+   ],
+   [
+    7,
+    563,
+    "Oldfield"
+   ],
+   [
+    8,
+    571,
+    "O'Reilly"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1938-06-10",
+  "test": 1,
+  "date": "1938-06-10",
+  "runs": 144,
+  "notOut": true,
+  "name": "DG Bradman",
+  "pos": 3,
+  "inningsNo": 3,
+  "followOn": true,
+  "entryWkts": 1,
+  "entryScore": 89,
+  "leadOnEntry": -158,
+  "teamTotal": 427,
+  "teamWkts": 6,
+  "share": 0.337,
+  "result": "draw",
+  "stakes": "live",
+  "peril": 0,
+  "series_before": "0-0",
+  "remaining": 5,
+  "coHundredsInnings": [
+   "WA Brown"
+  ],
+  "res": "Match drawn",
+  "fow": [
+   [
+    1,
+    89,
+    "Fingleton"
+   ],
+   [
+    2,
+    259,
+    "Brown"
+   ],
+   [
+    3,
+    331,
+    "McCabe"
+   ],
+   [
+    4,
+    337,
+    "Hassett"
+   ],
+   [
+    5,
+    369,
+    "Badcock"
+   ],
+   [
+    6,
+    417,
+    "Barnett"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1938-06-24",
+  "test": 2,
+  "date": "1938-06-24",
+  "runs": 102,
+  "notOut": true,
+  "name": "DG Bradman",
+  "pos": 3,
+  "inningsNo": 4,
+  "followOn": false,
+  "entryWkts": 1,
+  "entryScore": 8,
+  "leadOnEntry": -306,
+  "teamTotal": 204,
+  "teamWkts": 6,
+  "share": 0.5,
+  "result": "draw",
+  "stakes": "live",
+  "peril": 4,
+  "series_before": "0-0",
+  "remaining": 4,
+  "coHundredsInnings": [],
+  "res": "Match drawn",
+  "fow": [
+   [
+    1,
+    8,
+    "Fingleton"
+   ],
+   [
+    2,
+    71,
+    "Brown"
+   ],
+   [
+    3,
+    111,
+    "McCabe"
+   ],
+   [
+    4,
+    175,
+    "Hassett"
+   ],
+   [
+    5,
+    180,
+    "Badcock"
+   ],
+   [
+    6,
+    204,
+    "Barnett"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1938-07-22",
+  "test": 4,
+  "date": "1938-07-22",
+  "runs": 103,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 4,
+  "inningsNo": 2,
+  "followOn": false,
+  "entryWkts": 2,
+  "entryScore": 87,
+  "leadOnEntry": -136,
+  "teamTotal": 242,
+  "teamWkts": 10,
+  "share": 0.426,
+  "result": "win",
+  "stakes": "live",
+  "peril": 4,
+  "series_before": "0-0",
+  "remaining": 2,
+  "coHundredsInnings": [],
+  "res": "Australia won by 5 wickets",
+  "fow": [
+   [
+    1,
+    28,
+    "Brown"
+   ],
+   [
+    2,
+    87,
+    "Fingleton"
+   ],
+   [
+    3,
+    128,
+    "Barnett"
+   ],
+   [
+    4,
+    136,
+    "McCabe"
+   ],
+   [
+    5,
+    145,
+    "Badcock"
+   ],
+   [
+    6,
+    195,
+    "Hassett"
+   ],
+   [
+    7,
+    232,
+    "Waite"
+   ],
+   [
+    8,
+    240,
+    "Bradman"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1946-11-29",
+  "test": 1,
+  "date": "1946-11-29",
+  "runs": 187,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 3,
+  "inningsNo": 1,
+  "followOn": false,
+  "entryWkts": 1,
+  "entryScore": 9,
+  "leadOnEntry": 9,
+  "teamTotal": 645,
+  "teamWkts": 10,
+  "share": 0.29,
+  "result": "win",
+  "stakes": "live",
+  "peril": 1,
+  "series_before": "0-0",
+  "remaining": 5,
+  "coHundredsInnings": [
+   "AL Hassett"
+  ],
+  "res": "Australia won by an innings and 332 runs",
+  "fow": [
+   [
+    1,
+    9,
+    "Morris"
+   ],
+   [
+    2,
+    46,
+    "Barnes"
+   ],
+   [
+    3,
+    322,
+    "Bradman"
+   ],
+   [
+    4,
+    428,
+    "Hassett"
+   ],
+   [
+    5,
+    465,
+    "Miller"
+   ],
+   [
+    6,
+    596,
+    "Johnson"
+   ],
+   [
+    7,
+    599,
+    "McCool"
+   ],
+   [
+    8,
+    629,
+    "Tallon"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1946-12-13",
+  "test": 2,
+  "date": "1946-12-13",
+  "runs": 234,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 6,
+  "inningsNo": 2,
+  "followOn": false,
+  "entryWkts": 4,
+  "entryScore": 159,
+  "leadOnEntry": -96,
+  "teamTotal": 659,
+  "teamWkts": 8,
+  "share": 0.355,
+  "result": "win",
+  "stakes": "live",
+  "peril": 0,
+  "series_before": "1-0",
+  "remaining": 4,
+  "coHundredsInnings": [
+   "SG Barnes"
+  ],
+  "res": "Australia won by an innings and 33 runs",
+  "fow": [
+   [
+    1,
+    24,
+    "Morris"
+   ],
+   [
+    2,
+    37,
+    "Johnson"
+   ],
+   [
+    3,
+    96,
+    "Hassett"
+   ],
+   [
+    4,
+    159,
+    "Miller"
+   ],
+   [
+    5,
+    564,
+    "Bradman"
+   ],
+   [
+    6,
+    564,
+    "Barnes"
+   ],
+   [
+    7,
+    595,
+    "McCool"
+   ],
+   [
+    8,
+    617,
+    "Tallon"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1947-11-28",
+  "test": 1,
+  "date": "1947-11-28",
+  "runs": 185,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 3,
+  "inningsNo": 1,
+  "followOn": false,
+  "entryWkts": 1,
+  "entryScore": 38,
+  "leadOnEntry": 38,
+  "teamTotal": 382,
+  "teamWkts": 8,
+  "share": 0.484,
+  "result": "win",
+  "stakes": "live",
+  "peril": 2,
+  "series_before": "0-0",
+  "remaining": 5,
+  "coHundredsInnings": [],
+  "res": "Australia won by an innings and 226 runs",
+  "fow": [
+   [
+    1,
+    38,
+    "Brown"
+   ],
+   [
+    2,
+    97,
+    "Morris"
+   ],
+   [
+    3,
+    198,
+    "Hassett"
+   ],
+   [
+    4,
+    318,
+    "Bradman"
+   ],
+   [
+    5,
+    344,
+    "McCool"
+   ],
+   [
+    6,
+    373,
+    "Lindwall"
+   ],
+   [
+    7,
+    373,
+    "Miller"
+   ],
+   [
+    8,
+    380,
+    "Johnson"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1948-01-01",
+  "test": 3,
+  "date": "1948-01-01",
+  "runs": 132,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 3,
+  "inningsNo": 1,
+  "followOn": false,
+  "entryWkts": 1,
+  "entryScore": 29,
+  "leadOnEntry": 29,
+  "teamTotal": 394,
+  "teamWkts": 10,
+  "share": 0.335,
+  "result": "win",
+  "stakes": "live",
+  "peril": 1,
+  "series_before": "1-0",
+  "remaining": 3,
+  "coHundredsInnings": [],
+  "res": "Australia won by 233 runs",
+  "fow": [
+   [
+    1,
+    29,
+    "Barnes"
+   ],
+   [
+    2,
+    99,
+    "Morris"
+   ],
+   [
+    3,
+    268,
+    "Hassett"
+   ],
+   [
+    4,
+    280,
+    "Bradman"
+   ],
+   [
+    5,
+    302,
+    "Miller"
+   ],
+   [
+    6,
+    339,
+    "Lindwall"
+   ],
+   [
+    7,
+    341,
+    "Tallon"
+   ],
+   [
+    8,
+    352,
+    "Hamence"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1948-01-01",
+  "test": 3,
+  "date": "1948-01-01",
+  "runs": 127,
+  "notOut": true,
+  "name": "DG Bradman",
+  "pos": 6,
+  "inningsNo": 3,
+  "followOn": false,
+  "entryWkts": 4,
+  "entryScore": 32,
+  "leadOnEntry": 135,
+  "teamTotal": 255,
+  "teamWkts": 4,
+  "share": 0.498,
+  "result": "win",
+  "stakes": "live",
+  "peril": 0,
+  "series_before": "1-0",
+  "remaining": 3,
+  "coHundredsInnings": [
+   "AR Morris"
+  ],
+  "res": "Australia won by 233 runs",
+  "fow": [
+   [
+    1,
+    1,
+    "Johnson"
+   ],
+   [
+    2,
+    11,
+    "Dooland"
+   ],
+   [
+    3,
+    13,
+    "Johnston"
+   ],
+   [
+    4,
+    32,
+    "Barnes"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1948-01-23",
+  "test": 4,
+  "date": "1948-01-23",
+  "runs": 201,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 3,
+  "inningsNo": 1,
+  "followOn": false,
+  "entryWkts": 1,
+  "entryScore": 20,
+  "leadOnEntry": 20,
+  "teamTotal": 674,
+  "teamWkts": 10,
+  "share": 0.298,
+  "result": "win",
+  "stakes": "live",
+  "peril": 0,
+  "series_before": "2-0",
+  "remaining": 2,
+  "coHundredsInnings": [
+   "SG Barnes",
+   "AL Hassett"
+  ],
+  "res": "Australia won by an innings and 16 runs",
+  "fow": [
+   [
+    1,
+    20,
+    "Morris"
+   ],
+   [
+    2,
+    256,
+    "Barnes"
+   ],
+   [
+    3,
+    361,
+    "Bradman"
+   ],
+   [
+    4,
+    503,
+    "Miller"
+   ],
+   [
+    5,
+    523,
+    "Harvey"
+   ],
+   [
+    6,
+    576,
+    "McCool"
+   ],
+   [
+    7,
+    634,
+    "Johnson"
+   ],
+   [
+    8,
+    640,
+    "Lindwall"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1948-06-10",
+  "test": 1,
+  "date": "1948-06-10",
+  "runs": 138,
+  "notOut": false,
+  "name": "DG Bradman",
+  "pos": 3,
+  "inningsNo": 2,
+  "followOn": false,
+  "entryWkts": 1,
+  "entryScore": 73,
+  "leadOnEntry": -92,
+  "teamTotal": 509,
+  "teamWkts": 10,
+  "share": 0.271,
+  "result": "win",
+  "stakes": "live",
+  "peril": 3,
+  "series_before": "0-0",
+  "remaining": 5,
+  "coHundredsInnings": [
+   "AL Hassett"
+  ],
+  "res": "Australia won by 8 wickets",
+  "fow": [
+   [
+    1,
+    73,
+    "Morris"
+   ],
+   [
+    2,
+    121,
+    "Barnes"
+   ],
+   [
+    3,
+    121,
+    "Miller"
+   ],
+   [
+    4,
+    185,
+    "Brown"
+   ],
+   [
+    5,
+    305,
+    "Bradman"
+   ],
+   [
+    6,
+    338,
+    "Johnson"
+   ],
+   [
+    7,
+    365,
+    "Tallon"
+   ],
+   [
+    8,
+    472,
+    "Hassett"
+   ]
+  ],
+  "opp_team": null
+ },
+ {
+  "key": "1948-07-22",
+  "test": 4,
+  "date": "1948-07-22",
+  "runs": 173,
+  "notOut": true,
+  "name": "DG Bradman",
+  "pos": 3,
+  "inningsNo": 4,
+  "followOn": false,
+  "entryWkts": 1,
+  "entryScore": 57,
+  "leadOnEntry": -346,
+  "teamTotal": 404,
+  "teamWkts": 3,
+  "share": 0.428,
+  "result": "win",
+  "stakes": "live",
+  "peril": 0,
+  "series_before": "2-0",
+  "remaining": 2,
+  "coHundredsInnings": [
+   "AR Morris"
+  ],
+  "res": "Australia won by 7 wickets",
+  "fow": [
+   [
+    1,
+    57,
+    "Hassett"
+   ],
+   [
+    2,
+    358,
+    "Morris"
+   ],
+   [
+    3,
+    396,
+    "Miller"
+   ]
+  ],
+  "opp_team": null
+ }
+]
