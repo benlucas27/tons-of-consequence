@@ -562,3 +562,5 @@ body[data-door="1"] .s-bar { display: none; }
 .hs-episode { margin-top: 28px; }
 .hs-episode h2 { font: 700 22px/1.2 var(--display); text-transform: uppercase; margin: 0 0 4px; }
 .hs-episode .hs-origin { margin-top: 12px; }
+.hs-tons { font: 500 14px/1.5 var(--ui); color: var(--ink-3); margin: 0 0 6px; }
+.hs-tons a { color: var(--sky); }

@@ -4,7 +4,7 @@ import { BY_ID, inningsPath } from '@/lib/dataset';
 import { runsText } from '@/lib/format';
 
 export const metadata = {
-  title: 'Hello Sport cricket chat: an archive',
+  title: 'Hello Sport Cricketing Archive',
   description: 'An archive of the moments the Hello Sport hosts talk about Test hundreds and tons of consequence, timestamped so you can hear them, and tagged to the innings.',
 };
 
@@ -28,7 +28,7 @@ export default function HelloSportPage() {
   const groups = byEpisode();
   return (
     <article className="prose hs-page">
-      <h1>Hello Sport cricket chat: an archive</h1>
+      <h1>Hello Sport Cricketing Archive</h1>
       <p className="lede">An archive of the moments the Hello Sport hosts talk about Test hundreds and tons of consequence. Each one has the timestamp, so you can hear what they said, and is tagged to the innings in Tons of Consequence where there is one.</p>
       <p className="conn-note">Independent and unofficial: not made or endorsed by Hello Sport. Scores shown are from our own database, not from the episodes. {MOMENTS.length} moments from {groups.length} episodes so far, with more being added.</p>
 
@@ -36,9 +36,16 @@ export default function HelloSportPage() {
         const ep = EPISODES[g.youtubeId];
         const label = episodeLabel(g.moments[0]);
         const extra = g.youtubeId === ORIGIN.youtubeId ? ORIGIN.points : [];
+        // the innings the hosts talk about in this episode, each linking to its page
+        const tons = [...new Map(g.moments.filter((m) => m.inningsId && BY_ID.get(m.inningsId)).map((m) => [m.inningsId, BY_ID.get(m.inningsId)])).values()];
         return (
           <section key={g.youtubeId} className="hs-episode" aria-label={label}>
             <h2>{label}</h2>
+            {tons.length > 0 && (
+              <p className="hs-tons">Tons mentioned: {tons.map((c, i) => (
+                <span key={c.id}>{i > 0 ? ', ' : ''}<Link href={inningsPath(c)}>{c.name} {runsText(c)}</Link></span>
+              ))}</p>
+            )}
             <ul className="hs-all">
               {g.moments.map((m) => {
                 const c = m.inningsId ? BY_ID.get(m.inningsId) : null;
