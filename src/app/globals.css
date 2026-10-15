@@ -609,6 +609,7 @@ body[data-door="1"] .s-bar { display: none; }
 .toc-note p { font: 400 17px/1.55 var(--prose); color: var(--ink-2); margin: 0; max-width: 62ch; }
 .toc-note p b { color: var(--ink); }
 .toc-note p a { color: var(--sky); font: 500 14px var(--ui); white-space: nowrap; }
+.toc-conf { margin: 10px 0 0; font-size: 13px; color: var(--ink-3); }
 .toc-note-body { display: flex; gap: 18px; align-items: center; }
 .toc-note-none p { color: var(--ink-3); }
 .toc-tag { font: 700 11px/1 var(--ui); letter-spacing: .08em; color: var(--ball); border: 1.5px solid var(--ball); border-radius: 999px; padding: 3px 7px; }

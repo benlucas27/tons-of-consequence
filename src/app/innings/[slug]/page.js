@@ -6,6 +6,7 @@ import { runsText } from '@/lib/format';
 import { verdictOf, wherePlayed } from '@/lib/consequence';
 import { oppositionLabel, otherHundredsLabel, WHERE_LABEL } from '@/lib/matchFacts';
 import { INNINGS_FACTS } from '@/data/innings-facts';
+import { NIGHT_WATCHMAN } from '@/data/night-watchman';
 
 const find = (slug) => BY_ID.get(parseInningsId(slug));
 
@@ -39,7 +40,7 @@ export default function Page({ params }) {
   if (!c) notFound();
   return (
     <Suspense fallback={<Skeleton c={c} />}>
-      <InningsView id={c.id} consequence={verdictOf(c.id)} facts={{ tier: oppositionLabel(c.opponent), others: otherHundredsLabel(INNINGS_FACTS[c.id]), where: WHERE_LABEL[wherePlayed(c.id)] || null }} />
+      <InningsView id={c.id} consequence={verdictOf(c.id)} facts={{ tier: oppositionLabel(c.opponent), others: otherHundredsLabel(INNINGS_FACTS[c.id]), nightWatchman: NIGHT_WATCHMAN[c.id] ? (NIGHT_WATCHMAN[c.id].debated ? 'Night watchman (classification debated)' : 'Night watchman') : null, where: WHERE_LABEL[wherePlayed(c.id)] || null }} />
     </Suspense>
   );
 }

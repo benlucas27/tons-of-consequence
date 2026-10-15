@@ -7,10 +7,17 @@ import { tierOfOpponent } from './matchFacts.js';
 /** 'H', 'A' or 'N' for the side that scored the hundred, or undefined when we do not have the match record. */
 export const wherePlayed = (id) => WHERE_PLAYED[id];
 
-/** { passes, scenario, because } for a hundred we have measured, or null when we have no match record for it yet. */
+/** How much to trust a verdict, by the evidence it was built from. */
+export const CONFIDENCE = {
+  b: { key: 'high', label: 'High confidence', note: 'Built from the ball-by-ball record: the score and wickets when he came in, the lead and the series stakes.' },
+  s: { key: 'high', label: 'High confidence', note: 'Judged from the full scorecard.' },
+  r: { key: 'medium', label: 'Medium confidence', note: 'Judged from match reports. The score when he came in is not recorded, so the call rests on the result, the innings and the series.' },
+};
+
+/** { passes, scenario, because, confidence } for a hundred we have measured, or null when we have no match record for it yet. */
 export function verdictOf(id) {
   const v = CONSEQUENCE[id];
-  return v ? { passes: v[0] === 1, scenario: v[1], because: v[2] } : null;
+  return v ? { passes: v[0] === 1, scenario: v[1], because: v[2], confidence: CONFIDENCE[v[3]] || CONFIDENCE.b } : null;
 }
 
 const byName = new Map();

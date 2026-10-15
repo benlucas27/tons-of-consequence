@@ -26,7 +26,7 @@ test('every country code is known and years are plausible', () => {
 });
 
 test('match results use a known value', () => {
-  const ok = new Set(['win', 'loss', 'draw', 'unknown', 'live']);
+  const ok = new Set(['win', 'loss', 'draw', 'tie', 'unknown', 'live']);
   for (const c of ALL) assert.ok(ok.has(c.matchResult), `#${c.id} has result ${c.matchResult}`);
 });
 

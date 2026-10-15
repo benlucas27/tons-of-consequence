@@ -239,7 +239,7 @@ export function createServer() {
       opposition: oppositionLabel(c.opponent),
       otherHundreds: otherHundredsLabel(INNINGS_FACTS[c.id]),
       playedAt: WHERE_LABEL[wherePlayed(c.id)] || null,
-      tonOfConsequence: (() => { const v = verdictOf(c.id); return v ? { answer: v.passes ? 'yes' : 'no', scenario: v.scenario, reason: v.because } : { answer: 'not enough match data yet' }; })(),
+      tonOfConsequence: (() => { const v = verdictOf(c.id); return v ? { answer: v.passes ? 'yes' : 'no', scenario: v.scenario, reason: v.because, confidence: v.confidence.label } : { answer: 'not enough match data yet' }; })(),
       matchNotes: c.facts || [],
       tags: c.tags || [],
       criteria: LEVERS.map((l) => ({ criterion: l.name, score: c.levers[l.key] })),

@@ -35,6 +35,7 @@ export default function ConsequenceNote({ verdict }) {
           <Link href="/tons-of-consequence">How it works</Link>
         </p>
       </div>
+      {verdict.confidence && <p className="toc-conf"><b>{verdict.confidence.label}.</b> {verdict.confidence.note}</p>}
     </section>
   );
 }

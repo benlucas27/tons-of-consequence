@@ -211,10 +211,10 @@ export const REFERENCE_POINTS = {
  "Ricky Ponting|AUS": {
   "hundreds": 41,
   "results": {
-   "known": 18,
-   "won": 13,
-   "drawn": 4,
-   "lost": 1
+   "known": 41,
+   "won": 30,
+   "drawn": 7,
+   "lost": 4
   },
   "measured": 18,
   "tons": 4,
@@ -263,10 +263,10 @@ export const REFERENCE_POINTS = {
  "Kumar Sangakkara|SL": {
   "hundreds": 38,
   "results": {
-   "known": 29,
-   "won": 12,
-   "drawn": 13,
-   "lost": 4
+   "known": 38,
+   "won": 19,
+   "drawn": 14,
+   "lost": 5
   },
   "measured": 29,
   "tons": 7,
@@ -289,9 +289,9 @@ export const REFERENCE_POINTS = {
  "Jacques Kallis|SA": {
   "hundreds": 45,
   "results": {
-   "known": 28,
-   "won": 14,
-   "drawn": 11,
+   "known": 44,
+   "won": 21,
+   "drawn": 20,
    "lost": 3
   },
   "measured": 28,
@@ -653,9 +653,9 @@ export const REFERENCE_POINTS = {
  "Adam Gilchrist|AUS": {
   "hundreds": 17,
   "results": {
-   "known": 9,
-   "won": 7,
-   "drawn": 1,
+   "known": 17,
+   "won": 14,
+   "drawn": 2,
    "lost": 1
   },
   "measured": 9,

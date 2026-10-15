@@ -11,4 +11,4 @@ export const context = (c) => [`v ${c.opponent}`, c.venue, c.year].filter(Boolea
 
 export const runsText = (c) => `${c.runs}${c.notOut ? '*' : ''}`;
 
-export const RESULT_LABEL = { win: 'Won', draw: 'Drawn', loss: 'Lost', live: 'In progress' };
+export const RESULT_LABEL = { win: 'Won', draw: 'Drawn', loss: 'Lost', tie: 'Tied', live: 'In progress' };

@@ -153,6 +153,7 @@ export default function InningsView({ id, consequence = null, facts = null }) {
               <div><dt>Strike rate</dt><dd>{sr}</dd></div>
               <div><dt>Match</dt><dd>{RESULT_LABEL[c.matchResult] || '—'}</dd></div>
               {facts?.tier && <div><dt>Opposition</dt><dd>{facts.tier}</dd></div>}
+              {facts?.nightWatchman && <div><dt>Role</dt><dd>{facts.nightWatchman}</dd></div>}
               {facts?.others && <div><dt>Other hundreds</dt><dd>{facts.others}</dd></div>}
               {facts?.where && <div><dt>Played</dt><dd>{facts.where}</dd></div>}
             </dl>
