@@ -89,7 +89,9 @@ function parseTests(wt, teamNames) {
     const swap = [1, 2].find((t) => fo.test(cell('score', t, 2)));
     const seq = swap ? [[1, 1], [2, 1], [swap, 2], [swap === 1 ? 2 : 1, 2]] : order;
     const inns = seq.map(([t, i], k) => ({ no: k + 1, team: t, total: total(cell('score', t, i)), runsText: strip(cell('runs', t, i)).toLowerCase() }));
-    tests.push({ venueText: strip(venue).toLowerCase(), winner: r, inns }); // winner null when the box has no readable result
+    const mm = /(innings and )?(\d+)\s+(runs|wickets?)/i.exec(strip(res));
+    const margin = mm ? (mm[1] ? 'i' : mm[3].toLowerCase().startsWith('run') ? 'r' : 'w') + mm[2] : null;
+    tests.push({ venueText: strip(venue).toLowerCase(), winner: r, inns, margin }); // winner null when the box has no readable result
   }
   if (!tests.some((t) => t.winner)) {
     tests.length = 0;
@@ -162,7 +164,7 @@ for (const cb of [...combos.values()].slice(0, limit)) {
           const prior = tests[i].inns.filter((x) => x.no < hit.no);
           if (prior.every((x) => x.total != null)) leadStart = prior.filter((x) => x.team === hit.team).reduce((a, x) => a + x.total, 0) - prior.filter((x) => x.team !== hit.team).reduce((a, x) => a + x.total, 0);
         }
-        facts[c.id] = [result, i + 1, m, lead, dead ? 1 : 0, inn, tot, leadStart];
+        facts[c.id] = [result, i + 1, m, lead, dead ? 1 : 0, inn, tot, leadStart, tests[i].margin || null];
         matched += 1;
       }
       pending = still;
@@ -174,5 +176,5 @@ for (const cb of [...combos.values()].slice(0, limit)) {
 }
 if (validate) { console.log(`validation: ${vagree} of ${vtotal} agree with the known result`); process.exit(0); }
 const ids = Object.keys(facts).map(Number).sort((a, b) => a - b);
-fs.writeFileSync(path.join(root, 'src/data/series-facts.js'), `/** id -> [result for the batter's team, Test number in the series, Tests in the series, the batter's team's series lead going in (wins minus losses), 1 if the series was already decided, innings of the match, the team's total in that innings, the lead when it began], from Wikipedia's tour pages (scripts/fill-from-wikipedia-tours.mjs). Generated: do not edit by hand. */\nexport const SERIES_FACTS = {\n${ids.map((id) => `  ${id}: ${JSON.stringify(facts[id])},`).join('\n')}\n};\n`);
+fs.writeFileSync(path.join(root, 'src/data/series-facts.js'), `/** id -> [result for the batter's team, Test number in the series, Tests in the series, the batter's team's series lead going in (wins minus losses), 1 if the series was already decided, innings of the match, the team's total in that innings, the lead when it began, the margin as 'r120' runs, 'w5' wickets or 'i48' innings and runs], from Wikipedia's tour pages (scripts/fill-from-wikipedia-tours.mjs). Generated: do not edit by hand. */\nexport const SERIES_FACTS = {\n${ids.map((id) => `  ${id}: ${JSON.stringify(facts[id])},`).join('\n')}\n};\n`);
 console.log(`${combos.size} team-pair-years (${Math.min(limit, combos.size)} tried): ${found} tour pages found, ${missing} not found. ${matched} hundreds matched to a Test (${ambiguous} ambiguous by ground). Wrote ${ids.length} rows.`);
