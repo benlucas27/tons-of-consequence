@@ -338,7 +338,7 @@ export const MOMENTS = [
     "date": "2025-02-10",
     "youtubeId": "jVfc8f3AFGo",
     "start": 1521,
-    "note": "\"Smudge got another ton, he's now at 36.\" That makes it the 131 in the 2nd Test, not the 141 in the 1st",
+    "note": "\"Smudge got another ton, he's now at 36.\"",
     "matchText": "Sri Lanka v Australia, 2nd Test, Galle, Feb 2025 (Aus won)",
     "inningsText": "131",
     "inningsId": 2009
