@@ -1,0 +1,2472 @@
+[
+ {
+  "id": 4599,
+  "innings": "Matt Renshaw 190 v South Africa, Durban 2026",
+  "match": "Batting position not found",
+  "result": "The team won",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 15,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "We have the result but not the score when he came in.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 318,
+  "innings": "Patsy Hendren 205* v West Indies, Port of Spain 1930",
+  "match": "Batting position not found, innings 3 of the match, team 425, Test 2 of 4",
+  "result": "The team won",
+  "series_going_in": "Test 2 of 4, level",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 63,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "He made 48% of the team's 425 in a win, which is between the thresholds, and we do not know when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 2360,
+  "innings": "Frank Woolley 123 v Australia, Sydney 1924",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 66,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 57,
+  "innings": "George Headley 270* v England, Kingston 1935",
+  "match": "Batting position not found, innings 1 of the match, team 535, Test 4 of 4",
+  "result": "The team won",
+  "series_going_in": "Test 4 of 4, level",
+  "innings_of_match": "1",
+  "entry_state": "Not recorded",
+  "rank": 67,
+  "verdict": "yes",
+  "confidence": "low",
+  "reason": "He made 50% of the team's 535 in a win; it counts as carrying the innings if he came in under 100.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 68,
+  "innings": "Bill Ponsford 266 v England, The Oval 1934",
+  "match": "Batting position not found, innings 1 of the match, team 701, Test 5 of 5",
+  "result": "The team won",
+  "series_going_in": "Test 5 of 5, level",
+  "innings_of_match": "1",
+  "entry_state": "Not recorded",
+  "rank": 68,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "He made 38% of the team's 701 in a win, which is between the thresholds, and we do not know when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 2362,
+  "innings": "Patsy Hendren 123 v West Indies, Georgetown 1930",
+  "match": "Batting position not found, innings 4 of the match, team 327, Test 3 of 4",
+  "result": "The team lost",
+  "series_going_in": "Test 3 of 4, his side 1 up",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 69,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 2935,
+  "innings": "Herbert Sutcliffe 115 v Australia, Sydney 1924",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 72,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 726,
+  "innings": "Mark Butcher 173* v Australia, Leeds 2001",
+  "match": "Batting position not found, innings 4 of the match, team 315, Test 3 of 4",
+  "result": "The team won",
+  "series_going_in": "Test 3 of 4, his side 2 down",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 74,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "A hundred in a winning fourth-innings chase.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 1724,
+  "innings": "Seymour Nurse 137 v Australia, Sydney 1969",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 77,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 2567,
+  "innings": "Paul Gibb 120 v South Africa, Durban 1939",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 78,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 27,
+  "innings": "Virender Sehwag 309 v Pakistan, Multan 2004",
+  "match": "Batting position not found, innings 1 of the match, team 675, Test 1 of 3",
+  "result": "The team won",
+  "series_going_in": "Test 1 of 3, level",
+  "innings_of_match": "1",
+  "entry_state": "Not recorded",
+  "rank": 79,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "He made 46% of the team's 675 in a win, which is between the thresholds, and we do not know when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 1670,
+  "innings": "Roy Fredericks 138 v England, Lord's 1976",
+  "match": "Batting position not found, innings 4 of the match, team 241, Test 2 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 2 of 5, level",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 80,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "Batting in the last innings of a drawn Test, which saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 1774,
+  "innings": "Keith Stackpole 136 v England, Adelaide 1971",
+  "match": "Batting position not found, Test 5 of 6",
+  "result": "The team drawn",
+  "series_going_in": "Test 5 of 6, his side 1 down",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 81,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "We have the result but not the score when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 3928,
+  "innings": "Gilbert Jessop 104 v Australia, The Oval 1902",
+  "match": "Batting position not found, Test 3 of 5",
+  "result": "The team lost",
+  "series_going_in": "Test 3 of 5, level",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 82,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 97,
+  "innings": "Sanath Jayasuriya 253 v Pakistan, Faisalabad 2004",
+  "match": "Batted 2, innings 3 of the match, team 438, Test 1 of 2, away",
+  "result": "The team won",
+  "series_going_in": "Test 1 of 2, level",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 83,
+  "verdict": "yes",
+  "confidence": "low",
+  "reason": "He made 58% of the team's 438 in a win; it counts as carrying the innings if he came in under 100.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_international_cricket_centuries_by_Sanath_Jayasuriya",
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 2297,
+  "innings": "Arthur Morris 124* v England, Adelaide 1947",
+  "match": "Batting position not found, innings 4 of the match, team 1, Test 4 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 4 of 5, his side 2 up",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 85,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "Batting in the last innings of a drawn Test, which saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 2432,
+  "innings": "Vijay Hazare 122 v West Indies, Brabourne 1949",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 87,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 54,
+  "innings": "Graeme Pollock 274 v Australia, Durban 1970",
+  "match": "Batting position not found, innings 1 of the match, team 622, Test 2 of 4",
+  "result": "The team won",
+  "series_going_in": "Test 2 of 4, his side 1 up",
+  "innings_of_match": "1",
+  "entry_state": "Not recorded",
+  "rank": 88,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "He made 44% of the team's 622 in a win, which is between the thresholds, and we do not know when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 1834,
+  "innings": "Asif Iqbal 135 v West Indies, Kingston 1977",
+  "match": "Batting position not found, innings 4 of the match, team 301, Test 5 of 5",
+  "result": "The team lost",
+  "series_going_in": "Test 5 of 5, level",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 89,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 55,
+  "innings": "Zaheer Abbas 274 v England, Birmingham 1971",
+  "match": "Batting position not found, innings 1 of the match, team 608, Test 1 of 3",
+  "result": "The team drawn",
+  "series_going_in": "Test 1 of 3, level",
+  "innings_of_match": "1",
+  "entry_state": "Not recorded",
+  "rank": 91,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "A draw in which his side was not behind when the innings began, so it was not in danger of losing.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 281,
+  "innings": "Basil Butcher 209* v England, Nottingham 1966",
+  "match": "Batting position not found, innings 3 of the match, team 482, Test 3 of 5",
+  "result": "The team won",
+  "series_going_in": "Test 3 of 5, his side 1 up",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 93,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "He made 43% of the team's 482 in a win, which is between the thresholds, and we do not know when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 76,
+  "innings": "Frank Worrell 261 v England, Nottingham 1950",
+  "match": "Batting position not found, innings 2 of the match, team 558, Test 3 of 4",
+  "result": "The team won",
+  "series_going_in": "Test 3 of 4, level",
+  "innings_of_match": "2",
+  "entry_state": "Not recorded",
+  "rank": 96,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "He made 47% of the team's 558 in a win, which is between the thresholds, and we do not know when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 551,
+  "innings": "Victor Trumper 185* v England, Sydney 1903",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 97,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 2194,
+  "innings": "Colin Milburn 126* v West Indies, Lord's 1966",
+  "match": "Batting position not found, innings 4 of the match, team 197, Test 2 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 2 of 5, his side 1 down",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 98,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "Batting in the last innings of a drawn Test, which saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 1100,
+  "innings": "Saleem Malik 155 v Sri Lanka, Colombo (SSC) 1997",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 100,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 2866,
+  "innings": "Willie Watson 116 v West Indies, Kingston 1954",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 101,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 3021,
+  "innings": "Cyril Washbrook 114 v West Indies, Lord's 1950",
+  "match": "Batting position not found, innings 4 of the match, team 274, Test 2 of 4",
+  "result": "The team lost",
+  "series_going_in": "Test 2 of 4, his side 1 up",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 102,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 3252,
+  "innings": "Maurice Leyland 111* v Australia, Melbourne 1937",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 103,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 135,
+  "innings": "Saleem Malik 237 v Australia, Rawalpindi 1994",
+  "match": "Batting position not found, innings 3 of the match, team 537, Test 2 of 3",
+  "result": "The team drawn",
+  "series_going_in": "Test 2 of 3, his side 1 up",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 104,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "His side trailed by 261 when the innings began and the match was drawn, so the hundred saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 342,
+  "innings": "Mansoor Ali Khan Pataudi 203* v England, Delhi 1964",
+  "match": "Batting position not found, innings 3 of the match, team 463, Test 4 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 4 of 5, level",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 105,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "His side trailed by 107 when the innings began and the match was drawn, so the hundred saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 4208,
+  "innings": "Herbie Taylor 102 v England, Durban 1923",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 106,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 4335,
+  "innings": "Herbie Taylor 101 v England, Johannesburg 1923",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 107,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 84,
+  "innings": "Tom Graveney 258 v West Indies, Nottingham 1957",
+  "match": "Batting position not found, innings 1 of the match, team 619, Test 3 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 3 of 5, his side 1 up",
+  "innings_of_match": "1",
+  "entry_state": "Not recorded",
+  "rank": 108,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "A draw in which his side was not behind when the innings began, so it was not in danger of losing.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 3187,
+  "innings": "Cyril Washbrook 112 v Australia, Melbourne 1947",
+  "match": "Batting position not found, innings 4 of the match, team 7, Test 3 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 3 of 5, his side 2 down",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 109,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "Batting in the last innings of a drawn Test, which saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 2710,
+  "innings": "Polly Umrigar 118 v England, Manchester 1959",
+  "match": "Batting position not found, innings 4 of the match, team 376, Test 4 of 5",
+  "result": "The team lost",
+  "series_going_in": "Test 4 of 5, his side 3 down (series already decided)",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 112,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 2139,
+  "innings": "John Dyson 127* v West Indies, Sydney 1982",
+  "match": "Batting position not found, innings 4 of the match, team 200, Test 2 of 3",
+  "result": "The team drawn",
+  "series_going_in": "Test 2 of 3, his side 1 up",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 116,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "Batting in the last innings of a drawn Test, which saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 89,
+  "innings": "Rohan Kanhai 256 v India, Eden Gardens 1958",
+  "match": "Batting position not found, innings 1 of the match, team 614, Test 3 of 5",
+  "result": "The team won",
+  "series_going_in": "Test 3 of 5, his side 1 up",
+  "innings_of_match": "1",
+  "entry_state": "Not recorded",
+  "rank": 117,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "He made 42% of the team's 614 in a win, which is between the thresholds, and we do not know when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 2218,
+  "innings": "Graeme Wood 126 v West Indies, Georgetown 1978",
+  "match": "Batting position not found, innings 4 of the match, team 362, Test 3 of 5",
+  "result": "The team won",
+  "series_going_in": "Test 3 of 5, his side 2 down",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 118,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "A hundred in a winning fourth-innings chase.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 2219,
+  "innings": "Alvin Kallicharran 126 v Australia, Kingston 1978",
+  "match": "Batting position not found, innings 4 of the match, team 258, Test 5 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 5 of 5, his side 2 up (series already decided)",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 119,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "The series was already decided when this Test began.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 3715,
+  "innings": "Syed Mushtaq Ali 106 v West Indies, Eden Gardens 1948",
+  "match": "Batting position not found, innings 4 of the match, team 325, Test 2 of 4",
+  "result": "The team drawn",
+  "series_going_in": "Test 2 of 4, level",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 120,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "Batting in the last innings of a drawn Test, which saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 667,
+  "innings": "Herbie Taylor 176 v England, Johannesburg 1922",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 121,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 115,
+  "innings": "Eddie Paynter 243 v South Africa, Durban 1939",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 122,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 2317,
+  "innings": "Craig Serjeant 124 v West Indies, Georgetown 1978",
+  "match": "Batting position not found, Test 3 of 5",
+  "result": "The team won",
+  "series_going_in": "Test 3 of 5, his side 2 down",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 123,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "We have the result but not the score when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 3106,
+  "innings": "Rev.DS Sheppard 113 v Australia, Melbourne 1962",
+  "match": "Batting position not found",
+  "result": "The team won",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 124,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "We have the result but not the score when he came in.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 3196,
+  "innings": "Abbas Ali Baig 112 v England, Manchester 1959",
+  "match": "Batting position not found, Test 4 of 5",
+  "result": "The team lost",
+  "series_going_in": "Test 4 of 5, his side 3 down (series already decided)",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 128,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 3450,
+  "innings": "Willie Watson 109 v Australia, Lord's 1953",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 129,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 81,
+  "innings": "Glenn Turner 259 v West Indies, Georgetown 1972",
+  "match": "Batting position not found, innings 2 of the match, team 543, Test 4 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 4 of 5, level",
+  "innings_of_match": "2",
+  "entry_state": "Not recorded",
+  "rank": 132,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "A draw in which his side was not behind when the innings began, so it was not in danger of losing.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 151,
+  "innings": "Andy Flower 232* v India, Nagpur 2000",
+  "match": "Batting position not found, innings 3 of the match, team 503, Test 2 of 2",
+  "result": "The team drawn",
+  "series_going_in": "Test 2 of 2, his side 1 down",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 136,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "His side trailed by 227 when the innings began and the match was drawn, so the hundred saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 669,
+  "innings": "George Headley 176 v England, Bridgetown 1930",
+  "match": "Batting position not found, innings 3 of the match, team 384, Test 1 of 4",
+  "result": "The team drawn",
+  "series_going_in": "Test 1 of 4, level",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 142,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "His side trailed by 98 when the innings began and the match was drawn, so the hundred saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 728,
+  "innings": "Andrew Stoddart 173 v Australia, Melbourne 1894",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 143,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 2871,
+  "innings": "Vic Pollard 116 v England, Nottingham 1973",
+  "match": "Batting position not found, Test 1 of 3",
+  "result": "The team lost",
+  "series_going_in": "Test 1 of 3, level",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 144,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 3897,
+  "innings": "Alan Melville 104* v England, Nottingham 1947",
+  "match": "Batting position not found, innings 4 of the match, team 166, Test 1 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 1 of 5, level",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 145,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "Batting in the last innings of a drawn Test, which saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 3344,
+  "innings": "Rohan Kanhai 110 v England, Port of Spain 1960",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 147,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 3938,
+  "innings": "Jeff Stollmeyer 104 v Australia, Sydney 1952",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 149,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 566,
+  "innings": "Denis Compton 184 v Australia, Nottingham 1948",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 151,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 833,
+  "innings": "Victor Trumper 166 v England, Sydney 1908",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 152,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 3526,
+  "innings": "Conrad Hunte 108* v England, The Oval 1963",
+  "match": "Batting position not found, innings 4 of the match, team 255, Test 5 of 5",
+  "result": "The team won",
+  "series_going_in": "Test 5 of 5, his side 1 up",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 154,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "A hundred in a winning fourth-innings chase.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 3898,
+  "innings": "Jeff Stollmeyer 104* v India, Port of Spain 1953",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 155,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 567,
+  "innings": "Vinoo Mankad 184 v England, Lord's 1952",
+  "match": "Batting position not found, innings 3 of the match, team 378, Test 2 of 4",
+  "result": "The team lost",
+  "series_going_in": "Test 2 of 4, his side 1 down",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 157,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 4217,
+  "innings": "Lindsay Hassett 102 v West Indies, Melbourne 1951",
+  "match": "Batting position not found, innings 4 of the match, team 260, Test 4 of 5",
+  "result": "The team won",
+  "series_going_in": "Test 4 of 5, his side 1 up",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 160,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "A hundred in a winning fourth-innings chase.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 1306,
+  "innings": "Shoaib Malik 148* v Sri Lanka, Colombo (SSC) 2006",
+  "match": "Batting position not found",
+  "result": "The team drawn",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 162,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "We have the result but not the score when he came in.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 3037,
+  "innings": "Graham Yallop 114 v England, Manchester 1981",
+  "match": "Batting position not found, Test 5 of 6",
+  "result": "The team lost",
+  "series_going_in": "Test 5 of 6, his side 1 down",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 163,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 3208,
+  "innings": "Gundappa Viswanath 112 v West Indies, Port of Spain 1976",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 164,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 153,
+  "innings": "Stan McCabe 232 v England, Nottingham 1938",
+  "match": "Batting position not found, innings 2 of the match, team 411, Test 1 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 1 of 5, level",
+  "innings_of_match": "2",
+  "entry_state": "Not recorded",
+  "rank": 169,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "A draw in which his side was not behind when the innings began, so it was not in danger of losing.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 3118,
+  "innings": "Andrew Hilditch 113 v West Indies, Melbourne 1984",
+  "match": "Batting position not found, innings 4 of the match, team 8, Test 4 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 4 of 5, his side 3 down (series already decided)",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 171,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "The series was already decided when this Test began.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 3326,
+  "innings": "Glenn Turner 110* v Australia, Christchurch 1974",
+  "match": "Batting position not found, innings 4 of the match, team 230, Test 2 of 3",
+  "result": "The team won",
+  "series_going_in": "Test 2 of 3, level",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 172,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "A hundred in a winning fourth-innings chase.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 3696,
+  "innings": "Frank Hayes 106* v West Indies, The Oval 1973",
+  "match": "Batting position not found, innings 4 of the match, team 255, Test 1 of 3",
+  "result": "The team lost",
+  "series_going_in": "Test 1 of 3, level",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 173,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 138,
+  "innings": "Eric Rowan 236 v England, Leeds 1951",
+  "match": "Batting position not found, innings 1 of the match, team 538, Test 4 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 4 of 5, his side 1 down",
+  "innings_of_match": "1",
+  "entry_state": "Not recorded",
+  "rank": 175,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "A draw in which his side was not behind when the innings began, so it was not in danger of losing.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 3697,
+  "innings": "Alan Knott 106* v Australia, Adelaide 1975",
+  "match": "Batting position not found, Test 5 of 6",
+  "result": "The team lost",
+  "series_going_in": "Test 5 of 6, his side 3 down (series already decided)",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 179,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 103,
+  "innings": "Faoud Bacchus 250 v India, Kanpur 1979",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 182,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 134,
+  "innings": "Frank Worrell 237 v India, Kingston 1953",
+  "match": "Batting position not found, innings 2 of the match, team 576, Test 5 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 5 of 5, his side 1 up",
+  "innings_of_match": "2",
+  "entry_state": "Not recorded",
+  "rank": 183,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "A draw in which his side was not behind when the innings began, so it was not in danger of losing.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 971,
+  "innings": "Clem Hill 160 v England, Adelaide 1908",
+  "match": "Batting position not found, innings 3 of the match, team 506, Test 3 of 5",
+  "result": "The team won",
+  "series_going_in": "Test 3 of 5, level",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 185,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "He made 32% of the team's 506 in a win, which is between the thresholds, and we do not know when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 997,
+  "innings": "Warwick Armstrong 159* v South Africa, Johannesburg 1902",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 186,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 1000,
+  "innings": "Victor Trumper 159 v South Africa, Melbourne 1910",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 187,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 1016,
+  "innings": "Warwick Armstrong 158 v England, Sydney 1920",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 188,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 3611,
+  "innings": "Bevan Congdon 107* v Australia, Christchurch 1977",
+  "match": "Batting position not found, innings 4 of the match, team 293, Test 1 of 2",
+  "result": "The team drawn",
+  "series_going_in": "Test 1 of 2, level",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 190,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "Batting in the last innings of a drawn Test, which saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 145,
+  "innings": "Sid Barnes 234 v England, Sydney 1946",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 192,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 591,
+  "innings": "Denis Lindsay 182 v Australia, Johannesburg 1966",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 196,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 3954,
+  "innings": "Ian Chappell 104 v England, Adelaide 1971",
+  "match": "Batting position not found, Test 5 of 6",
+  "result": "The team drawn",
+  "series_going_in": "Test 5 of 6, his side 1 down",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 198,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "We have the result but not the score when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 611,
+  "innings": "Ted Dexter 180 v Australia, Birmingham 1961",
+  "match": "Batting position not found, innings 3 of the match, team 401, Test 1 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 1 of 5, level",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 199,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "His side trailed by 321 when the innings began and the match was drawn, so the hundred saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 945,
+  "innings": "Herbert Sutcliffe 161 v Australia, The Oval 1926",
+  "match": "Batting position not found, innings 3 of the match, team 436, Test 5 of 5",
+  "result": "The team won",
+  "series_going_in": "Test 5 of 5, level",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 200,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "He made 37% of the team's 436 in a win, which is between the thresholds, and we do not know when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 4356,
+  "innings": "ML Jaisimha 101 v Australia, Brisbane 1968",
+  "match": "Batting position not found, innings 4 of the match, team 355, Test 3 of 4",
+  "result": "The team lost",
+  "series_going_in": "Test 3 of 4, his side 2 down",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 202,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 26,
+  "innings": "John Edrich 310* v New Zealand, Leeds 1965",
+  "match": "Batting position not found, innings 1 of the match, team 546, Test 3 of 6",
+  "result": "The team won",
+  "series_going_in": "Test 3 of 6, his side 2 up",
+  "innings_of_match": "1",
+  "entry_state": "Not recorded",
+  "rank": 203,
+  "verdict": "yes",
+  "confidence": "low",
+  "reason": "He made 57% of the team's 546 in a win; it counts as carrying the innings if he came in under 100.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 50,
+  "innings": "Daryll Cullinan 275* v New Zealand, Auckland 1999",
+  "match": "Batting position not found, innings 1 of the match, team 621, Test 1 of 3",
+  "result": "The team drawn",
+  "series_going_in": "Test 1 of 3, level",
+  "innings_of_match": "1",
+  "entry_state": "Not recorded",
+  "rank": 204,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "A draw in which his side was not behind when the innings began, so it was not in danger of losing.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 121,
+  "innings": "Doug Walters 242 v West Indies, Sydney 1969",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 205,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 129,
+  "innings": "Graham Dowling 239 v India, Christchurch 1968",
+  "match": "Batting position not found, innings 1 of the match, team 502, Test 2 of 4",
+  "result": "The team won",
+  "series_going_in": "Test 2 of 4, his side 1 down",
+  "innings_of_match": "1",
+  "entry_state": "Not recorded",
+  "rank": 206,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "He made 48% of the team's 502 in a win, which is between the thresholds, and we do not know when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 696,
+  "innings": "Geoff Pullar 175 v South Africa, The Oval 1960",
+  "match": "Batting position not found, innings 3 of the match, team 479, Test 5 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 5 of 5, his side 3 up (series already decided)",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 207,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "The series was already decided when this Test began.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 4361,
+  "innings": "Mark Burgess 101 v West Indies, Kingston 1972",
+  "match": "Batting position not found, innings 4 of the match, team 236, Test 1 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 1 of 5, level",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 209,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "Batting in the last innings of a drawn Test, which saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 163,
+  "innings": "Bert Sutcliffe 230* v India, Delhi 1955",
+  "match": "Batting position not found, innings 1 of the match, team 450, Test 3 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 3 of 5, his side 1 down",
+  "innings_of_match": "1",
+  "entry_state": "Not recorded",
+  "rank": 210,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "A draw in which his side was not behind when the innings began, so it was not in danger of losing.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 871,
+  "innings": "Bruce Mitchell 164* v England, Lord's 1935",
+  "match": "Batting position not found, innings 3 of the match, team 278, Test 2 of 5",
+  "result": "The team won",
+  "series_going_in": "Test 2 of 5, level",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 212,
+  "verdict": "yes",
+  "confidence": "low",
+  "reason": "He made 59% of the team's 278 in a win; it counts as carrying the innings if he came in under 100.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 947,
+  "innings": "Bill Woodfull 161 v South Africa, Melbourne 1931",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 213,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 1109,
+  "innings": "Ranjitsinhji 154* v Australia, Manchester 1896",
+  "match": "Batting position not found, innings 3 of the match, team 305, Test 2 of 3",
+  "result": "The team lost",
+  "series_going_in": "Test 2 of 3, his side 1 up",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 218,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 1138,
+  "innings": "Billy Murdoch 153* v England, The Oval 1880",
+  "match": "Batting position not found, innings 3 of the match, team 327, Test 1 of 1",
+  "result": "The team lost",
+  "series_going_in": "Test 1 of 1, level",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 219,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 119,
+  "innings": "Clive Lloyd 242* v India, Wankhede 1975",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 223,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 126,
+  "innings": "Zaheer Abbas 240 v England, The Oval 1974",
+  "match": "Batting position not found, innings 1 of the match, team 600, Test 3 of 3",
+  "result": "The team drawn",
+  "series_going_in": "Test 3 of 3, level",
+  "innings_of_match": "1",
+  "entry_state": "Not recorded",
+  "rank": 224,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "A draw in which his side was not behind when the innings began, so it was not in danger of losing.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 243,
+  "innings": "Victor Trumper 214* v South Africa, Adelaide 1911",
+  "match": "Batting position not found, innings 2 of the match, team 465, Test 3 of 5",
+  "result": "The team lost",
+  "series_going_in": "Test 3 of 5, his side 2 up",
+  "innings_of_match": "2",
+  "entry_state": "Not recorded",
+  "rank": 225,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 796,
+  "innings": "Clyde Walcott 168* v England, Lord's 1950",
+  "match": "Batting position not found, innings 3 of the match, team 425, Test 2 of 4",
+  "result": "The team won",
+  "series_going_in": "Test 2 of 4, his side 1 down",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 227,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "He made 40% of the team's 425 in a win, which is between the thresholds, and we do not know when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 801,
+  "innings": "Seymour Nurse 168 v New Zealand, Auckland 1969",
+  "match": "Batting position not found, innings 4 of the match, team 348, Test 1 of 3",
+  "result": "The team won",
+  "series_going_in": "Test 1 of 3, level",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 228,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "A hundred in a winning fourth-innings chase.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 1183,
+  "innings": "Charlie Frank 152 v Australia, Johannesburg 1921",
+  "match": "Batting position not found, innings 3 of the match, team 472, Test 2 of 3",
+  "result": "The team drawn",
+  "series_going_in": "Test 2 of 3, level",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 229,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "His side trailed by 207 when the innings began and the match was drawn, so the hundred saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 1248,
+  "innings": "JW Zulch 150 v Australia, Sydney 1911",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 230,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 3961,
+  "innings": "Mohsin Khan 104 v England, Lahore 1984",
+  "match": "Batting position not found, innings 4 of the match, team 217, Test 3 of 3",
+  "result": "The team drawn",
+  "series_going_in": "Test 3 of 3, his side 1 up",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 232,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "Batting in the last innings of a drawn Test, which saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 53,
+  "innings": "Stephen Fleming 274* v Sri Lanka, Colombo (PSS) 2003",
+  "match": "Batting position not found, innings 1 of the match, team 515, Test 1 of 2",
+  "result": "The team drawn",
+  "series_going_in": "Test 1 of 2, level",
+  "innings_of_match": "1",
+  "entry_state": "Not recorded",
+  "rank": 233,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "A draw in which his side was not behind when the innings began, so it was not in danger of losing.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 2321,
+  "innings": "Duleep Mendis 124 v India, Kandy 1985",
+  "match": "Batting position not found, innings 4 of the match, team 307, Test 3 of 3",
+  "result": "The team drawn",
+  "series_going_in": "Test 3 of 3, his side 1 up",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 238,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "Batting in the last innings of a drawn Test, which saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 69,
+  "innings": "Dave Houghton 266 v Sri Lanka, Bulawayo 1994",
+  "match": "Batting position not found, innings 1 of the match, team 462, Test 2 of 3",
+  "result": "The team drawn",
+  "series_going_in": "Test 2 of 3, level",
+  "innings_of_match": "1",
+  "entry_state": "Not recorded",
+  "rank": 241,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "A draw in which his side was not behind when the innings began, so it was not in danger of losing.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 230,
+  "innings": "Eddie Paynter 216* v Australia, Nottingham 1938",
+  "match": "Batting position not found, innings 1 of the match, team 658, Test 1 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 1 of 5, level",
+  "innings_of_match": "1",
+  "entry_state": "Not recorded",
+  "rank": 242,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "A draw in which his side was not behind when the innings began, so it was not in danger of losing.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 834,
+  "innings": "John Holt 166 v England, Bridgetown 1954",
+  "match": "Batting position not found, innings 3 of the match, team 292, Test 2 of 5",
+  "result": "The team won",
+  "series_going_in": "Test 2 of 5, his side 1 up",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 245,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "His side already led by 202 before the innings began, so the match was safe.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 744,
+  "innings": "Polly Umrigar 172* v West Indies, Port of Spain 1962",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 247,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 1337,
+  "innings": "Gordon White 147 v England, Johannesburg 1906",
+  "match": "Batting position not found, Test 1 of 3",
+  "result": "The team won",
+  "series_going_in": "Test 1 of 3, level",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 249,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "We have the result but not the score when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 1997,
+  "innings": "Sanath Jayasuriya 131 v Australia, Kandy 2004",
+  "match": "Batted 2, innings 4 of the match, Test 2 of 3, at home",
+  "result": "The team lost",
+  "series_going_in": "Test 2 of 3, his side 1 down",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 252,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_international_cricket_centuries_by_Sanath_Jayasuriya",
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 2169,
+  "innings": "Justin Langer 127 v Pakistan, Hobart 1999",
+  "match": "Batting position not found, Test 2 of 3",
+  "result": "The team won",
+  "series_going_in": "Test 2 of 3, his side 1 up",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 253,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "We have the result but not the score when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 2482,
+  "innings": "Dean Jones 121* v Pakistan, Adelaide 1990",
+  "match": "Batting position not found, innings 4 of the match, team 6, Test 2 of 3",
+  "result": "The team drawn",
+  "series_going_in": "Test 2 of 3, his side 1 up",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 254,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "Batting in the last innings of a drawn Test, which saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 2517,
+  "innings": "Ijaz Ahmed 121 v Australia, Melbourne 1990",
+  "match": "Batting position not found, innings 4 of the match, team 336, Test 1 of 3",
+  "result": "The team lost",
+  "series_going_in": "Test 1 of 3, level",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 255,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 4030,
+  "innings": "Desmond Haynes 103* v Australia, Georgetown 1984",
+  "match": "Batting position not found, Test 1 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 1 of 5, level",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 256,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "We have the result but not the score when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 64,
+  "innings": "Bryan Young 267* v Sri Lanka, Dunedin 1997",
+  "match": "Batting position not found, innings 1 of the match, team 586, Test 1 of 2",
+  "result": "The team won",
+  "series_going_in": "Test 1 of 2, level",
+  "innings_of_match": "1",
+  "entry_state": "Not recorded",
+  "rank": 257,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "He made 46% of the team's 586 in a win, which is between the thresholds, and we do not know when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 140,
+  "innings": "Zaheer Abbas 235* v India, Lahore 1978",
+  "match": "Batting position not found, innings 2 of the match, team 539, Test 2 of 3",
+  "result": "The team won",
+  "series_going_in": "Test 2 of 3, level",
+  "innings_of_match": "2",
+  "entry_state": "Not recorded",
+  "rank": 258,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "He made 44% of the team's 539 in a win, which is between the thresholds, and we do not know when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 799,
+  "innings": "Collie Smith 168 v England, Nottingham 1957",
+  "match": "Batting position not found, innings 3 of the match, team 367, Test 3 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 3 of 5, his side 1 down",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 259,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "His side trailed by 247 when the innings began and the match was drawn, so the hundred saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 898,
+  "innings": "Denis Compton 163 v South Africa, Nottingham 1947",
+  "match": "Batting position not found, innings 3 of the match, team 551, Test 1 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 1 of 5, level",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 260,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "His side trailed by 325 when the innings began and the match was drawn, so the hundred saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 700,
+  "innings": "John Edrich 175 v Australia, Lord's 1975",
+  "match": "Batting position not found, innings 3 of the match, team 436, Test 1 of 3",
+  "result": "The team drawn",
+  "series_going_in": "Test 1 of 3, level",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 262,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "A draw in which his side was not behind when the innings began, so it was not in danger of losing.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 835,
+  "innings": "Saeed Ahmed 166 v Australia, Lahore 1959",
+  "match": "Batting position not found, innings 3 of the match, team 366, Test 2 of 3",
+  "result": "The team lost",
+  "series_going_in": "Test 2 of 3, his side 1 down",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 263,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 266,
+  "innings": "Billy Murdoch 211 v England, The Oval 1884",
+  "match": "Batting position not found, innings 1 of the match, team 551, Test 3 of 3",
+  "result": "The team drawn",
+  "series_going_in": "Test 3 of 3, his side 1 down",
+  "innings_of_match": "1",
+  "entry_state": "Not recorded",
+  "rank": 268,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "A draw in which his side was not behind when the innings began, so it was not in danger of losing.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 267,
+  "innings": "Jack Hobbs 211 v South Africa, Lord's 1924",
+  "match": "Batting position not found, innings 2 of the match, team 531, Test 2 of 5",
+  "result": "The team won",
+  "series_going_in": "Test 2 of 5, his side 1 up",
+  "innings_of_match": "2",
+  "entry_state": "Not recorded",
+  "rank": 269,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "He made 40% of the team's 531 in a win, which is between the thresholds, and we do not know when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 282,
+  "innings": "Clifford Roach 209 v England, Georgetown 1930",
+  "match": "Batting position not found, innings 1 of the match, team 471, Test 3 of 4",
+  "result": "The team won",
+  "series_going_in": "Test 3 of 4, his side 1 down",
+  "innings_of_match": "1",
+  "entry_state": "Not recorded",
+  "rank": 270,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "He made 44% of the team's 471 in a win, which is between the thresholds, and we do not know when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 713,
+  "innings": "Dennis Amiss 174 v West Indies, Port of Spain 1974",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 271,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 209,
+  "innings": "Clyde Walcott 220 v England, Bridgetown 1954",
+  "match": "Batting position not found, innings 1 of the match, team 383, Test 2 of 5",
+  "result": "The team won",
+  "series_going_in": "Test 2 of 5, his side 1 up",
+  "innings_of_match": "1",
+  "entry_state": "Not recorded",
+  "rank": 277,
+  "verdict": "yes",
+  "confidence": "low",
+  "reason": "He made 57% of the team's 383 in a win; it counts as carrying the innings if he came in under 100.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 892,
+  "innings": "Madhav Apte 163* v West Indies, Port of Spain 1953",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 278,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 1458,
+  "innings": "Harry Trott 143 v England, Lord's 1896",
+  "match": "Batting position not found, innings 3 of the match, team 347, Test 1 of 3",
+  "result": "The team lost",
+  "series_going_in": "Test 1 of 3, level",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 279,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 2414,
+  "innings": "Daryll Cullinan 122* v India, Johannesburg 1997",
+  "match": "Batting position not found, innings 4 of the match, team 228, Test 3 of 3",
+  "result": "The team drawn",
+  "series_going_in": "Test 3 of 3, his side 2 up (series already decided)",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 282,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "The series was already decided when this Test began.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 2552,
+  "innings": "Shane Thomson 120* v Pakistan, Christchurch 1994",
+  "match": "Batting position not found, innings 4 of the match, team 324, Test 3 of 3",
+  "result": "The team won",
+  "series_going_in": "Test 3 of 3, his side 2 down (series already decided)",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 283,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "The series was already decided when this Test began.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 2587,
+  "innings": "Bryan Young 120 v Pakistan, Christchurch 1994",
+  "match": "Batting position not found, Test 3 of 3",
+  "result": "The team won",
+  "series_going_in": "Test 3 of 3, his side 2 down (series already decided)",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 284,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "The series was already decided when this Test began.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 917,
+  "innings": "Russell Endean 162* v Australia, Melbourne 1952",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 289,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 2416,
+  "innings": "Justin Langer 122* v New Zealand, Hamilton 2000",
+  "match": "Batting position not found, innings 4 of the match, team 212, Test 3 of 3",
+  "result": "The team won",
+  "series_going_in": "Test 3 of 3, his side 2 up (series already decided)",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 292,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "The series was already decided when this Test began.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 2773,
+  "innings": "John Wright 117* v Australia, Wellington 1990",
+  "match": "Batting position not found, innings 4 of the match, team 181, Test 1 of 1",
+  "result": "The team won",
+  "series_going_in": "Test 1 of 1, level",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 294,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "A hundred in a winning fourth-innings chase.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 181,
+  "innings": "Bob Simpson 225 v England, Adelaide 1966",
+  "match": "Batting position not found, Test 4 of 5",
+  "result": "The team won",
+  "series_going_in": "Test 4 of 5, his side 1 down",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 295,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "We have the result but not the score when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 1061,
+  "innings": "Eric Rowan 156* v England, Johannesburg 1948",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 296,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 1092,
+  "innings": "Arthur Morris 155 v England, Melbourne 1947",
+  "match": "Batting position not found, innings 3 of the match, team 536, Test 3 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 3 of 5, his side 2 up",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 297,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "A draw in which his side was not behind when the innings began, so it was not in danger of losing.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 1338,
+  "innings": "Charlie Kelleway 147 v England, Adelaide 1921",
+  "match": "Batting position not found, innings 3 of the match, team 582, Test 3 of 5",
+  "result": "The team won",
+  "series_going_in": "Test 3 of 5, his side 2 up",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 298,
+  "verdict": "no",
+  "confidence": "low",
+  "reason": "He made 25% of the team's 582 in a win.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 2553,
+  "innings": "Ijaz Ahmed 120* v Australia, Karachi 1998",
+  "match": "Batting position not found, innings 4 of the match, team 262, Test 3 of 3",
+  "result": "The team drawn",
+  "series_going_in": "Test 3 of 3, his side 1 down",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 299,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "Batting in the last innings of a drawn Test, which saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 303,
+  "innings": "Bill Brown 206* v England, Lord's 1938",
+  "match": "Batting position not found, innings 2 of the match, team 422, Test 2 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 2 of 5, level",
+  "innings_of_match": "2",
+  "entry_state": "Not recorded",
+  "rank": 301,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "A draw in which his side was not behind when the innings began, so it was not in danger of losing.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 335,
+  "innings": "Aubrey Faulkner 204 v Australia, Melbourne 1910",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 303,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 764,
+  "innings": "Ross Edwards 170* v England, Nottingham 1972",
+  "match": "Batting position not found, innings 3 of the match, team 324, Test 3 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 3 of 5, level",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 304,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "A draw in which his side was not behind when the innings began, so it was not in danger of losing.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 1503,
+  "innings": "Clem Hill 142 v South Africa, Johannesburg 1902",
+  "match": "Batting position not found",
+  "result": "Result not found",
+  "series_going_in": "Not checked",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 305,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "No result found yet.",
+  "sources": [],
+  "flags": ""
+ },
+ {
+  "id": 2656,
+  "innings": "Alec Stewart 119 v New Zealand, Lord's 1994",
+  "match": "Batting position not found, innings 4 of the match, team 254, Test 2 of 3",
+  "result": "The team drawn",
+  "series_going_in": "Test 2 of 3, his side 1 up",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 308,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "Batting in the last innings of a drawn Test, which saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 3119,
+  "innings": "Allan Lamb 113 v West Indies, Lord's 1988",
+  "match": "Batting position not found, innings 4 of the match, team 307, Test 2 of 5",
+  "result": "The team lost",
+  "series_going_in": "Test 2 of 5, level",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 309,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 214,
+  "innings": "Denis Atkinson 219 v Australia, Bridgetown 1955",
+  "match": "Batting position not found, innings 2 of the match, team 510, Test 4 of 5",
+  "result": "The team drawn",
+  "series_going_in": "Test 4 of 5, his side 2 down",
+  "innings_of_match": "2",
+  "entry_state": "Not recorded",
+  "rank": 310,
+  "verdict": "no",
+  "confidence": "medium",
+  "reason": "A draw in which his side was not behind when the innings began, so it was not in danger of losing.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 707,
+  "innings": "Jeremy Coney 174* v England, Wellington 1984",
+  "match": "Batting position not found, innings 3 of the match, team 537, Test 1 of 3",
+  "result": "The team drawn",
+  "series_going_in": "Test 1 of 3, level",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 311,
+  "verdict": "yes",
+  "confidence": "medium",
+  "reason": "His side trailed by 244 when the innings began and the match was drawn, so the hundred saved it.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 1578,
+  "innings": "Frank Iredale 140 v England, Adelaide 1895",
+  "match": "Batting position not found, innings 3 of the match, team 411, Test 3 of 5",
+  "result": "The team won",
+  "series_going_in": "Test 3 of 5, his side 2 down",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 312,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "He made 34% of the team's 411 in a win, which is between the thresholds, and we do not know when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 1580,
+  "innings": "Archie MacLaren 140 v Australia, Nottingham 1905",
+  "match": "Batting position not found, innings 3 of the match, team 426, Test 1 of 5",
+  "result": "The team won",
+  "series_going_in": "Test 1 of 5, level",
+  "innings_of_match": "3",
+  "entry_state": "Not recorded",
+  "rank": 313,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "He made 33% of the team's 426 in a win, which is between the thresholds, and we do not know when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 2460,
+  "innings": "Shahid Afridi 122 v West Indies, Bridgetown 2005",
+  "match": "Batting position not found, innings 4 of the match, team 296, Test 1 of 2",
+  "result": "The team lost",
+  "series_going_in": "Test 1 of 2, level",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 315,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 2774,
+  "innings": "Moin Khan 117* v Sri Lanka, Sialkot 1995",
+  "match": "Batting position not found, innings 4 of the match, team 212, Test 3 of 3",
+  "result": "The team lost",
+  "series_going_in": "Test 3 of 3, level",
+  "innings_of_match": "4",
+  "entry_state": "Not recorded",
+  "rank": 317,
+  "verdict": "no",
+  "confidence": "high",
+  "reason": "A loss never counts.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ },
+ {
+  "id": 161,
+  "innings": "Mudassar Nazar 231 v India, Hyderabad (Sind) 1983",
+  "match": "Batting position not found, Test 4 of 6",
+  "result": "The team won",
+  "series_going_in": "Test 4 of 6, his side 2 up",
+  "innings_of_match": "Not found",
+  "entry_state": "Not recorded",
+  "rank": 319,
+  "verdict": "cannot tell",
+  "confidence": "low",
+  "reason": "We have the result but not the score when he came in.",
+  "sources": [
+   "Wikipedia tour page for the series"
+  ],
+  "flags": ""
+ }
+]

@@ -81,7 +81,15 @@ function parseTests(wt, teamNames) {
     const venue = /\|\s*(?:venue|location|stadium|ground)\s*=\s*([^\n]*)/i.exec(body)?.[1] || '';
     const res = /\|\s*result\s*=\s*([^\n]*)/i.exec(body)?.[1] || '';
     const r = resultOf(res);
-    tests.push({ venueText: strip(venue).toLowerCase(), winner: r }); // winner null when the box has no readable result
+    // innings in the order they were played: team1 bats first; a team marked f/o followed on
+    const cell = (name, t, i) => new RegExp(`\\|\\s*${name}-team${t}-inns${i}\\s*=\\s*([^\\n]*)`, 'i').exec(body)?.[1] || '';
+    const total = (txt) => { const m = /(\d+)(?:\/\d+)?/.exec(strip(txt).replace(/\(.*?\)/g, '')); return m ? Number(m[1]) : null; };
+    const order = [[1, 1], [2, 1], [1, 2], [2, 2]];
+    const fo = /f\/o|follow-?on/i;
+    const swap = [1, 2].find((t) => fo.test(cell('score', t, 2)));
+    const seq = swap ? [[1, 1], [2, 1], [swap, 2], [swap === 1 ? 2 : 1, 2]] : order;
+    const inns = seq.map(([t, i], k) => ({ no: k + 1, team: t, total: total(cell('score', t, i)), runsText: strip(cell('runs', t, i)).toLowerCase() }));
+    tests.push({ venueText: strip(venue).toLowerCase(), winner: r, inns }); // winner null when the box has no readable result
   }
   if (!tests.some((t) => t.winner)) {
     tests.length = 0;
@@ -139,7 +147,16 @@ for (const cb of [...combos.values()].slice(0, limit)) {
         const lead = unreadable ? null : mine - theirs;
         const dead = lead !== null && Math.abs(lead) > m - i;
         if (validate) { vtotal += 1; if (result === c.matchResult) vagree += 1; else console.log('DISAGREE', c.id, c.name, c.runs, c.opponent, c.venue, c.year, 'ours', c.matchResult, 'wikipedia', result, title); continue; }
-        facts[c.id] = [result, i + 1, m, lead, dead ? 1 : 0];
+        // which innings of the Test, the team's total in it, and the lead when it began (from the match box's top scorers)
+        let inn = null, tot = null, leadStart = null;
+        const sur = c.name.split(' ').slice(-1)[0].toLowerCase().replace(/[^a-z]/g, '');
+        const hit = (tests[i].inns || []).find((x) => x.runsText.includes(sur) && new RegExp(`\\b${c.runs}\\b`).test(x.runsText));
+        if (hit) {
+          inn = hit.no; tot = hit.total;
+          const prior = tests[i].inns.filter((x) => x.no < hit.no);
+          if (prior.every((x) => x.total != null)) leadStart = prior.filter((x) => x.team === hit.team).reduce((a, x) => a + x.total, 0) - prior.filter((x) => x.team !== hit.team).reduce((a, x) => a + x.total, 0);
+        }
+        facts[c.id] = [result, i + 1, m, lead, dead ? 1 : 0, inn, tot, leadStart];
         matched += 1;
       }
       pending = still;
@@ -151,5 +168,5 @@ for (const cb of [...combos.values()].slice(0, limit)) {
 }
 if (validate) { console.log(`validation: ${vagree} of ${vtotal} agree with the known result`); process.exit(0); }
 const ids = Object.keys(facts).map(Number).sort((a, b) => a - b);
-fs.writeFileSync(path.join(root, 'src/data/series-facts.js'), `/** id -> [result for the batter's team, Test number in the series, Tests in the series, the batter's team's series lead going in (wins minus losses), 1 if the series was already decided], from Wikipedia's tour pages (scripts/fill-from-wikipedia-tours.mjs). Generated: do not edit by hand. */\nexport const SERIES_FACTS = {\n${ids.map((id) => `  ${id}: ${JSON.stringify(facts[id])},`).join('\n')}\n};\n`);
+fs.writeFileSync(path.join(root, 'src/data/series-facts.js'), `/** id -> [result for the batter's team, Test number in the series, Tests in the series, the batter's team's series lead going in (wins minus losses), 1 if the series was already decided, innings of the match, the team's total in that innings, the lead when it began], from Wikipedia's tour pages (scripts/fill-from-wikipedia-tours.mjs). Generated: do not edit by hand. */\nexport const SERIES_FACTS = {\n${ids.map((id) => `  ${id}: ${JSON.stringify(facts[id])},`).join('\n')}\n};\n`);
 console.log(`${combos.size} team-pair-years (${Math.min(limit, combos.size)} tried): ${found} tour pages found, ${missing} not found. ${matched} hundreds matched to a Test (${ambiguous} ambiguous by ground). Wrote ${ids.length} rows.`);
