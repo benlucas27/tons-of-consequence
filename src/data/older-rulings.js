@@ -255,4 +255,5 @@ export const OLDER_RULINGS = {
   707: [1, "Saved the match", "The match was drawn. His side trailed by 244 when the innings began and the match was drawn, so the hundred saved it."],
   2460: [0, null, "The team lost the match. A loss never counts."],
   2774: [0, null, "The team lost the match. A loss never counts."],
+  4599: [1, "Rescued the innings", "Australia were 6 for 124 on the first day with him at the crease. He made 190 of their 390 and added 134 for the ninth wicket with Nathan Lyon. Australia won by 214 runs in the first Test of a three-Test series.", "h"],
 };

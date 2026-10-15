@@ -1992,6 +1992,7 @@ export const CONSEQUENCE = {
   4596: [0,null,"No: he came in comfortably and the team did not depend on him.","b"],
   4597: [0,null,"No: he came in comfortably and the team did not depend on him.","b"],
   4598: [0,null,"No: he came in comfortably and the team did not depend on him.","b"],
+  4599: [1,"Rescued the innings","Australia were 6 for 124 on the first day with him at the crease. He made 190 of their 390 and added 134 for the ninth wicket with Nathan Lyon. Australia won by 214 runs in the first Test of a three-Test series.","h"],
   4600: [0,null,"No: he came in comfortably and the team did not depend on him.","b"],
   4601: [0,null,"The team lost.","b"],
   4602: [0,null,"No: he came in comfortably and the team did not depend on him.","b"],

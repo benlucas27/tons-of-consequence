@@ -79,7 +79,7 @@ for (const d of DON) {
 }
 
 // older hundreds with no ball-by-ball record, ruled by hand from the sourced review (src/data/older-rulings.js)
-for (const [id, v] of Object.entries(OLDER_RULINGS)) if (!out[id]) out[id] = [...v, 'r'];
+for (const [id, v] of Object.entries(OLDER_RULINGS)) if (!out[id]) out[id] = v.length > 3 ? v : [...v, 'r']; // a fourth item sets the evidence level ('h': match reports that describe how the innings unfolded)
 
 const ids = Object.keys(out).map(Number).sort((a, b) => a - b);
 const lines = ids.map((id) => `  ${id}: ${JSON.stringify(out[id])},`);

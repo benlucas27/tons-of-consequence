@@ -11,6 +11,7 @@ export const wherePlayed = (id) => WHERE_PLAYED[id];
 export const CONFIDENCE = {
   b: { key: 'high', label: 'High confidence', note: 'Built from the ball-by-ball record: the score and wickets when he came in, the lead and the series stakes.' },
   s: { key: 'high', label: 'High confidence', note: 'Judged from the full scorecard.' },
+  h: { key: 'high', label: 'High confidence', note: 'Judged from several match reports that describe how the innings unfolded: the slump, the stands, the result and the series.' },
   r: { key: 'medium', label: 'Medium confidence', note: 'Judged from match reports. The score when he came in is not recorded, so the call rests on the result, the innings and the series.' },
 };
 
