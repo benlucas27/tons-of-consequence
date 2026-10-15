@@ -242,8 +242,8 @@ export const REFERENCE_POINTS = {
    "drawn": 8,
    "lost": 3
   },
-  "measured": 16,
-  "tons": 2,
+  "measured": 21,
+  "tons": 6,
   "byTier": [
    9,
    8,
@@ -251,8 +251,8 @@ export const REFERENCE_POINTS = {
    6
   ],
   "tonsByTier": [
-   0,
-   0,
+   3,
+   1,
    2,
    0
   ],
@@ -268,7 +268,7 @@ export const REFERENCE_POINTS = {
    "drawn": 14,
    "lost": 5
   },
-  "measured": 29,
+  "measured": 32,
   "tons": 7,
   "byTier": [
    9,
@@ -294,8 +294,8 @@ export const REFERENCE_POINTS = {
    "drawn": 21,
    "lost": 3
   },
-  "measured": 28,
-  "tons": 2,
+  "measured": 29,
+  "tons": 3,
   "byTier": [
    20,
    6,
@@ -303,7 +303,7 @@ export const REFERENCE_POINTS = {
    4
   ],
   "tonsByTier": [
-   0,
+   1,
    1,
    1,
    0
@@ -320,8 +320,8 @@ export const REFERENCE_POINTS = {
    "drawn": 9,
    "lost": 3
   },
-  "measured": 21,
-  "tons": 4,
+  "measured": 24,
+  "tons": 5,
   "byTier": [
    16,
    9,
@@ -329,7 +329,7 @@ export const REFERENCE_POINTS = {
    6
   ],
   "tonsByTier": [
-   2,
+   3,
    2,
    0,
    0
@@ -346,8 +346,8 @@ export const REFERENCE_POINTS = {
    "drawn": 7,
    "lost": 6
   },
-  "measured": 24,
-  "tons": 3,
+  "measured": 25,
+  "tons": 4,
   "byTier": [
    13,
    6,
@@ -355,7 +355,7 @@ export const REFERENCE_POINTS = {
    4
   ],
   "tonsByTier": [
-   2,
+   3,
    0,
    1,
    0
