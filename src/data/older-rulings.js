@@ -256,4 +256,6 @@ export const OLDER_RULINGS = {
   2460: [0, null, "The team lost the match. A loss never counts."],
   2774: [0, null, "The team lost the match. A loss never counts."],
   4599: [1, "Rescued the innings", "Australia were 6 for 124 on the first day with him at the crease. He made 190 of their 390 and added 134 for the ninth wicket with Nathan Lyon. Australia won by 214 runs in the first Test of a three-Test series.", "h"],
+  3070: [0, null, "The team lost the match. A loss never counts."],
+  4405: [0, null, "The team lost the match. A loss never counts."],
 };
