@@ -50,3 +50,26 @@ Evidence ladder shown on every verdict:
 2. Decide the tempo thresholds and whether to count them as a reason.
 3. Hand-check every post-2006 hundred with no verdict from two match reports (about 45), and promote them to high-confidence report evidence.
 4. Show "yes or no, and how sure" separately on the page: verdict by the rules, and evidence level.
+
+## 6. Gate and weights (Ben, 16 Oct): the structure to work through
+
+**Hard gate (pass/fail, before any weighting)**
+1. The team won, **or** saved a draw it was in danger of losing **and the series was still alive**. (To settle: "keeps the series alive" could mean any live series, or only where the draw stopped the other side winning it. Counts are on the draw review page.)
+2. Not a dead rubber.
+
+**Weighted context (only for hundreds that pass the gate)**, as points that add up to a score; a ton of consequence is a score over a threshold:
+- how badly the team needed it on entry (wickets down, runs, collapse around him)
+- how much he carried (share of the team's runs)
+- a winning chase, and how close the finish was
+- whether the team was behind or already far ahead (far ahead is a large deduction)
+- series stakes (decider, last match, live)
+- tempo (strike rate over 90, or under 40 over 250 balls or more)
+- shared credit (other hundreds in the innings take a small deduction)
+- later candidates from match reports: comeback after time out, away from home, the only hundred in the match.
+
+**What today's rule implicitly weights** (a plain weighted model fitted to today's verdicts reproduces 84% of the 939 gated hundreds, so the move to weights is a refinement, not a break):
+share of runs is the strongest factor (about 3 log-odds points at 50% share), then coming in 3+ down under 100 (2.8), a collapse around him (2.2), a saved draw (2.2), a winning chase (2.1). Being already 200+ ahead is a large deduction (-3.3). Series stakes, tempo and close finishes carry **almost no weight today**, which is the gap you identified. Prototype: `scripts/consequence-model-v3.mjs` (analysis only; `fit` shows the weights).
+
+**Why very fast hundreds (strike rate 100+) count less today:** of 69 measured, 17 were in a loss, 14 came in comfortably, 14 were with the team already far ahead, 6 were dead rubbers and 8 were draws the team was never in danger of losing. So fast hundreds mostly come when the team is already winning (or losing), which today's rules do not credit. A run-a-ball hundred that swings a session would score on the tempo weight in v3.
+
+**To decide next**: the meaning of "keeps a series alive", the weights and threshold, whether a very close finish earns points, and how to treat the 126 draw/loss tons (review page).
