@@ -49,7 +49,7 @@ export default function HelloSportPage() {
               {g.moments.map((m) => {
                 const c = m.inningsId ? BY_ID.get(m.inningsId) : null;
                 return (
-                  <li key={`${m.start}-${m.player}`}>
+                  <li key={`${m.start}-${m.player}-${m.inningsId ?? m.type}`}>
                     <div className="hs-when">
                       <b>{c ? <Link href={inningsPath(c)}>{c.name} {runsText(c)}</Link> : m.type === 'concept' ? KIND.concept : m.player}</b>
                       <span>{c ? `v ${c.opponent}, ${c.venue}, ${c.year}` : (KIND[m.type] || '')}</span>

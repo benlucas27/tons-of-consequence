@@ -6,19 +6,19 @@
  */
 export const ORIGIN = {
   "episode": "#828",
-  "published": "12 Jan 2026 straight after the Sydney Test",
+  "published": "12 Jan 2026",
   "youtubeId": "KAZuw748xiw",
   "start": 2068,
   "points": [
     {
       "start": 1986,
       "end": null,
-      "text": "The Joe Root chat starts. He has two tons this series and is level with Ponting on 41 Test tons."
+      "text": "Joe Root chat begins. He has two tons this series and is level with Ponting on 41 Test tons."
     },
     {
       "start": 2068,
       "end": null,
-      "text": "\"Tons of consequence\" is named as the idea of separating tons from tons of consequence."
+      "text": "\"Tons of consequence\" is named: the idea of separating tons from tons of consequence."
     },
     {
       "start": 2113,
@@ -28,7 +28,7 @@ export const ORIGIN = {
     {
       "start": 2211,
       "end": null,
-      "text": "The listener call-out. If you've got a formula or a way of deciphering it, \"might be something in it for you\". It needs to be third party tested."
+      "text": "Listener call-out: if you've got a formula or a way of deciphering it, \"might be something in it for you\". It must be \"third party tested\"."
     },
     {
       "start": 2231,
@@ -38,53 +38,80 @@ export const ORIGIN = {
   ]
 };
 export const EPISODES = {
-  "vhEUpN2Y4-g": {
-    "episode": "#946",
-    "date": "2026-10-12",
-    "youtubeId": "vhEUpN2Y4-g",
-    "result": "Renshaw 190"
-  },
   "KAZuw748xiw": {
     "episode": "#828",
     "date": "2026-01-12",
-    "youtubeId": "KAZuw748xiw",
-    "result": "Tons of consequence origin"
+    "youtubeId": "KAZuw748xiw"
   },
-  "8TSqOg-kq6w": {
-    "episode": "#818",
-    "date": "2025-12-08",
-    "youtubeId": "8TSqOg-kq6w",
-    "result": "Root, Weatherald"
-  },
-  "_wfTf3mCK1U": {
-    "episode": "#817",
-    "date": "2025-12-03",
-    "youtubeId": "_wfTf3mCK1U",
-    "result": "Khawaja career"
-  },
-  "M4JNzSVMMj4": {
-    "episode": "#815",
-    "date": "2025-11-26",
-    "youtubeId": "M4JNzSVMMj4",
-    "result": "Head Perth"
+  "vhEUpN2Y4-g": {
+    "episode": "#946",
+    "date": "2026-10-12",
+    "youtubeId": "vhEUpN2Y4-g"
   },
   "viQBliAgMwA": {
     "episode": "#814",
     "date": "2025-11-24",
-    "youtubeId": "viQBliAgMwA",
-    "result": "Reviewed, no ranker mention; innings segments not yet extracted (Head's Perth ton)"
+    "youtubeId": "viQBliAgMwA"
   },
-  "eYUdt4_TsrE": {
-    "episode": "Live: Ashes Perth Test Day 1",
-    "date": "2025-11-21",
-    "youtubeId": "eYUdt4_TsrE",
-    "result": "Khawaja career"
+  "M4JNzSVMMj4": {
+    "episode": "#815",
+    "date": "2025-11-26",
+    "youtubeId": "M4JNzSVMMj4"
+  },
+  "8TSqOg-kq6w": {
+    "episode": "#818",
+    "date": "2025-12-08",
+    "youtubeId": "8TSqOg-kq6w"
   },
   "hjMEohPwKcM": {
-    "episode": "Live: Ashes Brisbane Test Day 1",
+    "episode": "Live: Ashes Brisbane Test, Day 1",
     "date": "2025-12-04",
-    "youtubeId": "hjMEohPwKcM",
-    "result": "Root 40th ton, Tendulkar"
+    "youtubeId": "hjMEohPwKcM"
+  },
+  "Ku0BCZbsMaM": {
+    "episode": "#703",
+    "date": "2024-12-16",
+    "youtubeId": "Ku0BCZbsMaM"
+  },
+  "D8KI8tc_V_g": {
+    "episode": "Live: Boxing Day 2024",
+    "date": "2024-12-26",
+    "youtubeId": "D8KI8tc_V_g"
+  },
+  "jVfc8f3AFGo": {
+    "episode": "#719",
+    "date": "2025-02-10",
+    "youtubeId": "jVfc8f3AFGo"
+  },
+  "usNVT8H-J-s": {
+    "episode": "#945",
+    "date": "2026-10-10",
+    "youtubeId": "usNVT8H-J-s"
+  },
+  "_wfTf3mCK1U": {
+    "episode": "#817",
+    "date": "2025-12-03",
+    "youtubeId": "_wfTf3mCK1U"
+  },
+  "eYUdt4_TsrE": {
+    "episode": "Live: Ashes Perth Test, Day 1",
+    "date": "2025-11-21",
+    "youtubeId": "eYUdt4_TsrE"
+  },
+  "F49ZKcBlgHU": {
+    "episode": "#921",
+    "date": "2026-08-19",
+    "youtubeId": "F49ZKcBlgHU"
+  },
+  "1tBQSCrRpto": {
+    "episode": "#779",
+    "date": "2025-07-28",
+    "youtubeId": "1tBQSCrRpto"
+  },
+  "lIIiBPp0MqU": {
+    "episode": "#801",
+    "date": "2025-10-13",
+    "youtubeId": "lIIiBPp0MqU"
   }
 };
 export const MOMENTS = [
@@ -95,9 +122,9 @@ export const MOMENTS = [
     "date": "2026-01-12",
     "youtubeId": "KAZuw748xiw",
     "start": 1986,
-    "note": "Root's two tons this series; level with Ponting on 41; \"swords away\" respect segment that leads into tons of consequence",
-    "matchText": "Australia v England, 5th Test, SCG, Jan 2026",
-    "inningsText": "Hundred, 5th Test (verify score)",
+    "note": "Root's two tons this series; level with Ponting on 41; the \"swords away\" respect segment that leads into tons of consequence",
+    "matchText": "Australia v England, 5th Test, Sydney, Jan 2026 (Eng lost)",
+    "inningsText": "160",
     "inningsId": 996
   },
   {
@@ -107,7 +134,7 @@ export const MOMENTS = [
     "date": "2026-01-12",
     "youtubeId": "KAZuw748xiw",
     "start": 2068,
-    "note": "\"Tons of consequence\" named; examples to 35:51; listener formula call-out at 36:51",
+    "note": "\"Tons of consequence\" named; examples run to 35:51; listener formula call-out at 36:51",
     "matchText": null,
     "inningsText": null,
     "inningsId": null
@@ -120,8 +147,8 @@ export const MOMENTS = [
     "youtubeId": "KAZuw748xiw",
     "start": 2231,
     "note": "Dead rubber, but ruled a ton of consequence",
-    "matchText": "Australia v England, 5th Test, SCG, Jan 2026",
-    "inningsText": "Hundred, 5th Test (verify score)",
+    "matchText": "Australia v England, 5th Test, Sydney, Jan 2026 (Aus won)",
+    "inningsText": "163",
     "inningsId": 916
   },
   {
@@ -132,8 +159,8 @@ export const MOMENTS = [
     "youtubeId": "KAZuw748xiw",
     "start": 2231,
     "note": "Dead rubber, but ruled a ton of consequence; \"complete freak\"",
-    "matchText": "Australia v England, 5th Test, SCG, Jan 2026",
-    "inningsText": "Hundred, 5th Test (verify score)",
+    "matchText": "Australia v England, 5th Test, Sydney, Jan 2026 (Aus won)",
+    "inningsText": "138",
     "inningsId": 1698
   },
   {
@@ -143,8 +170,8 @@ export const MOMENTS = [
     "date": "2026-10-12",
     "youtubeId": "vhEUpN2Y4-g",
     "start": 562,
-    "note": "\"Generational 190\"; argues 190 is more respectable than 200+; old-school ton with modern shots (ramps, laps)",
-    "matchText": "(verify match), Oct 2026",
+    "note": "\"Generational 190\"; argues 190 is more respectable than 200+; an old-school ton played with modern shots (ramps, laps)",
+    "matchText": "South Africa v Australia, 1st Test, Durban, 2026 (Aus won by 214)",
     "inningsText": "190 off 397 balls",
     "inningsId": 4599
   },
@@ -155,10 +182,46 @@ export const MOMENTS = [
     "date": "2026-10-12",
     "youtubeId": "vhEUpN2Y4-g",
     "start": 629,
-    "note": "Aside during the Renshaw chat: big scores \"imply\" weak bowling",
-    "matchText": "Australia v India, SCG, Jan 2012 (verify)",
-    "inningsText": "329* (verify)",
+    "note": "An aside during the Renshaw chat: big scores \"imply\" weak bowling",
+    "matchText": "Australia v India, 2nd Test, Sydney, Jan 2012 (Aus won)",
+    "inningsText": "329*",
     "inningsId": 16
+  },
+  {
+    "player": "Travis Head",
+    "type": "innings",
+    "episode": "#814",
+    "date": "2025-11-24",
+    "youtubeId": "viQBliAgMwA",
+    "start": 119,
+    "note": "The first ever day-two fourth-innings Test ton",
+    "matchText": "Australia v England, 1st Test, Perth, Nov 2025 (Aus won)",
+    "inningsText": "123 off 83",
+    "inningsId": 2407
+  },
+  {
+    "player": "Travis Head",
+    "type": "innings",
+    "episode": "#814",
+    "date": "2025-11-24",
+    "youtubeId": "viQBliAgMwA",
+    "start": 1696,
+    "note": "Records rundown: winning fourth-innings centuries, only four in the last 60 years and 12 in Ashes history",
+    "matchText": "Australia v England, 1st Test, Perth, Nov 2025 (Aus won)",
+    "inningsText": "123 off 83",
+    "inningsId": 2407
+  },
+  {
+    "player": "Travis Head",
+    "type": "innings",
+    "episode": "#814",
+    "date": "2025-11-24",
+    "youtubeId": "viQBliAgMwA",
+    "start": 2586,
+    "note": "The ton \"papered over massive cracks\" in the Aussie batting",
+    "matchText": "Australia v England, 1st Test, Perth, Nov 2025 (Aus won)",
+    "inningsText": "123 off 83",
+    "inningsId": 2407
   },
   {
     "player": "Travis Head",
@@ -167,9 +230,9 @@ export const MOMENTS = [
     "date": "2025-11-26",
     "youtubeId": "M4JNzSVMMj4",
     "start": 1300,
-    "note": "Day two celebration, \"one of the great\" knocks",
-    "matchText": "Australia v England, 1st Test, Perth, Nov 2025",
-    "inningsText": "123 (verify)",
+    "note": "Day-two celebration, \"one of the great\" knocks",
+    "matchText": "Australia v England, 1st Test, Perth, Nov 2025 (Aus won)",
+    "inningsText": "123 off 83",
     "inningsId": 2407
   },
   {
@@ -180,8 +243,8 @@ export const MOMENTS = [
     "youtubeId": "M4JNzSVMMj4",
     "start": 1906,
     "note": "\"One of the greatest knocks in the history of human beings\"; Head as the new Warner at the top of the order",
-    "matchText": "Australia v England, 1st Test, Perth, Nov 2025",
-    "inningsText": "123 (verify)",
+    "matchText": "Australia v England, 1st Test, Perth, Nov 2025 (Aus won)",
+    "inningsText": "123 off 83",
     "inningsId": 2407
   },
   {
@@ -191,22 +254,10 @@ export const MOMENTS = [
     "date": "2025-12-08",
     "youtubeId": "8TSqOg-kq6w",
     "start": 1274,
-    "note": "First Test ton in Australia, but \"the ton means nothing\" because England lost; early version of the tons of consequence idea",
-    "matchText": "Australia v England, 2nd Test, Gabba (pink ball), Dec 2025",
-    "inningsText": "Hundred, 2nd Test (verify score)",
+    "note": "First Test ton in Australia, but \"the ton means nothing\" because England lost; an early version of the tons of consequence idea",
+    "matchText": "Australia v England, 2nd Test, Brisbane (pink ball), Dec 2025 (Eng lost)",
+    "inningsText": "138*",
     "inningsId": 1657
-  },
-  {
-    "player": "Jake Weatherald",
-    "type": "innings",
-    "episode": "#818",
-    "date": "2025-12-08",
-    "youtubeId": "8TSqOg-kq6w",
-    "start": 2445,
-    "note": "New opener bounces back from a pair",
-    "matchText": "Australia v England, 2nd Test, Gabba, Dec 2025",
-    "inningsText": "First innings knock (verify score)",
-    "inningsId": null
   },
   {
     "player": "Joe Root",
@@ -215,9 +266,9 @@ export const MOMENTS = [
     "date": "2025-12-04",
     "youtubeId": "hjMEohPwKcM",
     "start": 24516,
-    "note": "Live reaction: one behind Ponting, third most Test hundreds; Kallis tangent",
-    "matchText": "Australia v England, 2nd Test, Gabba, Day 1, Dec 2025",
-    "inningsText": "Hundred, his 40th Test ton (verify)",
+    "note": "Live reaction to his 40th Test ton: one behind Ponting, third most Test hundreds; Kallis tangent",
+    "matchText": "Australia v England, 2nd Test, Brisbane, Dec 2025 (Eng lost)",
+    "inningsText": "138*",
     "inningsId": 1657
   },
   {
@@ -228,9 +279,81 @@ export const MOMENTS = [
     "youtubeId": "hjMEohPwKcM",
     "start": 572,
     "note": "The innings with no cover drives; \"most controlled innings of the modern era\"",
-    "matchText": "Australia v India, SCG, Jan 2004 (verify)",
-    "inningsText": "241* (verify)",
+    "matchText": "Australia v India, 4th Test, Sydney, Jan 2004 (draw)",
+    "inningsText": "241*",
     "inningsId": 124
+  },
+  {
+    "player": "Travis Head",
+    "type": "innings",
+    "episode": "#703",
+    "date": "2024-12-16",
+    "youtubeId": "Ku0BCZbsMaM",
+    "start": 917,
+    "note": "Head's summer run: 140 in Adelaide, \"now 152 off 160\"",
+    "matchText": "Australia v India, 3rd Test, Brisbane, Dec 2024 (draw)",
+    "inningsText": "152 off 160",
+    "inningsId": 1208
+  },
+  {
+    "player": "Travis Head",
+    "type": "innings",
+    "episode": "#703",
+    "date": "2024-12-16",
+    "youtubeId": "Ku0BCZbsMaM",
+    "start": 917,
+    "note": "Mentioned in the same run-down as the Brisbane 152",
+    "matchText": "Australia v India, 2nd Test, Adelaide, Dec 2024 (Aus won)",
+    "inningsText": "140 off 141",
+    "inningsId": 1614
+  },
+  {
+    "player": "Steve Smith",
+    "type": "innings",
+    "episode": "#703",
+    "date": "2024-12-16",
+    "youtubeId": "Ku0BCZbsMaM",
+    "start": 1336,
+    "note": "His 33rd Test ton, passing Steve Waugh, with only Ponting ahead for Australia",
+    "matchText": "Australia v India, 3rd Test, Brisbane, Dec 2024 (draw)",
+    "inningsText": "101",
+    "inningsId": 4423
+  },
+  {
+    "player": "Nitish Kumar Reddy",
+    "type": "innings",
+    "episode": "Live: Boxing Day 2024",
+    "date": "2024-12-26",
+    "youtubeId": "D8KI8tc_V_g",
+    "start": 20248,
+    "note": "\"He's 21, batting eight, gets 100.\" The ton came on day three, so this stream runs past day one",
+    "matchText": "Australia v India, 4th Test, Melbourne, Dec 2024 (India lost)",
+    "inningsText": "114",
+    "inningsId": 3074
+  },
+  {
+    "player": "Steve Smith",
+    "type": "innings",
+    "episode": "#719",
+    "date": "2025-02-10",
+    "youtubeId": "jVfc8f3AFGo",
+    "start": 1521,
+    "note": "\"Smudge got another ton, he's now at 36.\" That makes it the 131 in the 2nd Test, not the 141 in the 1st",
+    "matchText": "Sri Lanka v Australia, 2nd Test, Galle, Feb 2025 (Aus won)",
+    "inningsText": "131",
+    "inningsId": 2009
+  },
+  {
+    "player": "Adam Gilchrist",
+    "type": "innings",
+    "episode": "#945",
+    "date": "2026-10-10",
+    "youtubeId": "usNVT8H-J-s",
+    "start": 3546,
+    "note": "Gilchrist tells it himself (the episode is \"All Talk with Adam Gilchrist\"): \"100 off 80 balls\" (the database has the full innings as 112 balls), then a king pair in Kolkata",
+    "matchText": "India v Australia, 1st Test, Mumbai (Wankhede), 2001",
+    "inningsText": "122",
+    "inningsId": 2457
   },
   {
     "player": "Usman Khawaja",
@@ -239,7 +362,7 @@ export const MOMENTS = [
     "date": "2025-12-03",
     "youtubeId": "_wfTf3mCK1U",
     "start": 1008,
-    "note": "Career review as he nears retirement",
+    "note": "Retirement send-off: 17 tons, 85 Tests, high score 232",
     "matchText": null,
     "inningsText": "Career (17 Test tons)",
     "inningsId": null
@@ -251,9 +374,45 @@ export const MOMENTS = [
     "date": "2025-11-21",
     "youtubeId": "eYUdt4_TsrE",
     "start": 20036,
-    "note": "Most Test tons for Australia list; Khawaja 17th",
+    "note": "Most Test tons for Australia list (Ponting 41, Smith 36, Warner 32...); Khawaja on 16 at the time",
     "matchText": null,
     "inningsText": "Career (Test tons tally)",
+    "inningsId": null
+  },
+  {
+    "player": "Steve Smith",
+    "type": "career",
+    "episode": "#921",
+    "date": "2026-08-19",
+    "youtubeId": "F49ZKcBlgHU",
+    "start": 971,
+    "note": "Smith 10,834 runs v Ponting 10,960 after the same number of innings",
+    "matchText": null,
+    "inningsText": "Career (v Ponting after 221 innings)",
+    "inningsId": null
+  },
+  {
+    "player": "Joe Root",
+    "type": "career",
+    "episode": "#779",
+    "date": "2025-07-28",
+    "youtubeId": "1tBQSCrRpto",
+    "start": 5699,
+    "note": "End of the England v India series: 21 tons since Covid, past Kallis and Ponting, behind only Tendulkar",
+    "matchText": null,
+    "inningsText": "Career (38 tons, second all-time run scorer)",
+    "inningsId": null
+  },
+  {
+    "player": "Joe Root",
+    "type": "career",
+    "episode": "#801",
+    "date": "2025-10-13",
+    "youtubeId": "lIIiBPp0MqU",
+    "start": 4700,
+    "note": "Lehmann's claim that a ton in Australia would make him the greatest of all time",
+    "matchText": null,
+    "inningsText": "Preview (no ton in Australia yet)",
     "inningsId": null
   }
 ];

@@ -1,5 +1,7 @@
 import { LEVERS, RANK_WEIGHTS } from '@/lib/scoring';
 import { TOTAL } from '@/lib/dataset';
+import { ORIGIN, conceptMoments } from '@/lib/helloSport';
+import HelloSportMoments from '@/components/HelloSportMoments';
 
 export const metadata = {
   title: 'How it works',
@@ -31,6 +33,10 @@ export default function About() {
       <h2>How the scores are made</h2>
       <p>Most of the {TOTAL.toLocaleString()} innings are given automatic estimates built from the scorecard. The best-known innings are scored and written up by hand.</p>
       <p>An innings in a Test that is still being played carries an &ldquo;In progress&rdquo; label until the result is known.</p>
+
+      <h2>Where &ldquo;tons of consequence&rdquo; comes from</h2>
+      <p>The phrase comes from the Hello Sport podcast: episode {ORIGIN.episode}{ORIGIN.published ? `, ${ORIGIN.published}` : ''}, straight after the Sydney Test, where the hosts separate a good ton from a ton of consequence.</p>
+      <HelloSportMoments moments={conceptMoments()} title="Hello Sport names the idea" />
 
       <h2>Where the data comes from</h2>
       <ul>

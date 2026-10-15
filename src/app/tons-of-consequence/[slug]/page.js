@@ -4,6 +4,8 @@ import { BATTER_BY_SLUG, verdictOf, wherePlayed } from '@/lib/consequence';
 import { TIERS, WHERE_LABEL } from '@/lib/matchFacts';
 import { inningsPath } from '@/lib/dataset';
 import { runsText, RESULT_LABEL } from '@/lib/format';
+import { careerMomentsFor } from '@/lib/helloSport';
+import HelloSportMoments from '@/components/HelloSportMoments';
 
 export function generateMetadata({ params }) {
   const b = BATTER_BY_SLUG.get(params.slug);
@@ -48,6 +50,8 @@ export default function BatterPage({ params }) {
           );
         })}
       </ol>
+
+      <HelloSportMoments moments={careerMomentsFor(b.name)} title={`Hello Sport on ${b.name}`} />
     </article>
   );
 }

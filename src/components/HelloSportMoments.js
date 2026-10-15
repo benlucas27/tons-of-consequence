@@ -30,15 +30,21 @@ function Moment({ m }) {
   );
 }
 
-/** "Hello Sport on this innings": what the hosts said, with a way to hear it. Renders nothing if they haven't. */
-export default function HelloSportMoments({ inningsId }) {
-  const list = momentsFor(inningsId);
+const INNINGS_CAPTION = 'The Hello Sport podcast. Independent: not made or endorsed by them, and the score shown on this page is from our database, not from the episode.';
+const GENERAL_CAPTION = 'The Hello Sport podcast. Independent: not made or endorsed by them.';
+
+/**
+ * "Hello Sport on this innings": what the hosts said, with a way to hear it. Renders nothing if they haven't.
+ * Pass `moments`, `title` and `caption` to use it for something else (a player's career chat, the origin of the idea).
+ */
+export default function HelloSportMoments({ inningsId, moments, title = 'Hello Sport on this innings', caption }) {
+  const list = moments ?? momentsFor(inningsId);
   if (!list.length) return null;
   return (
-    <section className="hs" aria-label="Hello Sport on this innings">
-      <h2 className="sec-t"><span>Hello Sport on this innings</span><span>{list.length === 1 ? '1 moment' : `${list.length} moments`}</span></h2>
-      <ul className="hs-list">{list.map((m) => <Moment key={`${m.youtubeId}-${m.start}-${m.player}`} m={m} />)}</ul>
-      <p className="src">The Hello Sport podcast. Independent: not made or endorsed by them, and the score shown on this page is from our database, not from the episode.</p>
+    <section className="hs" aria-label={title}>
+      <h2 className="sec-t"><span>{title}</span><span>{list.length === 1 ? '1 moment' : `${list.length} moments`}</span></h2>
+      <ul className="hs-list">{list.map((m) => <Moment key={`${m.youtubeId}-${m.start}-${m.player}-${m.inningsId ?? m.type}`} m={m} />)}</ul>
+      <p className="src">{caption ?? (moments ? GENERAL_CAPTION : INNINGS_CAPTION)}</p>
     </section>
   );
 }

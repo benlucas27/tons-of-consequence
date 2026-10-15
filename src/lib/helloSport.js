@@ -15,6 +15,12 @@ export const embedUrl = (id, start) => `https://www.youtube-nocookie.com/embed/$
 /** The moments that are about one innings (a knock, or an older innings mentioned in passing). */
 export const momentsFor = (inningsId) => MOMENTS.filter((m) => m.inningsId === inningsId);
 
+/** Career chat about one player (tallies, send-offs, previews), shown on that player's page. Matched by the player's name. */
+export const careerMomentsFor = (name) => MOMENTS.filter((m) => m.type === 'career' && m.player === name);
+
+/** The "tons of consequence" concept moments, shown on the About page. */
+export const conceptMoments = () => MOMENTS.filter((m) => m.type === 'concept');
+
 /** How a moment is described: "Hello Sport #946, 12 Oct 2026". */
 export function episodeLabel(m) {
   const ep = EPISODES[m.youtubeId];

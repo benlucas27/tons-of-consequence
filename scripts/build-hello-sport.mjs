@@ -6,12 +6,14 @@
  *
  * Add a row to the table in the markdown file, run this (the build runs it too), and the site picks it up.
  * It warns about anything it can't match or that disagrees with the database, but only fails if the table itself is broken.
- * Scores in the file are marked "(verify)": the site always shows the score from our database, never the host's.
+ * Each innings row carries a `toc_id` (the database innings id) at the end: that is how it is tied to its innings page.
+ * We no longer guess from the player and score. Career and concept rows have toc_id "--".
+ * The site always shows the score from our database, never the host's.
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { ALL } from '../src/lib/dataset.js';
+import { BY_ID } from '../src/lib/dataset.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const src = path.join(root, 'src/data/hello-sport-index.md');
@@ -33,47 +35,46 @@ const table = (header) => {
   return rows;
 };
 
+// Notes are written for the people who maintain this file, so keep the hand-over markers off the public site:
+// the leading "**NEW.**" flag, any "(Claude ...)" aside, and bold marks.
+const cleanNote = (n) => n.replace(/^\*\*NEW\.\*\*\s*/, '').replace(/\s*\(Claude[^)]*\)/g, '').replace(/\*\*/g, '').trim();
+
 const warnings = [];
 const warn = (m) => warnings.push(m);
 
 // ---- the origin of "tons of consequence"
 const originLines = md.slice(md.indexOf('## Origin'), md.indexOf('## Entries'));
-const origin = [...originLines.matchAll(/^- \*\*([\d:]+)(?: - ([\d:]+))?\*\* -- (.+)$/gm)].map((m) => ({ start: clock(m[1]), end: m[2] ? clock(m[2]) : null, text: m[3].replace(/\*([^*]+)\*/g, '$1').trim() }));
+const origin = [...originLines.matchAll(/^- \*\*([\d:]+)(?: - ([\d:]+))?\*\*(?: --)? (.+)$/gm)].map((m) => ({ start: clock(m[1]), end: m[2] ? clock(m[2]) : null, text: m[3].replace(/\*([^*]+)\*/g, '$1').trim() }));
 const originWatch = /Watch: (https:\/\/www\.youtube\.com\/watch\?v=([\w-]{11})&t=(\d+)s)/.exec(originLines);
-const originMeta = /Episode (#\d+), published ([^.]+?)\./.exec(originLines);
+const originMeta = /Episode (#\d+), published (\d{1,2} \w+ \d{4})/.exec(originLines);
 
-// ---- episodes reviewed
-const episodes = Object.fromEntries(table('| episode | date | youtube id').map((r) => [r['youtube id'], { episode: r.episode, date: r.date, youtubeId: r['youtube id'], result: r.result }]));
+// ---- episodes: one per video in the Entries table
+const entryRows = table('| player | innings');
+const episodes = {};
+for (const r of entryRows) {
+  const id = /v=([\w-]{11})/.exec(r.link)?.[1];
+  if (id && !episodes[id]) episodes[id] = { episode: r.episode, date: r.date, youtubeId: id };
+}
 
-// ---- resolving a moment to one innings in the database
-const VENUES = { scg: 'Sydney', gabba: 'Brisbane', 'perth': 'Perth', mcg: 'Melbourne', 'adelaide': 'Adelaide', "lord's": "Lord's", 'oval': 'The Oval', headingley: 'Leeds', 'edgbaston': 'Birmingham', 'old trafford': 'Manchester', 'trent bridge': 'Nottingham', 'eden gardens': 'Eden Gardens' };
+// ---- tying a moment to one innings in the database, by its toc_id
 function resolve(m) {
-  const candidates = ALL.filter((c) => c.name === m.player);
-  if (!candidates.length) return { why: `no player called ${m.player} in the database` };
-  const text = `${m.match} ${m.innings}`;
-  const year = [...(m.match.match(/\b(19|20)\d{2}\b/g) || [])].pop();
-  const runs = (m.innings.match(/\b(\d{2,3})\*?(?: off|\s|\(|$)/) || [])[1];
-  let list = candidates;
-  if (runs) list = list.filter((c) => c.runs === Number(runs));
-  if (year && list.length > 1) list = list.filter((c) => c.year === Number(year));
-  else if (year && list.length === 1 && list[0].year !== Number(year)) return { why: `${m.player} ${runs || ''} is from ${list[0].year}, not ${year}` };
-  if (list.length > 1) {
-    const hint = Object.entries(VENUES).find(([k]) => text.toLowerCase().includes(k));
-    if (hint) list = list.filter((c) => (c.venue || '').includes(hint[1]));
-  }
-  if (!runs && !year) return { why: 'no score or year to go on' };
-  if (list.length === 1) return { id: list[0].id, row: list[0] };
-  return { why: list.length ? `${list.length} innings fit` : 'no innings fits' };
+  const raw = (m.toc_id || '').trim();
+  if (!raw || raw === '--') return { why: 'no toc_id' };
+  const id = Number(raw);
+  const row = Number.isInteger(id) ? BY_ID.get(id) : null;
+  if (!row) return { why: `toc_id ${raw} is not in the database` };
+  if (row.name !== m.player) return { why: `toc_id ${raw} is ${row.name} in the database, not ${m.player}` };
+  return { id, row };
 }
 
 const moments = [];
-for (const [n, r] of table('| player | innings').entries()) {
+for (const [n, r] of entryRows.entries()) {
   const linkM = /v=([\w-]{11})&t=(\d+)s/.exec(r.link);
   if (!linkM) { warn(`row ${n + 1} (${r.player}, ${r.episode}): the link has no video id and start time`); continue; }
   const start = clock(r.start);
   if (start != null && start !== Number(linkM[2])) warn(`row ${n + 1} (${r.player}, ${r.episode}): start ${r.start} (${start}s) disagrees with the link (${linkM[2]}s); using the link`);
   const moment = {
-    player: r.player, type: r.type, episode: r.episode, date: r.date, youtubeId: linkM[1], start: Number(linkM[2]), note: r.note,
+    player: r.player, type: r.type, episode: r.episode, date: r.date, youtubeId: linkM[1], start: Number(linkM[2]), note: cleanNote(r.note),
     matchText: r.match === '--' ? null : r.match, inningsText: r.innings === '--' ? null : r.innings, inningsId: null,
   };
   if (r.type === 'innings' || r.type === 'historic') {
