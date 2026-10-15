@@ -67,7 +67,7 @@ function parseTests(wt, teamNames) {
     return null;
   };
   // only boxes whose nearest heading is about a Test count (county and other tour matches use the same boxes)
-  const heads = [...wt.matchAll(/\n(={2,4})\s*([^=\n]+?)\s*\1\s*\n/g)].map((m) => ({ at: m.index, name: m[2] }));
+  const heads = [...wt.matchAll(/\n(={2,4})\s*([^=\n]+?)\s*\1(?=\s*\n)/g)].map((m) => ({ at: m.index, name: m[2] }));
   const underTest = (pos) => {
     let near = null;
     for (const h of heads) { if (h.at > pos) break; near = h; }
@@ -123,7 +123,7 @@ let found = 0, missing = 0, noTests = 0, matched = 0, ambiguous = 0;
 for (const cb of [...combos.values()].slice(0, limit)) {
   let pending = [...cb.rows];
   let anyTour = false;
-  outer: for (const [vis, host] of [[cb.a, cb.b], [cb.b, cb.a]]) {
+  outer: for (const [vis, host] of [[cb.a, cb.b], [cb.b, cb.a], [cb.a, 'the United Arab Emirates'], [cb.b, 'the United Arab Emirates']]) {
     for (const s of seasons(cb.year)) {
       const title = `${DEM[vis] || vis} cricket team in ${host} in ${s}`;
       const wt = await page(title);
@@ -135,7 +135,13 @@ for (const cb of [...combos.values()].slice(0, limit)) {
       const still = [];
       for (const c of pending) {
         const words = venueWords(c.venue);
-        const idx = tests.map((t, i) => (words.some((w) => w && t.venueText.includes(w)) ? i : -1)).filter((i) => i >= 0);
+        let idx = tests.map((t, i) => (words.some((w) => w && t.venueText.includes(w)) ? i : -1)).filter((i) => i >= 0);
+        if (idx.length > 1) {
+          // two Tests at the same ground (or two grounds in one city): the one whose box lists this batter and score is the one
+          const sur0 = c.name.split(' ').slice(-1)[0].toLowerCase().replace(/[^a-z]/g, '');
+          const withHit = idx.filter((i) => (tests[i].inns || []).some((x) => x.runsText.includes(sur0) && new RegExp(`\\b${c.runs}\\b`).test(x.runsText)));
+          if (withHit.length === 1) idx = withHit;
+        }
         if (idx.length !== 1) { if (idx.length > 1) { ambiguous += 1; if (process.env.DEBUG_AMBIG) console.log('AMBIG', c.venue, c.year, c.opponent, idx.map((i) => tests[i].venueText).join(' | ')); } still.push(c); continue; }
         const i = idx[0];
         if (!tests[i].winner) { still.push(c); continue; }
