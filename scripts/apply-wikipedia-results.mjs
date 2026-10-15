@@ -24,15 +24,27 @@ for (const [id, f] of Object.entries(RESULTS)) {
   const re = new RegExp(`(\\{id:${id},[^\\n]*?matchResult:")unknown(")`);
   if (re.test(text)) { text = text.replace(re, `$1${f[0]}$2`); filled += 1; }
 }
+// known results that the tour pages contradict (checked against 1,451 known results: 25 differ, and the ones I could verify
+// from memory of the matches were errors in our data) are corrected, and listed so they can be reviewed
+const corrected = [];
+for (const [id, f] of Object.entries(RESULTS)) {
+  const c = BY_ID.get(Number(id));
+  if (!c || !['win', 'draw', 'loss', 'tie'].includes(c.matchResult) || c.matchResult === f[0] || WIKIPEDIA_FACTS[id]) continue;
+  const re = new RegExp(`(\\{id:${id},[^\\n]*?matchResult:")${c.matchResult}(")`);
+  if (re.test(text)) { text = text.replace(re, `$1${f[0]}$2`); corrected.push(`${c.name} ${c.runs} v ${c.opponent}, ${c.venue} ${c.year}: ${c.matchResult} -> ${f[0]}`); }
+}
+if (corrected.length) console.log('Corrected:\n  ' + corrected.join('\n  '));
+
 // the facts-only story now includes how the match ended, so rows that still carry the older facts-only line get the new one
 let restated = 0;
 const esc = (t) => JSON.stringify(t).slice(1, -1);
 for (const id of Object.keys(RESULTS)) {
   const c = BY_ID.get(Number(id));
   if (!c) continue;
-  const old = factsStory({ ...c, matchResult: 'unknown' });
+  const old = factsStory({ ...c, matchResult: c.matchResult });
+  const oldUnknown = factsStory({ ...c, matchResult: 'unknown' });
   const now = factsStory({ ...c, matchResult: RESULTS[id][0] });
-  if (c.story === old && now !== old && text.includes(`story:"${esc(old)}"`)) { text = text.replace(`story:"${esc(old)}"`, `story:"${esc(now)}"`); restated += 1; }
+  for (const o of [old, oldUnknown]) if (c.story === o && now !== o && text.includes(`story:"${esc(o)}"`)) { text = text.replace(`story:"${esc(o)}"`, `story:"${esc(now)}"`); restated += 1; break; }
 }
 fs.writeFileSync(file, text);
 console.log(`Filled ${filled} results of ${Object.keys(RESULTS).length} found; ${restated} facts-only stories updated to mention the result.`);

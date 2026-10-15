@@ -53,44 +53,55 @@ const venueWords = (v) => {
   return [base, ...base.split(' ').filter((w) => w.length >= 5)];
 };
 
-/** The Tests listed on a tour page: [{ venueText, winner: name | 'draw' | 'tie', date? }] in order. */
+/** The Tests listed on a tour page: [{ venueText, winner: name | 'draw' | 'tie' }] in order. */
+const stem = (n) => (/west ind/i.test(n) ? 'west ind' : n.toLowerCase().replace(/(ia|a|d)$/, ''));
 function parseTests(wt, teamNames) {
   const tests = [];
+  const strip = (t) => t.replace(/\[\[(?:[^\]|]*\|)?([^\]]*)\]\]/g, '$1').replace(/'{2,3}/g, '');
   const resultOf = (txt) => {
-    const t = txt.replace(/\[\[(?:[^\]|]*\|)?([^\]]*)\]\]/g, '$1').replace(/'''|''/g, '').toLowerCase();
-    if (/tied|tie\b/.test(t) && !/won/.test(t)) return 'tie';
+    const t = strip(txt).toLowerCase();
+    if (/tied/.test(t) && !/won/.test(t)) return 'tie';
     if (/drawn|draw\b/.test(t) && !/won by/.test(t)) return 'draw';
     const m = /([a-z ]+?)\s+won/.exec(t);
-    if (m) { const name = teamNames.find((n) => m[1].includes(n.toLowerCase())); return name || null; }
+    if (m) return teamNames.find((n) => m[1].includes(stem(n))) || null;
     return null;
   };
-  // format B: two-innings match boxes
-  const boxes = wt.split(/\{\{\s*(?:Two-innings cricket match|Cricket scorebox|Test cricket match)/i).slice(1);
-  if (boxes.length) {
-    for (const b of boxes) {
-      const body = b.slice(0, b.indexOf('\n}}') > 0 ? b.indexOf('\n}}') : b.length);
-      const venue = /\|\s*(?:venue|location)\s*=\s*([^\n]*)/i.exec(body)?.[1] || '';
-      const res = /\|\s*result\s*=\s*([^\n]*)/i.exec(body)?.[1] || '';
-      const r = resultOf(res);
-      if (r) tests.push({ venueText: venue.replace(/\[\[(?:[^\]|]*\|)?([^\]]*)\]\]/g, '$1').toLowerCase(), winner: r });
+  // only boxes whose nearest heading is about a Test count (county and other tour matches use the same boxes)
+  const heads = [...wt.matchAll(/\n(={2,4})\s*([^=\n]+?)\s*\1\s*\n/g)].map((m) => ({ at: m.index, name: m[2] }));
+  const underTest = (pos) => {
+    let near = null;
+    for (const h of heads) { if (h.at > pos) break; near = h; }
+    return near ? /\btest\b|tests\b/i.test(near.name) && !/tour|first-class|county|warm/i.test(near.name) : false;
+  };
+  const starts = [...wt.matchAll(/\{\{\s*(?:Two-innings cricket match|Cricket scorebox|Test cricket match|Test match)/gi)].map((m) => m.index);
+  for (let k = 0; k < starts.length; k++) {
+    const at = starts[k];
+    if (!underTest(at)) continue;
+    const body = wt.slice(at, starts[k + 1] ?? wt.length);
+    const venue = /\|\s*(?:venue|location|stadium|ground)\s*=\s*([^\n]*)/i.exec(body)?.[1] || '';
+    const res = /\|\s*result\s*=\s*([^\n]*)/i.exec(body)?.[1] || '';
+    const r = resultOf(res);
+    tests.push({ venueText: strip(venue).toLowerCase(), winner: r }); // winner null when the box has no readable result
+  }
+  if (!tests.some((t) => t.winner)) {
+    tests.length = 0;
+    for (const line of wt.split('\n')) {
+      if (!/^\*/.test(line) || !/\d(?:st|nd|rd|th)\s+Test/i.test(line)) continue;
+      const at = /\bat\s+(.*?)\s*(?:&ndash;|–|—|\s-\s)\s*(.*)$/i.exec(line);
+      if (!at) continue;
+      const r = resultOf(at[2]);
+      if (r) tests.push({ venueText: strip(at[1]).toLowerCase(), winner: r });
     }
-    if (tests.length) return tests;
   }
-  // format A: "* 1st Test at [[Ground]] – X won by ..."
-  for (const line of wt.split('\n')) {
-    if (!/^\*/.test(line) || !/\d(?:st|nd|rd|th)\s+Test/i.test(line)) continue;
-    const at = /\bat\s+(.*?)\s*(?:&ndash;|–|—|\s-\s)\s*(.*)$/i.exec(line);
-    if (!at) continue;
-    const r = resultOf(at[2]);
-    if (r) tests.push({ venueText: at[1].replace(/\[\[(?:[^\]|]*\|)?([^\]]*)\]\]/g, '$1').toLowerCase(), winner: r });
-  }
-  return tests;
+  // the same Test sometimes appears twice in a row (a summary box and a full one)
+  return tests.filter((t, i) => !(i > 0 && tests[i - 1].venueText === t.venueText && tests[i - 1].winner === t.winner));
 }
 
 const teamName = (c) => NATIONS[c.country] || c.country;
 const validate = args.includes('--validate'); // test the method on hundreds whose result we already know
 const isKnown = (c) => ['win', 'draw', 'loss', 'tie'].includes(c.matchResult);
-const unknown = ALL.filter((c) => (validate ? isKnown(c) && c.year < 2006 : !isKnown(c)) && c.opponent !== 'ICC World XI');
+// unknown results are filled; known pre-2006 results are checked too, and a disagreement is reported so it can be corrected
+const unknown = ALL.filter((c) => (validate ? isKnown(c) && c.year < 2006 : !isKnown(c) || c.year < 2006) && c.opponent !== 'ICC World XI');
 const combos = new Map();
 for (const c of unknown) {
   const pair = [teamName(c), c.opponent].sort().join(' v ');
@@ -102,37 +113,41 @@ const facts = {};
 let vtotal = 0, vagree = 0;
 let found = 0, missing = 0, noTests = 0, matched = 0, ambiguous = 0;
 for (const cb of [...combos.values()].slice(0, limit)) {
-  let tour = null;
-  for (const [vis, host] of [[cb.a, cb.b], [cb.b, cb.a]]) {
+  let pending = [...cb.rows];
+  let anyTour = false;
+  outer: for (const [vis, host] of [[cb.a, cb.b], [cb.b, cb.a]]) {
     for (const s of seasons(cb.year)) {
       const title = `${DEM[vis] || vis} cricket team in ${host} in ${s}`;
       const wt = await page(title);
-      if (wt && /Test/.test(wt)) {
-        const tests = parseTests(wt, [cb.a, cb.b]);
-        if (tests.length) { tour = { title, tests }; break; }
+      if (!wt || !/Test/.test(wt)) continue;
+      const tests = parseTests(wt, [cb.a, cb.b]);
+      if (!tests.some((t) => t.winner)) continue;
+      anyTour = true;
+      const m = tests.length;
+      const still = [];
+      for (const c of pending) {
+        const words = venueWords(c.venue);
+        const idx = tests.map((t, i) => (words.some((w) => w && t.venueText.includes(w)) ? i : -1)).filter((i) => i >= 0);
+        if (idx.length !== 1) { if (idx.length > 1) { ambiguous += 1; if (process.env.DEBUG_AMBIG) console.log('AMBIG', c.venue, c.year, c.opponent, idx.map((i) => tests[i].venueText).join(' | ')); } still.push(c); continue; }
+        const i = idx[0];
+        if (!tests[i].winner) { still.push(c); continue; }
+        const me = teamName(c);
+        let mine = 0, theirs = 0, unreadable = false;
+        for (const t of tests.slice(0, i)) { if (!t.winner) unreadable = true; else if (t.winner === me) mine += 1; else if (t.winner !== 'draw' && t.winner !== 'tie') theirs += 1; }
+        const w = tests[i].winner;
+        const result = w === me ? 'win' : w === 'draw' ? 'draw' : w === 'tie' ? 'tie' : 'loss';
+        const lead = unreadable ? null : mine - theirs;
+        const dead = lead !== null && Math.abs(lead) > m - i;
+        if (validate) { vtotal += 1; if (result === c.matchResult) vagree += 1; else console.log('DISAGREE', c.id, c.name, c.runs, c.opponent, c.venue, c.year, 'ours', c.matchResult, 'wikipedia', result, title); continue; }
+        facts[c.id] = [result, i + 1, m, lead, dead ? 1 : 0];
+        matched += 1;
       }
+      pending = still;
+      if (!pending.length) break outer;
     }
-    if (tour) break;
   }
-  if (!tour) { missing += 1; continue; }
-  found += 1;
-  const m = tour.tests.length;
-  for (const c of cb.rows) {
-    const words = venueWords(c.venue);
-    const idx = tour.tests.map((t, i) => (words.some((w) => w && t.venueText.includes(w)) ? i : -1)).filter((i) => i >= 0);
-    if (idx.length !== 1) { if (idx.length > 1) ambiguous += 1; continue; }
-    const i = idx[0];
-    const me = teamName(c);
-    let mine = 0, theirs = 0;
-    for (const t of tour.tests.slice(0, i)) { if (t.winner === me) mine += 1; else if (t.winner !== 'draw' && t.winner !== 'tie') theirs += 1; }
-    const w = tour.tests[i].winner;
-    const result = w === me ? 'win' : w === 'draw' ? 'draw' : w === 'tie' ? 'tie' : 'loss';
-    const lead = mine - theirs;
-    const dead = Math.abs(lead) > m - i;
-    if (validate) { vtotal += 1; if (result === c.matchResult) vagree += 1; else console.log('DISAGREE', c.id, c.name, c.runs, c.opponent, c.venue, c.year, 'ours', c.matchResult, 'wikipedia', result, tour.title); continue; }
-    facts[c.id] = [result, i + 1, m, lead, dead ? 1 : 0];
-    matched += 1;
-  }
+  if (anyTour) found += 1; else { missing += 1; if (process.env.DEBUG_MISSING) console.log('MISSING', cb.a, 'v', cb.b, cb.year, cb.rows.length); }
+  for (const c of pending) if (process.env.DEBUG_NOVENUE) console.log('UNMATCHED', c.venue, c.year, c.opponent, c.runs);
 }
 if (validate) { console.log(`validation: ${vagree} of ${vtotal} agree with the known result`); process.exit(0); }
 const ids = Object.keys(facts).map(Number).sort((a, b) => a - b);

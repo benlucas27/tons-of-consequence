@@ -185,8 +185,8 @@ export const REFERENCE_POINTS = {
  "Graeme Smith|SA": {
   "hundreds": 27,
   "results": {
-   "known": 23,
-   "won": 14,
+   "known": 27,
+   "won": 18,
    "drawn": 9,
    "lost": 0
   },
@@ -237,10 +237,10 @@ export const REFERENCE_POINTS = {
  "Rahul Dravid|IND": {
   "hundreds": 36,
   "results": {
-   "known": 20,
-   "won": 9,
-   "drawn": 8,
-   "lost": 3
+   "known": 32,
+   "won": 13,
+   "drawn": 15,
+   "lost": 4
   },
   "measured": 21,
   "tons": 6,
@@ -315,10 +315,10 @@ export const REFERENCE_POINTS = {
  "Mahela Jayawardene|SL": {
   "hundreds": 34,
   "results": {
-   "known": 23,
-   "won": 11,
-   "drawn": 9,
-   "lost": 3
+   "known": 32,
+   "won": 16,
+   "drawn": 11,
+   "lost": 5
   },
   "measured": 24,
   "tons": 5,
@@ -341,10 +341,10 @@ export const REFERENCE_POINTS = {
  "Younis Khan|PAK": {
   "hundreds": 34,
   "results": {
-   "known": 26,
-   "won": 13,
+   "known": 30,
+   "won": 16,
    "drawn": 7,
-   "lost": 6
+   "lost": 7
   },
   "measured": 25,
   "tons": 4,
@@ -419,9 +419,9 @@ export const REFERENCE_POINTS = {
  "AB de Villiers|SA": {
   "hundreds": 22,
   "results": {
-   "known": 21,
+   "known": 22,
    "won": 16,
-   "drawn": 4,
+   "drawn": 5,
    "lost": 1
   },
   "measured": 21,
