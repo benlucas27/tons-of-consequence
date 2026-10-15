@@ -19,7 +19,7 @@ export const momentsFor = (inningsId) => MOMENTS.filter((m) => m.inningsId === i
 export const careerMomentsFor = (name) => MOMENTS.filter((m) => m.type === 'career' && m.player === name);
 
 /** The "tons of consequence" concept moments, shown on the About page. */
-export const conceptMoments = () => MOMENTS.filter((m) => m.type === 'concept');
+export const conceptMoments = () => MOMENTS.filter((m) => m.type === 'concept').sort((a, b) => a.date.localeCompare(b.date));
 
 /** How a moment is described: "Hello Sport #946, 12 Oct 2026". */
 export function episodeLabel(m) {

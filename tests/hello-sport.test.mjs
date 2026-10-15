@@ -81,13 +81,16 @@ test('career moments belong to a player page, and the concept moment is on the a
     assert.ok([...BATTER_BY_SLUG.values()].some((b) => b.name === m.player), `${m.player} has no player page`);
     assert.ok(careerMomentsFor(m.player).includes(m));
   }
-  assert.equal(conceptMoments().length, 1);
-  assert.equal(conceptMoments()[0].youtubeId, ORIGIN.youtubeId);
+  const concepts = conceptMoments();
+  assert.equal(concepts.length, 2);
+  assert.equal(concepts[0].episode, '#606');                      // oldest first: the early use
+  assert.equal(concepts[0].start, 3793);
+  assert.equal(concepts[1].youtubeId, ORIGIN.youtubeId);          // then #828, where they define it
 });
 
 test('the index file has no rows from the "Other cricket chat" table', () => {
   assert.ok(!MOMENTS.some((m) => ['Jason Sangha', 'Konstas'].some((n) => m.player.includes(n))));
-  assert.equal(MOMENTS.length, 25);
+  assert.equal(MOMENTS.length, 26);
 });
 
 test('public notes carry no hand-over markers', () => {

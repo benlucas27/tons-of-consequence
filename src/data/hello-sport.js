@@ -43,6 +43,11 @@ export const EPISODES = {
     "date": "2026-01-12",
     "youtubeId": "KAZuw748xiw"
   },
+  "YjkrB5XUq60": {
+    "episode": "#606",
+    "date": "2024-03-04",
+    "youtubeId": "YjkrB5XUq60"
+  },
   "vhEUpN2Y4-g": {
     "episode": "#946",
     "date": "2026-10-12",
@@ -135,6 +140,18 @@ export const MOMENTS = [
     "youtubeId": "KAZuw748xiw",
     "start": 2068,
     "note": "\"Tons of consequence\" named; examples run to 35:51; listener formula call-out at 36:51",
+    "matchText": null,
+    "inningsText": null,
+    "inningsId": null
+  },
+  {
+    "player": "(concept)",
+    "type": "concept",
+    "episode": "#606",
+    "date": "2024-03-04",
+    "youtubeId": "YjkrB5XUq60",
+    "start": 3793,
+    "note": "Early use of the idea, nearly two years before #828. Of a hundred in an Ashes Test that was unwinnable, with a draw certain given the weather: \"it wasn't a ton of consequence\"",
     "matchText": null,
     "inningsText": null,
     "inningsId": null
