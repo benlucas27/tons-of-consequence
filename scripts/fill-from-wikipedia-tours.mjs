@@ -88,7 +88,9 @@ function parseTests(wt, teamNames) {
 }
 
 const teamName = (c) => NATIONS[c.country] || c.country;
-const unknown = ALL.filter((c) => !['win', 'draw', 'loss', 'tie'].includes(c.matchResult) && c.opponent !== 'ICC World XI');
+const validate = args.includes('--validate'); // test the method on hundreds whose result we already know
+const isKnown = (c) => ['win', 'draw', 'loss', 'tie'].includes(c.matchResult);
+const unknown = ALL.filter((c) => (validate ? isKnown(c) && c.year < 2006 : !isKnown(c)) && c.opponent !== 'ICC World XI');
 const combos = new Map();
 for (const c of unknown) {
   const pair = [teamName(c), c.opponent].sort().join(' v ');
@@ -97,6 +99,7 @@ for (const c of unknown) {
   combos.get(k).rows.push(c);
 }
 const facts = {};
+let vtotal = 0, vagree = 0;
 let found = 0, missing = 0, noTests = 0, matched = 0, ambiguous = 0;
 for (const cb of [...combos.values()].slice(0, limit)) {
   let tour = null;
@@ -126,10 +129,12 @@ for (const cb of [...combos.values()].slice(0, limit)) {
     const result = w === me ? 'win' : w === 'draw' ? 'draw' : w === 'tie' ? 'tie' : 'loss';
     const lead = mine - theirs;
     const dead = Math.abs(lead) > m - i;
+    if (validate) { vtotal += 1; if (result === c.matchResult) vagree += 1; else console.log('DISAGREE', c.id, c.name, c.runs, c.opponent, c.venue, c.year, 'ours', c.matchResult, 'wikipedia', result, tour.title); continue; }
     facts[c.id] = [result, i + 1, m, lead, dead ? 1 : 0];
     matched += 1;
   }
 }
+if (validate) { console.log(`validation: ${vagree} of ${vtotal} agree with the known result`); process.exit(0); }
 const ids = Object.keys(facts).map(Number).sort((a, b) => a - b);
 fs.writeFileSync(path.join(root, 'src/data/series-facts.js'), `/** id -> [result for the batter's team, Test number in the series, Tests in the series, the batter's team's series lead going in (wins minus losses), 1 if the series was already decided], from Wikipedia's tour pages (scripts/fill-from-wikipedia-tours.mjs). Generated: do not edit by hand. */\nexport const SERIES_FACTS = {\n${ids.map((id) => `  ${id}: ${JSON.stringify(facts[id])},`).join('\n')}\n};\n`);
 console.log(`${combos.size} team-pair-years (${Math.min(limit, combos.size)} tried): ${found} tour pages found, ${missing} not found. ${matched} hundreds matched to a Test (${ambiguous} ambiguous by ground). Wrote ${ids.length} rows.`);

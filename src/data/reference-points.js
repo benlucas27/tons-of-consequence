@@ -237,9 +237,9 @@ export const REFERENCE_POINTS = {
  "Rahul Dravid|IND": {
   "hundreds": 36,
   "results": {
-   "known": 16,
-   "won": 7,
-   "drawn": 6,
+   "known": 20,
+   "won": 9,
+   "drawn": 8,
    "lost": 3
   },
   "measured": 16,
@@ -289,9 +289,9 @@ export const REFERENCE_POINTS = {
  "Jacques Kallis|SA": {
   "hundreds": 45,
   "results": {
-   "known": 44,
+   "known": 45,
    "won": 21,
-   "drawn": 20,
+   "drawn": 21,
    "lost": 3
   },
   "measured": 28,
@@ -315,9 +315,9 @@ export const REFERENCE_POINTS = {
  "Mahela Jayawardene|SL": {
   "hundreds": 34,
   "results": {
-   "known": 21,
+   "known": 23,
    "won": 11,
-   "drawn": 7,
+   "drawn": 9,
    "lost": 3
   },
   "measured": 21,
@@ -341,10 +341,10 @@ export const REFERENCE_POINTS = {
  "Younis Khan|PAK": {
   "hundreds": 34,
   "results": {
-   "known": 24,
-   "won": 12,
+   "known": 26,
+   "won": 13,
    "drawn": 7,
-   "lost": 5
+   "lost": 6
   },
   "measured": 24,
   "tons": 3,
