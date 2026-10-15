@@ -48,4 +48,7 @@ export const OLDER_RULINGS = {
   2145: [0, null, "No match record could be matched to this score."],
   2192: [1, "Chased it down", "England won by 8 wickets chasing 219. Series going in: Australia 1-0 up."],
   2359: [0, null, "England lost by 119 runs. Series going in: Australia 2-0 up."],
+  375: [1, "Ruled a ton of consequence", "Australia won by an innings and 80 runs (581/4d). He batted as night watchman. Series going in: Australia 1-0 up, last of 2.", "r"],
+  3828: [1, "Chased it down", "Australia won by 2 wickets in a fourth-innings chase of about 339. Series going in: Australia 1-0 up.", "r"],
+  3574: [1, "Saved the match", "Drawn after South Africa followed on (156, then 572/7). Series going in: South Africa 1-0 up.", "r"],
 };
