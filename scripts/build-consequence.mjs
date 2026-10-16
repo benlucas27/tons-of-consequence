@@ -26,6 +26,7 @@ import { canonicalPlayer } from '../src/data/name-aliases.js';
 import { ALL } from '../src/lib/dataset.js';
 import { displayName } from '../src/lib/scoring.js';
 import { DON } from '../src/data/the-don.js';
+import { FINAL_OLDER_RULINGS } from '../src/data/final-older-rulings.js';
 import { OLDER_RULINGS } from '../src/data/older-rulings.js';
 import { COMPARE_SETS } from '../src/data/compare-sets.js';
 import { tierOfOpponent } from '../src/lib/matchFacts.js';
@@ -157,6 +158,7 @@ for (const row of ALL) {
 const finalIds = new Set(Object.entries(CONSEQUENCE_OVERRIDES).filter(([, o]) => o.final).map(([k]) => Number(k.split('|')[3])));
 rerun.splice(0, rerun.length, ...rerun.filter((r) => !finalIds.has(r.id)));
 for (const r of rerun) out[r.id] = r.verdict; 
+for (const [id, v] of Object.entries(FINAL_OLDER_RULINGS)) out[id] = v;
 fs.writeFileSync(path.join(root, 'docs/drafts/review-rerun.json'), JSON.stringify(rerun, null, 1));
 console.log(`Rerun: ${rerun.length} of Ben's hand rulings disagree with the rules (${rerun.filter((r) => r.evidence === 'b').length} ball-by-ball, ${rerun.filter((r) => r.evidence === 'p').length} older, of ${calib.olderTotal || 0} older rulings with series facts).`);
 fs.writeFileSync(path.join(root, 'docs/drafts/review-queue.json'), JSON.stringify(queue, null, 1));
