@@ -19,3 +19,9 @@ test("the women's leaderboard adds up and the ball-by-ball count is 26 or fewer"
   assert.equal(WOMENS_BATTERS.reduce((a, b) => a + b.tons, 0), 17);
   assert.ok(WOMENS_BALL_BY_BALL <= 40);
 });
+
+test("the historic women's hundreds are real entries and win-or-save tons", () => {
+  const historic = WOMENS.filter((h) => h.historic);
+  assert.equal(historic.length, 5);
+  for (const h of historic) assert.equal(h.ton, true, `${h.name} ${h.runs}`);
+});

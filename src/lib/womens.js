@@ -17,6 +17,16 @@ export const WOMENS_BATTERS = [...byName.entries()].map(([name, list]) => ({
   name, team: list[0].team, hundreds: list.length, tons: list.filter((h) => h.ton).length, list,
 })).sort((a, b) => b.tons - a.tons || b.tons / b.hundreds - a.tons / a.hundreds || b.hundreds - a.hundreds || a.name.localeCompare(b.name));
 
+/** Hundreds that also count for their place in history (the first, a record). Two sources checked for each: Wikipedia and a match report. */
+export const HISTORIC = {
+  1: "The first century in a women's Test.",
+  2: 'A world-record score at the time, and it stood for about half a century.',
+  5: "The first century by an Australian woman in a Test, made on debut.",
+  71: "Sri Lanka's only women's Test, and their win.",
+  80: 'A world-record score at the time.',
+};
+for (const h of WOMENS) h.historic = HISTORIC[h.no] || null;
+
 export const WOMENS_TOTAL = WOMENS.length;
 export const WOMENS_TONS = WOMENS.filter((h) => h.ton);
 export const WOMENS_BALL_BY_BALL = WOMENS.filter((h) => h.evidence === 'b').length;

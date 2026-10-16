@@ -34,10 +34,12 @@ export default function WomensTests() {
         {WOMENS_TONS.map((h) => (
           <li key={h.no} className="toc-yes">
             <h3>{h.name} {h.runs} <small>{h.team} v {h.opponent}, {h.ground.split(',')[0]}, {h.year} &middot; {RESULT_WORD[h.result]}</small></h3>
+            {h.historic && <p><b>Historic:</b> {h.historic}</p>}
             <p>{h.reason}</p>
           </li>
         ))}
       </ol>
+      <p className="conn-note">A few of these count partly for their place in history: the first women&rsquo;s Test century, or a world-record score at the time. They are marked &ldquo;Historic&rdquo;.</p>
 
       <h2>Every hundred</h2>
       <p className="conn-note">Oldest first. A good ton is a fine hundred that did not win or save the match.</p>
@@ -45,7 +47,7 @@ export default function WomensTests() {
         {WOMENS.map((h) => (
           <li key={h.no} id={h.slug} className={h.ton ? 'toc-yes' : 'toc-no'}>
             <h3>{h.name} {h.runs} <small>{h.team} v {h.opponent}, {h.ground.split(',')[0]}, {dateText(h.date)} &middot; {RESULT_WORD[h.result]}</small></h3>
-            <p><b>{h.ton ? 'A ton of consequence.' : 'A good ton.'}</b> {h.reason}</p>
+            <p><b>{h.ton ? 'A ton of consequence.' : 'A good ton.'}</b>{h.historic ? <> <b>Historic:</b> {h.historic}</> : null} {h.reason}</p>
           </li>
         ))}
       </ol>
