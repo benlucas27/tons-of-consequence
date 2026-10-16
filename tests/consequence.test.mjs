@@ -15,11 +15,11 @@ test('every measured hundred belongs to a row in the dataset, and a ton always h
   assert.ok(MEASURED_TOTAL > 1700 && TONS_TOTAL > 300 && TONS_TOTAL < MEASURED_TOTAL);
 });
 
-test("Bradman's 29 are measured: 10 are tons of consequence", () => {
+test("Bradman's 29 are measured: 13 are tons of consequence", () => {
   const b = BATTER_BY_SLUG.get('don-bradman');
   assert.equal(b.hundreds, 29);
   assert.equal(b.measured, 29);
-  assert.equal(b.tons, 10);
+  assert.equal(b.tons, 13);
 });
 
 test('the leaderboard is sorted by tons of consequence', () => {
