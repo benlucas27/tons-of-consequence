@@ -875,31 +875,6 @@
   ]
  },
  {
-  "id": 1976,
-  "name": "Younis Khan",
-  "runs": 131,
-  "year": 2010,
-  "opponent": "South Africa",
-  "venue": "Dubai (DICS)",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "4th innings, team 375 behind. The match was drawn. He made 38% of the team's runs. 3 other hundreds were scored in the match."
-  },
-  "rules": "yes",
-  "score": 51.4,
-  "gate": "",
-  "parts": "need 20, carry 20.4, stakes 11",
-  "reason": "In at 2 for 75, 375 behind. He made 38% of the team's 343, and no one else came close. The match was drawn, with his side in danger of losing.",
-  "scenario": "Saved the match",
-  "verdict": [
-   1,
-   "Saved the match",
-   "In at 2 for 75, 375 behind. He made 38% of the team's 343, and no one else came close. The match was drawn, with his side in danger of losing.",
-   "b"
-  ]
- },
- {
   "id": 2003,
   "name": "Ross Taylor",
   "runs": 131,
@@ -946,31 +921,6 @@
    1,
    "Carried the innings",
    "In at 3 for 61, 87 behind. He made 41% of the team's 318, and no one else came close. The team won by 9 wickets. He added 97 for the 10th wicket.",
-   "b"
-  ]
- },
- {
-  "id": 2035,
-  "name": "Younis Khan",
-  "runs": 130,
-  "year": 2007,
-  "opponent": "South Africa",
-  "venue": "Lahore",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "4th innings, team 441 behind. The match was drawn. He made 41% of the team's runs. 2 other hundreds were scored in the match."
-  },
-  "rules": "yes",
-  "score": 67.6,
-  "gate": "",
-  "parts": "need 20, carry 30.6, stakes 17",
-  "reason": "In at 1 for 15, 441 behind. He made 41% of the team's 316, and no one else came close. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test.",
-  "scenario": "Saved the match",
-  "verdict": [
-   1,
-   "Saved the match",
-   "In at 1 for 15, 441 behind. He made 41% of the team's 316, and no one else came close. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test.",
    "b"
   ]
  },
@@ -1546,31 +1496,6 @@
    1,
    "Rescued the innings",
    "In at 3 for 114, 61 behind. He made 28% of the team's 381. The team won by 65 runs. The series was still to be settled in this Test. A slow grind at 38 runs per 100 balls.",
-   "b"
-  ]
- },
- {
-  "id": 3619,
-  "name": "Younis Khan",
-  "runs": 107,
-  "year": 2007,
-  "opponent": "India",
-  "venue": "Eden Gardens",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "4th innings, team 307 behind. The match was drawn. He made 50% of the team's runs. 5 other hundreds were scored in the match."
-  },
-  "rules": "yes",
-  "score": 75.7,
-  "gate": "",
-  "parts": "need 20, carry 44.7, stakes 11",
-  "reason": "In at 2 for 37, 307 behind. He made 50% of the team's 214, and no one else came close. The match was drawn, with his side in danger of losing. The rest of the team added only 107.",
-  "scenario": "Saved the match",
-  "verdict": [
-   1,
-   "Saved the match",
-   "In at 2 for 37, 307 behind. He made 50% of the team's 214, and no one else came close. The match was drawn, with his side in danger of losing. The rest of the team added only 107.",
    "b"
   ]
  },
