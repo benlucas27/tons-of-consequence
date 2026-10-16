@@ -12,20 +12,22 @@
  * A verdict is only trusted when it is firm: `robustness` re-scores the hundred 300 times with every weight nudged up to 25%
  * either way and the threshold by up to 5 points, and says how often it was a ton.
  */
-export const THRESHOLD = 38;
+export const THRESHOLD = 45; // set higher than the first draft: Ben wants tons kept strict
 const OCCASION_POINTS = { tribute: 15, farewell: 8, emotional: 8, comeback: 6 };
 const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
 
 /** f: result, inn, lead (when the innings began, or on entry when known), share, stakes, sideAhead, seriesNotAhead, margin ('r30'/'w3'/'i40'), start (MMDD), occasion, balls, runs, entryWkts, entryScore, peril, others, nextBest, followOn. */
 export function modelV3(f, wm = {}, th = THRESHOLD) {
   const dead = f.stakes === 'dead';
+  const sr0 = f.balls ? (100 * f.runs) / f.balls : null;
+  const slowGrind = sr0 != null && sr0 < 45 && f.balls >= 250; // a long innings that ate the clock counts as a reason in its own right (Ben's tempo review)
   const inDanger = f.inn === 4 || (f.inn === 3 && f.lead != null && f.lead < 0) || Boolean(f.followOn);
   let gate = false;
   let gateWhy = '';
   if (f.result === 'loss') gateWhy = 'a loss';
   else if (dead && !(f.sideAhead && f.result === 'win')) gateWhy = f.result === 'win' ? 'a dead rubber, and his side had lost the series' : 'a dead rubber that was not a win';
   else if (f.result === 'draw' && f.inn == null) gateWhy = 'a draw, and the innings is not known';
-  else if (f.result === 'draw' && !inDanger) gateWhy = 'a draw the team was not in danger of losing';
+  else if (f.result === 'draw' && !inDanger && !slowGrind) gateWhy = 'a draw the team was not in danger of losing';
   else if (!['win', 'draw', 'tie'].includes(f.result)) gateWhy = 'no result';
   else gate = true;
   const p = {};
@@ -41,7 +43,7 @@ export function modelV3(f, wm = {}, th = THRESHOLD) {
   p.stakes = ({ decider: 15, 'on the line': 12, live: 6, single: 7, dead: 3 })[f.stakes] ?? 6;
   if (f.result === 'draw' && inDanger && !dead && f.seriesNotAhead) p.stakes += 5;
   const sr = f.balls ? (100 * f.runs) / f.balls : null;
-  p.tempo = sr != null && (sr >= 90 || (sr < 40 && f.balls >= 250)) ? 10 : 0;
+  p.tempo = slowGrind ? 25 : sr != null && sr >= 90 ? 10 : 0;
   const md = f.start ? Number(f.start) : null;
   p.occasion = OCCASION_POINTS[f.occasion] ?? (md != null && ((md >= 1225 && md <= 1227) || (md >= 101 && md <= 103)) ? 5 : 0);
   p.safe = f.lead != null && f.lead > 200 ? -20 : 0;
@@ -74,7 +76,7 @@ export function describeTon(f, m, team = 'The team') {
   const p = m.parts;
   const inDanger = f.inn === 4 || (f.inn === 3 && f.lead != null && f.lead < 0) || f.followOn;
   let scenario = 'Set up the win';
-  if (f.result === 'draw') scenario = 'Saved the match';
+  if (f.result === 'draw') scenario = inDanger ? 'Saved the match' : 'Wore the opposition down';
   else if (f.inn === 4 && f.result === 'win') scenario = 'Chased it down';
   else if (p.need >= 15 && p.need >= p.carry) scenario = 'Rescued the innings';
   else if (p.carry >= 12) scenario = 'Carried the innings';

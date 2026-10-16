@@ -104,6 +104,7 @@ const handRuled = (row) => {
   return Boolean(o) && (o.id == null || o.id === row.id);
 };
 const queue = [];
+const calib = { total: 0, agree: 0 };
 let v3Changed = 0, v3Kept = 0, v3Partial = 0;
 const decide = (row, f, evidence, existing) => {
   const m = modelV3(f);
@@ -115,7 +116,7 @@ const decide = (row, f, evidence, existing) => {
 for (const [idStr, f] of Object.entries(fullCases)) {
   const id = Number(idStr);
   const row = ALL.find((c) => c.id === id);
-  if (handRuled(row)) continue; // Ben's own ruling stands
+  if (handRuled(row)) { calib.total += 1; { const mm = modelV3(f); if (mm.ton === (out[id][0] === 1)) calib.agree += 1; else if (process.env.DEBUG_CALIB) console.log('DISAGREE', out[id][0] === 1 ? 'Ben yes, model no' : 'Ben no, model yes', row.name, row.runs, row.opponent, row.year, 'score', mm.score, mm.gate ? '' : 'gate:' + mm.gateWhy, JSON.stringify(Object.fromEntries(Object.entries(mm.parts).filter(([, v]) => v).map(([k, v]) => [k, Math.round(v)])))); } continue; } // Ben's own ruling stands (and is a check on the model)
   const next = decide(row, f, 'b', out[id]);
   if (next && out[id] && next[0] !== out[id][0]) v3Changed += 1; else v3Kept += 1;
   if (next) out[id] = next;
@@ -131,6 +132,7 @@ for (const row of ALL) {
   if (next) { out[row.id] = next; v3Partial += 1; }
 }
 fs.writeFileSync(path.join(root, 'docs/drafts/review-queue.json'), JSON.stringify(queue, null, 1));
+console.log(`The model agrees with ${calib.agree} of ${calib.total} of Ben's own rulings on ball-by-ball hundreds.`);
 console.log(`v3 (threshold ${THRESHOLD}): ${v3Changed} ball-by-ball verdicts changed, ${v3Kept} kept, ${v3Partial} partial-evidence verdicts added, ${queue.length} marginal hundreds queued for review.`);
 
 const ids = Object.keys(out).map(Number).sort((a, b) => a - b);
