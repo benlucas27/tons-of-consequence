@@ -48,6 +48,11 @@ export const EPISODES = {
     "date": "2024-03-04",
     "youtubeId": "YjkrB5XUq60"
   },
+  "_djTMLXUbS0": {
+    "episode": "#609",
+    "date": "2024-03-13",
+    "youtubeId": "_djTMLXUbS0"
+  },
   "vhEUpN2Y4-g": {
     "episode": "#946",
     "date": "2026-10-12",
@@ -127,6 +132,11 @@ export const EPISODES = {
     "episode": "#572",
     "date": "2023-11-20",
     "youtubeId": "cMdHDzOrQF0"
+  },
+  "sEDG6gEfMjs": {
+    "episode": "#474",
+    "date": "2023-03-13",
+    "youtubeId": "sEDG6gEfMjs"
   }
 };
 export const MOMENTS = [
@@ -162,6 +172,18 @@ export const MOMENTS = [
     "youtubeId": "YjkrB5XUq60",
     "start": 3793,
     "note": "Early use of the idea, nearly two years before #828. Of a hundred in an Ashes Test that was unwinnable, with a draw certain given the weather: \"it wasn't a ton of consequence\"",
+    "matchText": null,
+    "inningsText": null,
+    "inningsId": null
+  },
+  {
+    "player": "(concept)",
+    "type": "concept",
+    "episode": "#609",
+    "date": "2024-03-13",
+    "youtubeId": "_djTMLXUbS0",
+    "start": 3064,
+    "note": "The phrase as a joke about living to a hundred: a \"ton of consequence\" here is reaching 100 years, not a cricket innings",
     "matchText": null,
     "inningsText": null,
     "inningsId": null
@@ -477,5 +499,41 @@ export const MOMENTS = [
     "matchText": null,
     "inningsText": "Career (tons: the WTC final and since)",
     "inningsId": null
+  },
+  {
+    "player": "Marnus Labuschagne",
+    "type": "innings",
+    "episode": "#606",
+    "date": "2024-03-04",
+    "youtubeId": "YjkrB5XUq60",
+    "start": 3793,
+    "note": "On Labuschagne's Ashes hundred: the Test was unwinnable and a draw certain given the weather, so \"it wasn't a ton of consequence\" (the site rules it one: he saved the match)",
+    "matchText": "England v Australia, Ashes Test, Manchester, Jul 2023 (draw)",
+    "inningsText": "111",
+    "inningsId": 3322
+  },
+  {
+    "player": "Virat Kohli",
+    "type": "innings",
+    "episode": "#474",
+    "date": "2023-03-13",
+    "youtubeId": "sEDG6gEfMjs",
+    "start": 6386,
+    "note": "Day-four chat about Kohli's 186, his first Test hundred since 2019 and 28th overall, with a joke that the pitch must be bad \"when Virat's getting 100\"",
+    "matchText": "India v Australia, 4th Test, Ahmedabad, Mar 2023 (draw)",
+    "inningsText": "186",
+    "inningsId": 550
+  },
+  {
+    "player": "Shubman Gill",
+    "type": "innings",
+    "episode": "#474",
+    "date": "2023-03-13",
+    "youtubeId": "sEDG6gEfMjs",
+    "start": 6386,
+    "note": "Gill's 128 read out alongside Kohli's 186; at 23, \"a bit of an Indian handful\"",
+    "matchText": "India v Australia, 4th Test, Ahmedabad, Mar 2023 (draw)",
+    "inningsText": "128",
+    "inningsId": 2134
   }
 ];

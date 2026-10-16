@@ -82,15 +82,16 @@ test('career moments belong to a player page, and the concept moment is on the a
     assert.ok(careerMomentsFor(m.player).includes(m));
   }
   const concepts = conceptMoments();
-  assert.equal(concepts.length, 2);
+  assert.equal(concepts.length, 3);
   assert.equal(concepts[0].episode, '#606');                      // oldest first: the early use
   assert.equal(concepts[0].start, 3793);
-  assert.equal(concepts[1].youtubeId, ORIGIN.youtubeId);          // then #828, where they define it
+  assert.equal(concepts[1].episode, '#609');                      // the lifespan joke, nine days later
+  assert.equal(concepts[2].youtubeId, ORIGIN.youtubeId);          // then #828, where they define it
 });
 
 test('the index file has no rows from the "Other cricket chat" table', () => {
   assert.ok(!MOMENTS.some((m) => ['Jason Sangha', 'Konstas'].some((n) => m.player.includes(n))));
-  assert.equal(MOMENTS.length, 29);
+  assert.equal(MOMENTS.length, 33);
 });
 
 test('public notes carry no hand-over markers', () => {
@@ -115,4 +116,16 @@ test('older-season finds: Green 174*, Brook 186, and a career clip for Head', ()
   assert.equal(momentsFor(549).length, 1);
   assert.equal(momentsFor(549)[0].start, 4467);
   assert.ok(careerMomentsFor('Travis Head').some((m) => m.episode === '#572'));
+});
+
+test('Labuschagne 111 at Manchester carries the host view that it was not a ton of consequence', () => {
+  const [m] = momentsFor(3322);
+  assert.equal(m.episode, '#606');
+  assert.equal(m.start, 3793);
+  assert.match(m.note, /wasn't a ton of consequence/);
+});
+
+test('Ahmedabad 2023: Kohli 186 and Gill 128 from #474', () => {
+  assert.equal(momentsFor(550)[0].episode, '#474');
+  assert.equal(momentsFor(2134)[0].start, 6386);
 });
