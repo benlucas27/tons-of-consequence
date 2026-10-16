@@ -275,31 +275,6 @@
   ]
  },
  {
-  "id": 330,
-  "name": "Ollie Pope",
-  "runs": 205,
-  "year": 2023,
-  "opponent": "Ireland",
-  "venue": "Lord's",
-  "evidence": "b",
-  "yours": {
-   "verdict": "yes",
-   "note": "A fast hundred: 99 runs per 100 balls off 208 balls, 100th run off ball 126, batted 3, innings 2. The match was won."
-  },
-  "rules": "no",
-  "score": 37,
-  "gate": "",
-  "parts": "need 10, carry 12, stakes 15, tempo 10, opposition -10",
-  "reason": "He made 39% of the team's runs. The match did not depend on it: he came in at 1 for 109.",
-  "scenario": null,
-  "verdict": [
-   0,
-   null,
-   "He made 39% of the team's runs. The match did not depend on it: he came in at 1 for 109.",
-   "b"
-  ]
- },
- {
   "id": 361,
   "name": "Kevin Pietersen",
   "runs": 202,
@@ -571,31 +546,6 @@
    0,
    null,
    "He made 38% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
-   "b"
-  ]
- },
- {
-  "id": 961,
-  "name": "Travis Head",
-  "runs": 161,
-  "year": 2019,
-  "opponent": "Sri Lanka",
-  "venue": "Canberra",
-  "evidence": "b",
-  "yours": {
-   "verdict": "yes",
-   "note": "He came in at 3 for 28."
-  },
-  "rules": "no",
-  "score": 44,
-  "gate": "",
-  "parts": "need 25, carry 10, stakes 12, opposition -3",
-  "reason": "He made 30% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 3 for 28.",
-  "scenario": null,
-  "verdict": [
-   0,
-   null,
-   "He made 30% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 3 for 28.",
    "b"
   ]
  },
@@ -1646,31 +1596,6 @@
    0,
    null,
    "He made 28% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
-   "b"
-  ]
- },
- {
-  "id": 3305,
-  "name": "Matthew Hayden",
-  "runs": 111,
-  "year": 2005,
-  "opponent": "ICC World XI",
-  "venue": "Sydney",
-  "evidence": "b",
-  "yours": {
-   "verdict": "yes",
-   "note": "4 wickets fell around him while the team was under 200."
-  },
-  "rules": "no",
-  "score": 43.2,
-  "gate": "",
-  "parts": "need 20, carry 18.2, stakes 15, opposition -10",
-  "reason": "He made 32% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
-  "scenario": null,
-  "verdict": [
-   0,
-   null,
-   "He made 32% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
    "b"
   ]
  },

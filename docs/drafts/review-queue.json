@@ -170,23 +170,6 @@
   "result": "win"
  },
  {
-  "id": 297,
-  "name": "Tagenarine Chanderpaul",
-  "runs": 207,
-  "year": 2023,
-  "opponent": "Zimbabwe",
-  "venue": "Bulawayo",
-  "score": 46,
-  "stable": 0.5366666666666666,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "carry 25, stakes 6, tempo 25, opposition -10",
-  "facts": "In at 0 for 0, level. He made 46% of the team's 447. The match was drawn. A slow grind at 44 runs per 100 balls.",
-  "result": "draw"
- },
- {
   "id": 305,
   "name": "Dinesh Chandimal",
   "runs": 206,
@@ -323,23 +306,6 @@
   "result": "win"
  },
  {
-  "id": 500,
-  "name": "Mushfiqur Rahim",
-  "runs": 191,
-  "year": 2024,
-  "opponent": "Pakistan",
-  "venue": "Rawalpindi",
-  "score": 51.1,
-  "stable": 0.8766666666666667,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 20, carry 18.1, stakes 6, late 10, opposition -3",
-  "facts": "In at 3 for 147, 301 behind. He made 34% of the team's 565, and no one else came close. The team won by 10 wickets. He added 196 for the 7th wicket.",
-  "result": "win"
- },
- {
   "id": 507,
   "name": "Joe Root",
   "runs": 190,
@@ -391,40 +357,6 @@
   "result": "win"
  },
  {
-  "id": 601,
-  "name": "Ben Duckett",
-  "runs": 182,
-  "year": 2023,
-  "opponent": "Ireland",
-  "venue": "Lord's",
-  "score": 50,
-  "stable": 0.8333333333333334,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 15, carry 12, stakes 15, tempo 10, platform 8, opposition -10",
-  "facts": "In at 0 for 0, 172 behind. He made 35% of the team's 524. The team won by 10 wickets. It was the decider of a level series. As an opener he put on 109 for the first wicket, and the second opener was not out until 361. He scored at 102 runs per 100 balls.",
-  "result": "win"
- },
- {
-  "id": 645,
-  "name": "AB de Villiers",
-  "runs": 178,
-  "year": 2005,
-  "opponent": "West Indies",
-  "venue": "Bridgetown",
-  "score": 50,
-  "stable": 0.8333333333333334,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 20, carry 12, stakes 6, platform 15, opposition -3",
-  "facts": "In at 0 for 0, 296 behind. He made 33% of the team's 548. The team won by 86 runs. As an opener he put on 191 for the first wicket, and the second opener was not out until 392.",
-  "result": "win"
- },
- {
   "id": 661,
   "name": "Rohit Sharma",
   "runs": 177,
@@ -456,23 +388,6 @@
   "today": 1,
   "parts": "need 25, carry 12, stakes 6, opposition -3",
   "facts": "He made 38% of the team's runs. The match did not depend on it: he came in at 3 for 81.",
-  "result": "win"
- },
- {
-  "id": 722,
-  "name": "Abid Ali",
-  "runs": 174,
-  "year": 2019,
-  "opponent": "Sri Lanka",
-  "venue": "Karachi",
-  "score": 50,
-  "stable": 0.8266666666666667,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 10, carry 8, stakes 15, platform 20, opposition -3",
-  "facts": "In at 0 for 0, 80 behind. He made 31% of the team's 555. The team won by 263 runs. It was the decider of a level series. As an opener he put on 278 for the first wicket, and the second opener was not out until 355.",
   "result": "win"
  },
  {
@@ -663,23 +578,6 @@
   "result": "win"
  },
  {
-  "id": 1134,
-  "name": "David Warner",
-  "runs": 154,
-  "year": 2019,
-  "opponent": "Pakistan",
-  "venue": "Brisbane",
-  "score": 51,
-  "stable": 0.8766666666666667,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 20, carry 3, finish 5, stakes 6, platform 20, opposition -3",
-  "facts": "In at 0 for 0, 240 behind. He made 27% of the team's 580. The team won by 5 runs. As an opener he put on 222 for the first wicket, and the second opener was not out until 351.",
-  "result": "win"
- },
- {
   "id": 1165,
   "name": "Matthew Hayden",
   "runs": 153,
@@ -799,23 +697,6 @@
   "result": "win"
  },
  {
-  "id": 1401,
-  "name": "Angelo Mathews",
-  "runs": 145,
-  "year": 2022,
-  "opponent": "Bangladesh",
-  "venue": "Mirpur",
-  "score": 53,
-  "stable": 0.8833333333333333,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 20, carry 3, stakes 15, tempo 25, opposition -10",
-  "facts": "In at 3 for 144, 221 behind. He made 29% of the team's 506. The team won by 10 wickets. It was the decider of a level series. A slow grind at 42 runs per 100 balls.",
-  "result": "win"
- },
- {
   "id": 1484,
   "name": "Ravi Bopara",
   "runs": 143,
@@ -881,23 +762,6 @@
   "today": 1,
   "parts": "need 25, carry 12, stakes 12, opposition -10",
   "facts": "He made 30% of the team's runs. The match did not depend on it: he came in at 3 for 33.",
-  "result": "win"
- },
- {
-  "id": 1745,
-  "name": "Mike Hussey",
-  "runs": 137,
-  "year": 2005,
-  "opponent": "West Indies",
-  "venue": "Hobart",
-  "score": 50,
-  "stable": 0.85,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 15, carry 12, stakes 6, platform 20, opposition -3",
-  "facts": "In at 0 for 0, 149 behind. He made 34% of the team's 406. The team won by 9 wickets. As an opener he put on 231 for the first wicket, and the second opener was not out until 306.",
   "result": "win"
  },
  {
@@ -1122,23 +986,6 @@
   "result": "win"
  },
  {
-  "id": 2532,
-  "name": "Kirk Edwards",
-  "runs": 121,
-  "year": 2011,
-  "opponent": "Bangladesh",
-  "venue": "Mirpur",
-  "score": 50.2,
-  "stable": 0.78,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "carry 20.2, stakes 15, tempo 25, opposition -10",
-  "facts": "In at 1 for 100, 100 ahead. He made 34% of the team's 355, and no one else came close. The team won by 229 runs. It was the decider of a level series. A slow grind at 44 runs per 100 balls.",
-  "result": "win"
- },
- {
   "id": 2535,
   "name": "AB de Villiers",
   "runs": 121,
@@ -1153,23 +1000,6 @@
   "today": 0,
   "parts": "need 18, carry 6.9, finish 5, stakes 3, late 10, opposition -3",
   "facts": "He made 30% of the team's runs. The match did not depend on it: he came in at 3 for 107.",
-  "result": "win"
- },
- {
-  "id": 2539,
-  "name": "Kraigg Brathwaite",
-  "runs": 121,
-  "year": 2018,
-  "opponent": "Bangladesh",
-  "venue": "North Sound",
-  "score": 47.6,
-  "stable": 0.6466666666666666,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 10, carry 8.6, stakes 6, tempo 25, platform 8, opposition -10",
-  "facts": "In at 0 for 0, 43 behind. He made 30% of the team's 406, and no one else came close. The team won by 219 runs. As an opener he put on 113 for the first wicket, and the second opener was not out until 272. A slow grind at 42 runs per 100 balls.",
   "result": "win"
  },
  {
@@ -1238,23 +1068,6 @@
   "today": 1,
   "parts": "need 20, carry 8.5, finish 5, stakes 12, attack 4",
   "facts": "In at 0 for 0, 23 behind. He made 30% of the team's 396, and no one else came close. The team won by 6 runs. The series was still to be settled in this Test. He faced an elite attack.",
-  "result": "win"
- },
- {
-  "id": 2901,
-  "name": "Andrew Strauss",
-  "runs": 116,
-  "year": 2006,
-  "opponent": "Pakistan",
-  "venue": "Leeds",
-  "score": 49,
-  "stable": 0.7833333333333333,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 10, carry 21, stakes 6, platform 15, opposition -3",
-  "facts": "In at 0 for 0, 23 behind. He made 34% of the team's 345, and no one else came close. The team won by 167 runs. As an opener he put on 158 for the first wicket, and the second opener was not out until 237.",
   "result": "win"
  },
  {
@@ -1477,23 +1290,6 @@
   "parts": "need 25, carry 3, finish 15, stakes 6",
   "facts": "In at 3 for 74, 343 behind. He made 25% of the team's 418. The team won by 3 wickets.",
   "result": "win"
- },
- {
-  "id": 3893,
-  "name": "Mushfiqur Rahim",
-  "runs": 105,
-  "year": 2022,
-  "opponent": "Sri Lanka",
-  "venue": "Chattogram",
-  "score": 51,
-  "stable": 0.8,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 20, carry 3, stakes 6, tempo 25, opposition -3",
-  "facts": "In at 3 for 184, 213 behind. He made 23% of the team's 465. The match was drawn. A slow grind at 37 runs per 100 balls.",
-  "result": "draw"
  },
  {
   "id": 3921,
