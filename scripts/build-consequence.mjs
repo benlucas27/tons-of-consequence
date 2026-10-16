@@ -153,7 +153,10 @@ for (const row of ALL) {
   if (next) { out[row.id] = next; v3Partial += 1; }
 }
 // Ben, 16 Oct 2026: with the 12 laws agreed, the rules' answer replaces his earlier hand ruling wherever they disagree (Bradman excepted: he is not in this list)
-for (const r of rerun) out[r.id] = r.verdict;
+// rulings made in the final review (final: true) were made under the 12 laws and stand
+const finalIds = new Set(Object.entries(CONSEQUENCE_OVERRIDES).filter(([, o]) => o.final).map(([k]) => Number(k.split('|')[3])));
+rerun.splice(0, rerun.length, ...rerun.filter((r) => !finalIds.has(r.id)));
+for (const r of rerun) out[r.id] = r.verdict; 
 fs.writeFileSync(path.join(root, 'docs/drafts/review-rerun.json'), JSON.stringify(rerun, null, 1));
 console.log(`Rerun: ${rerun.length} of Ben's hand rulings disagree with the rules (${rerun.filter((r) => r.evidence === 'b').length} ball-by-ball, ${rerun.filter((r) => r.evidence === 'p').length} older, of ${calib.olderTotal || 0} older rulings with series facts).`);
 fs.writeFileSync(path.join(root, 'docs/drafts/review-queue.json'), JSON.stringify(queue, null, 1));

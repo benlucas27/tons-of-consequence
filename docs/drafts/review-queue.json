@@ -102,23 +102,6 @@
   "result": "draw"
  },
  {
-  "id": 144,
-  "name": "Virat Kohli",
-  "runs": 235,
-  "year": 2016,
-  "opponent": "England",
-  "venue": "Wankhede",
-  "score": 46,
-  "stable": 0.56,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 20, carry 10, stakes 6, late 10",
-  "facts": "In at 2 for 146, 254 behind. He made 37% of the team's 631. The team won by 36 runs. He added 241 for the 8th wicket.",
-  "result": "win"
- },
- {
   "id": 185,
   "name": "Lou Vincent",
   "runs": 224,
@@ -133,23 +116,6 @@
   "today": 1,
   "parts": "need 15, carry 28.9, stakes 6",
   "facts": "In at 2 for 70, 141 behind. He made 43% of the team's 522, and no one else came close. The team won by 38 runs.",
-  "result": "win"
- },
- {
-  "id": 241,
-  "name": "Marnus Labuschagne",
-  "runs": 215,
-  "year": 2020,
-  "opponent": "New Zealand",
-  "venue": "Sydney",
-  "score": 44.7,
-  "stable": 0.47,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "carry 32.7, stakes 3, occasion 5, attack 4",
-  "facts": "He made 47% of the team's runs. The match did not depend on it: he came in at 1 for 39.",
   "result": "win"
  },
  {
@@ -184,23 +150,6 @@
   "today": 1,
   "parts": "carry 28.8, stakes 6, platform 8",
   "facts": "He made 44% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
-  "result": "win"
- },
- {
-  "id": 272,
-  "name": "Steve Smith",
-  "runs": 211,
-  "year": 2019,
-  "opponent": "England",
-  "venue": "Manchester",
-  "score": 45.5,
-  "stable": 0.49666666666666665,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 1,
-  "parts": "need 10, carry 29.5, stakes 6",
-  "facts": "In at 2 for 28, 28 ahead. He made 43% of the team's 497, and no one else came close. The team won by 185 runs.",
   "result": "win"
  },
  {
@@ -357,40 +306,6 @@
   "result": "win"
  },
  {
-  "id": 429,
-  "name": "Steve Smith",
-  "runs": 199,
-  "year": 2015,
-  "opponent": "West Indies",
-  "venue": "Kingston",
-  "score": 45.1,
-  "stable": 0.5,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 1,
-  "parts": "carry 33.1, stakes 12",
-  "facts": "In at 1 for 0, level. He made 50% of the team's 399, and no one else came close. The team won by 277 runs. The series was still to be settled in this Test.",
-  "result": "win"
- },
- {
-  "id": 432,
-  "name": "Faf du Plessis",
-  "runs": 199,
-  "year": 2020,
-  "opponent": "Sri Lanka",
-  "venue": "Centurion",
-  "score": 44.2,
-  "stable": 0.36333333333333334,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 15, carry 18.2, stakes 6, occasion 5",
-  "facts": "He made 32% of the team's runs. The match did not depend on it: he came in at 2 for 200.",
-  "result": "win"
- },
- {
   "id": 454,
   "name": "Dimuth Karunaratne",
   "runs": 196,
@@ -439,23 +354,6 @@
   "today": 1,
   "parts": "need 10, carry 28.3, stakes 6, attack 4",
   "facts": "In at 2 for 17, 17 ahead. He made 42% of the team's 458, and no one else came close. The team won by 211 runs. He faced an elite attack.",
-  "result": "win"
- },
- {
-  "id": 519,
-  "name": "Martin Guptill",
-  "runs": 189,
-  "year": 2010,
-  "opponent": "Bangladesh",
-  "venue": "Hamilton",
-  "score": 44,
-  "stable": 0.38333333333333336,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 1,
-  "parts": "need 25, carry 12, stakes 7",
-  "facts": "He made 34% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 3 for 66.",
   "result": "win"
  },
  {
@@ -592,40 +490,6 @@
   "today": 1,
   "parts": "need 25, carry 18.3, stakes 6",
   "facts": "In at 3 for 45, 303 behind. He made 34% of the team's 499, and no one else came close. The team won by 8 wickets.",
-  "result": "win"
- },
- {
-  "id": 763,
-  "name": "Mahmudul Hasan Joy",
-  "runs": 171,
-  "year": 2025,
-  "opponent": "Ireland",
-  "venue": "Sylhet",
-  "score": 44,
-  "stable": 0.38333333333333336,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 20, carry 3, stakes 6, platform 15",
-  "facts": "He made 29% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 0 for 0.",
-  "result": "win"
- },
- {
-  "id": 776,
-  "name": "Joe Burns",
-  "runs": 170,
-  "year": 2016,
-  "opponent": "New Zealand",
-  "venue": "Christchurch",
-  "score": 44,
-  "stable": 0.3466666666666667,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 20, carry 12, stakes 12",
-  "facts": "He made 34% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 0 for 0.",
   "result": "win"
  },
  {
@@ -780,23 +644,6 @@
   "parts": "need 10, carry 30.8, stakes 11",
   "facts": "In at 0 for 0, 87 behind. He made 47% of the team's 331, and no one else came close. The match was drawn, with his side in danger of losing.",
   "result": "draw"
- },
- {
-  "id": 1133,
-  "name": "Tom Latham",
-  "runs": 154,
-  "year": 2019,
-  "opponent": "Sri Lanka",
-  "venue": "Colombo (PSS)",
-  "score": 44,
-  "stable": 0.3466666666666667,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 1,
-  "parts": "need 20, carry 12, stakes 12",
-  "facts": "He made 36% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 0 for 0.",
-  "result": "win"
  },
  {
   "id": 1165,
@@ -969,23 +816,6 @@
   "result": "win"
  },
  {
-  "id": 1420,
-  "name": "David Warner",
-  "runs": 145,
-  "year": 2014,
-  "opponent": "South Africa",
-  "venue": "Cape Town",
-  "score": 45.8,
-  "stable": 0.52,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "carry 32.8, stakes 15, tempo 10, platform 8, safe -20",
-  "facts": "In at 0 for 0, 207 ahead. He made 48% of the team's 303, and no one else came close. The team won by 245 runs. It was the decider of a level series. As an opener he put on 123 for the first wicket, and the second opener was not out until 290. He scored at 93 runs per 100 balls.",
-  "result": "win"
- },
- {
   "id": 1495,
   "name": "Babar Azam",
   "runs": 143,
@@ -1054,23 +884,6 @@
   "result": "draw"
  },
  {
-  "id": 1616,
-  "name": "Ben Duckett",
-  "runs": 140,
-  "year": 2025,
-  "opponent": "Zimbabwe",
-  "venue": "Nottingham",
-  "score": 46,
-  "stable": 0.5633333333333334,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "carry 1, stakes 15, tempo 10, platform 20",
-  "facts": "In at 0 for 0, level. He made 25% of the team's 565. The team won by 45 runs. It was the decider of a level series. As an opener he put on 231 for the first wicket, and the second opener was not out until 368. He scored at 104 runs per 100 balls.",
-  "result": "win"
- },
- {
   "id": 1617,
   "name": "Shai Hope",
   "runs": 140,
@@ -1086,23 +899,6 @@
   "parts": "need 20, carry 12, stakes 11",
   "facts": "He made 31% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 2 for 25.",
   "result": "draw"
- },
- {
-  "id": 1620,
-  "name": "Ashwell Prince",
-  "runs": 139,
-  "year": 2005,
-  "opponent": "Zimbabwe",
-  "venue": "Centurion",
-  "score": 45.3,
-  "stable": 0.49666666666666665,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 15, carry 8.3, stakes 12, late 10",
-  "facts": "In at 3 for 133, 136 behind. He made 29% of the team's 480, and no one else came close. The team won by 62 runs. The series was still to be settled in this Test. He added 142 for the 7th wicket.",
-  "result": "win"
  },
  {
   "id": 1642,
@@ -1343,23 +1139,6 @@
   "result": "win"
  },
  {
-  "id": 2087,
-  "name": "Kane Williamson",
-  "runs": 129,
-  "year": 2020,
-  "opponent": "Pakistan",
-  "venue": "Mount Maunganui",
-  "score": 44.5,
-  "stable": 0.4266666666666667,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "carry 8.5, stakes 6, tempo 25, occasion 5",
-  "facts": "He made 30% of the team's runs. The match did not depend on it: he came in at 1 for 4.",
-  "result": "win"
- },
- {
   "id": 2125,
   "name": "Paul Collingwood",
   "runs": 128,
@@ -1564,23 +1343,6 @@
   "result": "win"
  },
  {
-  "id": 2743,
-  "name": "Simon Katich",
-  "runs": 118,
-  "year": 2005,
-  "opponent": "New Zealand",
-  "venue": "Christchurch",
-  "score": 45,
-  "stable": 0.48,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 20, carry 3, stakes 6, late 10, lower 6",
-  "facts": "In at 5 for 160, 273 behind. He made 27% of the team's 432. The team won by 9 wickets. He added 212 for the 7th wicket. He batted at number 7, a lower-order hundred.",
-  "result": "win"
- },
- {
   "id": 2768,
   "name": "Yashasvi Jaiswal",
   "runs": 118,
@@ -1683,23 +1445,6 @@
   "result": "win"
  },
  {
-  "id": 2998,
-  "name": "Dimuth Karunaratne",
-  "runs": 115,
-  "year": 2023,
-  "opponent": "Ireland",
-  "venue": "Galle",
-  "score": 45,
-  "stable": 0.44666666666666666,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 20, carry -12, finish 5, stakes 12, platform 20",
-  "facts": "In at 0 for 0, 492 behind. He made 16% of the team's 704. The team won by 10 runs. The series was still to be settled in this Test. As an opener he put on 228 for the first wicket, and the second opener was not out until 496.",
-  "result": "win"
- },
- {
   "id": 3064,
   "name": "Misbah-ul-Haq",
   "runs": 114,
@@ -1785,23 +1530,6 @@
   "result": "win"
  },
  {
-  "id": 3382,
-  "name": "Matthew Hayden",
-  "runs": 110,
-  "year": 2005,
-  "opponent": "West Indies",
-  "venue": "Hobart",
-  "score": 44,
-  "stable": 0.4033333333333333,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 15, carry 3, stakes 6, platform 20",
-  "facts": "He made 27% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 0 for 0.",
-  "result": "win"
- },
- {
   "id": 3392,
   "name": "Kirk Edwards",
   "runs": 110,
@@ -1884,23 +1612,6 @@
   "today": 0,
   "parts": "carry 21.2, stakes 12, late 10, lower 6",
   "facts": "In at 5 for 157, 157 ahead. He made 32% of the team's 328, and no one else came close. The team won by 75 runs. The series was still to be settled in this Test. He added 102 for the 9th wicket. He batted at number 7, a lower-order hundred.",
-  "result": "win"
- },
- {
-  "id": 3769,
-  "name": "Alviro Petersen",
-  "runs": 106,
-  "year": 2013,
-  "opponent": "New Zealand",
-  "venue": "Cape Town",
-  "score": 45.9,
-  "stable": 0.5466666666666666,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 10, carry 19.9, finish 5, stakes 6, occasion 5",
-  "facts": "In at 0 for 0, 45 behind. He made 31% of the team's 347. The team won by 27 runs. It was a Boxing Day or New Year Test.",
   "result": "win"
  },
  {
@@ -2142,23 +1853,6 @@
   "result": "win"
  },
  {
-  "id": 4129,
-  "name": "Virat Kohli",
-  "runs": 103,
-  "year": 2012,
-  "opponent": "New Zealand",
-  "venue": "Bengaluru",
-  "score": 45.2,
-  "stable": 0.44,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 1,
-  "parts": "need 25, carry 8.2, stakes 12",
-  "facts": "In at 3 for 67, 298 behind. He made 29% of the team's 353, and no one else came close. The team won by 5 wickets. The series was still to be settled in this Test.",
-  "result": "win"
- },
- {
   "id": 4150,
   "name": "Marnus Labuschagne",
   "runs": 103,
@@ -2173,23 +1867,6 @@
   "today": 0,
   "parts": "carry 5.6, stakes 6, tempo 25, attack 10",
   "facts": "In at 1 for 4, 4 ahead. He made 22% of the team's 473. The team won by 275 runs. He faced an elite attack. A slow grind at 34 runs per 100 balls.",
-  "result": "win"
- },
- {
-  "id": 4154,
-  "name": "Rohit Sharma",
-  "runs": 103,
-  "year": 2023,
-  "opponent": "West Indies",
-  "venue": "Roseau",
-  "score": 44,
-  "stable": 0.4033333333333333,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 15, carry 3, stakes 6, platform 20",
-  "facts": "He made 25% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 0 for 0.",
   "result": "win"
  },
  {
@@ -2292,23 +1969,6 @@
   "today": 1,
   "parts": "need 25, carry 7.4, finish 5, stakes 6",
   "facts": "He made 27% of the team's runs. The match did not depend on it: he came in at 3 for 76.",
-  "result": "win"
- },
- {
-  "id": 4290,
-  "name": "Dhananjaya de Silva",
-  "runs": 102,
-  "year": 2024,
-  "opponent": "Bangladesh",
-  "venue": "Sylhet",
-  "score": 46,
-  "stable": 0.51,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 1,
-  "parts": "need 25, carry 15, stakes 6",
-  "facts": "In at 4 for 47, 47 ahead. He made 36% of the team's 280. The team won by 328 runs.",
   "result": "win"
  },
  {
@@ -2446,23 +2106,6 @@
   "parts": "need 20, carry 19.3, stakes 11",
   "facts": "In at 0 for 0, 367 behind. He made 39% of the team's 260. The match was drawn, with his side in danger of losing.",
   "result": "draw"
- },
- {
-  "id": 4590,
-  "name": "Steve Smith",
-  "runs": 100,
-  "year": 2014,
-  "opponent": "South Africa",
-  "venue": "Centurion",
-  "score": 44,
-  "stable": 0.36666666666666664,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 1,
-  "parts": "need 25, carry 3, stakes 6, attack 10",
-  "facts": "He made 25% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 4 for 98.",
-  "result": "win"
  },
  {
   "id": 4598,

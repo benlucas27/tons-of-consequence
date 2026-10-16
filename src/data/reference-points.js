@@ -35,7 +35,7 @@ export const REFERENCE_POINTS = {
    "lost": 7
   },
   "measured": 30,
-  "tons": 3,
+  "tons": 4,
   "byTier": [
    14,
    6,
@@ -43,7 +43,7 @@ export const REFERENCE_POINTS = {
    2
   ],
   "tonsByTier": [
-   1,
+   2,
    2,
    0,
    0
@@ -139,7 +139,7 @@ export const REFERENCE_POINTS = {
    "lost": 3
   },
   "measured": 26,
-  "tons": 3,
+  "tons": 4,
   "byTier": [
    7,
    10,
@@ -148,13 +148,13 @@ export const REFERENCE_POINTS = {
   ],
   "tonsByTier": [
    1,
-   0,
+   1,
    2,
    0
   ],
   "away": 5,
   "home": 20,
-  "awayTons": 0
+  "awayTons": 1
  },
  "Rohit Sharma|IND": {
   "hundreds": 12,
@@ -503,7 +503,7 @@ export const REFERENCE_POINTS = {
    "lost": 2
   },
   "measured": 11,
-  "tons": 0,
+  "tons": 1,
   "byTier": [
    3,
    2,
@@ -512,7 +512,7 @@ export const REFERENCE_POINTS = {
   ],
   "tonsByTier": [
    0,
-   0,
+   1,
    0,
    0
   ],
