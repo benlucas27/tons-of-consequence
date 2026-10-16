@@ -120,6 +120,7 @@ const handRuled = (row) => {
 };
 const queue = [];
 const calib = { total: 0, agree: 0 };
+const scoreDump = {}; // id -> what the rules scored it, for the batter reviews
 const rerun = []; // hundreds Ben ruled by hand where the rules, run again, disagree
 const addRerun = (row, mine, f, mm, evidence) => {
   const d = mm.ton ? describeTon(f, mm) : null;
@@ -138,6 +139,7 @@ for (const [idStr, f] of Object.entries(fullCases)) {
   const id = Number(idStr);
   const row = ALL.find((c) => c.id === id);
   if (handRuled(row)) { calib.total += 1; { const mm = modelV3(f); if (mm.ton === (out[id][0] === 1)) calib.agree += 1; else { addRerun(row, { verdict: out[id][0] === 1 ? 'yes' : 'no', note: out[id][2] }, f, mm, 'b'); } if (false && process.env.DEBUG_CALIB) console.log('DISAGREE', out[id][0] === 1 ? 'Ben yes, model no' : 'Ben no, model yes', row.name, row.runs, row.opponent, row.year, 'score', mm.score, mm.gate ? '' : 'gate:' + mm.gateWhy, JSON.stringify(Object.fromEntries(Object.entries(mm.parts).filter(([, v]) => v).map(([k, v]) => [k, Math.round(v)])))); } continue; } // Ben's own ruling stands (and is a check on the model)
+  { const mm = modelV3(f); scoreDump[id] = { score: mm.score, gate: mm.gate, why: mm.gateWhy, parts: Object.entries(mm.parts).filter(([, v]) => v).map(([k, v]) => `${k} ${Math.round(v * 10) / 10}`).join(', '), evidence: 'b', facts: mm.ton ? describeTon(f, mm).reason : describeGoodTon(f, mm), result: f.result }; }
   const next = decide(row, f, 'b', out[id]);
   if (next && out[id] && next[0] !== out[id][0]) v3Changed += 1; else v3Kept += 1;
   if (next) out[id] = next;
@@ -150,6 +152,7 @@ for (const row of ALL) {
   const stakes = dead ? 'dead' : n === mm && lead === 0 ? 'decider' : n === mm ? 'on the line' : mm === 1 ? 'single' : 'live';
   const f = { occasion: OCCASIONS[row.id]?.tag, occasionNote: OCCASIONS[row.id]?.note, result, inn, lead: leadStart, share: tot ? row.runs / tot : null, total: tot, stakes, sideAhead: lead != null && lead > 0, seriesNotAhead: lead == null || lead <= 0, margin, start, balls: row.balls, runs: row.runs, pos: WIKIPEDIA_FACTS[row.id]?.[1] ?? null, entryWkts: null, others: null, nextBest: null, followOn: false };
   if (OLDER_RULINGS[row.id]) { if (out[row.id]) { const mm = modelV3(f); calib.olderTotal = (calib.olderTotal || 0) + 1; if (mm.ton !== (out[row.id][0] === 1)) addRerun(row, { verdict: out[row.id][0] === 1 ? 'yes' : 'no', note: out[row.id][2] }, f, mm, 'p'); } continue; }
+  { const mm = modelV3(f); scoreDump[row.id] = { score: mm.score, gate: mm.gate, why: mm.gateWhy, parts: Object.entries(mm.parts).filter(([, v]) => v).map(([k, v]) => `${k} ${Math.round(v * 10) / 10}`).join(', '), evidence: 'p', facts: mm.ton ? describeTon(f, mm).reason : describeGoodTon(f, mm), result: f.result }; }
   const next = decide(row, f, 'p', null);
   if (next) { out[row.id] = next; v3Partial += 1; }
 }
@@ -159,6 +162,7 @@ const finalIds = new Set(Object.entries(CONSEQUENCE_OVERRIDES).filter(([, o]) =>
 rerun.splice(0, rerun.length, ...rerun.filter((r) => !finalIds.has(r.id)));
 for (const r of rerun) out[r.id] = r.verdict; 
 for (const [id, v] of Object.entries(FINAL_OLDER_RULINGS)) out[id] = v;
+fs.writeFileSync(path.join(root, 'docs/drafts/scores.json'), JSON.stringify(scoreDump));
 fs.writeFileSync(path.join(root, 'docs/drafts/review-rerun.json'), JSON.stringify(rerun, null, 1));
 console.log(`Rerun: ${rerun.length} of Ben's hand rulings disagree with the rules (${rerun.filter((r) => r.evidence === 'b').length} ball-by-ball, ${rerun.filter((r) => r.evidence === 'p').length} older, of ${calib.olderTotal || 0} older rulings with series facts).`);
 fs.writeFileSync(path.join(root, 'docs/drafts/review-queue.json'), JSON.stringify(queue, null, 1));
