@@ -29,7 +29,7 @@ export function batterRecords({ batter, opposition, oppositionTier, where, resul
     const matching = b.innings.filter((c) => {
       if (cc && c.country !== cc) return false;
       if (opposition && c.opponent.toLowerCase() !== opposition.toLowerCase()) return false;
-      if (oppositionTier && tierOfOpponent(c.opponent) !== oppositionTier) return false;
+      if (oppositionTier && tierOfOpponent(c.opponent, c.year) !== oppositionTier) return false;
       if (since != null && c.year < since) return false;
       if (until != null && c.year > until) return false;
       if (wantWhere && wherePlayed(c.id) !== wantWhere) return false;

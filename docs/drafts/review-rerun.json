@@ -12,9 +12,9 @@
    "note": "He scored 52% of the team's runs."
   },
   "rules": "no",
-  "score": 34,
+  "score": 24,
   "gate": "",
-  "parts": "carry 28, stakes 6",
+  "parts": "carry 28, stakes 6, opposition -10",
   "reason": "He made 52% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
   "scenario": null,
   "verdict": [
@@ -37,9 +37,9 @@
    "note": "A fast hundred: 94 runs per 100 balls off 285 balls, 100th run off ball 100, batted 4, innings 1. The match was won."
   },
   "rules": "no",
-  "score": 38,
+  "score": 35,
   "gate": "",
-  "parts": "carry 22, stakes 6, tempo 10",
+  "parts": "carry 22, stakes 6, tempo 10, opposition -3",
   "reason": "He made 46% of the team's runs. The match did not depend on it: he came in at 2 for 104.",
   "scenario": null,
   "verdict": [
@@ -112,9 +112,9 @@
    "note": "2nd innings, team 99 behind. South Africa won by an innings and 92 runs. He made 45% of the team's runs. Another hundred came in the same innings."
   },
   "rules": "yes",
-  "score": 54,
+  "score": 51,
   "gate": "",
-  "parts": "need 20, carry 22, stakes 12",
+  "parts": "need 20, carry 22, stakes 12, opposition -3",
   "reason": "In at 0 for 0, 99 behind. He made 45% of the team's 517. The team won by 92 runs. The series was still to be settled in this Test.",
   "scenario": "Carried the innings",
   "verdict": [
@@ -137,9 +137,9 @@
    "note": "He made 232, 36% of Australia's 654, after coming in at 0 for 0. Australia won by an innings and 242 runs. Another hundred came in the same innings."
   },
   "rules": "no",
-  "score": 16,
+  "score": 13,
   "gate": "",
-  "parts": "carry 10, stakes 6",
+  "parts": "carry 10, stakes 6, opposition -3",
   "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
   "scenario": null,
   "verdict": [
@@ -162,9 +162,9 @@
    "note": "Judged a good ton: the two hundreds at Galle were in the same match, and the win was not decided by this one."
   },
   "rules": "yes",
-  "score": 59.4,
+  "score": 56.4,
   "gate": "",
-  "parts": "need 15, carry 38.4, stakes 6",
+  "parts": "need 15, carry 38.4, stakes 6, opposition -3",
   "reason": "In at 2 for 17, 118 behind. He made 54% of the team's 421, and no one else came close. The team won by 7 wickets.",
   "scenario": "Carried the innings",
   "verdict": [
@@ -187,15 +187,15 @@
    "note": "He made 227, 40% of New Zealand's 575, after coming in at 0 for 0. New Zealand won by 323 runs. Another hundred came in the same innings."
   },
   "rules": "no",
-  "score": 44,
+  "score": 41,
   "gate": "",
-  "parts": "carry 12, stakes 12, platform 20",
-  "reason": "He made 40% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 0 for 0.",
+  "parts": "carry 12, stakes 12, platform 20, opposition -3",
+  "reason": "He made 40% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 40% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 0 for 0.",
+   "He made 40% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
    "b"
   ]
  },
@@ -262,15 +262,40 @@
    "note": "Judged a good ton in a drawn match, not one that saved it."
   },
   "rules": "yes",
-  "score": 53,
+  "score": 50,
   "gate": "",
-  "parts": "need 20, carry 22, stakes 11",
+  "parts": "need 20, carry 22, stakes 11, opposition -3",
   "reason": "In at 1 for 0, 314 behind. He made 44% of the team's 483. The match was drawn, with his side in danger of losing.",
   "scenario": "Saved the match",
   "verdict": [
    1,
    "Saved the match",
    "In at 1 for 0, 314 behind. He made 44% of the team's 483. The match was drawn, with his side in danger of losing.",
+   "b"
+  ]
+ },
+ {
+  "id": 330,
+  "name": "Ollie Pope",
+  "runs": 205,
+  "year": 2023,
+  "opponent": "Ireland",
+  "venue": "Lord's",
+  "evidence": "b",
+  "yours": {
+   "verdict": "yes",
+   "note": "A fast hundred: 99 runs per 100 balls off 208 balls, 100th run off ball 126, batted 3, innings 2. The match was won."
+  },
+  "rules": "no",
+  "score": 37,
+  "gate": "",
+  "parts": "need 10, carry 12, stakes 15, tempo 10, opposition -10",
+  "reason": "He made 39% of the team's runs. The match did not depend on it: he came in at 1 for 109.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 39% of the team's runs. The match did not depend on it: he came in at 1 for 109.",
    "b"
   ]
  },
@@ -300,31 +325,6 @@
   ]
  },
  {
-  "id": 402,
-  "name": "Younis Khan",
-  "runs": 200,
-  "year": 2013,
-  "opponent": "Zimbabwe",
-  "venue": "Harare",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "3rd innings, team 57 behind. Pakistan won by 221 runs. He made 48% of the team's runs."
-  },
-  "rules": "yes",
-  "score": 48.4,
-  "gate": "",
-  "parts": "need 10, carry 32.4, stakes 6",
-  "reason": "In at 2 for 21, 57 behind. He made 48% of the team's 419, and no one else came close. The team won by 221 runs.",
-  "scenario": "Carried the innings",
-  "verdict": [
-   1,
-   "Carried the innings",
-   "In at 2 for 21, 57 behind. He made 48% of the team's 419, and no one else came close. The team won by 221 runs.",
-   "b"
-  ]
- },
- {
   "id": 405,
   "name": "Angelo Mathews",
   "runs": 200,
@@ -337,9 +337,9 @@
    "note": "No: he came in comfortably and the team did not depend on him."
   },
   "rules": "yes",
-  "score": 69.8,
+  "score": 59.8,
   "gate": "",
-  "parts": "need 20, carry 18.8, stakes 6, tempo 25",
+  "parts": "need 20, carry 18.8, stakes 6, tempo 25, opposition -10",
   "reason": "In at 2 for 92, 266 behind. He made 39% of the team's 515, and no one else came close. The team won by 10 wickets. A slow grind at 43 runs per 100 balls.",
   "scenario": "Rescued the innings",
   "verdict": [
@@ -387,9 +387,9 @@
    "note": "Judged a good ton: the two hundreds at Galle were in the same match, and the win was not decided by this one."
   },
   "rules": "yes",
-  "score": 70.6,
+  "score": 67.6,
   "gate": "",
-  "parts": "need 20, carry 38.6, stakes 12",
+  "parts": "need 20, carry 38.6, stakes 12, opposition -3",
   "reason": "In at 2 for 5, 376 behind. He made 54% of the team's 344, and no one else came close. The team won by 6 wickets. The series was still to be settled in this Test.",
   "scenario": "Carried the innings",
   "verdict": [
@@ -575,6 +575,31 @@
   ]
  },
  {
+  "id": 961,
+  "name": "Travis Head",
+  "runs": 161,
+  "year": 2019,
+  "opponent": "Sri Lanka",
+  "venue": "Canberra",
+  "evidence": "b",
+  "yours": {
+   "verdict": "yes",
+   "note": "He came in at 3 for 28."
+  },
+  "rules": "no",
+  "score": 44,
+  "gate": "",
+  "parts": "need 25, carry 10, stakes 12, opposition -3",
+  "reason": "He made 30% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 3 for 28.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 30% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 3 for 28.",
+   "b"
+  ]
+ },
+ {
   "id": 995,
   "name": "Kraigg Brathwaite",
   "runs": 160,
@@ -662,9 +687,9 @@
    "note": "He made 156, 36% of New Zealand's 431, after coming in at 0 for 0. New Zealand won by 122 runs."
   },
   "rules": "no",
-  "score": 23.5,
+  "score": 20.5,
   "gate": "",
-  "parts": "carry 17.5, stakes 6",
+  "parts": "carry 17.5, stakes 6, opposition -3",
   "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
   "scenario": null,
   "verdict": [
@@ -712,9 +737,9 @@
    "note": "A fast hundred: 92 runs per 100 balls off 165 balls, 100th run off ball 109, batted 4, innings 2. The match was won."
   },
   "rules": "yes",
-  "score": 49,
+  "score": 46,
   "gate": "",
-  "parts": "need 10, carry 17, stakes 12, tempo 10",
+  "parts": "need 10, carry 17, stakes 12, tempo 10, opposition -3",
   "reason": "In at 2 for 213, 62 behind. He made 33% of the team's 460, and no one else came close. The team won by 8 wickets. The series was still to be settled in this Test. He scored at 92 runs per 100 balls.",
   "scenario": "Carried the innings",
   "verdict": [
@@ -887,9 +912,9 @@
    "note": "A slow grind: 42 runs per 100 balls off 344 balls, 100th run off ball 232, batted 3, innings 1. The match was drawn."
   },
   "rules": "yes",
-  "score": 53.9,
+  "score": 50.9,
   "gate": "",
-  "parts": "carry 16.9, stakes 12, tempo 25",
+  "parts": "carry 16.9, stakes 12, tempo 25, opposition -3",
   "reason": "In at 1 for 4, 4 ahead. He made 35% of the team's 413, and no one else came close. The match was drawn. The series was still to be settled in this Test. A slow grind at 42 runs per 100 balls.",
   "scenario": "Wore the opposition down",
   "verdict": [
@@ -1012,9 +1037,9 @@
    "note": "Judged a good ton in a drawn match, not one that saved it."
   },
   "rules": "yes",
-  "score": 63.9,
+  "score": 60.9,
   "gate": "",
-  "parts": "need 15, carry 37.9, stakes 11",
+  "parts": "need 15, carry 37.9, stakes 11, opposition -3",
   "reason": "In at 0 for 0, 149 behind. He made 50% of the team's 279, and no one else came close. The match was drawn, with his side in danger of losing. The rest of the team added only 140.",
   "scenario": "Saved the match",
   "verdict": [
@@ -1037,9 +1062,9 @@
    "note": "Judged a good ton: against Bangladesh, in a win the hundred did not decide."
   },
   "rules": "yes",
-  "score": 60,
+  "score": 50,
   "gate": "",
-  "parts": "need 20, carry 25, stakes 15",
+  "parts": "need 20, carry 25, stakes 15, opposition -10",
   "reason": "In at 1 for 7, 233 behind. He made 40% of the team's 346. The team won by 7 wickets. It was the decider of a level series.",
   "scenario": "Carried the innings",
   "verdict": [
@@ -1162,9 +1187,9 @@
    "note": "No: he came in comfortably and the team did not depend on him."
   },
   "rules": "yes",
-  "score": 53.5,
+  "score": 50.5,
   "gate": "",
-  "parts": "need 20, carry 21.5, stakes 12",
+  "parts": "need 20, carry 21.5, stakes 12, opposition -3",
   "reason": "In at 2 for 43, 324 behind. He made 38% of the team's 349, and no one else came close. The team won by 8 wickets. The series was still to be settled in this Test.",
   "scenario": "Carried the innings",
   "verdict": [
@@ -1187,9 +1212,9 @@
    "note": "2nd innings, team 87 behind. Australia won by 9 wickets. He made 41% of the team's runs."
   },
   "rules": "yes",
-  "score": 68.6,
+  "score": 65.6,
   "gate": "",
-  "parts": "need 25, carry 32.6, stakes 6, late 5",
+  "parts": "need 25, carry 32.6, stakes 6, late 5, opposition -3",
   "reason": "In at 3 for 61, 87 behind. He made 41% of the team's 318, and no one else came close. The team won by 9 wickets. He added 97 for the 10th wicket.",
   "scenario": "Carried the innings",
   "verdict": [
@@ -1225,31 +1250,6 @@
   ]
  },
  {
-  "id": 2081,
-  "name": "Mahela Jayawardene",
-  "runs": 129,
-  "year": 2014,
-  "opponent": "Pakistan",
-  "venue": "Dubai (DICS)",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "2nd innings, team 77 behind. Sri Lanka won by 9 wickets. He made 33% of the team's runs."
-  },
-  "rules": "yes",
-  "score": 47.1,
-  "gate": "",
-  "parts": "need 25, carry 16.1, stakes 6",
-  "reason": "In at 3 for 88, 77 behind. He made 33% of the team's 388. The team won by 9 wickets.",
-  "scenario": "Rescued the innings",
-  "verdict": [
-   1,
-   "Rescued the innings",
-   "In at 3 for 88, 77 behind. He made 33% of the team's 388. The team won by 9 wickets.",
-   "b"
-  ]
- },
- {
   "id": 2088,
   "name": "KL Rahul",
   "runs": 129,
@@ -1271,31 +1271,6 @@
    0,
    null,
    "He made 35% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
-   "b"
-  ]
- },
- {
-  "id": 2128,
-  "name": "Ian Bell",
-  "runs": 128,
-  "year": 2010,
-  "opponent": "Bangladesh",
-  "venue": "Manchester",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "1st innings. England won by an innings and 80 runs. He made 31% of the team's runs. Another hundred was scored in the match."
-  },
-  "rules": "yes",
-  "score": 53.2,
-  "gate": "",
-  "parts": "need 25, carry 16.2, stakes 12",
-  "reason": "In at 3 for 83, 83 ahead. He made 31% of the team's 419. The team won by 80 runs. The series was still to be settled in this Test.",
-  "scenario": "Rescued the innings",
-  "verdict": [
-   1,
-   "Rescued the innings",
-   "In at 3 for 83, 83 ahead. He made 31% of the team's 419. The team won by 80 runs. The series was still to be settled in this Test.",
    "b"
   ]
  },
@@ -1337,9 +1312,9 @@
    "note": "No: he came in comfortably and the team did not depend on him."
   },
   "rules": "yes",
-  "score": 61.3,
+  "score": 58.3,
   "gate": "",
-  "parts": "carry 21.3, stakes 15, tempo 25",
+  "parts": "carry 21.3, stakes 15, tempo 25, opposition -3",
   "reason": "In at 0 for 0, level. He made 34% of the team's 376, and no one else came close. The team won by 101 runs. It was the decider of a level series. A slow grind at 38 runs per 100 balls.",
   "scenario": "Carried the innings",
   "verdict": [
@@ -1362,9 +1337,9 @@
    "note": "2nd innings, team 157 behind. South Africa won by 10 wickets. He made 42% of the team's runs. Another hundred was scored in the match."
   },
   "rules": "yes",
-  "score": 62.8,
+  "score": 59.8,
   "gate": "",
-  "parts": "need 15, carry 30.8, stakes 12, occasion 5",
+  "parts": "need 15, carry 30.8, stakes 12, occasion 5, opposition -3",
   "reason": "In at 0 for 0, 157 behind. He made 42% of the team's 302, and no one else came close. The team won by 10 wickets. The series was still to be settled in this Test. It was a Boxing Day or New Year Test.",
   "scenario": "Carried the innings",
   "verdict": [
@@ -1437,9 +1412,9 @@
    "note": "No: he came in comfortably and the team did not depend on him."
   },
   "rules": "yes",
-  "score": 69.5,
+  "score": 59.5,
   "gate": "",
-  "parts": "need 10, carry 18.5, finish 5, stakes 6, tempo 10, platform 20",
+  "parts": "need 10, carry 18.5, finish 5, stakes 6, tempo 10, platform 20, opposition -10",
   "reason": "In at 0 for 0, 54 behind. He made 36% of the team's 340. The team won by 21 runs. As an opener he put on 217 for the first wicket, and the second opener was not out until 234. He scored at 113 runs per 100 balls.",
   "scenario": "Carried the innings",
   "verdict": [
@@ -1537,9 +1512,9 @@
    "note": "2nd innings, team 121 behind. Australia won by 10 wickets. He made 42% of the team's runs."
   },
   "rules": "yes",
-  "score": 63,
+  "score": 60,
   "gate": "",
-  "parts": "need 25, carry 32, stakes 6",
+  "parts": "need 25, carry 32, stakes 6, opposition -3",
   "reason": "In at 3 for 67, 121 behind. He made 42% of the team's 283, and no one else came close. The team won by 10 wickets.",
   "scenario": "Carried the innings",
   "verdict": [
@@ -1650,31 +1625,6 @@
   ]
  },
  {
-  "id": 3138,
-  "name": "Marcus Trescothick",
-  "runs": 113,
-  "year": 2003,
-  "opponent": "Bangladesh",
-  "venue": "Dhaka",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "No: he came in comfortably and the team did not depend on him."
-  },
-  "rules": "yes",
-  "score": 54.5,
-  "gate": "",
-  "parts": "need 20, carry 20.5, stakes 6, platform 8",
-  "reason": "In at 0 for 0, 203 behind. He made 38% of the team's 295, and no one else came close. The team won by 7 wickets. As an opener he put on 137 for the first wicket, and the second opener was not out until 175.",
-  "scenario": "Carried the innings",
-  "verdict": [
-   1,
-   "Carried the innings",
-   "In at 0 for 0, 203 behind. He made 38% of the team's 295, and no one else came close. The team won by 7 wickets. As an opener he put on 137 for the first wicket, and the second opener was not out until 175.",
-   "b"
-  ]
- },
- {
   "id": 3301,
   "name": "Taufeeq Umar",
   "runs": 111,
@@ -1700,6 +1650,31 @@
   ]
  },
  {
+  "id": 3305,
+  "name": "Matthew Hayden",
+  "runs": 111,
+  "year": 2005,
+  "opponent": "ICC World XI",
+  "venue": "Sydney",
+  "evidence": "b",
+  "yours": {
+   "verdict": "yes",
+   "note": "4 wickets fell around him while the team was under 200."
+  },
+  "rules": "no",
+  "score": 43.2,
+  "gate": "",
+  "parts": "need 20, carry 18.2, stakes 15, opposition -10",
+  "reason": "He made 32% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 32% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "b"
+  ]
+ },
+ {
   "id": 3323,
   "name": "Jamie Smith",
   "runs": 111,
@@ -1712,9 +1687,9 @@
    "note": "No: he came in comfortably and the team did not depend on him."
   },
   "rules": "yes",
-  "score": 50,
+  "score": 47,
   "gate": "",
-  "parts": "need 18, carry 21, stakes 6, late 5",
+  "parts": "need 18, carry 21, stakes 6, late 5, opposition -3",
   "reason": "In at 4 for 125, 111 behind. He made 31% of the team's 358, and no one else came close. The team won by 5 wickets. He added 66 for the 7th wicket.",
   "scenario": "Carried the innings",
   "verdict": [
@@ -1762,9 +1737,9 @@
    "note": "No: he came in comfortably and the team did not depend on him."
   },
   "rules": "yes",
-  "score": 55.7,
+  "score": 45.7,
   "gate": "",
-  "parts": "carry 18.7, stakes 12, tempo 25",
+  "parts": "carry 18.7, stakes 12, tempo 25, opposition -10",
   "reason": "In at 0 for 0, level. He made 31% of the team's 354. The team won by 166 runs. The series was still to be settled in this Test. A slow grind at 39 runs per 100 balls.",
   "scenario": "Carried the innings",
   "verdict": [
@@ -1787,9 +1762,9 @@
    "note": "Judged a good ton: against Bangladesh, in a win the hundred did not decide."
   },
   "rules": "yes",
-  "score": 84.6,
+  "score": 74.6,
   "gate": "",
-  "parts": "need 20, carry 42.6, finish 10, stakes 12",
+  "parts": "need 20, carry 42.6, finish 10, stakes 12, opposition -10",
   "reason": "In at 0 for 0, 208 behind. He made 52% of the team's 209. The team won by 9 wickets. The series was still to be settled in this Test. The rest of the team added only 100.",
   "scenario": "Chased it down",
   "verdict": [
@@ -1887,9 +1862,9 @@
    "note": "No: he came in comfortably and the team did not depend on him."
   },
   "rules": "yes",
-  "score": 58,
+  "score": 48,
   "gate": "",
-  "parts": "need 18, carry 3, stakes 12, tempo 25",
+  "parts": "need 18, carry 3, stakes 12, tempo 25, opposition -10",
   "reason": "In at 3 for 114, 61 behind. He made 28% of the team's 381. The team won by 65 runs. The series was still to be settled in this Test. A slow grind at 38 runs per 100 balls.",
   "scenario": "Rescued the innings",
   "verdict": [
@@ -1937,9 +1912,9 @@
    "note": "No: he came in comfortably and the team did not depend on him."
   },
   "rules": "yes",
-  "score": 56.4,
+  "score": 53.4,
   "gate": "",
-  "parts": "need 18, carry 21.4, stakes 6, late 5, lower 6",
+  "parts": "need 18, carry 21.4, stakes 6, late 5, lower 6, opposition -3",
   "reason": "In at 5 for 103, 103 ahead. He made 31% of the team's 342, and no one else came close. The team won by 211 runs. He added 88 for the 7th wicket. He batted at number 7, a lower-order hundred.",
   "scenario": "Carried the innings",
   "verdict": [
@@ -1987,9 +1962,9 @@
    "note": "1st innings. India won by 113 runs. He made 43% of the team's runs. 2 other hundreds were scored in the match."
   },
   "rules": "yes",
-  "score": 64,
+  "score": 54,
   "gate": "",
-  "parts": "need 20, carry 38, stakes 6",
+  "parts": "need 20, carry 38, stakes 6, opposition -10",
   "reason": "In at 2 for 79, 79 ahead. He made 43% of the team's 243, and no one else came close. The team won by 113 runs. The rest of the team added only 138.",
   "scenario": "Carried the innings",
   "verdict": [
@@ -2012,9 +1987,9 @@
    "note": "New Zealand were 4 for 126 when he came in, 118 behind. He made 105 not out, 24% of the 431, and New Zealand won by an innings and 65 runs. Another hundred came in the same innings."
   },
   "rules": "no",
-  "score": 33,
+  "score": 30,
   "gate": "",
-  "parts": "need 18, carry 3, stakes 12",
+  "parts": "need 18, carry 3, stakes 12, opposition -3",
   "reason": "He made 24% of the team's runs. The match did not depend on it: he came in at 4 for 126.",
   "scenario": null,
   "verdict": [
@@ -2087,9 +2062,9 @@
    "note": "South Africa were 3 for 126 when he came in, 51 behind. He made 103, 24% of the 431, and South Africa won by 9 wickets."
   },
   "rules": "no",
-  "score": 35.9,
+  "score": 32.9,
   "gate": "",
-  "parts": "need 18, carry 6.9, stakes 6, occasion 5",
+  "parts": "need 18, carry 6.9, stakes 6, occasion 5, opposition -3",
   "reason": "He made 24% of the team's runs. The match did not depend on it: he came in at 3 for 126.",
   "scenario": null,
   "verdict": [
@@ -2162,9 +2137,9 @@
    "note": "No: he came in comfortably and the team did not depend on him."
   },
   "rules": "yes",
-  "score": 72.2,
+  "score": 69.2,
   "gate": "",
-  "parts": "need 18, carry 33.2, stakes 12, late 5, attack 4",
+  "parts": "need 18, carry 33.2, stakes 12, late 5, attack 4, opposition -3",
   "reason": "In at 4 for 106, 106 ahead. He made 45% of the team's 278, and no one else came close. The team won by 78 runs. The series was still to be settled in this Test. He added 64 for the 9th wicket. He faced an elite attack.",
   "scenario": "Carried the innings",
   "verdict": [
@@ -2187,9 +2162,9 @@
    "note": "No: he came in comfortably and the team did not depend on him."
   },
   "rules": "yes",
-  "score": 52,
+  "score": 49,
   "gate": "",
-  "parts": "need 18, carry 18, stakes 12, attack 4",
+  "parts": "need 18, carry 18, stakes 12, attack 4, opposition -3",
   "reason": "In at 3 for 110, 156 ahead. He made 35% of the team's 390, and no one else came close. The team won by 78 runs. The series was still to be settled in this Test. He faced an elite attack.",
   "scenario": "Rescued the innings",
   "verdict": [
@@ -2212,9 +2187,9 @@
    "note": "He made 233, 37% of West Indies' 626, after coming in at 2 for 97 with the team 211 behind. West Indies won by an innings and 217 runs. Another hundred came in the same innings."
   },
   "rules": "no",
-  "score": 38,
+  "score": 35,
   "gate": "",
-  "parts": "need 20, carry 12, stakes 6",
+  "parts": "need 20, carry 12, stakes 6, opposition -3",
   "reason": "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 97.",
   "scenario": null,
   "verdict": [
@@ -2237,9 +2212,9 @@
    "note": "He made 167, 36% of India's 462, after coming in at 1 for 47. India won by 165 runs."
   },
   "rules": "no",
-  "score": 24.1,
+  "score": 21.1,
   "gate": "",
-  "parts": "carry 18.1, stakes 6",
+  "parts": "carry 18.1, stakes 6, opposition -3",
   "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 1 for 47.",
   "scenario": null,
   "verdict": [
@@ -2287,9 +2262,9 @@
    "note": "The match was drawn."
   },
   "rules": "no",
-  "score": 36,
+  "score": 33,
   "gate": "a draw the team was not in danger of losing",
-  "parts": "carry 30, stakes 6",
+  "parts": "carry 30, stakes 6, opposition -3",
   "reason": "A draw the team was not in danger of losing.",
   "scenario": null,
   "verdict": [
@@ -2700,31 +2675,6 @@
   ]
  },
  {
-  "id": 678,
-  "name": "Sachin Tendulkar",
-  "runs": 176,
-  "year": 2002,
-  "opponent": "West Indies",
-  "venue": "Eden Gardens",
-  "evidence": "p",
-  "yours": {
-   "verdict": "no",
-   "note": "Batted 4, innings 3 of the match, at home. The match was drawn."
-  },
-  "rules": "yes",
-  "score": 46,
-  "gate": "",
-  "parts": "need 15, carry 14, stakes 17",
-  "reason": "His side trailed by 139 when the innings began. He made 37% of the team's 471. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test.",
-  "scenario": "Saved the match",
-  "verdict": [
-   1,
-   "Saved the match",
-   "His side trailed by 139 when the innings began. He made 37% of the team's 471. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test.",
-   "p"
-  ]
- },
- {
   "id": 717,
   "name": "Graham Gooch",
   "runs": 174,
@@ -2737,9 +2687,9 @@
    "note": "The result and the score when he came in are not recorded."
   },
   "rules": "no",
-  "score": 39,
+  "score": 36,
   "gate": "",
-  "parts": "carry 24, stakes 15",
+  "parts": "carry 24, stakes 15, opposition -3",
   "reason": "He made 48% of the team's runs. The match did not depend on it on the facts we have.",
   "scenario": null,
   "verdict": [
@@ -2912,9 +2862,9 @@
    "note": "Batted 5, innings 2 of the match. Australia won."
   },
   "rules": "yes",
-  "score": 69,
+  "score": 59,
   "gate": "",
-  "parts": "need 15, carry 14, stakes 15, tempo 25",
+  "parts": "need 15, carry 14, stakes 15, tempo 25, opposition -10",
   "reason": "His side trailed by 194 when the innings began. He made 36% of the team's 422. The team won by 10 wickets. It was the decider of a level series. A slow grind at 43 runs per 100 balls.",
   "scenario": "Rescued the innings",
   "verdict": [
@@ -3062,9 +3012,9 @@
    "note": "The match was drawn. Batting in the last innings of a drawn Test, which saved it."
   },
   "rules": "no",
-  "score": 36,
+  "score": 33,
   "gate": "",
-  "parts": "carry 30, stakes 6",
+  "parts": "carry 30, stakes 6, opposition -3",
   "reason": "He made 2017% of the team's runs. The match did not depend on it on the facts we have.",
   "scenario": null,
   "verdict": [

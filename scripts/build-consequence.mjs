@@ -90,7 +90,7 @@ for (const m of matches) {
       let notAhead = true;
       if (st) { const [x, y] = st.score.split('-').map(Number); const mine = h.team === st.teams[0] ? x : y; const theirs = h.team === st.teams[0] ? y : x; sideAhead = mine > theirs; notAhead = mine <= theirs; }
       const mg = h.margin ? (h.margin.runs != null ? `r${h.margin.runs}` : h.margin.wickets != null ? `w${h.margin.wickets}` : null) : null;
-      fullCases[row.id] = { occasion: OCCASIONS[row.id]?.tag, occasionNote: OCCASIONS[row.id]?.note, result: h.result, inn: h.inningsNo, lead: h.leadOnEntry, share: h.share, total: h.teamTotal, stakes: st?.stakes || 'single', sideAhead, seriesNotAhead: notAhead, margin: mg, start: h.date ? h.date.slice(5, 7) + h.date.slice(8, 10) : null, balls: h.balls, runs: h.runs, entryWkts: h.entryWkts, entryScore: h.entryScore, peril: h.peril, others, nextBest, followOn: h.followOn, pos: h.position, bestStand: h.bestStand, openStand: h.openStand, lastOpenerOut: h.lastOpenerOut, overs: Math.round(m.innings.reduce((a, i2) => a + (i2.overs || []).reduce((x, o) => x + o.deliveries.filter((d) => !d.extras?.wides && !d.extras?.noballs).length, 0), 0) / 6), rest: h.teamTotal - h.runs, attack: attackAverage(m.innings[h.inningsNo - 1]) };
+      fullCases[row.id] = { occasion: OCCASIONS[row.id]?.tag, occasionNote: OCCASIONS[row.id]?.note, result: h.result, inn: h.inningsNo, lead: h.leadOnEntry, share: h.share, total: h.teamTotal, stakes: st?.stakes || 'single', sideAhead, seriesNotAhead: notAhead, margin: mg, start: h.date ? h.date.slice(5, 7) + h.date.slice(8, 10) : null, balls: h.balls, runs: h.runs, entryWkts: h.entryWkts, entryScore: h.entryScore, peril: h.peril, others, nextBest, followOn: h.followOn, tier: tierOfOpponent(row.opponent, row.year), pos: h.position, bestStand: h.bestStand, openStand: h.openStand, lastOpenerOut: h.lastOpenerOut, overs: Math.round(m.innings.reduce((a, i2) => a + (i2.overs || []).reduce((x, o) => x + o.deliveries.filter((d) => !d.extras?.wides && !d.extras?.noballs).length, 0), 0) / 6), rest: h.teamTotal - h.runs, attack: attackAverage(m.innings[h.inningsNo - 1]) };
     }
     const v = withOverride(consequenceTest({ ...h, stakes: st?.stakes || 'single' }), row.name, row.runs, row.year, row.id);
     out[row.id] = [v.passes ? 1 : 0, v.passes ? v.scenario : null, v.because, 'b'];
@@ -150,7 +150,7 @@ for (const row of ALL) {
   if (!sf || !sf[5] || !sf[6]) continue;
   const [result, n, mm, lead, dead, inn, tot, leadStart, margin, start] = sf;
   const stakes = dead ? 'dead' : n === mm && lead === 0 ? 'decider' : n === mm ? 'on the line' : mm === 1 ? 'single' : 'live';
-  const f = { occasion: OCCASIONS[row.id]?.tag, occasionNote: OCCASIONS[row.id]?.note, result, inn, lead: leadStart, share: tot ? row.runs / tot : null, total: tot, stakes, sideAhead: lead != null && lead > 0, seriesNotAhead: lead == null || lead <= 0, margin, start, balls: row.balls, runs: row.runs, pos: WIKIPEDIA_FACTS[row.id]?.[1] ?? null, entryWkts: null, others: null, nextBest: null, followOn: false };
+  const f = { occasion: OCCASIONS[row.id]?.tag, occasionNote: OCCASIONS[row.id]?.note, result, inn, lead: leadStart, share: tot ? row.runs / tot : null, total: tot, stakes, sideAhead: lead != null && lead > 0, seriesNotAhead: lead == null || lead <= 0, margin, start, balls: row.balls, runs: row.runs, tier: tierOfOpponent(row.opponent, row.year), pos: WIKIPEDIA_FACTS[row.id]?.[1] ?? null, entryWkts: null, others: null, nextBest: null, followOn: false };
   if (OLDER_RULINGS[row.id]) { if (out[row.id]) { const mm = modelV3(f); calib.olderTotal = (calib.olderTotal || 0) + 1; if (mm.ton !== (out[row.id][0] === 1)) addRerun(row, { verdict: out[row.id][0] === 1 ? 'yes' : 'no', note: out[row.id][2] }, f, mm, 'p'); } continue; }
   { const mm = modelV3(f); scoreDump[row.id] = { score: mm.score, gate: mm.gate, why: mm.gateWhy, parts: Object.entries(mm.parts).filter(([, v]) => v).map(([k, v]) => `${k} ${Math.round(v * 10) / 10}`).join(', '), evidence: 'p', facts: mm.ton ? describeTon(f, mm).reason : describeGoodTon(f, mm), result: f.result }; }
   const next = decide(row, f, 'p', null);
@@ -191,7 +191,7 @@ for (const set of COMPARE_SETS) {
     const known = mine.filter((c) => ['win', 'draw', 'loss'].includes(c.matchResult));
     const measured = mine.filter((c) => out[c.id]);
     const tons = measured.filter((c) => out[c.id][0] === 1);
-    const tier = (list, n) => list.filter((c) => tierOfOpponent(c.opponent) === n).length;
+    const tier = (list, n) => list.filter((c) => tierOfOpponent(c.opponent, c.year) === n).length;
     ref[`${p.name}|${p.country}`] = {
       hundreds: mine.length,
       results: { known: known.length, won: known.filter((c) => c.matchResult === 'win').length, drawn: known.filter((c) => c.matchResult === 'draw').length, lost: known.filter((c) => c.matchResult === 'loss').length },

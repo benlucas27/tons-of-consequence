@@ -55,13 +55,14 @@ export function modelV3(f, wm = {}, th = THRESHOLD) {
   p.late = f.bestStand && f.bestStand.wicket >= 7 ? (f.bestStand.runs >= 100 ? 10 : f.bestStand.runs >= 60 ? 5 : 0) : 0;
   p.lower = f.pos != null && f.pos >= 8 ? 10 : f.pos === 7 ? 6 : 0;
   p.attack = f.attack == null ? 0 : f.attack < 25 ? 10 : f.attack < 27 ? 4 : 0; // only a truly elite attack counts
+  p.opposition = f.tier >= 4 ? -10 : f.tier === 3 ? -3 : 0; // who it was scored against
   p.safe = f.lead != null && f.lead > 200 ? -20 : 0;
   for (const k of Object.keys(p)) p[k] *= wm[k] ?? 1;
   const score = Math.round(Object.values(p).reduce((a, b) => a + b, 0) * 10) / 10;
   return { gate, gateWhy, score, parts: p, ton: gate && score >= th, sr };
 }
 
-const KEYS = ['need', 'carry', 'finish', 'stakes', 'tempo', 'safe', 'occasion', 'platform', 'late', 'lower', 'attack'];
+const KEYS = ['need', 'carry', 'finish', 'stakes', 'tempo', 'safe', 'occasion', 'platform', 'late', 'lower', 'attack', 'opposition'];
 // a fixed set of 300 nudges, so a rebuild gives the same answer
 const DRAWS = (() => {
   let seed = 12345;

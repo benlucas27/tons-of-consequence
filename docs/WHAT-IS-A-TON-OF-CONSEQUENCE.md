@@ -6,7 +6,7 @@ There are good tons, but not every ton is a ton of consequence.
 
 ## The laws (a ton of consequence is shortened to "toc")
 
-Law 1 is the only hard law. Laws 2 to 12 add points, and law 8 takes points away. A hundred needs 45 points to count, and that bar is deliberately high.
+Law 1 is the only hard law. Laws 2 to 13 add points, and law 8 takes points away. A hundred needs 45 points to count, and that bar is deliberately high.
 
 1. **A toc wins or saves a match.** You can't score a toc in a loss or a dead rubber. This is the only hard law.
    - A dead rubber counts only if his side had already won the series and also won the match.
@@ -22,6 +22,8 @@ Law 1 is the only hard law. Laws 2 to 12 add points, and law 8 takes points away
 10. **The late stand (new).** A hundred built in a partnership at the 7th wicket or later earns extra: most for 100+ runs, less for 60+.
 11. **The lower order (new).** A hundred from number 7 or lower earns extra: a little from number 7, more from number 8 and below.
 12. **An elite attack (new).** Only a truly elite attack counts: the three most-used bowlers averaging under about 25 (under 27 for a smaller reward), from each bowler's career record in our data. Ordinary strong attacks earn nothing. It works for 2006 on.
+
+13. **Who it was scored against (new).** Tiers: 1 England, Australia and India; 2 New Zealand and South Africa; 3 Sri Lanka, West Indies and Pakistan; 4 everyone else. A hundred against a tier 4 side loses 10 points and against a tier 3 side loses 3. A side counts a tier higher in an era when it was stronger: West Indies up to 2000 and Sri Lanka from 1996 to 2010.
 
 ## How firm a verdict is
 

@@ -40,7 +40,7 @@ export default function Page({ params }) {
   if (!c) notFound();
   return (
     <Suspense fallback={<Skeleton c={c} />}>
-      <InningsView id={c.id} consequence={verdictOf(c.id)} facts={{ tier: oppositionLabel(c.opponent), others: otherHundredsLabel(INNINGS_FACTS[c.id]), nightWatchman: NIGHT_WATCHMAN[c.id] ? (NIGHT_WATCHMAN[c.id].debated ? 'Night watchman (classification debated)' : 'Night watchman') : null, where: WHERE_LABEL[wherePlayed(c.id)] || null }} />
+      <InningsView id={c.id} consequence={verdictOf(c.id)} facts={{ tier: oppositionLabel(c.opponent, c.year), others: otherHundredsLabel(INNINGS_FACTS[c.id]), nightWatchman: NIGHT_WATCHMAN[c.id] ? (NIGHT_WATCHMAN[c.id].debated ? 'Night watchman (classification debated)' : 'Night watchman') : null, where: WHERE_LABEL[wherePlayed(c.id)] || null }} />
     </Suspense>
   );
 }

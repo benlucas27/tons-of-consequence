@@ -9,11 +9,18 @@ export const TIERS = [
 ];
 const TIER_OF = { England: 1, Australia: 1, India: 1, 'New Zealand': 2, 'South Africa': 2, 'Sri Lanka': 3, 'West Indies': 3, Pakistan: 3 };
 
-export const tierOfOpponent = (opponent) => TIER_OF[opponent] || 4;
+// Some sides were stronger in some eras than their fixed tier says: they count a tier higher then.
+const STRONGER_WHEN = { 'West Indies': [[0, 2000, 2]], 'Sri Lanka': [[1996, 2010, 2]] };
+
+/** The opponent's tier; pass the year and an era in which the side was stronger counts a tier higher. */
+export const tierOfOpponent = (opponent, year) => {
+  const era = year == null ? null : (STRONGER_WHEN[opponent] || []).find(([from, to]) => year >= from && year <= to);
+  return era ? era[2] : TIER_OF[opponent] || 4;
+};
 export const tierName = (n) => TIERS[n - 1].name;
 
 /** The opposition with its tier, e.g. "South Africa (second tier)". */
-export const oppositionLabel = (opponent) => `${opponent} (${tierName(tierOfOpponent(opponent)).toLowerCase()})`;
+export const oppositionLabel = (opponent, year) => `${opponent} (${tierName(tierOfOpponent(opponent, year)).toLowerCase()})`;
 
 /** The other hundreds in the innings and in the match, from the per-hundred facts [pos, innings, balls, inningsOthers, matchOthers]. */
 export function otherHundredsLabel(f) {

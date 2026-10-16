@@ -20,8 +20,8 @@ export default function TonsOfConsequence() {
       <h2>What is a ton of consequence?</h2>
       <p>A ton of consequence (a ToC) is a Test hundred of consequence. The side needed it. It helped them win the match or avoid losing it. There are good tons, but not every ton is a ton of consequence.</p>
 
-      <h2>The 12 laws</h2>
-      <p>Law 1 is the only hard law. Laws 2 to 12 add points, law 8 takes points away, and a hundred needs {THRESHOLD} points to count. The bar is set high on purpose.</p>
+      <h2>The 13 laws</h2>
+      <p>Law 1 is the only hard law. Laws 2 to 13 add points, law 8 takes points away, and a hundred needs {THRESHOLD} points to count. The bar is set high on purpose.</p>
       <ol className="toc-laws">
         <li><b>A ToC wins or saves a match.</b> You can&rsquo;t score a ToC in a loss or a dead rubber (a dead rubber counts only if his side had already won the series and won the match). A draw counts only if his side was in danger of losing, or he batted a long, slow grind to save it, and not if rain or the clock saved the match instead.</li>
         <li><b>A ToC considers the scoreboard when the batter came in, except for openers.</b> Walking in at 3 for 80 matters. Walking in at 1 for 300 doesn&rsquo;t.</li>
@@ -35,6 +35,7 @@ export default function TonsOfConsequence() {
         <li><b>The late stand.</b> A hundred built in a partnership at the 7th wicket or later earns extra.</li>
         <li><b>The lower order.</b> A hundred from number 7 or lower earns extra.</li>
         <li><b>An elite attack.</b> Only a truly elite attack counts: bowlers who averaged under about 25 in their careers. Ordinary strong attacks earn nothing.</li>
+        <li><b>Who it was scored against.</b> A hundred against a weaker side loses points: a lot against Zimbabwe, Bangladesh and the other newer sides, a little against Sri Lanka, West Indies and Pakistan. A side counts as stronger in an era when it was, such as the West Indies up to 2000 and Sri Lanka from 1996 to 2010.</li>
       </ol>
       <p>These laws are judgement calls, not a measurement. Where a verdict is too close to call, it has been decided by hand. Every verdict shows how firm its evidence is, and some famous innings carry links to articles that call them one of the greats.</p>
 

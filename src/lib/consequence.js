@@ -37,8 +37,8 @@ export const BATTERS = [...byName.entries()].map(([name, list]) => {
   const count = (list, key) => list.reduce((acc, c) => { const k = key(c); if (k != null) acc[k] = (acc[k] || 0) + 1; return acc; }, {});
   return {
     name, slug: slugify(name), innings, hundreds: innings.length, measured: measured.length, tons: tons.length,
-    byTier: count(innings, (c) => tierOfOpponent(c.opponent)),
-    tonsByTier: count(tons, (c) => tierOfOpponent(c.opponent)),
+    byTier: count(innings, (c) => tierOfOpponent(c.opponent, c.year)),
+    tonsByTier: count(tons, (c) => tierOfOpponent(c.opponent, c.year)),
     byWhere: count(innings, (c) => WHERE_PLAYED[c.id]),
     tonsByWhere: count(tons, (c) => WHERE_PLAYED[c.id]),
   };
