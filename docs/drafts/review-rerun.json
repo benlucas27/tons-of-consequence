@@ -25,31 +25,6 @@
   ]
  },
  {
-  "id": 42,
-  "name": "Kumar Sangakkara",
-  "runs": 287,
-  "year": 2006,
-  "opponent": "South Africa",
-  "venue": "Colombo (SSC)",
-  "evidence": "b",
-  "yours": {
-   "verdict": "yes",
-   "note": "He made 287, 38% of Sri Lanka's 756, after coming in at 1 for 6 with the team 163 behind. Sri Lanka won by an innings and 153 runs. Another hundred came in the same innings."
-  },
-  "rules": "no",
-  "score": 31,
-  "gate": "",
-  "parts": "need 15, carry 6, stakes 6, attack 4",
-  "reason": "He made 38% of the team's runs. The match did not depend on it: he came in at 1 for 6.",
-  "scenario": null,
-  "verdict": [
-   0,
-   null,
-   "He made 38% of the team's runs. The match did not depend on it: he came in at 1 for 6.",
-   "b"
-  ]
- },
- {
   "id": 61,
   "name": "Adam Voges",
   "runs": 269,
@@ -121,31 +96,6 @@
    0,
    null,
    "He made 43% of the team's runs. The match did not depend on it: he came in at 3 for 131.",
-   "b"
-  ]
- },
- {
-  "id": 132,
-  "name": "Steve Smith",
-  "runs": 239,
-  "year": 2017,
-  "opponent": "England",
-  "venue": "W.A.C.A",
-  "evidence": "b",
-  "yours": {
-   "verdict": "yes",
-   "note": "He made 239, 36% of Australia's 662, after coming in at 2 for 55 with the team 348 behind. Australia won by an innings and 41 runs. Another hundred came in the same innings."
-  },
-  "rules": "no",
-  "score": 38,
-  "gate": "",
-  "parts": "need 20, carry 12, stakes 6",
-  "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 2 for 55.",
-  "scenario": null,
-  "verdict": [
-   0,
-   null,
-   "He made 36% of the team's runs. The match did not depend on it: he came in at 2 for 55.",
    "b"
   ]
  },
@@ -275,31 +225,6 @@
   ]
  },
  {
-  "id": 186,
-  "name": "Jacques Kallis",
-  "runs": 224,
-  "year": 2012,
-  "opponent": "Sri Lanka",
-  "venue": "Cape Town",
-  "evidence": "b",
-  "yours": {
-   "verdict": "yes",
-   "note": "He made 224, 39% of South Africa's 580, after coming in at 2 for 56 in the decider. South Africa won by 10 wickets. Another hundred came in the same innings."
-  },
-  "rules": "no",
-  "score": 40,
-  "gate": "",
-  "parts": "need 10, carry 10, stakes 15, occasion 5",
-  "reason": "He made 39% of the team's runs. The match did not depend on it: he came in at 2 for 56.",
-  "scenario": null,
-  "verdict": [
-   0,
-   null,
-   "He made 39% of the team's runs. The match did not depend on it: he came in at 2 for 56.",
-   "b"
-  ]
- },
- {
   "id": 217,
   "name": "Marcus Trescothick",
   "runs": 219,
@@ -325,31 +250,6 @@
   ]
  },
  {
-  "id": 222,
-  "name": "Joe Root",
-  "runs": 218,
-  "year": 2021,
-  "opponent": "India",
-  "venue": "Chennai",
-  "evidence": "b",
-  "yours": {
-   "verdict": "yes",
-   "note": "He made 218, 38% of England's 578, after coming in at 2 for 63. England won by 227 runs."
-  },
-  "rules": "no",
-  "score": 34.8,
-  "gate": "",
-  "parts": "carry 18.8, stakes 6, attack 10",
-  "reason": "He made 38% of the team's runs. The match did not depend on it: he came in at 2 for 63.",
-  "scenario": null,
-  "verdict": [
-   0,
-   null,
-   "He made 38% of the team's runs. The match did not depend on it: he came in at 2 for 63.",
-   "b"
-  ]
- },
- {
   "id": 238,
   "name": "Justin Langer",
   "runs": 215,
@@ -371,56 +271,6 @@
    0,
    null,
    "He made 37% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
-   "b"
-  ]
- },
- {
-  "id": 239,
-  "name": "Steve Smith",
-  "runs": 215,
-  "year": 2015,
-  "opponent": "England",
-  "venue": "Lord's",
-  "evidence": "b",
-  "yours": {
-   "verdict": "yes",
-   "note": "He made 215, 38% of Australia's 566, after coming in at 1 for 78. Australia won by 405 runs. Another hundred came in the same innings."
-  },
-  "rules": "no",
-  "score": 18,
-  "gate": "",
-  "parts": "carry 12, stakes 6",
-  "reason": "He made 38% of the team's runs. The match did not depend on it: he came in at 1 for 78.",
-  "scenario": null,
-  "verdict": [
-   0,
-   null,
-   "He made 38% of the team's runs. The match did not depend on it: he came in at 1 for 78.",
-   "b"
-  ]
- },
- {
-  "id": 258,
-  "name": "Younis Khan",
-  "runs": 213,
-  "year": 2014,
-  "opponent": "Australia",
-  "venue": "Abu Dhabi",
-  "evidence": "b",
-  "yours": {
-   "verdict": "yes",
-   "note": "He made 213, 37% of Pakistan's 570, after coming in at 2 for 96. Pakistan won by 356 runs. Another hundred came in the same innings."
-  },
-  "rules": "no",
-  "score": 22,
-  "gate": "",
-  "parts": "carry 10, stakes 12",
-  "reason": "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 96.",
-  "scenario": null,
-  "verdict": [
-   0,
-   null,
-   "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 96.",
    "b"
   ]
  },
@@ -871,31 +721,6 @@
    0,
    null,
    "He made 36% of the team's runs. The match did not depend on it: he came in at 1 for 49.",
-   "b"
-  ]
- },
- {
-  "id": 1029,
-  "name": "Ricky Ponting",
-  "runs": 158,
-  "year": 2008,
-  "opponent": "West Indies",
-  "venue": "Kingston",
-  "evidence": "b",
-  "yours": {
-   "verdict": "yes",
-   "note": "He made 158, 37% of Australia's 431, after coming in at 1 for 18. Australia won by 95 runs."
-  },
-  "rules": "no",
-  "score": 24.5,
-  "gate": "",
-  "parts": "carry 18.5, stakes 6",
-  "reason": "He made 37% of the team's runs. The match did not depend on it: he came in at 1 for 18.",
-  "scenario": null,
-  "verdict": [
-   0,
-   null,
-   "He made 37% of the team's runs. The match did not depend on it: he came in at 1 for 18.",
    "b"
   ]
  },
@@ -2000,31 +1825,6 @@
   ]
  },
  {
-  "id": 3312,
-  "name": "Steve Smith",
-  "runs": 111,
-  "year": 2013,
-  "opponent": "England",
-  "venue": "W.A.C.A",
-  "evidence": "b",
-  "yours": {
-   "verdict": "yes",
-   "note": "In at 3 for 106 in an Ashes Test at Perth, close enough to the 100 line to count as a rescue. Australia won by 150 runs."
-  },
-  "rules": "no",
-  "score": 32.7,
-  "gate": "",
-  "parts": "need 18, carry 8.7, stakes 6",
-  "reason": "He made 29% of the team's runs. The match did not depend on it: he came in at 3 for 106.",
-  "scenario": null,
-  "verdict": [
-   0,
-   null,
-   "He made 29% of the team's runs. The match did not depend on it: he came in at 3 for 106.",
-   "b"
-  ]
- },
- {
   "id": 3323,
   "name": "Jamie Smith",
   "runs": 111,
@@ -2396,31 +2196,6 @@
    1,
    "Rescued the innings",
    "In at 3 for 67, 67 ahead. He made 29% of the team's 354. The team won by 247 runs. The series was still to be settled in this Test.",
-   "b"
-  ]
- },
- {
-  "id": 4045,
-  "name": "Sachin Tendulkar",
-  "runs": 103,
-  "year": 2008,
-  "opponent": "England",
-  "venue": "Chennai",
-  "evidence": "b",
-  "yours": {
-   "verdict": "yes",
-   "note": "He made it in a winning chase."
-  },
-  "rules": "no",
-  "score": 42.4,
-  "gate": "",
-  "parts": "need 20, carry 6.4, finish 10, stakes 6",
-  "reason": "He made 27% of the team's runs. The match did not depend on it: he came in at 2 for 141.",
-  "scenario": null,
-  "verdict": [
-   0,
-   null,
-   "He made 27% of the team's runs. The match did not depend on it: he came in at 2 for 141.",
    "b"
   ]
  },
@@ -3100,56 +2875,6 @@
   ]
  },
  {
-  "id": 395,
-  "name": "Allan Border",
-  "runs": 200,
-  "year": 1993,
-  "opponent": "England",
-  "venue": "Leeds",
-  "evidence": "p",
-  "yours": {
-   "verdict": "yes",
-   "note": "Batted 5, innings 2 of the match, Test 4 of 6, away. The team won the match."
-  },
-  "rules": "no",
-  "score": 20,
-  "gate": "",
-  "parts": "carry 14, stakes 6",
-  "reason": "He made 31% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null,
-  "verdict": [
-   0,
-   null,
-   "He made 31% of the team's runs. The match did not depend on it on the facts we have.",
-   "p"
-  ]
- },
- {
-  "id": 438,
-  "name": "Ricky Ponting",
-  "runs": 197,
-  "year": 1999,
-  "opponent": "Pakistan",
-  "venue": "W.A.C.A",
-  "evidence": "p",
-  "yours": {
-   "verdict": "yes",
-   "note": "Batted 6, innings 2 of the match. Australia won by an innings and 20 runs (Australia 451). Series going in: Australia 2-0 up with this the last of 3 Tests (series decided)."
-  },
-  "rules": "no",
-  "score": 42,
-  "gate": "",
-  "parts": "need 15, carry 24, stakes 3",
-  "reason": "He made 44% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null,
-  "verdict": [
-   0,
-   null,
-   "He made 44% of the team's runs. The match did not depend on it on the facts we have.",
-   "p"
-  ]
- },
- {
   "id": 444,
   "name": "Len Hutton",
   "runs": 196,
@@ -3521,31 +3246,6 @@
    1,
    "Chased it down",
    "His side trailed by 274 when the innings began. He made 58% of the team's 276. The team won by 6 wickets. The series was already won by his side.",
-   "p"
-  ]
- },
- {
-  "id": 1085,
-  "name": "Sachin Tendulkar",
-  "runs": 155,
-  "year": 1998,
-  "opponent": "Australia",
-  "venue": "Chennai",
-  "evidence": "p",
-  "yours": {
-   "verdict": "yes",
-   "note": "Batted 4, innings 3 of the match, at home. The team won the match."
-  },
-  "rules": "no",
-  "score": 30,
-  "gate": "",
-  "parts": "need 10, carry 14, stakes 6",
-  "reason": "He made 37% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null,
-  "verdict": [
-   0,
-   null,
-   "He made 37% of the team's runs. The match did not depend on it on the facts we have.",
    "p"
   ]
  },
@@ -4046,31 +3746,6 @@
    1,
    "Saved the match",
    "His side trailed by 213 when the innings began. He made 33% of the team's 299. The match was drawn, with his side in danger of losing. A slow grind at 37 runs per 100 balls.",
-   "p"
-  ]
- },
- {
-  "id": 4464,
-  "name": "Ricky Ponting",
-  "runs": 100,
-  "year": 2002,
-  "opponent": "South Africa",
-  "venue": "Cape Town",
-  "evidence": "p",
-  "yours": {
-   "verdict": "yes",
-   "note": "Batted 3, innings 4 of the match. Australia won a fourth-innings chase."
-  },
-  "rules": "no",
-  "score": 41,
-  "gate": "",
-  "parts": "need 20, carry 5, finish 10, stakes 6",
-  "reason": "He made 30% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null,
-  "verdict": [
-   0,
-   null,
-   "He made 30% of the team's runs. The match did not depend on it on the facts we have.",
    "p"
   ]
  }

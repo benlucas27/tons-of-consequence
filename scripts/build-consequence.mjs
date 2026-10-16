@@ -158,7 +158,7 @@ for (const row of ALL) {
 }
 // Ben, 16 Oct 2026: with the 12 laws agreed, the rules' answer replaces his earlier hand ruling wherever they disagree (Bradman excepted: he is not in this list)
 // rulings made in the final review (final: true) were made under the 12 laws and stand
-const finalIds = new Set(Object.entries(CONSEQUENCE_OVERRIDES).filter(([, o]) => o.final).map(([k]) => Number(k.split('|')[3])));
+const finalIds = new Set([...Object.entries(CONSEQUENCE_OVERRIDES).filter(([, o]) => o.final).map(([k]) => Number(k.split('|')[3])), ...Object.keys(FINAL_OLDER_RULINGS).map(Number)]);
 rerun.splice(0, rerun.length, ...rerun.filter((r) => !finalIds.has(r.id)));
 for (const r of rerun) out[r.id] = r.verdict; 
 for (const [id, v] of Object.entries(FINAL_OLDER_RULINGS)) out[id] = v;

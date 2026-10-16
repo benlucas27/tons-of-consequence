@@ -272,23 +272,6 @@
   "result": "win"
  },
  {
-  "id": 499,
-  "name": "Rahul Dravid",
-  "runs": 191,
-  "year": 2010,
-  "opponent": "New Zealand",
-  "venue": "Nagpur",
-  "score": 42.9,
-  "stable": 0.28,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 10, carry 17.9, stakes 15",
-  "facts": "He made 34% of the team's runs. The match did not depend on it: he came in at 1 for 113.",
-  "result": "win"
- },
- {
   "id": 507,
   "name": "Joe Root",
   "runs": 190,
@@ -799,23 +782,6 @@
   "result": "win"
  },
  {
-  "id": 1851,
-  "name": "Kane Williamson",
-  "runs": 135,
-  "year": 2012,
-  "opponent": "Sri Lanka",
-  "venue": "Colombo (PSS)",
-  "score": 49,
-  "stable": 0.7066666666666667,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "carry 12, stakes 12, tempo 25",
-  "facts": "In at 1 for 4, 4 ahead. He made 33% of the team's 412. The team won by 167 runs. The series was still to be settled in this Test. A slow grind at 44 runs per 100 balls.",
-  "result": "win"
- },
- {
   "id": 1862,
   "name": "Mike Hussey",
   "runs": 134,
@@ -867,23 +833,6 @@
   "result": "win"
  },
  {
-  "id": 1927,
-  "name": "Steve Smith",
-  "runs": 133,
-  "year": 2014,
-  "opponent": "India",
-  "venue": "Brisbane",
-  "score": 43.7,
-  "stable": 0.3433333333333333,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 20, carry 7.7, stakes 6, late 10",
-  "facts": "He made 26% of the team's runs. The match did not depend on it: he came in at 2 for 98.",
-  "result": "win"
- },
- {
   "id": 2005,
   "name": "Asad Shafiq",
   "runs": 131,
@@ -898,23 +847,6 @@
   "today": 1,
   "parts": "need 25, carry 16.1, stakes 6",
   "facts": "In at 4 for 86, 214 behind. He made 31% of the team's 417. The team won by 10 wickets.",
-  "result": "win"
- },
- {
-  "id": 2009,
-  "name": "Steve Smith",
-  "runs": 131,
-  "year": 2025,
-  "opponent": "Sri Lanka",
-  "venue": "Galle",
-  "score": 44,
-  "stable": 0.3466666666666667,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 20, carry 12, stakes 12",
-  "facts": "He made 32% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 2 for 37.",
   "result": "win"
  },
  {
@@ -1290,23 +1222,6 @@
   "parts": "carry 43.7, stakes 3, occasion 5, platform 8, safe -20",
   "facts": "His side already led by 203 when the innings began. He made 51% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
   "result": "win"
- },
- {
-  "id": 3308,
-  "name": "Rahul Dravid",
-  "runs": 111,
-  "year": 2008,
-  "opponent": "South Africa",
-  "venue": "Chennai",
-  "score": 43,
-  "stable": 0.33,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 20, carry -8, stakes 6, tempo 25",
-  "facts": "He made 18% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 1 for 213.",
-  "result": "draw"
  },
  {
   "id": 3319,
