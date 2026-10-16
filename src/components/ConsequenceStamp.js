@@ -35,6 +35,11 @@ export default function ConsequenceNote({ verdict }) {
           <Link href="/tons-of-consequence">How it works</Link>
         </p>
       </div>
+      {verdict.press?.length > 0 && (
+        <p className="toc-conf"><b>Called one of the greats:</b>{' '}
+          {verdict.press.map((a, i) => <span key={a.url}>{i > 0 && '; '}<a href={a.url} target="_blank" rel="noopener noreferrer">{a.title}</a> ({a.source})</span>)}
+        </p>
+      )}
       {verdict.confidence && <p className="toc-conf"><b>{verdict.confidence.label}.</b> {verdict.confidence.note}</p>}
     </section>
   );

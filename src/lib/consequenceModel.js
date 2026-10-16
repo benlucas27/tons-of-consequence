@@ -46,13 +46,18 @@ export function modelV3(f, wm = {}, th = THRESHOLD) {
   p.tempo = slowGrind ? 25 : sr != null && sr >= 90 ? 10 : 0;
   const md = f.start ? Number(f.start) : null;
   p.occasion = OCCASION_POINTS[f.occasion] ?? (md != null && ((md >= 1225 && md <= 1227) || (md >= 101 && md <= 103)) ? 5 : 0);
+  // the opening platform: an opener whose stand set up a win (the match looks out of reach because he made it so)
+  p.platform = f.pos != null && f.pos <= 2 && f.result === 'win' && f.openStand != null ? (f.openStand >= 200 ? 20 : f.openStand >= 150 ? 15 : f.openStand >= 100 ? 8 : 0) : 0;
+  // a big stand late in the order, and a hundred from number 7 or lower
+  p.late = f.bestStand && f.bestStand.wicket >= 7 ? (f.bestStand.runs >= 100 ? 10 : f.bestStand.runs >= 60 ? 5 : 0) : 0;
+  p.lower = f.pos != null && f.pos >= 8 ? 10 : f.pos === 7 ? 6 : 0;
   p.safe = f.lead != null && f.lead > 200 ? -20 : 0;
   for (const k of Object.keys(p)) p[k] *= wm[k] ?? 1;
   const score = Math.round(Object.values(p).reduce((a, b) => a + b, 0) * 10) / 10;
   return { gate, gateWhy, score, parts: p, ton: gate && score >= th, sr };
 }
 
-const KEYS = ['need', 'carry', 'finish', 'stakes', 'tempo', 'safe', 'occasion'];
+const KEYS = ['need', 'carry', 'finish', 'stakes', 'tempo', 'safe', 'occasion', 'platform', 'late', 'lower'];
 // a fixed set of 300 nudges, so a rebuild gives the same answer
 const DRAWS = (() => {
   let seed = 12345;
@@ -80,6 +85,7 @@ export function describeTon(f, m, team = 'The team') {
   else if (f.inn === 4 && f.result === 'win') scenario = 'Chased it down';
   else if (p.need >= 15 && p.need >= p.carry) scenario = 'Rescued the innings';
   else if (p.carry >= 12) scenario = 'Carried the innings';
+  else if (p.platform >= 15) scenario = 'Set up the win';
   else if (f.occasion === 'tribute' || f.occasion === 'emotional' || f.occasion === 'farewell' || f.occasion === 'comeback') scenario = 'Made it count on the day';
   const bits = [];
   if (f.entryWkts != null) bits.push(`In at ${f.entryWkts} for ${f.entryScore}${f.lead != null ? (f.lead < 0 ? `, ${-f.lead} behind` : f.lead > 0 ? `, ${f.lead} ahead` : ', level') : ''}.`);
@@ -91,6 +97,9 @@ export function describeTon(f, m, team = 'The team') {
   else if (f.stakes === 'dead') bits.push('The series was already won by his side.');
   if (f.occasion && f.occasionNote) bits.push(f.occasionNote);
   else if (p.occasion >= 5 && !f.occasion) bits.push('It was a Boxing Day or New Year Test.');
+  if (p.platform) bits.push(`As an opener he put on ${f.openStand} for the first wicket${f.lastOpenerOut ? `, and the second opener was not out until ${f.lastOpenerOut}` : ''}.`);
+  if (p.late && f.bestStand) bits.push(`He added ${f.bestStand.runs} for the ${f.bestStand.wicket}th wicket.`);
+  if (p.lower) bits.push(`He batted at number ${f.pos}, a lower-order hundred.`);
   if (p.tempo && m.sr != null) bits.push(m.sr >= 90 ? `He scored at ${Math.round(m.sr)} runs per 100 balls.` : `A slow grind at ${Math.round(m.sr)} runs per 100 balls.`);
   return { scenario, reason: bits.join(' ') };
 }

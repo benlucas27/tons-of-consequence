@@ -139,7 +139,7 @@ export const REFERENCE_POINTS = {
    "lost": 3
   },
   "measured": 26,
-  "tons": 5,
+  "tons": 6,
   "byTier": [
    7,
    10,
@@ -149,7 +149,7 @@ export const REFERENCE_POINTS = {
   "tonsByTier": [
    3,
    1,
-   1,
+   2,
    0
   ],
   "away": 5,
@@ -425,7 +425,7 @@ export const REFERENCE_POINTS = {
    "lost": 1
   },
   "measured": 21,
-  "tons": 4,
+  "tons": 5,
   "byTier": [
    11,
    0,
@@ -435,12 +435,12 @@ export const REFERENCE_POINTS = {
   "tonsByTier": [
    4,
    0,
-   0,
+   1,
    0
   ],
   "away": 7,
   "home": 12,
-  "awayTons": 2
+  "awayTons": 3
  },
  "Harry Brook|ENG": {
   "hundreds": 10,
@@ -658,8 +658,8 @@ export const REFERENCE_POINTS = {
    "drawn": 2,
    "lost": 1
   },
-  "measured": 9,
-  "tons": 4,
+  "measured": 11,
+  "tons": 6,
   "byTier": [
    5,
    6,
@@ -667,8 +667,8 @@ export const REFERENCE_POINTS = {
    2
   ],
   "tonsByTier": [
-   0,
-   2,
+   1,
+   3,
    1,
    1
   ],

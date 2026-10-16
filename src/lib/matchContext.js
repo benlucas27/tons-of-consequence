@@ -13,14 +13,23 @@ export function inningsOf(match) {
     let score = 0;
     let wkts = 0;
     const batters = new Map();
+    const pairs = new Map(); // "a|b" -> { a, b, wicket (which wicket it is), start (team score when it began) }
+    const closePair = (pr) => {
+      const stand = { wicket: pr.wicket, runs: score - pr.start };
+      for (const n of [pr.a, pr.b]) (batters.get(n).stands ||= []).push(stand);
+      pairs.delete(pr.key);
+    };
     const touch = (name) => {
       if (!batters.has(name)) batters.set(name, { name, order: batters.size + 1, entryScore: score, entryWkts: wkts, runs: 0, balls: 0, out: false, peril: 0 });
       return batters.get(name);
     };
     for (const over of inn.overs || []) {
       for (const d of over.deliveries || []) {
+        const scoreBefore = score;
         const b = touch(d.batter);
         touch(d.non_striker);
+        const pk = [d.batter, d.non_striker].sort().join('|');
+        if (!pairs.has(pk)) pairs.set(pk, { key: pk, a: d.batter, b: d.non_striker, wicket: wkts + 1, start: scoreBefore });
         b.runs += d.runs?.batter || 0;
         if (!('wides' in (d.extras || {}))) b.balls += 1;
         if (b.b100 == null && b.runs >= 100) b.b100 = b.balls; // balls faced when he reached 100
@@ -28,7 +37,11 @@ export function inningsOf(match) {
         for (const w of d.wickets || []) {
           if (isDismissal(w)) {
             wkts += 1;
-            touch(w.player_out).out = true;
+            const po = touch(w.player_out);
+            po.out = true;
+            po.outScore = score;
+            po.outWkts = wkts;
+            for (const pr of [...pairs.values()]) if (pr.a === w.player_out || pr.b === w.player_out) closePair(pr);
             // a top-seven batter falls while the other batter is at the crease and the team is still short of 200: a collapse
             // around him (tail-enders going does not count)
             if (score < 200 && batters.get(w.player_out).order <= 7) for (const n of [d.batter, d.non_striker]) if (n !== w.player_out) batters.get(n).peril += 1;
@@ -36,6 +49,7 @@ export function inningsOf(match) {
         }
       }
     }
+    for (const pr of [...pairs.values()]) closePair(pr);
     out.push({ team: inn.team, runs: score, wkts, declared: Boolean(inn.declared), batters: [...batters.values()] });
   }
   return out;
@@ -65,8 +79,14 @@ export function hundredsIn(match) {
     const prev = innings[i - 1];
     const followOn = i === 2 && prev && prev.team === inn.team; // batted twice in a row
     const res = resultFor(info, inn.team);
+    const openers = inn.batters.filter((x) => x.order <= 2);
     for (const b of inn.batters) {
       if (b.runs < 100) continue;
+      const myStands = (b.stands || []).filter((x) => x.runs > 0);
+      const best = myStands.reduce((m, x) => (!m || x.runs > m.runs ? x : m), null);
+      const isOpener = b.order <= 2;
+      const openStand = isOpener ? Math.max(0, ...(b.stands || []).filter((x) => x.wicket === 1).map((x) => x.runs)) : null;
+      const lastOpenerOut = isOpener ? (openers.every((o) => o.out) ? Math.max(...openers.map((o) => o.outScore)) : null) : null;
       const leadOnEntry = ownBefore + b.entryScore - oppBefore;
       const target = i === 3 ? oppBefore - ownBefore + 1 : null;
       found.push({
@@ -76,6 +96,9 @@ export function hundredsIn(match) {
         balls: b.balls,
         ballsTo100: b.b100 ?? null,
         position: b.order,
+        bestStand: best ? { wicket: best.wicket, runs: best.runs } : null,
+        openStand,
+        lastOpenerOut,
         team: inn.team,
         opponent,
         date,

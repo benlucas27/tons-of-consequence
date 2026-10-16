@@ -3,6 +3,7 @@ import { CONSEQUENCE } from '../data/consequence.js';
 import { ALL, slugify } from './dataset.js';
 import { WHERE_PLAYED } from '../data/where-played.js';
 import { tierOfOpponent } from './matchFacts.js';
+import { PRESS_REFERENCES } from '../data/press-references.js';
 
 /** 'H', 'A' or 'N' for the side that scored the hundred, or undefined when we do not have the match record. */
 export const wherePlayed = (id) => WHERE_PLAYED[id];
@@ -19,7 +20,7 @@ export const CONFIDENCE = {
 /** { passes, scenario, because, confidence } for a hundred we have measured, or null when we have no match record for it yet. */
 export function verdictOf(id) {
   const v = CONSEQUENCE[id];
-  return v ? { passes: v[0] === 1, scenario: v[1], because: v[2], confidence: CONFIDENCE[v[3]] || CONFIDENCE.b } : null;
+  return v ? { passes: v[0] === 1, scenario: v[1], because: v[2], confidence: CONFIDENCE[v[3]] || CONFIDENCE.b, press: PRESS_REFERENCES[id] || [] } : null;
 }
 
 const byName = new Map();

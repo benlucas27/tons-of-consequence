@@ -17,6 +17,7 @@ import AdmZip from 'adm-zip';
 import { hundredsIn, inningsOf, seriesStakes } from '../src/lib/matchContext.js';
 import { modelV3, robustness, describeTon, describeGoodTon, THRESHOLD } from '../src/lib/consequenceModel.js';
 import { SERIES_FACTS } from '../src/data/series-facts.js';
+import { WIKIPEDIA_FACTS } from '../src/data/wikipedia-facts.js';
 import { OCCASIONS } from '../src/data/occasions.js';
 import { CONSEQUENCE_OVERRIDES } from '../src/data/consequence-overrides.js';
 import { consequenceTest } from '../src/lib/consequenceTest.js';
@@ -75,7 +76,7 @@ for (const m of matches) {
       let notAhead = true;
       if (st) { const [x, y] = st.score.split('-').map(Number); const mine = h.team === st.teams[0] ? x : y; const theirs = h.team === st.teams[0] ? y : x; sideAhead = mine > theirs; notAhead = mine <= theirs; }
       const mg = h.margin ? (h.margin.runs != null ? `r${h.margin.runs}` : h.margin.wickets != null ? `w${h.margin.wickets}` : null) : null;
-      fullCases[row.id] = { occasion: OCCASIONS[row.id]?.tag, occasionNote: OCCASIONS[row.id]?.note, result: h.result, inn: h.inningsNo, lead: h.leadOnEntry, share: h.share, total: h.teamTotal, stakes: st?.stakes || 'single', sideAhead, seriesNotAhead: notAhead, margin: mg, start: h.date ? h.date.slice(5, 7) + h.date.slice(8, 10) : null, balls: h.balls, runs: h.runs, entryWkts: h.entryWkts, entryScore: h.entryScore, peril: h.peril, others, nextBest, followOn: h.followOn };
+      fullCases[row.id] = { occasion: OCCASIONS[row.id]?.tag, occasionNote: OCCASIONS[row.id]?.note, result: h.result, inn: h.inningsNo, lead: h.leadOnEntry, share: h.share, total: h.teamTotal, stakes: st?.stakes || 'single', sideAhead, seriesNotAhead: notAhead, margin: mg, start: h.date ? h.date.slice(5, 7) + h.date.slice(8, 10) : null, balls: h.balls, runs: h.runs, entryWkts: h.entryWkts, entryScore: h.entryScore, peril: h.peril, others, nextBest, followOn: h.followOn, pos: h.position, bestStand: h.bestStand, openStand: h.openStand, lastOpenerOut: h.lastOpenerOut };
     }
     const v = withOverride(consequenceTest({ ...h, stakes: st?.stakes || 'single' }), row.name, row.runs, row.year, row.id);
     out[row.id] = [v.passes ? 1 : 0, v.passes ? v.scenario : null, v.because, 'b'];
@@ -127,7 +128,7 @@ for (const row of ALL) {
   if (!sf || !sf[5] || !sf[6]) continue;
   const [result, n, mm, lead, dead, inn, tot, leadStart, margin, start] = sf;
   const stakes = dead ? 'dead' : n === mm && lead === 0 ? 'decider' : n === mm ? 'on the line' : mm === 1 ? 'single' : 'live';
-  const f = { occasion: OCCASIONS[row.id]?.tag, occasionNote: OCCASIONS[row.id]?.note, result, inn, lead: leadStart, share: tot ? row.runs / tot : null, total: tot, stakes, sideAhead: lead != null && lead > 0, seriesNotAhead: lead == null || lead <= 0, margin, start, balls: row.balls, runs: row.runs, entryWkts: null, others: null, nextBest: null, followOn: false };
+  const f = { occasion: OCCASIONS[row.id]?.tag, occasionNote: OCCASIONS[row.id]?.note, result, inn, lead: leadStart, share: tot ? row.runs / tot : null, total: tot, stakes, sideAhead: lead != null && lead > 0, seriesNotAhead: lead == null || lead <= 0, margin, start, balls: row.balls, runs: row.runs, pos: WIKIPEDIA_FACTS[row.id]?.[1] ?? null, entryWkts: null, others: null, nextBest: null, followOn: false };
   const next = decide(row, f, 'p', null);
   if (next) { out[row.id] = next; v3Partial += 1; }
 }
