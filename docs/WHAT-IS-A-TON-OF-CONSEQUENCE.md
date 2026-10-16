@@ -35,9 +35,8 @@ Law 1 is the only hard law. Laws 2 to 13 add points, and law 8 takes points away
 
 ## Honest limits
 
-- It is a first pass, not a measurement. The points agreed with 151 of your 258 earlier ball-by-ball rulings (59%); the other 107 now follow the rules.
-- The new laws (9 to 11) did not lift that agreement, and adding a "very big score" law lifted it by only 3 rulings while pushing the count of tons up to about 700, so I left it out.
-- About 649 hundreds clear the bar today.
+- It is a first pass, not a measurement. The points now agree with 272 of 401 ball-by-ball rulings (68%). Where an earlier hand ruling and the laws disagreed on 16 Oct 2026, the laws replaced the ruling.
+- 398 of the 3,691 hundreds we can measure are tons of consequence today. Women's Tests have their own page: 17 of 121.
 - The partnership and opening-platform laws only work for hundreds with a ball-by-ball record. Older ones use hand rulings.
 
 ## For when someone asks "why is this a ton?"
