@@ -472,4 +472,9 @@ export const CONSEQUENCE_OVERRIDES = {
   // dial-down review, Ben's answers
   "Inzamam-ul-Haq|138|2003|1654": { verdict: 'no', final: true, note: "The match was won by 1 wickets. The match did not depend on it on the facts we have." },
   "Kane Williamson|131|2010|2001": { verdict: 'no', final: true, note: "The match was drawn. The match did not depend on it on the facts we have." },
+  // drawn-match tons review: Ben's page answers, and a NO for unanswered pre-2000 drawn tons without high-confidence evidence (his instruction)
+  "Steve Smith|115|2014|2986": { verdict: 'yes', final: true, scenario: "Carried the innings", note: "The match was won." },
+  "Steve Smith|141|2017|1543": { verdict: 'yes', final: true, scenario: "Carried the innings", note: "The match was won." },
+  "Steve Smith|109|2017|3513": { verdict: 'yes', final: true, scenario: "Carried the innings", note: "The match was won." },
+  "Steve Smith|144|2019|1451": { verdict: 'yes', final: true, scenario: "Carried the innings", note: "The match was won." },
 };

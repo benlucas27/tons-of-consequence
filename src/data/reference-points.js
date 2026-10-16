@@ -113,7 +113,7 @@ export const REFERENCE_POINTS = {
    "lost": 5
   },
   "measured": 33,
-  "tons": 7,
+  "tons": 6,
   "byTier": [
    12,
    5,
@@ -123,12 +123,12 @@ export const REFERENCE_POINTS = {
   "tonsByTier": [
    3,
    1,
-   2,
+   1,
    1
   ],
   "away": 17,
   "home": 15,
-  "awayTons": 6
+  "awayTons": 5
  },
  "David Warner|AUS": {
   "hundreds": 26,
@@ -217,7 +217,7 @@ export const REFERENCE_POINTS = {
    "lost": 4
   },
   "measured": 41,
-  "tons": 10,
+  "tons": 7,
   "byTier": [
    16,
    10,
@@ -226,13 +226,13 @@ export const REFERENCE_POINTS = {
   ],
   "tonsByTier": [
    3,
-   3,
    2,
-   2
+   2,
+   0
   ],
   "away": 6,
   "home": 11,
-  "awayTons": 1
+  "awayTons": 0
  },
  "Rahul Dravid|IND": {
   "hundreds": 36,
@@ -243,7 +243,7 @@ export const REFERENCE_POINTS = {
    "lost": 4
   },
   "measured": 36,
-  "tons": 8,
+  "tons": 6,
   "byTier": [
    9,
    8,
@@ -252,7 +252,7 @@ export const REFERENCE_POINTS = {
   ],
   "tonsByTier": [
    3,
-   2,
+   0,
    3,
    0
   ],
@@ -295,7 +295,7 @@ export const REFERENCE_POINTS = {
    "lost": 3
   },
   "measured": 44,
-  "tons": 7,
+  "tons": 6,
   "byTier": [
    20,
    6,
@@ -303,7 +303,7 @@ export const REFERENCE_POINTS = {
    4
   ],
   "tonsByTier": [
-   4,
+   3,
    1,
    1,
    1
