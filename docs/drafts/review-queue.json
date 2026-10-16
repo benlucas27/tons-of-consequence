@@ -170,23 +170,6 @@
   "result": "win"
  },
  {
-  "id": 287,
-  "name": "Yashasvi Jaiswal",
-  "runs": 209,
-  "year": 2024,
-  "opponent": "England",
-  "venue": "Visakhapatnam",
-  "score": 45.7,
-  "stable": 0.52,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 1,
-  "parts": "carry 39.7, stakes 6",
-  "facts": "In at 0 for 0, level. He made 53% of the team's 396, and no one else came close. The team won by 106 runs.",
-  "result": "win"
- },
- {
   "id": 305,
   "name": "Dinesh Chandimal",
   "runs": 206,
@@ -388,23 +371,6 @@
   "today": 1,
   "parts": "need 10, carry 28.9, stakes 6, occasion 5",
   "facts": "In at 0 for 0, 1 behind. He made 41% of the team's 452, and no one else came close. The team won by 225 runs. It was a Boxing Day or New Year Test.",
-  "result": "win"
- },
- {
-  "id": 663,
-  "name": "Tom Latham",
-  "runs": 177,
-  "year": 2017,
-  "opponent": "Bangladesh",
-  "venue": "Wellington",
-  "score": 44.7,
-  "stable": 0.4166666666666667,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 20, carry 18.7, stakes 6",
-  "facts": "He made 33% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
   "result": "win"
  },
  {
@@ -969,23 +935,6 @@
   "result": "win"
  },
  {
-  "id": 1854,
-  "name": "Shan Masood",
-  "runs": 135,
-  "year": 2019,
-  "opponent": "Sri Lanka",
-  "venue": "Karachi",
-  "score": 44,
-  "stable": 0.3933333333333333,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 10, carry -1, stakes 15, platform 20",
-  "facts": "He made 24% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 0 for 0.",
-  "result": "win"
- },
- {
   "id": 1862,
   "name": "Mike Hussey",
   "runs": 134,
@@ -1241,23 +1190,6 @@
   "result": "win"
  },
  {
-  "id": 2467,
-  "name": "Andrew Strauss",
-  "runs": 122,
-  "year": 2012,
-  "opponent": "West Indies",
-  "venue": "Lord's",
-  "score": 44,
-  "stable": 0.3466666666666667,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 20, carry 18, stakes 6",
-  "facts": "He made 31% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
-  "result": "win"
- },
- {
   "id": 2535,
   "name": "AB de Villiers",
   "runs": 121,
@@ -1391,23 +1323,6 @@
   "today": 0,
   "parts": "carry 32, stakes 6, tempo 10, platform 20, safe -20",
   "facts": "In at 0 for 0, 239 ahead. He made 44% of the team's 264. The team won by 208 runs. As an opener he put on 237 for the first wicket, and the second opener was not out until 254. The rest of the team added only 148. He scored at 103 runs per 100 balls.",
-  "result": "win"
- },
- {
-  "id": 2916,
-  "name": "Shakib Al Hasan",
-  "runs": 116,
-  "year": 2017,
-  "opponent": "Sri Lanka",
-  "venue": "Colombo (PSS)",
-  "score": 44.8,
-  "stable": 0.45,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 0,
-  "parts": "need 15, carry 7.8, stakes 12, late 10",
-  "facts": "He made 25% of the team's runs. The match did not depend on it: he came in at 4 for 192.",
   "result": "win"
  },
  {
@@ -1547,23 +1462,6 @@
   "result": "draw"
  },
  {
-  "id": 3393,
-  "name": "Kieran Powell",
-  "runs": 110,
-  "year": 2012,
-  "opponent": "Bangladesh",
-  "venue": "Mirpur",
-  "score": 45.5,
-  "stable": 0.5033333333333333,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 1,
-  "parts": "need 10, carry 29.5, stakes 6",
-  "facts": "In at 0 for 0, 29 behind. He made 40% of the team's 273. The team won by 77 runs.",
-  "result": "win"
- },
- {
   "id": 3513,
   "name": "Steve Smith",
   "runs": 109,
@@ -1578,23 +1476,6 @@
   "today": 1,
   "parts": "need 20, carry 22.7, stakes 6",
   "facts": "In at 1 for 10, 165 ahead. He made 38% of the team's 285, and no one else came close. The team won by 333 runs.",
-  "result": "win"
- },
- {
-  "id": 3609,
-  "name": "Dhananjaya de Silva",
-  "runs": 108,
-  "year": 2024,
-  "opponent": "Bangladesh",
-  "venue": "Sylhet",
-  "score": 44,
-  "stable": 0.3933333333333333,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 1,
-  "parts": "need 25, carry 3, stakes 6, late 10",
-  "facts": "He made 26% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 4 for 64.",
   "result": "win"
  },
  {
@@ -1751,23 +1632,6 @@
   "result": "win"
  },
  {
-  "id": 3978,
-  "name": "Shivnarine Chanderpaul",
-  "runs": 104,
-  "year": 2003,
-  "opponent": "Australia",
-  "venue": "St John's",
-  "score": 44,
-  "stable": 0.3566666666666667,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 1,
-  "parts": "need 20, carry 3, finish 15, stakes 6",
-  "facts": "He made 25% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 4 for 165.",
-  "result": "win"
- },
- {
   "id": 3983,
   "name": "Graeme Smith",
   "runs": 104,
@@ -1919,23 +1783,6 @@
   "parts": "carry 9.3, stakes 6, tempo 25",
   "facts": "He made 29% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
   "result": "draw"
- },
- {
-  "id": 4276,
-  "name": "Dinesh Chandimal",
-  "runs": 102,
-  "year": 2013,
-  "opponent": "Bangladesh",
-  "venue": "Colombo (RPS)",
-  "score": 46,
-  "stable": 0.49666666666666665,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 1,
-  "parts": "need 25, carry 6, stakes 15",
-  "facts": "In at 4 for 69, 171 behind. He made 30% of the team's 346. The team won by 7 wickets. It was the decider of a level series.",
-  "result": "win"
  },
  {
   "id": 4283,
