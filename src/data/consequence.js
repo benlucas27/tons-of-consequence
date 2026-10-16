@@ -2472,7 +2472,7 @@ export const CONSEQUENCE = {
   2982: [0,null,"He made 18% of the team's runs. The match did not depend on it: he came in at 5 for 226.","b"],
   2983: [0,null,"3rd innings, team 35 behind. The match was drawn. He made 26% of the team's runs. Another hundred came in the same innings.","b"],
   2984: [0,null,"A loss.","b"],
-  2985: [1,"Rescued the innings","In at 2 for 113, 221 behind. He made 23% of the team's 500, and no one else came close. The team won by 10 wickets. It was the decider of a level series. It was a Boxing Day or New Year Test. A slow grind at 36 runs per 100 balls.","b"],
+  2985: [1,"Rescued the innings","In at 2 for 113, 221 behind. He made 23% of the team's 500, and no one else came close. The team won by 10 wickets. It was the decider of a level series. Kallis's last Test, on Boxing Day 2013: he made 115, only the 31st batter to score a hundred in his final Test. A slow grind at 36 runs per 100 balls.","b"],
   2986: [1,"Carried the innings","The match was won.","r"],
   2987: [0,null,"A draw against a lower-tier side: not a draw the hundred saved.","b"],
   2988: [0,null,"A loss.","b"],
