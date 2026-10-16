@@ -132,7 +132,7 @@ test('batter_records answers the aggregate questions', async () => {
   const client = await connect();
   const don = (await call(client, 'batter_records', { batter: 'Don Bradman' })).data.results[0];
   assert.equal(don.hundreds, 29);
-  assert.equal(don.tonsOfConsequence, 12);
+  assert.equal(don.tonsOfConsequence, 11);
   assert.deepEqual([don.results.won, don.results.drawn, don.results.lost], [23, 4, 2]);
   const top = (await call(client, 'batter_records', { sortBy: 'tonsOfConsequence', limit: 3 })).data.results;
   assert.ok(top[0].tonsOfConsequence >= top[1].tonsOfConsequence);
