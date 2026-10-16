@@ -132,6 +132,11 @@ export const EPISODES = {
     "episode": "#572",
     "date": "2023-11-20",
     "youtubeId": "cMdHDzOrQF0"
+  },
+  "sEDG6gEfMjs": {
+    "episode": "#474",
+    "date": "2023-03-13",
+    "youtubeId": "sEDG6gEfMjs"
   }
 };
 export const MOMENTS = [
@@ -506,5 +511,29 @@ export const MOMENTS = [
     "matchText": "England v Australia, Ashes Test, Manchester, Jul 2023 (draw)",
     "inningsText": "111",
     "inningsId": 3322
+  },
+  {
+    "player": "Virat Kohli",
+    "type": "innings",
+    "episode": "#474",
+    "date": "2023-03-13",
+    "youtubeId": "sEDG6gEfMjs",
+    "start": 6386,
+    "note": "Day-four chat about Kohli's 186, his first Test hundred since 2019 and 28th overall, with a joke that the pitch must be bad \"when Virat's getting 100\"",
+    "matchText": "India v Australia, 4th Test, Ahmedabad, Mar 2023 (draw)",
+    "inningsText": "186",
+    "inningsId": 550
+  },
+  {
+    "player": "Shubman Gill",
+    "type": "innings",
+    "episode": "#474",
+    "date": "2023-03-13",
+    "youtubeId": "sEDG6gEfMjs",
+    "start": 6386,
+    "note": "Gill's 128 read out alongside Kohli's 186; at 23, \"a bit of an Indian handful\"",
+    "matchText": "India v Australia, 4th Test, Ahmedabad, Mar 2023 (draw)",
+    "inningsText": "128",
+    "inningsId": 2134
   }
 ];

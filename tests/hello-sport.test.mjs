@@ -91,7 +91,7 @@ test('career moments belong to a player page, and the concept moment is on the a
 
 test('the index file has no rows from the "Other cricket chat" table', () => {
   assert.ok(!MOMENTS.some((m) => ['Jason Sangha', 'Konstas'].some((n) => m.player.includes(n))));
-  assert.equal(MOMENTS.length, 31);
+  assert.equal(MOMENTS.length, 33);
 });
 
 test('public notes carry no hand-over markers', () => {
@@ -123,4 +123,9 @@ test('Labuschagne 111 at Manchester carries the host view that it was not a ton 
   assert.equal(m.episode, '#606');
   assert.equal(m.start, 3793);
   assert.match(m.note, /wasn't a ton of consequence/);
+});
+
+test('Ahmedabad 2023: Kohli 186 and Gill 128 from #474', () => {
+  assert.equal(momentsFor(550)[0].episode, '#474');
+  assert.equal(momentsFor(2134)[0].start, 6386);
 });

@@ -64,6 +64,8 @@ Watch: https://www.youtube.com/watch?v=KAZuw748xiw&t=2068s
 | Harry Brook | 186 off 176 | New Zealand v England, Wellington, Feb 2023 (Eng lost) | #469 | 2023-02-26 | 1:14:27 | https://www.youtube.com/watch?v=_LFfFRuIGLo&t=4467s | innings | A read-out of Brook's 186 off 176 in England's 435 declared, with New Zealand following on and fighting back | 549 |
 | Travis Head | Career (tons: the WTC final and since) | -- | #572 | 2023-11-20 | 18:32 | https://www.youtube.com/watch?v=cMdHDzOrQF0&t=1112s | career | Praise for Head's recent form: a hundred in the World Test Championship final, and tons since | -- |
 | Marnus Labuschagne | 111 | England v Australia, Ashes Test, Manchester, Jul 2023 (draw) | #606 | 2024-03-04 | 1:03:13 | https://www.youtube.com/watch?v=YjkrB5XUq60&t=3793s | innings | On Labuschagne's Ashes hundred: the Test was unwinnable and a draw certain given the weather, so "it wasn't a ton of consequence" (the site rules it one: he saved the match) | 3322 |
+| Virat Kohli | 186 | India v Australia, 4th Test, Ahmedabad, Mar 2023 (draw) | #474 | 2023-03-13 | 1:46:26 | https://www.youtube.com/watch?v=sEDG6gEfMjs&t=6386s | innings | Day-four chat about Kohli's 186, his first Test hundred since 2019 and 28th overall, with a joke that the pitch must be bad "when Virat's getting 100" | 550 |
+| Shubman Gill | 128 | India v Australia, 4th Test, Ahmedabad, Mar 2023 (draw) | #474 | 2023-03-13 | 1:46:26 | https://www.youtube.com/watch?v=sEDG6gEfMjs&t=6386s | innings | Gill's 128 read out alongside Kohli's 186; at 23, "a bit of an Indian handful" | 2134 |
 
 ## Other cricket chat (not Test centuries, so no database row)
 
