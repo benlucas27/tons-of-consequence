@@ -123,7 +123,7 @@ const rerun = []; // hundreds Ben ruled by hand where the rules, run again, disa
 const addRerun = (row, mine, f, mm, evidence) => {
   const d = mm.ton ? describeTon(f, mm) : null;
   const parts = Object.entries(mm.parts).filter(([, v]) => v).map(([k, v]) => `${k} ${Math.round(v * 10) / 10}`).join(', ');
-  rerun.push({ id: row.id, name: row.name, runs: row.runs, year: row.year, opponent: row.opponent, venue: row.venue, evidence, yours: mine, rules: mm.ton ? 'yes' : 'no', score: mm.score, gate: mm.gate ? '' : mm.gateWhy, parts, reason: mm.ton ? d.reason : describeGoodTon(f, mm), scenario: d?.scenario || null });
+  rerun.push({ id: row.id, name: row.name, runs: row.runs, year: row.year, opponent: row.opponent, venue: row.venue, evidence, yours: mine, rules: mm.ton ? 'yes' : 'no', score: mm.score, gate: mm.gate ? '' : mm.gateWhy, parts, reason: mm.ton ? d.reason : describeGoodTon(f, mm), scenario: d?.scenario || null, verdict: [mm.ton ? 1 : 0, d?.scenario || null, mm.ton ? d.reason : describeGoodTon(f, mm), evidence] });
 };
 let v3Changed = 0, v3Kept = 0, v3Partial = 0;
 const decide = (row, f, evidence, existing) => {
@@ -152,6 +152,8 @@ for (const row of ALL) {
   const next = decide(row, f, 'p', null);
   if (next) { out[row.id] = next; v3Partial += 1; }
 }
+// Ben, 16 Oct 2026: with the 12 laws agreed, the rules' answer replaces his earlier hand ruling wherever they disagree (Bradman excepted: he is not in this list)
+for (const r of rerun) out[r.id] = r.verdict;
 fs.writeFileSync(path.join(root, 'docs/drafts/review-rerun.json'), JSON.stringify(rerun, null, 1));
 console.log(`Rerun: ${rerun.length} of Ben's hand rulings disagree with the rules (${rerun.filter((r) => r.evidence === 'b').length} ball-by-ball, ${rerun.filter((r) => r.evidence === 'p').length} older, of ${calib.olderTotal || 0} older rulings with series facts).`);
 fs.writeFileSync(path.join(root, 'docs/drafts/review-queue.json'), JSON.stringify(queue, null, 1));

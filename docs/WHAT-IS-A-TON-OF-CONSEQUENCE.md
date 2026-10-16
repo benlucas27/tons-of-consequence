@@ -25,7 +25,7 @@ Law 1 is the only hard law. Laws 2 to 12 add points, and law 8 takes points away
 
 ## How firm a verdict is
 
-- Your own rulings always win over the points.
+- Your own hand rulings stand, with one exception made on 16 Oct 2026: once the 12 laws were agreed, the laws' answer replaced your earlier ruling on the 164 hundreds where they disagreed. Bradman's are untouched.
 - If a verdict flips when the weights are nudged, it's marked marginal. Full-evidence hundreds keep their current verdict. Partial-evidence ones get no verdict until reviewed.
 - Every verdict shows the level of evidence behind it.
 - **Articles that call an innings one of the greats** are linked beside the verdict on the site and help hand rulings. They set the evidence, not the points. Two are in so far (Laxman 281 at Kolkata and Stokes 135* at Headingley, both from Wisden). More come from Wisden, Wikipedia, Cricket Country, Scroll and cricket.com.au.
@@ -33,7 +33,7 @@ Law 1 is the only hard law. Laws 2 to 12 add points, and law 8 takes points away
 
 ## Honest limits
 
-- It is a first pass, not a measurement. The points agree with 151 of your 258 rulings (59%).
+- It is a first pass, not a measurement. The points agreed with 151 of your 258 earlier ball-by-ball rulings (59%); the other 107 now follow the rules.
 - The new laws (9 to 11) did not lift that agreement, and adding a "very big score" law lifted it by only 3 rulings while pushing the count of tons up to about 700, so I left it out.
 - About 649 hundreds clear the bar today.
 - The partnership and opening-platform laws only work for hundreds with a ball-by-ball record. Older ones use hand rulings.

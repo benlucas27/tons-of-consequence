@@ -15,8 +15,14 @@
   "score": 34,
   "gate": "",
   "parts": "carry 28, stakes 6",
-  "reason": "He made 52% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 0 for 0.",
-  "scenario": null
+  "reason": "He made 52% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 52% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "b"
+  ]
  },
  {
   "id": 42,
@@ -34,8 +40,14 @@
   "score": 31,
   "gate": "",
   "parts": "need 15, carry 6, stakes 6, attack 4",
-  "reason": "He made 38% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 1 for 6.",
-  "scenario": null
+  "reason": "He made 38% of the team's runs. The match did not depend on it: he came in at 1 for 6.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 38% of the team's runs. The match did not depend on it: he came in at 1 for 6.",
+   "b"
+  ]
  },
  {
   "id": 61,
@@ -53,8 +65,14 @@
   "score": 38,
   "gate": "",
   "parts": "carry 22, stakes 6, tempo 10",
-  "reason": "He made 46% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 2 for 104.",
-  "scenario": null
+  "reason": "He made 46% of the team's runs. The match did not depend on it: he came in at 2 for 104.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 46% of the team's runs. The match did not depend on it: he came in at 2 for 104.",
+   "b"
+  ]
  },
  {
   "id": 96,
@@ -72,8 +90,14 @@
   "score": 33,
   "gate": "",
   "parts": "carry 22, finish 5, stakes 6",
-  "reason": "He made 45% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 1 for 5.",
-  "scenario": null
+  "reason": "He made 45% of the team's runs. The match did not depend on it: he came in at 1 for 5.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 45% of the team's runs. The match did not depend on it: he came in at 1 for 5.",
+   "b"
+  ]
  },
  {
   "id": 131,
@@ -91,8 +115,14 @@
   "score": 38,
   "gate": "",
   "parts": "need 10, carry 22, stakes 6",
-  "reason": "He made 43% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 3 for 131.",
-  "scenario": null
+  "reason": "He made 43% of the team's runs. The match did not depend on it: he came in at 3 for 131.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 43% of the team's runs. The match did not depend on it: he came in at 3 for 131.",
+   "b"
+  ]
  },
  {
   "id": 132,
@@ -110,8 +140,14 @@
   "score": 38,
   "gate": "",
   "parts": "need 20, carry 12, stakes 6",
-  "reason": "He made 36% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 2 for 55.",
-  "scenario": null
+  "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 2 for 55.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 36% of the team's runs. The match did not depend on it: he came in at 2 for 55.",
+   "b"
+  ]
  },
  {
   "id": 133,
@@ -130,7 +166,13 @@
   "gate": "",
   "parts": "need 20, carry 10, stakes 12, occasion 5, attack 4",
   "reason": "In at 1 for 52, 245 behind. He made 36% of the team's 659. The team won by 176 runs. The series was still to be settled in this Test. It was a Boxing Day or New Year Test. He faced an elite attack.",
-  "scenario": "Rescued the innings"
+  "scenario": "Rescued the innings",
+  "verdict": [
+   1,
+   "Rescued the innings",
+   "In at 1 for 52, 245 behind. He made 36% of the team's 659. The team won by 176 runs. The series was still to be settled in this Test. It was a Boxing Day or New Year Test. He faced an elite attack.",
+   "b"
+  ]
  },
  {
   "id": 147,
@@ -149,7 +191,13 @@
   "gate": "",
   "parts": "need 20, carry 22, stakes 12",
   "reason": "In at 0 for 0, 99 behind. He made 45% of the team's 517. The team won by 92 runs. The series was still to be settled in this Test.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 0 for 0, 99 behind. He made 45% of the team's 517. The team won by 92 runs. The series was still to be settled in this Test.",
+   "b"
+  ]
  },
  {
   "id": 157,
@@ -167,8 +215,14 @@
   "score": 16,
   "gate": "",
   "parts": "carry 10, stakes 6",
-  "reason": "He made 36% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 0 for 0.",
-  "scenario": null
+  "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 36% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "b"
+  ]
  },
  {
   "id": 167,
@@ -187,7 +241,13 @@
   "gate": "",
   "parts": "need 15, carry 38.4, stakes 6",
   "reason": "In at 2 for 17, 118 behind. He made 54% of the team's 421, and no one else came close. The team won by 7 wickets.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 2 for 17, 118 behind. He made 54% of the team's 421, and no one else came close. The team won by 7 wickets.",
+   "b"
+  ]
  },
  {
   "id": 171,
@@ -205,8 +265,14 @@
   "score": 44,
   "gate": "",
   "parts": "carry 12, stakes 12, platform 20",
-  "reason": "He made 40% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 0 for 0.",
-  "scenario": null
+  "reason": "He made 40% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 0 for 0.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 40% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 0 for 0.",
+   "b"
+  ]
  },
  {
   "id": 186,
@@ -224,8 +290,14 @@
   "score": 40,
   "gate": "",
   "parts": "need 10, carry 10, stakes 15, occasion 5",
-  "reason": "He made 39% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 2 for 56.",
-  "scenario": null
+  "reason": "He made 39% of the team's runs. The match did not depend on it: he came in at 2 for 56.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 39% of the team's runs. The match did not depend on it: he came in at 2 for 56.",
+   "b"
+  ]
  },
  {
   "id": 217,
@@ -243,8 +315,14 @@
   "score": 38,
   "gate": "",
   "parts": "need 20, carry 12, stakes 6",
-  "reason": "He made 36% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 0 for 0.",
-  "scenario": null
+  "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 36% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "b"
+  ]
  },
  {
   "id": 222,
@@ -263,7 +341,13 @@
   "gate": "",
   "parts": "carry 18.8, stakes 6, attack 10",
   "reason": "He made 38% of the team's runs. The match did not depend on it: he came in at 2 for 63.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 38% of the team's runs. The match did not depend on it: he came in at 2 for 63.",
+   "b"
+  ]
  },
  {
   "id": 238,
@@ -282,7 +366,13 @@
   "gate": "",
   "parts": "carry 19, stakes 12, platform 8",
   "reason": "He made 37% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 37% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "b"
+  ]
  },
  {
   "id": 239,
@@ -300,8 +390,14 @@
   "score": 18,
   "gate": "",
   "parts": "carry 12, stakes 6",
-  "reason": "He made 38% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 1 for 78.",
-  "scenario": null
+  "reason": "He made 38% of the team's runs. The match did not depend on it: he came in at 1 for 78.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 38% of the team's runs. The match did not depend on it: he came in at 1 for 78.",
+   "b"
+  ]
  },
  {
   "id": 258,
@@ -319,8 +415,14 @@
   "score": 22,
   "gate": "",
   "parts": "carry 10, stakes 12",
-  "reason": "He made 37% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 2 for 96.",
-  "scenario": null
+  "reason": "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 96.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 96.",
+   "b"
+  ]
  },
  {
   "id": 270,
@@ -339,7 +441,13 @@
   "gate": "",
   "parts": "need 20, carry 22, stakes 11",
   "reason": "In at 1 for 0, 314 behind. He made 44% of the team's 483. The match was drawn, with his side in danger of losing.",
-  "scenario": "Saved the match"
+  "scenario": "Saved the match",
+  "verdict": [
+   1,
+   "Saved the match",
+   "In at 1 for 0, 314 behind. He made 44% of the team's 483. The match was drawn, with his side in danger of losing.",
+   "b"
+  ]
  },
  {
   "id": 361,
@@ -358,7 +466,13 @@
   "gate": "",
   "parts": "carry 29.2, stakes 6",
   "reason": "He made 43% of the team's runs. The match did not depend on it: he came in at 2 for 62.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 43% of the team's runs. The match did not depend on it: he came in at 2 for 62.",
+   "b"
+  ]
  },
  {
   "id": 402,
@@ -377,7 +491,13 @@
   "gate": "",
   "parts": "need 10, carry 32.4, stakes 6",
   "reason": "In at 2 for 21, 57 behind. He made 48% of the team's 419, and no one else came close. The team won by 221 runs.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 2 for 21, 57 behind. He made 48% of the team's 419, and no one else came close. The team won by 221 runs.",
+   "b"
+  ]
  },
  {
   "id": 405,
@@ -396,7 +516,13 @@
   "gate": "",
   "parts": "need 20, carry 18.8, stakes 6, tempo 25",
   "reason": "In at 2 for 92, 266 behind. He made 39% of the team's 515, and no one else came close. The team won by 10 wickets. A slow grind at 43 runs per 100 balls.",
-  "scenario": "Rescued the innings"
+  "scenario": "Rescued the innings",
+  "verdict": [
+   1,
+   "Rescued the innings",
+   "In at 2 for 92, 266 behind. He made 39% of the team's 515, and no one else came close. The team won by 10 wickets. A slow grind at 43 runs per 100 balls.",
+   "b"
+  ]
  },
  {
   "id": 453,
@@ -414,8 +540,14 @@
   "score": 27,
   "gate": "",
   "parts": "carry 12, stakes 15",
-  "reason": "He made 34% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 1 for 28.",
-  "scenario": null
+  "reason": "He made 34% of the team's runs. The match did not depend on it: he came in at 1 for 28.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 34% of the team's runs. The match did not depend on it: he came in at 1 for 28.",
+   "b"
+  ]
  },
  {
   "id": 548,
@@ -434,7 +566,13 @@
   "gate": "",
   "parts": "need 20, carry 38.6, stakes 12",
   "reason": "In at 2 for 5, 376 behind. He made 54% of the team's 344, and no one else came close. The team won by 6 wickets. The series was still to be settled in this Test.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 2 for 5, 376 behind. He made 54% of the team's 344, and no one else came close. The team won by 6 wickets. The series was still to be settled in this Test.",
+   "b"
+  ]
  },
  {
   "id": 621,
@@ -453,7 +591,13 @@
   "gate": "",
   "parts": "need 20, carry 12, stakes 12, tempo 25, attack 4",
   "reason": "In at 0 for 0, level. He made 38% of the team's 480. The match was drawn. The series was still to be settled in this Test. He faced an elite attack. A slow grind at 43 runs per 100 balls.",
-  "scenario": "Wore the opposition down"
+  "scenario": "Wore the opposition down",
+  "verdict": [
+   1,
+   "Wore the opposition down",
+   "In at 0 for 0, level. He made 38% of the team's 480. The match was drawn. The series was still to be settled in this Test. He faced an elite attack. A slow grind at 43 runs per 100 balls.",
+   "b"
+  ]
  },
  {
   "id": 659,
@@ -471,8 +615,14 @@
   "score": 27,
   "gate": "",
   "parts": "carry 12, stakes 15",
-  "reason": "He made 38% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 1 for 5.",
-  "scenario": null
+  "reason": "He made 38% of the team's runs. The match did not depend on it: he came in at 1 for 5.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 38% of the team's runs. The match did not depend on it: he came in at 1 for 5.",
+   "b"
+  ]
  },
  {
   "id": 665,
@@ -490,8 +640,14 @@
   "score": 31,
   "gate": "",
   "parts": "carry 25, stakes 6",
-  "reason": "He made 42% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 1 for 8.",
-  "scenario": null
+  "reason": "He made 42% of the team's runs. The match did not depend on it: he came in at 1 for 8.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 42% of the team's runs. The match did not depend on it: he came in at 1 for 8.",
+   "b"
+  ]
  },
  {
   "id": 789,
@@ -510,7 +666,13 @@
   "gate": "",
   "parts": "need 20, carry 32.1, stakes 12",
   "reason": "In at 1 for 7, 301 behind. He made 42% of the team's 403, and no one else came close. The team won by 9 wickets. The series was still to be settled in this Test.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 1 for 7, 301 behind. He made 42% of the team's 403, and no one else came close. The team won by 9 wickets. The series was still to be settled in this Test.",
+   "b"
+  ]
  },
  {
   "id": 809,
@@ -528,8 +690,14 @@
   "score": 36,
   "gate": "",
   "parts": "need 18, carry 12, stakes 6",
-  "reason": "He made 37% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 3 for 115.",
-  "scenario": null
+  "reason": "He made 37% of the team's runs. The match did not depend on it: he came in at 3 for 115.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 37% of the team's runs. The match did not depend on it: he came in at 3 for 115.",
+   "b"
+  ]
  },
  {
   "id": 829,
@@ -547,8 +715,14 @@
   "score": 28,
   "gate": "",
   "parts": "need 10, carry 12, stakes 6",
-  "reason": "He made 37% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 2 for 22.",
-  "scenario": null
+  "reason": "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 22.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 22.",
+   "b"
+  ]
  },
  {
   "id": 869,
@@ -566,8 +740,14 @@
   "score": 35,
   "gate": "",
   "parts": "need 20, carry -7, stakes 12, tempo 10",
-  "reason": "He made 26% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 0 for 0.",
-  "scenario": null
+  "reason": "He made 26% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 26% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "b"
+  ]
  },
  {
   "id": 909,
@@ -586,7 +766,13 @@
   "gate": "",
   "parts": "need 20, carry 17.9, stakes 6, tempo 25",
   "reason": "In at 0 for 0, level. He made 32% of the team's 510, and no one else came close. The match was drawn. A slow grind at 36 runs per 100 balls.",
-  "scenario": "Wore the opposition down"
+  "scenario": "Wore the opposition down",
+  "verdict": [
+   1,
+   "Wore the opposition down",
+   "In at 0 for 0, level. He made 32% of the team's 510, and no one else came close. The match was drawn. A slow grind at 36 runs per 100 balls.",
+   "b"
+  ]
  },
  {
   "id": 943,
@@ -605,7 +791,13 @@
   "gate": "",
   "parts": "need 10, carry 32.5, stakes 15",
   "reason": "In at 1 for 1, 23 behind. He made 49% of the team's 331, and no one else came close. The team won by 53 runs. It was the decider of a level series.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 1 for 1, 23 behind. He made 49% of the team's 331, and no one else came close. The team won by 53 runs. It was the decider of a level series.",
+   "b"
+  ]
  },
  {
   "id": 958,
@@ -624,7 +816,13 @@
   "gate": "",
   "parts": "carry 17.3, stakes 6, platform 15",
   "reason": "He made 38% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 38% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "b"
+  ]
  },
  {
   "id": 995,
@@ -643,7 +841,13 @@
   "gate": "",
   "parts": "need 20, carry 12, stakes 6, tempo 25",
   "reason": "In at 0 for 0, 507 behind. He made 39% of the team's 411. The match was drawn. A slow grind at 33 runs per 100 balls.",
-  "scenario": "Wore the opposition down"
+  "scenario": "Wore the opposition down",
+  "verdict": [
+   1,
+   "Wore the opposition down",
+   "In at 0 for 0, 507 behind. He made 39% of the team's 411. The match was drawn. A slow grind at 33 runs per 100 balls.",
+   "b"
+  ]
  },
  {
   "id": 1009,
@@ -662,7 +866,13 @@
   "gate": "",
   "parts": "carry 18.3, stakes 6",
   "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 1 for 49.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 36% of the team's runs. The match did not depend on it: he came in at 1 for 49.",
+   "b"
+  ]
  },
  {
   "id": 1029,
@@ -681,7 +891,13 @@
   "gate": "",
   "parts": "carry 18.5, stakes 6",
   "reason": "He made 37% of the team's runs. The match did not depend on it: he came in at 1 for 18.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 37% of the team's runs. The match did not depend on it: he came in at 1 for 18.",
+   "b"
+  ]
  },
  {
   "id": 1060,
@@ -700,7 +916,13 @@
   "gate": "",
   "parts": "carry 12, stakes 6, tempo 25, attack 4",
   "reason": "In at 0 for 0, level. He made 33% of the team's 476. The match was drawn. He faced an elite attack. A slow grind at 44 runs per 100 balls.",
-  "scenario": "Wore the opposition down"
+  "scenario": "Wore the opposition down",
+  "verdict": [
+   1,
+   "Wore the opposition down",
+   "In at 0 for 0, level. He made 33% of the team's 476. The match was drawn. He faced an elite attack. A slow grind at 44 runs per 100 balls.",
+   "b"
+  ]
  },
  {
   "id": 1080,
@@ -719,7 +941,13 @@
   "gate": "",
   "parts": "carry 17.5, stakes 6",
   "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 36% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "b"
+  ]
  },
  {
   "id": 1207,
@@ -738,7 +966,13 @@
   "gate": "",
   "parts": "carry 17.1, stakes 6, tempo 10, late 5, attack 4",
   "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 3 for 189.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 36% of the team's runs. The match did not depend on it: he came in at 3 for 189.",
+   "b"
+  ]
  },
  {
   "id": 1233,
@@ -757,7 +991,13 @@
   "gate": "",
   "parts": "need 10, carry 17, stakes 12, tempo 10",
   "reason": "In at 2 for 213, 62 behind. He made 33% of the team's 460, and no one else came close. The team won by 8 wickets. The series was still to be settled in this Test. He scored at 92 runs per 100 balls.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 2 for 213, 62 behind. He made 33% of the team's 460, and no one else came close. The team won by 8 wickets. The series was still to be settled in this Test. He scored at 92 runs per 100 balls.",
+   "b"
+  ]
  },
  {
   "id": 1328,
@@ -775,8 +1015,14 @@
   "score": 41,
   "gate": "",
   "parts": "need 10, carry 15, stakes 6, attack 10",
-  "reason": "He made 37% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 2 for 24.",
-  "scenario": null
+  "reason": "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 24.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 24.",
+   "b"
+  ]
  },
  {
   "id": 1335,
@@ -795,7 +1041,13 @@
   "gate": "",
   "parts": "need 20, carry 1, stakes 12, tempo 25",
   "reason": "In at 3 for 195, 351 behind. He made 27% of the team's 544. The match was drawn. The series was still to be settled in this Test. A slow grind at 41 runs per 100 balls.",
-  "scenario": "Wore the opposition down"
+  "scenario": "Wore the opposition down",
+  "verdict": [
+   1,
+   "Wore the opposition down",
+   "In at 3 for 195, 351 behind. He made 27% of the team's 544. The match was drawn. The series was still to be settled in this Test. A slow grind at 41 runs per 100 balls.",
+   "b"
+  ]
  },
  {
   "id": 1387,
@@ -814,7 +1066,13 @@
   "gate": "",
   "parts": "need 20, carry 12, stakes 6, platform 8, attack 10",
   "reason": "In at 0 for 0, 249 behind. He made 33% of the team's 442. The team won by 7 wickets. As an opener he put on 135 for the first wicket, and the second opener was not out until 290. He faced an elite attack.",
-  "scenario": "Rescued the innings"
+  "scenario": "Rescued the innings",
+  "verdict": [
+   1,
+   "Rescued the innings",
+   "In at 0 for 0, 249 behind. He made 33% of the team's 442. The team won by 7 wickets. As an opener he put on 135 for the first wicket, and the second opener was not out until 290. He faced an elite attack.",
+   "b"
+  ]
  },
  {
   "id": 1388,
@@ -833,7 +1091,13 @@
   "gate": "",
   "parts": "need 20, carry 17.5, stakes 6, tempo 25",
   "reason": "In at 0 for 0, level. He made 32% of the team's 457, and no one else came close. The match was drawn. A slow grind at 40 runs per 100 balls.",
-  "scenario": "Wore the opposition down"
+  "scenario": "Wore the opposition down",
+  "verdict": [
+   1,
+   "Wore the opposition down",
+   "In at 0 for 0, level. He made 32% of the team's 457, and no one else came close. The match was drawn. A slow grind at 40 runs per 100 balls.",
+   "b"
+  ]
  },
  {
   "id": 1398,
@@ -851,8 +1115,14 @@
   "score": 23,
   "gate": "",
   "parts": "carry 12, stakes 6, occasion 5",
-  "reason": "He made 36% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 2 for 90.",
-  "scenario": null
+  "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 2 for 90.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 36% of the team's runs. The match did not depend on it: he came in at 2 for 90.",
+   "b"
+  ]
  },
  {
   "id": 1421,
@@ -870,8 +1140,14 @@
   "score": 22,
   "gate": "",
   "parts": "carry 1, stakes 6, occasion 15",
-  "reason": "He made 28% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 0 for 0.",
-  "scenario": null
+  "reason": "He made 28% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 28% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "b"
+  ]
  },
  {
   "id": 1445,
@@ -890,7 +1166,13 @@
   "gate": "",
   "parts": "carry 16.9, stakes 12, tempo 25",
   "reason": "In at 1 for 4, 4 ahead. He made 35% of the team's 413, and no one else came close. The match was drawn. The series was still to be settled in this Test. A slow grind at 42 runs per 100 balls.",
-  "scenario": "Wore the opposition down"
+  "scenario": "Wore the opposition down",
+  "verdict": [
+   1,
+   "Wore the opposition down",
+   "In at 1 for 4, 4 ahead. He made 35% of the team's 413, and no one else came close. The match was drawn. The series was still to be settled in this Test. A slow grind at 42 runs per 100 balls.",
+   "b"
+  ]
  },
  {
   "id": 1485,
@@ -909,7 +1191,13 @@
   "gate": "",
   "parts": "need 18, carry 16.9, stakes 12",
   "reason": "In at 3 for 115, 115 ahead. He made 34% of the team's 416, and no one else came close. The team won by 96 runs. The series was still to be settled in this Test.",
-  "scenario": "Rescued the innings"
+  "scenario": "Rescued the innings",
+  "verdict": [
+   1,
+   "Rescued the innings",
+   "In at 3 for 115, 115 ahead. He made 34% of the team's 416, and no one else came close. The team won by 96 runs. The series was still to be settled in this Test.",
+   "b"
+  ]
  },
  {
   "id": 1529,
@@ -927,8 +1215,14 @@
   "score": 43,
   "gate": "",
   "parts": "need 15, carry -3, stakes 6, tempo 25",
-  "reason": "He made 23% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 1 for 71.",
-  "scenario": null
+  "reason": "He made 23% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 1 for 71.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 23% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 1 for 71.",
+   "b"
+  ]
  },
  {
   "id": 1533,
@@ -947,7 +1241,13 @@
   "gate": "",
   "parts": "need 10, carry 33.3, stakes 6, tempo 10",
   "reason": "In at 2 for 69, 72 behind. He made 48% of the team's 295, and no one else came close. The team won by 6 wickets. He scored at 90 runs per 100 balls.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 2 for 69, 72 behind. He made 48% of the team's 295, and no one else came close. The team won by 6 wickets. He scored at 90 runs per 100 balls.",
+   "b"
+  ]
  },
  {
   "id": 1564,
@@ -965,8 +1265,14 @@
   "score": 29,
   "gate": "",
   "parts": "need 20, carry 3, stakes 6",
-  "reason": "He made 24% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 4 for 128.",
-  "scenario": null
+  "reason": "He made 24% of the team's runs. The match did not depend on it: he came in at 4 for 128.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 24% of the team's runs. The match did not depend on it: he came in at 4 for 128.",
+   "b"
+  ]
  },
  {
   "id": 1621,
@@ -985,7 +1291,13 @@
   "gate": "",
   "parts": "need 15, carry 37.9, stakes 11",
   "reason": "In at 0 for 0, 149 behind. He made 50% of the team's 279, and no one else came close. The match was drawn, with his side in danger of losing. The rest of the team added only 140.",
-  "scenario": "Saved the match"
+  "scenario": "Saved the match",
+  "verdict": [
+   1,
+   "Saved the match",
+   "In at 0 for 0, 149 behind. He made 50% of the team's 279, and no one else came close. The match was drawn, with his side in danger of losing. The rest of the team added only 140.",
+   "b"
+  ]
  },
  {
   "id": 1643,
@@ -1004,7 +1316,13 @@
   "gate": "",
   "parts": "need 20, carry 25, stakes 15",
   "reason": "In at 1 for 7, 233 behind. He made 40% of the team's 346. The team won by 7 wickets. It was the decider of a level series.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 1 for 7, 233 behind. He made 40% of the team's 346. The team won by 7 wickets. It was the decider of a level series.",
+   "b"
+  ]
  },
  {
   "id": 1746,
@@ -1023,7 +1341,13 @@
   "gate": "",
   "parts": "need 20, carry 30.8, stakes 6, occasion 5",
   "reason": "In at 0 for 0, 44 ahead. He made 43% of the team's 321, and no one else came close. The team won by 184 runs. It was a Boxing Day or New Year Test.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 0 for 0, 44 ahead. He made 43% of the team's 321, and no one else came close. The team won by 184 runs. It was a Boxing Day or New Year Test.",
+   "b"
+  ]
  },
  {
   "id": 1767,
@@ -1042,7 +1366,13 @@
   "gate": "",
   "parts": "need 18, carry 22.2, stakes 12",
   "reason": "In at 4 for 103, 174 ahead. He made 38% of the team's 354, and no one else came close. The team won by 198 runs. The series was still to be settled in this Test.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 4 for 103, 174 ahead. He made 38% of the team's 354, and no one else came close. The team won by 198 runs. The series was still to be settled in this Test.",
+   "b"
+  ]
  },
  {
   "id": 1795,
@@ -1061,7 +1391,13 @@
   "gate": "",
   "parts": "carry 12, stakes 12, tempo 25",
   "reason": "In at 1 for 6, 6 ahead. He made 30% of the team's 453. The match was drawn. The series was still to be settled in this Test. A slow grind at 41 runs per 100 balls.",
-  "scenario": "Wore the opposition down"
+  "scenario": "Wore the opposition down",
+  "verdict": [
+   1,
+   "Wore the opposition down",
+   "In at 1 for 6, 6 ahead. He made 30% of the team's 453. The match was drawn. The series was still to be settled in this Test. A slow grind at 41 runs per 100 balls.",
+   "b"
+  ]
  },
  {
   "id": 1976,
@@ -1080,7 +1416,13 @@
   "gate": "",
   "parts": "need 20, carry 20.4, stakes 11",
   "reason": "In at 2 for 75, 375 behind. He made 38% of the team's 343, and no one else came close. The match was drawn, with his side in danger of losing.",
-  "scenario": "Saved the match"
+  "scenario": "Saved the match",
+  "verdict": [
+   1,
+   "Saved the match",
+   "In at 2 for 75, 375 behind. He made 38% of the team's 343, and no one else came close. The match was drawn, with his side in danger of losing.",
+   "b"
+  ]
  },
  {
   "id": 2003,
@@ -1099,7 +1441,13 @@
   "gate": "",
   "parts": "need 20, carry 21.5, stakes 12",
   "reason": "In at 2 for 43, 324 behind. He made 38% of the team's 349, and no one else came close. The team won by 8 wickets. The series was still to be settled in this Test.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 2 for 43, 324 behind. He made 38% of the team's 349, and no one else came close. The team won by 8 wickets. The series was still to be settled in this Test.",
+   "b"
+  ]
  },
  {
   "id": 2015,
@@ -1118,7 +1466,13 @@
   "gate": "",
   "parts": "need 25, carry 32.6, stakes 6, late 5",
   "reason": "In at 3 for 61, 87 behind. He made 41% of the team's 318, and no one else came close. The team won by 9 wickets. He added 97 for the 10th wicket.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 3 for 61, 87 behind. He made 41% of the team's 318, and no one else came close. The team won by 9 wickets. He added 97 for the 10th wicket.",
+   "b"
+  ]
  },
  {
   "id": 2035,
@@ -1137,7 +1491,13 @@
   "gate": "",
   "parts": "need 20, carry 30.6, stakes 17",
   "reason": "In at 1 for 15, 441 behind. He made 41% of the team's 316, and no one else came close. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test.",
-  "scenario": "Saved the match"
+  "scenario": "Saved the match",
+  "verdict": [
+   1,
+   "Saved the match",
+   "In at 1 for 15, 441 behind. He made 41% of the team's 316, and no one else came close. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test.",
+   "b"
+  ]
  },
  {
   "id": 2081,
@@ -1156,7 +1516,13 @@
   "gate": "",
   "parts": "need 25, carry 16.1, stakes 6",
   "reason": "In at 3 for 88, 77 behind. He made 33% of the team's 388. The team won by 9 wickets.",
-  "scenario": "Rescued the innings"
+  "scenario": "Rescued the innings",
+  "verdict": [
+   1,
+   "Rescued the innings",
+   "In at 3 for 88, 77 behind. He made 33% of the team's 388. The team won by 9 wickets.",
+   "b"
+  ]
  },
  {
   "id": 2088,
@@ -1175,7 +1541,13 @@
   "gate": "",
   "parts": "carry 19.9, stakes 6, platform 8, attack 4",
   "reason": "He made 35% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 35% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "b"
+  ]
  },
  {
   "id": 2128,
@@ -1194,7 +1566,13 @@
   "gate": "",
   "parts": "need 25, carry 16.2, stakes 12",
   "reason": "In at 3 for 83, 83 ahead. He made 31% of the team's 419. The team won by 80 runs. The series was still to be settled in this Test.",
-  "scenario": "Rescued the innings"
+  "scenario": "Rescued the innings",
+  "verdict": [
+   1,
+   "Rescued the innings",
+   "In at 3 for 83, 83 ahead. He made 31% of the team's 419. The team won by 80 runs. The series was still to be settled in this Test.",
+   "b"
+  ]
  },
  {
   "id": 2142,
@@ -1213,7 +1591,13 @@
   "gate": "",
   "parts": "carry 39.9, stakes 6",
   "reason": "In at 1 for 20, 197 ahead. He made 47% of the team's 270, and no one else came close. The team won by 231 runs. The rest of the team added only 143.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 1 for 20, 197 ahead. He made 47% of the team's 270, and no one else came close. The team won by 231 runs. The rest of the team added only 143.",
+   "b"
+  ]
  },
  {
   "id": 2186,
@@ -1232,7 +1616,13 @@
   "gate": "",
   "parts": "carry 21.3, stakes 15, tempo 25",
   "reason": "In at 0 for 0, level. He made 34% of the team's 376, and no one else came close. The team won by 101 runs. It was the decider of a level series. A slow grind at 38 runs per 100 balls.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 0 for 0, level. He made 34% of the team's 376, and no one else came close. The team won by 101 runs. It was the decider of a level series. A slow grind at 38 runs per 100 balls.",
+   "b"
+  ]
  },
  {
   "id": 2189,
@@ -1251,7 +1641,13 @@
   "gate": "",
   "parts": "need 15, carry 30.8, stakes 12, occasion 5",
   "reason": "In at 0 for 0, 157 behind. He made 42% of the team's 302, and no one else came close. The team won by 10 wickets. The series was still to be settled in this Test. It was a Boxing Day or New Year Test.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 0 for 0, 157 behind. He made 42% of the team's 302, and no one else came close. The team won by 10 wickets. The series was still to be settled in this Test. It was a Boxing Day or New Year Test.",
+   "b"
+  ]
  },
  {
   "id": 2336,
@@ -1270,7 +1666,13 @@
   "gate": "",
   "parts": "carry 20.7, stakes 6, occasion 5, platform 8",
   "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 36% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "b"
+  ]
  },
  {
   "id": 2461,
@@ -1289,7 +1691,13 @@
   "gate": "",
   "parts": "need 15, carry 20.3, finish 5, stakes 6",
   "reason": "In at 0 for 0, 144 behind. He made 36% of the team's 341, and no one else came close. The team won by 22 runs.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 0 for 0, 144 behind. He made 36% of the team's 341, and no one else came close. The team won by 22 runs.",
+   "b"
+  ]
  },
  {
   "id": 2527,
@@ -1308,7 +1716,13 @@
   "gate": "",
   "parts": "need 10, carry 18.5, finish 5, stakes 6, tempo 10, platform 20",
   "reason": "In at 0 for 0, 54 behind. He made 36% of the team's 340. The team won by 21 runs. As an opener he put on 217 for the first wicket, and the second opener was not out until 234. He scored at 113 runs per 100 balls.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 0 for 0, 54 behind. He made 36% of the team's 340. The team won by 21 runs. As an opener he put on 217 for the first wicket, and the second opener was not out until 234. He scored at 113 runs per 100 balls.",
+   "b"
+  ]
  },
  {
   "id": 2601,
@@ -1327,7 +1741,13 @@
   "gate": "",
   "parts": "need 18, carry 6.9, stakes 6, late 10",
   "reason": "He made 26% of the team's runs. The match did not depend on it: he came in at 3 for 129.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 26% of the team's runs. The match did not depend on it: he came in at 3 for 129.",
+   "b"
+  ]
  },
  {
   "id": 2672,
@@ -1346,7 +1766,13 @@
   "gate": "",
   "parts": "need 20, carry 8.4, stakes 11",
   "reason": "He made 22% of the team's runs. The match did not depend on it: he came in at 2 for 119.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 22% of the team's runs. The match did not depend on it: he came in at 2 for 119.",
+   "b"
+  ]
  },
  {
   "id": 2682,
@@ -1364,8 +1790,14 @@
   "score": 28,
   "gate": "",
   "parts": "need 10, carry 12, stakes 6",
-  "reason": "He made 31% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 2 for 46.",
-  "scenario": null
+  "reason": "He made 31% of the team's runs. The match did not depend on it: he came in at 2 for 46.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 31% of the team's runs. The match did not depend on it: he came in at 2 for 46.",
+   "b"
+  ]
  },
  {
   "id": 2689,
@@ -1384,7 +1816,13 @@
   "gate": "",
   "parts": "need 25, carry 32, stakes 6",
   "reason": "In at 3 for 67, 121 behind. He made 42% of the team's 283, and no one else came close. The team won by 10 wickets.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 3 for 67, 121 behind. He made 42% of the team's 283, and no one else came close. The team won by 10 wickets.",
+   "b"
+  ]
  },
  {
   "id": 2694,
@@ -1403,7 +1841,13 @@
   "gate": "",
   "parts": "need 20, carry 20.1, finish 15, stakes 15",
   "reason": "In at 1 for 64, 242 behind. He made 38% of the team's 307, and no one else came close. The team won by 3 wickets. It was the decider of a level series.",
-  "scenario": "Chased it down"
+  "scenario": "Chased it down",
+  "verdict": [
+   1,
+   "Chased it down",
+   "In at 1 for 64, 242 behind. He made 38% of the team's 307, and no one else came close. The team won by 3 wickets. It was the decider of a level series.",
+   "b"
+  ]
  },
  {
   "id": 2850,
@@ -1422,7 +1866,13 @@
   "gate": "",
   "parts": "need 25, carry 15, stakes 12, tempo 25, attack 4",
   "reason": "In at 3 for 94, 98 ahead. He made 33% of the team's 352. The match was drawn. The series was still to be settled in this Test. He faced an elite attack. A slow grind at 38 runs per 100 balls.",
-  "scenario": "Wore the opposition down"
+  "scenario": "Wore the opposition down",
+  "verdict": [
+   1,
+   "Wore the opposition down",
+   "In at 3 for 94, 98 ahead. He made 33% of the team's 352. The match was drawn. The series was still to be settled in this Test. He faced an elite attack. A slow grind at 38 runs per 100 balls.",
+   "b"
+  ]
  },
  {
   "id": 2976,
@@ -1441,7 +1891,13 @@
   "gate": "",
   "parts": "need 10, carry 20.3, finish 5, stakes 12",
   "reason": "In at 2 for 44, 44 ahead. He made 32% of the team's 364, and no one else came close. The team won by 9 runs. The series was still to be settled in this Test.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 2 for 44, 44 ahead. He made 32% of the team's 364, and no one else came close. The team won by 9 runs. The series was still to be settled in this Test.",
+   "b"
+  ]
  },
  {
   "id": 2989,
@@ -1460,7 +1916,13 @@
   "gate": "",
   "parts": "carry 18.8, stakes 6, attack 4",
   "reason": "He made 40% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 40% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "b"
+  ]
  },
  {
   "id": 3071,
@@ -1479,7 +1941,13 @@
   "gate": "",
   "parts": "carry 21.5, stakes 6",
   "reason": "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 69.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 69.",
+   "b"
+  ]
  },
  {
   "id": 3138,
@@ -1498,7 +1966,13 @@
   "gate": "",
   "parts": "need 20, carry 20.5, stakes 6, platform 8",
   "reason": "In at 0 for 0, 203 behind. He made 38% of the team's 295, and no one else came close. The team won by 7 wickets. As an opener he put on 137 for the first wicket, and the second opener was not out until 175.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 0 for 0, 203 behind. He made 38% of the team's 295, and no one else came close. The team won by 7 wickets. As an opener he put on 137 for the first wicket, and the second opener was not out until 175.",
+   "b"
+  ]
  },
  {
   "id": 3301,
@@ -1517,7 +1991,13 @@
   "gate": "",
   "parts": "need 20, carry 5.9, stakes 6, platform 8",
   "reason": "He made 28% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 28% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "b"
+  ]
  },
  {
   "id": 3312,
@@ -1536,7 +2016,13 @@
   "gate": "",
   "parts": "need 18, carry 8.7, stakes 6",
   "reason": "He made 29% of the team's runs. The match did not depend on it: he came in at 3 for 106.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 29% of the team's runs. The match did not depend on it: he came in at 3 for 106.",
+   "b"
+  ]
  },
  {
   "id": 3323,
@@ -1555,7 +2041,13 @@
   "gate": "",
   "parts": "need 18, carry 21, stakes 6, late 5",
   "reason": "In at 4 for 125, 111 behind. He made 31% of the team's 358, and no one else came close. The team won by 5 wickets. He added 66 for the 7th wicket.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 4 for 125, 111 behind. He made 31% of the team's 358, and no one else came close. The team won by 5 wickets. He added 66 for the 7th wicket.",
+   "b"
+  ]
  },
  {
   "id": 3379,
@@ -1573,8 +2065,14 @@
   "score": 41,
   "gate": "",
   "parts": "carry 1, stakes 15, tempo 25",
-  "reason": "He made 22% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 2 for 175.",
-  "scenario": null
+  "reason": "He made 22% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 2 for 175.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 22% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 2 for 175.",
+   "b"
+  ]
  },
  {
   "id": 3406,
@@ -1593,7 +2091,13 @@
   "gate": "",
   "parts": "carry 18.7, stakes 12, tempo 25",
   "reason": "In at 0 for 0, level. He made 31% of the team's 354. The team won by 166 runs. The series was still to be settled in this Test. A slow grind at 39 runs per 100 balls.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 0 for 0, level. He made 31% of the team's 354. The team won by 166 runs. The series was still to be settled in this Test. A slow grind at 39 runs per 100 balls.",
+   "b"
+  ]
  },
  {
   "id": 3431,
@@ -1612,7 +2116,13 @@
   "gate": "",
   "parts": "need 20, carry 42.6, finish 10, stakes 12",
   "reason": "In at 0 for 0, 208 behind. He made 52% of the team's 209. The team won by 9 wickets. The series was still to be settled in this Test. The rest of the team added only 100.",
-  "scenario": "Chased it down"
+  "scenario": "Chased it down",
+  "verdict": [
+   1,
+   "Chased it down",
+   "In at 0 for 0, 208 behind. He made 52% of the team's 209. The team won by 9 wickets. The series was still to be settled in this Test. The rest of the team added only 100.",
+   "b"
+  ]
  },
  {
   "id": 3500,
@@ -1631,7 +2141,13 @@
   "gate": "",
   "parts": "need 20, carry 8.4, stakes 12, tempo 10",
   "reason": "In at 0 for 0, 425 behind. He made 25% of the team's 436, and no one else came close. The team won by 5 wickets. The series was still to be settled in this Test. He scored at 104 runs per 100 balls.",
-  "scenario": "Rescued the innings"
+  "scenario": "Rescued the innings",
+  "verdict": [
+   1,
+   "Rescued the innings",
+   "In at 0 for 0, 425 behind. He made 25% of the team's 436, and no one else came close. The team won by 5 wickets. The series was still to be settled in this Test. He scored at 104 runs per 100 balls.",
+   "b"
+  ]
  },
  {
   "id": 3505,
@@ -1650,7 +2166,13 @@
   "gate": "",
   "parts": "need 25, carry 17.1, stakes 6, attack 4",
   "reason": "In at 3 for 28, 28 ahead. He made 30% of the team's 361, and no one else came close. The team won by 347 runs. He faced an elite attack.",
-  "scenario": "Rescued the innings"
+  "scenario": "Rescued the innings",
+  "verdict": [
+   1,
+   "Rescued the innings",
+   "In at 3 for 28, 28 ahead. He made 30% of the team's 361, and no one else came close. The team won by 347 runs. He faced an elite attack.",
+   "b"
+  ]
  },
  {
   "id": 3506,
@@ -1668,8 +2190,14 @@
   "score": 27,
   "gate": "",
   "parts": "need 18, carry 3, stakes 6",
-  "reason": "He made 24% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 3 for 109.",
-  "scenario": null
+  "reason": "He made 24% of the team's runs. The match did not depend on it: he came in at 3 for 109.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 24% of the team's runs. The match did not depend on it: he came in at 3 for 109.",
+   "b"
+  ]
  },
  {
   "id": 3517,
@@ -1688,7 +2216,13 @@
   "gate": "",
   "parts": "need 10, carry 22.7, stakes 11, attack 4",
   "reason": "In at 2 for 46, 49 behind. He made 36% of the team's 303, and no one else came close. The match was drawn, with his side in danger of losing. He faced an elite attack.",
-  "scenario": "Saved the match"
+  "scenario": "Saved the match",
+  "verdict": [
+   1,
+   "Saved the match",
+   "In at 2 for 46, 49 behind. He made 36% of the team's 303, and no one else came close. The match was drawn, with his side in danger of losing. He faced an elite attack.",
+   "b"
+  ]
  },
  {
   "id": 3595,
@@ -1707,7 +2241,13 @@
   "gate": "",
   "parts": "need 18, carry 3, stakes 12, tempo 25",
   "reason": "In at 3 for 114, 61 behind. He made 28% of the team's 381. The team won by 65 runs. The series was still to be settled in this Test. A slow grind at 38 runs per 100 balls.",
-  "scenario": "Rescued the innings"
+  "scenario": "Rescued the innings",
+  "verdict": [
+   1,
+   "Rescued the innings",
+   "In at 3 for 114, 61 behind. He made 28% of the team's 381. The team won by 65 runs. The series was still to be settled in this Test. A slow grind at 38 runs per 100 balls.",
+   "b"
+  ]
  },
  {
   "id": 3619,
@@ -1726,7 +2266,13 @@
   "gate": "",
   "parts": "need 20, carry 44.7, stakes 11",
   "reason": "In at 2 for 37, 307 behind. He made 50% of the team's 214, and no one else came close. The match was drawn, with his side in danger of losing. The rest of the team added only 107.",
-  "scenario": "Saved the match"
+  "scenario": "Saved the match",
+  "verdict": [
+   1,
+   "Saved the match",
+   "In at 2 for 37, 307 behind. He made 50% of the team's 214, and no one else came close. The match was drawn, with his side in danger of losing. The rest of the team added only 107.",
+   "b"
+  ]
  },
  {
   "id": 3686,
@@ -1745,7 +2291,13 @@
   "gate": "",
   "parts": "need 18, carry 21.4, stakes 6, late 5, lower 6",
   "reason": "In at 5 for 103, 103 ahead. He made 31% of the team's 342, and no one else came close. The team won by 211 runs. He added 88 for the 7th wicket. He batted at number 7, a lower-order hundred.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 5 for 103, 103 ahead. He made 31% of the team's 342, and no one else came close. The team won by 211 runs. He added 88 for the 7th wicket. He batted at number 7, a lower-order hundred.",
+   "b"
+  ]
  },
  {
   "id": 3706,
@@ -1763,8 +2315,14 @@
   "score": 39,
   "gate": "",
   "parts": "need 20, carry 3, finish 10, stakes 6",
-  "reason": "He made 26% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 3 for 179.",
-  "scenario": null
+  "reason": "He made 26% of the team's runs. The match did not depend on it: he came in at 3 for 179.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 26% of the team's runs. The match did not depend on it: he came in at 3 for 179.",
+   "b"
+  ]
  },
  {
   "id": 3796,
@@ -1783,7 +2341,13 @@
   "gate": "",
   "parts": "need 20, carry 38, stakes 6",
   "reason": "In at 2 for 79, 79 ahead. He made 43% of the team's 243, and no one else came close. The team won by 113 runs. The rest of the team added only 138.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 2 for 79, 79 ahead. He made 43% of the team's 243, and no one else came close. The team won by 113 runs. The rest of the team added only 138.",
+   "b"
+  ]
  },
  {
   "id": 3801,
@@ -1801,8 +2365,14 @@
   "score": 33,
   "gate": "",
   "parts": "need 18, carry 3, stakes 12",
-  "reason": "He made 24% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 4 for 126.",
-  "scenario": null
+  "reason": "He made 24% of the team's runs. The match did not depend on it: he came in at 4 for 126.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 24% of the team's runs. The match did not depend on it: he came in at 4 for 126.",
+   "b"
+  ]
  },
  {
   "id": 3917,
@@ -1821,7 +2391,13 @@
   "gate": "",
   "parts": "need 15, carry 37.4, finish 10, stakes 6, tempo 10",
   "reason": "In at 1 for 32, 184 behind. He made 48% of the team's 217, and no one else came close. The team won by 7 wickets. The rest of the team added only 113. He scored at 116 runs per 100 balls.",
-  "scenario": "Chased it down"
+  "scenario": "Chased it down",
+  "verdict": [
+   1,
+   "Chased it down",
+   "In at 1 for 32, 184 behind. He made 48% of the team's 217, and no one else came close. The team won by 7 wickets. The rest of the team added only 113. He scored at 116 runs per 100 balls.",
+   "b"
+  ]
  },
  {
   "id": 4000,
@@ -1840,7 +2416,13 @@
   "gate": "",
   "parts": "need 25, carry 8.1, stakes 12",
   "reason": "In at 3 for 67, 67 ahead. He made 29% of the team's 354. The team won by 247 runs. The series was still to be settled in this Test.",
-  "scenario": "Rescued the innings"
+  "scenario": "Rescued the innings",
+  "verdict": [
+   1,
+   "Rescued the innings",
+   "In at 3 for 67, 67 ahead. He made 29% of the team's 354. The team won by 247 runs. The series was still to be settled in this Test.",
+   "b"
+  ]
  },
  {
   "id": 4045,
@@ -1859,7 +2441,13 @@
   "gate": "",
   "parts": "need 20, carry 6.4, finish 10, stakes 6",
   "reason": "He made 27% of the team's runs. The match did not depend on it: he came in at 2 for 141.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 27% of the team's runs. The match did not depend on it: he came in at 2 for 141.",
+   "b"
+  ]
  },
  {
   "id": 4134,
@@ -1877,8 +2465,14 @@
   "score": 34,
   "gate": "",
   "parts": "need 20, carry 3, stakes 11",
-  "reason": "He made 23% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 4 for 197.",
-  "scenario": null
+  "reason": "He made 23% of the team's runs. The match did not depend on it: he came in at 4 for 197.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 23% of the team's runs. The match did not depend on it: he came in at 4 for 197.",
+   "b"
+  ]
  },
  {
   "id": 4146,
@@ -1897,7 +2491,13 @@
   "gate": "",
   "parts": "need 18, carry 6.9, stakes 6, occasion 5",
   "reason": "He made 24% of the team's runs. The match did not depend on it: he came in at 3 for 126.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 24% of the team's runs. The match did not depend on it: he came in at 3 for 126.",
+   "b"
+  ]
  },
  {
   "id": 4188,
@@ -1916,7 +2516,13 @@
   "gate": "",
   "parts": "need 20, carry 44.9, stakes 17, attack 10",
   "reason": "In at 2 for 1, 387 behind. He made 51% of the team's 200, and no one else came close. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test. He faced an elite attack. The rest of the team added only 98.",
-  "scenario": "Saved the match"
+  "scenario": "Saved the match",
+  "verdict": [
+   1,
+   "Saved the match",
+   "In at 2 for 1, 387 behind. He made 51% of the team's 200, and no one else came close. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test. He faced an elite attack. The rest of the team added only 98.",
+   "b"
+  ]
  },
  {
   "id": 4278,
@@ -1935,7 +2541,13 @@
   "gate": "",
   "parts": "carry 20.9, stakes 6, occasion 15",
   "reason": "He made 35% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 35% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "b"
+  ]
  },
  {
   "id": 4401,
@@ -1954,7 +2566,13 @@
   "gate": "",
   "parts": "need 20, carry 7.7, stakes 17",
   "reason": "He made 27% of the team's runs. The match did not depend on it: he came in at 2 for 86.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 27% of the team's runs. The match did not depend on it: he came in at 2 for 86.",
+   "b"
+  ]
  },
  {
   "id": 4602,
@@ -1973,7 +2591,13 @@
   "gate": "",
   "parts": "need 18, carry 33.2, stakes 12, late 5, attack 4",
   "reason": "In at 4 for 106, 106 ahead. He made 45% of the team's 278, and no one else came close. The team won by 78 runs. The series was still to be settled in this Test. He added 64 for the 9th wicket. He faced an elite attack.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "In at 4 for 106, 106 ahead. He made 45% of the team's 278, and no one else came close. The team won by 78 runs. The series was still to be settled in this Test. He added 64 for the 9th wicket. He faced an elite attack.",
+   "b"
+  ]
  },
  {
   "id": 4603,
@@ -1992,7 +2616,13 @@
   "gate": "",
   "parts": "need 18, carry 18, stakes 12, attack 4",
   "reason": "In at 3 for 110, 156 ahead. He made 35% of the team's 390, and no one else came close. The team won by 78 runs. The series was still to be settled in this Test. He faced an elite attack.",
-  "scenario": "Rescued the innings"
+  "scenario": "Rescued the innings",
+  "verdict": [
+   1,
+   "Rescued the innings",
+   "In at 3 for 110, 156 ahead. He made 35% of the team's 390, and no one else came close. The team won by 78 runs. The series was still to be settled in this Test. He faced an elite attack.",
+   "b"
+  ]
  },
  {
   "id": 4613,
@@ -2010,8 +2640,14 @@
   "score": 38,
   "gate": "",
   "parts": "need 20, carry 12, stakes 6",
-  "reason": "He made 37% of the team's runs. Another hundred came in the same innings. The match did not depend on it: he came in at 2 for 97.",
-  "scenario": null
+  "reason": "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 97.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 97.",
+   "b"
+  ]
  },
  {
   "id": 4623,
@@ -2030,7 +2666,13 @@
   "gate": "",
   "parts": "carry 18.1, stakes 6",
   "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 1 for 47.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 36% of the team's runs. The match did not depend on it: he came in at 1 for 47.",
+   "b"
+  ]
  },
  {
   "id": 3,
@@ -2049,7 +2691,13 @@
   "gate": "a dead rubber that was not a win",
   "parts": "carry 30, stakes 3",
   "reason": "A dead rubber that was not a win.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "A dead rubber that was not a win.",
+   "p"
+  ]
  },
  {
   "id": 12,
@@ -2068,7 +2716,13 @@
   "gate": "a draw the team was not in danger of losing",
   "parts": "carry 30, stakes 6",
   "reason": "A draw the team was not in danger of losing.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "A draw the team was not in danger of losing.",
+   "p"
+  ]
  },
  {
   "id": 14,
@@ -2087,7 +2741,13 @@
   "gate": "",
   "parts": "carry 30, stakes 6",
   "reason": "He made 51% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 51% of the team's runs. The match did not depend on it on the facts we have.",
+   "p"
+  ]
  },
  {
   "id": 78,
@@ -2106,7 +2766,13 @@
   "gate": "a draw the team was not in danger of losing",
   "parts": "carry 14, stakes 12",
   "reason": "A draw the team was not in danger of losing.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "A draw the team was not in danger of losing.",
+   "p"
+  ]
  },
  {
   "id": 81,
@@ -2125,7 +2791,13 @@
   "gate": "",
   "parts": "need 20, carry 24, stakes 6, tempo 25",
   "reason": "His side trailed by 365 when the innings began. He made 48% of the team's 543. The match was drawn. A slow grind at 34 runs per 100 balls.",
-  "scenario": "Wore the opposition down"
+  "scenario": "Wore the opposition down",
+  "verdict": [
+   1,
+   "Wore the opposition down",
+   "His side trailed by 365 when the innings began. He made 48% of the team's 543. The match was drawn. A slow grind at 34 runs per 100 balls.",
+   "p"
+  ]
  },
  {
   "id": 125,
@@ -2144,7 +2816,13 @@
   "gate": "a draw the team was not in danger of losing",
   "parts": "carry 24, stakes 6",
   "reason": "A draw the team was not in danger of losing.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "A draw the team was not in danger of losing.",
+   "p"
+  ]
  },
  {
   "id": 154,
@@ -2163,7 +2841,13 @@
   "gate": "a draw the team was not in danger of losing",
   "parts": "carry 24, stakes 6",
   "reason": "A draw the team was not in danger of losing.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "A draw the team was not in danger of losing.",
+   "p"
+  ]
  },
  {
   "id": 173,
@@ -2182,7 +2866,13 @@
   "gate": "a draw the team was not in danger of losing",
   "parts": "need 20, carry 24, stakes 6",
   "reason": "A draw the team was not in danger of losing.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "A draw the team was not in danger of losing.",
+   "p"
+  ]
  },
  {
   "id": 174,
@@ -2201,7 +2891,13 @@
   "gate": "",
   "parts": "carry 24, stakes 6",
   "reason": "He made 42% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 42% of the team's runs. The match did not depend on it on the facts we have.",
+   "p"
+  ]
  },
  {
   "id": 203,
@@ -2220,7 +2916,13 @@
   "gate": "a draw the team was not in danger of losing",
   "parts": "carry 24, stakes 6",
   "reason": "A draw the team was not in danger of losing.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "A draw the team was not in danger of losing.",
+   "p"
+  ]
  },
  {
   "id": 210,
@@ -2239,7 +2941,13 @@
   "gate": "",
   "parts": "need 15, carry 30, stakes 12",
   "reason": "His side trailed by 166 when the innings began. He made 52% of the team's 427. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test.",
-  "scenario": "Saved the match"
+  "scenario": "Saved the match",
+  "verdict": [
+   1,
+   "Saved the match",
+   "His side trailed by 166 when the innings began. He made 52% of the team's 427. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test.",
+   "p"
+  ]
  },
  {
   "id": 228,
@@ -2258,7 +2966,13 @@
   "gate": "a draw the team was not in danger of losing",
   "parts": "need 20, carry 24, stakes 15",
   "reason": "A draw the team was not in danger of losing.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "A draw the team was not in danger of losing.",
+   "p"
+  ]
  },
  {
   "id": 266,
@@ -2277,7 +2991,13 @@
   "gate": "",
   "parts": "carry 14, stakes 12, tempo 25",
   "reason": "The scores were level when the innings began. He made 38% of the team's 551. The match was drawn. The series was still to be settled in this Test. A slow grind at 40 runs per 100 balls.",
-  "scenario": "Wore the opposition down"
+  "scenario": "Wore the opposition down",
+  "verdict": [
+   1,
+   "Wore the opposition down",
+   "The scores were level when the innings began. He made 38% of the team's 551. The match was drawn. The series was still to be settled in this Test. A slow grind at 40 runs per 100 balls.",
+   "p"
+  ]
  },
  {
   "id": 268,
@@ -2296,7 +3016,13 @@
   "gate": "",
   "parts": "carry 24, stakes 6",
   "reason": "He made 45% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 45% of the team's runs. The match did not depend on it on the facts we have.",
+   "p"
+  ]
  },
  {
   "id": 293,
@@ -2315,7 +3041,13 @@
   "gate": "a dead rubber that was not a win",
   "parts": "carry 24, stakes 3",
   "reason": "A dead rubber that was not a win.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "A dead rubber that was not a win.",
+   "p"
+  ]
  },
  {
   "id": 322,
@@ -2334,7 +3066,13 @@
   "gate": "",
   "parts": "need 15, carry 24, stakes 12",
   "reason": "His side trailed by 139 when the innings began. He made 50% of the team's 414. The team won by 9 wickets. The series was still to be settled in this Test.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "His side trailed by 139 when the innings began. He made 50% of the team's 414. The team won by 9 wickets. The series was still to be settled in this Test.",
+   "p"
+  ]
  },
  {
   "id": 326,
@@ -2353,7 +3091,13 @@
   "gate": "",
   "parts": "need 20, carry 24, stakes 6, tempo 25",
   "reason": "His side trailed by 485 when the innings began. He made 41% of the team's 496. The match was drawn. A slow grind at 42 runs per 100 balls.",
-  "scenario": "Wore the opposition down"
+  "scenario": "Wore the opposition down",
+  "verdict": [
+   1,
+   "Wore the opposition down",
+   "His side trailed by 485 when the innings began. He made 41% of the team's 496. The match was drawn. A slow grind at 42 runs per 100 balls.",
+   "p"
+  ]
  },
  {
   "id": 334,
@@ -2372,7 +3116,13 @@
   "gate": "",
   "parts": "carry 14, stakes 6, tempo 10",
   "reason": "He made 31% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 31% of the team's runs. The match did not depend on it on the facts we have.",
+   "p"
+  ]
  },
  {
   "id": 395,
@@ -2391,7 +3141,13 @@
   "gate": "",
   "parts": "carry 14, stakes 6",
   "reason": "He made 31% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 31% of the team's runs. The match did not depend on it on the facts we have.",
+   "p"
+  ]
  },
  {
   "id": 438,
@@ -2410,7 +3166,13 @@
   "gate": "",
   "parts": "need 15, carry 24, stakes 3",
   "reason": "He made 44% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 44% of the team's runs. The match did not depend on it on the facts we have.",
+   "p"
+  ]
  },
  {
   "id": 444,
@@ -2429,7 +3191,13 @@
   "gate": "",
   "parts": "need 20, carry 24, stakes 6",
   "reason": "His side trailed by 277 when the innings began. He made 49% of the team's 404. The team won by 8 wickets.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "His side trailed by 277 when the innings began. He made 49% of the team's 404. The team won by 8 wickets.",
+   "p"
+  ]
  },
  {
   "id": 495,
@@ -2448,7 +3216,13 @@
   "gate": "",
   "parts": "carry 24, stakes 6, tempo 25",
   "reason": "The scores were level when the innings began. He made 44% of the team's 436. The team won by an innings and 85 runs. A slow grind at 41 runs per 100 balls.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "The scores were level when the innings began. He made 44% of the team's 436. The team won by an innings and 85 runs. A slow grind at 41 runs per 100 balls.",
+   "p"
+  ]
  },
  {
   "id": 501,
@@ -2467,7 +3241,13 @@
   "gate": "",
   "parts": "need 15, carry 24, stakes 6",
   "reason": "His side trailed by 173 when the innings began. He made 43% of the team's 443. The team won by an innings and 38 runs.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "His side trailed by 173 when the innings began. He made 43% of the team's 443. The team won by an innings and 38 runs.",
+   "p"
+  ]
  },
  {
   "id": 584,
@@ -2486,7 +3266,13 @@
   "gate": "",
   "parts": "carry 24, stakes 6",
   "reason": "He made 48% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 48% of the team's runs. The match did not depend on it on the facts we have.",
+   "p"
+  ]
  },
  {
   "id": 678,
@@ -2505,7 +3291,13 @@
   "gate": "",
   "parts": "need 15, carry 14, stakes 17",
   "reason": "His side trailed by 139 when the innings began. He made 37% of the team's 471. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test.",
-  "scenario": "Saved the match"
+  "scenario": "Saved the match",
+  "verdict": [
+   1,
+   "Saved the match",
+   "His side trailed by 139 when the innings began. He made 37% of the team's 471. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test.",
+   "p"
+  ]
  },
  {
   "id": 700,
@@ -2524,7 +3316,13 @@
   "gate": "",
   "parts": "carry 24, stakes 6, tempo 25",
   "reason": "His side led by 47 when the innings began. He made 40% of the team's 436. The match was drawn. A slow grind at 42 runs per 100 balls.",
-  "scenario": "Wore the opposition down"
+  "scenario": "Wore the opposition down",
+  "verdict": [
+   1,
+   "Wore the opposition down",
+   "His side led by 47 when the innings began. He made 40% of the team's 436. The match was drawn. A slow grind at 42 runs per 100 balls.",
+   "p"
+  ]
  },
  {
   "id": 717,
@@ -2543,7 +3341,13 @@
   "gate": "",
   "parts": "carry 24, stakes 15",
   "reason": "He made 48% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 48% of the team's runs. The match did not depend on it on the facts we have.",
+   "p"
+  ]
  },
  {
   "id": 726,
@@ -2562,7 +3366,13 @@
   "gate": "a dead rubber, and his side had lost the series",
   "parts": "need 20, carry 30, finish 10, stakes 3",
   "reason": "A dead rubber, and his side had lost the series.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "A dead rubber, and his side had lost the series.",
+   "p"
+  ]
  },
  {
   "id": 745,
@@ -2581,7 +3391,13 @@
   "gate": "",
   "parts": "carry 14, stakes 11",
   "reason": "He made 35% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 35% of the team's runs. The match did not depend on it on the facts we have.",
+   "p"
+  ]
  },
  {
   "id": 805,
@@ -2600,7 +3416,13 @@
   "gate": "",
   "parts": "need 10, carry 14, stakes 11, tempo 25",
   "reason": "His side trailed by 48 when the innings began. He made 40% of the team's 423. The match was drawn, with his side in danger of losing. A slow grind at 44 runs per 100 balls.",
-  "scenario": "Saved the match"
+  "scenario": "Saved the match",
+  "verdict": [
+   1,
+   "Saved the match",
+   "His side trailed by 48 when the innings began. He made 40% of the team's 423. The match was drawn, with his side in danger of losing. A slow grind at 44 runs per 100 balls.",
+   "p"
+  ]
  },
  {
   "id": 855,
@@ -2619,7 +3441,13 @@
   "gate": "",
   "parts": "need 15, carry 24, stakes 12",
   "reason": "His side trailed by 146 when the innings began. He made 45% of the team's 366. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test.",
-  "scenario": "Saved the match"
+  "scenario": "Saved the match",
+  "verdict": [
+   1,
+   "Saved the match",
+   "His side trailed by 146 when the innings began. He made 45% of the team's 366. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test.",
+   "p"
+  ]
  },
  {
   "id": 884,
@@ -2638,7 +3466,13 @@
   "gate": "",
   "parts": "carry 30, stakes 12",
   "reason": "He made 2343% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 2343% of the team's runs. The match did not depend on it on the facts we have.",
+   "p"
+  ]
  },
  {
   "id": 893,
@@ -2657,7 +3491,13 @@
   "gate": "",
   "parts": "need 10, carry 24, stakes 6",
   "reason": "He made 44% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 44% of the team's runs. The match did not depend on it on the facts we have.",
+   "p"
+  ]
  },
  {
   "id": 898,
@@ -2676,7 +3516,13 @@
   "gate": "",
   "parts": "need 20, carry 5, stakes 11",
   "reason": "He made 30% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 30% of the team's runs. The match did not depend on it on the facts we have.",
+   "p"
+  ]
  },
  {
   "id": 970,
@@ -2695,7 +3541,13 @@
   "gate": "",
   "parts": "need 20, carry 30, finish 10, stakes 3",
   "reason": "His side trailed by 274 when the innings began. He made 58% of the team's 276. The team won by 6 wickets. The series was already won by his side.",
-  "scenario": "Chased it down"
+  "scenario": "Chased it down",
+  "verdict": [
+   1,
+   "Chased it down",
+   "His side trailed by 274 when the innings began. He made 58% of the team's 276. The team won by 6 wickets. The series was already won by his side.",
+   "p"
+  ]
  },
  {
   "id": 1085,
@@ -2714,7 +3566,13 @@
   "gate": "",
   "parts": "need 10, carry 14, stakes 6",
   "reason": "He made 37% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 37% of the team's runs. The match did not depend on it on the facts we have.",
+   "p"
+  ]
  },
  {
   "id": 1213,
@@ -2733,7 +3591,13 @@
   "gate": "",
   "parts": "need 15, carry 14, stakes 15, tempo 25",
   "reason": "His side trailed by 194 when the innings began. He made 36% of the team's 422. The team won by 10 wickets. It was the decider of a level series. A slow grind at 43 runs per 100 balls.",
-  "scenario": "Rescued the innings"
+  "scenario": "Rescued the innings",
+  "verdict": [
+   1,
+   "Rescued the innings",
+   "His side trailed by 194 when the innings began. He made 36% of the team's 422. The team won by 10 wickets. It was the decider of a level series. A slow grind at 43 runs per 100 balls.",
+   "p"
+  ]
  },
  {
   "id": 1334,
@@ -2752,7 +3616,13 @@
   "gate": "",
   "parts": "need 20, carry 30, stakes 12",
   "reason": "His side trailed by 233 when the innings began. He made 2450% of the team's 6. The team won by an innings and 96 runs. The series was still to be settled in this Test.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "His side trailed by 233 when the innings began. He made 2450% of the team's 6. The team won by an innings and 96 runs. The series was still to be settled in this Test.",
+   "p"
+  ]
  },
  {
   "id": 1591,
@@ -2771,7 +3641,13 @@
   "gate": "",
   "parts": "carry 14, stakes 6, tempo 25",
   "reason": "The scores were level when the innings began. He made 38% of the team's 364. The match was drawn. A slow grind at 41 runs per 100 balls.",
-  "scenario": "Wore the opposition down"
+  "scenario": "Wore the opposition down",
+  "verdict": [
+   1,
+   "Wore the opposition down",
+   "The scores were level when the innings began. He made 38% of the team's 364. The match was drawn. A slow grind at 41 runs per 100 balls.",
+   "p"
+  ]
  },
  {
   "id": 1650,
@@ -2790,7 +3666,13 @@
   "gate": "",
   "parts": "need 10, carry 24, stakes 11",
   "reason": "His side trailed by 5 when the innings began. He made 45% of the team's 308. The match was drawn, with his side in danger of losing.",
-  "scenario": "Saved the match"
+  "scenario": "Saved the match",
+  "verdict": [
+   1,
+   "Saved the match",
+   "His side trailed by 5 when the innings began. He made 45% of the team's 308. The match was drawn, with his side in danger of losing.",
+   "p"
+  ]
  },
  {
   "id": 1833,
@@ -2809,7 +3691,13 @@
   "gate": "",
   "parts": "carry 14, stakes 6",
   "reason": "He made 33% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 33% of the team's runs. The match did not depend on it on the facts we have.",
+   "p"
+  ]
  },
  {
   "id": 1913,
@@ -2828,7 +3716,13 @@
   "gate": "a loss",
   "parts": "need 20, carry 24, stakes 6",
   "reason": "A loss.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "A loss.",
+   "p"
+  ]
  },
  {
   "id": 1934,
@@ -2847,7 +3741,13 @@
   "gate": "",
   "parts": "need 20, carry 30, stakes 11",
   "reason": "His side trailed by 355 when the innings began. He made 59% of the team's 223. The match was drawn, with his side in danger of losing.",
-  "scenario": "Saved the match"
+  "scenario": "Saved the match",
+  "verdict": [
+   1,
+   "Saved the match",
+   "His side trailed by 355 when the innings began. He made 59% of the team's 223. The match was drawn, with his side in danger of losing.",
+   "p"
+  ]
  },
  {
   "id": 2091,
@@ -2866,7 +3766,13 @@
   "gate": "",
   "parts": "need 20, carry 30, stakes 20",
   "reason": "His side trailed by 369 when the innings began. He made 52% of the team's 244. The match was drawn, with his side in danger of losing. It was the decider of a level series.",
-  "scenario": "Saved the match"
+  "scenario": "Saved the match",
+  "verdict": [
+   1,
+   "Saved the match",
+   "His side trailed by 369 when the innings began. He made 52% of the team's 244. The match was drawn, with his side in danger of losing. It was the decider of a level series.",
+   "p"
+  ]
  },
  {
   "id": 2297,
@@ -2885,7 +3791,13 @@
   "gate": "",
   "parts": "carry 30, stakes 6",
   "reason": "He made 12400% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 12400% of the team's runs. The match did not depend on it on the facts we have.",
+   "p"
+  ]
  },
  {
   "id": 2416,
@@ -2904,7 +3816,13 @@
   "gate": "",
   "parts": "need 20, carry 30, finish 10, stakes 3, tempo 10",
   "reason": "His side trailed by 209 when the innings began. He made 58% of the team's 212. The team won by 6 wickets. The series was already won by his side. He scored at 100 runs per 100 balls.",
-  "scenario": "Chased it down"
+  "scenario": "Chased it down",
+  "verdict": [
+   1,
+   "Chased it down",
+   "His side trailed by 209 when the innings began. He made 58% of the team's 212. The team won by 6 wickets. The series was already won by his side. He scored at 100 runs per 100 balls.",
+   "p"
+  ]
  },
  {
   "id": 2482,
@@ -2923,7 +3841,13 @@
   "gate": "",
   "parts": "carry 30, stakes 6",
   "reason": "He made 2017% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 2017% of the team's runs. The match did not depend on it on the facts we have.",
+   "p"
+  ]
  },
  {
   "id": 2890,
@@ -2942,7 +3866,13 @@
   "gate": "",
   "parts": "carry 5, stakes 6, tempo 25",
   "reason": "He made 29% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 29% of the team's runs. The match did not depend on it on the facts we have.",
+   "p"
+  ]
  },
  {
   "id": 2956,
@@ -2961,7 +3891,13 @@
   "gate": "",
   "parts": "carry 14, stakes 6, tempo 25",
   "reason": "His side led by 16 when the innings began. He made 34% of the team's 337. The team won by 138 runs. A slow grind at 39 runs per 100 balls.",
-  "scenario": "Carried the innings"
+  "scenario": "Carried the innings",
+  "verdict": [
+   1,
+   "Carried the innings",
+   "His side led by 16 when the innings began. He made 34% of the team's 337. The team won by 138 runs. A slow grind at 39 runs per 100 balls.",
+   "p"
+  ]
  },
  {
   "id": 3721,
@@ -2980,7 +3916,13 @@
   "gate": "",
   "parts": "need 20, carry 14, stakes 6, tempo 25",
   "reason": "His side trailed by 331 when the innings began. He made 36% of the team's 295. The match was drawn, with his side in danger of losing. A slow grind at 38 runs per 100 balls.",
-  "scenario": "Saved the match"
+  "scenario": "Saved the match",
+  "verdict": [
+   1,
+   "Saved the match",
+   "His side trailed by 331 when the innings began. He made 36% of the team's 295. The match was drawn, with his side in danger of losing. A slow grind at 38 runs per 100 balls.",
+   "p"
+  ]
  },
  {
   "id": 3868,
@@ -2999,7 +3941,13 @@
   "gate": "",
   "parts": "need 20, carry 5, stakes 12, tempo 10",
   "reason": "His side trailed by 292 when the innings began. He made 27% of the team's 383. The team won by 9 wickets. The series was still to be settled in this Test. He scored at 95 runs per 100 balls.",
-  "scenario": "Rescued the innings"
+  "scenario": "Rescued the innings",
+  "verdict": [
+   1,
+   "Rescued the innings",
+   "His side trailed by 292 when the innings began. He made 27% of the team's 383. The team won by 9 wickets. The series was still to be settled in this Test. He scored at 95 runs per 100 balls.",
+   "p"
+  ]
  },
  {
   "id": 4035,
@@ -3018,7 +3966,13 @@
   "gate": "",
   "parts": "need 20, carry 24, stakes 17, occasion 5",
   "reason": "His side trailed by 414 when the innings began. He made 41% of the team's 249. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test. It was a Boxing Day or New Year Test.",
-  "scenario": "Saved the match"
+  "scenario": "Saved the match",
+  "verdict": [
+   1,
+   "Saved the match",
+   "His side trailed by 414 when the innings began. He made 41% of the team's 249. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test. It was a Boxing Day or New Year Test.",
+   "p"
+  ]
  },
  {
   "id": 4246,
@@ -3037,7 +3991,13 @@
   "gate": "",
   "parts": "need 20, carry 5, stakes 6, tempo 25",
   "reason": "His side trailed by 371 when the innings began. He made 30% of the team's 341. The match was drawn, with his side in danger of losing. A slow grind at 38 runs per 100 balls.",
-  "scenario": "Saved the match"
+  "scenario": "Saved the match",
+  "verdict": [
+   1,
+   "Saved the match",
+   "His side trailed by 371 when the innings began. He made 30% of the team's 341. The match was drawn, with his side in danger of losing. A slow grind at 38 runs per 100 balls.",
+   "p"
+  ]
  },
  {
   "id": 4313,
@@ -3056,7 +4016,13 @@
   "gate": "",
   "parts": "need 20, carry 30, stakes 20",
   "reason": "His side trailed by 262 when the innings began. He made 52% of the team's 195. The match was drawn, with his side in danger of losing. It was the decider of a level series.",
-  "scenario": "Saved the match"
+  "scenario": "Saved the match",
+  "verdict": [
+   1,
+   "Saved the match",
+   "His side trailed by 262 when the innings began. He made 52% of the team's 195. The match was drawn, with his side in danger of losing. It was the decider of a level series.",
+   "p"
+  ]
  },
  {
   "id": 4368,
@@ -3075,7 +4041,13 @@
   "gate": "a loss",
   "parts": "need 20, carry 14, stakes 6",
   "reason": "A loss.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "A loss.",
+   "p"
+  ]
  },
  {
   "id": 4445,
@@ -3094,7 +4066,13 @@
   "gate": "",
   "parts": "need 20, carry 14, stakes 11, tempo 25",
   "reason": "His side trailed by 213 when the innings began. He made 33% of the team's 299. The match was drawn, with his side in danger of losing. A slow grind at 37 runs per 100 balls.",
-  "scenario": "Saved the match"
+  "scenario": "Saved the match",
+  "verdict": [
+   1,
+   "Saved the match",
+   "His side trailed by 213 when the innings began. He made 33% of the team's 299. The match was drawn, with his side in danger of losing. A slow grind at 37 runs per 100 balls.",
+   "p"
+  ]
  },
  {
   "id": 4464,
@@ -3113,6 +4091,12 @@
   "gate": "",
   "parts": "need 20, carry 5, finish 10, stakes 6",
   "reason": "He made 30% of the team's runs. The match did not depend on it on the facts we have.",
-  "scenario": null
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 30% of the team's runs. The match did not depend on it on the facts we have.",
+   "p"
+  ]
  }
 ]

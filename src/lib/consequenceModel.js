@@ -114,7 +114,8 @@ export function describeGoodTon(f, m) {
   const bits = [];
   if (f.lead != null && f.lead > 200) bits.push(`His side already led by ${f.lead} when the innings began.`);
   if (f.share != null) bits.push(`He made ${pct(f.share)} of the team's runs.`);
-  if (f.others) bits.push('Another hundred came in the same innings.');
+  // only say so when it made the difference: the hundred would have cleared the bar without the small deduction
+  if (f.others && m.gate && m.score < THRESHOLD && m.score + Math.min(6, 2 * f.others) >= THRESHOLD) bits.push('Another hundred came in the same innings, which counted against it a little.');
   bits.push(f.entryWkts != null ? `The match did not depend on it: he came in at ${f.entryWkts} for ${f.entryScore}.` : 'The match did not depend on it on the facts we have.');
   return bits.join(' ');
 }

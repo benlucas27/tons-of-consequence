@@ -26,8 +26,9 @@ test('the leaderboard is sorted by tons of consequence', () => {
   for (let i = 1; i < LEADERS.length; i++) assert.ok(LEADERS[i - 1].tons >= LEADERS[i].tons);
 });
 
-test("the rulings land: Smith's Perth 111 counts, Root's Trent Bridge 109 does not", () => {
-  const find = (name, runs, year) => ALL.find((c) => c.name === name && c.runs === runs && c.year === year);
-  assert.equal(verdictOf(find('Steve Smith', 111, 2013).id).passes, true);
-  assert.equal(verdictOf(find('Joe Root', 109, 2021).id).passes, false);
+test('where the 12 laws and an earlier hand ruling disagreed, the laws now decide (Ben, 16 Oct 2026)', async () => {
+  const { readFileSync } = await import('node:fs');
+  const rerun = JSON.parse(readFileSync(new URL('../docs/drafts/review-rerun.json', import.meta.url), 'utf8'));
+  assert.ok(rerun.length > 100);
+  for (const r of rerun) assert.equal(verdictOf(r.id).passes, r.rules === 'yes', `${r.name} ${r.runs} ${r.year}`);
 });
