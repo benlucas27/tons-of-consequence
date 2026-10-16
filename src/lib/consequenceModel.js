@@ -28,8 +28,10 @@ export function modelV3(f, wm = {}, th = THRESHOLD) {
   if (f.result === 'loss') gateWhy = 'a loss';
   else if (dead && !(f.sideAhead && f.result === 'win')) gateWhy = f.result === 'win' ? 'a dead rubber, and his side had lost the series' : 'a dead rubber that was not a win';
   else if (f.result === 'draw' && f.inn == null) gateWhy = 'a draw, and the innings is not known';
+  else if (f.result === 'draw' && f.partial) gateWhy = 'a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it';
+  else if (f.result === 'draw' && f.tier >= 3) gateWhy = 'a draw against a lower-tier side: not a draw the hundred saved';
   else if (f.result === 'draw' && f.overs != null && f.overs < DRAW_CUT_SHORT && !slowGrind) gateWhy = 'a draw cut short by weather: the clock saved the match, not the hundred';
-  else if (f.result === 'draw' && !inDanger && !slowGrind) gateWhy = 'a draw the team was not in danger of losing';
+  else if (f.result === 'draw' && !inDanger) gateWhy = 'a draw the team was not in danger of losing';
   else if (!['win', 'draw', 'tie'].includes(f.result)) gateWhy = 'no result';
   else gate = true;
   const p = {};

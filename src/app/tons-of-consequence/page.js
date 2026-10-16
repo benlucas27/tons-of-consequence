@@ -23,7 +23,7 @@ export default function TonsOfConsequence() {
       <h2>The 13 laws</h2>
       <p>Law 1 is the only hard law. Laws 2 to 13 add points, law 8 takes points away, and a hundred needs {THRESHOLD} points to count. The bar is set high on purpose.</p>
       <ol className="toc-laws">
-        <li><b>A ToC wins or saves a match.</b> You can&rsquo;t score a ToC in a loss or a dead rubber (a dead rubber counts only if his side had already won the series and won the match). A draw counts only if his side was in danger of losing, or he batted a long, slow grind to save it, and not if rain or the clock saved the match instead.</li>
+        <li><b>A ToC wins or saves a match.</b> You can&rsquo;t score a ToC in a loss or a dead rubber (a dead rubber counts only if his side had already won the series and won the match). A draw counts only if his side was in danger of losing and we can say with confidence that the hundred saved it. It doesn&rsquo;t count against the lower-tier sides, and not if rain or the clock saved the match instead.</li>
         <li><b>A ToC considers the scoreboard when the batter came in, except for openers.</b> Walking in at 3 for 80 matters. Walking in at 1 for 300 doesn&rsquo;t.</li>
         <li><b>A ToC carries the innings.</b> What share of the team&rsquo;s runs did he score? Was he the only hundred? How far clear was he of the next batter? If the rest of the team added very little, it counts for more. If they added a lot, it counts for less.</li>
         <li><b>A ToC is part of a winning chase or a close finish.</b> It doesn&rsquo;t have to finish the job, but it can be what made it possible.</li>

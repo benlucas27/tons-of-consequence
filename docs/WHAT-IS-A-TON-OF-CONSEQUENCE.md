@@ -10,7 +10,7 @@ Law 1 is the only hard law. Laws 2 to 13 add points, and law 8 takes points away
 
 1. **A toc wins or saves a match.** You can't score a toc in a loss or a dead rubber. This is the only hard law.
    - A dead rubber counts only if his side had already won the series and also won the match.
-   - A draw counts only if his side was in danger of losing, or he batted a long, slow grind (under 45 runs per 100 balls, 250+ balls) to save it.
+   - A draw counts only if his side was in danger of losing and the ball-by-ball record shows the hundred saved it. It doesn't count against lower-tier sides (tier 3 and 4), and not if rain or the clock saved the match. (Changed 16 Oct 2026: the slow-grind exception is gone.)
 2. **A toc considers the scoreboard when the batter came in, except for openers.** Walking in at 3 for 80 matters. Walking in at 1 for 300 doesn't. Openers always come in at 0 for 0.
 3. **A toc carries the innings.** What share of the team's runs did he score? Was he the only hundred? How far clear was he of the other batters? Did the team collapse around him? If the other ten batters added under 150 between them, it earns extra. If they added 450 or more, it loses a little.
 4. **A toc is part of a winning chase or a close finish.** It doesn't have to finish the chase. It can be what made it possible.

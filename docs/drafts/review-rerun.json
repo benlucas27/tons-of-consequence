@@ -250,31 +250,6 @@
   ]
  },
  {
-  "id": 270,
-  "name": "Kumar Sangakkara",
-  "runs": 211,
-  "year": 2011,
-  "opponent": "Pakistan",
-  "venue": "Abu Dhabi",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "Judged a good ton in a drawn match, not one that saved it."
-  },
-  "rules": "yes",
-  "score": 50,
-  "gate": "",
-  "parts": "need 20, carry 22, stakes 11, opposition -3",
-  "reason": "In at 1 for 0, 314 behind. He made 44% of the team's 483. The match was drawn, with his side in danger of losing.",
-  "scenario": "Saved the match",
-  "verdict": [
-   1,
-   "Saved the match",
-   "In at 1 for 0, 314 behind. He made 44% of the team's 483. The match was drawn, with his side in danger of losing.",
-   "b"
-  ]
- },
- {
   "id": 361,
   "name": "Kevin Pietersen",
   "runs": 202,
@@ -371,31 +346,6 @@
    1,
    "Carried the innings",
    "In at 2 for 5, 376 behind. He made 54% of the team's 344, and no one else came close. The team won by 6 wickets. The series was still to be settled in this Test.",
-   "b"
-  ]
- },
- {
-  "id": 621,
-  "name": "Usman Khawaja",
-  "runs": 180,
-  "year": 2023,
-  "opponent": "India",
-  "venue": "Ahmedabad",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "A slow grind: 43 runs per 100 balls off 422 balls, 100th run off ball 246, batted 2, innings 1. The match was drawn."
-  },
-  "rules": "yes",
-  "score": 73,
-  "gate": "",
-  "parts": "need 20, carry 12, stakes 12, tempo 25, attack 4",
-  "reason": "In at 0 for 0, level. He made 38% of the team's 480. The match was drawn. The series was still to be settled in this Test. He faced an elite attack. A slow grind at 43 runs per 100 balls.",
-  "scenario": "Wore the opposition down",
-  "verdict": [
-   1,
-   "Wore the opposition down",
-   "In at 0 for 0, level. He made 38% of the team's 480. The match was drawn. The series was still to be settled in this Test. He faced an elite attack. A slow grind at 43 runs per 100 balls.",
    "b"
   ]
  },
@@ -550,31 +500,6 @@
   ]
  },
  {
-  "id": 995,
-  "name": "Kraigg Brathwaite",
-  "runs": 160,
-  "year": 2022,
-  "opponent": "England",
-  "venue": "Bridgetown",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "A slow grind: 33 runs per 100 balls off 489 balls, 100th run off ball 278, batted 1, innings 2. The match was drawn."
-  },
-  "rules": "yes",
-  "score": 63,
-  "gate": "",
-  "parts": "need 20, carry 12, stakes 6, tempo 25",
-  "reason": "In at 0 for 0, 507 behind. He made 39% of the team's 411. The match was drawn. A slow grind at 33 runs per 100 balls.",
-  "scenario": "Wore the opposition down",
-  "verdict": [
-   1,
-   "Wore the opposition down",
-   "In at 0 for 0, 507 behind. He made 39% of the team's 411. The match was drawn. A slow grind at 33 runs per 100 balls.",
-   "b"
-  ]
- },
- {
   "id": 1009,
   "name": "Cheteshwar Pujara",
   "runs": 159,
@@ -596,31 +521,6 @@
    0,
    null,
    "He made 36% of the team's runs. The match did not depend on it: he came in at 1 for 49.",
-   "b"
-  ]
- },
- {
-  "id": 1060,
-  "name": "Imam-ul-Haq",
-  "runs": 157,
-  "year": 2022,
-  "opponent": "Australia",
-  "venue": "Rawalpindi",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "A slow grind: 44 runs per 100 balls off 358 balls, 100th run off ball 200, batted 2, innings 1. The match was drawn."
-  },
-  "rules": "yes",
-  "score": 47,
-  "gate": "",
-  "parts": "carry 12, stakes 6, tempo 25, attack 4",
-  "reason": "In at 0 for 0, level. He made 33% of the team's 476. The match was drawn. He faced an elite attack. A slow grind at 44 runs per 100 balls.",
-  "scenario": "Wore the opposition down",
-  "verdict": [
-   1,
-   "Wore the opposition down",
-   "In at 0 for 0, level. He made 33% of the team's 476. The match was drawn. He faced an elite attack. A slow grind at 44 runs per 100 balls.",
    "b"
   ]
  },
@@ -725,31 +625,6 @@
   ]
  },
  {
-  "id": 1335,
-  "name": "Shivnarine Chanderpaul",
-  "runs": 147,
-  "year": 2009,
-  "opponent": "England",
-  "venue": "Port of Spain",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "A slow grind: 41 runs per 100 balls off 361 balls, 100th run off ball 288, batted 6, innings 2. The match was drawn."
-  },
-  "rules": "yes",
-  "score": 58,
-  "gate": "",
-  "parts": "need 20, carry 1, stakes 12, tempo 25",
-  "reason": "In at 3 for 195, 351 behind. He made 27% of the team's 544. The match was drawn. The series was still to be settled in this Test. A slow grind at 41 runs per 100 balls.",
-  "scenario": "Wore the opposition down",
-  "verdict": [
-   1,
-   "Wore the opposition down",
-   "In at 3 for 195, 351 behind. He made 27% of the team's 544. The match was drawn. The series was still to be settled in this Test. A slow grind at 41 runs per 100 balls.",
-   "b"
-  ]
- },
- {
   "id": 1387,
   "name": "Khurram Manzoor",
   "runs": 146,
@@ -771,31 +646,6 @@
    1,
    "Rescued the innings",
    "In at 0 for 0, 249 behind. He made 33% of the team's 442. The team won by 7 wickets. As an opener he put on 135 for the first wicket, and the second opener was not out until 290. He faced an elite attack.",
-   "b"
-  ]
- },
- {
-  "id": 1388,
-  "name": "Murali Vijay",
-  "runs": 146,
-  "year": 2014,
-  "opponent": "England",
-  "venue": "Nottingham",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "A slow grind: 40 runs per 100 balls off 361 balls, 100th run off ball 214, batted 1, innings 1. The match was drawn."
-  },
-  "rules": "yes",
-  "score": 68.5,
-  "gate": "",
-  "parts": "need 20, carry 17.5, stakes 6, tempo 25",
-  "reason": "In at 0 for 0, level. He made 32% of the team's 457, and no one else came close. The match was drawn. A slow grind at 40 runs per 100 balls.",
-  "scenario": "Wore the opposition down",
-  "verdict": [
-   1,
-   "Wore the opposition down",
-   "In at 0 for 0, level. He made 32% of the team's 457, and no one else came close. The match was drawn. A slow grind at 40 runs per 100 balls.",
    "b"
   ]
  },
@@ -846,31 +696,6 @@
    0,
    null,
    "He made 28% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
-   "b"
-  ]
- },
- {
-  "id": 1445,
-  "name": "Kumar Sangakkara",
-  "runs": 144,
-  "year": 2011,
-  "opponent": "Pakistan",
-  "venue": "Sharjah",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "A slow grind: 42 runs per 100 balls off 344 balls, 100th run off ball 232, batted 3, innings 1. The match was drawn."
-  },
-  "rules": "yes",
-  "score": 50.9,
-  "gate": "",
-  "parts": "carry 16.9, stakes 12, tempo 25, opposition -3",
-  "reason": "In at 1 for 4, 4 ahead. He made 35% of the team's 413, and no one else came close. The match was drawn. The series was still to be settled in this Test. A slow grind at 42 runs per 100 balls.",
-  "scenario": "Wore the opposition down",
-  "verdict": [
-   1,
-   "Wore the opposition down",
-   "In at 1 for 4, 4 ahead. He made 35% of the team's 413, and no one else came close. The match was drawn. The series was still to be settled in this Test. A slow grind at 42 runs per 100 balls.",
    "b"
   ]
  },
@@ -975,31 +800,6 @@
   ]
  },
  {
-  "id": 1621,
-  "name": "Alastair Cook",
-  "runs": 139,
-  "year": 2009,
-  "opponent": "West Indies",
-  "venue": "Bridgetown",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "Judged a good ton in a drawn match, not one that saved it."
-  },
-  "rules": "yes",
-  "score": 60.9,
-  "gate": "",
-  "parts": "need 15, carry 37.9, stakes 11, opposition -3",
-  "reason": "In at 0 for 0, 149 behind. He made 50% of the team's 279, and no one else came close. The match was drawn, with his side in danger of losing. The rest of the team added only 140.",
-  "scenario": "Saved the match",
-  "verdict": [
-   1,
-   "Saved the match",
-   "In at 0 for 0, 149 behind. He made 50% of the team's 279, and no one else came close. The match was drawn, with his side in danger of losing. The rest of the team added only 140.",
-   "b"
-  ]
- },
- {
   "id": 1643,
   "name": "Kumar Sangakkara",
   "runs": 139,
@@ -1071,31 +871,6 @@
    1,
    "Carried the innings",
    "In at 4 for 103, 174 ahead. He made 38% of the team's 354, and no one else came close. The team won by 198 runs. The series was still to be settled in this Test.",
-   "b"
-  ]
- },
- {
-  "id": 1795,
-  "name": "Rahul Dravid",
-  "runs": 136,
-  "year": 2008,
-  "opponent": "England",
-  "venue": "Mohali",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "A slow grind: 41 runs per 100 balls off 328 balls, 100th run off ball 261, batted 3, innings 1. The match was drawn."
-  },
-  "rules": "yes",
-  "score": 49,
-  "gate": "",
-  "parts": "carry 12, stakes 12, tempo 25",
-  "reason": "In at 1 for 6, 6 ahead. He made 30% of the team's 453. The match was drawn. The series was still to be settled in this Test. A slow grind at 41 runs per 100 balls.",
-  "scenario": "Wore the opposition down",
-  "verdict": [
-   1,
-   "Wore the opposition down",
-   "In at 1 for 6, 6 ahead. He made 30% of the team's 453. The match was drawn. The series was still to be settled in this Test. A slow grind at 41 runs per 100 balls.",
    "b"
   ]
  },
@@ -1471,31 +1246,6 @@
    1,
    "Carried the innings",
    "In at 3 for 67, 121 behind. He made 42% of the team's 283, and no one else came close. The team won by 10 wickets.",
-   "b"
-  ]
- },
- {
-  "id": 2850,
-  "name": "Ian Bell",
-  "runs": 116,
-  "year": 2012,
-  "opponent": "India",
-  "venue": "Nagpur",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "A slow grind: 38 runs per 100 balls off 306 balls, 100th run off ball 293, batted 5, innings 3. The match was drawn."
-  },
-  "rules": "yes",
-  "score": 81,
-  "gate": "",
-  "parts": "need 25, carry 15, stakes 12, tempo 25, attack 4",
-  "reason": "In at 3 for 94, 98 ahead. He made 33% of the team's 352. The match was drawn. The series was still to be settled in this Test. He faced an elite attack. A slow grind at 38 runs per 100 balls.",
-  "scenario": "Wore the opposition down",
-  "verdict": [
-   1,
-   "Wore the opposition down",
-   "In at 3 for 94, 98 ahead. He made 33% of the team's 352. The match was drawn. The series was still to be settled in this Test. He faced an elite attack. A slow grind at 38 runs per 100 balls.",
    "b"
   ]
  },
@@ -2188,14 +1938,14 @@
   },
   "rules": "no",
   "score": 33,
-  "gate": "a draw the team was not in danger of losing",
+  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
   "parts": "carry 30, stakes 6, opposition -3",
-  "reason": "A draw the team was not in danger of losing.",
+  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A draw the team was not in danger of losing.",
+   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
    "p"
   ]
  },
@@ -2238,14 +1988,14 @@
   },
   "rules": "no",
   "score": 26,
-  "gate": "a draw the team was not in danger of losing",
+  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
   "parts": "carry 14, stakes 12",
-  "reason": "A draw the team was not in danger of losing.",
+  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A draw the team was not in danger of losing.",
+   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
    "p"
   ]
  },
@@ -2263,14 +2013,14 @@
   },
   "rules": "no",
   "score": 30,
-  "gate": "a draw the team was not in danger of losing",
+  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
   "parts": "carry 24, stakes 6",
-  "reason": "A draw the team was not in danger of losing.",
+  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A draw the team was not in danger of losing.",
+   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
    "p"
   ]
  },
@@ -2288,14 +2038,14 @@
   },
   "rules": "no",
   "score": 30,
-  "gate": "a draw the team was not in danger of losing",
+  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
   "parts": "carry 24, stakes 6",
-  "reason": "A draw the team was not in danger of losing.",
+  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A draw the team was not in danger of losing.",
+   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
    "p"
   ]
  },
@@ -2313,14 +2063,14 @@
   },
   "rules": "no",
   "score": 50,
-  "gate": "a draw the team was not in danger of losing",
+  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
   "parts": "need 20, carry 24, stakes 6",
-  "reason": "A draw the team was not in danger of losing.",
+  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A draw the team was not in danger of losing.",
+   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
    "p"
   ]
  },
@@ -2363,14 +2113,14 @@
   },
   "rules": "no",
   "score": 30,
-  "gate": "a draw the team was not in danger of losing",
+  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
   "parts": "carry 24, stakes 6",
-  "reason": "A draw the team was not in danger of losing.",
+  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A draw the team was not in danger of losing.",
+   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
    "p"
   ]
  },
@@ -2388,14 +2138,14 @@
   },
   "rules": "no",
   "score": 59,
-  "gate": "a draw the team was not in danger of losing",
+  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
   "parts": "need 20, carry 24, stakes 15",
-  "reason": "A draw the team was not in danger of losing.",
+  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A draw the team was not in danger of losing.",
+   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
    "p"
   ]
  },
@@ -2663,14 +2413,14 @@
   },
   "rules": "no",
   "score": 25,
-  "gate": "",
+  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
   "parts": "carry 14, stakes 11",
-  "reason": "He made 35% of the team's runs. The match did not depend on it on the facts we have.",
+  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 35% of the team's runs. The match did not depend on it on the facts we have.",
+   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
    "p"
   ]
  },
@@ -2713,14 +2463,14 @@
   },
   "rules": "no",
   "score": 40,
-  "gate": "",
+  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
   "parts": "need 10, carry 24, stakes 6",
-  "reason": "He made 44% of the team's runs. The match did not depend on it on the facts we have.",
+  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 44% of the team's runs. The match did not depend on it on the facts we have.",
+   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
    "p"
   ]
  },
@@ -2738,14 +2488,14 @@
   },
   "rules": "no",
   "score": 36,
-  "gate": "",
+  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
   "parts": "need 20, carry 5, stakes 11",
-  "reason": "He made 30% of the team's runs. The match did not depend on it on the facts we have.",
+  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 30% of the team's runs. The match did not depend on it on the facts we have.",
+   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
    "p"
   ]
  },
@@ -2888,14 +2638,14 @@
   },
   "rules": "no",
   "score": 36,
-  "gate": "",
+  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
   "parts": "carry 30, stakes 6",
-  "reason": "He made 12400% of the team's runs. The match did not depend on it on the facts we have.",
+  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 12400% of the team's runs. The match did not depend on it on the facts we have.",
+   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
    "p"
   ]
  },
@@ -2938,14 +2688,14 @@
   },
   "rules": "no",
   "score": 33,
-  "gate": "",
+  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
   "parts": "carry 30, stakes 6, opposition -3",
-  "reason": "He made 2017% of the team's runs. The match did not depend on it on the facts we have.",
+  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 2017% of the team's runs. The match did not depend on it on the facts we have.",
+   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
    "p"
   ]
  },
@@ -2971,31 +2721,6 @@
    0,
    null,
    "He made 29% of the team's runs. The match did not depend on it on the facts we have.",
-   "p"
-  ]
- },
- {
-  "id": 4313,
-  "name": "Mahela Jayawardene",
-  "runs": 101,
-  "year": 2000,
-  "opponent": "South Africa",
-  "venue": "Colombo (SSC)",
-  "evidence": "p",
-  "yours": {
-   "verdict": "no",
-   "note": "The result and the score when he came in are not recorded."
-  },
-  "rules": "yes",
-  "score": 70,
-  "gate": "",
-  "parts": "need 20, carry 30, stakes 20",
-  "reason": "His side trailed by 262 when the innings began. He made 52% of the team's 195. The match was drawn, with his side in danger of losing. It was the decider of a level series.",
-  "scenario": "Saved the match",
-  "verdict": [
-   1,
-   "Saved the match",
-   "His side trailed by 262 when the innings began. He made 52% of the team's 195. The match was drawn, with his side in danger of losing. It was the decider of a level series.",
    "p"
   ]
  },
