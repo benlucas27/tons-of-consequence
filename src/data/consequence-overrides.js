@@ -407,10 +407,8 @@ export const CONSEQUENCE_OVERRIDES = {
   "Wasim Jaffer|212|2006|262": { verdict: 'no', final: true, note: "The match was drawn and the hundred did not save it on the facts we have." },
   "Tamim Iqbal|206|2015|317": { verdict: 'yes', final: true, scenario: "Saved the match", note: "He saved the match." },
   "Justin Greaves|202|2025|363": { verdict: 'yes', final: true, scenario: "Saved the match", note: "In at 4 for 72, 458 behind. He made 44% of the team's 457. The match was drawn, with his side in danger of losing." },
-  "Babar Azam|196|2022|456": { verdict: 'yes', final: true, scenario: "Saved the match", note: "In at 2 for 21, 484 behind. He made 44% of the team's 443. The match was drawn, with his side in danger of losing. He faced an elite attack." },
   "Mohammad Yousuf|191|2006|498": { verdict: 'yes', final: true, scenario: "Saved the match", note: "In at 2 for 124, 110 behind. He made 41% of the team's 461, and no one else came close. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test." },
   "Neil McKenzie|155|2008|1086": { verdict: 'yes', final: true, scenario: "Saved the match", note: "He saved the match." },
-  "Virender Sehwag|151|2008|1229": { verdict: 'yes', final: true, scenario: "Saved the match", note: "In at 0 for 0, 37 behind. He made 56% of the team's 269, and no one else came close. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test. The rest of the team added only 118." },
   "Don Bradman|144|1938|1428": { verdict: 'yes', final: true, scenario: "Saved the match", note: "He batted to save a match Australia were in danger of losing." },
   "Kusal Mendis|141|2018|1545": { verdict: 'yes', final: true, scenario: "Saved the match", note: "In at 2 for 10, 286 behind. He made 49% of the team's 287. The match was drawn, with his side in danger of losing. The rest of the team added only 146. A slow grind at 42 runs per 100 balls." },
   "Usman Khawaja|141|2018|1571": { verdict: 'yes', final: true, scenario: "Saved the match", note: "He saved the match." },
@@ -522,4 +520,6 @@ export const CONSEQUENCE_OVERRIDES = {
   "Virat Kohli|103|2012|4131": { verdict: 'no', final: true, note: "The match was drawn and the hundred did not save it: his side was not in danger of losing." },
   // last drawn-match tons review, Ben's answers
 
+  "Babar Azam|196|2022|456": { verdict: 'no', final: true, note: "The match was drawn. A hundred in a drawn Test is not counted as a ton of consequence." },
+  "Virender Sehwag|151|2008|1229": { verdict: 'no', final: true, note: "The match was drawn. A hundred in a drawn Test is not counted as a ton of consequence." },
 };
