@@ -129,7 +129,7 @@ let v3Changed = 0, v3Kept = 0, v3Partial = 0;
 const decide = (row, f, evidence, existing) => {
   const m = modelV3(f);
   const rob = robustness(f);
-  if (rob.cls === 'marginal') { queue.push({ id: row.id, score: m.score, stable: rob.stable, gate: m.gate, why: m.gate ? '' : m.gateWhy, evidence, today: existing ? existing[0] : null }); return existing || null; }
+  if (rob.cls === 'marginal') { queue.push({ id: row.id, name: row.name, runs: row.runs, year: row.year, opponent: row.opponent, venue: row.venue, score: m.score, stable: rob.stable, gate: m.gate, why: m.gate ? '' : m.gateWhy, evidence, today: existing ? existing[0] : null, parts: Object.entries(m.parts).filter(([, v]) => v).map(([k, v]) => `${k} ${Math.round(v * 10) / 10}`).join(', '), facts: m.ton ? describeTon(f, m).reason : describeGoodTon(f, m), result: f.result }); return existing || null; }
   if (rob.cls === 'solid ton' && m.ton) { const d = describeTon(f, m); return [1, d.scenario, d.reason, evidence]; }
   return [0, null, describeGoodTon(f, m), evidence];
 };
