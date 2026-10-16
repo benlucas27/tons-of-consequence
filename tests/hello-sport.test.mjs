@@ -98,3 +98,13 @@ test('public notes carry no hand-over markers', () => {
     assert.ok(!/\*\*|\bNEW\b|Claude/.test(m.note), `${m.player} (${m.episode}): note shows a marker: ${m.note}`);
   }
 });
+
+test('the Hello Cricket page is at /hello-cricket, and the old /hello-sport address redirects to it', async () => {
+  const { createRequire } = await import('node:module');
+  const config = createRequire(import.meta.url)('../next.config.js');
+  const redirects = await config.redirects();
+  const r = redirects.find((x) => x.source === '/hello-sport');
+  assert.ok(r, 'no redirect from /hello-sport');
+  assert.equal(r.destination, '/hello-cricket');
+  assert.equal(r.permanent, true);
+});
