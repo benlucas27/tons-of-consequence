@@ -25,3 +25,12 @@ test("the historic women's hundreds are real entries and win-or-save tons", () =
   assert.equal(historic.length, 5);
   for (const h of historic) assert.equal(h.ton, true, `${h.name} ${h.runs}`);
 });
+
+test("the women's search finds a hundred by batter and year", async () => {
+  const { searchWomens, WOMENS_BY_NO } = await import('../src/lib/womens.js');
+  const hits = searchWomens('Maclagan 119');
+  assert.equal(hits.length, 1);
+  assert.equal(hits[0].no, 1);
+  assert.equal(WOMENS_BY_NO.get(80).name, 'Karen Rolton');
+  assert.ok(searchWomens('sutherland 2025').length >= 1);
+});

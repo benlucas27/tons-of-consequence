@@ -14,6 +14,7 @@ import Door from './Door';
 import Spotlight from './Spotlight';
 import RankRow from './RankRow';
 import CompareView from './CompareView';
+import WomensRankings from './WomensRankings';
 
 const PAGE = 50;
 
@@ -26,7 +27,8 @@ export default function Rankings() {
   const { order, bias, explicit, setOrder } = useWeighting();
   const isDefault = sameOrder(order, DEFAULT_ORDER) && !bias;
   const [door, setDoor] = useState(!explicit);
-  const [view, setView] = useState(params.get('view') === 'divisive' ? 'divisive' : 'rankings');
+  const viewOf = (p) => (p.get('view') === 'divisive' ? 'divisive' : p.get('view') === 'womens' ? 'womens' : 'rankings');
+  const [view, setView] = useState(viewOf(params));
   const [country, setCountry] = useState('');
   const [era, setEra] = useState('');
   const [band, setBand] = useState('');
@@ -39,7 +41,7 @@ export default function Rankings() {
   const searchRef = useRef(null);
   const persona = params.get('from') === 'quiz' ? PERSONA_BY_ID[params.get('p')] : null;
 
-  useEffect(() => { setView(params.get('view') === 'divisive' ? 'divisive' : 'rankings'); }, [params]);
+  useEffect(() => { setView(viewOf(params)); }, [params]);
   useEffect(() => {
     document.body.dataset.door = door ? '1' : '';
     return () => { delete document.body.dataset.door; };
@@ -75,7 +77,7 @@ export default function Rankings() {
   function changeView(next) {
     setView(next);
     const url = new URL(window.location.href);
-    if (next === 'divisive') url.searchParams.set('view', 'divisive'); else url.searchParams.delete('view');
+    if (next !== 'rankings') url.searchParams.set('view', next); else url.searchParams.delete('view');
     window.history.replaceState(null, '', url);
   }
   async function share() {
@@ -93,12 +95,29 @@ export default function Rankings() {
     URL.revokeObjectURL(a.href);
   }
 
-  if (door) {
+  if (door && view !== 'womens') {
     return <Door order={order} bias={bias} onChange={setOrder} onDone={() => { setOrder(order, bias); setDoor(false); window.scrollTo(0, 0); }} />;
   }
 
   if (comparing && pickedItems.length >= 2) {
     return <CompareView items={pickedItems} order={order} bias={bias} onBack={() => setComparing(false)} onClear={() => { setPicks([]); setComparing(false); }} />;
+  }
+
+  if (view === 'womens') {
+    return (
+      <>
+        <div className="page-pad">
+          <div className="toolbar">
+            <div className="tabs" role="group" aria-label="View">
+              <button type="button" aria-pressed={false} onClick={() => changeView('rankings')}>Rankings</button>
+              <button type="button" aria-pressed={false} onClick={() => changeView('divisive')}>Most divisive</button>
+              <button type="button" aria-pressed onClick={() => changeView('womens')}>Women&rsquo;s Tests</button>
+            </div>
+          </div>
+        </div>
+        <WomensRankings />
+      </>
+    );
   }
 
   return (
@@ -126,6 +145,7 @@ export default function Rankings() {
             <div className="tabs" role="group" aria-label="View">
               <button type="button" aria-pressed={view === 'rankings'} onClick={() => changeView('rankings')}>Rankings</button>
               <button type="button" aria-pressed={view === 'divisive'} onClick={() => changeView('divisive')}>Most divisive</button>
+              <button type="button" aria-pressed={view === 'womens'} onClick={() => changeView('womens')}>Women&rsquo;s Tests</button>
             </div>
             <div className="toolbar-r">
               <button type="button" className="chip filter-toggle" aria-expanded={filtersOpen} onClick={() => setFiltersOpen(!filtersOpen)}>

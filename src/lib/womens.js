@@ -30,3 +30,16 @@ for (const h of WOMENS) h.historic = HISTORIC[h.no] || null;
 export const WOMENS_TOTAL = WOMENS.length;
 export const WOMENS_TONS = WOMENS.filter((h) => h.ton);
 export const WOMENS_BALL_BY_BALL = WOMENS.filter((h) => h.evidence === 'b').length;
+
+/** Does a hundred match every word typed? */
+export const matchesWomens = (h, text) => text.toLowerCase().split(/\s+/).filter(Boolean).every((w) => `${h.name} ${h.team} ${h.opponent} ${h.ground} ${h.year} ${h.score}`.toLowerCase().includes(w));
+
+/** Search the women's hundreds by batter, team, opponent, ground, year or runs ("Maclagan 119", "Sutherland 2025"). */
+export function searchWomens(text, limit = 8) {
+  if (!text.trim()) return [];
+  return WOMENS.filter((h) => matchesWomens(h, text)).slice(0, limit);
+}
+
+export const WOMENS_BY_NO = new Map(WOMENS.map((h) => [h.no, h]));
+export const WOMENS_TEAMS = [...new Set(WOMENS.map((h) => h.team))].sort((a, b) => WOMENS.filter((h) => h.team === b).length - WOMENS.filter((h) => h.team === a).length);
+export const hundredText = (h) => `${h.name} ${h.runs} v ${h.opponent}, ${h.ground.split(',')[0]}, ${h.year}`;

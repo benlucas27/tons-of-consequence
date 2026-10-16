@@ -12,6 +12,7 @@ import WeightNote from './WeightNote';
 import BiasNote from './BiasNote';
 import CompareResult from './CompareResult';
 import CareerCompare from './CareerCompare';
+import WomensCompare from './WomensCompare';
 import { COMPARE_SETS, setById } from '@/lib/careerCompare';
 
 const PAIRS = [
@@ -103,6 +104,8 @@ export default function CompareBuilder() {
   const [b, setB] = useState(() => idParam('b'));
   const [setId, setSetId] = useState(() => (setById(params.get('set')) ? params.get('set') : null));
   const careerSet = setId ? setById(setId) : null;
+  const [womens, setWomens] = useState(() => params.get('women') === '1');
+  function chooseWomens(on) { setWomens(on); setUrlParam('women', on ? '1' : ''); }
 
   const left = a != null ? byId.get(a) : null;
   const right = b != null ? byId.get(b) : null;
@@ -129,18 +132,21 @@ export default function CompareBuilder() {
   return (
     <div className="page-pad ask">
       <header className="ask-head">
-        <h1>{careerSet ? 'Compare careers' : 'Compare two innings'}</h1>
-        <p>{careerSet
+        <h1>{womens ? 'Compare two women\'s hundreds' : careerSet ? 'Compare careers' : 'Compare two innings'}</h1>
+        <p>{womens ? 'Pick any two women\'s Test hundreds and see which were tons of consequence, with the match facts side by side.' : careerSet
           ? 'Whole careers side by side: the numbers from every innings, and how their hundreds rank on your weighting.'
           : 'Pick any two Test hundreds. You get a verdict on your weighting, how it holds up under the five presets, and the six criteria side by side.'}</p>
       </header>
 
       <div className="tabs" role="group" aria-label="What to compare" style={{ justifySelf: 'start' }}>
-        <button type="button" aria-pressed={!careerSet} onClick={() => chooseSet(null)}>Two innings</button>
-        <button type="button" aria-pressed={Boolean(careerSet)} onClick={() => chooseSet(careerSet ? careerSet.id : COMPARE_SETS[0].id)}>Career presets</button>
+        <button type="button" aria-pressed={!careerSet && !womens} onClick={() => { chooseWomens(false); chooseSet(null); }}>Two innings</button>
+        <button type="button" aria-pressed={Boolean(careerSet) && !womens} onClick={() => { chooseWomens(false); chooseSet(careerSet ? careerSet.id : COMPARE_SETS[0].id); }}>Career presets</button>
+        <button type="button" aria-pressed={womens} onClick={() => { chooseSet(null); chooseWomens(true); }}>Women&rsquo;s Tests</button>
       </div>
 
-      {careerSet ? (
+      {womens ? (
+        <WomensCompare />
+      ) : careerSet ? (
         <>
           <div className="chips" role="group" aria-label="Preset comparisons">
             {COMPARE_SETS.map((s) => (
