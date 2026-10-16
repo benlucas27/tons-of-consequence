@@ -90,7 +90,7 @@ test('career moments belong to a player page, and the concept moment is on the a
 
 test('the index file has no rows from the "Other cricket chat" table', () => {
   assert.ok(!MOMENTS.some((m) => ['Jason Sangha', 'Konstas'].some((n) => m.player.includes(n))));
-  assert.equal(MOMENTS.length, 26);
+  assert.equal(MOMENTS.length, 29);
 });
 
 test('public notes carry no hand-over markers', () => {
@@ -107,4 +107,12 @@ test('the Hello Cricket page is at /hello-cricket, and the old /hello-sport addr
   assert.ok(r, 'no redirect from /hello-sport');
   assert.equal(r.destination, '/hello-cricket');
   assert.equal(r.permanent, true);
+});
+
+test('older-season finds: Green 174*, Brook 186, and a career clip for Head', () => {
+  assert.equal(momentsFor(710).length, 1);
+  assert.equal(momentsFor(710)[0].episode, '#606');
+  assert.equal(momentsFor(549).length, 1);
+  assert.equal(momentsFor(549)[0].start, 4467);
+  assert.ok(careerMomentsFor('Travis Head').some((m) => m.episode === '#572'));
 });

@@ -59,6 +59,9 @@ Watch: https://www.youtube.com/watch?v=KAZuw748xiw&t=2068s
 | Steve Smith | Career (v Ponting after 221 innings) | -- | #921 | 2026-08-19 | 16:11 | https://www.youtube.com/watch?v=F49ZKcBlgHU&t=971s | career | **NEW.** Smith 10,834 runs v Ponting 10,960 after the same number of innings | -- |
 | Joe Root | Career (38 tons, second all-time run scorer) | -- | #779 | 2025-07-28 | 1:34:59 | https://www.youtube.com/watch?v=1tBQSCrRpto&t=5699s | career | **NEW.** End of the England v India series: 21 tons since Covid, past Kallis and Ponting, behind only Tendulkar | -- |
 | Joe Root | Preview (no ton in Australia yet) | -- | #801 | 2025-10-13 | 1:18:20 | https://www.youtube.com/watch?v=lIIiBPp0MqU&t=4700s | career | **NEW.** Lehmann's claim that a ton in Australia would make him the greatest of all time | -- |
+| Cameron Green | 174* | New Zealand v Australia, 1st Test, Wellington, Mar 2024 (Aus won) | #606 | 2024-03-04 | 56:48 | https://www.youtube.com/watch?v=YjkrB5XUq60&t=3408s | innings | Reaction, recorded live from Las Vegas, to Green's unbeaten 174: "boy becomes man" territory; Lyon's ten wickets in the match sealed the win | 710 |
+| Harry Brook | 186 off 176 | New Zealand v England, Wellington, Feb 2023 (Eng lost) | #469 | 2023-02-26 | 1:14:27 | https://www.youtube.com/watch?v=_LFfFRuIGLo&t=4467s | innings | A read-out of Brook's 186 off 176 in England's 435 declared, with New Zealand following on and fighting back | 549 |
+| Travis Head | Career (tons: the WTC final and since) | -- | #572 | 2023-11-20 | 18:32 | https://www.youtube.com/watch?v=cMdHDzOrQF0&t=1112s | career | Praise for Head's recent form: a hundred in the World Test Championship final, and tons since | -- |
 
 ## Other cricket chat (not Test centuries, so no database row)
 
