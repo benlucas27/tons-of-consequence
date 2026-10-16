@@ -1175,31 +1175,6 @@
   ]
  },
  {
-  "id": 2689,
-  "name": "Travis Head",
-  "runs": 119,
-  "year": 2024,
-  "opponent": "West Indies",
-  "venue": "Adelaide",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "2nd innings, team 121 behind. Australia won by 10 wickets. He made 42% of the team's runs."
-  },
-  "rules": "yes",
-  "score": 60,
-  "gate": "",
-  "parts": "need 25, carry 32, stakes 6, opposition -3",
-  "reason": "In at 3 for 67, 121 behind. He made 42% of the team's 283, and no one else came close. The team won by 10 wickets.",
-  "scenario": "Carried the innings",
-  "verdict": [
-   1,
-   "Carried the innings",
-   "In at 3 for 67, 121 behind. He made 42% of the team's 283, and no one else came close. The team won by 10 wickets.",
-   "b"
-  ]
- },
- {
   "id": 2976,
   "name": "Kevin Pietersen",
   "runs": 115,
