@@ -9,7 +9,7 @@ export const REFERENCE_POINTS = {
    "lost": 3
   },
   "measured": 37,
-  "tons": 8,
+  "tons": 10,
   "byTier": [
    24,
    4,
@@ -17,14 +17,14 @@ export const REFERENCE_POINTS = {
    0
   ],
   "tonsByTier": [
-   7,
-   0,
+   8,
+   1,
    1,
    0
   ],
   "away": 16,
   "home": 19,
-  "awayTons": 5
+  "awayTons": 6
  },
  "Virat Kohli|IND": {
   "hundreds": 30,
@@ -61,7 +61,7 @@ export const REFERENCE_POINTS = {
    "lost": 7
   },
   "measured": 41,
-  "tons": 5,
+  "tons": 6,
   "byTier": [
    19,
    8,
@@ -70,13 +70,13 @@ export const REFERENCE_POINTS = {
   ],
   "tonsByTier": [
    3,
-   2,
+   3,
    0,
    0
   ],
   "away": 17,
   "home": 24,
-  "awayTons": 1
+  "awayTons": 2
  },
  "Kane Williamson|NZ": {
   "hundreds": 33,
@@ -295,7 +295,7 @@ export const REFERENCE_POINTS = {
    "lost": 3
   },
   "measured": 35,
-  "tons": 7,
+  "tons": 8,
   "byTier": [
    20,
    6,
@@ -304,7 +304,7 @@ export const REFERENCE_POINTS = {
   ],
   "tonsByTier": [
    4,
-   0,
+   1,
    2,
    1
   ],
@@ -658,8 +658,8 @@ export const REFERENCE_POINTS = {
    "drawn": 2,
    "lost": 1
   },
-  "measured": 11,
-  "tons": 6,
+  "measured": 10,
+  "tons": 5,
   "byTier": [
    5,
    6,
@@ -667,7 +667,7 @@ export const REFERENCE_POINTS = {
    2
   ],
   "tonsByTier": [
-   1,
+   0,
    3,
    1,
    1

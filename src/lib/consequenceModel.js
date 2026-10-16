@@ -38,6 +38,7 @@ export function modelV3(f, wm = {}, th = THRESHOLD) {
   p.carry = sh >= 0.5 ? 30 : sh >= 0.4 ? 24 : sh >= 0.3 ? 14 : sh >= 0.2 ? 5 : 0;
   if (f.nextBest != null && f.others === 0) p.carry += 8 * clamp((f.runs - f.nextBest) / f.runs); // the only hundred, and well clear of the next batter
   if (f.others) p.carry -= Math.min(6, 2 * f.others);
+  if (f.rest != null) p.carry += f.rest < 150 ? 10 : f.rest < 250 ? 3 : f.rest >= 450 ? -6 : 0; // the team collapsed around him, or it did not
   const close = f.result === 'tie' || (f.result === 'win' && f.margin && ((f.margin[0] === 'r' && Number(f.margin.slice(1)) <= 30) || (f.margin[0] === 'w' && Number(f.margin.slice(1)) <= 3)));
   p.finish = (f.inn === 4 && f.result === 'win' ? 10 : 0) + (close ? 5 : 0);
   p.stakes = ({ decider: 15, 'on the line': 12, live: 6, single: 7, dead: 3 })[f.stakes] ?? 6;
@@ -51,13 +52,14 @@ export function modelV3(f, wm = {}, th = THRESHOLD) {
   // a big stand late in the order, and a hundred from number 7 or lower
   p.late = f.bestStand && f.bestStand.wicket >= 7 ? (f.bestStand.runs >= 100 ? 10 : f.bestStand.runs >= 60 ? 5 : 0) : 0;
   p.lower = f.pos != null && f.pos >= 8 ? 10 : f.pos === 7 ? 6 : 0;
+  p.attack = f.attack == null ? 0 : f.attack < 25 ? 10 : f.attack < 27 ? 4 : 0; // only a truly elite attack counts
   p.safe = f.lead != null && f.lead > 200 ? -20 : 0;
   for (const k of Object.keys(p)) p[k] *= wm[k] ?? 1;
   const score = Math.round(Object.values(p).reduce((a, b) => a + b, 0) * 10) / 10;
   return { gate, gateWhy, score, parts: p, ton: gate && score >= th, sr };
 }
 
-const KEYS = ['need', 'carry', 'finish', 'stakes', 'tempo', 'safe', 'occasion', 'platform', 'late', 'lower'];
+const KEYS = ['need', 'carry', 'finish', 'stakes', 'tempo', 'safe', 'occasion', 'platform', 'late', 'lower', 'attack'];
 // a fixed set of 300 nudges, so a rebuild gives the same answer
 const DRAWS = (() => {
   let seed = 12345;
@@ -99,6 +101,8 @@ export function describeTon(f, m, team = 'The team') {
   else if (p.occasion >= 5 && !f.occasion) bits.push('It was a Boxing Day or New Year Test.');
   if (p.platform) bits.push(`As an opener he put on ${f.openStand} for the first wicket${f.lastOpenerOut ? `, and the second opener was not out until ${f.lastOpenerOut}` : ''}.`);
   if (p.late && f.bestStand) bits.push(`He added ${f.bestStand.runs} for the ${f.bestStand.wicket}th wicket.`);
+  if (p.attack) bits.push('He faced an elite attack.');
+  if (f.rest != null && f.rest < 150) bits.push(`The rest of the team added only ${f.rest}.`);
   if (p.lower) bits.push(`He batted at number ${f.pos}, a lower-order hundred.`);
   if (p.tempo && m.sr != null) bits.push(m.sr >= 90 ? `He scored at ${Math.round(m.sr)} runs per 100 balls.` : `A slow grind at ${Math.round(m.sr)} runs per 100 balls.`);
   return { scenario, reason: bits.join(' ') };

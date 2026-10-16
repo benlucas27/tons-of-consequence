@@ -57,6 +57,19 @@ const rowFor = (h) => {
   return same.length > 1 ? same.find((c) => c.balls && h.balls && c.balls === h.balls) || same[0] : same[0];
 };
 
+// career bowling averages over the whole archive, to size up the attack a hundred was made against (2006 on)
+const bowlerRecord = new Map();
+for (const m of matches) for (const inn of m.innings || []) for (const o of inn.overs || []) for (const d of o.deliveries || []) {
+  const r = bowlerRecord.get(d.bowler) || { runs: 0, wk: 0 }; bowlerRecord.set(d.bowler, r);
+  r.runs += (d.runs?.batter || 0) + (d.extras?.wides || 0) + (d.extras?.noballs || 0);
+  for (const w of d.wickets || []) if (!['run out', 'retired hurt', 'retired out', 'retired not out', 'obstructing the field'].includes(w.kind)) r.wk += 1;
+}
+const attackAverage = (inn) => {
+  const balls = new Map();
+  for (const o of inn.overs || []) for (const d of o.deliveries || []) balls.set(d.bowler, (balls.get(d.bowler) || 0) + 1);
+  const top = [...balls.entries()].sort((a, c) => c[1] - a[1]).slice(0, 3).map(([n]) => bowlerRecord.get(n)).filter((r) => r && r.wk >= 50).map((r) => r.runs / r.wk);
+  return top.length >= 2 ? top.reduce((a, c) => a + c, 0) / top.length : null;
+};
 const out = {};
 const fullCases = {}; // id -> the facts the gated and weighted rules need, from the ball-by-ball record
 const facts = {}; // id -> [batting position, innings number, balls to 100, other hundreds in the innings, other hundreds in the match]
@@ -76,7 +89,7 @@ for (const m of matches) {
       let notAhead = true;
       if (st) { const [x, y] = st.score.split('-').map(Number); const mine = h.team === st.teams[0] ? x : y; const theirs = h.team === st.teams[0] ? y : x; sideAhead = mine > theirs; notAhead = mine <= theirs; }
       const mg = h.margin ? (h.margin.runs != null ? `r${h.margin.runs}` : h.margin.wickets != null ? `w${h.margin.wickets}` : null) : null;
-      fullCases[row.id] = { occasion: OCCASIONS[row.id]?.tag, occasionNote: OCCASIONS[row.id]?.note, result: h.result, inn: h.inningsNo, lead: h.leadOnEntry, share: h.share, total: h.teamTotal, stakes: st?.stakes || 'single', sideAhead, seriesNotAhead: notAhead, margin: mg, start: h.date ? h.date.slice(5, 7) + h.date.slice(8, 10) : null, balls: h.balls, runs: h.runs, entryWkts: h.entryWkts, entryScore: h.entryScore, peril: h.peril, others, nextBest, followOn: h.followOn, pos: h.position, bestStand: h.bestStand, openStand: h.openStand, lastOpenerOut: h.lastOpenerOut };
+      fullCases[row.id] = { occasion: OCCASIONS[row.id]?.tag, occasionNote: OCCASIONS[row.id]?.note, result: h.result, inn: h.inningsNo, lead: h.leadOnEntry, share: h.share, total: h.teamTotal, stakes: st?.stakes || 'single', sideAhead, seriesNotAhead: notAhead, margin: mg, start: h.date ? h.date.slice(5, 7) + h.date.slice(8, 10) : null, balls: h.balls, runs: h.runs, entryWkts: h.entryWkts, entryScore: h.entryScore, peril: h.peril, others, nextBest, followOn: h.followOn, pos: h.position, bestStand: h.bestStand, openStand: h.openStand, lastOpenerOut: h.lastOpenerOut, rest: h.teamTotal - h.runs, attack: attackAverage(m.innings[h.inningsNo - 1]) };
     }
     const v = withOverride(consequenceTest({ ...h, stakes: st?.stakes || 'single' }), row.name, row.runs, row.year, row.id);
     out[row.id] = [v.passes ? 1 : 0, v.passes ? v.scenario : null, v.because, 'b'];
