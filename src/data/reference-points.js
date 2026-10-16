@@ -9,7 +9,7 @@ export const REFERENCE_POINTS = {
    "lost": 3
   },
   "measured": 37,
-  "tons": 13,
+  "tons": 10,
   "byTier": [
    24,
    4,
@@ -18,13 +18,13 @@ export const REFERENCE_POINTS = {
   ],
   "tonsByTier": [
    10,
-   1,
-   2,
+   0,
+   0,
    0
   ],
   "away": 16,
   "home": 19,
-  "awayTons": 7
+  "awayTons": 4
  },
  "Virat Kohli|IND": {
   "hundreds": 30,

@@ -496,4 +496,8 @@ export const CONSEQUENCE_OVERRIDES = {
   "AB de Villiers|178|2005|645": { verdict: 'no', final: true, note: "His side trailed by 296 when his innings began. He made 32% of the team's 548. The match was won by an innings and 86 runs. The match did not depend on it on the facts we have." },
   "Abid Ali|174|2019|722": { verdict: 'no', final: true, note: "The match was won. The match did not depend on it on the facts we have." },
   "Tom Latham|252|2022|99": { verdict: 'no', final: true, note: "The match was won. The match did not depend on it on the facts we have." },
+  // law 13 review, Ben's answers
+  "Sachin Tendulkar|143|2010|1486": { verdict: 'no', final: true, note: "The match was won. The match did not depend on it on the facts we have." },
+  "Sachin Tendulkar|109|2008|3494": { verdict: 'yes', final: true, scenario: "Carried the innings", note: "The match was won." },
+  "Sachin Tendulkar|106|2010|3762": { verdict: 'no', final: true, note: "The match was won. The match did not depend on it on the facts we have." },
 };
