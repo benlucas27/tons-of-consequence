@@ -4,24 +4,23 @@ A ton of consequence is a Test hundred of consequence. The side needed it. It he
 
 There are good tons, but not every ton is a ton of consequence.
 
-## The laws
+## The laws (a ton of consequence is shortened to "toc")
 
-Law 1 must be met. Laws 2 to 11 each add points, and law 8 takes points away. A hundred needs 45 points to count, and that bar is deliberately high.
+Law 1 is the only hard law. Laws 2 to 11 add points, and law 8 takes points away. A hundred needs 45 points to count, and that bar is deliberately high.
 
-1. **A ton of consequence wins or saves the match.**
-   - It never comes in a loss.
-   - It never comes in a dead rubber, unless his side had already won the series and also won the match.
+1. **A toc wins or saves a match.** You can't score a toc in a loss or a dead rubber. This is the only hard law.
+   - A dead rubber counts only if his side had already won the series and also won the match.
    - A draw counts only if his side was in danger of losing, or he batted a long, slow grind (under 45 runs per 100 balls, 250+ balls) to save it.
-2. **A ton of consequence considers the scoreboard when the batter came to the crease, except for openers.** Walking in at 3 for 80 matters. Walking in at 1 for 300 doesn't. Openers always come in at 0 for 0, so they are judged on how far their side trailed, and on law 9.
-3. **A ton of consequence carries the innings.** How much of the team's runs did he make? Was he the only hundred in the innings? Was he well clear of the next batter? A hundred shared with another hundred counts for less.
-4. **A ton of consequence is part of a winning chase or a close finish.** The ton doesn't have to finish the chase, but it can be what made the chase possible. A close finish (30 runs or fewer, 3 wickets or fewer, or a tie) adds more.
-5. **A ton of consequence matters to the series.** A hundred in a series decider, or one where the series was still undecided, counts for more than one in a dead rubber. Saving a draw when his side wasn't ahead in the series adds a bit too.
-6. **Pace matters, but not always.** A fast hundred (90+ runs per 100 balls) can change a game. A slow grind can save one.
-7. **The moment matters.** A tribute (Warner after Hughes), a farewell, a comeback, an emotional match, Boxing Day or New Year Tests all add weight.
-8. **It is hard to be a ton of consequence if your team is miles ahead when you come in.** If his side led by more than 200 when his innings began, it loses points.
-9. **The opening platform.** An opener whose stand set up the win counts, even if the match later looks out of reach. That is the Hayden and Langer case. We look at the first-wicket stand and when the second opener fell, and only count it when his side won.
-10. **A big late stand.** A hundred built in a big partnership at the 7th wicket or later (100+ runs earns the most, 60+ a smaller amount) earns extra, on top of the other laws.
-11. **The lower order.** A hundred from number 7 or lower is rare enough to earn extra, especially from number 8 and below.
+2. **A toc considers the scoreboard when the batter came in, except for openers.** Walking in at 3 for 80 matters. Walking in at 1 for 300 doesn't. Openers always come in at 0 for 0.
+3. **A toc carries the innings.** What share of the team's runs did he score? Was he the only hundred? How far clear was he of the other batters?
+4. **A toc is part of a winning chase or a close finish.** It doesn't have to finish the chase. It can be what made it possible.
+5. **A toc impacts a series.** Deciders and undecided series count more than dead rubbers.
+6. **Pace matters, but not always.** A fast hundred can change a game. A slow grind can save one.
+7. **The moment matters.** A tribute, a farewell, a comeback, an emotional match, Boxing Day or New Year.
+8. **It's hard to score a toc if there's no pressure on when you come in.** If his side led by more than 200 when his innings began, it loses points.
+9. **The opening platform (new).** An opener whose first-wicket stand set up a win counts, even if the match later looks out of reach. That is the Hayden and Langer case. We look at the size of the stand and when the second opener fell, and only count it when his side won.
+10. **The late stand (new).** A hundred built in a partnership at the 7th wicket or later earns extra: most for 100+ runs, less for 60+.
+11. **The lower order (new).** A hundred from number 7 or lower earns extra: a little from number 7, more from number 8 and below.
 
 ## How firm a verdict is
 
