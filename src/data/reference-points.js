@@ -61,7 +61,7 @@ export const REFERENCE_POINTS = {
    "lost": 7
   },
   "measured": 41,
-  "tons": 9,
+  "tons": 8,
   "byTier": [
    19,
    8,
@@ -69,7 +69,7 @@ export const REFERENCE_POINTS = {
    0
   ],
   "tonsByTier": [
-   3,
+   2,
    4,
    2,
    0
@@ -269,7 +269,7 @@ export const REFERENCE_POINTS = {
    "lost": 5
   },
   "measured": 36,
-  "tons": 9,
+  "tons": 8,
   "byTier": [
    9,
    7,
@@ -277,14 +277,14 @@ export const REFERENCE_POINTS = {
    9
   ],
   "tonsByTier": [
-   2,
+   1,
    2,
    4,
    1
   ],
   "away": 11,
   "home": 16,
-  "awayTons": 3
+  "awayTons": 2
  },
  "Jacques Kallis|SA": {
   "hundreds": 45,
@@ -503,7 +503,7 @@ export const REFERENCE_POINTS = {
    "lost": 2
   },
   "measured": 11,
-  "tons": 1,
+  "tons": 0,
   "byTier": [
    3,
    2,
@@ -511,14 +511,14 @@ export const REFERENCE_POINTS = {
    0
   ],
   "tonsByTier": [
-   1,
+   0,
    0,
    0,
    0
   ],
   "away": 2,
   "home": 9,
-  "awayTons": 1
+  "awayTons": 0
  },
  "Yashasvi Jaiswal|IND": {
   "hundreds": 7,

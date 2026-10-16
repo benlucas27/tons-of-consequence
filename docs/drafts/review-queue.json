@@ -1564,23 +1564,6 @@
   "result": "win"
  },
  {
-  "id": 2676,
-  "name": "Kumar Sangakkara",
-  "runs": 119,
-  "year": 2011,
-  "opponent": "England",
-  "venue": "Southampton",
-  "score": 51.2,
-  "stable": 0.8533333333333334,
-  "gate": true,
-  "why": "",
-  "evidence": "b",
-  "today": 1,
-  "parts": "need 15, carry 19.2, stakes 17",
-  "facts": "In at 1 for 25, 168 behind. He made 36% of the team's 334. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test.",
-  "result": "draw"
- },
- {
   "id": 2743,
   "name": "Simon Katich",
   "runs": 118,

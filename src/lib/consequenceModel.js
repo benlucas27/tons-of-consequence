@@ -13,6 +13,7 @@
  * either way and the threshold by up to 5 points, and says how often it was a ton.
  */
 export const THRESHOLD = 45; // set higher than the first draft: Ben wants tons kept strict
+const DRAW_CUT_SHORT = 330; // fewer overs than this in a drawn Test means a day or more was lost (Root's Trent Bridge 109: 250 overs)
 const OCCASION_POINTS = { tribute: 15, farewell: 8, emotional: 8, comeback: 6 };
 const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
 
@@ -27,6 +28,7 @@ export function modelV3(f, wm = {}, th = THRESHOLD) {
   if (f.result === 'loss') gateWhy = 'a loss';
   else if (dead && !(f.sideAhead && f.result === 'win')) gateWhy = f.result === 'win' ? 'a dead rubber, and his side had lost the series' : 'a dead rubber that was not a win';
   else if (f.result === 'draw' && f.inn == null) gateWhy = 'a draw, and the innings is not known';
+  else if (f.result === 'draw' && f.overs != null && f.overs < DRAW_CUT_SHORT && !slowGrind) gateWhy = 'a draw cut short by weather: the clock saved the match, not the hundred';
   else if (f.result === 'draw' && !inDanger && !slowGrind) gateWhy = 'a draw the team was not in danger of losing';
   else if (!['win', 'draw', 'tie'].includes(f.result)) gateWhy = 'no result';
   else gate = true;

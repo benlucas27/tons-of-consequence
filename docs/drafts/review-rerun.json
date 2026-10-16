@@ -2200,31 +2200,6 @@
   ]
  },
  {
-  "id": 3517,
-  "name": "Joe Root",
-  "runs": 109,
-  "year": 2021,
-  "opponent": "India",
-  "venue": "Nottingham",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "Rain ended the match with India needing about 50 with nine wickets in hand. The weather saved England, not the hundred."
-  },
-  "rules": "yes",
-  "score": 47.7,
-  "gate": "",
-  "parts": "need 10, carry 22.7, stakes 11, attack 4",
-  "reason": "In at 2 for 46, 49 behind. He made 36% of the team's 303, and no one else came close. The match was drawn, with his side in danger of losing. He faced an elite attack.",
-  "scenario": "Saved the match",
-  "verdict": [
-   1,
-   "Saved the match",
-   "In at 2 for 46, 49 behind. He made 36% of the team's 303, and no one else came close. The match was drawn, with his side in danger of losing. He faced an elite attack.",
-   "b"
-  ]
- },
- {
   "id": 3595,
   "name": "Shivnarine Chanderpaul",
   "runs": 108,
