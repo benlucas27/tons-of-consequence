@@ -117,6 +117,16 @@ export const EPISODES = {
     "episode": "#801",
     "date": "2025-10-13",
     "youtubeId": "lIIiBPp0MqU"
+  },
+  "_LFfFRuIGLo": {
+    "episode": "#469",
+    "date": "2023-02-26",
+    "youtubeId": "_LFfFRuIGLo"
+  },
+  "cMdHDzOrQF0": {
+    "episode": "#572",
+    "date": "2023-11-20",
+    "youtubeId": "cMdHDzOrQF0"
   }
 };
 export const MOMENTS = [
@@ -430,6 +440,42 @@ export const MOMENTS = [
     "note": "Lehmann's claim that a ton in Australia would make him the greatest of all time",
     "matchText": null,
     "inningsText": "Preview (no ton in Australia yet)",
+    "inningsId": null
+  },
+  {
+    "player": "Cameron Green",
+    "type": "innings",
+    "episode": "#606",
+    "date": "2024-03-04",
+    "youtubeId": "YjkrB5XUq60",
+    "start": 3408,
+    "note": "Reaction, recorded live from Las Vegas, to Green's unbeaten 174: \"boy becomes man\" territory; Lyon's ten wickets in the match sealed the win",
+    "matchText": "New Zealand v Australia, 1st Test, Wellington, Mar 2024 (Aus won)",
+    "inningsText": "174*",
+    "inningsId": 710
+  },
+  {
+    "player": "Harry Brook",
+    "type": "innings",
+    "episode": "#469",
+    "date": "2023-02-26",
+    "youtubeId": "_LFfFRuIGLo",
+    "start": 4467,
+    "note": "A read-out of Brook's 186 off 176 in England's 435 declared, with New Zealand following on and fighting back",
+    "matchText": "New Zealand v England, Wellington, Feb 2023 (Eng lost)",
+    "inningsText": "186 off 176",
+    "inningsId": 549
+  },
+  {
+    "player": "Travis Head",
+    "type": "career",
+    "episode": "#572",
+    "date": "2023-11-20",
+    "youtubeId": "cMdHDzOrQF0",
+    "start": 1112,
+    "note": "Praise for Head's recent form: a hundred in the World Test Championship final, and tons since",
+    "matchText": null,
+    "inningsText": "Career (tons: the WTC final and since)",
     "inningsId": null
   }
 ];

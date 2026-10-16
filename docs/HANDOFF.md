@@ -9,7 +9,7 @@ GitHub: push with `gh auth switch --user benlucas27 && git push` (the active acc
 
 **Live on main (`04f393f` + the domain commit `ec78941`):** rankings with a working filter panel; new menu (Rankings, ToCs, Compare, Search, The Don,
 Pub Test, More = Hello Cricket, Connect to Claude, About, Privacy; Most divisive is a tab inside Rankings); `/tons-of-consequence` (page + per-batter
-pages `/tons-of-consequence/<batter>`); `/the-don`; Hello Cricket (`/hello-sport`); ToC stamp and a why line on every innings page, ToC mark on ranking
+pages `/tons-of-consequence/<batter>`); `/the-don`; Hello Cricket (`/hello-cricket`, old `/hello-sport` redirects); ToC stamp and a why line on every innings page, ToC mark on ranking
 rows; opposition tier + home/away facts; connector with eight tools (`batter_records` is new; `ask` now routes counting questions); facts-only stories;
 326 full names; data audit at 0 findings; www redirect.
 
