@@ -36,7 +36,8 @@ export default function About() {
 
       <h2>Where &ldquo;tons of consequence&rdquo; comes from</h2>
       <p>The phrase comes from the Hello Sport podcast: episode {ORIGIN.episode}{ORIGIN.published ? `, ${ORIGIN.published}` : ''}, straight after the Sydney Test, where the hosts separate a good ton from a ton of consequence.</p>
-      <HelloSportMoments moments={conceptMoments()} title="Hello Sport names the idea" />
+      <p>They had used the phrase before that. In March 2024 (episode #606) a host says a hundred in an Ashes Test with a draw certain given the weather &ldquo;wasn&rsquo;t a ton of consequence&rdquo;.</p>
+      <HelloSportMoments moments={conceptMoments()} title="Hello Sport on the idea" />
 
       <h2>Where the data comes from</h2>
       <ul>
