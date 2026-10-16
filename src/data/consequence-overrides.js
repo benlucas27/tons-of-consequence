@@ -469,4 +469,7 @@ export const CONSEQUENCE_OVERRIDES = {
   "Joe Root|262|2024|74": { verdict: 'no', final: true, note: "The match was won. The match did not depend on it on the facts we have." },
   "Steve Smith|165|2016|857": { verdict: 'no', final: true, note: "The match was won. The match did not depend on it on the facts we have." },
   "Sachin Tendulkar|160|2009|989": { verdict: 'no', final: true, note: "The match was won. The match did not depend on it on the facts we have." },
+  // dial-down review, Ben's answers
+  "Inzamam-ul-Haq|138|2003|1654": { verdict: 'no', final: true, note: "The match was won by 1 wickets. The match did not depend on it on the facts we have." },
+  "Kane Williamson|131|2010|2001": { verdict: 'no', final: true, note: "The match was drawn. The match did not depend on it on the facts we have." },
 };

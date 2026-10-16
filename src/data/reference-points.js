@@ -87,7 +87,7 @@ export const REFERENCE_POINTS = {
    "lost": 3
   },
   "measured": 33,
-  "tons": 10,
+  "tons": 4,
   "byTier": [
    9,
    6,
@@ -95,14 +95,14 @@ export const REFERENCE_POINTS = {
    5
   ],
   "tonsByTier": [
-   2,
-   2,
-   5,
-   1
+   0,
+   1,
+   3,
+   0
   ],
   "away": 11,
   "home": 20,
-  "awayTons": 2
+  "awayTons": 1
  },
  "Alastair Cook|ENG": {
   "hundreds": 33,

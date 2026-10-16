@@ -100,31 +100,6 @@
   ]
  },
  {
-  "id": 133,
-  "name": "Kane Williamson",
-  "runs": 238,
-  "year": 2021,
-  "opponent": "Pakistan",
-  "venue": "Christchurch",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "Three hundreds were scored in the same innings."
-  },
-  "rules": "yes",
-  "score": 51,
-  "gate": "",
-  "parts": "need 20, carry 10, stakes 12, occasion 5, attack 4",
-  "reason": "In at 1 for 52, 245 behind. He made 36% of the team's 659. The team won by 176 runs. The series was still to be settled in this Test. It was a Boxing Day or New Year Test. He faced an elite attack.",
-  "scenario": "Rescued the innings",
-  "verdict": [
-   1,
-   "Rescued the innings",
-   "In at 1 for 52, 245 behind. He made 36% of the team's 659. The team won by 176 runs. The series was still to be settled in this Test. It was a Boxing Day or New Year Test. He faced an elite attack.",
-   "b"
-  ]
- },
- {
   "id": 147,
   "name": "Graeme Smith",
   "runs": 234,
@@ -621,31 +596,6 @@
    1,
    "Wore the opposition down",
    "In at 0 for 0, level. He made 32% of the team's 510, and no one else came close. The match was drawn. A slow grind at 36 runs per 100 balls.",
-   "b"
-  ]
- },
- {
-  "id": 943,
-  "name": "Kane Williamson",
-  "runs": 161,
-  "year": 2014,
-  "opponent": "West Indies",
-  "venue": "Bridgetown",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "3rd innings, team 23 behind. New Zealand won by 53 runs. He made 49% of the team's runs."
-  },
-  "rules": "yes",
-  "score": 57.5,
-  "gate": "",
-  "parts": "need 10, carry 32.5, stakes 15",
-  "reason": "In at 1 for 1, 23 behind. He made 49% of the team's 331, and no one else came close. The team won by 53 runs. It was the decider of a level series.",
-  "scenario": "Carried the innings",
-  "verdict": [
-   1,
-   "Carried the innings",
-   "In at 1 for 1, 23 behind. He made 49% of the team's 331, and no one else came close. The team won by 53 runs. It was the decider of a level series.",
    "b"
   ]
  },
@@ -2150,31 +2100,6 @@
   ]
  },
  {
-  "id": 3917,
-  "name": "Kane Williamson",
-  "runs": 104,
-  "year": 2017,
-  "opponent": "Bangladesh",
-  "venue": "Wellington",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "A fast hundred: 116 runs per 100 balls off 90 balls, 100th run off ball 89, batted 3, innings 4. The match was won."
-  },
-  "rules": "yes",
-  "score": 78.4,
-  "gate": "",
-  "parts": "need 15, carry 37.4, finish 10, stakes 6, tempo 10",
-  "reason": "In at 1 for 32, 184 behind. He made 48% of the team's 217, and no one else came close. The team won by 7 wickets. The rest of the team added only 113. He scored at 116 runs per 100 balls.",
-  "scenario": "Chased it down",
-  "verdict": [
-   1,
-   "Chased it down",
-   "In at 1 for 32, 184 behind. He made 48% of the team's 217, and no one else came close. The team won by 7 wickets. The rest of the team added only 113. He scored at 116 runs per 100 balls.",
-   "b"
-  ]
- },
- {
   "id": 4000,
   "name": "Joe Root",
   "runs": 104,
@@ -2246,31 +2171,6 @@
    0,
    null,
    "He made 24% of the team's runs. The match did not depend on it: he came in at 3 for 126.",
-   "b"
-  ]
- },
- {
-  "id": 4188,
-  "name": "Kane Williamson",
-  "runs": 102,
-  "year": 2012,
-  "opponent": "South Africa",
-  "venue": "Wellington",
-  "evidence": "b",
-  "yours": {
-   "verdict": "no",
-   "note": "4th innings, team 387 behind. The match was drawn. He made 51% of the team's runs. 2 other hundreds were scored in the match."
-  },
-  "rules": "yes",
-  "score": 91.9,
-  "gate": "",
-  "parts": "need 20, carry 44.9, stakes 17, attack 10",
-  "reason": "In at 2 for 1, 387 behind. He made 51% of the team's 200, and no one else came close. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test. He faced an elite attack. The rest of the team added only 98.",
-  "scenario": "Saved the match",
-  "verdict": [
-   1,
-   "Saved the match",
-   "In at 2 for 1, 387 behind. He made 51% of the team's 200, and no one else came close. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test. He faced an elite attack. The rest of the team added only 98.",
    "b"
   ]
  },
@@ -2675,31 +2575,6 @@
   ]
  },
  {
-  "id": 210,
-  "name": "Sunil Gavaskar",
-  "runs": 220,
-  "year": 1971,
-  "opponent": "West Indies",
-  "venue": "Port of Spain",
-  "evidence": "p",
-  "yours": {
-   "verdict": "no",
-   "note": "The match was drawn. It was the last Test of the series."
-  },
-  "rules": "yes",
-  "score": 57,
-  "gate": "",
-  "parts": "need 15, carry 30, stakes 12",
-  "reason": "His side trailed by 166 when the innings began. He made 52% of the team's 427. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test.",
-  "scenario": "Saved the match",
-  "verdict": [
-   1,
-   "Saved the match",
-   "His side trailed by 166 when the innings began. He made 52% of the team's 427. The match was drawn, with his side in danger of losing. The series was still to be settled in this Test.",
-   "p"
-  ]
- },
- {
   "id": 228,
   "name": "Rahul Dravid",
   "runs": 217,
@@ -2821,31 +2696,6 @@
    1,
    "Carried the innings",
    "His side trailed by 139 when the innings began. He made 50% of the team's 414. The team won by 9 wickets. The series was still to be settled in this Test.",
-   "p"
-  ]
- },
- {
-  "id": 326,
-  "name": "Allan Border",
-  "runs": 205,
-  "year": 1987,
-  "opponent": "New Zealand",
-  "venue": "Adelaide",
-  "evidence": "p",
-  "yours": {
-   "verdict": "no",
-   "note": "A draw, and in the first innings the team was not yet in danger of losing."
-  },
-  "rules": "yes",
-  "score": 75,
-  "gate": "",
-  "parts": "need 20, carry 24, stakes 6, tempo 25",
-  "reason": "His side trailed by 485 when the innings began. He made 41% of the team's 496. The match was drawn. A slow grind at 42 runs per 100 balls.",
-  "scenario": "Wore the opposition down",
-  "verdict": [
-   1,
-   "Wore the opposition down",
-   "His side trailed by 485 when the innings began. He made 41% of the team's 496. The match was drawn. A slow grind at 42 runs per 100 balls.",
    "p"
   ]
  },
@@ -3300,31 +3150,6 @@
   ]
  },
  {
-  "id": 1591,
-  "name": "Allan Border",
-  "runs": 140,
-  "year": 1986,
-  "opponent": "New Zealand",
-  "venue": "Christchurch",
-  "evidence": "p",
-  "yours": {
-   "verdict": "no",
-   "note": "A draw, and in the first innings the team was not yet in danger of losing."
-  },
-  "rules": "yes",
-  "score": 45,
-  "gate": "",
-  "parts": "carry 14, stakes 6, tempo 25",
-  "reason": "The scores were level when the innings began. He made 38% of the team's 364. The match was drawn. A slow grind at 41 runs per 100 balls.",
-  "scenario": "Wore the opposition down",
-  "verdict": [
-   1,
-   "Wore the opposition down",
-   "The scores were level when the innings began. He made 38% of the team's 364. The match was drawn. A slow grind at 41 runs per 100 balls.",
-   "p"
-  ]
- },
- {
   "id": 1650,
   "name": "Wally Hammond",
   "runs": 138,
@@ -3550,31 +3375,6 @@
   ]
  },
  {
-  "id": 2956,
-  "name": "Allan Border",
-  "runs": 115,
-  "year": 1979,
-  "opponent": "England",
-  "venue": "W.A.C.A",
-  "evidence": "p",
-  "yours": {
-   "verdict": "no",
-   "note": "Batted 3, innings 3 of the match, Test 1 of 3, at home. The team won the match."
-  },
-  "rules": "yes",
-  "score": 45,
-  "gate": "",
-  "parts": "carry 14, stakes 6, tempo 25",
-  "reason": "His side led by 16 when the innings began. He made 34% of the team's 337. The team won by 138 runs. A slow grind at 39 runs per 100 balls.",
-  "scenario": "Carried the innings",
-  "verdict": [
-   1,
-   "Carried the innings",
-   "His side led by 16 when the innings began. He made 34% of the team's 337. The team won by 138 runs. A slow grind at 39 runs per 100 balls.",
-   "p"
-  ]
- },
- {
   "id": 3721,
   "name": "Geoffrey Boycott",
   "runs": 106,
@@ -3721,31 +3521,6 @@
    0,
    null,
    "A loss.",
-   "p"
-  ]
- },
- {
-  "id": 4445,
-  "name": "Allan Border",
-  "runs": 100,
-  "year": 1984,
-  "opponent": "West Indies",
-  "venue": "Port of Spain",
-  "evidence": "p",
-  "yours": {
-   "verdict": "no",
-   "note": "Batted 6, innings 3 of the match, Test 2 of 5, away. The match was drawn."
-  },
-  "rules": "yes",
-  "score": 70,
-  "gate": "",
-  "parts": "need 20, carry 14, stakes 11, tempo 25",
-  "reason": "His side trailed by 213 when the innings began. He made 33% of the team's 299. The match was drawn, with his side in danger of losing. A slow grind at 37 runs per 100 balls.",
-  "scenario": "Saved the match",
-  "verdict": [
-   1,
-   "Saved the match",
-   "His side trailed by 213 when the innings began. He made 33% of the team's 299. The match was drawn, with his side in danger of losing. A slow grind at 37 runs per 100 balls.",
    "p"
   ]
  }
