@@ -119,6 +119,12 @@ const handRuled = (row) => {
 };
 const queue = [];
 const calib = { total: 0, agree: 0 };
+const rerun = []; // hundreds Ben ruled by hand where the rules, run again, disagree
+const addRerun = (row, mine, f, mm, evidence) => {
+  const d = mm.ton ? describeTon(f, mm) : null;
+  const parts = Object.entries(mm.parts).filter(([, v]) => v).map(([k, v]) => `${k} ${Math.round(v * 10) / 10}`).join(', ');
+  rerun.push({ id: row.id, name: row.name, runs: row.runs, year: row.year, opponent: row.opponent, venue: row.venue, evidence, yours: mine, rules: mm.ton ? 'yes' : 'no', score: mm.score, gate: mm.gate ? '' : mm.gateWhy, parts, reason: mm.ton ? d.reason : describeGoodTon(f, mm), scenario: d?.scenario || null });
+};
 let v3Changed = 0, v3Kept = 0, v3Partial = 0;
 const decide = (row, f, evidence, existing) => {
   const m = modelV3(f);
@@ -130,21 +136,24 @@ const decide = (row, f, evidence, existing) => {
 for (const [idStr, f] of Object.entries(fullCases)) {
   const id = Number(idStr);
   const row = ALL.find((c) => c.id === id);
-  if (handRuled(row)) { calib.total += 1; { const mm = modelV3(f); if (mm.ton === (out[id][0] === 1)) calib.agree += 1; else if (process.env.DEBUG_CALIB) console.log('DISAGREE', out[id][0] === 1 ? 'Ben yes, model no' : 'Ben no, model yes', row.name, row.runs, row.opponent, row.year, 'score', mm.score, mm.gate ? '' : 'gate:' + mm.gateWhy, JSON.stringify(Object.fromEntries(Object.entries(mm.parts).filter(([, v]) => v).map(([k, v]) => [k, Math.round(v)])))); } continue; } // Ben's own ruling stands (and is a check on the model)
+  if (handRuled(row)) { calib.total += 1; { const mm = modelV3(f); if (mm.ton === (out[id][0] === 1)) calib.agree += 1; else { addRerun(row, { verdict: out[id][0] === 1 ? 'yes' : 'no', note: out[id][2] }, f, mm, 'b'); } if (false && process.env.DEBUG_CALIB) console.log('DISAGREE', out[id][0] === 1 ? 'Ben yes, model no' : 'Ben no, model yes', row.name, row.runs, row.opponent, row.year, 'score', mm.score, mm.gate ? '' : 'gate:' + mm.gateWhy, JSON.stringify(Object.fromEntries(Object.entries(mm.parts).filter(([, v]) => v).map(([k, v]) => [k, Math.round(v)])))); } continue; } // Ben's own ruling stands (and is a check on the model)
   const next = decide(row, f, 'b', out[id]);
   if (next && out[id] && next[0] !== out[id][0]) v3Changed += 1; else v3Kept += 1;
   if (next) out[id] = next;
 }
 for (const row of ALL) {
-  if (out[row.id]) continue; // already has a verdict (ball-by-ball, Bradman, or a hand ruling)
+  if (out[row.id] && !OLDER_RULINGS[row.id]) continue; // already has a verdict (ball-by-ball, Bradman, or a hand ruling)
   const sf = SERIES_FACTS[row.id];
   if (!sf || !sf[5] || !sf[6]) continue;
   const [result, n, mm, lead, dead, inn, tot, leadStart, margin, start] = sf;
   const stakes = dead ? 'dead' : n === mm && lead === 0 ? 'decider' : n === mm ? 'on the line' : mm === 1 ? 'single' : 'live';
   const f = { occasion: OCCASIONS[row.id]?.tag, occasionNote: OCCASIONS[row.id]?.note, result, inn, lead: leadStart, share: tot ? row.runs / tot : null, total: tot, stakes, sideAhead: lead != null && lead > 0, seriesNotAhead: lead == null || lead <= 0, margin, start, balls: row.balls, runs: row.runs, pos: WIKIPEDIA_FACTS[row.id]?.[1] ?? null, entryWkts: null, others: null, nextBest: null, followOn: false };
+  if (OLDER_RULINGS[row.id]) { if (out[row.id]) { const mm = modelV3(f); calib.olderTotal = (calib.olderTotal || 0) + 1; if (mm.ton !== (out[row.id][0] === 1)) addRerun(row, { verdict: out[row.id][0] === 1 ? 'yes' : 'no', note: out[row.id][2] }, f, mm, 'p'); } continue; }
   const next = decide(row, f, 'p', null);
   if (next) { out[row.id] = next; v3Partial += 1; }
 }
+fs.writeFileSync(path.join(root, 'docs/drafts/review-rerun.json'), JSON.stringify(rerun, null, 1));
+console.log(`Rerun: ${rerun.length} of Ben's hand rulings disagree with the rules (${rerun.filter((r) => r.evidence === 'b').length} ball-by-ball, ${rerun.filter((r) => r.evidence === 'p').length} older, of ${calib.olderTotal || 0} older rulings with series facts).`);
 fs.writeFileSync(path.join(root, 'docs/drafts/review-queue.json'), JSON.stringify(queue, null, 1));
 console.log(`The model agrees with ${calib.agree} of ${calib.total} of Ben's own rulings on ball-by-ball hundreds.`);
 console.log(`v3 (threshold ${THRESHOLD}): ${v3Changed} ball-by-ball verdicts changed, ${v3Kept} kept, ${v3Partial} partial-evidence verdicts added, ${queue.length} marginal hundreds queued for review.`);
