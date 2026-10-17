@@ -45,12 +45,12 @@ export const QUESTIONS = [
   },
   {
     id: 4,
-    question: 'Whose bowling would you most like to see someone score a hundred against?',
+    question: 'A brilliant hundred in a Test his side lost. How much does it count?',
     options: [
-      { persona: 'purist', text: 'The 1976 West Indies pace quartet on a quick pitch.' },
-      { persona: 'analyst', text: 'Any attack, as long as the hundred wins the game.' },
-      { persona: 'romantic', text: "The bowler who is about to end a hero's career, in the batter's last Test." },
-      { persona: 'patriot', text: 'England, in England, with the Ashes at stake.' },
+      { persona: 'purist', text: "Plenty. Runs against a great attack on a hard pitch are hard runs, whatever the scoreboard says." },
+      { persona: 'analyst', text: 'Not much. If it did not win or save the match, it is a good ton, not a ton of consequence.' },
+      { persona: 'romantic', text: 'It counts if it meant something: a farewell, a comeback, a stand against the odds.' },
+      { persona: 'patriot', text: 'It counts if he was one of ours and it was against England.' },
     ],
   },
   {
