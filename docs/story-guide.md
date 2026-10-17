@@ -36,10 +36,4 @@ Check a draft, then save it (nothing is written if a rule fails):
 
 ## Hand-written stories without sources
 
-About 40 older, hand-written stories (Lara's 400, Stokes at Headingley and so on) have no sources yet. The innings page marks
-them "Not yet sourced". They are first in the queue: add two sources, or replace them with a story that has them.
-
-## The scheduled helper
-
-A scheduled task works down the top 200, a few innings at a time, on a branch called `stories-auto`. It never pushes and never
-merges: Ben reads the branch before anything is published.
+None are left (17 Oct 2026). The old hand-written stories either now have two sources (the Bradman innings, Renshaw's 190 and Warner's 253) or were replaced by the facts-only line, because they carried flourishes that could not be sourced: made-up venue lore, bowler names guessed by team, and in one case a wrong claim (Warner's 253 was off 286 balls, not the fastest double century). Do not add a story without two sources.
