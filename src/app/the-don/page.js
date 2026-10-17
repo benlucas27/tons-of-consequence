@@ -1,4 +1,6 @@
-import { DON, WIN_RATES } from '@/data/the-don';
+import { DON as DON_DATA, WIN_RATES } from '@/data/the-don';
+import { ALL } from '@/lib/dataset';
+import { verdictOf } from '@/lib/consequence';
 
 export const metadata = {
   title: 'The Don',
@@ -8,6 +10,13 @@ export const metadata = {
 const STATUS = { yes: 'A ton of consequence', no: 'A good ton', review: 'Under review' };
 const stakes = { dead: 'a dead rubber', decider: 'the decider', 'on the line': 'the last match', live: 'a live series', single: 'a one-off Test' };
 const pct = (n, of) => Math.round((100 * n) / of);
+
+// the verdicts come from the same place as the rest of the site, so this page and the leaderboard always agree
+const DON = DON_DATA.map((d) => {
+  const row = ALL.find((c) => c.name === 'Don Bradman' && c.runs === d.runs && c.year === d.year && c.notOut === d.notOut);
+  const v = row ? verdictOf(row.id) : null;
+  return v ? { ...d, status: v.passes ? 'yes' : 'no', scenario: v.passes ? v.scenario : null, reason: v.because } : d;
+});
 
 export default function TheDon() {
   const yes = DON.filter((d) => d.status === 'yes').length;
@@ -21,7 +30,7 @@ export default function TheDon() {
       <div className="don-stats">
         <div><b>{won} of 29</b><span>matches won when he made a hundred ({pct(won, 29)}%)</span></div>
         <div><b>{yes} of 29</b><span>were tons of consequence</span></div>
-        <div><b>{dead}</b><span>came in dead rubbers, which don&rsquo;t count</span></div>
+        <div><b>{dead}</b><span>came in dead rubbers (these only count if his side had already won the series and won the match)</span></div>
       </div>
 
       <h2>Team win rate when the batter scored a hundred</h2>
@@ -33,7 +42,7 @@ export default function TheDon() {
           ))}
         </tbody>
       </table>
-      <p className="conn-note">Bradman&rsquo;s figures are from the scorecards on this page; the others are from ball-by-ball data for every hundred in the Cricsheet archive. Independent and unofficial. Notes are written only from the linked scorecards and pages;</p>
+      <p className="conn-note">Bradman&rsquo;s figures are from the scorecards on this page; the others are from ball-by-ball data for every hundred in the Cricsheet archive. Independent and unofficial. Notes are written only from the linked scorecards and pages.</p>
 
       <h2>All 29, in order</h2>
       <ol className="don-list">
