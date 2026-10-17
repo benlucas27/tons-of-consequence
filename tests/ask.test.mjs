@@ -128,8 +128,8 @@ test('"which hundreds were tons of consequence" lists them, and "best ever" poin
   assert.ok(b.notes.some((n) => /Pub Test/.test(n)));
 });
 
-test('"how is the ToC score calculated" is explained', () => {
-  const a = ask('how is the ToC score calculated?');
+test('"how is the Greatness score calculated" is explained', () => {
+  const a = ask('how is the Greatness score calculated?');
   assert.equal(a.kind, 'info');
   assert.match(a.headline, /30%/);
   assert.notEqual(ask('how many hundreds did Don Bradman score?').kind, 'info');

@@ -2,7 +2,7 @@
  * The Tons of Consequence scoring model.
  *
  * Every innings has six lever values (0-100). A reader's weighting is just an ORDER of the six
- * levers: first place carries 30%, then 22, 18, 14, 10 and 6. An innings' ToC score is the
+ * levers: first place carries 30%, then 22, 18, 14, 10 and 6. An innings' Greatness score is the
  * weighted average of its lever values under that order. Because a weighting is only an order,
  * it fits in a link (see formatOrder / parseOrder).
  */

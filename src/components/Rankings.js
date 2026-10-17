@@ -87,7 +87,7 @@ export default function Rankings() {
   function downloadCsv() {
     const q = (v) => `"${String(v ?? '').replace(/"/g, '""')}"`;
     const rows = list.map((c, i) => [i + 1, q(c.name), c.country, c.runs, c.notOut ? '*' : '', q(c.opponent), q(c.venue), c.year, c.matchResult || '', c.toc].join(','));
-    const blob = new Blob([['Rank,Player,Country,Runs,Not out,Opponent,Venue,Year,Result,ToC score', ...rows].join('\n')], { type: 'text/csv' });
+    const blob = new Blob([['Rank,Player,Country,Runs,Not out,Opponent,Venue,Year,Result,Greatness score', ...rows].join('\n')], { type: 'text/csv' });
     const a = document.createElement('a');
     a.download = 'tons-of-consequence.csv';
     a.href = URL.createObjectURL(blob);
@@ -155,7 +155,7 @@ export default function Rankings() {
                 <label>
                   <span className="sr-only">Sort by</span>
                   <select className="sel" value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-                    <option value="toc">Sort: ToC score</option>
+                    <option value="toc">Sort: Greatness score</option>
                     <option value="runs">Sort: Runs scored</option>
                     <option value="year">Sort: Most recent</option>
                   </select>

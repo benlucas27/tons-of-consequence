@@ -47,7 +47,7 @@
   "evidence": "b",
   "today": 1,
   "parts": "need 20, carry 20, stakes 12, opposition -10",
-  "facts": "He made 40% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 2 for 43.",
+  "facts": "He made 40% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match didn't hinge on it: he came in at 2 for 43.",
   "result": "win"
  },
  {
@@ -81,7 +81,7 @@
   "evidence": "b",
   "today": 1,
   "parts": "need 15, carry 29.2, stakes 6, opposition -10",
-  "facts": "He made 49% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "facts": "He made 49% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "result": "win"
  },
  {
@@ -166,7 +166,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "need 25, carry 12, stakes 3",
-  "facts": "He made 35% of the team's runs. The match did not depend on it: he came in at 3 for 84.",
+  "facts": "He made 35% of the team's runs. The match didn't hinge on it: he came in at 3 for 84.",
   "result": "win"
  },
  {
@@ -200,7 +200,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "need 20, carry -7, finish 5, stakes 12, platform 20, opposition -10",
-  "facts": "He made 29% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 0 for 0.",
+  "facts": "He made 29% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match didn't hinge on it: he came in at 0 for 0.",
   "result": "win"
  },
  {
@@ -285,7 +285,7 @@
   "evidence": "b",
   "today": 1,
   "parts": "carry 29.5, stakes 12, opposition -3",
-  "facts": "He made 41% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "facts": "He made 41% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "result": "win"
  },
  {
@@ -336,7 +336,7 @@
   "evidence": "b",
   "today": 1,
   "parts": "need 10, carry 25, stakes 6",
-  "facts": "He made 44% of the team's runs. The match did not depend on it: he came in at 2 for 20.",
+  "facts": "He made 44% of the team's runs. The match didn't hinge on it: he came in at 2 for 20.",
   "result": "win"
  },
  {
@@ -387,7 +387,7 @@
   "evidence": "b",
   "today": 1,
   "parts": "need 25, carry 12, stakes 6, opposition -3",
-  "facts": "He made 38% of the team's runs. The match did not depend on it: he came in at 3 for 81.",
+  "facts": "He made 38% of the team's runs. The match didn't hinge on it: he came in at 3 for 81.",
   "result": "win"
  },
  {
@@ -404,7 +404,7 @@
   "evidence": "b",
   "today": 1,
   "parts": "need 10, carry 32.4, stakes 6, opposition -10",
-  "facts": "He made 44% of the team's runs. The match did not depend on it: he came in at 2 for 22.",
+  "facts": "He made 44% of the team's runs. The match didn't hinge on it: he came in at 2 for 22.",
   "result": "win"
  },
  {
@@ -421,7 +421,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "need 20, carry -5, stakes 3, tempo 25",
-  "facts": "He made 26% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 1 for 1.",
+  "facts": "He made 26% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match didn't hinge on it: he came in at 1 for 1.",
   "result": "win"
  },
  {
@@ -455,7 +455,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "need 10, carry 12, stakes 12, lower 6",
-  "facts": "He made 32% of the team's runs. The match did not depend on it: he came in at 5 for 247.",
+  "facts": "He made 32% of the team's runs. The match didn't hinge on it: he came in at 5 for 247.",
   "result": "win"
  },
  {
@@ -489,7 +489,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "carry 12, stakes 6, platform 20, attack 4",
-  "facts": "He made 33% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "facts": "He made 33% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "result": "win"
  },
  {
@@ -506,7 +506,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "carry 18.1, stakes 15, late 10",
-  "facts": "He made 35% of the team's runs. The match did not depend on it: he came in at 4 for 176.",
+  "facts": "He made 35% of the team's runs. The match didn't hinge on it: he came in at 4 for 176.",
   "result": "win"
  },
  {
@@ -523,7 +523,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "need 20, carry 17.3, stakes 15, opposition -10",
-  "facts": "He made 35% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "facts": "He made 35% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "result": "win"
  },
  {
@@ -540,7 +540,7 @@
   "evidence": "b",
   "today": 1,
   "parts": "need 25, carry -5, stakes 12, occasion 5, attack 4, opposition -3",
-  "facts": "He made 24% of the team's runs. The match did not depend on it: he came in at 3 for 71.",
+  "facts": "He made 24% of the team's runs. The match didn't hinge on it: he came in at 3 for 71.",
   "result": "win"
  },
  {
@@ -591,7 +591,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "need 20, carry 12, stakes 3, occasion 5",
-  "facts": "He made 37% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "facts": "He made 37% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "result": "win"
  },
  {
@@ -608,7 +608,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "need 18, carry 32.5, stakes 12, safe -20",
-  "facts": "His side already led by 238 when the innings began. He made 42% of the team's runs. The match did not depend on it: he came in at 4 for 100.",
+  "facts": "His side already led by 238 when the innings began. He made 42% of the team's runs. The match didn't hinge on it: he came in at 4 for 100.",
   "result": "win"
  },
  {
@@ -676,7 +676,7 @@
   "evidence": "b",
   "today": 1,
   "parts": "need 25, carry 12, stakes 6",
-  "facts": "He made 34% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 3 for 35.",
+  "facts": "He made 34% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match didn't hinge on it: he came in at 3 for 35.",
   "result": "win"
  },
  {
@@ -693,7 +693,7 @@
   "evidence": "b",
   "today": 1,
   "parts": "need 20, carry 22.2, stakes 6, opposition -10",
-  "facts": "He made 40% of the team's runs. The match did not depend on it: he came in at 1 for 1.",
+  "facts": "He made 40% of the team's runs. The match didn't hinge on it: he came in at 1 for 1.",
   "result": "win"
  },
  {
@@ -727,7 +727,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "need 20, carry 17.5, stakes 6, opposition -3",
-  "facts": "He made 33% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "facts": "He made 33% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "result": "win"
  },
  {
@@ -761,7 +761,7 @@
   "evidence": "b",
   "today": 1,
   "parts": "need 25, carry 12, stakes 12, opposition -10",
-  "facts": "He made 30% of the team's runs. The match did not depend on it: he came in at 3 for 33.",
+  "facts": "He made 30% of the team's runs. The match didn't hinge on it: he came in at 3 for 33.",
   "result": "win"
  },
  {
@@ -812,7 +812,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "carry 16.6, stakes 6, late 10, attack 10",
-  "facts": "He made 33% of the team's runs. The match did not depend on it: he came in at 2 for 142.",
+  "facts": "He made 33% of the team's runs. The match didn't hinge on it: he came in at 2 for 142.",
   "result": "win"
  },
  {
@@ -829,7 +829,7 @@
   "evidence": "b",
   "today": 1,
   "parts": "need 25, carry 16.1, stakes 6, opposition -3",
-  "facts": "He made 31% of the team's runs. The match did not depend on it: he came in at 4 for 86.",
+  "facts": "He made 31% of the team's runs. The match didn't hinge on it: he came in at 4 for 86.",
   "result": "win"
  },
  {
@@ -897,7 +897,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "need 20, carry -10, stakes 12, tempo 25, opposition -10",
-  "facts": "He made 20% of the team's runs. The match did not depend on it: he came in at 1 for 37.",
+  "facts": "He made 20% of the team's runs. The match didn't hinge on it: he came in at 1 for 37.",
   "result": "win"
  },
  {
@@ -914,7 +914,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "need 15, carry 19.5, stakes 15, opposition -10",
-  "facts": "He made 34% of the team's runs. The match did not depend on it: he came in at 2 for 34.",
+  "facts": "He made 34% of the team's runs. The match didn't hinge on it: he came in at 2 for 34.",
   "result": "win"
  },
  {
@@ -931,7 +931,7 @@
   "evidence": "b",
   "today": 1,
   "parts": "carry 31.6, stakes 15, occasion 5, opposition -10",
-  "facts": "He made 41% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "facts": "He made 41% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "result": "win"
  },
  {
@@ -948,7 +948,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "need 20, carry 3, stakes 6, late 10",
-  "facts": "He made 24% of the team's runs. The match did not depend on it: he came in at 4 for 257.",
+  "facts": "He made 24% of the team's runs. The match didn't hinge on it: he came in at 4 for 257.",
   "result": "win"
  },
  {
@@ -965,7 +965,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "need 20, carry 16.7, stakes 12, opposition -10",
-  "facts": "He made 33% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "facts": "He made 33% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "result": "win"
  },
  {
@@ -982,7 +982,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "need 18, carry 6.9, finish 5, stakes 3, late 10, opposition -3",
-  "facts": "He made 30% of the team's runs. The match did not depend on it: he came in at 3 for 107.",
+  "facts": "He made 30% of the team's runs. The match didn't hinge on it: he came in at 3 for 107.",
   "result": "win"
  },
  {
@@ -999,7 +999,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "need 25, carry 19.6, stakes 12, attack 4, safe -20",
-  "facts": "His side already led by 361 when the innings began. He made 35% of the team's runs. The match did not depend on it: he came in at 3 for 94.",
+  "facts": "His side already led by 361 when the innings began. He made 35% of the team's runs. The match didn't hinge on it: he came in at 3 for 94.",
   "result": "win"
  },
  {
@@ -1033,7 +1033,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "need 25, carry 17, stakes 15, safe -20",
-  "facts": "His side already led by 211 when the innings began. He made 32% of the team's runs. The match did not depend on it: he came in at 3 for 39.",
+  "facts": "His side already led by 211 when the innings began. He made 32% of the team's runs. The match didn't hinge on it: he came in at 3 for 39.",
   "result": "win"
  },
  {
@@ -1101,7 +1101,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "need 25, carry 3, stakes 3, attack 10",
-  "facts": "He made 23% of the team's runs. The match did not depend on it: he came in at 3 for 39.",
+  "facts": "He made 23% of the team's runs. The match didn't hinge on it: he came in at 3 for 39.",
   "result": "win"
  },
  {
@@ -1135,7 +1135,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "carry 43.7, stakes 3, occasion 5, platform 8, safe -20",
-  "facts": "His side already led by 203 when the innings began. He made 51% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "facts": "His side already led by 203 when the innings began. He made 51% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "result": "win"
  },
  {
@@ -1237,7 +1237,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "need 18, carry 20.3, stakes 6, late 5, lower 10, safe -20",
-  "facts": "His side already led by 301 when the innings began. He made 37% of the team's runs. The match did not depend on it: he came in at 6 for 106.",
+  "facts": "His side already led by 301 when the innings began. He made 37% of the team's runs. The match didn't hinge on it: he came in at 6 for 106.",
   "result": "win"
  },
  {
@@ -1254,7 +1254,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "need 20, carry 5.5, stakes 6, attack 10",
-  "facts": "He made 23% of the team's runs. The match did not depend on it: he came in at 1 for 4.",
+  "facts": "He made 23% of the team's runs. The match didn't hinge on it: he came in at 1 for 4.",
   "result": "win"
  },
  {
@@ -1305,7 +1305,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "carry 44.3, stakes 6, tempo 10, opposition -3, safe -20",
-  "facts": "His side already led by 335 when the innings began. He made 57% of the team's runs. The match did not depend on it: he came in at 1 for 20.",
+  "facts": "His side already led by 335 when the innings began. He made 57% of the team's runs. The match didn't hinge on it: he came in at 1 for 20.",
   "result": "win"
  },
  {
@@ -1322,7 +1322,7 @@
   "evidence": "b",
   "today": 1,
   "parts": "need 20, carry 6.7, stakes 6, late 10",
-  "facts": "He made 26% of the team's runs. The match did not depend on it: he came in at 1 for 31.",
+  "facts": "He made 26% of the team's runs. The match didn't hinge on it: he came in at 1 for 31.",
   "result": "win"
  },
  {
@@ -1339,7 +1339,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "carry 5.8, stakes 6, tempo 25, occasion 5",
-  "facts": "He made 26% of the team's runs. The match did not depend on it: he came in at 3 for 166.",
+  "facts": "He made 26% of the team's runs. The match didn't hinge on it: he came in at 3 for 166.",
   "result": "win"
  },
  {
@@ -1407,7 +1407,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "need 25, carry 22.8, stakes 6, lower 6, opposition -3, safe -20",
-  "facts": "His side already led by 244 when the innings began. He made 39% of the team's runs. The match did not depend on it: he came in at 5 for 72.",
+  "facts": "His side already led by 244 when the innings began. He made 39% of the team's runs. The match didn't hinge on it: he came in at 5 for 72.",
   "result": "win"
  },
  {
@@ -1424,7 +1424,7 @@
   "evidence": "b",
   "today": 1,
   "parts": "need 25, carry 7.4, finish 5, stakes 6, opposition -3",
-  "facts": "He made 27% of the team's runs. The match did not depend on it: he came in at 3 for 76.",
+  "facts": "He made 27% of the team's runs. The match didn't hinge on it: he came in at 3 for 76.",
   "result": "win"
  },
  {
@@ -1441,7 +1441,7 @@
   "evidence": "b",
   "today": 1,
   "parts": "need 25, carry 15, stakes 6, lower 6, opposition -10",
-  "facts": "He made 36% of the team's runs. The match did not depend on it: he came in at 5 for 57.",
+  "facts": "He made 36% of the team's runs. The match didn't hinge on it: he came in at 5 for 57.",
   "result": "win"
  },
  {
@@ -1458,7 +1458,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "need 25, carry 36.7, stakes 12, opposition -10, safe -20",
-  "facts": "His side already led by 243 when the innings began. He made 45% of the team's runs. The match did not depend on it: he came in at 4 for 25.",
+  "facts": "His side already led by 243 when the innings began. He made 45% of the team's runs. The match didn't hinge on it: he came in at 4 for 25.",
   "result": "win"
  },
  {
@@ -1492,7 +1492,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "carry 15, stakes 12, platform 15, opposition -3",
-  "facts": "He made 33% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "facts": "He made 33% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "result": "win"
  },
  {
@@ -1509,7 +1509,7 @@
   "evidence": "b",
   "today": 0,
   "parts": "carry 15, stakes 12, platform 15, opposition -3",
-  "facts": "He made 33% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "facts": "He made 33% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "result": "win"
  },
  {
@@ -1526,7 +1526,7 @@
   "evidence": "b",
   "today": 1,
   "parts": "need 25, carry 12, stakes 15, opposition -10",
-  "facts": "He made 38% of the team's runs. The match did not depend on it: he came in at 4 for 86.",
+  "facts": "He made 38% of the team's runs. The match didn't hinge on it: he came in at 4 for 86.",
   "result": "win"
  },
  {
@@ -1560,7 +1560,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 15, carry 24, stakes 6, opposition -3",
-  "facts": "He made 50% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 50% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -1628,7 +1628,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 10, carry 30, stakes 6, opposition -3",
-  "facts": "He made 58% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 58% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -1696,7 +1696,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 36% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 36% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -1713,7 +1713,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 15, carry 24, stakes 3",
-  "facts": "He made 47% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 47% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -1730,7 +1730,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 34% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 34% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -1747,7 +1747,7 @@
   "evidence": "p",
   "today": null,
   "parts": "carry 24, stakes 12, occasion 5",
-  "facts": "He made 41% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 41% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -1798,7 +1798,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 40% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 40% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -1815,7 +1815,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 37% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 37% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -1832,7 +1832,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 10, carry 24, stakes 6",
-  "facts": "He made 43% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 43% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -1849,7 +1849,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 37% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 37% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -1866,7 +1866,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 32% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 32% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -1900,7 +1900,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 10, carry 24, stakes 6",
-  "facts": "He made 48% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 48% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -1968,7 +1968,7 @@
   "evidence": "p",
   "today": null,
   "parts": "carry 14, stakes 6, tempo 25, opposition -3",
-  "facts": "He made 37% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 37% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -1985,7 +1985,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 34% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 34% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2002,7 +2002,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 24, stakes 6, opposition -10",
-  "facts": "He made 44% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 44% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2019,7 +2019,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 40% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 40% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2087,7 +2087,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 32% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 32% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2104,7 +2104,7 @@
   "evidence": "p",
   "today": null,
   "parts": "carry 24, stakes 6, tempo 10",
-  "facts": "He made 49% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 49% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2138,7 +2138,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 36% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 36% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2155,7 +2155,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 10, carry 24, stakes 6",
-  "facts": "He made 42% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 42% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2189,7 +2189,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 33% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 33% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2240,7 +2240,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 24, stakes 6, opposition -10",
-  "facts": "He made 49% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 49% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2257,7 +2257,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 5, stakes 6, tempo 10",
-  "facts": "He made 29% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 29% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2308,7 +2308,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 30% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 30% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2359,7 +2359,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 10, carry 24, stakes 6",
-  "facts": "He made 42% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 42% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2393,7 +2393,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 10, carry 24, stakes 6",
-  "facts": "He made 50% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 50% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2495,7 +2495,7 @@
   "evidence": "p",
   "today": null,
   "parts": "carry 30, stakes 6, occasion 5, opposition -3",
-  "facts": "He made 75% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 75% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2512,7 +2512,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 15, carry 14, stakes 6, occasion 5",
-  "facts": "He made 38% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 38% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2563,7 +2563,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 35% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 35% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2597,7 +2597,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 39% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 39% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2614,7 +2614,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 37% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 37% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2648,7 +2648,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 39% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 39% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2716,7 +2716,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 15, carry 14, stakes 15",
-  "facts": "He made 36% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 36% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2733,7 +2733,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 12, opposition -3",
-  "facts": "He made 32% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 32% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2750,7 +2750,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6, occasion 5, opposition -3",
-  "facts": "He made 37% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 37% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2784,7 +2784,7 @@
   "evidence": "p",
   "today": null,
   "parts": "carry 24, stakes 15",
-  "facts": "He made 50% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 50% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2818,7 +2818,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 5, stakes 15",
-  "facts": "He made 23% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 23% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2835,7 +2835,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 32% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 32% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2852,7 +2852,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 32% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 32% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2869,7 +2869,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 37% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 37% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2903,7 +2903,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 36% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 36% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2920,7 +2920,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 5, stakes 12, tempo 10, opposition -3",
-  "facts": "He made 27% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 27% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2937,7 +2937,7 @@
   "evidence": "p",
   "today": null,
   "parts": "carry 14, stakes 3, tempo 25",
-  "facts": "He made 34% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 34% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2971,7 +2971,7 @@
   "evidence": "p",
   "today": null,
   "parts": "carry 30, finish 5, stakes 6",
-  "facts": "He made 51% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 51% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3005,7 +3005,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 38% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 38% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3073,7 +3073,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 15, carry 24, stakes 3",
-  "facts": "He made 42% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 42% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3090,7 +3090,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 37% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 37% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3141,7 +3141,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 31% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 31% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3175,7 +3175,7 @@
   "evidence": "p",
   "today": null,
   "parts": "carry 14, stakes 3, tempo 25",
-  "facts": "He made 36% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 36% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3209,7 +3209,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 15, carry 24, stakes 3",
-  "facts": "He made 47% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 47% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3260,7 +3260,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 34% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 34% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3277,7 +3277,7 @@
   "evidence": "p",
   "today": null,
   "parts": "carry 24, stakes 6, tempo 10",
-  "facts": "He made 45% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 45% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3379,7 +3379,7 @@
   "evidence": "p",
   "today": null,
   "parts": "carry 5, stakes 12, tempo 25",
-  "facts": "He made 27% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 27% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3430,7 +3430,7 @@
   "evidence": "p",
   "today": null,
   "parts": "carry 30, finish 5, stakes 6",
-  "facts": "He made 52% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 52% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3464,7 +3464,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 31% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 31% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3583,7 +3583,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 10, carry 24, stakes 6",
-  "facts": "He made 42% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 42% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3600,7 +3600,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 5, stakes 15",
-  "facts": "He made 24% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 24% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3617,7 +3617,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 32% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 32% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3634,7 +3634,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 5, finish 10, stakes 6",
-  "facts": "He made 28% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 28% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3685,7 +3685,7 @@
   "evidence": "p",
   "today": null,
   "parts": "carry 24, stakes 15",
-  "facts": "He made 46% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 46% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3702,7 +3702,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 36% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 36% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3719,7 +3719,7 @@
   "evidence": "p",
   "today": null,
   "parts": "carry 14, stakes 3, tempo 25",
-  "facts": "He made 36% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 36% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3736,7 +3736,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 39% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 39% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3753,7 +3753,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 32% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 32% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3770,7 +3770,7 @@
   "evidence": "p",
   "today": null,
   "parts": "carry 5, stakes 12, tempo 25",
-  "facts": "He made 26% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 26% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3787,7 +3787,7 @@
   "evidence": "p",
   "today": null,
   "parts": "carry 14, stakes 3, tempo 25",
-  "facts": "He made 31% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 31% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3838,7 +3838,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 34% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 34% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3940,7 +3940,7 @@
   "evidence": "p",
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
-  "facts": "He made 31% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 31% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3957,7 +3957,7 @@
   "evidence": "p",
   "today": null,
   "parts": "carry 30, stakes 6, occasion 5",
-  "facts": "He made 51% of the team's runs. The match did not depend on it on the facts we have.",
+  "facts": "He made 51% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {

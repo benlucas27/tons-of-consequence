@@ -4,8 +4,8 @@ import { TOTAL } from '@/lib/dataset';
 import { THRESHOLD } from '@/lib/consequenceModel';
 
 export const metadata = {
-  title: 'Tons of Consequence',
-  description: 'A great ton is not always a ton of consequence. A ton of consequence changed the match: it won it, saved it, or rescued it.',
+  title: 'ToCs: how a ton of consequence is decided',
+  description: 'A ton of consequence (a ToC) is a Test hundred the side needed: it helped them win the match or avoid losing it. Every ToC, the 13 laws behind the call, and how firm each verdict is.',
 };
 
 const MIN_MEASURED = 8;
@@ -16,12 +16,9 @@ export default function TonsOfConsequence() {
     <article className="prose toc-page">
       <p className="conn-note">Men&rsquo;s ToCs &middot; <Link href="/womens-tests">Women&rsquo;s ToCs</Link></p>
       <h1>Tons of Consequence</h1>
-      <p className="lede">A great ton is not always a ton of consequence. A ton of consequence is one that changed the match: it won it, saved it, or rescued it.</p>
+      <p className="lede">A ton of consequence (a ToC) is a Test hundred of consequence. The side needed it, and it helped them win the match or avoid losing it. There are good tons, but not every ton is a ToC.</p>
 
-      <h2>What is a ton of consequence?</h2>
-      <p>A ton of consequence (a ToC) is a Test hundred of consequence. The side needed it. It helped them win the match or avoid losing it. There are good tons, but not every ton is a ton of consequence.</p>
-
-      <h2>The 13 laws</h2>
+      <h2>How a ToC is decided: the 13 laws</h2>
       <p>Law 1 is the only hard law. Laws 2 to 13 add points, law 8 takes points away, and a hundred needs {THRESHOLD} points to count. The bar is set high on purpose.</p>
       <ol className="toc-laws">
         <li><b>A ToC wins or saves a match.</b> You can&rsquo;t score a ToC in a loss or a dead rubber (a dead rubber counts only if his side had already won the series and won the match). A draw counts only if his side was in danger of losing and we can say with confidence that the hundred saved it. It doesn&rsquo;t count against the lower-tier sides, and not if rain or the clock saved the match instead.</li>

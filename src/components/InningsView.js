@@ -106,7 +106,7 @@ export default function InningsView({ id, consequence = null, facts = null }) {
                   <div className="lhead"><span className="sw" aria-hidden="true" />{BIASES[bias].name}<b>+{fmt1(bonus)}</b></div>
                 </div>
               )}
-              <div className="ltotal"><span>ToC score on your weighting</span><b>{fmt1(c.toc)}</b></div>
+              <div className="ltotal"><span>Greatness score on your weighting</span><b>{fmt1(c.toc)}</b></div>
             </div>
           </section>
 
@@ -144,7 +144,7 @@ export default function InningsView({ id, consequence = null, facts = null }) {
           <div className="card">
             <div className="bigscore">
               <div className="n">{fmt1(c.toc)}</div>
-              <div><span className={`tier t-${tier.key}`}>{tier.label}</span><small>ToC score</small></div>
+              <div><span className={`tier t-${tier.key}`}>{tier.label}</span><small>Greatness score</small></div>
             </div>
             <dl className="stats">
               <div><dt>Rank overall</dt><dd>{ord(c.rank)} of {ranked.length.toLocaleString()}</dd></div>

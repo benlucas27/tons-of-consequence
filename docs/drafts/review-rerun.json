@@ -15,12 +15,12 @@
   "score": 24,
   "gate": "",
   "parts": "carry 28, stakes 6, opposition -10",
-  "reason": "He made 52% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "reason": "He made 52% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 52% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "He made 52% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
    "b"
   ]
  },
@@ -40,12 +40,12 @@
   "score": 35,
   "gate": "",
   "parts": "carry 22, stakes 6, tempo 10, opposition -3",
-  "reason": "He made 46% of the team's runs. The match did not depend on it: he came in at 2 for 104.",
+  "reason": "He made 46% of the team's runs. The match didn't hinge on it: he came in at 2 for 104.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 46% of the team's runs. The match did not depend on it: he came in at 2 for 104.",
+   "He made 46% of the team's runs. The match didn't hinge on it: he came in at 2 for 104.",
    "b"
   ]
  },
@@ -65,12 +65,12 @@
   "score": 33,
   "gate": "",
   "parts": "carry 22, finish 5, stakes 6",
-  "reason": "He made 45% of the team's runs. The match did not depend on it: he came in at 1 for 5.",
+  "reason": "He made 45% of the team's runs. The match didn't hinge on it: he came in at 1 for 5.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 45% of the team's runs. The match did not depend on it: he came in at 1 for 5.",
+   "He made 45% of the team's runs. The match didn't hinge on it: he came in at 1 for 5.",
    "b"
   ]
  },
@@ -90,12 +90,12 @@
   "score": 38,
   "gate": "",
   "parts": "need 10, carry 22, stakes 6",
-  "reason": "He made 43% of the team's runs. The match did not depend on it: he came in at 3 for 131.",
+  "reason": "He made 43% of the team's runs. The match didn't hinge on it: he came in at 3 for 131.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 43% of the team's runs. The match did not depend on it: he came in at 3 for 131.",
+   "He made 43% of the team's runs. The match didn't hinge on it: he came in at 3 for 131.",
    "b"
   ]
  },
@@ -140,12 +140,12 @@
   "score": 13,
   "gate": "",
   "parts": "carry 10, stakes 6, opposition -3",
-  "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "reason": "He made 36% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 36% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "He made 36% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
    "b"
   ]
  },
@@ -159,7 +159,7 @@
   "evidence": "b",
   "yours": {
    "verdict": "no",
-   "note": "Judged a good ton: the two hundreds at Galle were in the same match, and the win was not decided by this one."
+   "note": "A good ton: the two hundreds at Galle were in the same match, and the win was not decided by this one."
   },
   "rules": "yes",
   "score": 56.4,
@@ -190,12 +190,12 @@
   "score": 41,
   "gate": "",
   "parts": "carry 12, stakes 12, platform 20, opposition -3",
-  "reason": "He made 40% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "reason": "He made 40% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 40% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "He made 40% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
    "b"
   ]
  },
@@ -215,12 +215,12 @@
   "score": 38,
   "gate": "",
   "parts": "need 20, carry 12, stakes 6",
-  "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "reason": "He made 36% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 36% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "He made 36% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
    "b"
   ]
  },
@@ -240,12 +240,12 @@
   "score": 39,
   "gate": "",
   "parts": "carry 19, stakes 12, platform 8",
-  "reason": "He made 37% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "reason": "He made 37% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 37% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "He made 37% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
    "b"
   ]
  },
@@ -265,12 +265,12 @@
   "score": 35.2,
   "gate": "",
   "parts": "carry 29.2, stakes 6",
-  "reason": "He made 43% of the team's runs. The match did not depend on it: he came in at 2 for 62.",
+  "reason": "He made 43% of the team's runs. The match didn't hinge on it: he came in at 2 for 62.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 43% of the team's runs. The match did not depend on it: he came in at 2 for 62.",
+   "He made 43% of the team's runs. The match didn't hinge on it: he came in at 2 for 62.",
    "b"
   ]
  },
@@ -284,7 +284,7 @@
   "evidence": "b",
   "yours": {
    "verdict": "no",
-   "note": "No: he came in comfortably and the team did not depend on him."
+   "note": "He came in comfortably, and the team did not depend on him."
   },
   "rules": "yes",
   "score": 59.8,
@@ -315,12 +315,12 @@
   "score": 27,
   "gate": "",
   "parts": "carry 12, stakes 15",
-  "reason": "He made 34% of the team's runs. The match did not depend on it: he came in at 1 for 28.",
+  "reason": "He made 34% of the team's runs. The match didn't hinge on it: he came in at 1 for 28.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 34% of the team's runs. The match did not depend on it: he came in at 1 for 28.",
+   "He made 34% of the team's runs. The match didn't hinge on it: he came in at 1 for 28.",
    "b"
   ]
  },
@@ -334,7 +334,7 @@
   "evidence": "b",
   "yours": {
    "verdict": "no",
-   "note": "Judged a good ton: the two hundreds at Galle were in the same match, and the win was not decided by this one."
+   "note": "A good ton: the two hundreds at Galle were in the same match, and the win was not decided by this one."
   },
   "rules": "yes",
   "score": 67.6,
@@ -365,12 +365,12 @@
   "score": 27,
   "gate": "",
   "parts": "carry 12, stakes 15",
-  "reason": "He made 38% of the team's runs. The match did not depend on it: he came in at 1 for 5.",
+  "reason": "He made 38% of the team's runs. The match didn't hinge on it: he came in at 1 for 5.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 38% of the team's runs. The match did not depend on it: he came in at 1 for 5.",
+   "He made 38% of the team's runs. The match didn't hinge on it: he came in at 1 for 5.",
    "b"
   ]
  },
@@ -390,12 +390,12 @@
   "score": 31,
   "gate": "",
   "parts": "carry 25, stakes 6",
-  "reason": "He made 42% of the team's runs. The match did not depend on it: he came in at 1 for 8.",
+  "reason": "He made 42% of the team's runs. The match didn't hinge on it: he came in at 1 for 8.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 42% of the team's runs. The match did not depend on it: he came in at 1 for 8.",
+   "He made 42% of the team's runs. The match didn't hinge on it: he came in at 1 for 8.",
    "b"
   ]
  },
@@ -415,12 +415,12 @@
   "score": 36,
   "gate": "",
   "parts": "need 18, carry 12, stakes 6",
-  "reason": "He made 37% of the team's runs. The match did not depend on it: he came in at 3 for 115.",
+  "reason": "He made 37% of the team's runs. The match didn't hinge on it: he came in at 3 for 115.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 37% of the team's runs. The match did not depend on it: he came in at 3 for 115.",
+   "He made 37% of the team's runs. The match didn't hinge on it: he came in at 3 for 115.",
    "b"
   ]
  },
@@ -440,12 +440,12 @@
   "score": 28,
   "gate": "",
   "parts": "need 10, carry 12, stakes 6",
-  "reason": "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 22.",
+  "reason": "He made 37% of the team's runs. The match didn't hinge on it: he came in at 2 for 22.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 22.",
+   "He made 37% of the team's runs. The match didn't hinge on it: he came in at 2 for 22.",
    "b"
   ]
  },
@@ -465,12 +465,12 @@
   "score": 35,
   "gate": "",
   "parts": "need 20, carry -7, stakes 12, tempo 10",
-  "reason": "He made 26% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "reason": "He made 26% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 26% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "He made 26% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
    "b"
   ]
  },
@@ -490,12 +490,12 @@
   "score": 38.3,
   "gate": "",
   "parts": "carry 17.3, stakes 6, platform 15",
-  "reason": "He made 38% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "reason": "He made 38% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 38% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "He made 38% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
    "b"
   ]
  },
@@ -515,12 +515,12 @@
   "score": 24.3,
   "gate": "",
   "parts": "carry 18.3, stakes 6",
-  "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 1 for 49.",
+  "reason": "He made 36% of the team's runs. The match didn't hinge on it: he came in at 1 for 49.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 36% of the team's runs. The match did not depend on it: he came in at 1 for 49.",
+   "He made 36% of the team's runs. The match didn't hinge on it: he came in at 1 for 49.",
    "b"
   ]
  },
@@ -540,12 +540,12 @@
   "score": 20.5,
   "gate": "",
   "parts": "carry 17.5, stakes 6, opposition -3",
-  "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "reason": "He made 36% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 36% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "He made 36% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
    "b"
   ]
  },
@@ -565,12 +565,12 @@
   "score": 42.1,
   "gate": "",
   "parts": "carry 17.1, stakes 6, tempo 10, late 5, attack 4",
-  "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 3 for 189.",
+  "reason": "He made 36% of the team's runs. The match didn't hinge on it: he came in at 3 for 189.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 36% of the team's runs. The match did not depend on it: he came in at 3 for 189.",
+   "He made 36% of the team's runs. The match didn't hinge on it: he came in at 3 for 189.",
    "b"
   ]
  },
@@ -615,12 +615,12 @@
   "score": 41,
   "gate": "",
   "parts": "need 10, carry 15, stakes 6, attack 10",
-  "reason": "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 24.",
+  "reason": "He made 37% of the team's runs. The match didn't hinge on it: he came in at 2 for 24.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 24.",
+   "He made 37% of the team's runs. The match didn't hinge on it: he came in at 2 for 24.",
    "b"
   ]
  },
@@ -634,7 +634,7 @@
   "evidence": "b",
   "yours": {
    "verdict": "no",
-   "note": "No: he came in comfortably and the team did not depend on him."
+   "note": "He came in comfortably, and the team did not depend on him."
   },
   "rules": "yes",
   "score": 56,
@@ -665,12 +665,12 @@
   "score": 23,
   "gate": "",
   "parts": "carry 12, stakes 6, occasion 5",
-  "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 2 for 90.",
+  "reason": "He made 36% of the team's runs. The match didn't hinge on it: he came in at 2 for 90.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 36% of the team's runs. The match did not depend on it: he came in at 2 for 90.",
+   "He made 36% of the team's runs. The match didn't hinge on it: he came in at 2 for 90.",
    "b"
   ]
  },
@@ -690,12 +690,12 @@
   "score": 22,
   "gate": "",
   "parts": "carry 1, stakes 6, occasion 15",
-  "reason": "He made 28% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "reason": "He made 28% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 28% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "He made 28% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
    "b"
   ]
  },
@@ -709,7 +709,7 @@
   "evidence": "b",
   "yours": {
    "verdict": "no",
-   "note": "No: he came in comfortably and the team did not depend on him."
+   "note": "He came in comfortably, and the team did not depend on him."
   },
   "rules": "yes",
   "score": 46.9,
@@ -740,12 +740,12 @@
   "score": 43,
   "gate": "",
   "parts": "need 15, carry -3, stakes 6, tempo 25",
-  "reason": "He made 23% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 1 for 71.",
+  "reason": "He made 23% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match didn't hinge on it: he came in at 1 for 71.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 23% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 1 for 71.",
+   "He made 23% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match didn't hinge on it: he came in at 1 for 71.",
    "b"
   ]
  },
@@ -790,12 +790,12 @@
   "score": 29,
   "gate": "",
   "parts": "need 20, carry 3, stakes 6",
-  "reason": "He made 24% of the team's runs. The match did not depend on it: he came in at 4 for 128.",
+  "reason": "He made 24% of the team's runs. The match didn't hinge on it: he came in at 4 for 128.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 24% of the team's runs. The match did not depend on it: he came in at 4 for 128.",
+   "He made 24% of the team's runs. The match didn't hinge on it: he came in at 4 for 128.",
    "b"
   ]
  },
@@ -809,7 +809,7 @@
   "evidence": "b",
   "yours": {
    "verdict": "no",
-   "note": "Judged a good ton: against Bangladesh, in a win the hundred did not decide."
+   "note": "A good ton: against Bangladesh, in a win the hundred did not decide."
   },
   "rules": "yes",
   "score": 50,
@@ -859,7 +859,7 @@
   "evidence": "b",
   "yours": {
    "verdict": "no",
-   "note": "No: he came in comfortably and the team did not depend on him."
+   "note": "He came in comfortably, and the team did not depend on him."
   },
   "rules": "yes",
   "score": 52.2,
@@ -884,7 +884,7 @@
   "evidence": "b",
   "yours": {
    "verdict": "no",
-   "note": "No: he came in comfortably and the team did not depend on him."
+   "note": "He came in comfortably, and the team did not depend on him."
   },
   "rules": "yes",
   "score": 50.5,
@@ -940,12 +940,12 @@
   "score": 37.9,
   "gate": "",
   "parts": "carry 19.9, stakes 6, platform 8, attack 4",
-  "reason": "He made 35% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "reason": "He made 35% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 35% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "He made 35% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
    "b"
   ]
  },
@@ -984,7 +984,7 @@
   "evidence": "b",
   "yours": {
    "verdict": "no",
-   "note": "No: he came in comfortably and the team did not depend on him."
+   "note": "He came in comfortably, and the team did not depend on him."
   },
   "rules": "yes",
   "score": 58.3,
@@ -1040,12 +1040,12 @@
   "score": 39.7,
   "gate": "",
   "parts": "carry 20.7, stakes 6, occasion 5, platform 8",
-  "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "reason": "He made 36% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 36% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "He made 36% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
    "b"
   ]
  },
@@ -1059,7 +1059,7 @@
   "evidence": "b",
   "yours": {
    "verdict": "no",
-   "note": "No: he came in comfortably and the team did not depend on him."
+   "note": "He came in comfortably, and the team did not depend on him."
   },
   "rules": "yes",
   "score": 46.3,
@@ -1084,7 +1084,7 @@
   "evidence": "b",
   "yours": {
    "verdict": "no",
-   "note": "No: he came in comfortably and the team did not depend on him."
+   "note": "He came in comfortably, and the team did not depend on him."
   },
   "rules": "yes",
   "score": 59.5,
@@ -1115,12 +1115,12 @@
   "score": 40.9,
   "gate": "",
   "parts": "need 18, carry 6.9, stakes 6, late 10",
-  "reason": "He made 26% of the team's runs. The match did not depend on it: he came in at 3 for 129.",
+  "reason": "He made 26% of the team's runs. The match didn't hinge on it: he came in at 3 for 129.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 26% of the team's runs. The match did not depend on it: he came in at 3 for 129.",
+   "He made 26% of the team's runs. The match didn't hinge on it: he came in at 3 for 129.",
    "b"
   ]
  },
@@ -1140,12 +1140,12 @@
   "score": 39.4,
   "gate": "",
   "parts": "need 20, carry 8.4, stakes 11",
-  "reason": "He made 22% of the team's runs. The match did not depend on it: he came in at 2 for 119.",
+  "reason": "He made 22% of the team's runs. The match didn't hinge on it: he came in at 2 for 119.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 22% of the team's runs. The match did not depend on it: he came in at 2 for 119.",
+   "He made 22% of the team's runs. The match didn't hinge on it: he came in at 2 for 119.",
    "b"
   ]
  },
@@ -1165,12 +1165,12 @@
   "score": 28,
   "gate": "",
   "parts": "need 10, carry 12, stakes 6",
-  "reason": "He made 31% of the team's runs. The match did not depend on it: he came in at 2 for 46.",
+  "reason": "He made 31% of the team's runs. The match didn't hinge on it: he came in at 2 for 46.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 31% of the team's runs. The match did not depend on it: he came in at 2 for 46.",
+   "He made 31% of the team's runs. The match didn't hinge on it: he came in at 2 for 46.",
    "b"
   ]
  },
@@ -1215,12 +1215,12 @@
   "score": 28.8,
   "gate": "",
   "parts": "carry 18.8, stakes 6, attack 4",
-  "reason": "He made 40% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "reason": "He made 40% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 40% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "He made 40% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
    "b"
   ]
  },
@@ -1240,12 +1240,12 @@
   "score": 27.5,
   "gate": "",
   "parts": "carry 21.5, stakes 6",
-  "reason": "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 69.",
+  "reason": "He made 37% of the team's runs. The match didn't hinge on it: he came in at 2 for 69.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 69.",
+   "He made 37% of the team's runs. The match didn't hinge on it: he came in at 2 for 69.",
    "b"
   ]
  },
@@ -1265,12 +1265,12 @@
   "score": 39.9,
   "gate": "",
   "parts": "need 20, carry 5.9, stakes 6, platform 8",
-  "reason": "He made 28% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "reason": "He made 28% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 28% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "He made 28% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
    "b"
   ]
  },
@@ -1284,7 +1284,7 @@
   "evidence": "b",
   "yours": {
    "verdict": "no",
-   "note": "No: he came in comfortably and the team did not depend on him."
+   "note": "He came in comfortably, and the team did not depend on him."
   },
   "rules": "yes",
   "score": 47,
@@ -1315,12 +1315,12 @@
   "score": 41,
   "gate": "",
   "parts": "carry 1, stakes 15, tempo 25",
-  "reason": "He made 22% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 2 for 175.",
+  "reason": "He made 22% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match didn't hinge on it: he came in at 2 for 175.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 22% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match did not depend on it: he came in at 2 for 175.",
+   "He made 22% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match didn't hinge on it: he came in at 2 for 175.",
    "b"
   ]
  },
@@ -1334,7 +1334,7 @@
   "evidence": "b",
   "yours": {
    "verdict": "no",
-   "note": "No: he came in comfortably and the team did not depend on him."
+   "note": "He came in comfortably, and the team did not depend on him."
   },
   "rules": "yes",
   "score": 45.7,
@@ -1359,7 +1359,7 @@
   "evidence": "b",
   "yours": {
    "verdict": "no",
-   "note": "Judged a good ton: against Bangladesh, in a win the hundred did not decide."
+   "note": "A good ton: against Bangladesh, in a win the hundred did not decide."
   },
   "rules": "yes",
   "score": 74.6,
@@ -1384,7 +1384,7 @@
   "evidence": "b",
   "yours": {
    "verdict": "no",
-   "note": "No: he came in comfortably and the team did not depend on him."
+   "note": "He came in comfortably, and the team did not depend on him."
   },
   "rules": "yes",
   "score": 50.4,
@@ -1440,12 +1440,12 @@
   "score": 27,
   "gate": "",
   "parts": "need 18, carry 3, stakes 6",
-  "reason": "He made 24% of the team's runs. The match did not depend on it: he came in at 3 for 109.",
+  "reason": "He made 24% of the team's runs. The match didn't hinge on it: he came in at 3 for 109.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 24% of the team's runs. The match did not depend on it: he came in at 3 for 109.",
+   "He made 24% of the team's runs. The match didn't hinge on it: he came in at 3 for 109.",
    "b"
   ]
  },
@@ -1459,7 +1459,7 @@
   "evidence": "b",
   "yours": {
    "verdict": "no",
-   "note": "No: he came in comfortably and the team did not depend on him."
+   "note": "He came in comfortably, and the team did not depend on him."
   },
   "rules": "yes",
   "score": 48,
@@ -1484,7 +1484,7 @@
   "evidence": "b",
   "yours": {
    "verdict": "no",
-   "note": "No: he came in comfortably and the team did not depend on him."
+   "note": "He came in comfortably, and the team did not depend on him."
   },
   "rules": "yes",
   "score": 53.4,
@@ -1515,12 +1515,12 @@
   "score": 39,
   "gate": "",
   "parts": "need 20, carry 3, finish 10, stakes 6",
-  "reason": "He made 26% of the team's runs. The match did not depend on it: he came in at 3 for 179.",
+  "reason": "He made 26% of the team's runs. The match didn't hinge on it: he came in at 3 for 179.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 26% of the team's runs. The match did not depend on it: he came in at 3 for 179.",
+   "He made 26% of the team's runs. The match didn't hinge on it: he came in at 3 for 179.",
    "b"
   ]
  },
@@ -1565,12 +1565,12 @@
   "score": 30,
   "gate": "",
   "parts": "need 18, carry 3, stakes 12, opposition -3",
-  "reason": "He made 24% of the team's runs. The match did not depend on it: he came in at 4 for 126.",
+  "reason": "He made 24% of the team's runs. The match didn't hinge on it: he came in at 4 for 126.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 24% of the team's runs. The match did not depend on it: he came in at 4 for 126.",
+   "He made 24% of the team's runs. The match didn't hinge on it: he came in at 4 for 126.",
    "b"
   ]
  },
@@ -1584,7 +1584,7 @@
   "evidence": "b",
   "yours": {
    "verdict": "no",
-   "note": "Judged a good ton: a home win against New Zealand that the hundred did not decide."
+   "note": "A good ton: a home win against New Zealand that the hundred did not decide."
   },
   "rules": "yes",
   "score": 45.1,
@@ -1615,12 +1615,12 @@
   "score": 34,
   "gate": "",
   "parts": "need 20, carry 3, stakes 11",
-  "reason": "He made 23% of the team's runs. The match did not depend on it: he came in at 4 for 197.",
+  "reason": "He made 23% of the team's runs. The match didn't hinge on it: he came in at 4 for 197.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 23% of the team's runs. The match did not depend on it: he came in at 4 for 197.",
+   "He made 23% of the team's runs. The match didn't hinge on it: he came in at 4 for 197.",
    "b"
   ]
  },
@@ -1640,12 +1640,12 @@
   "score": 32.9,
   "gate": "",
   "parts": "need 18, carry 6.9, stakes 6, occasion 5, opposition -3",
-  "reason": "He made 24% of the team's runs. The match did not depend on it: he came in at 3 for 126.",
+  "reason": "He made 24% of the team's runs. The match didn't hinge on it: he came in at 3 for 126.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 24% of the team's runs. The match did not depend on it: he came in at 3 for 126.",
+   "He made 24% of the team's runs. The match didn't hinge on it: he came in at 3 for 126.",
    "b"
   ]
  },
@@ -1665,12 +1665,12 @@
   "score": 41.9,
   "gate": "",
   "parts": "carry 20.9, stakes 6, occasion 15",
-  "reason": "He made 35% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+  "reason": "He made 35% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 35% of the team's runs. The match did not depend on it: he came in at 0 for 0.",
+   "He made 35% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
    "b"
   ]
  },
@@ -1690,12 +1690,12 @@
   "score": 44.7,
   "gate": "",
   "parts": "need 20, carry 7.7, stakes 17",
-  "reason": "He made 27% of the team's runs. The match did not depend on it: he came in at 2 for 86.",
+  "reason": "He made 27% of the team's runs. The match didn't hinge on it: he came in at 2 for 86.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 27% of the team's runs. The match did not depend on it: he came in at 2 for 86.",
+   "He made 27% of the team's runs. The match didn't hinge on it: he came in at 2 for 86.",
    "b"
   ]
  },
@@ -1709,7 +1709,7 @@
   "evidence": "b",
   "yours": {
    "verdict": "no",
-   "note": "No: he came in comfortably and the team did not depend on him."
+   "note": "He came in comfortably, and the team did not depend on him."
   },
   "rules": "yes",
   "score": 69.2,
@@ -1734,7 +1734,7 @@
   "evidence": "b",
   "yours": {
    "verdict": "no",
-   "note": "No: he came in comfortably and the team did not depend on him."
+   "note": "He came in comfortably, and the team did not depend on him."
   },
   "rules": "yes",
   "score": 49,
@@ -1765,12 +1765,12 @@
   "score": 35,
   "gate": "",
   "parts": "need 20, carry 12, stakes 6, opposition -3",
-  "reason": "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 97.",
+  "reason": "He made 37% of the team's runs. The match didn't hinge on it: he came in at 2 for 97.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 37% of the team's runs. The match did not depend on it: he came in at 2 for 97.",
+   "He made 37% of the team's runs. The match didn't hinge on it: he came in at 2 for 97.",
    "b"
   ]
  },
@@ -1790,12 +1790,12 @@
   "score": 21.1,
   "gate": "",
   "parts": "carry 18.1, stakes 6, opposition -3",
-  "reason": "He made 36% of the team's runs. The match did not depend on it: he came in at 1 for 47.",
+  "reason": "He made 36% of the team's runs. The match didn't hinge on it: he came in at 1 for 47.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 36% of the team's runs. The match did not depend on it: he came in at 1 for 47.",
+   "He made 36% of the team's runs. The match didn't hinge on it: he came in at 1 for 47.",
    "b"
   ]
  },
@@ -1813,14 +1813,14 @@
   },
   "rules": "no",
   "score": 33,
-  "gate": "a dead rubber that was not a win",
+  "gate": "a dead rubber (the series was already decided) that his side did not win",
   "parts": "carry 30, stakes 3",
-  "reason": "A dead rubber that was not a win.",
+  "reason": "A dead rubber (the series was already decided) that his side did not win.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A dead rubber that was not a win.",
+   "A dead rubber (the series was already decided) that his side did not win.",
    "p"
   ]
  },
@@ -1838,14 +1838,14 @@
   },
   "rules": "no",
   "score": 33,
-  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
+  "gate": "a draw: without a ball-by-ball record we cannot say the hundred saved it",
   "parts": "carry 30, stakes 6, opposition -3",
-  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+  "reason": "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+   "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
    "p"
   ]
  },
@@ -1865,12 +1865,12 @@
   "score": 36,
   "gate": "",
   "parts": "carry 30, stakes 6",
-  "reason": "He made 51% of the team's runs. The match did not depend on it on the facts we have.",
+  "reason": "He made 51% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 51% of the team's runs. The match did not depend on it on the facts we have.",
+   "He made 51% of the team's runs. On the facts we have, the match didn't hinge on it.",
    "p"
   ]
  },
@@ -1884,18 +1884,18 @@
   "evidence": "p",
   "yours": {
    "verdict": "yes",
-   "note": "The result and the score when he came in are not recorded."
+   "note": "We don't have the result or the score when he came in."
   },
   "rules": "no",
   "score": 26,
-  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
+  "gate": "a draw: without a ball-by-ball record we cannot say the hundred saved it",
   "parts": "carry 14, stakes 12",
-  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+  "reason": "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+   "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
    "p"
   ]
  },
@@ -1909,18 +1909,18 @@
   "evidence": "p",
   "yours": {
    "verdict": "yes",
-   "note": "The result and the score when he came in are not recorded."
+   "note": "We don't have the result or the score when he came in."
   },
   "rules": "no",
   "score": 30,
-  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
+  "gate": "a draw: without a ball-by-ball record we cannot say the hundred saved it",
   "parts": "carry 24, stakes 6",
-  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+  "reason": "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+   "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
    "p"
   ]
  },
@@ -1934,18 +1934,18 @@
   "evidence": "p",
   "yours": {
    "verdict": "yes",
-   "note": "The result and the score when he came in are not recorded."
+   "note": "We don't have the result or the score when he came in."
   },
   "rules": "no",
   "score": 30,
-  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
+  "gate": "a draw: without a ball-by-ball record we cannot say the hundred saved it",
   "parts": "carry 24, stakes 6",
-  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+  "reason": "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+   "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
    "p"
   ]
  },
@@ -1959,18 +1959,18 @@
   "evidence": "p",
   "yours": {
    "verdict": "yes",
-   "note": "The result and the score when he came in are not recorded."
+   "note": "We don't have the result or the score when he came in."
   },
   "rules": "no",
   "score": 50,
-  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
+  "gate": "a draw: without a ball-by-ball record we cannot say the hundred saved it",
   "parts": "need 20, carry 24, stakes 6",
-  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+  "reason": "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+   "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
    "p"
   ]
  },
@@ -1984,18 +1984,18 @@
   "evidence": "p",
   "yours": {
    "verdict": "yes",
-   "note": "The result and the score when he came in are not recorded."
+   "note": "We don't have the result or the score when he came in."
   },
   "rules": "no",
   "score": 30,
   "gate": "",
   "parts": "carry 24, stakes 6",
-  "reason": "He made 42% of the team's runs. The match did not depend on it on the facts we have.",
+  "reason": "He made 42% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 42% of the team's runs. The match did not depend on it on the facts we have.",
+   "He made 42% of the team's runs. On the facts we have, the match didn't hinge on it.",
    "p"
   ]
  },
@@ -2009,18 +2009,18 @@
   "evidence": "p",
   "yours": {
    "verdict": "yes",
-   "note": "The result and the score when he came in are not recorded."
+   "note": "We don't have the result or the score when he came in."
   },
   "rules": "no",
   "score": 30,
-  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
+  "gate": "a draw: without a ball-by-ball record we cannot say the hundred saved it",
   "parts": "carry 24, stakes 6",
-  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+  "reason": "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+   "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
    "p"
   ]
  },
@@ -2034,18 +2034,18 @@
   "evidence": "p",
   "yours": {
    "verdict": "yes",
-   "note": "The result and the score when he came in are not recorded."
+   "note": "We don't have the result or the score when he came in."
   },
   "rules": "no",
   "score": 59,
-  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
+  "gate": "a draw: without a ball-by-ball record we cannot say the hundred saved it",
   "parts": "need 20, carry 24, stakes 15",
-  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+  "reason": "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+   "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
    "p"
   ]
  },
@@ -2059,18 +2059,18 @@
   "evidence": "p",
   "yours": {
    "verdict": "yes",
-   "note": "The result and the score when he came in are not recorded."
+   "note": "We don't have the result or the score when he came in."
   },
   "rules": "no",
   "score": 30,
   "gate": "",
   "parts": "carry 24, stakes 6",
-  "reason": "He made 45% of the team's runs. The match did not depend on it on the facts we have.",
+  "reason": "He made 45% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 45% of the team's runs. The match did not depend on it on the facts we have.",
+   "He made 45% of the team's runs. On the facts we have, the match didn't hinge on it.",
    "p"
   ]
  },
@@ -2084,18 +2084,18 @@
   "evidence": "p",
   "yours": {
    "verdict": "yes",
-   "note": "The result and the score when he came in are not recorded."
+   "note": "We don't have the result or the score when he came in."
   },
   "rules": "no",
   "score": 27,
-  "gate": "a dead rubber that was not a win",
+  "gate": "a dead rubber (the series was already decided) that his side did not win",
   "parts": "carry 24, stakes 3",
-  "reason": "A dead rubber that was not a win.",
+  "reason": "A dead rubber (the series was already decided) that his side did not win.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A dead rubber that was not a win.",
+   "A dead rubber (the series was already decided) that his side did not win.",
    "p"
   ]
  },
@@ -2109,7 +2109,7 @@
   "evidence": "p",
   "yours": {
    "verdict": "no",
-   "note": "The result and the score when he came in are not recorded."
+   "note": "We don't have the result or the score when he came in."
   },
   "rules": "yes",
   "score": 51,
@@ -2140,12 +2140,12 @@
   "score": 30,
   "gate": "",
   "parts": "carry 14, stakes 6, tempo 10",
-  "reason": "He made 31% of the team's runs. The match did not depend on it on the facts we have.",
+  "reason": "He made 31% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 31% of the team's runs. The match did not depend on it on the facts we have.",
+   "He made 31% of the team's runs. On the facts we have, the match didn't hinge on it.",
    "p"
   ]
  },
@@ -2159,7 +2159,7 @@
   "evidence": "p",
   "yours": {
    "verdict": "no",
-   "note": "The result and the score when he came in are not recorded."
+   "note": "We don't have the result or the score when he came in."
   },
   "rules": "yes",
   "score": 50,
@@ -2184,7 +2184,7 @@
   "evidence": "p",
   "yours": {
    "verdict": "no",
-   "note": "The result and the score when he came in are not recorded."
+   "note": "We don't have the result or the score when he came in."
   },
   "rules": "yes",
   "score": 55,
@@ -2209,7 +2209,7 @@
   "evidence": "p",
   "yours": {
    "verdict": "no",
-   "note": "The result and the score when he came in are not recorded."
+   "note": "We don't have the result or the score when he came in."
   },
   "rules": "yes",
   "score": 45,
@@ -2234,18 +2234,18 @@
   "evidence": "p",
   "yours": {
    "verdict": "yes",
-   "note": "The result and the score when he came in are not recorded."
+   "note": "We don't have the result or the score when he came in."
   },
   "rules": "no",
   "score": 30,
   "gate": "",
   "parts": "carry 24, stakes 6",
-  "reason": "He made 48% of the team's runs. The match did not depend on it on the facts we have.",
+  "reason": "He made 48% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 48% of the team's runs. The match did not depend on it on the facts we have.",
+   "He made 48% of the team's runs. On the facts we have, the match didn't hinge on it.",
    "p"
   ]
  },
@@ -2259,18 +2259,18 @@
   "evidence": "p",
   "yours": {
    "verdict": "yes",
-   "note": "The result and the score when he came in are not recorded."
+   "note": "We don't have the result or the score when he came in."
   },
   "rules": "no",
   "score": 36,
   "gate": "",
   "parts": "carry 24, stakes 15, opposition -3",
-  "reason": "He made 48% of the team's runs. The match did not depend on it on the facts we have.",
+  "reason": "He made 48% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 48% of the team's runs. The match did not depend on it on the facts we have.",
+   "He made 48% of the team's runs. On the facts we have, the match didn't hinge on it.",
    "p"
   ]
  },
@@ -2288,14 +2288,14 @@
   },
   "rules": "no",
   "score": 63,
-  "gate": "a dead rubber, and his side had lost the series",
+  "gate": "a dead rubber, and his side had already lost the series",
   "parts": "need 20, carry 30, finish 10, stakes 3",
-  "reason": "A dead rubber, and his side had lost the series.",
+  "reason": "A dead rubber, and his side had already lost the series.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A dead rubber, and his side had lost the series.",
+   "A dead rubber, and his side had already lost the series.",
    "p"
   ]
  },
@@ -2309,18 +2309,18 @@
   "evidence": "p",
   "yours": {
    "verdict": "yes",
-   "note": "The result and the score when he came in are not recorded."
+   "note": "We don't have the result or the score when he came in."
   },
   "rules": "no",
   "score": 25,
-  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
+  "gate": "a draw: without a ball-by-ball record we cannot say the hundred saved it",
   "parts": "carry 14, stakes 11",
-  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+  "reason": "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+   "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
    "p"
   ]
  },
@@ -2340,12 +2340,12 @@
   "score": 42,
   "gate": "",
   "parts": "carry 30, stakes 12",
-  "reason": "He made 2343% of the team's runs. The match did not depend on it on the facts we have.",
+  "reason": "He made 2343% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 2343% of the team's runs. The match did not depend on it on the facts we have.",
+   "He made 2343% of the team's runs. On the facts we have, the match didn't hinge on it.",
    "p"
   ]
  },
@@ -2359,18 +2359,18 @@
   "evidence": "p",
   "yours": {
    "verdict": "yes",
-   "note": "The result and the score when he came in are not recorded."
+   "note": "We don't have the result or the score when he came in."
   },
   "rules": "no",
   "score": 40,
-  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
+  "gate": "a draw: without a ball-by-ball record we cannot say the hundred saved it",
   "parts": "need 10, carry 24, stakes 6",
-  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+  "reason": "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+   "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
    "p"
   ]
  },
@@ -2388,14 +2388,14 @@
   },
   "rules": "no",
   "score": 36,
-  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
+  "gate": "a draw: without a ball-by-ball record we cannot say the hundred saved it",
   "parts": "need 20, carry 5, stakes 11",
-  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+  "reason": "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+   "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
    "p"
   ]
  },
@@ -2484,18 +2484,18 @@
   "evidence": "p",
   "yours": {
    "verdict": "yes",
-   "note": "The result and the score when he came in are not recorded."
+   "note": "We don't have the result or the score when he came in."
   },
   "rules": "no",
   "score": 20,
   "gate": "",
   "parts": "carry 14, stakes 6",
-  "reason": "He made 33% of the team's runs. The match did not depend on it on the facts we have.",
+  "reason": "He made 33% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 33% of the team's runs. The match did not depend on it on the facts we have.",
+   "He made 33% of the team's runs. On the facts we have, the match didn't hinge on it.",
    "p"
   ]
  },
@@ -2509,18 +2509,18 @@
   "evidence": "p",
   "yours": {
    "verdict": "yes",
-   "note": "The result and the score when he came in are not recorded."
+   "note": "We don't have the result or the score when he came in."
   },
   "rules": "no",
   "score": 50,
-  "gate": "a loss",
+  "gate": "a loss: even a great hundred can't be a ton of consequence in a defeat",
   "parts": "need 20, carry 24, stakes 6",
-  "reason": "A loss.",
+  "reason": "A loss: even a great hundred can't be a ton of consequence in a defeat.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A loss.",
+   "A loss: even a great hundred can't be a ton of consequence in a defeat.",
    "p"
   ]
  },
@@ -2538,14 +2538,14 @@
   },
   "rules": "no",
   "score": 36,
-  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
+  "gate": "a draw: without a ball-by-ball record we cannot say the hundred saved it",
   "parts": "carry 30, stakes 6",
-  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+  "reason": "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+   "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
    "p"
   ]
  },
@@ -2588,14 +2588,14 @@
   },
   "rules": "no",
   "score": 33,
-  "gate": "a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it",
+  "gate": "a draw: without a ball-by-ball record we cannot say the hundred saved it",
   "parts": "carry 30, stakes 6, opposition -3",
-  "reason": "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+  "reason": "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it.",
+   "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
    "p"
   ]
  },
@@ -2615,12 +2615,12 @@
   "score": 36,
   "gate": "",
   "parts": "carry 5, stakes 6, tempo 25",
-  "reason": "He made 29% of the team's runs. The match did not depend on it on the facts we have.",
+  "reason": "He made 29% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 29% of the team's runs. The match did not depend on it on the facts we have.",
+   "He made 29% of the team's runs. On the facts we have, the match didn't hinge on it.",
    "p"
   ]
  },
@@ -2634,18 +2634,18 @@
   "evidence": "p",
   "yours": {
    "verdict": "yes",
-   "note": "The result and the score when he came in are not recorded."
+   "note": "We don't have the result or the score when he came in."
   },
   "rules": "no",
   "score": 40,
-  "gate": "a loss",
+  "gate": "a loss: even a great hundred can't be a ton of consequence in a defeat",
   "parts": "need 20, carry 14, stakes 6",
-  "reason": "A loss.",
+  "reason": "A loss: even a great hundred can't be a ton of consequence in a defeat.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "A loss.",
+   "A loss: even a great hundred can't be a ton of consequence in a defeat.",
    "p"
   ]
  }

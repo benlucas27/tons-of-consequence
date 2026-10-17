@@ -14,7 +14,7 @@ export default function WomensTests() {
     <article className="prose toc-page">
       <p className="conn-note"><Link href="/tons-of-consequence">&larr; Men&rsquo;s ToCs</Link></p>
       <h1>Women&rsquo;s ToCs</h1>
-      <p className="lede">There have been {WOMENS_TOTAL} hundreds in women&rsquo;s Tests. {WOMENS_TONS.length} of them were tons of consequence: the hundred won the match, or saved it. The same laws as the men&rsquo;s game apply, with <Link href="/tons-of-consequence">the 13 laws explained here</Link>.</p>
+      <p className="lede">There have been {WOMENS_TOTAL} hundreds in women&rsquo;s Tests. {WOMENS_TONS.length} of them were tons of consequence: the hundred won the match, or saved it. The same laws as the men&rsquo;s game apply, with <Link href="/tons-of-consequence">the 13 laws behind every verdict</Link>.</p>
 
       <h2>How much can we measure?</h2>
       <p>Only {WOMENS_BALL_BY_BALL} of the {WOMENS_TOTAL} hundreds have a ball-by-ball record, so most of these verdicts rest on the result and match reports, not on the score when the batter came in. A draw only counts when the ball-by-ball record shows the hundred saved it, so almost every drawn Test here is a good ton. Most of these hundreds came in drawn Tests.</p>

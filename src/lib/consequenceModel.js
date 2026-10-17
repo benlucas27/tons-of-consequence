@@ -25,13 +25,13 @@ export function modelV3(f, wm = {}, th = THRESHOLD) {
   const inDanger = f.inn === 4 || (f.inn === 3 && f.lead != null && f.lead < 0) || Boolean(f.followOn);
   let gate = false;
   let gateWhy = '';
-  if (f.result === 'loss') gateWhy = 'a loss';
-  else if (dead && !(f.sideAhead && f.result === 'win')) gateWhy = f.result === 'win' ? 'a dead rubber, and his side had lost the series' : 'a dead rubber that was not a win';
-  else if (f.result === 'draw' && f.inn == null) gateWhy = 'a draw, and the innings is not known';
-  else if (f.result === 'draw' && f.partial) gateWhy = 'a draw, and without the ball-by-ball record we cannot say with confidence that the hundred saved it';
-  else if (f.result === 'draw' && f.tier >= 3) gateWhy = 'a draw against a lower-tier side: not a draw the hundred saved';
-  else if (f.result === 'draw' && f.overs != null && f.overs < DRAW_CUT_SHORT && !slowGrind) gateWhy = 'a draw cut short by weather: the clock saved the match, not the hundred';
-  else if (f.result === 'draw' && !inDanger) gateWhy = 'a draw the team was not in danger of losing';
+  if (f.result === 'loss') gateWhy = "a loss: even a great hundred can't be a ton of consequence in a defeat";
+  else if (dead && !(f.sideAhead && f.result === 'win')) gateWhy = f.result === 'win' ? 'a dead rubber, and his side had already lost the series' : 'a dead rubber (the series was already decided) that his side did not win';
+  else if (f.result === 'draw' && f.inn == null) gateWhy = 'a draw, and we do not know which innings it was';
+  else if (f.result === 'draw' && f.partial) gateWhy = 'a draw: without a ball-by-ball record we cannot say the hundred saved it';
+  else if (f.result === 'draw' && f.tier >= 3) gateWhy = "a draw against a lower-tier side: a hundred doesn't save a draw against a side like that";
+  else if (f.result === 'draw' && f.overs != null && f.overs < DRAW_CUT_SHORT && !slowGrind) gateWhy = 'a draw cut short by the weather: the weather saved the match, not the hundred';
+  else if (f.result === 'draw' && !inDanger) gateWhy = "a draw, and his side was never in danger of losing, so the hundred didn't save anything";
   else if (!['win', 'draw', 'tie'].includes(f.result)) gateWhy = 'no result';
   else gate = true;
   const p = {};
@@ -121,6 +121,6 @@ export function describeGoodTon(f, m) {
   if (f.share != null) bits.push(`He made ${pct(f.share)} of the team's runs.`);
   // only say so when it made the difference: the hundred would have cleared the bar without the small deduction
   if (f.others && m.gate && m.score < THRESHOLD && m.score + Math.min(6, 2 * f.others) >= THRESHOLD) bits.push('Another hundred came in the same innings, which counted against it a little.');
-  bits.push(f.entryWkts != null ? `The match did not depend on it: he came in at ${f.entryWkts} for ${f.entryScore}.` : 'The match did not depend on it on the facts we have.');
+  bits.push(f.entryWkts != null ? `The match didn't hinge on it: he came in at ${f.entryWkts} for ${f.entryScore}.` : "On the facts we have, the match didn't hinge on it.");
   return bits.join(' ');
 }

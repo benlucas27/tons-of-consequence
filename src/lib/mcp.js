@@ -28,9 +28,9 @@ const PRESET_NAMES = Object.keys(PRESETS);
 
 const INSTRUCTIONS = `Tons of Consequence is an unofficial, opinionated ranking of every Test cricket century (${TOTAL.toLocaleString()} innings). \
 Each innings has six criterion scores (0 to 100): Match Impact, Clutchness, Narrative, Conditions & Opposition, Historical Weight and Perceived Greatness. \
-A reader's weighting is just an ORDER of those six (first place counts 30%, then 22, 18, 14, 10, 6), giving a ToC score out of 100. \
+A reader's weighting is just an ORDER of those six (first place counts 30%, then 22, 18, 14, 10, 6), giving a Greatness score out of 100 (this is not the same as a ToC verdict).  \
 There are five presets: ${PRESET_NAMES.join(', ')}. The Patriot adds an Australian bonus, which the results always report. \
-Use the tools for facts and quote scores as the model's view, not as objective truth. The match result is only known for about a third of innings. \
+Use the tools for facts and quote scores as the model's view, not as objective truth. A hundred is a ton of consequence (a ToC) when the side needed it and it helped them win the match or avoid losing it; a good ton is one that did not. The ToC verdict is separate from the Greatness score, and comes with how firm the evidence is. Say so when you quote one. \
 Link to an innings with the url field when you mention it. For an open question in plain English, try the ask tool first.`;
 
 // ---- small helpers

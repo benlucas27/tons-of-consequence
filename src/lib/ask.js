@@ -303,7 +303,7 @@ export function answer(question, order, opts = {}) {
 }
 
 const PRESET_CUES = ['purist', 'analyst', 'patriot', 'romantic'];
-const ToC_EXPLAINER = 'Each hundred gets six scores out of 100: Match Impact, Clutchness, Narrative, Conditions & Opposition, Historical Weight and Perceived Greatness. The reader decides which matters most by putting the six in order, and first place counts for 30%, then 22, 18, 14, 10 and 6. Adding those up gives the ToC score out of 100. Purist, Analyst, Patriot and Romantic are ready-made orders, and Patriot adds a bonus for Australian innings. It is an opinionated model, so treat the scores as a view, not a fact.';
+const ToC_EXPLAINER = 'Each hundred gets six scores out of 100: Match Impact, Clutchness, Narrative, Conditions & Opposition, Historical Weight and Perceived Greatness. The reader decides which matters most by putting the six in order, and first place counts for 30%, then 22, 18, 14, 10 and 6. Adding those up gives the Greatness score out of 100. Purist, Analyst, Patriot and Romantic are ready-made orders, and Patriot adds a bonus for Australian innings. It is an opinionated model, so treat the scores as a view, not a fact. Separately, a hundred is a ton of consequence (a ToC) when the side needed it and it helped them win the match or avoid losing it.';
 
 function answerFor(question, order, opts) {
   let bias = opts.bias || null;
@@ -313,8 +313,8 @@ function answerFor(question, order, opts) {
 
   const tokens = text.split(' ');
 
-  // "how is the ToC score calculated?"
-  if (/(?:how|what).*(?:toc|ton of consequence|score|ranking|rated|ranked|calculated|worked out|work)/.test(text) && /(?:calculat|work out|worked out|works|work|made up|decided|computed)/.test(text) && !/(?: v | vs |against)/.test(text) && !/\d{3}/.test(text)) {
+  // "how is the Greatness score calculated?"
+  if (/(?:how|what).*(?:toc|greatness|ton of consequence|score|ranking|rated|ranked|calculated|worked out|work)/.test(text) && /(?:calculat|work out|worked out|works|work|made up|decided|computed)/.test(text) && !/(?: v | vs |against)/.test(text) && !/\d{3}/.test(text)) {
     return { kind: 'info', question: q, order, interpreted: [], headline: ToC_EXPLAINER, suggestions: EXAMPLE_QUESTIONS.slice(0, 4) };
   }
 

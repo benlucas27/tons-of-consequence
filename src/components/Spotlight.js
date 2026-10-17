@@ -22,7 +22,7 @@ export default function Spotlight({ ranked, order, bias }) {
         {sp.blurb && <p>{sp.blurb}</p>}
       </div>
       <div className="spot-side">
-        <div className="gauge" role="img" aria-label={`ToC score ${fmt1(f.toc)}`}>
+        <div className="gauge" role="img" aria-label={`Greatness score ${fmt1(f.toc)}`}>
           <svg viewBox="0 0 112 112" aria-hidden="true">
             <circle cx="56" cy="56" r="46" fill="none" stroke="var(--line)" strokeWidth="8" />
             <circle cx="56" cy="56" r="46" fill="none" stroke="var(--ball)" strokeWidth="8" strokeLinecap="round" strokeDasharray={`${((f.toc / 100) * C).toFixed(1)} ${C.toFixed(1)}`} />

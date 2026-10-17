@@ -73,7 +73,7 @@ export function consequenceTest(f) {
   const answers = [
     { question: 'Did the team win or save the match?', yes: q1.yes, why: q1.why },
     { question: 'Was the match still alive when he came in?', yes: q2.yes, why: q2.why },
-    { question: 'Did the hundred change it?', yes: Boolean(q3), why: q3 ? q3.why : q1.yes && q2.yes ? 'No: he came in comfortably and the team did not depend on him.' : 'Not asked.' },
+    { question: 'Did the hundred change it?', yes: Boolean(q3), why: q3 ? q3.why : q1.yes && q2.yes ? 'He came in comfortably, and the team did not depend on him.' : 'Not asked.' },
   ];
   const firstNo = answers.find((a) => !a.yes);
   return {

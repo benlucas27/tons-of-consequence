@@ -21,7 +21,7 @@ export default function ConsequenceNote({ verdict }) {
     return (
       <section className="toc-note toc-note-none">
         <h2 className="sec-t">Was it a ton of consequence?</h2>
-        <p><b>Not enough match data yet to say.</b> We can only judge hundreds where we have the match record, which is mostly from 2006 on. <Link href="/tons-of-consequence">How it works</Link></p>
+        <p><b>Not enough match data yet to say.</b> We have not found enough about this match (the result, which innings it was and where the series stood) to call it either way. <Link href="/tons-of-consequence">How a ToC is decided</Link></p>
       </section>
     );
   }
@@ -32,7 +32,7 @@ export default function ConsequenceNote({ verdict }) {
         {verdict.passes && <Stamp />}
         <p>
           <b>{verdict.passes ? `Yes: ${verdict.scenario.toLowerCase()}.` : 'No: a good ton.'}</b> {verdict.because}{' '}
-          <Link href="/tons-of-consequence">How it works</Link>
+          <Link href="/tons-of-consequence">How a ToC is decided</Link>
         </p>
       </div>
       {verdict.press?.length > 0 && (

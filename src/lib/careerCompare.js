@@ -68,7 +68,7 @@ const RANKING = [
   { key: 'bestRank', label: 'Best innings, ranked', get: (p) => p.ranking.best?.rank ?? null, fmt: (v) => ord(v), scored: true, better: 'low', note: 'Of every Test century' },
   { key: 'top100', label: 'Hundreds in the top 100', get: (p) => p.ranking.inTop100, fmt: (v) => v, scored: true, better: 'high' },
   { key: 'top500', label: 'Hundreds in the top 500', get: (p) => p.ranking.inTop500, fmt: (v) => v, scored: true, better: 'high' },
-  { key: 'avgToc', label: 'Average ToC score of their hundreds', phrase: 'average ToC score', get: (p) => p.ranking.averageToc, fmt: (v) => v.toFixed(1), scored: true, better: 'high' },
+  { key: 'avgToc', label: 'Average Greatness score of their hundreds', phrase: 'average Greatness score', get: (p) => p.ranking.averageToc, fmt: (v) => v.toFixed(1), scored: true, better: 'high' },
   { key: 'elite', label: 'Elite or Legendary hundreds', phrase: 'Elite and Legendary hundreds', get: (p) => p.ranking.elite, fmt: (v) => v, scored: true, better: 'high', note: 'ToC score of 82 or more' },
   { key: 'elitePct', label: 'Share of hundreds that are Elite or better', phrase: 'share of hundreds that are Elite or better', get: (p) => p.ranking.elitePct, fmt: (v) => `${v.toFixed(1)}%`, scored: true, better: 'high' },
 ];

@@ -10,11 +10,11 @@ export const wherePlayed = (id) => WHERE_PLAYED[id];
 
 /** How much to trust a verdict, by the evidence it was built from. */
 export const CONFIDENCE = {
-  b: { key: 'high', label: 'High confidence', note: 'Built from the ball-by-ball record: the score and wickets when he came in, the lead and the series stakes.' },
-  s: { key: 'high', label: 'High confidence', note: 'Judged from the full scorecard.' },
-  h: { key: 'high', label: 'High confidence', note: 'Judged from several match reports that describe how the innings unfolded: the slump, the stands, the result and the series.' },
-  p: { key: 'medium', label: 'Medium confidence', note: 'Judged from the result, which innings it was, the team total and the series. The score when he came in is not recorded.' },
-  r: { key: 'medium', label: 'Medium confidence', note: 'Judged from match reports. The score when he came in is not recorded, so the call rests on the result, the innings and the series.' },
+  b: { key: 'high', label: 'High confidence', note: 'We have the full ball-by-ball record: the score when the batter came in, the lead and what the series rode on.' },
+  s: { key: 'high', label: 'High confidence', note: 'We have the full scorecard.' },
+  h: { key: 'high', label: 'High confidence', note: 'Several match reports describe how the innings unfolded: the slump, the stands, the result and the series.' },
+  p: { key: 'medium', label: 'Medium confidence', note: 'We know the result, which innings it was, the team total and where the series stood, but not the score when the batter came in.' },
+  r: { key: 'medium', label: 'Medium confidence', note: "We rely on match reports. We don't have the score when the batter came in, so the call rests on the result, the innings and the series." },
 };
 
 /** { passes, scenario, because, confidence } for a hundred we have measured, or null when we have no match record for it yet. */
