@@ -217,7 +217,7 @@ export const REFERENCE_POINTS = {
    "lost": 4
   },
   "measured": 41,
-  "tons": 10,
+  "tons": 11,
   "byTier": [
    16,
    12,
@@ -225,7 +225,7 @@ export const REFERENCE_POINTS = {
    2
   ],
   "tonsByTier": [
-   2,
+   3,
    4,
    3,
    1
