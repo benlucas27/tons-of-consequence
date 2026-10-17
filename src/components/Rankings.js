@@ -111,7 +111,7 @@ export default function Rankings() {
             <div className="tabs" role="group" aria-label="View">
               <button type="button" aria-pressed={false} onClick={() => changeView('rankings')}>Rankings</button>
               <button type="button" aria-pressed={false} onClick={() => changeView('divisive')}>Most divisive</button>
-              <button type="button" aria-pressed onClick={() => changeView('womens')}>Women&rsquo;s Tests</button>
+              <button type="button" aria-pressed onClick={() => changeView('womens')}>Women&rsquo;s ToCs</button>
             </div>
           </div>
         </div>
@@ -145,7 +145,7 @@ export default function Rankings() {
             <div className="tabs" role="group" aria-label="View">
               <button type="button" aria-pressed={view === 'rankings'} onClick={() => changeView('rankings')}>Rankings</button>
               <button type="button" aria-pressed={view === 'divisive'} onClick={() => changeView('divisive')}>Most divisive</button>
-              <button type="button" aria-pressed={view === 'womens'} onClick={() => changeView('womens')}>Women&rsquo;s Tests</button>
+              <button type="button" aria-pressed={view === 'womens'} onClick={() => changeView('womens')}>Women&rsquo;s ToCs</button>
             </div>
             <div className="toolbar-r">
               <button type="button" className="chip filter-toggle" aria-expanded={filtersOpen} onClick={() => setFiltersOpen(!filtersOpen)}>

@@ -141,7 +141,7 @@ export default function CompareBuilder() {
       <div className="tabs" role="group" aria-label="What to compare" style={{ justifySelf: 'start' }}>
         <button type="button" aria-pressed={!careerSet && !womens} onClick={() => { chooseWomens(false); chooseSet(null); }}>Two innings</button>
         <button type="button" aria-pressed={Boolean(careerSet) && !womens} onClick={() => { chooseWomens(false); chooseSet(careerSet ? careerSet.id : COMPARE_SETS[0].id); }}>Career presets</button>
-        <button type="button" aria-pressed={womens} onClick={() => { chooseSet(null); chooseWomens(true); }}>Women&rsquo;s Tests</button>
+        <button type="button" aria-pressed={womens} onClick={() => { chooseSet(null); chooseWomens(true); }}>Women&rsquo;s ToCs</button>
       </div>
 
       {womens ? (

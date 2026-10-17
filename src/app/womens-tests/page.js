@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { WOMENS, WOMENS_BATTERS, WOMENS_TONS, WOMENS_TOTAL, WOMENS_BALL_BY_BALL, RESULT_WORD } from '@/lib/womens';
 
 export const metadata = {
-  title: "Women's Test tons of consequence",
+  title: "Women's ToCs: tons of consequence in women's Tests",
   description: "Every women's Test hundred, from Myrtle Maclagan in 1935 to today, and which of them were tons of consequence: the ones that won or saved the match.",
 };
 
@@ -12,8 +12,8 @@ export default function WomensTests() {
   const leaders = WOMENS_BATTERS.filter((b) => b.tons > 0);
   return (
     <article className="prose toc-page">
-      <p className="conn-note"><Link href="/tons-of-consequence">&larr; Men&rsquo;s Tests</Link></p>
-      <h1>Women&rsquo;s Test tons of consequence</h1>
+      <p className="conn-note"><Link href="/tons-of-consequence">&larr; Men&rsquo;s ToCs</Link></p>
+      <h1>Women&rsquo;s ToCs</h1>
       <p className="lede">There have been {WOMENS_TOTAL} hundreds in women&rsquo;s Tests. {WOMENS_TONS.length} of them were tons of consequence: the hundred won the match, or saved it. The same laws as the men&rsquo;s game apply, with <Link href="/tons-of-consequence">the 13 laws explained here</Link>.</p>
 
       <h2>How much can we measure?</h2>

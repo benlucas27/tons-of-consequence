@@ -14,7 +14,7 @@ export default function TonsOfConsequence() {
   const board = LEADERS.filter((b) => b.measured >= MIN_MEASURED).slice(0, 40);
   return (
     <article className="prose toc-page">
-      <p className="conn-note">Men&rsquo;s Tests &middot; <Link href="/womens-tests">Women&rsquo;s Tests</Link></p>
+      <p className="conn-note">Men&rsquo;s ToCs &middot; <Link href="/womens-tests">Women&rsquo;s ToCs</Link></p>
       <h1>Tons of Consequence</h1>
       <p className="lede">A great ton is not always a ton of consequence. A ton of consequence is one that changed the match: it won it, saved it, or rescued it.</p>
 
