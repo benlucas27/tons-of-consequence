@@ -40,6 +40,11 @@ export default function ConsequenceNote({ verdict }) {
           {verdict.press.map((a, i) => <span key={a.url}>{i > 0 && '; '}<a href={a.url} target="_blank" rel="noopener noreferrer">{a.title}</a> ({a.source})</span>)}
         </p>
       )}
+      {verdict.sources?.length > 0 && (
+        <p className="toc-conf"><b>Sources:</b>{' '}
+          {verdict.sources.map((a, i) => <span key={a.url}>{i > 0 && ' · '}<a href={a.url} target="_blank" rel="noopener noreferrer">{a.label}</a></span>)}
+        </p>
+      )}
       {verdict.confidence && <p className="toc-conf"><b>{verdict.confidence.label}.</b> {verdict.confidence.note}</p>}
     </section>
   );

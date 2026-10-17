@@ -4,6 +4,8 @@ import { ALL, slugify } from './dataset.js';
 import { WHERE_PLAYED } from '../data/where-played.js';
 import { tierOfOpponent } from './matchFacts.js';
 import { PRESS_REFERENCES } from '../data/press-references.js';
+import { SERIES_SOURCES } from '../data/series-sources.js';
+import { VERDICT_SOURCES } from '../data/verdict-sources.js';
 
 /** 'H', 'A' or 'N' for the side that scored the hundred, or undefined when we do not have the match record. */
 export const wherePlayed = (id) => WHERE_PLAYED[id];
@@ -17,10 +19,21 @@ export const CONFIDENCE = {
   r: { key: 'medium', label: 'Medium confidence', note: "We rely on match reports. We don't have the score when the batter came in, so the call rests on the result, the innings and the series." },
 };
 
+/** Where a verdict's facts came from: pages opened for the hand-checked ones, the Wikipedia tour page the result and series came from, and Cricsheet for the ball-by-ball record. */
+export function sourcesOf(id) {
+  const v = CONSEQUENCE[id];
+  if (!v) return [];
+  const out = [...(VERDICT_SOURCES[id] || [])];
+  const tour = SERIES_SOURCES[id];
+  if (tour) { const url = `https://en.wikipedia.org/wiki/${tour.replace(/ /g, '_')}`; if (!out.some((s) => s.url === url)) out.push({ url, label: `Wikipedia: ${tour}` }); }
+  if (v[3] === 'b') out.push({ url: 'https://cricsheet.org/', label: 'Cricsheet ball-by-ball data' });
+  return out.slice(0, 5);
+}
+
 /** { passes, scenario, because, confidence } for a hundred we have measured, or null when we have no match record for it yet. */
 export function verdictOf(id) {
   const v = CONSEQUENCE[id];
-  return v ? { passes: v[0] === 1, scenario: v[1], because: v[2], confidence: CONFIDENCE[v[3]] || CONFIDENCE.b, press: PRESS_REFERENCES[id] || [] } : null;
+  return v ? { passes: v[0] === 1, scenario: v[1], because: v[2], confidence: CONFIDENCE[v[3]] || CONFIDENCE.b, press: PRESS_REFERENCES[id] || [], sources: sourcesOf(id) } : null;
 }
 
 const byName = new Map();
