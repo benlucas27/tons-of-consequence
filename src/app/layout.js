@@ -4,6 +4,7 @@ import SiteBar from '@/components/SiteBar';
 import Footer from '@/components/Footer';
 import Toaster from '@/components/Toaster';
 import { SITE_URL } from '@/lib/site';
+import { Analytics } from '@vercel/analytics/next';
 
 const display = Barlow_Condensed({ subsets: ['latin'], weight: ['500', '600', '700'], variable: '--font-display', display: 'swap' });
 const ui = Barlow({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--font-ui', display: 'swap' });
@@ -44,6 +45,7 @@ export default function RootLayout({ children }) {
         <main id="main">{children}</main>
         <Footer />
         <Toaster />
+        <Analytics />
       </body>
     </html>
   );
