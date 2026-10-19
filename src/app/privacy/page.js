@@ -10,12 +10,13 @@ export default function Privacy() {
   return (
     <article className="prose">
       <h1>Privacy</h1>
-      <p className="lede">Short version: there are no accounts, no ads and no tracking. We don&rsquo;t ask who you are and we don&rsquo;t keep what you ask.</p>
-      <p className="conn-note">Last updated 14 October 2026. Tons of Consequence is an independent project run by Ben Lucas.</p>
+      <p className="lede">Short version: there are no accounts, no ads and no tracking across other sites. We count page views anonymously, with no cookies. We don&rsquo;t ask who you are and we don&rsquo;t keep what you ask.</p>
+      <p className="conn-note">Last updated 20 October 2026. Tons of Consequence is an independent project run by Ben Lucas.</p>
 
       <h2>On the website</h2>
       <ul>
-        <li><strong>No accounts, no sign-in, no advertising, no analytics.</strong></li>
+        <li><strong>No accounts, no sign-in, no advertising.</strong></li>
+        <li><strong>Anonymous page counts.</strong> We use Vercel Web Analytics to see which pages are read. It uses no cookies and does not follow you across other sites. It records the page, the time, where you came from (the referring site), your rough location (country and region), and your browser, device and operating system. It does not record who you are or your IP address, and the figures are used only as totals. Under Vercel&rsquo;s own policy, a visitor is recognised by a code made from the request, and that code is dropped after 24 hours.</li>
         <li><strong>Your weighting is saved on your own device.</strong> Your chosen order of the six criteria is kept in your browser&rsquo;s local storage so the site remembers it next time. It never leaves your device, and clearing your browser data removes it.</li>
         <li><strong>Voice questions.</strong> If you use the microphone on the Search page, your browser turns your speech into text. In Chrome and Safari that means the audio goes to the browser maker&rsquo;s own speech service. We never receive the audio.</li>
         <li><strong>Videos.</strong> Nothing from YouTube loads until you press play, and then it uses YouTube&rsquo;s privacy-enhanced player. Once it plays, YouTube&rsquo;s own privacy policy applies.</li>
