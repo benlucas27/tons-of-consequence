@@ -58,7 +58,8 @@ const CODES = { ENG: 'England', AUS: 'Australia', IND: 'India', SAF: 'South Afri
 const stem = (n) => (/west ind/i.test(n) ? 'west ind' : n.toLowerCase().replace(/(ia|a|d)$/, ''));
 function parseTests(wt, teamNames) {
   const tests = [];
-  const strip = (t) => t.replace(/\[\[(?:[^\]|]*\|)?([^\]]*)\]\]/g, '$1').replace(/'{2,3}/g, '');
+  const CR = /\{\{\s*(?:cr|cr-rt|crw?|flagicon|flag)[^|}]*\|\s*([^|}]*?)\s*(?:\|[^}]*)?\}\}/gi;
+  const strip = (t) => t.replace(CR, (m, x) => CODES[x.trim().toUpperCase()] || x).replace(/\[\[(?:[^\]|]*\|)?([^\]]*)\]\]/g, '$1').replace(/'{2,3}/g, '');
   const resultOf = (txt) => {
     const t = strip(txt).toLowerCase();
     if (/tied/.test(t) && !/won/.test(t)) return 'tie';
@@ -84,7 +85,7 @@ function parseTests(wt, teamNames) {
     const r = resultOf(res);
     // innings in the order they were played: team1 bats first; a team marked f/o followed on
     const cell = (name, t, i) => new RegExp(`\\|\\s*${name}-team${t}-inns${i}\\s*=\\s*([^\\n]*)`, 'i').exec(body)?.[1] || '';
-    const total = (txt) => { const m = /(\d+)(?:\/\d+)?/.exec(strip(txt).replace(/\(.*?\)/g, '')); return m ? Number(m[1]) : null; };
+    const total = (txt) => { const m = /(\d+)(?:\/(\d+))?/.exec(strip(txt).replace(/\(.*?\)/g, '')); if (!m) return null; const x = Number(m[1]), y = m[2] == null ? null : Number(m[2]); return y != null && x <= 10 && y > x ? y : x; }; // '8/342' and '342/8' both mean 342 runs
     const order = [[1, 1], [2, 1], [1, 2], [2, 2]];
     const fo = /f\/o|follow-?on/i;
     const swap = [1, 2].find((t) => fo.test(cell('score', t, 2)));
@@ -96,7 +97,7 @@ function parseTests(wt, teamNames) {
     const dm = /(\d{1,2})/.exec(ds), mon = /(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*/i.exec(ds);
     const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
     const start = dm && mon ? String(MONTHS.indexOf(mon[1].toLowerCase()) + 1).padStart(2, '0') + String(dm[1]).padStart(2, '0') : null; // MMDD of the first day
-    const teamOf = (n) => { const raw = new RegExp(`\\|\\s*team${n}\\s*=\\s*([^\\n]*)`, 'i').exec(body)?.[1] || ''; const code = /\{\{\s*cr[^|}]*\|\s*([A-Za-z]{2,3})\b/i.exec(raw)?.[1]; return { code: code ? code.toUpperCase() : null, text: strip(raw).toLowerCase() }; };
+    const teamOf = (n) => { const raw = new RegExp(`\\|\\s*team${n}\\s*=\\s*([^\\n]*)`, 'i').exec(body)?.[1] || ''; const code = /\{\{\s*cr[^|}]*\|\s*([A-Za-z]{2,3})\s*[|}]/i.exec(raw)?.[1]; return { code: code ? code.toUpperCase() : null, text: strip(raw).replace(/\|\s*$/, '').toLowerCase() }; };
     tests.push({ venueText: strip(venue).toLowerCase(), winner: r, inns, margin, start, t1: teamOf(1), t2: teamOf(2) }); // winner null when the box has no readable result
   }
   if (!tests.some((t) => t.winner)) {
@@ -113,6 +114,7 @@ function parseTests(wt, teamNames) {
   return tests.filter((t, i) => !(i > 0 && tests[i - 1].venueText === t.venueText && tests[i - 1].winner === t.winner));
 }
 
+if (process.env.DEBUG_TITLE) { const wt = await page(process.env.DEBUG_TITLE); const t = parseTests(wt, (process.env.DEBUG_TEAMS || '').split(',')); console.log(JSON.stringify(t.map((x) => ({ ...x, inns: (x.inns || []).map((i) => [i.no, i.team, i.total, i.runsText.slice(0, 40)]) })), null, 0)); process.exit(0); }
 const teamName = (c) => NATIONS[c.country] || c.country;
 const validate = args.includes('--validate'); // test the method on hundreds whose result we already know
 const isKnown = (c) => ['win', 'draw', 'loss', 'tie'].includes(c.matchResult);

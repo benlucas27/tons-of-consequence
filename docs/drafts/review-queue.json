@@ -2091,23 +2091,6 @@
   "result": "win"
  },
  {
-  "id": 528,
-  "name": "Martin Crowe",
-  "runs": 188,
-  "year": 1985,
-  "opponent": "Australia",
-  "venue": "Brisbane",
-  "score": 51,
-  "stable": 0.84,
-  "gate": true,
-  "why": "",
-  "evidence": "p",
-  "today": null,
-  "parts": "need 15, carry 30, stakes 6",
-  "facts": "His side trailed by 179 when the innings began. He made 2686% of the team's 7. The team won by an innings and 41 runs.",
-  "result": "win"
- },
- {
   "id": 535,
   "name": "Maurice Leyland",
   "runs": 187,
@@ -3604,6 +3587,23 @@
   "result": "win"
  },
  {
+  "id": 2449,
+  "name": "Richie Richardson",
+  "runs": 122,
+  "year": 1988,
+  "opponent": "Australia",
+  "venue": "Melbourne",
+  "score": 45,
+  "stable": 0.45666666666666667,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "carry 14, stakes 6, tempo 25",
+  "facts": "His side led by 38 when the innings began. He made 34% of the team's 361. The team won by 285 runs. A slow grind at 43 runs per 100 balls.",
+  "result": "win"
+ },
+ {
   "id": 2452,
   "name": "Hansie Cronje",
   "runs": 122,
@@ -3720,6 +3720,23 @@
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
   "facts": "He made 33% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
+  "id": 2616,
+  "name": "Wally Hammond",
+  "runs": 119,
+  "year": 1929,
+  "opponent": "Australia",
+  "venue": "Adelaide",
+  "score": 47,
+  "stable": 0.6166666666666667,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "carry 14, finish 5, stakes 3, tempo 25",
+  "facts": "The scores were level when the innings began. He made 36% of the team's 334. The team won by 12 runs. The series was already won by his side. A slow grind at 32 runs per 100 balls.",
   "result": "win"
  },
  {
@@ -3978,6 +3995,23 @@
   "result": "win"
  },
  {
+  "id": 3105,
+  "name": "Colin Cowdrey",
+  "runs": 113,
+  "year": 1962,
+  "opponent": "Australia",
+  "venue": "Melbourne",
+  "score": 40,
+  "stable": 0.15,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 14, stakes 6",
+  "facts": "He made 34% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
   "id": 3108,
   "name": "Mansoor Ali Khan Pataudi",
   "runs": 113,
@@ -4179,6 +4213,23 @@
   "today": null,
   "parts": "need 20, carry 5, stakes 15, occasion 5",
   "facts": "His side trailed by 288 when the innings began. He made 25% of the team's 440. The team won by 7 wickets. It was the decider of a level series. It was a Boxing Day or New Year Test.",
+  "result": "win"
+ },
+ {
+  "id": 3562,
+  "name": "John Fulton Reid",
+  "runs": 108,
+  "year": 1985,
+  "opponent": "Australia",
+  "venue": "Brisbane",
+  "score": 46,
+  "stable": 0.5833333333333334,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 15, stakes 6, tempo 25",
+  "facts": "His side trailed by 179 when the innings began. He made 20% of the team's 553. The team won by an innings and 41 runs. A slow grind at 42 runs per 100 balls.",
   "result": "win"
  },
  {
