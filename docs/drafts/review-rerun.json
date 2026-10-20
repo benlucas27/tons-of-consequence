@@ -1875,6 +1875,31 @@
   ]
  },
  {
+  "id": 66,
+  "name": "Younis Khan",
+  "runs": 267,
+  "year": 2005,
+  "opponent": "India",
+  "venue": "Bengaluru",
+  "evidence": "p",
+  "yours": {
+   "verdict": "yes",
+   "note": "We don't have the result or the score when he came in."
+  },
+  "rules": "no",
+  "score": 36,
+  "gate": "",
+  "parts": "carry 24, stakes 12",
+  "reason": "He made 47% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 47% of the team's runs. On the facts we have, the match didn't hinge on it.",
+   "p"
+  ]
+ },
+ {
   "id": 78,
   "name": "Javed Miandad",
   "runs": 260,
@@ -2250,6 +2275,31 @@
   ]
  },
  {
+  "id": 614,
+  "name": "Rahul Dravid",
+  "runs": 180,
+  "year": 2001,
+  "opponent": "Australia",
+  "venue": "Eden Gardens",
+  "evidence": "p",
+  "yours": {
+   "verdict": "yes",
+   "note": "We don't have the result or the score when he came in."
+  },
+  "rules": "no",
+  "score": 31,
+  "gate": "",
+  "parts": "need 20, carry 5, stakes 6",
+  "reason": "He made 27% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 27% of the team's runs. On the facts we have, the match didn't hinge on it.",
+   "p"
+  ]
+ },
+ {
   "id": 717,
   "name": "Graham Gooch",
   "runs": 174,
@@ -2421,6 +2471,31 @@
    1,
    "Chased it down",
    "His side trailed by 274 when the innings began. He made 58% of the team's 276. The team won by 6 wickets. The series was already won by his side.",
+   "p"
+  ]
+ },
+ {
+  "id": 980,
+  "name": "Steve Waugh",
+  "runs": 160,
+  "year": 1997,
+  "opponent": "South Africa",
+  "venue": "Johannesburg",
+  "evidence": "p",
+  "yours": {
+   "verdict": "no",
+   "note": "Batted 5, innings 2 of the match. Australia won."
+  },
+  "rules": "yes",
+  "score": 56,
+  "gate": "",
+  "parts": "need 20, carry 5, stakes 6, tempo 25",
+  "reason": "His side trailed by 302 when the innings began. He made 25% of the team's 628. The team won by an innings and 196 runs. A slow grind at 44 runs per 100 balls.",
+  "scenario": "Rescued the innings",
+  "verdict": [
+   1,
+   "Rescued the innings",
+   "His side trailed by 302 when the innings began. He made 25% of the team's 628. The team won by an innings and 196 runs. A slow grind at 44 runs per 100 balls.",
    "p"
   ]
  },
@@ -2621,6 +2696,31 @@
    0,
    null,
    "He made 29% of the team's runs. On the facts we have, the match didn't hinge on it.",
+   "p"
+  ]
+ },
+ {
+  "id": 4177,
+  "name": "Mark Taylor",
+  "runs": 102,
+  "year": 1998,
+  "opponent": "India",
+  "venue": "Bengaluru",
+  "evidence": "p",
+  "yours": {
+   "verdict": "yes",
+   "note": "We don't have the result or the score when he came in."
+  },
+  "rules": "no",
+  "score": 58,
+  "gate": "a dead rubber, and his side had already lost the series",
+  "parts": "need 15, carry 30, finish 10, stakes 3",
+  "reason": "A dead rubber, and his side had already lost the series.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "A dead rubber, and his side had already lost the series.",
    "p"
   ]
  },

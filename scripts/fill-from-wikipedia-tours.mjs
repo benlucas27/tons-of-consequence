@@ -45,7 +45,7 @@ const yy = (n) => String(n % 100).padStart(2, '0');
 const season = (a) => ((a + 1) % 100 === 0 ? `${a}–${a + 1}` : `${a}–${yy(a + 1)}`);
 const seasons = (Y) => [`${Y}`, season(Y), season(Y - 1)];
 
-const ALIAS = { 'w.a.c.a': ['waca', 'perth'], 'the oval': ['oval', 'kennington'], "lord's": ['lord'], 'eden gardens': ['eden', 'calcutta', 'kolkata'], wankhede: ['wankhede', 'bombay', 'mumbai'], brisbane: ['gabba', 'brisbane'], melbourne: ['melbourne', 'mcg'], sydney: ['sydney', 'scg'], 'port of spain': ['port of spain', "queen's park"], bridgetown: ['bridgetown', 'kensington'], kingston: ['kingston', 'sabina'], 'st john\'s': ["st john", 'antigua'], leeds: ['headingley', 'leeds'], nottingham: ['trent bridge', 'nottingham'], birmingham: ['edgbaston', 'birmingham'], manchester: ['old trafford', 'manchester'], chennai: ['chennai', 'madras', 'chepauk'], delhi: ['delhi', 'kotla'], 'cape town': ['newlands', 'cape town'], johannesburg: ['wanderers', 'johannesburg', 'ellis park'], durban: ['kingsmead', 'durban'], 'port elizabeth': ['port elizabeth', "st george"], wellington: ['basin reserve', 'wellington'], auckland: ['eden park', 'auckland'], christchurch: ['lancaster', 'hagley', 'jade', 'christchurch'], lahore: ['gaddafi', 'lahore'], karachi: ['national stadium', 'karachi'] };
+const ALIAS = { 'gqeberha': ['port elizabeth', 'st george', 'gqeberha'], bengaluru: ['bangalore', 'chinnaswamy', 'bengaluru'], chattogram: ['chittagong', 'chattogram', 'mdc ', 'zohur'], brabourne: ['brabourne', 'bombay', 'mumbai'], 'w.a.c.a': ['waca', 'perth'], 'the oval': ['oval', 'kennington'], "lord's": ['lord'], 'eden gardens': ['eden', 'calcutta', 'kolkata'], wankhede: ['wankhede', 'bombay', 'mumbai'], brisbane: ['gabba', 'brisbane'], melbourne: ['melbourne', 'mcg'], sydney: ['sydney', 'scg'], 'port of spain': ['port of spain', "queen's park"], bridgetown: ['bridgetown', 'kensington'], kingston: ['kingston', 'sabina'], 'st john\'s': ["st john", 'antigua'], leeds: ['headingley', 'leeds'], nottingham: ['trent bridge', 'nottingham'], birmingham: ['edgbaston', 'birmingham'], manchester: ['old trafford', 'manchester'], chennai: ['chennai', 'madras', 'chepauk'], delhi: ['delhi', 'kotla'], 'cape town': ['newlands', 'cape town'], johannesburg: ['wanderers', 'johannesburg', 'ellis park'], durban: ['kingsmead', 'durban'], 'port elizabeth': ['port elizabeth', "st george"], wellington: ['basin reserve', 'wellington'], auckland: ['eden park', 'auckland'], christchurch: ['lancaster', 'hagley', 'jade', 'christchurch'], lahore: ['gaddafi', 'lahore'], karachi: ['national stadium', 'karachi'] };
 const venueWords = (v) => {
   const k = v.toLowerCase();
   if (ALIAS[k]) return ALIAS[k];
@@ -54,6 +54,7 @@ const venueWords = (v) => {
 };
 
 /** The Tests listed on a tour page: [{ venueText, winner: name | 'draw' | 'tie' }] in order. */
+const CODES = { ENG: 'England', AUS: 'Australia', IND: 'India', SAF: 'South Africa', RSA: 'South Africa', WIN: 'West Indies', WI: 'West Indies', PAK: 'Pakistan', NZL: 'New Zealand', NZ: 'New Zealand', SRI: 'Sri Lanka', SL: 'Sri Lanka', ZIM: 'Zimbabwe', BAN: 'Bangladesh', AFG: 'Afghanistan', IRE: 'Ireland' };
 const stem = (n) => (/west ind/i.test(n) ? 'west ind' : n.toLowerCase().replace(/(ia|a|d)$/, ''));
 function parseTests(wt, teamNames) {
   const tests = [];
@@ -95,7 +96,8 @@ function parseTests(wt, teamNames) {
     const dm = /(\d{1,2})/.exec(ds), mon = /(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*/i.exec(ds);
     const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
     const start = dm && mon ? String(MONTHS.indexOf(mon[1].toLowerCase()) + 1).padStart(2, '0') + String(dm[1]).padStart(2, '0') : null; // MMDD of the first day
-    tests.push({ venueText: strip(venue).toLowerCase(), winner: r, inns, margin, start }); // winner null when the box has no readable result
+    const teamOf = (n) => { const raw = new RegExp(`\\|\\s*team${n}\\s*=\\s*([^\\n]*)`, 'i').exec(body)?.[1] || ''; const code = /\{\{\s*cr[^|}]*\|\s*([A-Za-z]{2,3})\b/i.exec(raw)?.[1]; return { code: code ? code.toUpperCase() : null, text: strip(raw).toLowerCase() }; };
+    tests.push({ venueText: strip(venue).toLowerCase(), winner: r, inns, margin, start, t1: teamOf(1), t2: teamOf(2) }); // winner null when the box has no readable result
   }
   if (!tests.some((t) => t.winner)) {
     tests.length = 0;
@@ -164,10 +166,21 @@ for (const cb of [...combos.values()].slice(0, limit)) {
         let inn = null, tot = null, leadStart = null;
         const sur = c.name.split(' ').slice(-1)[0].toLowerCase().replace(/[^a-z]/g, '');
         const hit = (tests[i].inns || []).find((x) => x.runsText.includes(sur) && new RegExp(`\\b${c.runs}\\b`).test(x.runsText));
-        if (hit) {
-          inn = hit.no; tot = hit.total;
-          const prior = tests[i].inns.filter((x) => x.no < hit.no);
-          if (prior.every((x) => x.total != null)) leadStart = prior.filter((x) => x.team === hit.team).reduce((a, x) => a + x.total, 0) - prior.filter((x) => x.team !== hit.team).reduce((a, x) => a + x.total, 0);
+        let hit0 = hit, inferred = false;
+        if ((!hit0 || process.env.VALIDATE_INF) && tests[i].inns?.length) {
+          // his name is not among the top scorers: take his side's only innings where the top scorer made at least as many as he did
+          const sideIs = (t) => t && ((t.code && CODES[t.code] === me) || (t.text && t.text.includes(stem(me))));
+          const mySide = sideIs(tests[i].t1) ? 1 : sideIs(tests[i].t2) ? 2 : null;
+          if (mySide) {
+            const cands = tests[i].inns.filter((x) => x.team === mySide && x.total != null && x.total >= c.runs && (Number((/(\d+)/.exec(x.runsText) || [])[1]) || 0) >= c.runs);
+            if (process.env.VALIDATE_INF) { if (hit) { global.vi = (global.vi || [0, 0, 0]); global.vi[0] += 1; if (cands.length === 1) { global.vi[1] += 1; if (cands[0] === hit) global.vi[2] += 1; else console.log('INF-WRONG', c.name, c.runs, c.year); } } }
+            else if (cands.length === 1) { hit0 = cands[0]; inferred = true; }
+          }
+        }
+        if (hit0) {
+          inn = hit0.no; tot = hit0.total;
+          const prior = tests[i].inns.filter((x) => x.no < hit0.no);
+          if (prior.every((x) => x.total != null)) leadStart = prior.filter((x) => x.team === hit0.team).reduce((a, x) => a + x.total, 0) - prior.filter((x) => x.team !== hit0.team).reduce((a, x) => a + x.total, 0);
         }
         sources[c.id] = title;
         facts[c.id] = [result, i + 1, m, lead, dead ? 1 : 0, inn, tot, leadStart, tests[i].margin || null, tests[i].start || null];
@@ -180,6 +193,7 @@ for (const cb of [...combos.values()].slice(0, limit)) {
   if (anyTour) found += 1; else { missing += 1; if (process.env.DEBUG_MISSING) console.log('MISSING', cb.a, 'v', cb.b, cb.year, cb.rows.length); }
   for (const c of pending) if (process.env.DEBUG_NOVENUE) console.log('UNMATCHED', c.venue, c.year, c.opponent, c.runs);
 }
+if (process.env.VALIDATE_INF) console.log('inference check [had a name hit, inference gave one answer, agreed]:', global.vi);
 if (validate) { console.log(`validation: ${vagree} of ${vtotal} agree with the known result`); process.exit(0); }
 const ids = Object.keys(facts).map(Number).sort((a, b) => a - b);
 fs.writeFileSync(path.join(root, 'src/data/series-facts.js'), `/** id -> [result for the batter's team, Test number in the series, Tests in the series, the batter's team's series lead going in (wins minus losses), 1 if the series was already decided, innings of the match, the team's total in that innings, the lead when it began, the margin as 'r120' runs, 'w5' wickets or 'i48' innings and runs, the first day of the Test as MMDD], from Wikipedia's tour pages (scripts/fill-from-wikipedia-tours.mjs). Generated: do not edit by hand. */\nexport const SERIES_FACTS = {\n${ids.map((id) => `  ${id}: ${JSON.stringify(facts[id])},`).join('\n')}\n};\n`);

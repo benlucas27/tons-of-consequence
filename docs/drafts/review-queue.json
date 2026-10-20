@@ -1360,6 +1360,23 @@
   "result": "win"
  },
  {
+  "id": 4004,
+  "name": "Quinton de Kock",
+  "runs": 104,
+  "year": 2016,
+  "opponent": "Australia",
+  "venue": "Hobart",
+  "score": 41.3,
+  "stable": 0.19333333333333333,
+  "gate": true,
+  "why": "",
+  "evidence": "b",
+  "today": 0,
+  "parts": "carry 19.3, stakes 6, lower 6, attack 10",
+  "facts": "He made 32% of the team's runs. The match didn't hinge on it: he came in at 5 for 132.",
+  "result": "win"
+ },
+ {
   "id": 4050,
   "name": "Matt Prior",
   "runs": 103,
@@ -1938,6 +1955,23 @@
   "result": "win"
  },
  {
+  "id": 333,
+  "name": "Mohammad Yousuf",
+  "runs": 204,
+  "year": 2002,
+  "opponent": "Bangladesh",
+  "venue": "Chattogram",
+  "score": 41,
+  "stable": 0.20333333333333334,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 15, carry 24, stakes 12, opposition -10",
+  "facts": "He made 44% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
   "id": 346,
   "name": "Shoaib Mohammad",
   "runs": 203,
@@ -1989,6 +2023,23 @@
   "result": "win"
  },
  {
+  "id": 386,
+  "name": "Graeme Fowler",
+  "runs": 201,
+  "year": 1985,
+  "opponent": "India",
+  "venue": "Chennai",
+  "score": 40,
+  "stable": 0.15,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 14, stakes 6",
+  "facts": "He made 31% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
   "id": 397,
   "name": "Rahul Dravid",
   "runs": 200,
@@ -2023,6 +2074,23 @@
   "result": "win"
  },
  {
+  "id": 516,
+  "name": "Waqar Hasan",
+  "runs": 189,
+  "year": 1955,
+  "opponent": "New Zealand",
+  "venue": "Lahore",
+  "score": 40,
+  "stable": 0.15,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 14, stakes 6",
+  "facts": "He made 34% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
   "id": 528,
   "name": "Martin Crowe",
   "runs": 188,
@@ -2037,6 +2105,23 @@
   "today": null,
   "parts": "need 15, carry 30, stakes 6",
   "facts": "His side trailed by 179 when the innings began. He made 2686% of the team's 7. The team won by an innings and 41 runs.",
+  "result": "win"
+ },
+ {
+  "id": 535,
+  "name": "Maurice Leyland",
+  "runs": 187,
+  "year": 1938,
+  "opponent": "Australia",
+  "venue": "The Oval",
+  "score": 42,
+  "stable": 0.29333333333333333,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "carry 5, stakes 12, tempo 25",
+  "facts": "He made 21% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2108,6 +2193,23 @@
   "result": "win"
  },
  {
+  "id": 605,
+  "name": "Norm O'Neill",
+  "runs": 181,
+  "year": 1960,
+  "opponent": "West Indies",
+  "venue": "Brisbane",
+  "score": 45,
+  "stable": 0.5066666666666667,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 14, finish 5, stakes 6",
+  "facts": "His side trailed by 453 when the innings began. He made 36% of the team's 505. The match was tied.",
+  "result": "tie"
+ },
+ {
   "id": 615,
   "name": "Marcus Trescothick",
   "runs": 180,
@@ -2139,6 +2241,23 @@
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
   "facts": "He made 36% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
+  "id": 653,
+  "name": "Inzamam-ul-Haq",
+  "runs": 177,
+  "year": 1997,
+  "opponent": "West Indies",
+  "venue": "Rawalpindi",
+  "score": 40,
+  "stable": 0.15,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 14, stakes 6",
+  "facts": "He made 38% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2329,6 +2448,23 @@
   "result": "win"
  },
  {
+  "id": 862,
+  "name": "Ian Chappell",
+  "runs": 165,
+  "year": 1968,
+  "opponent": "West Indies",
+  "venue": "Melbourne",
+  "score": 40,
+  "stable": 0.12,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 15, carry 14, stakes 6, occasion 5",
+  "facts": "He made 32% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
   "id": 880,
   "name": "John Edrich",
   "runs": 164,
@@ -2414,6 +2550,23 @@
   "result": "win"
  },
  {
+  "id": 981,
+  "name": "Aamer Sohail",
+  "runs": 160,
+  "year": 1997,
+  "opponent": "West Indies",
+  "venue": "Rawalpindi",
+  "score": 40,
+  "stable": 0.15,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 14, stakes 6",
+  "facts": "He made 34% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
   "id": 997,
   "name": "Warwick Armstrong",
   "runs": 159,
@@ -2482,6 +2635,23 @@
   "result": "win"
  },
  {
+  "id": 1128,
+  "name": "Richie Richardson",
+  "runs": 154,
+  "year": 1984,
+  "opponent": "Australia",
+  "venue": "St John's",
+  "score": 40,
+  "stable": 0.15,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 14, stakes 6",
+  "facts": "He made 31% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
   "id": 1158,
   "name": "Dilip Vengsarkar",
   "runs": 153,
@@ -2513,6 +2683,23 @@
   "today": null,
   "parts": "need 15, carry 14, stakes 6, occasion 5",
   "facts": "He made 38% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
+  "id": 1198,
+  "name": "Aravinda de Silva",
+  "runs": 152,
+  "year": 1998,
+  "opponent": "England",
+  "venue": "The Oval",
+  "score": 40,
+  "stable": 0.17,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 5, stakes 15",
+  "facts": "He made 26% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -2564,6 +2751,23 @@
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
   "facts": "He made 35% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
+  "id": 1288,
+  "name": "Gordon Greenidge",
+  "runs": 149,
+  "year": 1990,
+  "opponent": "England",
+  "venue": "St John's",
+  "score": 46,
+  "stable": 0.5633333333333334,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 14, stakes 12",
+  "facts": "His side trailed by 260 when the innings began. He made 33% of the team's 446. The team won by an innings and 32 runs. The series was still to be settled in this Test.",
   "result": "win"
  },
  {
@@ -2703,6 +2907,23 @@
   "result": "win"
  },
  {
+  "id": 1480,
+  "name": "Michael Slater",
+  "runs": 143,
+  "year": 2000,
+  "opponent": "New Zealand",
+  "venue": "Wellington",
+  "score": 40,
+  "stable": 0.15,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 14, stakes 6",
+  "facts": "He made 34% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
   "id": 1504,
   "name": "Jack Ryder",
   "runs": 142,
@@ -2819,6 +3040,40 @@
   "today": null,
   "parts": "need 20, carry 5, stakes 15",
   "facts": "He made 23% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
+  "id": 1761,
+  "name": "Frank Mann",
+  "runs": 136,
+  "year": 1949,
+  "opponent": "South Africa",
+  "venue": "Gqeberha",
+  "score": 51,
+  "stable": 0.8933333333333333,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 14, finish 5, stakes 12",
+  "facts": "His side trailed by 379 when the innings began. He made 34% of the team's 395. The team won by 3 wickets. The series was still to be settled in this Test.",
+  "result": "win"
+ },
+ {
+  "id": 1763,
+  "name": "Hashan Tillakaratne",
+  "runs": 136,
+  "year": 2001,
+  "opponent": "India",
+  "venue": "Colombo (SSC)",
+  "score": 40,
+  "stable": 0.17,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 5, stakes 15",
+  "facts": "He made 22% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3077,6 +3332,23 @@
   "result": "win"
  },
  {
+  "id": 2161,
+  "name": "Larry Gomes",
+  "runs": 127,
+  "year": 1984,
+  "opponent": "Australia",
+  "venue": "W.A.C.A",
+  "score": 45,
+  "stable": 0.45666666666666667,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "carry 14, stakes 6, tempo 25",
+  "facts": "The scores were level when the innings began. He made 31% of the team's 416. The team won by an innings and 112 runs. A slow grind at 43 runs per 100 balls.",
+  "result": "win"
+ },
+ {
   "id": 2196,
   "name": "Dilip Vengsarkar",
   "runs": 126,
@@ -3142,6 +3414,23 @@
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
   "facts": "He made 31% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
+  "id": 2227,
+  "name": "Mark Waugh",
+  "runs": 126,
+  "year": 1995,
+  "opponent": "West Indies",
+  "venue": "Kingston",
+  "score": 40,
+  "stable": 0.17,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 5, stakes 15",
+  "facts": "He made 24% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3383,6 +3672,40 @@
   "result": "win"
  },
  {
+  "id": 2591,
+  "name": "Herschelle Gibbs",
+  "runs": 120,
+  "year": 1999,
+  "opponent": "New Zealand",
+  "venue": "Wellington",
+  "score": 40,
+  "stable": 0.17,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 5, stakes 15",
+  "facts": "He made 24% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
+  "id": 2594,
+  "name": "Neil McKenzie",
+  "runs": 120,
+  "year": 2000,
+  "opponent": "New Zealand",
+  "venue": "Gqeberha",
+  "score": 40,
+  "stable": 0.15,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 14, stakes 6",
+  "facts": "He made 33% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
   "id": 2637,
   "name": "RH Catterall",
   "runs": 119,
@@ -3451,6 +3774,23 @@
   "result": "win"
  },
  {
+  "id": 2806,
+  "name": "Imran Khan",
+  "runs": 117,
+  "year": 1983,
+  "opponent": "India",
+  "venue": "Faisalabad",
+  "score": 41,
+  "stable": 0.25666666666666665,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, stakes 6, tempo 10, occasion 5",
+  "facts": "He made 18% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
   "id": 2809,
   "name": "Gordon Greenidge",
   "runs": 117,
@@ -3502,6 +3842,23 @@
   "result": "win"
  },
  {
+  "id": 2895,
+  "name": "Younis Khan",
+  "runs": 116,
+  "year": 2000,
+  "opponent": "Sri Lanka",
+  "venue": "Galle",
+  "score": 46,
+  "stable": 0.5833333333333334,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 15, stakes 6, tempo 25",
+  "facts": "His side trailed by 181 when the innings began. He made 19% of the team's 600. The team won by an innings and 163 runs. A slow grind at 41 runs per 100 balls.",
+  "result": "win"
+ },
+ {
   "id": 2949,
   "name": "John Edrich",
   "runs": 115,
@@ -3516,6 +3873,23 @@
   "today": null,
   "parts": "carry 14, stakes 6, tempo 25",
   "facts": "His side led by 21 when the innings began. He made 34% of the team's 340. The team won by 230 runs. A slow grind at 38 runs per 100 balls.",
+  "result": "win"
+ },
+ {
+  "id": 2967,
+  "name": "Jacques Kallis",
+  "runs": 115,
+  "year": 1999,
+  "opponent": "Zimbabwe",
+  "venue": "Harare",
+  "score": 50,
+  "stable": 0.7566666666666667,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 15, carry 5, stakes 15, tempo 25, opposition -10",
+  "facts": "His side trailed by 102 when the innings began. He made 25% of the team's 462. The team won by an innings and 219 runs. It was the decider of a level series. A slow grind at 43 runs per 100 balls.",
   "result": "win"
  },
  {
@@ -3774,6 +4148,23 @@
   "result": "win"
  },
  {
+  "id": 3481,
+  "name": "Dave Richardson",
+  "runs": 109,
+  "year": 1995,
+  "opponent": "New Zealand",
+  "venue": "Cape Town",
+  "score": 45,
+  "stable": 0.5266666666666666,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 5, stakes 15, occasion 5",
+  "facts": "His side trailed by 288 when the innings began. He made 25% of the team's 440. The team won by 7 wickets. It was the decider of a level series. It was a Boxing Day or New Year Test.",
+  "result": "win"
+ },
+ {
   "id": 3655,
   "name": "David Boon",
   "runs": 107,
@@ -3788,6 +4179,40 @@
   "today": null,
   "parts": "carry 14, stakes 3, tempo 25",
   "facts": "He made 31% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
+  "id": 3720,
+  "name": "Dilip Sardesai",
+  "runs": 106,
+  "year": 1965,
+  "opponent": "New Zealand",
+  "venue": "Delhi",
+  "score": 40,
+  "stable": 0.17,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 5, stakes 15",
+  "facts": "He made 23% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
+  "id": 3817,
+  "name": "Graeme Pollock",
+  "runs": 105,
+  "year": 1967,
+  "opponent": "Australia",
+  "venue": "Gqeberha",
+  "score": 41,
+  "stable": 0.18,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 15, carry 14, stakes 12",
+  "facts": "He made 38% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3944,6 +4369,23 @@
   "result": "win"
  },
  {
+  "id": 4387,
+  "name": "Mike Atherton",
+  "runs": 101,
+  "year": 1994,
+  "opponent": "New Zealand",
+  "venue": "Nottingham",
+  "score": 51,
+  "stable": 0.81,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, stakes 6, tempo 25",
+  "facts": "His side trailed by 251 when the innings began. He made 18% of the team's 567. The team won by an innings and 90 runs. A slow grind at 38 runs per 100 balls.",
+  "result": "win"
+ },
+ {
   "id": 4442,
   "name": "Kim Hughes",
   "runs": 100,
@@ -3961,6 +4403,23 @@
   "result": "win"
  },
  {
+  "id": 4527,
+  "name": "Basil D'Oliveira",
+  "runs": 100,
+  "year": 1971,
+  "opponent": "New Zealand",
+  "venue": "Christchurch",
+  "score": 40,
+  "stable": 0.15,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 10, carry 24, stakes 6",
+  "facts": "He made 43% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
   "id": 4538,
   "name": "Graeme Wood",
   "runs": 100,
@@ -3975,6 +4434,23 @@
   "today": null,
   "parts": "carry 14, stakes 6, tempo 25",
   "facts": "The scores were level when the innings began. He made 39% of the team's 258. The team won by 103 runs. A slow grind at 35 runs per 100 balls.",
+  "result": "win"
+ },
+ {
+  "id": 4552,
+  "name": "Mark Taylor",
+  "runs": 100,
+  "year": 1992,
+  "opponent": "India",
+  "venue": "Adelaide",
+  "score": 46,
+  "stable": 0.58,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 10, carry 5, stakes 6, tempo 25",
+  "facts": "His side trailed by 80 when the innings began. He made 22% of the team's 451. The team won by 38 runs. A slow grind at 33 runs per 100 balls.",
   "result": "win"
  }
 ]
