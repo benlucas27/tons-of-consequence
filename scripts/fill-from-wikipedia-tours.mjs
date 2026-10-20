@@ -59,7 +59,7 @@ const yy = (n) => String(n % 100).padStart(2, '0');
 const season = (a) => ((a + 1) % 100 === 0 ? `${a}–${a + 1}` : `${a}–${yy(a + 1)}`);
 const seasons = (Y) => [`${Y}`, season(Y), season(Y - 1)];
 
-const ALIAS = { 'gqeberha': ['port elizabeth', 'st george', 'gqeberha'], bengaluru: ['bangalore', 'chinnaswamy', 'bengaluru'], chattogram: ['chittagong', 'chattogram', 'mdc ', 'zohur'], brabourne: ['brabourne', 'bombay', 'mumbai'], 'w.a.c.a': ['waca', 'perth', 'western australia cricket'], 'the oval': ['oval', 'kennington'], "lord's": ['lord'], 'eden gardens': ['eden', 'calcutta', 'kolkata'], wankhede: ['wankhede', 'bombay', 'mumbai'], brisbane: ['gabba', 'brisbane'], melbourne: ['melbourne', 'mcg'], sydney: ['sydney', 'scg'], 'port of spain': ['port of spain', "queen's park"], bridgetown: ['bridgetown', 'kensington'], kingston: ['kingston', 'sabina'], 'st john\'s': ["st john", 'antigua'], leeds: ['headingley', 'leeds'], nottingham: ['trent bridge', 'nottingham'], birmingham: ['edgbaston', 'birmingham'], manchester: ['old trafford', 'manchester'], chennai: ['chennai', 'madras', 'chepauk'], delhi: ['delhi', 'kotla'], 'cape town': ['newlands', 'cape town'], johannesburg: ['wanderers', 'johannesburg', 'ellis park'], durban: ['kingsmead', 'durban'], 'port elizabeth': ['port elizabeth', "st george"], wellington: ['basin reserve', 'wellington'], auckland: ['eden park', 'auckland'], christchurch: ['lancaster', 'hagley', 'jade', 'christchurch'], lahore: ['gaddafi', 'lahore'], karachi: ['national stadium', 'karachi'] };
+const ALIAS = { 'gqeberha': ['port elizabeth', 'st george', 'gqeberha'], bengaluru: ['bangalore', 'chinnaswamy', 'bengaluru'], chattogram: ['chittagong', 'chattogram', 'mdc ', 'zohur'], brabourne: ['brabourne', 'bombay', 'mumbai'], kanpur: ['kanpur', 'green park'], lahore: ['gaddafi', 'lahore', 'bagh-e-jinnah'], 'w.a.c.a': ['waca', 'perth', 'western australia cricket'], 'the oval': ['oval', 'kennington'], "lord's": ['lord'], 'eden gardens': ['eden', 'calcutta', 'kolkata'], wankhede: ['wankhede', 'bombay', 'mumbai'], brisbane: ['gabba', 'brisbane'], melbourne: ['melbourne', 'mcg'], sydney: ['sydney', 'scg'], 'port of spain': ['port of spain', "queen's park"], bridgetown: ['bridgetown', 'kensington'], kingston: ['kingston', 'sabina'], 'st john\'s': ["st john", 'antigua'], leeds: ['headingley', 'leeds'], nottingham: ['trent bridge', 'nottingham'], birmingham: ['edgbaston', 'birmingham'], manchester: ['old trafford', 'manchester'], chennai: ['chennai', 'madras', 'chepauk', 'chidambaram'], delhi: ['delhi', 'kotla'], 'cape town': ['newlands', 'cape town'], johannesburg: ['wanderers', 'johannesburg', 'ellis park'], durban: ['kingsmead', 'durban'], 'port elizabeth': ['port elizabeth', "st george"], wellington: ['basin reserve', 'wellington'], auckland: ['eden park', 'auckland'], christchurch: ['lancaster', 'hagley', 'jade', 'christchurch'], lahore: ['gaddafi', 'lahore'], karachi: ['national stadium', 'karachi'] };
 const venueWords = (v) => {
   const k = v.toLowerCase();
   if (ALIAS[k]) return ALIAS[k];
@@ -156,7 +156,7 @@ const teamName = (c) => NATIONS[c.country] || c.country;
 const validate = args.includes('--validate'); // test the method on hundreds whose result we already know
 const isKnown = (c) => ['win', 'draw', 'loss', 'tie'].includes(c.matchResult);
 // unknown results are filled; known pre-2006 results are checked too, and a disagreement is reported so it can be corrected
-const unknown = ALL.filter((c) => (validate ? isKnown(c) && c.year < 2006 : !isKnown(c) || c.year < 2006) && c.opponent !== 'ICC World XI');
+const unknown = ALL.filter((c) => (validate ? isKnown(c) && c.year <= 2006 : !isKnown(c) || c.year <= 2006) && c.opponent !== 'ICC World XI');
 const combos = new Map();
 for (const c of unknown) {
   const pair = [teamName(c), c.opponent].sort().join(' v ');
@@ -175,7 +175,13 @@ for (const cb of [...combos.values()].slice(0, limit)) {
   outer: for (const [vis, host] of [[cb.a, cb.b], [cb.b, cb.a], [cb.a, 'the United Arab Emirates'], [cb.b, 'the United Arab Emirates']]) {
     const ashes = (vis === 'England' && host === 'Australia') || (vis === 'Australia' && host === 'England');
     const cands = [];
-    for (const s of seasons(cb.year)) { cands.push(`${DEM[vis] || vis} cricket team in ${host} in ${s}`); if (ashes) cands.push(`${s} Ashes series`); }
+    const other = vis === cb.a ? cb.b : cb.a;
+    for (const s of seasons(cb.year)) {
+      cands.push(`${DEM[vis] || vis} cricket team in ${host} in ${s}`);
+      if (ashes) cands.push(`${s} Ashes series`);
+      if (host === 'the United Arab Emirates' && [cb.a, cb.b].includes('Pakistan') && cb.year >= 1995) cands.push(`${DEM[vis] || vis} cricket team against ${other} in the UAE in ${s}`, `${DEM[vis] || vis} cricket team against ${other} in the United Arab Emirates in ${s}`);
+      if (['Pakistan', 'India', 'Sri Lanka', 'Bangladesh'].includes(cb.a) && ['Pakistan', 'India', 'Sri Lanka', 'Bangladesh'].includes(cb.b)) cands.push(`${s} Asian Test Championship`);
+    }
     if (!cands.some((t) => fs.existsSync(path.join(cacheDir, t.replace(/[^a-z0-9]+/gi, '_') + '.json')) && fs.readFileSync(path.join(cacheDir, t.replace(/[^a-z0-9]+/gi, '_') + '.json'), 'utf8') !== 'null')) {
       // no tour page under the usual names (a tour of two or three countries is titled "... in India and Sri Lanka in 1978–79"): ask Wikipedia's search
       for (const s of seasons(cb.year)) {
@@ -203,6 +209,9 @@ for (const cb of [...combos.values()].slice(0, limit)) {
             // otherwise keep the Tests where his side has an innings that could hold the score (total and top scorer both at least his runs)
             const me0 = teamName(c);
             const can = (t) => { const mine = t.inns || []; if (!mine.length) return true; const sideIs = (x) => x && ((x.code && CODES[x.code] === me0) || (x.text && x.text.includes(stem(me0)))); const side = sideIs(t.t1) ? 1 : sideIs(t.t2) ? 2 : null; return side ? mine.some((x) => x.team === side && x.total != null && x.total >= c.runs && (x.runsText === '' || (Number((/(\d+)/.exec(x.runsText) || [])[1]) || 0) >= c.runs)) : true; };
+            const yearOf = (t) => { const ym = /(?:in |^)(\d{4})(?:[–-]\d{2,4})?(?: Ashes series)?$/.exec(title); if (!ym || !t.start) return null; const two = /(?:in |^)\d{4}[–-]/.test(title); return two ? (Number(t.start.slice(0, 2)) >= 7 ? Number(ym[1]) : Number(ym[1]) + 1) : Number(ym[1]); };
+            const inYear = idx.filter((i) => yearOf(tests[i]) === c.year);
+            if (inYear.length >= 1 && inYear.length < idx.length) idx = inYear;
             const feas = idx.filter((i) => can(tests[i]));
             if (feas.length >= 1 && feas.length < idx.length) idx = feas;
             const specific = ({ ssc: ['sinhalese'], rps: ['premadasa'], pss: ['saravanamuttu', 'p. sara'], ccc: ['colombo cricket club'] })[(/\((\w+)\)/.exec(c.venue) || [])[1]?.toLowerCase()];

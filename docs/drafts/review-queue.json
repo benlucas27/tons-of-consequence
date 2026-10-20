@@ -2108,6 +2108,23 @@
   "result": "win"
  },
  {
+  "id": 522,
+  "name": "Saeed Anwar",
+  "runs": 188,
+  "year": 1999,
+  "opponent": "India",
+  "venue": "Eden Gardens",
+  "score": 46,
+  "stable": 0.56,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 10, carry 30, stakes 6",
+  "facts": "His side trailed by 38 when the innings began. He made 59% of the team's 316. The team won by 46 runs.",
+  "result": "win"
+ },
+ {
   "id": 535,
   "name": "Maurice Leyland",
   "runs": 187,
@@ -3125,23 +3142,6 @@
   "today": null,
   "parts": "need 20, carry 14, finish 5, stakes 12",
   "facts": "His side trailed by 379 when the innings began. He made 34% of the team's 395. The team won by 3 wickets. The series was still to be settled in this Test.",
-  "result": "win"
- },
- {
-  "id": 1763,
-  "name": "Hashan Tillakaratne",
-  "runs": 136,
-  "year": 2001,
-  "opponent": "India",
-  "venue": "Colombo (SSC)",
-  "score": 40,
-  "stable": 0.17,
-  "gate": true,
-  "why": "",
-  "evidence": "p",
-  "today": null,
-  "parts": "need 20, carry 5, stakes 15",
-  "facts": "He made 22% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -4451,6 +4451,23 @@
   "today": null,
   "parts": "need 20, carry 24, stakes 6",
   "facts": "His side trailed by 267 when the innings began. He made 45% of the team's 230. The team won by 7 wickets.",
+  "result": "win"
+ },
+ {
+  "id": 3985,
+  "name": "Mohammad Hafeez",
+  "runs": 104,
+  "year": 2006,
+  "opponent": "West Indies",
+  "venue": "Karachi",
+  "score": 39,
+  "stable": 0.13666666666666666,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "carry 5, stakes 12, tempo 25, opposition -3",
+  "facts": "He made 26% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {

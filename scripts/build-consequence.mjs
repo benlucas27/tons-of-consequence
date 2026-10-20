@@ -162,7 +162,15 @@ for (const row of ALL) {
 const finalIds = new Set([...Object.entries(CONSEQUENCE_OVERRIDES).filter(([, o]) => o.final).map(([k]) => Number(k.split('|')[3])), ...Object.keys(FINAL_OLDER_RULINGS).map(Number)]);
 rerun.splice(0, rerun.length, ...rerun.filter((r) => !finalIds.has(r.id)));
 for (const r of rerun) out[r.id] = r.verdict; 
-for (const [id, v] of Object.entries(FINAL_OLDER_RULINGS)) out[id] = v;
+// the final rulings win, but a terse ruling ("The match was won.", evidence r) does not replace a ball-by-ball verdict that says the same thing: keep the fuller note and the firmer evidence
+let keptBallByBall = 0;
+for (const [id, v] of Object.entries(FINAL_OLDER_RULINGS)) {
+  const cur = out[id];
+  if (cur && cur[3] === 'b' && cur[0] === v[0] && ['r', 'p'].includes(v[3])) { keptBallByBall += 1; continue; }
+  // the ruling disagrees with the rules, or has no ball-by-ball twin to keep: it stands, but if the ball-by-ball record exists it was made on that record
+  out[id] = cur && cur[3] === 'b' && ['r', 'p'].includes(v[3]) ? [v[0], v[1], v[2], 'b'] : v;
+}
+console.log(`${keptBallByBall} terse final rulings left in place where the ball-by-ball verdict agrees.`);
 fs.writeFileSync(path.join(root, 'docs/drafts/scores.json'), JSON.stringify(scoreDump));
 fs.writeFileSync(path.join(root, 'docs/drafts/review-rerun.json'), JSON.stringify(rerun, null, 1));
 console.log(`Rerun: ${rerun.length} of Ben's hand rulings disagree with the rules (${rerun.filter((r) => r.evidence === 'b').length} ball-by-ball, ${rerun.filter((r) => r.evidence === 'p').length} older, of ${calib.olderTotal || 0} older rulings with series facts).`);

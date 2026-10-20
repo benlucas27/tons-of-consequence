@@ -106,7 +106,7 @@ export const CONSEQUENCE_OVERRIDES = {
   "Kraigg Brathwaite|110|2018": { verdict: 'no' },
   "Kusal Mendis|194|2017": { verdict: 'no' },
   "Kyle Verreynne|136|2022": { verdict: 'no' },
-  "Liton Das|126|2026": { verdict: 'no' },
+  "Litton Das|126|2026": { verdict: 'no' },
   "Marcus Trescothick|113|2003": { verdict: 'no' },
   "Marcus Trescothick|105|2004": { verdict: 'no' },
   "Michael Clarke|106|2012": { verdict: 'no' },
