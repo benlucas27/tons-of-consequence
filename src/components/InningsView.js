@@ -16,6 +16,8 @@ import ConsequenceNote from './ConsequenceStamp';
 import { storyStatus } from '@/lib/stories';
 import BiasNote from './BiasNote';
 import { SITE_URL } from '@/lib/site';
+import { weightQuery } from '@/lib/scoring';
+import CardButtons from './CardButtons';
 
 export default function InningsView({ id, consequence = null, facts = null }) {
   const { order, bias } = useWeighting();
@@ -161,6 +163,7 @@ export default function InningsView({ id, consequence = null, facts = null }) {
               <button type="button" className="btn primary" onClick={copy}>Copy link to this innings</button>
               <code>{shown}</code>
               <p>Opens straight to this innings, with your weighting.</p>
+              <CardButtons src={`/card/innings/${c.id}${weightQuery(order, bias)}`} name={`toc-innings-${c.id}`} label="Share as a card" />
             </div>
           </div>
         </aside>
