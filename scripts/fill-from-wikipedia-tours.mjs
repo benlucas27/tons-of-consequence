@@ -59,7 +59,7 @@ const yy = (n) => String(n % 100).padStart(2, '0');
 const season = (a) => ((a + 1) % 100 === 0 ? `${a}–${a + 1}` : `${a}–${yy(a + 1)}`);
 const seasons = (Y) => [`${Y}`, season(Y), season(Y - 1)];
 
-const ALIAS = { 'gqeberha': ['port elizabeth', 'st george', 'gqeberha'], bengaluru: ['bangalore', 'chinnaswamy', 'bengaluru'], chattogram: ['chittagong', 'chattogram', 'mdc ', 'zohur'], brabourne: ['brabourne', 'bombay', 'mumbai'], 'w.a.c.a': ['waca', 'perth'], 'the oval': ['oval', 'kennington'], "lord's": ['lord'], 'eden gardens': ['eden', 'calcutta', 'kolkata'], wankhede: ['wankhede', 'bombay', 'mumbai'], brisbane: ['gabba', 'brisbane'], melbourne: ['melbourne', 'mcg'], sydney: ['sydney', 'scg'], 'port of spain': ['port of spain', "queen's park"], bridgetown: ['bridgetown', 'kensington'], kingston: ['kingston', 'sabina'], 'st john\'s': ["st john", 'antigua'], leeds: ['headingley', 'leeds'], nottingham: ['trent bridge', 'nottingham'], birmingham: ['edgbaston', 'birmingham'], manchester: ['old trafford', 'manchester'], chennai: ['chennai', 'madras', 'chepauk'], delhi: ['delhi', 'kotla'], 'cape town': ['newlands', 'cape town'], johannesburg: ['wanderers', 'johannesburg', 'ellis park'], durban: ['kingsmead', 'durban'], 'port elizabeth': ['port elizabeth', "st george"], wellington: ['basin reserve', 'wellington'], auckland: ['eden park', 'auckland'], christchurch: ['lancaster', 'hagley', 'jade', 'christchurch'], lahore: ['gaddafi', 'lahore'], karachi: ['national stadium', 'karachi'] };
+const ALIAS = { 'gqeberha': ['port elizabeth', 'st george', 'gqeberha'], bengaluru: ['bangalore', 'chinnaswamy', 'bengaluru'], chattogram: ['chittagong', 'chattogram', 'mdc ', 'zohur'], brabourne: ['brabourne', 'bombay', 'mumbai'], 'w.a.c.a': ['waca', 'perth', 'western australia cricket'], 'the oval': ['oval', 'kennington'], "lord's": ['lord'], 'eden gardens': ['eden', 'calcutta', 'kolkata'], wankhede: ['wankhede', 'bombay', 'mumbai'], brisbane: ['gabba', 'brisbane'], melbourne: ['melbourne', 'mcg'], sydney: ['sydney', 'scg'], 'port of spain': ['port of spain', "queen's park"], bridgetown: ['bridgetown', 'kensington'], kingston: ['kingston', 'sabina'], 'st john\'s': ["st john", 'antigua'], leeds: ['headingley', 'leeds'], nottingham: ['trent bridge', 'nottingham'], birmingham: ['edgbaston', 'birmingham'], manchester: ['old trafford', 'manchester'], chennai: ['chennai', 'madras', 'chepauk'], delhi: ['delhi', 'kotla'], 'cape town': ['newlands', 'cape town'], johannesburg: ['wanderers', 'johannesburg', 'ellis park'], durban: ['kingsmead', 'durban'], 'port elizabeth': ['port elizabeth', "st george"], wellington: ['basin reserve', 'wellington'], auckland: ['eden park', 'auckland'], christchurch: ['lancaster', 'hagley', 'jade', 'christchurch'], lahore: ['gaddafi', 'lahore'], karachi: ['national stadium', 'karachi'] };
 const venueWords = (v) => {
   const k = v.toLowerCase();
   if (ALIAS[k]) return ALIAS[k];
@@ -125,6 +125,28 @@ function parseTests(wt, teamNames) {
       if (r) tests.push({ venueText: strip(at[1]).toLowerCase(), winner: r });
     }
   }
+  if (!tests.some((t) => t.winner)) {
+    // older Ashes articles: a heading per Test, then a bold line such as '''Australia (346 and 368) drew with England (372 and 282 for seven wickets).'''
+    tests.length = 0;
+    const nums = (txt) => txt.split(/\band\b/).map((p) => { const m = /(\d+)/.exec(p); return m ? Number(m[1]) : null; });
+    let head = '';
+    for (const line of wt.split('\n')) {
+      const h = /^={2,4}\s*(.*?Test.*?)\s*={2,4}\s*$/.exec(line);
+      if (h) { head = strip(h[1]); continue; }
+      const m = /^'''\s*([A-Za-z ]+?)\s*\(([^)]*)\)\s+(beat|defeated|drew with|tied with|lost to)\s+([A-Za-z ]+?)\s*\(([^)]*)\)\s*([^']*?)\.?\s*'''/.exec(line.replace(/<ref[\s\S]*?<\/ref>/g, '').replace(/\[\[(?:[^\]|]*\|)?([^\]]*)\]\]/g, '$1'));
+      if (!m || !head) continue;
+      const [, t1, s1, verb, t2, s2, rest] = m;
+      const a1 = nums(s1), b1 = nums(s2);
+      const seq = [];
+      for (let k = 0; k < 2; k++) { if (a1[k] != null) seq.push({ team: 1, total: a1[k] }); if (b1[k] != null) seq.push({ team: 2, total: b1[k] }); }
+      const winner = verb === 'drew with' ? 'draw' : verb === 'tied with' ? 'tie' : verb === 'lost to' ? teamNames.find((n) => t2.toLowerCase().includes(stem(n))) : teamNames.find((n) => t1.toLowerCase().includes(stem(n)));
+      const mm = /(innings and )?(\d+)\s+(runs|wickets?)/i.exec(rest);
+      const at = /Test at\s+(.*?)(?:,\s*\d|$)/i.exec(head);
+      const dm = /(\d{1,2})(?:[–-]\d{1,2})?\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)/i.exec(head.replace(/&ndash;/g, '–'));
+      const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+      tests.push({ venueText: (at ? at[1] : head).toLowerCase(), winner: winner || null, inns: seq.map((x, k) => ({ no: k + 1, team: x.team, total: x.total, runsText: '' })), margin: mm ? (mm[1] ? 'i' : mm[3].toLowerCase().startsWith('run') ? 'r' : 'w') + mm[2] : null, start: dm ? String(MONTHS.indexOf(dm[2].toLowerCase()) + 1).padStart(2, '0') + String(dm[1]).padStart(2, '0') : null, t1: { code: null, text: t1.toLowerCase() }, t2: { code: null, text: t2.toLowerCase() } });
+    }
+  }
   // the same Test sometimes appears twice in a row (a summary box and a full one)
   return tests.filter((t, i) => !(i > 0 && tests[i - 1].venueText === t.venueText && tests[i - 1].winner === t.winner));
 }
@@ -187,6 +209,11 @@ for (const cb of [...combos.values()].slice(0, limit)) {
             if (idx.length > 1 && specific) { const sp = idx.filter((i) => specific.some((w) => tests[i].venueText.includes(w))); if (sp.length >= 1) idx = sp; }
           }
         }
+        if (idx.length > 1 && idx.every((k) => tests[k].winner && tests[k].winner === tests[idx[0]].winner)) {
+          // we cannot tell which of the Tests at this ground it was, but every one of them had the same result: that much is safe to record
+          (cand[c.id] ||= []).push({ title, tests, i: idx[0], m: tests.length, yearOk: true, listed: false, ambig: true });
+          still.push(c); continue;
+        }
         if (idx.length !== 1) { if (idx.length > 1) { ambiguous += 1; if (process.env.DEBUG_AMBIG) console.log('AMBIG', c.venue, c.year, c.opponent, idx.map((i) => tests[i].venueText).join(' | ')); } still.push(c); continue; }
         const i = idx[0];
         if (!tests[i].winner) { still.push(c); continue; }
@@ -207,8 +234,14 @@ for (const cb of [...combos.values()].slice(0, limit)) {
   for (const c of cb.rows) {
     const list = cand[c.id];
     if (!list || !list.length) continue;
-    const best = list.find((x) => x.listed) || list.find((x) => x.yearOk) || list[0];
+    const best = list.find((x) => x.listed) || list.find((x) => x.yearOk && !x.ambig) || list.find((x) => !x.ambig) || list[0];
     const { title, tests, i, m } = best;
+    if (best.ambig) { // result only
+      const w0 = tests[i].winner, me0 = teamName(c);
+      sources[c.id] = title;
+      facts[c.id] = [w0 === me0 ? 'win' : w0 === 'draw' ? 'draw' : w0 === 'tie' ? 'tie' : 'loss', null, m, null, 0, null, null, null, null, null];
+      matched += 1; continue;
+    }
         const me = teamName(c);
         let mine = 0, theirs = 0, unreadable = false;
         for (const t of tests.slice(0, i)) { if (!t.winner) unreadable = true; else if (t.winner === me) mine += 1; else if (t.winner !== 'draw' && t.winner !== 'tie') theirs += 1; }
