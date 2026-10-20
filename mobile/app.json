@@ -12,9 +12,17 @@
       "supportsTablet": false,
       "bundleIdentifier": "com.tonsofconsequence.app",
       "buildNumber": "1",
-      "infoPlist": { "ITSAppUsesNonExemptEncryption": false }
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
-    "android": { "package": "com.tonsofconsequence.app" },
-    "plugins": ["expo-font"]
+    "android": {
+      "package": "com.tonsofconsequence.app"
+    },
+    "plugins": [
+      "expo-font",
+      "expo-splash-screen",
+      "expo-status-bar"
+    ]
   }
 }
