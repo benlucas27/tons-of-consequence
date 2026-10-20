@@ -2075,6 +2075,31 @@
   ]
  },
  {
+  "id": 215,
+  "name": "Mark Taylor",
+  "runs": 219,
+  "year": 1989,
+  "opponent": "England",
+  "venue": "Nottingham",
+  "evidence": "p",
+  "yours": {
+   "verdict": "yes",
+   "note": "Australia won by an innings and 180 runs. Series going in: Australia 3-0 up (series decided)."
+  },
+  "rules": "no",
+  "score": 17,
+  "gate": "",
+  "parts": "carry 14, stakes 3",
+  "reason": "He made 36% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 36% of the team's runs. On the facts we have, the match didn't hinge on it.",
+   "p"
+  ]
+ },
+ {
   "id": 228,
   "name": "Rahul Dravid",
   "runs": 217,
@@ -2275,6 +2300,31 @@
   ]
  },
  {
+  "id": 479,
+  "name": "Viv Richards",
+  "runs": 192,
+  "year": 1974,
+  "opponent": "India",
+  "venue": "Delhi",
+  "evidence": "p",
+  "yours": {
+   "verdict": "yes",
+   "note": "We don't have the result or the score when he came in."
+  },
+  "rules": "no",
+  "score": 40,
+  "gate": "",
+  "parts": "need 20, carry 14, stakes 6",
+  "reason": "He made 39% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 39% of the team's runs. On the facts we have, the match didn't hinge on it.",
+   "p"
+  ]
+ },
+ {
   "id": 495,
   "name": "Geoffrey Boycott",
   "runs": 191,
@@ -2371,6 +2421,31 @@
    0,
    null,
    "He made 27% of the team's runs. On the facts we have, the match didn't hinge on it.",
+   "p"
+  ]
+ },
+ {
+  "id": 647,
+  "name": "Steve Waugh",
+  "runs": 177,
+  "year": 1989,
+  "opponent": "England",
+  "venue": "Leeds",
+  "evidence": "p",
+  "yours": {
+   "verdict": "yes",
+   "note": "Batted 6, innings 1 of the match. Australia won."
+  },
+  "rules": "no",
+  "score": 11,
+  "gate": "",
+  "parts": "carry 5, stakes 6",
+  "reason": "He made 29% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 29% of the team's runs. On the facts we have, the match didn't hinge on it.",
    "p"
   ]
  },
@@ -2575,6 +2650,31 @@
   ]
  },
  {
+  "id": 1179,
+  "name": "Steve Waugh",
+  "runs": 152,
+  "year": 1989,
+  "opponent": "England",
+  "venue": "Lord's",
+  "evidence": "p",
+  "yours": {
+   "verdict": "yes",
+   "note": "Batted 6, innings 2 of the match. Australia won."
+  },
+  "rules": "no",
+  "score": 31,
+  "gate": "",
+  "parts": "need 20, carry 5, stakes 6",
+  "reason": "He made 29% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "He made 29% of the team's runs. On the facts we have, the match didn't hinge on it.",
+   "p"
+  ]
+ },
+ {
   "id": 1213,
   "name": "Steve Waugh",
   "runs": 151,
@@ -2715,6 +2815,31 @@
   "score": 53,
   "gate": "a draw: without a ball-by-ball record we cannot say the hundred saved it",
   "parts": "need 20, carry 30, stakes 6, opposition -3",
+  "reason": "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
+   "p"
+  ]
+ },
+ {
+  "id": 2812,
+  "name": "Graham Gooch",
+  "runs": 117,
+  "year": 1991,
+  "opponent": "Australia",
+  "venue": "Adelaide",
+  "evidence": "p",
+  "yours": {
+   "verdict": "yes",
+   "note": "We don't have the result or the score when he came in."
+  },
+  "rules": "no",
+  "score": 45,
+  "gate": "a draw: without a ball-by-ball record we cannot say the hundred saved it",
+  "parts": "need 20, carry 14, stakes 11",
   "reason": "A draw: without a ball-by-ball record we cannot say the hundred saved it.",
   "scenario": null,
   "verdict": [

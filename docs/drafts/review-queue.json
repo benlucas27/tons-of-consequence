@@ -2057,6 +2057,23 @@
   "result": "win"
  },
  {
+  "id": 445,
+  "name": "Arthur Morris",
+  "runs": 196,
+  "year": 1948,
+  "opponent": "England",
+  "venue": "The Oval",
+  "score": 43,
+  "stable": 0.32666666666666666,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 10, carry 30, stakes 3",
+  "facts": "He made 50% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
   "id": 494,
   "name": "Bill Edrich",
   "runs": 191,
@@ -2462,6 +2479,23 @@
   "today": null,
   "parts": "carry 14, stakes 12, tempo 25",
   "facts": "The scores were level when the innings began. He made 33% of the team's 494. The team won by 226 runs. The series was still to be settled in this Test. A slow grind at 39 runs per 100 balls.",
+  "result": "win"
+ },
+ {
+  "id": 903,
+  "name": "Clive Lloyd",
+  "runs": 163,
+  "year": 1974,
+  "opponent": "India",
+  "venue": "Bengaluru",
+  "score": 40,
+  "stable": 0.15666666666666668,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "carry 24, stakes 6, tempo 10",
+  "facts": "He made 46% of the team's runs. On the facts we have, the match didn't hinge on it.",
   "result": "win"
  },
  {
@@ -3026,6 +3060,23 @@
   "result": "win"
  },
  {
+  "id": 1628,
+  "name": "Gundappa Viswanath",
+  "runs": 139,
+  "year": 1974,
+  "opponent": "West Indies",
+  "venue": "Eden Gardens",
+  "score": 45,
+  "stable": 0.47333333333333333,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 10, carry 24, stakes 6, occasion 5",
+  "facts": "His side trailed by 7 when the innings began. He made 44% of the team's 316. The team won by 85 runs. It was a Boxing Day or New Year Test.",
+  "result": "win"
+ },
+ {
   "id": 1635,
   "name": "Mahela Jayawardene",
   "runs": 139,
@@ -3040,6 +3091,23 @@
   "today": null,
   "parts": "need 20, carry 5, stakes 15",
   "facts": "He made 23% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
+  "id": 1716,
+  "name": "Lindsay Hassett",
+  "runs": 137,
+  "year": 1948,
+  "opponent": "England",
+  "venue": "Nottingham",
+  "score": 51,
+  "stable": 0.82,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 15, carry 5, stakes 6, tempo 25",
+  "facts": "His side trailed by 165 when the innings began. He made 27% of the team's 509. The team won by 8 wickets. A slow grind at 36 runs per 100 balls.",
   "result": "win"
  },
  {
@@ -4366,6 +4434,23 @@
   "today": null,
   "parts": "need 20, carry 14, finish 5, stakes 6",
   "facts": "His side trailed by 305 when the innings began. He made 32% of the team's 322. The team won by 3 wickets.",
+  "result": "win"
+ },
+ {
+  "id": 3962,
+  "name": "Javed Miandad",
+  "runs": 104,
+  "year": 1984,
+  "opponent": "New Zealand",
+  "venue": "Hyderabad (Sind)",
+  "score": 50,
+  "stable": 0.8066666666666666,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 24, stakes 6",
+  "facts": "His side trailed by 267 when the innings began. He made 45% of the team's 230. The team won by 7 wickets.",
   "result": "win"
  },
  {
