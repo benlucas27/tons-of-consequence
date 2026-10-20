@@ -162,6 +162,10 @@ for (const cb of [...combos.values()].slice(0, limit)) {
         }
         if (idx.length !== 1) { if (idx.length > 1) { ambiguous += 1; if (process.env.DEBUG_AMBIG) console.log('AMBIG', c.venue, c.year, c.opponent, idx.map((i) => tests[i].venueText).join(' | ')); } still.push(c); continue; }
         const i = idx[0];
+        { // a southern-summer season spans two years: the Test must have started in the year we have for the hundred
+          const ym = /in (\d{4})(?:[–-]\d{2,4})?$/.exec(title); const st = tests[i].start;
+          if (ym && st) { const two = /in \d{4}[–-]/.test(title); const ty = two ? (Number(st.slice(0, 2)) >= 7 ? Number(ym[1]) : Number(ym[1]) + 1) : Number(ym[1]); if (ty !== c.year) { still.push(c); continue; } }
+        }
         if (!tests[i].winner) { still.push(c); continue; }
         const me = teamName(c);
         let mine = 0, theirs = 0, unreadable = false;
