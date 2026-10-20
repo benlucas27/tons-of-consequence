@@ -1,4 +1,4 @@
-# DRAFT, NOT ACTIVE. To switch it on, move this file to .github/workflows/season-update.yml (Ben's go-ahead needed).
+# Season update (switched on 20 Oct 2026 with Ben's go-ahead).
 # Keeps new hundreds coming through the Australian summer: every day from October to March (about 7am Sydney time)
 # it adds new centuries from Cricsheet, settles finished matches, refreshes the verdicts, and publishes only if the
 # tests and build pass. The monthly update still does the full audit. Can also be run by hand from GitHub > Actions.
