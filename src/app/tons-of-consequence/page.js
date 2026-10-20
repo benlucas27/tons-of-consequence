@@ -1,5 +1,7 @@
 import Link from 'next/link';
-import { LEADERS, MEASURED_TOTAL, TONS_TOTAL } from '@/lib/consequence';
+import { MEASURED_TOTAL, TONS_TOTAL } from '@/lib/consequence';
+import { BOARD } from '@/lib/batterBoard';
+import TocBoard from '@/components/TocBoard';
 import { TOTAL } from '@/lib/dataset';
 import { THRESHOLD } from '@/lib/consequenceModel';
 
@@ -8,10 +10,7 @@ export const metadata = {
   description: 'A ton of consequence (a ToC) is a Test hundred the side needed: it helped them win the match or avoid losing it. Every ToC, the 13 laws behind the call, and how firm each verdict is.',
 };
 
-const MIN_MEASURED = 8;
-
 export default function TonsOfConsequence() {
-  const board = LEADERS.filter((b) => b.measured >= MIN_MEASURED).slice(0, 40);
   return (
     <article className="prose toc-page">
       <p className="conn-note">Men&rsquo;s ToCs &middot; <Link href="/womens-tests">Women&rsquo;s ToCs</Link></p>
@@ -40,21 +39,9 @@ export default function TonsOfConsequence() {
       <h2>How much can we measure?</h2>
       <p>The ball-by-ball record is close to complete from about 2006, and older hundreds are judged from the result, the series and match reports. We can measure {MEASURED_TOTAL.toLocaleString()} of the {TOTAL.toLocaleString()} hundreds in the database, and {TONS_TOTAL.toLocaleString()} of them are tons of consequence. Don Bradman&rsquo;s 29 are measured by hand, on <Link href="/the-don">The Don</Link>. The rest will follow as their scorecards are collected.</p>
 
-      <h2>The batters with the most</h2>
-      <p className="conn-note">Tap a name to see every hundred and why it was, or wasn&rsquo;t.</p>
-      <table className="toc-board">
-        <thead><tr><th>Batter</th><th>Tons of consequence</th><th>Measured</th><th>Share</th></tr></thead>
-        <tbody>
-          {board.map((b) => (
-            <tr key={b.slug}>
-              <td><Link href={`/tons-of-consequence/${b.slug}`}>{b.name}</Link></td>
-              <td><b>{b.tons}</b></td>
-              <td>{b.measured}{b.measured < b.hundreds ? ` of ${b.hundreds}` : ''}</td>
-              <td>{Math.round((100 * b.tons) / b.measured)}%</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <h2>Every batter</h2>
+      <p className="conn-note">Search for anyone with a Test hundred, or sort by share, best single innings or team win rate. Tap a name to see every hundred and why it was, or wasn&rsquo;t.</p>
+      <TocBoard rows={BOARD} />
     </article>
   );
 }

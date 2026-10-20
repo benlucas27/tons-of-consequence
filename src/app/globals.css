@@ -614,3 +614,8 @@ body[data-door="1"] .s-bar { display: none; }
 .toc-note-none p { color: var(--ink-3); }
 .toc-tag { font: 700 11px/1 var(--ui); letter-spacing: .08em; color: var(--ball); border: 1.5px solid var(--ball); border-radius: 999px; padding: 3px 7px; }
 @media (max-width: 600px) { .toc-note-body { flex-direction: column; align-items: flex-start; } }
+.toc-controls { display: flex; flex-wrap: wrap; gap: 12px 18px; margin: 8px 0; font: 500 14px var(--ui); color: var(--ink-2); }
+.toc-controls label { display: grid; gap: 4px; }
+.toc-controls input, .toc-controls select { padding: 8px 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; min-width: 160px; }
+.toc-boardwrap { overflow-x: auto; }
+.toc-more { margin-top: 12px; padding: 10px 16px; font: 600 14px var(--ui); background: var(--panel-2); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; cursor: pointer; }
