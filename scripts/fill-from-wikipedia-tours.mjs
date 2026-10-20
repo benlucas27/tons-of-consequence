@@ -234,7 +234,8 @@ for (const cb of [...combos.values()].slice(0, limit)) {
   for (const c of cb.rows) {
     const list = cand[c.id];
     if (!list || !list.length) continue;
-    const best = list.find((x) => x.listed) || list.find((x) => x.yearOk && !x.ambig) || list.find((x) => !x.ambig) || list[0];
+    const rich = (x) => (x.tests[x.i].inns || []).length >= 2; // a page with each innings' total beats one with only the result
+    const best = list.find((x) => x.listed) || list.find((x) => x.yearOk && !x.ambig && rich(x)) || list.find((x) => x.yearOk && !x.ambig) || list.find((x) => !x.ambig && rich(x)) || list.find((x) => !x.ambig) || list[0];
     const { title, tests, i, m } = best;
     if (best.ambig) { // result only
       const w0 = tests[i].winner, me0 = teamName(c);
