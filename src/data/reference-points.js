@@ -320,8 +320,8 @@ export const REFERENCE_POINTS = {
    "drawn": 12,
    "lost": 5
   },
-  "measured": 32,
-  "tons": 3,
+  "measured": 34,
+  "tons": 4,
   "byTier": [
    16,
    9,
@@ -330,7 +330,7 @@ export const REFERENCE_POINTS = {
   ],
   "tonsByTier": [
    1,
-   2,
+   3,
    0,
    0
   ],
@@ -658,8 +658,8 @@ export const REFERENCE_POINTS = {
    "drawn": 2,
    "lost": 1
   },
-  "measured": 15,
-  "tons": 4,
+  "measured": 16,
+  "tons": 5,
   "byTier": [
    5,
    7,
@@ -667,7 +667,7 @@ export const REFERENCE_POINTS = {
    2
   ],
   "tonsByTier": [
-   0,
+   1,
    2,
    1,
    1
