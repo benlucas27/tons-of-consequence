@@ -1,0 +1,6 @@
+node_modules/
+.expo/
+dist/
+# made by scripts/make-baseline.mjs from the site's own data files
+assets/feed-baseline.json
+doors/
