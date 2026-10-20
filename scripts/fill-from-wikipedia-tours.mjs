@@ -87,7 +87,7 @@ function parseTests(wt, teamNames) {
   const underTest = (pos) => {
     let near = null;
     for (const h of heads) { if (h.at > pos) break; near = h; }
-    return near ? /\btest\b|tests\b/i.test(near.name) && !/tour|first-class|county|warm/i.test(near.name) : false;
+    return near ? /\btest\b|tests\b|\bfinal\b/i.test(near.name) && !/tour|first-class|county|warm|one day|odi|t20/i.test(near.name) : false;
   };
   const starts = [...wt.matchAll(/\{\{\s*(?:Two-innings cricket match|Cricket scorebox|Test cricket match|Test match|Cricket match summary)/gi)].map((m) => m.index);
   for (let k = 0; k < starts.length; k++) {

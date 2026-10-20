@@ -1819,6 +1819,23 @@
   "result": "win"
  },
  {
+  "id": 269,
+  "name": "Ijaz Ahmed",
+  "runs": 211,
+  "year": 1999,
+  "opponent": "Sri Lanka",
+  "venue": "Dhaka",
+  "score": 46,
+  "stable": 0.5633333333333334,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 14, stakes 12",
+  "facts": "His side trailed by 231 when the innings began. He made 36% of the team's 594. The team won by an innings and 175 runs. The series was still to be settled in this Test.",
+  "result": "win"
+ },
+ {
   "id": 278,
   "name": "Graham Gooch",
   "runs": 210,
@@ -2037,6 +2054,23 @@
   "today": null,
   "parts": "need 20, carry 14, stakes 6",
   "facts": "He made 31% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
+  "id": 396,
+  "name": "Inzamam-ul-Haq",
+  "runs": 200,
+  "year": 1999,
+  "opponent": "Sri Lanka",
+  "venue": "Dhaka",
+  "score": 46,
+  "stable": 0.5633333333333334,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 14, stakes 12",
+  "facts": "His side trailed by 231 when the innings began. He made 34% of the team's 594. The team won by an innings and 175 runs. The series was still to be settled in this Test.",
   "result": "win"
  },
  {
