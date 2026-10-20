@@ -2700,6 +2700,31 @@
   ]
  },
  {
+  "id": 3109,
+  "name": "Garry Sobers",
+  "runs": 113,
+  "year": 1969,
+  "opponent": "Australia",
+  "venue": "Sydney",
+  "evidence": "p",
+  "yours": {
+   "verdict": "yes",
+   "note": "We don't have the result or the score when he came in."
+  },
+  "rules": "no",
+  "score": 46,
+  "gate": "a loss: even a great hundred can't be a ton of consequence in a defeat",
+  "parts": "need 20, carry 14, stakes 12",
+  "reason": "A loss: even a great hundred can't be a ton of consequence in a defeat.",
+  "scenario": null,
+  "verdict": [
+   0,
+   null,
+   "A loss: even a great hundred can't be a ton of consequence in a defeat.",
+   "p"
+  ]
+ },
+ {
   "id": 4177,
   "name": "Mark Taylor",
   "runs": 102,

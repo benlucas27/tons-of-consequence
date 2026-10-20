@@ -2737,6 +2737,23 @@
   "result": "win"
  },
  {
+  "id": 1220,
+  "name": "Bill Lawry",
+  "runs": 151,
+  "year": 1969,
+  "opponent": "West Indies",
+  "venue": "Sydney",
+  "score": 42,
+  "stable": 0.29333333333333333,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "carry 5, stakes 12, tempo 25",
+  "facts": "He made 24% of the team's runs. On the facts we have, the match didn't hinge on it.",
+  "result": "win"
+ },
+ {
   "id": 1281,
   "name": "Stan McCabe",
   "runs": 149,
@@ -4332,6 +4349,23 @@
   "today": null,
   "parts": "need 15, carry 30, finish 10, stakes 6, opposition -10",
   "facts": "His side trailed by 162 when the innings began. He made 62% of the team's 165. The team won by 9 wickets.",
+  "result": "win"
+ },
+ {
+  "id": 4212,
+  "name": "Nawab of Pataudi snr",
+  "runs": 102,
+  "year": 1932,
+  "opponent": "Australia",
+  "venue": "Sydney",
+  "score": 51,
+  "stable": 0.81,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, stakes 6, tempo 25",
+  "facts": "His side trailed by 360 when the innings began. He made 19% of the team's 524. The team won by 10 wickets. A slow grind at 27 runs per 100 balls.",
   "result": "win"
  },
  {

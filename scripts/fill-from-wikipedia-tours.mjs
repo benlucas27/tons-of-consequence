@@ -150,6 +150,15 @@ for (const cb of [...combos.values()].slice(0, limit)) {
           const sur0 = c.name.split(' ').slice(-1)[0].toLowerCase().replace(/[^a-z]/g, '');
           const withHit = idx.filter((i) => (tests[i].inns || []).some((x) => x.runsText.includes(sur0) && new RegExp(`\\b${c.runs}\\b`).test(x.runsText)));
           if (withHit.length === 1) idx = withHit;
+          else {
+            // otherwise keep the Tests where his side has an innings that could hold the score (total and top scorer both at least his runs)
+            const me0 = teamName(c);
+            const can = (t) => { const mine = t.inns || []; if (!mine.length) return true; const sideIs = (x) => x && ((x.code && CODES[x.code] === me0) || (x.text && x.text.includes(stem(me0)))); const side = sideIs(t.t1) ? 1 : sideIs(t.t2) ? 2 : null; return side ? mine.some((x) => x.team === side && x.total != null && x.total >= c.runs && (Number((/(\d+)/.exec(x.runsText) || [])[1]) || 0) >= c.runs) : true; };
+            const feas = idx.filter((i) => can(tests[i]));
+            if (feas.length >= 1 && feas.length < idx.length) idx = feas;
+            const specific = ({ ssc: ['sinhalese'], rps: ['premadasa'], pss: ['saravanamuttu', 'p. sara'], ccc: ['colombo cricket club'] })[(/\((\w+)\)/.exec(c.venue) || [])[1]?.toLowerCase()];
+            if (idx.length > 1 && specific) { const sp = idx.filter((i) => specific.some((w) => tests[i].venueText.includes(w))); if (sp.length >= 1) idx = sp; }
+          }
         }
         if (idx.length !== 1) { if (idx.length > 1) { ambiguous += 1; if (process.env.DEBUG_AMBIG) console.log('AMBIG', c.venue, c.year, c.opponent, idx.map((i) => tests[i].venueText).join(' | ')); } still.push(c); continue; }
         const i = idx[0];
