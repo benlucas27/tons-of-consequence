@@ -1,13 +1,9 @@
 'use client';
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
+import { SORTS, sortBoard } from '@/lib/boardSort';
+import CardButtons from './CardButtons';
 
-const SORTS = {
-  tons: { label: 'Most ToCs', needsMin: false },
-  share: { label: 'Highest ToC share', needsMin: true },
-  peak: { label: 'Best single innings', needsMin: false },
-  wins: { label: 'Team win rate', needsMin: true },
-};
 const pct = (a, b) => (b ? Math.round((100 * a) / b) : null);
 
 /** The ToCs leaderboard: every batter, searchable, with four sorts. */
@@ -17,20 +13,7 @@ export default function TocBoard({ rows }) {
   const [min, setMin] = useState(8);
   const [all, setAll] = useState(false);
 
-  const list = useMemo(() => {
-    const needle = q.trim().toLowerCase();
-    const floor = SORTS[sort].needsMin ? min : 0;
-    const ok = rows.filter((r) => r.hundreds > 0 && (!needle || r.name.toLowerCase().includes(needle))
-      && (sort === 'wins' ? r.resultsKnown >= floor : sort === 'share' ? r.measured >= floor : true)
-      && (sort !== 'tons' || r.measured > 0 || needle));
-    const key = {
-      tons: (r) => [r.tons, r.measured ? r.tons / r.measured : 0],
-      share: (r) => [r.measured ? r.tons / r.measured : 0, r.tons],
-      peak: (r) => [r.peak ? r.peak.score : 0, r.tons],
-      wins: (r) => [r.resultsKnown ? r.wins / r.resultsKnown : 0, r.resultsKnown],
-    }[sort];
-    return ok.sort((a, b) => { const x = key(a), y = key(b); return y[0] - x[0] || y[1] - x[1] || a.name.localeCompare(b.name); });
-  }, [rows, q, sort, min]);
+  const list = useMemo(() => sortBoard(rows, { sort, min, query: q }), [rows, q, sort, min]);
 
   const searching = q.trim().length > 0;
   const shown = searching || all ? list : list.slice(0, 40);
@@ -44,6 +27,7 @@ export default function TocBoard({ rows }) {
           <label>At least <select value={min} onChange={(e) => setMin(Number(e.target.value))}>{[1, 5, 8, 10, 15, 20].map((n) => <option key={n} value={n}>{n}</option>)}</select> {sort === 'wins' ? 'hundreds with a known result' : 'measured hundreds'}</label>
         )}
       </div>
+      <CardButtons src={`/card/leaders?sort=${sort}&min=${min}`} name={`toc-leaders-${sort}`} label="Share this leaderboard" />
       <p className="conn-note">{list.length.toLocaleString()} {list.length === 1 ? 'batter' : 'batters'}. Team win rate counts matches won out of hundreds with a known result. Best innings is the Greatness score on the Default weighting.</p>
       <table className="toc-board">
         <thead><tr><th>Batter</th><th>ToCs</th><th>Measured</th><th>Share</th><th>Best innings</th><th>Team won</th></tr></thead>

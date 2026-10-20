@@ -5,6 +5,7 @@ import { TIERS, WHERE_LABEL } from '@/lib/matchFacts';
 import { inningsPath } from '@/lib/dataset';
 import { runsText, RESULT_LABEL } from '@/lib/format';
 import { careerMomentsFor } from '@/lib/helloSport';
+import CardButtons from '@/components/CardButtons';
 import HelloSportMoments from '@/components/HelloSportMoments';
 
 export function generateMetadata({ params }) {
@@ -12,6 +13,8 @@ export function generateMetadata({ params }) {
   if (!b) return { title: 'Batter not found' };
   return {
     title: `${b.name}: tons of consequence`,
+    openGraph: { images: [{ url: `/card/batter/${b.slug}?format=wide`, width: 1200, height: 630 }] },
+    twitter: { card: 'summary_large_image', images: [`/card/batter/${b.slug}?format=wide`] },
     description: `${b.name} has ${b.hundreds} Test hundreds. ${b.measured ? `Of the ${b.measured} we can measure, ${b.tons} were tons of consequence.` : 'We cannot measure them yet.'} Every one, and why.`,
   };
 }
@@ -30,6 +33,7 @@ export default function BatterPage({ params }) {
       <p className="conn-note"><Link href="/tons-of-consequence">&larr; Tons of Consequence</Link></p>
       <h1>{b.name}</h1>
       <p className="lede">{b.hundreds} Test hundreds. {b.measured ? <>Of the {b.measured} we can measure, <b>{b.tons}</b> were tons of consequence.</> : 'We cannot measure any of them yet.'}{b.measured < b.hundreds && b.measured > 0 ? ` The other ${b.hundreds - b.measured} are not measured yet: ${notMeasuredSummary(b)}.` : ''}</p>
+      <CardButtons src={`/card/batter/${b.slug}`} name={`toc-${b.slug}`} label="Share as a card" />
       <h2>Who against, and where</h2>
       <table className="toc-board toc-facts">
         <thead><tr><th></th><th>Hundreds</th>{b.measured > 0 && <th>Tons of consequence</th>}</tr></thead>
