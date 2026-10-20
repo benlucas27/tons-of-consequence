@@ -15,7 +15,7 @@ import HelloSportMoments from './HelloSportMoments';
 import ConsequenceNote from './ConsequenceStamp';
 import { storyStatus } from '@/lib/stories';
 import BiasNote from './BiasNote';
-import ShareCard from './ShareCard';
+import ShareCard, { cardWeighting } from './ShareCard';
 import { SITE_URL } from '@/lib/site';
 
 export default function InningsView({ id, consequence = null, facts = null }) {
@@ -163,7 +163,7 @@ export default function InningsView({ id, consequence = null, facts = null }) {
               <code>{shown}</code>
               <p>Opens straight to this innings, with your weighting.</p>
             </div>
-            <ShareCard params={{ type: 'innings', id: String(c.id) }} pageUrl={inningsPath(c)} shareText={`${c.name} ${runsText(c)} v ${c.opponent}, ${c.year}:`} />
+            <ShareCard params={{ type: 'innings', id: String(c.id), ...cardWeighting(order, bias) }} pageUrl={inningsPath(c, order, bias)} shareText={`${c.name} ${runsText(c)} v ${c.opponent}, ${c.year}:`} />
           </div>
         </aside>
       </article>

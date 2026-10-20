@@ -4,6 +4,10 @@ import { useState } from 'react';
 import { copyText, toast } from '@/lib/clientUtils';
 import { SIZES } from '@/lib/cards/theme';
 import { SITE_URL } from '@/lib/site';
+import { DEFAULT_ORDER, sameOrder, formatOrder } from '@/lib/scoring';
+
+/** The card's query for a reader's weighting: nothing for Default, otherwise o= (and bonus=). */
+export const cardWeighting = (order, bias) => (bias || !sameOrder(order, DEFAULT_ORDER) ? { o: formatOrder(order), ...(bias ? { bonus: bias } : {}) } : {});
 
 const cardUrl = (params, size, extra = '') => `/card?${new URLSearchParams({ ...params, size }).toString()}${extra}`;
 

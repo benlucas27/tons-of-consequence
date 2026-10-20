@@ -1,13 +1,41 @@
 /** Share cards: one function per card type, each returning the JSX for next/og plus the page it points to. */
 import { ballSvg } from '../ball.js';
 import { BY_ID, parseInningsId, rankAll, TOTAL, inningsPath } from '../dataset.js';
-import { tocForOrder, DEFAULT_ORDER, tierOf } from '../scoring.js';
+import { tocForOrder, DEFAULT_ORDER, tierOf, LEVER_BY_KEY, RANK_WEIGHTS, activePreset, parseOrder, parseBias, BIASES } from '../scoring.js';
 import { BATTER_BY_SLUG, LEADERS, BATTERS, verdictOf, MEASURED_TOTAL, TONS_TOTAL } from '../consequence.js';
 import { LAWS } from '../laws.js';
 import { runsText, ord, context } from '../format.js';
 import { C, SIZES, cut, pct } from './theme.js';
 
 const SITE = 'tonsofconsequence.com';
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+/** "Data as of 21 Oct 2026": the day this version of the site was built. */
+function asOf() {
+  const d = process.env.BUILD_DATE ? new Date(`${process.env.BUILD_DATE}T00:00:00Z`) : new Date();
+  return `Data as of ${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
+}
+
+/** The weighting a score was made with: the six criteria as a bar (widths are their weights) and what to call it. */
+const weightingOf = (params) => ({ order: parseOrder(params.o) || DEFAULT_ORDER, bias: parseBias(params.bonus) });
+function WeightLine({ order, bias, k }) {
+  const preset = activePreset(order, bias);
+  const name = preset ? `${preset} weighting` : 'Custom weighting';
+  return (
+    <div style={col({ gap: 6 * k, marginTop: 14 * k })}>
+      <div style={flex({ fontSize: 20 * k, color: C.muted, gap: 10 * k })}>
+        <div style={flex({ color: C.soft, fontWeight: 700 })}>{name}</div>
+        <div style={flex()}>{preset === 'Default' ? '' : order.map((key) => LEVER_BY_KEY[key].short).join(' › ')}</div>
+        {bias ? <div style={flex({ color: C.gold })}>{`+ ${BIASES[bias].name}`}</div> : null}
+      </div>
+      <div style={flex({ height: 26 * k, borderRadius: 5 * k, overflow: 'hidden' })}>
+        {order.map((key, i) => {
+          const l = LEVER_BY_KEY[key];
+          return <div key={key} style={flex({ width: `${RANK_WEIGHTS[i]}%`, background: l.hex, color: '#0b1c13', fontSize: 15 * k, fontWeight: 700, alignItems: 'center', justifyContent: 'center' })}>{l.code.toUpperCase()}</div>;
+        })}
+      </div>
+    </div>
+  );
+}
 const TIER_COLOUR = { legendary: C.gold, elite: C.green, great: '#5fb8e8', notable: C.soft };
 const flex = (extra = {}) => ({ display: 'flex', ...extra });
 const col = (extra = {}) => flex({ flexDirection: 'column', ...extra });
@@ -25,7 +53,7 @@ function Frame({ size, k, link, children }) {
       <div style={col({ flexGrow: 1, justifyContent: 'center', padding: `${14 * k}px 0` })}>{children}</div>
       <div style={flex({ justifyContent: 'space-between', alignItems: 'center', fontSize: 24 * k, color: C.muted })}>
         <div style={flex()}>{SITE}</div>
-        {size.width > size.height ? <div style={flex()}>The unofficial ranking of Test cricket centuries</div> : null}
+        <div style={flex({ fontSize: 20 * k })}>{asOf()}</div>
       </div>
     </div>
   );
@@ -110,34 +138,44 @@ function BatterCard({ size, k, params }) {
 function InningsCard({ size, k, params }) {
   const c = BY_ID.get(parseInningsId(params.id || ''));
   if (!c) return null;
-  const toc = tocForOrder(c, DEFAULT_ORDER);
+  const { order, bias } = weightingOf(params);
+  const toc = tocForOrder(c, order, bias);
   const tier = tierOf(toc);
-  const rank = rankAll(DEFAULT_ORDER).findIndex((x) => x.id === c.id) + 1;
+  const rank = rankAll(order, bias).findIndex((x) => x.id === c.id) + 1;
   const v = verdictOf(c.id);
   const tall = size.height > size.width;
+  const nameBlock = (
+    <div style={col()}>
+      <div style={flex({ fontSize: (c.name.length > 16 ? 56 : 66) * k, fontWeight: 700, textTransform: 'uppercase', lineHeight: 1 })}>{c.name}</div>
+      <div style={flex({ alignItems: 'baseline', gap: 18 * k, marginTop: 6 * k })}>
+        <div style={flex({ fontSize: (tall ? 200 : 110) * k, fontWeight: 700, color: C.red, lineHeight: 1 })}>{runsText(c)}</div>
+        <div style={flex({ fontSize: 28 * k, color: C.soft })}>{c.balls ? `off ${c.balls} balls` : ''}</div>
+      </div>
+      <div style={flex({ fontSize: 28 * k, color: C.soft, marginTop: 4 * k })}>{context(c)}</div>
+    </div>
+  );
+  const scoreBlock = (
+    <div style={col({ alignItems: tall ? 'flex-start' : 'flex-end', marginTop: tall ? 18 * k : 0 })}>
+      <div style={flex({ fontSize: (tall ? 96 : 120) * k, fontWeight: 700, lineHeight: 1 })}>{toc.toFixed(1)}</div>
+      <div style={flex({ fontSize: 26 * k, letterSpacing: 5 * k, color: TIER_COLOUR[tier.key], textTransform: 'uppercase' })}>{tier.label}</div>
+      <div style={flex({ fontSize: 22 * k, color: C.muted })}>{`${ord(rank)} of ${TOTAL.toLocaleString()} Test centuries`}</div>
+    </div>
+  );
   return {
-    link: inningsPath(c),
+    link: inningsPath(c, order, bias),
     jsx: (
-      <Frame size={size} k={k} link={inningsPath(c)}>
-        <div style={flex({ fontSize: (c.name.length > 16 ? 60 : 72) * k, fontWeight: 700, textTransform: 'uppercase', lineHeight: 1 })}>{c.name}</div>
-        <div style={flex({ alignItems: 'baseline', gap: 20 * k, marginTop: 8 * k })}>
-          <div style={flex({ fontSize: (tall ? 200 : 120) * k, fontWeight: 700, color: C.red, lineHeight: 1 })}>{runsText(c)}</div>
-          <div style={flex({ fontSize: 30 * k, color: C.soft })}>{c.balls ? `off ${c.balls} balls` : ''}</div>
+      <Frame size={size} k={k} link="">
+        <div style={flex({ flexDirection: tall ? 'column' : 'row', justifyContent: 'space-between', alignItems: tall ? 'flex-start' : 'flex-end' })}>
+          {nameBlock}
+          {scoreBlock}
         </div>
-        <div style={flex({ fontSize: 32 * k, color: C.soft, marginTop: 8 * k })}>{context(c)}</div>
         {v && (
-          <div style={col({ marginTop: 18 * k, padding: `${14 * k}px ${22 * k}px`, border: `3px solid ${v.passes ? C.gold : C.dim}`, borderRadius: 10 * k })}>
-            <div style={flex({ fontSize: 34 * k, fontWeight: 700, letterSpacing: 4 * k, color: v.passes ? C.gold : C.soft })}>{v.passes ? 'A TON OF CONSEQUENCE' : 'A GOOD TON'}</div>
-            <div style={flex({ fontSize: 26 * k, color: C.soft, marginTop: 8 * k, lineHeight: 1.3 })}>{cut(v.because, tall ? 330 : 150)}</div>
+          <div style={col({ marginTop: 16 * k, padding: `${12 * k}px ${22 * k}px`, border: `3px solid ${v.passes ? C.gold : C.dim}`, borderRadius: 10 * k })}>
+            <div style={flex({ fontSize: 28 * k, fontWeight: 700, letterSpacing: 4 * k, color: v.passes ? C.gold : C.soft })}>{v.passes ? 'A TON OF CONSEQUENCE' : 'A GOOD TON'}</div>
+            <div style={flex({ fontSize: 22 * k, color: C.soft, marginTop: 4 * k, lineHeight: 1.3 })}>{cut(v.because, tall ? 330 : 130)}</div>
           </div>
         )}
-        <div style={flex({ alignItems: 'baseline', gap: 22 * k, marginTop: 26 * k })}>
-          <div style={flex({ fontSize: 72 * k, fontWeight: 700, lineHeight: 1 })}>{toc.toFixed(1)}</div>
-          <div style={col({ fontSize: 26 * k })}>
-            <div style={flex({ color: TIER_COLOUR[tier.key], letterSpacing: 5 * k, textTransform: 'uppercase' })}>{tier.label}</div>
-            <div style={flex({ color: C.muted })}>{`${ord(rank)} of ${TOTAL.toLocaleString()} Test centuries`}</div>
-          </div>
-        </div>
+        <WeightLine order={order} bias={bias} k={k} />
       </Frame>
     ),
   };
@@ -201,14 +239,15 @@ function BoardCard({ size, k, params }) {
   };
 }
 
-function RankingsCard({ size, k }) {
-  const rows = rankAll(DEFAULT_ORDER).slice(0, size.height > 1000 ? 10 : 4);
+function RankingsCard({ size, k, params }) {
+  const { order, bias } = weightingOf(params);
+  const rows = rankAll(order, bias).slice(0, size.height > 1000 ? 9 : 3);
   return {
     link: '/',
     jsx: (
       <Frame size={size} k={k} link="">
         <div style={flex({ fontSize: 46 * k, fontWeight: 700 })}>The greatest Test hundreds</div>
-        <div style={flex({ fontSize: 22 * k, color: C.muted, marginBottom: 18 * k })}>{`Ranked by Greatness score across ${TOTAL.toLocaleString()} centuries (default weighting)`}</div>
+        <div style={flex({ fontSize: 22 * k, color: C.muted, marginBottom: 18 * k })}>{`Ranked by Greatness score across ${TOTAL.toLocaleString()} Test centuries`}</div>
         {rows.map((c, i) => (
           <div key={c.id} style={flex({ alignItems: 'center', gap: 16 * k, marginBottom: 12 * k })}>
             <div style={flex({ width: 44 * k, fontSize: 28 * k, color: C.muted })}>{i + 1}</div>
@@ -219,6 +258,7 @@ function RankingsCard({ size, k }) {
             <div style={flex({ fontSize: 40 * k, fontWeight: 700, color: C.gold })}>{c.toc.toFixed(1)}</div>
           </div>
         ))}
+        <WeightLine order={order} bias={bias} k={k} />
       </Frame>
     ),
   };
