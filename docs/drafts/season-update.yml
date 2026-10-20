@@ -1,0 +1,51 @@
+# DRAFT, NOT ACTIVE. To switch it on, move this file to .github/workflows/season-update.yml (Ben's go-ahead needed).
+# Keeps new hundreds coming through the Australian summer: every day from October to March (about 7am Sydney time)
+# it adds new centuries from Cricsheet, settles finished matches, refreshes the verdicts, and publishes only if the
+# tests and build pass. The monthly update still does the full audit. Can also be run by hand from GitHub > Actions.
+name: Season update
+
+on:
+  schedule:
+    - cron: '23 20 * 10-12,1-3 *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: season-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Add new centuries and settle finished matches
+        run: node scripts/add-new-centuries.mjs --write | tee update.log
+
+      - name: Refresh the Consequence Test verdicts
+        run: node scripts/build-consequence.mjs --download
+
+      - run: npm test
+      - run: npm run build
+
+      - name: Commit and publish
+        run: |
+          if git diff --quiet -- src/data/sample.js src/data/consequence.js src/data/ton-ids.js; then
+            echo "Nothing new today."
+            exit 0
+          fi
+          git config user.name "tons-of-consequence-bot"
+          git config user.email "tons-of-consequence-bot@users.noreply.github.com"
+          { echo "data: season update"; echo; cat update.log; } > commit-message.txt
+          git add src/data/sample.js src/data/consequence.js src/data/ton-ids.js
+          git commit -F commit-message.txt
+          git pull --rebase origin main
+          git push

@@ -619,3 +619,6 @@ body[data-door="1"] .s-bar { display: none; }
 .toc-controls input, .toc-controls select { padding: 8px 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; min-width: 160px; }
 .toc-boardwrap { overflow-x: auto; }
 .toc-more { margin-top: 12px; padding: 10px 16px; font: 600 14px var(--ui); background: var(--panel-2); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; cursor: pointer; }
+.toc-latest { list-style: none; padding: 0; margin: 0 0 8px; display: grid; gap: 6px; font: 400 16px/1.5 var(--prose); color: var(--ink-2); }
+.toc-latest a { color: var(--sky); text-decoration: none; }
+.toc-latest b { color: var(--ink); font-weight: 600; }
