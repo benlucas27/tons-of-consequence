@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import CompareBuilder from '@/components/CompareBuilder';
 
-export const metadata = {
+const metadata = {
   title: 'Compare innings and careers',
   description: 'Pick any two Test centuries for a verdict on your weighting, or compare whole careers, starting with The Big Four: Smith, Kohli, Root and Williamson.',
 };
