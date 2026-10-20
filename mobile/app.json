@@ -23,6 +23,12 @@
       "expo-font",
       "expo-splash-screen",
       "expo-status-bar"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "f2ed77c0-7045-4c6e-b5ed-862e9e705b84"
+      }
+    },
+    "owner": "blucas27s-team"
   }
 }
