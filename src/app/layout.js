@@ -3,6 +3,7 @@ import { Barlow_Condensed, Barlow, Newsreader } from 'next/font/google';
 import SiteBar from '@/components/SiteBar';
 import Footer from '@/components/Footer';
 import Toaster from '@/components/Toaster';
+import RegisterSW from '@/components/RegisterSW';
 import { SITE_URL } from '@/lib/site';
 import { Analytics } from '@vercel/analytics/next';
 
@@ -11,6 +12,9 @@ const ui = Barlow({ subsets: ['latin'], weight: ['400', '500', '600'], variable:
 const prose = Newsreader({ subsets: ['latin'], weight: ['400', '500'], variable: '--font-prose', display: 'swap', adjustFontFallback: false });
 
 export const metadata = {
+  applicationName: 'Tons of Consequence',
+  appleWebApp: { capable: true, title: 'Tons of ToC', statusBarStyle: 'black-translucent' },
+  icons: { apple: '/pwa-icon/180' },
   metadataBase: new URL(SITE_URL),
   title: {
     default: 'Tons of Consequence — The Unofficial Ranking of Test Cricket Centuries',
@@ -46,6 +50,7 @@ export default function RootLayout({ children }) {
         <Footer />
         <Toaster />
         <Analytics />
+        <RegisterSW />
       </body>
     </html>
   );
