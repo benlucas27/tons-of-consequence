@@ -30,22 +30,26 @@ jobs:
       - name: Add new centuries and settle finished matches
         run: node scripts/add-new-centuries.mjs --write | tee update.log
 
+      # Verdicts are only rebuilt when new hundreds arrived, and never published if an existing yes/no changes.
       - name: Refresh the Consequence Test verdicts
-        run: node scripts/build-consequence.mjs --download
+        run: |
+          if git diff --quiet -- src/data/sample.js; then echo "No new hundreds: verdicts left as they are."; exit 0; fi
+          node scripts/build-consequence.mjs --download
+          node scripts/check-verdict-flips.mjs
 
       - run: npm test
       - run: npm run build
 
       - name: Commit and publish
         run: |
-          if git diff --quiet -- src/data/sample.js src/data/consequence.js src/data/ton-ids.js; then
+          if git diff --quiet -- src/data docs/drafts; then
             echo "Nothing new today."
             exit 0
           fi
           git config user.name "tons-of-consequence-bot"
           git config user.email "tons-of-consequence-bot@users.noreply.github.com"
           { echo "data: season update"; echo; cat update.log; } > commit-message.txt
-          git add src/data/sample.js src/data/consequence.js src/data/ton-ids.js
+          git add src/data docs/drafts
           git commit -F commit-message.txt
           git pull --rebase origin main
           git push
