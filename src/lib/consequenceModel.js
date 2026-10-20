@@ -27,8 +27,8 @@ export function modelV3(f, wm = {}, th = THRESHOLD) {
   let gateWhy = '';
   if (f.result === 'loss') gateWhy = "a loss: even a great hundred can't be a ton of consequence in a defeat";
   else if (dead && !(f.sideAhead && f.result === 'win')) gateWhy = f.result === 'win' ? 'a dead rubber, and his side had already lost the series' : 'a dead rubber (the series was already decided) that his side did not win';
-  else if (f.result === 'draw' && f.inn == null) gateWhy = 'a draw, and we do not know which innings it was';
   else if (f.result === 'draw' && f.partial) gateWhy = 'a draw: without a ball-by-ball record we cannot say the hundred saved it';
+  else if (f.result === 'draw' && f.inn == null) gateWhy = 'a draw, and we do not know which innings it was';
   else if (f.result === 'draw' && f.tier >= 3) gateWhy = "a draw against a lower-tier side: a hundred doesn't save a draw against a side like that";
   else if (f.result === 'draw' && f.overs != null && f.overs < DRAW_CUT_SHORT && !slowGrind) gateWhy = 'a draw cut short by the weather: the weather saved the match, not the hundred';
   else if (f.result === 'draw' && !inDanger) gateWhy = "a draw, and his side was never in danger of losing, so the hundred didn't save anything";

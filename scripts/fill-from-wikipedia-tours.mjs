@@ -164,7 +164,12 @@ for (const cb of [...combos.values()].slice(0, limit)) {
         const i = idx[0];
         { // a southern-summer season spans two years: the Test must have started in the year we have for the hundred
           const ym = /in (\d{4})(?:[–-]\d{2,4})?$/.exec(title); const st = tests[i].start;
-          if (ym && st) { const two = /in \d{4}[–-]/.test(title); const ty = two ? (Number(st.slice(0, 2)) >= 7 ? Number(ym[1]) : Number(ym[1]) + 1) : Number(ym[1]); if (ty !== c.year) { still.push(c); continue; } }
+          if (ym && st) { const two = /in \d{4}[–-]/.test(title); const ty = two ? (Number(st.slice(0, 2)) >= 7 ? Number(ym[1]) : Number(ym[1]) + 1) : Number(ym[1]); if (ty !== c.year) {
+            // some rows carry the season's first year for a January Test: keep the match only if this Test's box lists the batter on that score
+            const sur1 = c.name.split(' ').slice(-1)[0].toLowerCase().replace(/[^a-z]/g, '');
+            const listed = (tests[i].inns || []).some((x) => x.runsText.includes(sur1) && new RegExp(`\\b${c.runs}\\b`).test(x.runsText));
+            if (!listed) { still.push(c); continue; }
+          } }
         }
         if (!tests[i].winner) { still.push(c); continue; }
         const me = teamName(c);

@@ -146,8 +146,9 @@ for (const [idStr, f] of Object.entries(fullCases)) {
 }
 for (const row of ALL) {
   if (out[row.id] && !OLDER_RULINGS[row.id]) continue; // already has a verdict (ball-by-ball, Bradman, or a hand ruling)
-  const sf = SERIES_FACTS[row.id];
-  if (!sf || !sf[5] || !sf[6]) continue;
+  // a draw or a loss needs only the result: without a ball-by-ball record a draw cannot be shown to have been saved (law 1), and a loss is never a ton
+  const sf = SERIES_FACTS[row.id] || (['draw', 'loss'].includes(row.matchResult) ? [row.matchResult, null, null, null, 0, null, null, null, null, null] : null);
+  if (!sf || (!(sf[5] && sf[6]) && !['draw', 'loss'].includes(sf[0]))) continue;
   const [result, n, mm, lead, dead, inn, tot, leadStart, margin, start] = sf;
   const stakes = dead ? 'dead' : n === mm && lead === 0 ? 'decider' : n === mm ? 'on the line' : mm === 1 ? 'single' : 'live';
   const f = { partial: true, occasion: OCCASIONS[row.id]?.tag, occasionNote: OCCASIONS[row.id]?.note, result, inn, lead: leadStart, share: tot ? row.runs / tot : null, total: tot, stakes, sideAhead: lead != null && lead > 0, seriesNotAhead: lead == null || lead <= 0, margin, start, balls: row.balls, runs: row.runs, tier: tierOfOpponent(row.opponent, row.year), pos: WIKIPEDIA_FACTS[row.id]?.[1] ?? null, entryWkts: null, others: null, nextBest: null, followOn: false };

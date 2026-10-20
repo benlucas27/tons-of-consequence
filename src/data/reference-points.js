@@ -658,7 +658,7 @@ export const REFERENCE_POINTS = {
    "drawn": 2,
    "lost": 1
   },
-  "measured": 14,
+  "measured": 15,
   "tons": 4,
   "byTier": [
    5,

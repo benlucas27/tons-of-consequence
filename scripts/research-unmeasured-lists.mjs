@@ -121,7 +121,16 @@ for (const p of todo) {
           return page.parse ? { title: page.parse.title, wikitext: page.parse.wikitext['*'] } : null;
         } catch { return null; }
       });
-      if (!okTitle(wt)) wt = null;
+      if (!okTitle(wt)) {
+        // many biographies carry their own "Test centuries" table
+        wt = await cached(`bio_${p.name}`, async () => {
+          try {
+            const page = await get({ action: 'parse', page: p.name, prop: 'wikitext', redirects: '1' });
+            return page.parse ? { title: page.parse.title, wikitext: page.parse.wikitext['*'] } : null;
+          } catch { return null; }
+        });
+        if (!okTitle(wt)) wt = null;
+      }
     }
   } catch (e) { console.log(`ERROR ${p.name}: ${e.message}`); continue; }
   if (!wt) { noPage += 1; continue; }
