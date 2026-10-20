@@ -64,3 +64,17 @@ export const LEADERS = BATTERS.filter((b) => b.measured > 0).sort((a, b) => b.to
 
 export const MEASURED_TOTAL = Object.keys(CONSEQUENCE).length;
 export const TONS_TOTAL = Object.values(CONSEQUENCE).filter((v) => v[0] === 1).length;
+
+/** Why a hundred has no verdict yet: { kind, text }. Only for hundreds without one. */
+export function notMeasuredReason(c) {
+  const era = c.year < 2006 ? ' The ball-by-ball record is patchy before 2006.' : '';
+  switch (c.matchResult) {
+    case 'loss': return { kind: 'lost', text: 'His side lost this match, and a ton of consequence has to win or save one (law 1), so it can’t count. We haven’t recorded the full verdict.' };
+    case 'tie': return { kind: 'tied', text: 'The match was tied. That needs a hand call on law 1, which we haven’t made yet.' };
+    case 'unknown': case 'live': return { kind: 'result', text: 'We don’t have the result of this match yet.' };
+    case 'draw': return { kind: 'draw', text: `A draw counts only if his side was in danger of losing and we can show the hundred saved it. We can’t show that yet.${era}` };
+    default: return { kind: 'entry', text: `His side won, but we don’t have the score when he came in or where the series stood, so we can’t say whether the hundred was needed.${era}` };
+  }
+}
+
+export const NOT_MEASURED_LABEL = { lost: 'in a lost match', tied: 'in a tied match', result: 'with the result not yet known', draw: 'in a draw', entry: 'in a win, but without the match detail' };
