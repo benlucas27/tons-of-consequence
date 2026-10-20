@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { BATTER_BY_SLUG, verdictOf, wherePlayed } from '@/lib/consequence';
+import { BATTER_BY_SLUG, verdictOf, wherePlayed, notMeasuredReason, NOT_MEASURED_LABEL } from '@/lib/consequence';
 import { TIERS, WHERE_LABEL } from '@/lib/matchFacts';
 import { inningsPath } from '@/lib/dataset';
 import { runsText, RESULT_LABEL } from '@/lib/format';
 import { careerMomentsFor } from '@/lib/helloSport';
+import CardButtons from '@/components/CardButtons';
 import HelloSportMoments from '@/components/HelloSportMoments';
 
 export function generateMetadata({ params }) {
@@ -12,8 +13,16 @@ export function generateMetadata({ params }) {
   if (!b) return { title: 'Batter not found' };
   return {
     title: `${b.name}: tons of consequence`,
+    openGraph: { images: [{ url: `/card/batter/${b.slug}?format=wide`, width: 1200, height: 630 }] },
+    twitter: { card: 'summary_large_image', images: [`/card/batter/${b.slug}?format=wide`] },
     description: `${b.name} has ${b.hundreds} Test hundreds. ${b.measured ? `Of the ${b.measured} we can measure, ${b.tons} were tons of consequence.` : 'We cannot measure them yet.'} Every one, and why.`,
   };
+}
+
+function notMeasuredSummary(b) {
+  const n = {};
+  for (const c of b.innings) if (!verdictOf(c.id)) { const k = notMeasuredReason(c).kind; n[k] = (n[k] || 0) + 1; }
+  return Object.entries(n).map(([k, v]) => `${v} ${NOT_MEASURED_LABEL[k]}`).join(', ');
 }
 
 export default function BatterPage({ params }) {
@@ -23,7 +32,8 @@ export default function BatterPage({ params }) {
     <article className="prose toc-page">
       <p className="conn-note"><Link href="/tons-of-consequence">&larr; Tons of Consequence</Link></p>
       <h1>{b.name}</h1>
-      <p className="lede">{b.hundreds} Test hundreds. {b.measured ? <>Of the {b.measured} we can measure, <b>{b.tons}</b> were tons of consequence.</> : 'We cannot measure any of them yet.'}{b.measured < b.hundreds && b.measured > 0 ? ` The other ${b.hundreds - b.measured} are before the ball-by-ball record, so we do not have enough match data yet.` : ''}</p>
+      <p className="lede">{b.hundreds} Test hundreds. {b.measured ? <>Of the {b.measured} we can measure, <b>{b.tons}</b> were tons of consequence.</> : 'We cannot measure any of them yet.'}{b.measured < b.hundreds && b.measured > 0 ? ` The other ${b.hundreds - b.measured} are not measured yet: ${notMeasuredSummary(b)}.` : ''}</p>
+      <CardButtons src={`/card/batter/${b.slug}`} name={`toc-${b.slug}`} label="Share as a card" />
       <h2>Who against, and where</h2>
       <table className="toc-board toc-facts">
         <thead><tr><th></th><th>Hundreds</th>{b.measured > 0 && <th>Tons of consequence</th>}</tr></thead>
@@ -44,7 +54,7 @@ export default function BatterPage({ params }) {
               {v ? (
                 <p><b>{v.passes ? `A ton of consequence: ${v.scenario.toLowerCase()}.` : 'A good ton.'}</b> {v.because}</p>
               ) : (
-                <p className="toc-na">Not enough match data yet to say.</p>
+                <p className="toc-na"><b>Not measured.</b> {notMeasuredReason(c).text}</p>
               )}
             </li>
           );
