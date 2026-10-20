@@ -65,7 +65,7 @@ today's ToC list with yesterday's; if a NEW ToC appears it calls OneSignal's sen
 
 ## 7. Decisions I need from you (see the message)
 1. OK with `mobile/` inside the same repo (recommended) rather than a new repo.
-2. App ID (permanent after first upload): suggest `xyz.haveaplan.tonsofconsequence`.
+2. App ID (permanent after first upload): decided: `com.tonsofconsequence.app` (your domain, reversed).
 3. Push: OneSignal (recommended) or Expo push + a new database.
 
 ## 8. Timeline (matches the 3 to 5 weeks)
