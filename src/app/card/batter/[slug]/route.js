@@ -29,7 +29,7 @@ export async function GET(req, { params }) {
         </div>
       </div>
       <div style={{ display: 'flex', gap: 16 }}>
-        <Stat big={big} value={share} label="TOC SHARE" />
+        <Stat big={big} value={share} label="ToC SHARE" />
         <Stat big={big} value={win} label="TEAM WON" />
         <Stat big={big} value={r.peak ? r.peak.score.toFixed(1) : '-'} label="BEST INNINGS" />
       </div>

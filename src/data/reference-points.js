@@ -190,7 +190,7 @@ export const REFERENCE_POINTS = {
    "drawn": 9,
    "lost": 0
   },
-  "measured": 26,
+  "measured": 27,
   "tons": 5,
   "byTier": [
    10,
@@ -237,13 +237,13 @@ export const REFERENCE_POINTS = {
  "Rahul Dravid|IND": {
   "hundreds": 36,
   "results": {
-   "known": 33,
-   "won": 13,
-   "drawn": 16,
+   "known": 36,
+   "won": 15,
+   "drawn": 17,
    "lost": 4
   },
   "measured": 36,
-  "tons": 4,
+  "tons": 3,
   "byTier": [
    9,
    11,
@@ -251,7 +251,7 @@ export const REFERENCE_POINTS = {
    6
   ],
   "tonsByTier": [
-   2,
+   1,
    0,
    2,
    0
@@ -315,12 +315,12 @@ export const REFERENCE_POINTS = {
  "Mahela Jayawardene|SL": {
   "hundreds": 34,
   "results": {
-   "known": 32,
-   "won": 16,
-   "drawn": 11,
+   "known": 34,
+   "won": 17,
+   "drawn": 12,
    "lost": 5
   },
-  "measured": 29,
+  "measured": 34,
   "tons": 4,
   "byTier": [
    16,
@@ -329,8 +329,8 @@ export const REFERENCE_POINTS = {
    6
   ],
   "tonsByTier": [
-   2,
-   2,
+   1,
+   3,
    0,
    0
   ],
@@ -341,13 +341,13 @@ export const REFERENCE_POINTS = {
  "Younis Khan|PAK": {
   "hundreds": 34,
   "results": {
-   "known": 31,
-   "won": 16,
+   "known": 34,
+   "won": 19,
    "drawn": 8,
    "lost": 7
   },
   "measured": 34,
-  "tons": 3,
+  "tons": 2,
   "byTier": [
    13,
    10,
@@ -355,7 +355,7 @@ export const REFERENCE_POINTS = {
    4
   ],
   "tonsByTier": [
-   2,
+   1,
    0,
    1,
    0
@@ -424,7 +424,7 @@ export const REFERENCE_POINTS = {
    "drawn": 5,
    "lost": 1
   },
-  "measured": 21,
+  "measured": 22,
   "tons": 2,
   "byTier": [
    11,
@@ -575,12 +575,12 @@ export const REFERENCE_POINTS = {
  "Michael Clarke|AUS": {
   "hundreds": 28,
   "results": {
-   "known": 27,
-   "won": 16,
+   "known": 28,
+   "won": 17,
    "drawn": 8,
    "lost": 3
   },
-  "measured": 27,
+  "measured": 28,
   "tons": 2,
   "byTier": [
    14,
@@ -658,8 +658,8 @@ export const REFERENCE_POINTS = {
    "drawn": 2,
    "lost": 1
   },
-  "measured": 10,
-  "tons": 4,
+  "measured": 17,
+  "tons": 6,
   "byTier": [
    5,
    7,
@@ -667,7 +667,7 @@ export const REFERENCE_POINTS = {
    2
   ],
   "tonsByTier": [
-   0,
+   2,
    2,
    1,
    1

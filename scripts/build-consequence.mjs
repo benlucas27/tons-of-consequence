@@ -146,12 +146,13 @@ for (const [idStr, f] of Object.entries(fullCases)) {
 }
 for (const row of ALL) {
   if (out[row.id] && !OLDER_RULINGS[row.id]) continue; // already has a verdict (ball-by-ball, Bradman, or a hand ruling)
-  const sf = SERIES_FACTS[row.id];
-  if (!sf || !sf[5] || !sf[6]) continue;
+  // a draw or a loss needs only the result: without a ball-by-ball record a draw cannot be shown to have been saved (law 1), and a loss is never a ton
+  const sf = SERIES_FACTS[row.id] || (['draw', 'loss'].includes(row.matchResult) ? [row.matchResult, null, null, null, 0, null, null, null, null, null] : null);
+  if (!sf || (!(sf[5] && sf[6]) && !['draw', 'loss'].includes(sf[0]))) continue;
   const [result, n, mm, lead, dead, inn, tot, leadStart, margin, start] = sf;
   const stakes = dead ? 'dead' : n === mm && lead === 0 ? 'decider' : n === mm ? 'on the line' : mm === 1 ? 'single' : 'live';
   const f = { partial: true, occasion: OCCASIONS[row.id]?.tag, occasionNote: OCCASIONS[row.id]?.note, result, inn, lead: leadStart, share: tot ? row.runs / tot : null, total: tot, stakes, sideAhead: lead != null && lead > 0, seriesNotAhead: lead == null || lead <= 0, margin, start, balls: row.balls, runs: row.runs, tier: tierOfOpponent(row.opponent, row.year), pos: WIKIPEDIA_FACTS[row.id]?.[1] ?? null, entryWkts: null, others: null, nextBest: null, followOn: false };
-  if (OLDER_RULINGS[row.id]) { if (out[row.id]) { const mm = modelV3(f); calib.olderTotal = (calib.olderTotal || 0) + 1; if (mm.ton !== (out[row.id][0] === 1)) addRerun(row, { verdict: out[row.id][0] === 1 ? 'yes' : 'no', note: out[row.id][2] }, f, mm, 'p'); } continue; }
+  if (OLDER_RULINGS[row.id]) { if (out[row.id]) { const mm = modelV3(f); calib.olderTotal = (calib.olderTotal || 0) + 1; if (mm.ton !== (out[row.id][0] === 1)) addRerun(row, { verdict: out[row.id][0] === 1 ? 'yes' : 'no', note: out[row.id][2] }, f, mm, 'p'); else if (/We don't have the result/.test(out[row.id][2])) { const d = mm.ton ? describeTon(f, mm) : null; out[row.id] = [mm.ton ? 1 : 0, d ? d.scenario : null, mm.ton ? d.reason : describeGoodTon(f, mm), 'p']; } } continue; }
   { const mm = modelV3(f); scoreDump[row.id] = { score: mm.score, gate: mm.gate, why: mm.gateWhy, parts: Object.entries(mm.parts).filter(([, v]) => v).map(([k, v]) => `${k} ${Math.round(v * 10) / 10}`).join(', '), evidence: 'p', facts: mm.ton ? describeTon(f, mm).reason : describeGoodTon(f, mm), result: f.result }; }
   const next = decide(row, f, 'p', null);
   if (next) { out[row.id] = next; v3Partial += 1; }
@@ -161,7 +162,15 @@ for (const row of ALL) {
 const finalIds = new Set([...Object.entries(CONSEQUENCE_OVERRIDES).filter(([, o]) => o.final).map(([k]) => Number(k.split('|')[3])), ...Object.keys(FINAL_OLDER_RULINGS).map(Number)]);
 rerun.splice(0, rerun.length, ...rerun.filter((r) => !finalIds.has(r.id)));
 for (const r of rerun) out[r.id] = r.verdict; 
-for (const [id, v] of Object.entries(FINAL_OLDER_RULINGS)) out[id] = v;
+// the final rulings win, but a terse ruling ("The match was won.", evidence r) does not replace a ball-by-ball verdict that says the same thing: keep the fuller note and the firmer evidence
+let keptBallByBall = 0;
+for (const [id, v] of Object.entries(FINAL_OLDER_RULINGS)) {
+  const cur = out[id];
+  if (cur && cur[3] === 'b' && cur[0] === v[0] && ['r', 'p'].includes(v[3])) { keptBallByBall += 1; continue; }
+  // the ruling disagrees with the rules, or has no ball-by-ball twin to keep: it stands, but if the ball-by-ball record exists it was made on that record
+  out[id] = cur && cur[3] === 'b' && ['r', 'p'].includes(v[3]) ? [v[0], v[1], v[2], 'b'] : v;
+}
+console.log(`${keptBallByBall} terse final rulings left in place where the ball-by-ball verdict agrees.`);
 fs.writeFileSync(path.join(root, 'docs/drafts/scores.json'), JSON.stringify(scoreDump));
 fs.writeFileSync(path.join(root, 'docs/drafts/review-rerun.json'), JSON.stringify(rerun, null, 1));
 console.log(`Rerun: ${rerun.length} of Ben's hand rulings disagree with the rules (${rerun.filter((r) => r.evidence === 'b').length} ball-by-ball, ${rerun.filter((r) => r.evidence === 'p').length} older, of ${calib.olderTotal || 0} older rulings with series facts).`);

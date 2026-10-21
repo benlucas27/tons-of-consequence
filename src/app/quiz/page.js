@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CardButtons from '@/components/CardButtons';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { QUESTIONS, PERSONA_BY_ID, PICKS, getPersona, tally, rankingsFor } from '@/lib/quiz';
@@ -100,6 +101,7 @@ export default function PubTest() {
         </section>
         <div className="quiz-actions">
           <button type="button" className="btn primary" style={{ minHeight: 52 }} onClick={seeRankings}>See your ranking →</button>
+          <CardButtons src={`/card/persona/${persona.id}?c=${PICKS.map((id) => counts[id]).join(',')}`} name={`toc-pub-test-${persona.id}`} label="Share my result" />
           <button type="button" className="btn" onClick={() => setStep(0)}>Retake the test</button>
         </div>
       </div>

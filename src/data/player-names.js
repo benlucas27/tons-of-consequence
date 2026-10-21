@@ -690,4 +690,7 @@ export const PLAYER_NAMES = {
   "WR Endean": "Russell Endean",
   "WU Tharanga": "Upul Tharanga",
   "WW Read": "Walter Read",
+  "Garfield Sobers": "Garry Sobers",
+  "Liton Das": "Litton Das",
+  "Nazmul Hossain Shanto": "Najmul Hossain Shanto",
 };
