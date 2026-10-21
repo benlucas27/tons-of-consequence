@@ -3,6 +3,8 @@
  * Made under the 12 laws, so they stand over the rules. id -> [1 if a ton of consequence else 0, scenario or null, reason, evidence].
  */
 export const FINAL_OLDER_RULINGS = {
+  // Renshaw 190 v South Africa, Durban 2026: the model called the first Test of an unfinished series "the decider" because it only knows the matches played so far.
+  4599: [1, "Carried the innings", "In at 3 for 84, 84 ahead. He made 49% of the team's 390, and no one else came close. The team won by 214 runs in the first Test of a three-Test series. He added 134 for the 9th wicket. He faced an elite attack.", "b"],
   396: [1, "Carried the innings", "The match reports back it up as a ton of consequence.", "r"],
   466: [1, "Made it count", "His side won the match, and the hundred mattered to it.", "r"],
   653: [0, null, "The match was won by an innings and 29 runs. On the facts we have, the match didn't hinge on it.", "r"],

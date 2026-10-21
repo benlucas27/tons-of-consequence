@@ -15,9 +15,9 @@ import HelloSportMoments from './HelloSportMoments';
 import ConsequenceNote from './ConsequenceStamp';
 import { storyStatus } from '@/lib/stories';
 import BiasNote from './BiasNote';
+import ShareCard, { cardWeighting } from './ShareCard';
 import { SITE_URL } from '@/lib/site';
 import { weightQuery } from '@/lib/scoring';
-import CardButtons from './CardButtons';
 
 export default function InningsView({ id, consequence = null, facts = null }) {
   const { order, bias } = useWeighting();
@@ -163,8 +163,8 @@ export default function InningsView({ id, consequence = null, facts = null }) {
               <button type="button" className="btn primary" onClick={copy}>Copy link to this innings</button>
               <code>{shown}</code>
               <p>Opens straight to this innings, with your weighting.</p>
-              <CardButtons src={`/card/innings/${c.id}${weightQuery(order, bias)}`} name={`toc-innings-${c.id}`} label="Share as a card" />
             </div>
+            <ShareCard params={{ type: 'innings', id: String(c.id), ...cardWeighting(order, bias) }} pageUrl={inningsPath(c, order, bias)} shareText={`${c.name} ${runsText(c)} v ${c.opponent}, ${c.year}:`} />
           </div>
         </aside>
       </article>

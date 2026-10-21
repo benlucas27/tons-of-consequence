@@ -11,7 +11,7 @@ export default function Privacy() {
     <article className="prose">
       <h1>Privacy</h1>
       <p className="lede">Short version: there are no accounts, no ads and no tracking across other sites. We count page views anonymously, with no cookies. We don&rsquo;t ask who you are and we don&rsquo;t keep what you ask.</p>
-      <p className="conn-note">Last updated 20 October 2026. Tons of Consequence is an independent project run by Ben Lucas.</p>
+      <p className="conn-note">Last updated 21 October 2026. Tons of Consequence is an independent project run by Ben Lucas.</p>
 
       <h2>On the website</h2>
       <ul>
@@ -21,6 +21,15 @@ export default function Privacy() {
         <li><strong>Voice questions.</strong> If you use the microphone on the Search page, your browser turns your speech into text. In Chrome and Safari that means the audio goes to the browser maker&rsquo;s own speech service. We never receive the audio.</li>
         <li><strong>Videos.</strong> Nothing from YouTube loads until you press play, and then it uses YouTube&rsquo;s privacy-enhanced player. Once it plays, YouTube&rsquo;s own privacy policy applies.</li>
         <li><strong>Hosting.</strong> The site is hosted by Vercel, which keeps standard server logs (such as the page requested, the time and your IP address) to run and secure the service, under its own policy.</li>
+      </ul>
+
+      <h2>In the iPhone app</h2>
+      <ul>
+        <li><strong>No accounts, no ads, no tracking.</strong> The app keeps the whole ranking and your chosen weighting on your phone, and it asks nobody who you are.</li>
+        <li><strong>New ToC alerts are optional.</strong> If you switch them on, we use OneSignal to send them. OneSignal receives an anonymous device code (a push token) and basic device details such as your country and language, only to deliver the notification. Switch the alerts off under More in the app, or in iOS Settings, and they stop.</li>
+        <li><strong>Share images.</strong> When you share an innings, a batter or a result as an image, the app asks our server to draw it. The request names the innings or batter and your weighting, nothing about you.</li>
+        <li><strong>Updates.</strong> The app checks our server for new data and downloads it when there is some. Like the website, our host keeps standard server logs of those requests.</li>
+        <li><strong>Location.</strong> The app does not use your location.</li>
       </ul>
 
       <h2>Through the Claude connector</h2>

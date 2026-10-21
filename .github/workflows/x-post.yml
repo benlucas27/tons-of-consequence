@@ -1,0 +1,59 @@
+# Posts the next approved item from social/x-queue.json to X, three times a day.
+# Runs in GitHub's cloud, so it does not depend on anyone being signed in to anything.
+# Times are UTC and sit a few minutes after the queue's slots (A 03:35, B 09:05, C 15:35); GitHub can start a run late,
+# and the script posts anything due, so a late start is fine.
+# By hand: GitHub > Actions > "Post to X" > Run workflow, then pick preview, verify or dry-run to test without posting.
+name: Post to X
+
+on:
+  schedule:
+    - cron: '40 3 * * *'
+    - cron: '10 9 * * *'
+    - cron: '40 15 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'preview = list the queue, verify = check the keys, dry-run = fetch the card and show the post, post = post the next due item'
+        type: choice
+        options: [post, preview, verify, dry-run]
+        default: preview
+
+permissions:
+  contents: write
+
+concurrency:
+  group: x-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run the poster
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          MODE: ${{ github.event.inputs.mode || 'post' }}
+        run: |
+          case "$MODE" in
+            preview) node scripts/x-post.mjs --preview ;;
+            verify) node scripts/x-post.mjs --verify ;;
+            dry-run) node scripts/x-post.mjs --dry-run ;;
+            *) node scripts/x-post.mjs ;;
+          esac
+      - name: Save what was posted
+        if: ${{ (github.event.inputs.mode || 'post') == 'post' }}
+        run: |
+          if git diff --quiet social/x-queue.json; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add social/x-queue.json
+          git commit -m "X queue: record what was posted [skip ci]"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push

@@ -4,12 +4,13 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useWeighting } from '@/lib/useWeighting';
-import { rankAll, applyFilters, movementOf, COUNTRIES, ERAS, SCORE_BANDS } from '@/lib/dataset';
+import { rankAll, rankingsPath, applyFilters, movementOf, COUNTRIES, ERAS, SCORE_BANDS } from '@/lib/dataset';
 import { calcVolatility } from '@/lib/volatility';
 import { NATIONS, DEFAULT_ORDER, sameOrder } from '@/lib/scoring';
 import { PERSONA_BY_ID } from '@/lib/quiz';
 import { copyText, toast } from '@/lib/clientUtils';
 import WeightPanel from './WeightPanel';
+import ShareCard, { cardWeighting } from './ShareCard';
 import Door from './Door';
 import Spotlight from './Spotlight';
 import RankRow from './RankRow';
@@ -130,6 +131,7 @@ export default function Rankings() {
           </div>
         )}
         <WeightPanel order={order} bias={bias} onChange={setOrder} />
+        {view === 'rankings' && <ShareCard params={{ type: 'rankings', ...cardWeighting(order, bias) }} pageUrl={rankingsPath(order, bias)} shareText="The greatest Test hundreds:" label="Share this top list" />}
         {view === 'rankings' && !activeFilters && <Spotlight ranked={ranked} order={order} bias={bias} />}
 
         <div className="tools">
