@@ -15,21 +15,19 @@ export function newTonIds(oldTonIds, newTonIds, oldHundredIds) {
 }
 
 /**
- * [{ headings, contents, inningsId }] ready to send. `byId` maps id to the hundred, `verdictOf` gives its scenario text.
- * Each message names the batter; the body says who and where, then the reason in a few words.
+ * [{ headings, contents, inningsId }] ready to send. `byId` maps id to the hundred.
+ * Each message leads with the batter and the score and ends on a question, so people open it to find out.
  */
-export function buildPushes(ids, byId, scenarioOf) {
+export function buildPushes(ids, byId) {
   const hundreds = ids.map((id) => byId.get(id)).filter(Boolean);
   if (!hundreds.length) return [];
   if (hundreds.length >= MANY) {
-    return [{ title: `${hundreds.length} new tons of consequence`, body: hundreds.slice(0, 3).map((c) => `${c.name} ${runs(c)}`).join(', ') + ' and more. Tap to see the ToCs.', inningsId: null }];
+    return [{ title: `${hundreds.length} new tons of consequence`, body: hundreds.slice(0, 3).map((c) => `${c.name} ${runs(c)}`).join(', ') + ' and more. Which ones really counted? Tap to see.', inningsId: null }];
   }
-  return hundreds.map((c) => {
-    const why = scenarioOf(c.id);
-    return {
-      title: `New ToC: ${c.name} ${runs(c)}`,
-      body: `v ${c.opponent}${c.venue ? `, ${c.venue}` : ''}, ${c.year}.${why ? ` ${why.charAt(0).toUpperCase()}${why.slice(1)}.` : ''}`,
-      inningsId: c.id,
-    };
-  });
+  // Written to make someone open the app: the score, then the question, not the answer.
+  return hundreds.map((c) => ({
+    title: `${c.name} scores ${runs(c)}`,
+    body: `v ${c.opponent}${c.venue ? `, ${c.venue}` : ''}. Was it a ToC? Where does it rank?`,
+    inningsId: c.id,
+  }));
 }

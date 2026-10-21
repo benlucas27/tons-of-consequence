@@ -14,22 +14,22 @@ test('an older hundred that gained a verdict later is not announced', () => {
   assert.deepEqual(newTonIds(new Set(), new Set([7]), [7]), []);
 });
 
-test('one new ton makes one push naming the batter, the match and the reason', () => {
-  const [p] = buildPushes([1], byId, () => 'carried the innings');
-  assert.equal(p.title, 'New ToC: Matt Renshaw 190');
-  assert.equal(p.body, 'v South Africa, Durban, 2026. Carried the innings.');
+test('one new ton makes one push: the score, then a question that makes you open it', () => {
+  const [p] = buildPushes([1], byId);
+  assert.equal(p.title, 'Matt Renshaw scores 190');
+  assert.equal(p.body, 'v South Africa, Durban. Was it a ToC? Where does it rank?');
   assert.equal(p.inningsId, 1);
 });
 
-test('not out is starred, and a missing reason is left out', () => {
-  const [p] = buildPushes([2], byId, () => null);
-  assert.equal(p.title, 'New ToC: Usman Khawaja 120*');
-  assert.equal(p.body, 'v South Africa, Durban, 2026.');
+test('not out is starred and the message never gives the verdict away', () => {
+  const [p] = buildPushes([2], byId);
+  assert.equal(p.title, 'Usman Khawaja scores 120*');
+  assert.doesNotMatch(p.body, /Yes|No:/);
 });
 
 test('a flood of new tons becomes one summary, and nothing new sends nothing', () => {
-  const pushes = buildPushes([1, 2, 3, 4], byId, () => null);
+  const pushes = buildPushes([1, 2, 3, 4], byId);
   assert.equal(pushes.length, 1);
   assert.match(pushes[0].title, /^4 new tons of consequence$/);
-  assert.deepEqual(buildPushes([], byId, () => null), []);
+  assert.deepEqual(buildPushes([], byId), []);
 });

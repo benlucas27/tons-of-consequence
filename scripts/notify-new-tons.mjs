@@ -16,7 +16,6 @@ import { pathToFileURL } from 'node:url';
 import { newTonIds, buildPushes } from '../src/lib/pushMessages.js';
 import { SAMPLE_CENTURIES } from '../src/data/sample.js';
 import { TON_IDS } from '../src/data/ton-ids.js';
-import { CONSEQUENCE } from '../src/data/consequence.js';
 import { PLAYER_NAMES } from '../src/data/player-names.js';
 
 const args = process.argv.slice(2);
@@ -34,7 +33,7 @@ const oldHundreds = (await atRef('src/data/sample.js', 'sample')).SAMPLE_CENTURI
 
 const ids = newTonIds(oldTons, TON_IDS, oldHundreds.map((c) => c.id));
 const byId = new Map(SAMPLE_CENTURIES.map((c) => [c.id, { ...c, name: c.fullName || PLAYER_NAMES[c.player] || c.player }]));
-const pushes = buildPushes(ids, byId, (id) => (CONSEQUENCE[id] ? CONSEQUENCE[id][1] : null));
+const pushes = buildPushes(ids, byId);
 
 if (!pushes.length) { console.log('No new tons of consequence: no notifications sent.'); process.exit(0); }
 for (const p of pushes) console.log(`${dry ? '[dry run] ' : ''}${p.title} | ${p.body}`);
