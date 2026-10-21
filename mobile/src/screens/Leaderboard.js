@@ -13,7 +13,7 @@ const VALUE = {
   wins: (r) => `${pct(r.wins, r.resultsKnown)}  (${r.wins} of ${r.resultsKnown})`,
 };
 
-export default function Leaderboard() {
+export default function Leaderboard({ navigation }) {
   const [sort, setSort] = useState('tons');
   const [query, setQuery] = useState('');
   const rows = useMemo(() => sortBoard(BOARD, { sort, min: 8, query }), [sort, query]);
@@ -32,14 +32,14 @@ export default function Leaderboard() {
         keyExtractor={(r) => r.slug}
         keyboardDismissMode="on-drag"
         renderItem={({ item, index }) => (
-          <View style={s.row}>
+          <Pressable style={s.row} onPress={() => navigation.navigate('Batter', { slug: item.slug })}>
             <Text style={s.rank}>{index + 1}</Text>
             <View style={{ flex: 1 }}>
               <Text style={s.name}>{item.name}</Text>
               <Text style={s.sub}>{item.hundreds} hundreds · {item.measured} measured</Text>
             </View>
             <Text style={s.value}>{VALUE[sort](item)}</Text>
-          </View>
+          </Pressable>
         )}
         ListEmptyComponent={<Text style={s.empty}>No batter matches that.</Text>}
       />
