@@ -12,7 +12,8 @@
       "bundleIdentifier": "com.tonsofconsequence.app",
       "buildNumber": "1",
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSLocationWhenInUseUsageDescription": "Tons of Consequence does not use your location. This line is only here because a notification library mentions it."
       }
     },
     "android": {
