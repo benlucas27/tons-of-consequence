@@ -28,3 +28,8 @@ OneSignal App ID in app.json, eas.json (production/preview), expo-doctor 21/21.
 4. App Store paperwork: docs/APP-STORE-LISTING.md (approved by Ben); add the privacy paragraph to /privacy on the site (needs Ben's OK, live text);
    take the 6 screenshots from TestFlight; fill App Store Connect (description, keywords, privacy answers); submit for review ONLY when Ben says.
 5. Before the first release: merge mobile-app into main (it only adds mobile/ and docs), after asking Ben.
+
+## Update (21 Oct 2026, later)
+Build #2 finished and was SUBMITTED to App Store Connect (TestFlight processing). App Store Connect app id 6825257483:
+https://appstoreconnect.apple.com/apps/6825257483/testflight/ios . Next: add Ben as an internal tester (TestFlight > Internal Testing > +), install from the
+TestFlight app, test alerts, then screenshots and listing (docs/APP-STORE-LISTING.md).
