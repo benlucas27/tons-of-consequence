@@ -2516,6 +2516,23 @@
   "result": "win"
  },
  {
+  "id": 877,
+  "name": "Warren Bardsley",
+  "runs": 164,
+  "year": 1912,
+  "opponent": "South Africa",
+  "venue": "Lord's",
+  "score": 50,
+  "stable": 0.8066666666666666,
+  "gate": true,
+  "why": "",
+  "evidence": "p",
+  "today": null,
+  "parts": "need 20, carry 24, stakes 6",
+  "facts": "His side trailed by 263 when the innings began. He made 42% of the team's 390. The team won by 10 wickets.",
+  "result": "win"
+ },
+ {
   "id": 880,
   "name": "John Edrich",
   "runs": 164,
