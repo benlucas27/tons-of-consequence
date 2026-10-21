@@ -33,3 +33,15 @@ OneSignal App ID in app.json, eas.json (production/preview), expo-doctor 21/21.
 Build #2 finished and was SUBMITTED to App Store Connect (TestFlight processing). App Store Connect app id 6825257483:
 https://appstoreconnect.apple.com/apps/6825257483/testflight/ios . Next: add Ben as an internal tester (TestFlight > Internal Testing > +), install from the
 TestFlight app, test alerts, then screenshots and listing (docs/APP-STORE-LISTING.md).
+
+## Overnight update (21-22 Oct 2026)
+- Push tested end to end on Ben's iPhone (subscribe, notification, tap opens the innings). Daily/monthly update notify step is live.
+- Privacy page now covers the app (live on main, 1c593dc).
+- Build 3 (location purpose string fix) built and submitted to TestFlight (non-interactive; eas.json has ascAppId 6825257483, EAS holds an App Store Connect API key).
+  Future builds: `cd mobile && npx eas-cli@latest build --platform ios --profile production --non-interactive` then
+  `npx eas-cli@latest submit --platform ios --profile production --id <build id> --non-interactive` (no Apple sign-in needed).
+- App Store Connect (app id 6825257483), filled and saved: promo text, description, keywords, support/marketing URL, copyright, categories (Sports + Entertainment).
+- NOT done (Ben decides / needs the phone): subtitle ("Every Test hundred, ranked" - field was not found on the App Information page, probably under the localised
+  version info), Content Rights, Age Rating questionnaire (answer all No), App Privacy answers (docs/APP-STORE-LISTING.md), privacy policy URL
+  (https://tonsofconsequence.com/privacy), review contact + notes, pricing (Free), the 6 screenshots, choose the build for the version, then "Add for Review".
+- mobile-app branch is still unmerged to main (asks Ben first). Submit for review only when Ben says.
