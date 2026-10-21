@@ -27,7 +27,7 @@ export default async function Reviews() {
       <p className="lede">Hundreds where readers have challenged the call, most challenged first. A challenge asks us to look at the facts again. Only a ruling changes a verdict.</p>
       <p className="review-counter"><b>{under.length}</b> {under.length === 1 ? 'innings' : 'innings'} under review · <b>{totalChallenges}</b> {totalChallenges === 1 ? 'challenge' : 'challenges'} so far</p>
       {counts === null && <p className="conn-note">The review list is not available right now. Try again soon.</p>}
-      {counts !== null && under.length === 0 && <p>Nothing is under review yet. Open any innings and press <b>Challenge</b> to add one.</p>}
+      {counts !== null && under.length === 0 && <p>Nothing is under review yet. Open any innings and press <b>Challenge this ruling</b> to add one.</p>}
       {under.length > 0 && (
         <table className="toc-board review-table">
           <thead><tr><th>Innings</th><th>Verdict today</th><th>Challenges</th><th>Why it is under review</th></tr></thead>
