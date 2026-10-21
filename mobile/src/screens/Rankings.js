@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useCallback, useTransition } from 'react';
+import React, { useMemo, useState, useCallback } from 'react';
 import { View, Text, TextInput, FlatList, Pressable, Modal, StyleSheet } from 'react-native';
 import { rankAll, applyFilters, movementOf, ERAS, SCORE_BANDS, COUNTRIES } from '../../../src/lib/dataset';
 import { PRESETS, NATIONS, LEVER_BY_KEY } from '../../../src/lib/scoring';
@@ -62,10 +62,9 @@ export default function Rankings({ navigation }) {
   const [custom, setCustom] = useState(false);
   const [more, setMore] = useState(false);
   // the tapped preset lights up at once; the ranking itself (4,628 innings re-scored) catches up a moment later
-  const [, startTransition] = useTransition();
   const [chosen, setChosen] = useState(undefined);
   const shown = chosen === undefined ? preset : chosen;
-  const pick = (name) => { setChosen(name); startTransition(() => { setPreset(name); setChosen(undefined); }); };
+  const pick = (name) => { setChosen(name); setTimeout(() => { setPreset(name); setChosen(undefined); }, 60); };
 
   const ranked = useMemo(() => rankAll(order, bias), [order, bias]);
   const rows = useMemo(() => applyFilters(ranked, { country, era, band, query }), [ranked, country, era, band, query]);
@@ -109,7 +108,6 @@ export default function Rankings({ navigation }) {
         initialNumToRender={12}
         maxToRenderPerBatch={10}
         windowSize={7}
-        removeClippedSubviews
         keyboardDismissMode="on-drag"
         keyboardShouldPersistTaps="handled"
         ListEmptyComponent={<Text style={s.empty}>No hundreds match.</Text>}
