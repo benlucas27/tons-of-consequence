@@ -57,6 +57,11 @@ YouTube loads until a reader presses play; a video that cannot be embedded links
 innings were done first, and no innings gets a video unless one was found and checked. Many from before the
 1950s have no footage. Check for dead links with `node scripts/check-videos.mjs`.
 
+### Share cards and the ToCs leaderboard (added 20 Oct 2026)
+- `/card/compare?a=ID&b=ID[&o=..&bonus=au]`, `/card/batter/<slug>` and `/card/leaders?sort=tons|share|peak|wins&min=8` return designed PNG cards (`format=portrait` 1080x1350 by default, `format=wide` 1200x630 for link previews, `download=1` to save). Shared look in `src/lib/cards.js`; the Share buttons are `src/components/CardButtons.js` (shares the image itself where the phone allows it). `/compare?a=&b=` and batter pages set these as their link-preview image.
+- The ToCs page lists every batter (`src/components/TocBoard.js`, rows from `src/lib/batterBoard.js`, sorting in `src/lib/boardSort.js`), shows the latest hundreds, and each batter page says why a hundred is not measured (`notMeasuredReason` in `src/lib/consequence.js`).
+- `docs/drafts/season-update.yml` is the weekly (Tuesday, Oct to Mar) season workflow, now switched on at `.github/workflows/season-update.yml`; the monthly update covers the rest of the year. `docs/MOBILE-APP-SCOPE.md` scopes a mobile app.
+
 ## Keeping the data up to date
 
 New centuries come from [Cricsheet](https://cricsheet.org)'s open ball-by-ball data.

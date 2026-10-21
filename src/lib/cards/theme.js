@@ -19,6 +19,6 @@ export const cut = (s, n) => {
 };
 export const pct = (a, b) => (b ? Math.round((a / b) * 100) : 0);
 /** Upper case for headings, but "ToC" / "ToCs" keep their house spelling. */
-export const up = (s) => String(s).toUpperCase().replace(/TOC(S?)\b/g, (_, s) => `ToC${s ? 's' : ''}`);
+export const up = (s) => String(s).toUpperCase().replace(/T[O]C(S?)\b/g, (_, s) => `ToC${s ? 's' : ''}`);
 /** A font size that keeps the longest line of a heading inside `width` px (condensed caps run about 0.46em a letter). */
 export const fit = (lines, width, max) => Math.min(max, Math.floor(width / (Math.max(...lines.map((l) => String(l).length)) * 0.46)));

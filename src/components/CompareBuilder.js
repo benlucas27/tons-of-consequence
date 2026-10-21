@@ -3,6 +3,8 @@
 import { useId, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useWeighting } from '@/lib/useWeighting';
+import CardButtons from './CardButtons';
+import { weightQuery } from '@/lib/scoring';
 import { rankAll } from '@/lib/dataset';
 import { searchInnings, findInnings } from '@/lib/ask';
 import { copyText, setUrlParam, toast } from '@/lib/clientUtils';
@@ -175,6 +177,7 @@ export default function CompareBuilder() {
           <div className="cmp-actions">
             <button type="button" className="btn" onClick={() => setBoth(b, a)}>Swap sides</button>
             <button type="button" className="btn" onClick={share}>Copy link</button>
+            <CardButtons src={`/card/compare?a=${left.id}&b=${right.id}${weightQuery(order, bias).replace('?', '&')}`} name={`toc-${left.id}-v-${right.id}`} label="Share as a card" />
           </div>
           <CompareResult items={[left, right]} order={order} bias={bias} />
         </section>

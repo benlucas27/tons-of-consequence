@@ -1,5 +1,7 @@
 import Link from 'next/link';
-import { MEASURED_TOTAL, TONS_TOTAL } from '@/lib/consequence';
+import { MEASURED_TOTAL, TONS_TOTAL, verdictOf } from '@/lib/consequence';
+import { ALL, inningsPath } from '@/lib/dataset';
+import { runsText } from '@/lib/format';
 import { BOARD } from '@/lib/batterBoard';
 import TocBoard from '@/components/TocBoard';
 import { TOTAL } from '@/lib/dataset';
@@ -9,6 +11,8 @@ export const metadata = {
   title: 'ToCs: how a ton of consequence is decided',
   description: 'A ton of consequence (a ToC) is a Test hundred the side needed: it helped them win the match or avoid losing it. Every ToC, the 13 laws behind the call, and how firm each verdict is.',
 };
+
+const LATEST = [...ALL].filter((c) => c.year >= 2026).sort((a, b) => b.id - a.id).slice(0, 8);
 
 export default function TonsOfConsequence() {
   return (
@@ -38,6 +42,19 @@ export default function TonsOfConsequence() {
 
       <h2>How much can we measure?</h2>
       <p>The ball-by-ball record is close to complete from about 2006, and older hundreds are judged from the result, the series and match reports. We can measure {MEASURED_TOTAL.toLocaleString()} of the {TOTAL.toLocaleString()} hundreds in the database, and {TONS_TOTAL.toLocaleString()} of them are tons of consequence. Don Bradman&rsquo;s 29 are measured by hand, on <Link href="/the-don">The Don</Link>. The rest will follow as their scorecards are collected.</p>
+
+      <h2>The latest hundreds</h2>
+      <p className="conn-note">The newest Test hundreds added to the database, with the call on each. New ones are added as soon as the match data lands.</p>
+      <ul className="toc-latest">
+        {LATEST.map((c) => {
+          const v = verdictOf(c.id);
+          return (
+            <li key={c.id}>
+              <Link href={inningsPath(c)}>{c.name} {runsText(c)}</Link> v {c.opponent}, {c.year}: <b>{v ? (v.passes ? 'a ton of consequence' : 'a good ton') : 'not measured yet'}</b>
+            </li>
+          );
+        })}
+      </ul>
 
       <h2>Every batter</h2>
       <p className="conn-note">Search for anyone with a Test hundred, or sort by share, best single innings or team win rate. Tap a name to see every hundred and why it was, or wasn&rsquo;t.</p>

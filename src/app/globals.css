@@ -635,3 +635,6 @@ body[data-door="1"] .s-bar { display: none; }
 .share-builder label { display: grid; gap: 4px; font: 500 14px var(--ui); color: var(--ink-2); }
 .share-builder input, .share-builder select { min-height: 44px; padding: 0 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-2); color: var(--ink); font: 400 16px var(--ui); }
 .share-types { display: flex; gap: 8px; flex-wrap: wrap; }
+.toc-latest { list-style: none; padding: 0; margin: 0 0 8px; display: grid; gap: 6px; font: 400 16px/1.5 var(--prose); color: var(--ink-2); }
+.toc-latest a { color: var(--sky); text-decoration: none; }
+.toc-latest b { color: var(--ink); font-weight: 600; }

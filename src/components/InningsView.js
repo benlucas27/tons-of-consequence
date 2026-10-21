@@ -17,6 +17,7 @@ import { storyStatus } from '@/lib/stories';
 import BiasNote from './BiasNote';
 import ShareCard, { cardWeighting } from './ShareCard';
 import { SITE_URL } from '@/lib/site';
+import { weightQuery } from '@/lib/scoring';
 
 export default function InningsView({ id, consequence = null, facts = null }) {
   const { order, bias } = useWeighting();

@@ -4,6 +4,9 @@ Ranks every Test cricket century ever scored by how much it actually mattered, n
 
 ## Language
 
+**ToC** (plural **ToCs**; short for ton of consequence):
+Always written exactly "ToC": capital T, lowercase o, capital C. Never TOC, Toc or toc in any text a reader sees (site, app, share images, notifications, docs). Code names such as `toc-board` and the `toc` field are fine. `tests/toc-spelling.test.mjs` fails the build if TOC or Toc appears in the site or app code.
+
 **Innings** (as a noun, singular and plural: "one innings", "many innings"):
 A single century-scoring batting performance by one player in one Test match. The unit everything else is computed on.
 _Avoid_: century (a stat about the innings, not the innings itself), hundred, knock.

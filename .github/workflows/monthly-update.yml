@@ -64,6 +64,7 @@ jobs:
       - run: npm run build
 
       - name: Commit and publish
+        id: publish
         run: |
           if git diff --quiet -- src/data/sample.js src/data/careers.js src/data/consequence.js src/data/ton-ids.js; then
             echo "Nothing new this month."
@@ -75,3 +76,14 @@ jobs:
           git add src/data/sample.js src/data/careers.js src/data/consequence.js src/data/ton-ids.js
           git commit -F commit-message.txt
           git push
+          echo "published=true" >> "$GITHUB_OUTPUT"
+
+      # New tons of consequence from this update go out as push notifications (OneSignal). Needs two repository secrets,
+      # ONESIGNAL_APP_ID and ONESIGNAL_API_KEY; without them it just says so. Never fails the run: the data is already live.
+      - name: Notify the app about new tons of consequence
+        if: steps.publish.outputs.published == 'true'
+        continue-on-error: true
+        env:
+          ONESIGNAL_APP_ID: ${{ secrets.ONESIGNAL_APP_ID }}
+          ONESIGNAL_API_KEY: ${{ secrets.ONESIGNAL_API_KEY }}
+        run: node scripts/notify-new-tons.mjs --from HEAD~1
