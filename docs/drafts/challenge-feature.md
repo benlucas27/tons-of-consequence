@@ -3,10 +3,10 @@
 Decided with Ben, 22 Oct 2026 (revised the same day). Nothing here changes any law or any verdict by itself. Ben's decision is the only thing that does. Audience is Australians; commentary from other countries is a signal, not a to-do list. AI-written copy is fine. This is NOT voting: there is no agree or disagree counter, because a fan vote would undercut a hard ruling.
 
 ## What people see
-**Button** on every innings page: **Challenge**. It opens a small box:
+**Button** on every innings page: **Challenge this ruling** (lime, `#c6ff3a`, opens a pop-up). It opens a small box:
 - *What should we look at?* One of: Facts look wrong / Situation missed (a follow-on, a collapse, series stakes) / Not enough data on this match / Other.
 - A box to write a note, 280 characters, optional. The note is for Ben only and is never shown anywhere public.
-- Submit. Then: "Added. N people have challenged this call."
+- Send. Then: "Added. N people have challenged this ruling."
 - No lines about which laws can or can't be challenged.
 
 **Under review list `/reviews`**, pretty basic:

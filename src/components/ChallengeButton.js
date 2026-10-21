@@ -34,7 +34,7 @@ export default function ChallengeButton({ id }) {
       if (!out.ok) { setMsg(out.error || 'Could not send that.'); setBusy(false); return; }
       setSent(true);
       setState((s) => ({ ...(s || {}), count: out.count || ((s && s.count) || 0) }));
-      setMsg(`Added. ${out.count} ${out.count === 1 ? 'person has' : 'people have'} challenged this call.`);
+      setMsg(`Added. ${out.count} ${out.count === 1 ? 'person has' : 'people have'} challenged this ruling.`);
     } catch { setMsg('Could not send that. Try again in a moment.'); }
     setBusy(false);
   }
@@ -45,12 +45,12 @@ export default function ChallengeButton({ id }) {
     <div className="challenge-box">
       {underReview && <p className="challenge-chip"><Link href="/reviews">Under review</Link> · {state.count} {state.count === 1 ? 'challenge' : 'challenges'}</p>}
       {decided && <p className="challenge-chip challenge-decided"><Link href="/reviews">Reviewed {state.decided || ''}: {state.outcome === 'changed' ? 'changed' : state.outcome === 'no-call' ? 'no call' : 'stands'}</Link>{state.note ? ` · ${state.note}` : ''}</p>}
-      <button type="button" className="btn challenge-btn" onClick={open}>Challenge this</button>
+      <button type="button" className="btn challenge-btn" onClick={open}>Challenge this ruling</button>
 
       <dialog ref={dialog} className="challenge-dialog" onClick={(e) => { if (e.target === dialog.current) close(); }} aria-labelledby={`challenge-title-${id}`}>
         <form className="challenge-form" onSubmit={submit}>
           <div className="challenge-head">
-            <h2 id={`challenge-title-${id}`}>Challenge this call</h2>
+            <h2 id={`challenge-title-${id}`}>Challenge this ruling</h2>
             <button type="button" className="challenge-x" onClick={close} aria-label="Close">×</button>
           </div>
           <fieldset disabled={sent || busy}>
