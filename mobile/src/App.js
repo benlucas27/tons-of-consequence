@@ -18,6 +18,7 @@ import PubTest from './screens/PubTest';
 import Womens from './screens/Womens';
 import HelloCricket from './screens/HelloCricket';
 import About from './screens/About';
+import ShareHost from './ShareHost';
 import { C, F } from './theme';
 
 const Tab = createBottomTabNavigator();
@@ -56,6 +57,7 @@ export default function App({ feedVersion, feedSource, counts }) {
               <Stack.Screen name="About" component={About} options={{ title: 'ABOUT' }} />
             </Stack.Navigator>
           </NavigationContainer>
+          <ShareHost />
         </WeightingProvider>
       </FeedInfo.Provider>
     </SafeAreaProvider>

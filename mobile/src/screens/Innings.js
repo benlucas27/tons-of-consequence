@@ -108,8 +108,8 @@ export default function Innings({ route, navigation }) {
         <Fact k="Played" v={where} />
       </View>
 
-      <Button label="Share as a card" primary onPress={() => shareCard(`/card/innings/${c.id}${weightQuery(order, bias)}`, `toc-innings-${c.id}`)} />
-      <Button label="Share a wide card" onPress={() => shareCard(`/card/innings/${c.id}${weightQuery(order, bias)}${weightQuery(order, bias) ? '&' : '?'}format=wide`, `toc-innings-${c.id}-wide`)} />
+      <Button label="Share as an image" primary onPress={() => shareCard(`/card/innings/${c.id}${weightQuery(order, bias)}`, `toc-innings-${c.id}`)} />
+      <Button label="Share as a wide image" onPress={() => shareCard(`/card/innings/${c.id}${weightQuery(order, bias)}${weightQuery(order, bias) ? '&' : '?'}format=wide`, `toc-innings-${c.id}-wide`)} />
 
       {others.length > 0 ? (
         <>

@@ -84,7 +84,7 @@ function InningsResult({ a, b }) {
           </View>
         );
       })}
-      <Button label="Share as a card" primary onPress={() => shareCard(`/card/compare?a=${cmp.a.id}&b=${cmp.b.id}${weightQuery(order, bias).replace('?', '&')}`, `toc-compare-${cmp.a.id}-${cmp.b.id}`)} />
+      <Button label="Share as an image" primary onPress={() => shareCard(`/card/compare?a=${cmp.a.id}&b=${cmp.b.id}${weightQuery(order, bias).replace('?', '&')}`, `toc-compare-${cmp.a.id}-${cmp.b.id}`)} />
     </View>
   );
 }

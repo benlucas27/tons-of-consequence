@@ -1,8 +1,8 @@
-import React, { useMemo, useState, useCallback } from 'react';
+import React, { useMemo, useState, useCallback, useTransition } from 'react';
 import { View, Text, TextInput, FlatList, Pressable, Modal, StyleSheet } from 'react-native';
 import { rankAll, applyFilters, movementOf, ERAS, SCORE_BANDS, COUNTRIES } from '../../../src/lib/dataset';
 import { PRESETS, NATIONS, LEVER_BY_KEY } from '../../../src/lib/scoring';
-import { verdictOf } from '../../../src/lib/consequence';
+import { TON_IDS } from '../../doors/ton-ids';
 import { runsText, fmt1 } from '../../../src/lib/format';
 import { useWeighting } from '../weighting';
 import { Chip, ChipRow, WeightBar, Legend, BiasNote, TocMark, Button, Small, P } from '../ui';
@@ -37,14 +37,13 @@ function Customise({ visible, order, onClose, onApply }) {
 }
 
 const Row = React.memo(function Row({ c, move, onPress }) {
-  const v = verdictOf(c.id);
   return (
     <Pressable onPress={() => onPress(c.id)} style={s.row}>
       <Text style={s.rank}>{c.rank}</Text>
       <View style={{ flex: 1, gap: 2 }}>
         <Text style={s.name}>{c.name} · {runsText(c)}</Text>
         <Text style={s.sub}>v {c.opponent} · {c.venue ? `${c.venue} · ` : ''}{c.year}</Text>
-        {v && v.passes ? <TocMark /> : null}
+        {TON_IDS.has(c.id) ? <TocMark /> : null}
       </View>
       <View style={{ alignItems: 'flex-end' }}>
         <Text style={s.score}>{fmt1(c.toc)}</Text>
@@ -62,6 +61,11 @@ export default function Rankings({ navigation }) {
   const [band, setBand] = useState(null);
   const [custom, setCustom] = useState(false);
   const [more, setMore] = useState(false);
+  // the tapped preset lights up at once; the ranking itself (4,628 innings re-scored) catches up a moment later
+  const [, startTransition] = useTransition();
+  const [chosen, setChosen] = useState(undefined);
+  const shown = chosen === undefined ? preset : chosen;
+  const pick = (name) => { setChosen(name); startTransition(() => { setPreset(name); setChosen(undefined); }); };
 
   const ranked = useMemo(() => rankAll(order, bias), [order, bias]);
   const rows = useMemo(() => applyFilters(ranked, { country, era, band, query }), [ranked, country, era, band, query]);
@@ -72,7 +76,7 @@ export default function Rankings({ navigation }) {
     <View style={{ paddingBottom: 6 }}>
       <TextInput style={s.search} value={query} onChangeText={setQuery} placeholder="Search a batter, team, ground or year" placeholderTextColor={C.mute} autoCorrect={false} clearButtonMode="while-editing" />
       <ChipRow>
-        {Object.keys(PRESETS).map((n) => <Chip key={n} label={n} on={preset === n} onPress={() => setPreset(n)} />)}
+        {Object.keys(PRESETS).map((n) => <Chip key={n} label={n} on={shown === n} onPress={() => pick(n)} />)}
         <Chip label={preset ? 'Your own…' : 'Your own ✓'} on={!preset} onPress={() => setCustom(true)} />
       </ChipRow>
       <View style={{ paddingHorizontal: 14, paddingTop: 6, gap: 4 }}>
@@ -102,8 +106,10 @@ export default function Rankings({ navigation }) {
         keyExtractor={(c) => String(c.id)}
         ListHeaderComponent={header}
         renderItem={({ item }) => <Row c={item} move={isDefault ? 0 : movementOf(item)} onPress={openInnings} />}
-        initialNumToRender={14}
-        windowSize={9}
+        initialNumToRender={12}
+        maxToRenderPerBatch={10}
+        windowSize={7}
+        removeClippedSubviews
         keyboardDismissMode="on-drag"
         keyboardShouldPersistTaps="handled"
         ListEmptyComponent={<Text style={s.empty}>No hundreds match.</Text>}

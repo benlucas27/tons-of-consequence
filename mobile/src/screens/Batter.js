@@ -22,7 +22,7 @@ export default function Batter({ route, navigation }) {
     <Screen>
       <H style={{ fontSize: 34 }}>{b.name}</H>
       <P>{b.hundreds} Test hundreds. {b.measured ? <>Of the {b.measured} we can measure, <Text style={{ color: C.gold, fontFamily: F.uiMed }}>{b.tons}</Text> were tons of consequence.</> : 'We cannot measure any of them yet.'}{b.measured < b.hundreds && b.measured > 0 ? ` The other ${b.hundreds - b.measured} are not measured yet: ${notMeasuredSummary(b)}.` : ''}</P>
-      <Button label="Share as a card" primary onPress={() => shareCard(`/card/batter/${b.slug}`, `toc-${b.slug}`)} />
+      <Button label="Share as an image" primary onPress={() => shareCard(`/card/batter/${b.slug}`, `toc-${b.slug}`)} />
 
       <SectionTitle>Who against, and where</SectionTitle>
       <View style={s.table}>
