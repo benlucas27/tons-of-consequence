@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Text } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { NavigationContainer, DarkTheme } from '@react-navigation/native';
+import { NavigationContainer, DarkTheme, createNavigationContainerRef } from '@react-navigation/native';
+import { startPush } from './push';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -21,6 +22,8 @@ import About from './screens/About';
 import ShareHost from './ShareHost';
 import { C, F } from './theme';
 
+const navRef = createNavigationContainerRef();
+const linking = { prefixes: ['tonsofconsequence://'], config: { screens: { Innings: 'innings/:id' } } };
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 const theme = { ...DarkTheme, colors: { ...DarkTheme.colors, background: C.bg, card: C.panel, border: C.line, text: C.ink, primary: C.gold } };
@@ -41,12 +44,14 @@ function Tabs() {
 }
 
 export default function App({ feedVersion, feedSource, counts }) {
+  // tapping a push notification opens that innings
+  useEffect(() => { startPush((id) => { if (navRef.isReady()) navRef.navigate('Innings', { id }); }); }, []);
   return (
     <SafeAreaProvider>
       <StatusBar style="light" />
       <FeedInfo.Provider value={{ feedVersion, feedSource, counts }}>
         <WeightingProvider>
-          <NavigationContainer theme={theme}>
+          <NavigationContainer theme={theme} ref={navRef} linking={linking}>
             <Stack.Navigator screenOptions={header}>
               <Stack.Screen name="Tabs" component={Tabs} options={{ headerShown: false }} />
               <Stack.Screen name="Innings" component={Innings} options={{ title: 'THE INNINGS' }} />

@@ -23,12 +23,19 @@
       "expo-font",
       "expo-splash-screen",
       "expo-status-bar",
-      "expo-sharing"
+      "expo-sharing",
+      [
+        "onesignal-expo-plugin",
+        {
+          "mode": "production"
+        }
+      ]
     ],
     "extra": {
       "eas": {
         "projectId": "f2ed77c0-7045-4c6e-b5ed-862e9e705b84"
-      }
+      },
+      "oneSignalAppId": "REPLACE-WITH-ONESIGNAL-APP-ID"
     },
     "owner": "blucas27s-team"
   }

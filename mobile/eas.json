@@ -1,0 +1,8 @@
+{
+  "cli": { "version": ">= 18.0.0", "appVersionSource": "remote" },
+  "build": {
+    "production": { "ios": { "resourceClass": "m-medium" }, "autoIncrement": true },
+    "preview": { "distribution": "store", "ios": { "resourceClass": "m-medium" }, "autoIncrement": true }
+  },
+  "submit": { "production": {} }
+}

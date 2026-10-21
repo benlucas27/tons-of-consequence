@@ -19,7 +19,7 @@ import { C, F } from '../theme';
 const Fact = ({ k, v }) => (v ? <View style={s.fact}><Text style={s.fk}>{k}</Text><Text style={s.fv}>{v}</Text></View> : null);
 
 export default function Innings({ route, navigation }) {
-  const { id } = route.params;
+  const id = Number(route.params.id);
   const { order, bias } = useWeighting();
   const ranked = useMemo(() => rankAll(order, bias), [order, bias]);
   const c = ranked.find((x) => x.id === id);
