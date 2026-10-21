@@ -21,7 +21,15 @@
     },
     "plugins": [
       "expo-font",
-      "expo-splash-screen",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/icon.png",
+          "imageWidth": 160,
+          "backgroundColor": "#0b1c13",
+          "resizeMode": "contain"
+        }
+      ],
       "expo-status-bar",
       "expo-sharing",
       [
@@ -37,6 +45,7 @@
       },
       "oneSignalAppId": "REPLACE-WITH-ONESIGNAL-APP-ID"
     },
-    "owner": "blucas27s-team"
+    "owner": "blucas27s-team",
+    "icon": "./assets/icon.png"
   }
 }
