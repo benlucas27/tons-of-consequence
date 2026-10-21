@@ -25,6 +25,14 @@ const BASE = opt('base', 'https://tonsofconsequence.com').replace(/\/$/, '');
 const SLOT_HOURS = { A: [3, 35], B: [9, 5], C: [15, 35] }; // UTC [hour, minute]
 const STALE_HOURS = 36; // an item that is this late is skipped, not posted out of context
 const MAX_PER_DAY = 3;
+const LINK_CHARS = 23; // X counts every link as 23 characters
+
+/** The post text: the caption, then (for the slots in queue.linkSlots) the page it points to. Links cost more on X, so slots can be switched off. */
+export function postText(queue, item, site = 'https://tonsofconsequence.com') {
+  const linked = item.link && (queue.linkSlots || ['A', 'B', 'C']).includes(item.slot);
+  return linked ? `${item.text}\n\n${site}${item.link}` : item.text;
+}
+export const postLength = (queue, item) => item.text.length + ((item.link && (queue.linkSlots || ['A', 'B', 'C']).includes(item.slot)) ? 2 + LINK_CHARS : 0);
 
 export const loadQueue = () => JSON.parse(fs.readFileSync(QUEUE_FILE, 'utf8'));
 const saveQueue = (q) => fs.writeFileSync(QUEUE_FILE, `${JSON.stringify(q, null, 2)}\n`);
@@ -104,7 +112,7 @@ function preview(queue) {
   for (const item of queue.items) {
     const when = dueAt(queue, item);
     const state = item.tweetId ? `POSTED ${item.tweetId}` : item.skipped ? 'SKIPPED' : item.approved ? (when <= now ? 'DUE' : 'approved') : 'not approved';
-    console.log(`#${item.id}  day ${item.day}${item.slot}  ${when.toISOString().slice(0, 16)}Z  [${state}]\n   ${item.text}\n   card: ${cardUrl(item)}\n`);
+    console.log(`#${item.id}  day ${item.day}${item.slot}  ${when.toISOString().slice(0, 16)}Z  [${state}]\n   ${postText(queue, item)}\n   card: ${cardUrl(item)}\n`);
   }
   console.log(`${queue.items.length} items, ${queue.items.filter((i) => i.approved).length} approved, ${queue.items.filter((i) => i.tweetId).length} posted.`);
 }
@@ -129,11 +137,11 @@ async function main() {
   if (!next) { saveQueue(queue); console.log('Nothing due.'); return; }
 
   const item = next.i;
-  if (item.text.length > 280) throw new Error(`#${item.id} is ${item.text.length} characters (the limit is 280).`);
+  if (postLength(queue, item) > 280) throw new Error(`#${item.id} is ${postLength(queue, item)} characters (the limit is 280).`);
   const bytes = await fetchCard(item);
-  if (flag('dry-run')) { console.log(`DRY RUN: would post #${item.id}\n${item.text}\ncard: ${cardUrl(item)} (${bytes.length} bytes)`); return; }
+  if (flag('dry-run')) { console.log(`DRY RUN: would post #${item.id}\n${postText(queue, item)}\ncard: ${cardUrl(item)} (${bytes.length} bytes)`); return; }
   const mediaId = await uploadImage(bytes);
-  item.tweetId = await createPost(item.text, mediaId);
+  item.tweetId = await createPost(postText(queue, item), mediaId);
   item.postedAt = new Date().toISOString();
   saveQueue(queue);
   console.log(`Posted #${item.id} as ${item.tweetId}`);

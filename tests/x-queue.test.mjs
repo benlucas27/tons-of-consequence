@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { loadQueue, dueAt, cardUrl, oauthSignature } from '../scripts/x-post.mjs';
+import { loadQueue, dueAt, cardUrl, oauthSignature, postText, postLength } from '../scripts/x-post.mjs';
 import { BATTER_BY_SLUG } from '../src/lib/consequence.js';
 import { BY_ID } from '../src/lib/dataset.js';
 
@@ -21,11 +21,18 @@ test('queue: ids are unique, days 0 to 30, three slots a day, in order', () => {
   assert.deepEqual(times, [...times].sort((a, b) => a - b));
 });
 
-test('queue: every caption fits, carries no link and no stale numbers about a verdict', () => {
+test('queue: every caption fits with its link and carries no raw address of its own', () => {
   for (const i of queue.items) {
-    assert.ok(i.text.length <= 280, `#${i.id} is ${i.text.length} characters`);
-    assert.ok(!/https?:|\.com\b|www\./i.test(i.text), `#${i.id} has a link (X charges extra for links)`);
+    assert.ok(postLength(queue, i) <= 280, `#${i.id} is ${postLength(queue, i)} characters with its link`);
+    assert.ok(!/https?:|\.com\b|www\./i.test(i.text), `#${i.id}: the link belongs in the link field, not the caption`);
+    assert.ok(i.link && i.link.startsWith('/'), `#${i.id} has no page to link to`);
   }
+});
+
+test('posts end with the page they point to, for the slots that carry links', () => {
+  const item = queue.items.find((i) => i.slot === 'A');
+  assert.ok(postText({ ...queue, linkSlots: ['A'] }, item).endsWith(`https://tonsofconsequence.com${item.link}`));
+  assert.equal(postText({ ...queue, linkSlots: [] }, item), item.text);
 });
 
 test('queue: every card points at something real', () => {

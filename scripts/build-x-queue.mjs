@@ -2,8 +2,7 @@
 /**
  * Writes the first month of the X queue (social/x-queue.json): 3 posts a day, plus one launch post (day 0), each a share card plus a short caption.
  * Captions carry no numbers and no verdicts: the numbers live on the card, which is drawn from the live data when it is
- * posted, so a ruling that changes later can never contradict the words. Posts carry no link (X charges more for them);
- * the card has the domain on it and the account bio has the link.
+ * posted, so a ruling that changes later can never contradict the words. Each item has a `link` (the page it points to), added to the post when it is sent.
  *
  *   node scripts/build-x-queue.mjs          writes the file only if it does not exist yet
  *   node scripts/build-x-queue.mjs --force  overwrites it (this discards approvals)
@@ -15,6 +14,7 @@ import { BATTER_BY_SLUG } from '../src/lib/consequence.js';
 import { rankAll, BY_ID } from '../src/lib/dataset.js';
 import { DEFAULT_ORDER, PRESETS, formatOrder } from '../src/lib/scoring.js';
 import { LAWS } from '../src/lib/laws.js';
+import { linkFor } from './x-links.mjs';
 
 const out = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../social/x-queue.json');
 if (fs.existsSync(out) && !process.argv.includes('--force')) { console.log('social/x-queue.json already exists. Use --force to overwrite (this discards approvals).'); process.exit(0); }
@@ -113,20 +113,20 @@ const C = [
 const items = [];
 let id = 1;
 // Day 0 is the launch post (Renshaw's 190), due the moment the job first runs, so the first live post doubles as the test.
-items.push({ id: id++, day: 0, slot: 'A', text: `Matt Renshaw's 190 v South Africa in Durban. Australia won the first Test by 214 runs. Did the side need it? The card shows the call and the reason. ${TAG}`, card: { type: 'innings', id: '4599', size: 'square' }, approved: false });
+items.push({ id: id++, day: 0, slot: 'A', text: `Matt Renshaw's 190 v South Africa in Durban. Australia won the first Test by 214 runs. Did the side need it? The card shows the call and the reason. ${TAG}`, card: { type: 'innings', id: '4599', size: 'square' }, link: linkFor({ type: 'innings', id: '4599' }), approved: false });
 for (let d = 1; d <= 30; d++) {
   for (const [slot, list] of [['A', A], ['B', B], ['C', C]]) {
     const e = list[d - 1];
-    items.push({ id: id++, day: d, slot, text: e.text(d), card: { ...e.card, size: 'square' }, approved: false });
+    items.push({ id: id++, day: d, slot, text: e.text(d), card: { ...e.card, size: 'square' }, link: linkFor(e.card), approved: false });
   }
 }
 // No identical card twice: a repeat is swapped for the next unused top innings, so no two posts carry the same picture.
 { const seen = new Set(); let next = 40;
   for (const it of items) {
     const k = JSON.stringify(it.card);
-    if (seen.has(k)) { const nid = topIds[next++]; it.card = { type: 'innings', id: String(nid), size: 'square' }; it.text = inningsCaption(nid, next); }
+    if (seen.has(k)) { const nid = topIds[next++]; it.card = { type: 'innings', id: String(nid), size: 'square' }; it.text = inningsCaption(nid, next); it.link = linkFor(it.card); }
     seen.add(JSON.stringify(it.card));
   } }
 fs.mkdirSync(path.dirname(out), { recursive: true });
-fs.writeFileSync(out, `${JSON.stringify({ _readme: 'Posts are sent by scripts/x-post.mjs from a GitHub Actions job. A post goes out only when approved is true. Times are UTC: slot A 03:35, B 09:05, C 15:35, counted from startDate (day 1; day 0 is the day before). Set paused to true to stop everything.', paused: true, startDate: '2026-10-22', items }, null, 2)}\n`);
+fs.writeFileSync(out, `${JSON.stringify({ _readme: 'Posts are sent by scripts/x-post.mjs from a GitHub Actions job. A post goes out only when approved is true. Times are UTC: slot A 03:35, B 09:05, C 15:35, counted from startDate (day 1; day 0 is the day before). Set paused to true to stop everything.', paused: true, startDate: '2026-10-22', linkSlots: ['A', 'B', 'C'], items }, null, 2)}\n`);
 console.log(`Wrote ${items.length} items.`);
