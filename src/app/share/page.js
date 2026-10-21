@@ -5,7 +5,7 @@ import ShareBuilder from '@/components/ShareBuilder';
 
 export const metadata = {
   title: 'Make a share card',
-  description: 'Make a picture of any batter, innings, head-to-head or leaderboard to post anywhere: wide, square or story size.',
+  description: 'Make a picture of any batter, innings, head-to-head or leaderboard to post anywhere: square or 4:5 portrait size.',
 };
 
 export default function SharePage({ searchParams }) {

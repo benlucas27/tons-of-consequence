@@ -1,0 +1,508 @@
+{
+  "_readme": "Posts are sent by scripts/x-post.mjs from a GitHub Actions job. A post goes out only when approved is true. Times are UTC: slot A 03:35, B 09:05, C 15:35, counted from startDate (day 1). Set paused to true to stop everything.",
+  "paused": true,
+  "startDate": "2026-11-02",
+  "items": [
+    {
+      "id": 1,
+      "day": 1,
+      "slot": "A",
+      "text": "Every Test hundred by Virat Kohli, sorted into the ones that mattered and the good tons that didn't change the result. Which one would you move? #TestCricket",
+      "card": {
+        "type": "batter",
+        "b": "virat-kohli",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 2,
+      "day": 1,
+      "slot": "B",
+      "text": "Law 1 of 13 for what makes a Test hundred a ton of consequence: A ToC wins or saves a match. Agree, or would you change it? #TestCricket",
+      "card": {
+        "type": "laws",
+        "law": "1",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 3,
+      "day": 1,
+      "slot": "C",
+      "text": "Most tons of consequence in Test cricket: hundreds that won or saved the match. Who did you expect at the top? #TestCricket",
+      "card": {
+        "type": "board",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 4,
+      "day": 2,
+      "slot": "A",
+      "text": "Kohli v Smith v Root: whose hundreds did the team actually need? Gold = ton of consequence. #TestCricket",
+      "card": {
+        "type": "compare",
+        "b": "virat-kohli,steve-smith,joe-root",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 5,
+      "day": 2,
+      "slot": "B",
+      "text": "Law 2 of 13 for what makes a Test hundred a ton of consequence: The scoreboard when he came in. Agree, or would you change it? #TestCricket",
+      "card": {
+        "type": "laws",
+        "law": "2",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 6,
+      "day": 2,
+      "slot": "C",
+      "text": "The greatest Test hundreds ever, ranked across six criteria. Change the order and the list changes. Which one is missing? #TestCricket",
+      "card": {
+        "type": "rankings",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 7,
+      "day": 3,
+      "slot": "A",
+      "text": "How many of Sachin Tendulkar's Test hundreds did the side actually need? Gold squares are tons of consequence: the ones that won or saved the match. #TestCricket",
+      "card": {
+        "type": "batter",
+        "b": "sachin-tendulkar",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 8,
+      "day": 3,
+      "slot": "B",
+      "text": "Law 3 of 13 for what makes a Test hundred a ton of consequence: A ToC carries the innings. Agree, or would you change it? #TestCricket",
+      "card": {
+        "type": "laws",
+        "law": "3",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 9,
+      "day": 3,
+      "slot": "C",
+      "text": "Virat Kohli's 235 v England in 2016. Did the side need it? The card shows the call and the reason. #TestCricket",
+      "card": {
+        "type": "innings",
+        "id": "144",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 10,
+      "day": 4,
+      "slot": "A",
+      "text": "Every Test hundred by Rahul Dravid, sorted into the ones that mattered and the good tons that didn't change the result. Which one would you move? #TestCricket",
+      "card": {
+        "type": "batter",
+        "b": "rahul-dravid",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 11,
+      "day": 4,
+      "slot": "B",
+      "text": "Law 4 of 13 for what makes a Test hundred a ton of consequence: A winning chase or a close finish. Agree, or would you change it? #TestCricket",
+      "card": {
+        "type": "laws",
+        "law": "4",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 12,
+      "day": 4,
+      "slot": "C",
+      "text": "It's not how many hundreds, it's how many mattered. Highest share of Test hundreds that were tons of consequence (10 or more measured). #TestCricket",
+      "card": {
+        "type": "board",
+        "sort": "share",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 13,
+      "day": 5,
+      "slot": "A",
+      "text": "Same question, 3 batters: how many of their Test hundreds won or saved the match? #TestCricket",
+      "card": {
+        "type": "compare",
+        "b": "sachin-tendulkar,ricky-ponting,brian-lara",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 14,
+      "day": 5,
+      "slot": "B",
+      "text": "Law 5 of 13 for what makes a Test hundred a ton of consequence: A ToC matters to the series. Agree, or would you change it? #TestCricket",
+      "card": {
+        "type": "laws",
+        "law": "5",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 15,
+      "day": 5,
+      "slot": "C",
+      "text": "The greatest Test hundreds, the Purist way: How hard it was. Conditions and pressure first, the story last. Same innings, different order. #TestCricket",
+      "card": {
+        "type": "rankings",
+        "o": "co,cl,mi,hi,pg,na",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 16,
+      "day": 6,
+      "slot": "A",
+      "text": "How many of Yashasvi Jaiswal's Test hundreds did the side actually need? Gold squares are tons of consequence: the ones that won or saved the match. #TestCricket",
+      "card": {
+        "type": "batter",
+        "b": "yashasvi-jaiswal",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 17,
+      "day": 6,
+      "slot": "B",
+      "text": "Law 6 of 13 for what makes a Test hundred a ton of consequence: Pace matters, but not always. Agree, or would you change it? #TestCricket",
+      "card": {
+        "type": "laws",
+        "law": "6",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 18,
+      "day": 6,
+      "slot": "C",
+      "text": "Rohit Sharma, 176 v South Africa, 2019: a great innings, but was it a ton of consequence? See the reason. #TestCricket",
+      "card": {
+        "type": "innings",
+        "id": "687",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 19,
+      "day": 7,
+      "slot": "A",
+      "text": "Same question, 3 batters: how many of their Test hundreds won or saved the match? #TestCricket",
+      "card": {
+        "type": "compare",
+        "b": "steve-smith,joe-root,kane-williamson",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 20,
+      "day": 7,
+      "slot": "B",
+      "text": "Law 7 of 13 for what makes a Test hundred a ton of consequence: The moment matters. Agree, or would you change it? #TestCricket",
+      "card": {
+        "type": "laws",
+        "law": "7",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 21,
+      "day": 7,
+      "slot": "C",
+      "text": "The greatest Test hundreds, the Analyst way: What it changed. Match impact first, then conditions, records and pressure. Same innings, different order. #TestCricket",
+      "card": {
+        "type": "rankings",
+        "o": "mi,co,hi,cl,pg,na",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 22,
+      "day": 8,
+      "slot": "A",
+      "text": "Rohit Sharma: a hundred is a ton of consequence only if it helped win or save the Test. Here's how the career looks. #TestCricket",
+      "card": {
+        "type": "batter",
+        "b": "rohit-sharma",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 23,
+      "day": 8,
+      "slot": "B",
+      "text": "Law 8 of 13 for what makes a Test hundred a ton of consequence: No pressure, no ToC. Agree, or would you change it? #TestCricket",
+      "card": {
+        "type": "laws",
+        "law": "8",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 24,
+      "day": 8,
+      "slot": "C",
+      "text": "Brian Lara's 153* v Australia in 1999. Did the side need it? The card shows the call and the reason. #TestCricket",
+      "card": {
+        "type": "innings",
+        "id": "1142",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 25,
+      "day": 9,
+      "slot": "A",
+      "text": "How many of Travis Head's Test hundreds did the side actually need? Gold squares are tons of consequence: the ones that won or saved the match. #TestCricket",
+      "card": {
+        "type": "batter",
+        "b": "travis-head",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 26,
+      "day": 9,
+      "slot": "B",
+      "text": "Law 9 of 13 for what makes a Test hundred a ton of consequence: The opening platform. Agree, or would you change it? #TestCricket",
+      "card": {
+        "type": "laws",
+        "law": "9",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 27,
+      "day": 9,
+      "slot": "C",
+      "text": "The greatest Test hundreds, the Romantic way: The story. Narrative first, then history and legend. Same innings, different order. #TestCricket",
+      "card": {
+        "type": "rankings",
+        "o": "na,hi,pg,cl,mi,co",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 28,
+      "day": 10,
+      "slot": "A",
+      "text": "Gavaskar v Tendulkar v Kohli: whose hundreds did the team actually need? Gold = ton of consequence. #TestCricket",
+      "card": {
+        "type": "compare",
+        "b": "sunil-gavaskar,sachin-tendulkar,virat-kohli",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 29,
+      "day": 10,
+      "slot": "B",
+      "text": "Law 10 of 13 for what makes a Test hundred a ton of consequence: The late stand. Agree, or would you change it? #TestCricket",
+      "card": {
+        "type": "laws",
+        "law": "10",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 30,
+      "day": 10,
+      "slot": "C",
+      "text": "Ben Stokes, 135* v Australia, 2019: a great innings, but was it a ton of consequence? See the reason. #TestCricket",
+      "card": {
+        "type": "innings",
+        "id": "1823",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 31,
+      "day": 11,
+      "slot": "A",
+      "text": "Cheteshwar Pujara: a hundred is a ton of consequence only if it helped win or save the Test. Here's how the career looks. #TestCricket",
+      "card": {
+        "type": "batter",
+        "b": "cheteshwar-pujara",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 32,
+      "day": 11,
+      "slot": "B",
+      "text": "Law 11 of 13 for what makes a Test hundred a ton of consequence: The lower order. Agree, or would you change it? #TestCricket",
+      "card": {
+        "type": "laws",
+        "law": "11",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 33,
+      "day": 11,
+      "slot": "C",
+      "text": "The greatest Test hundreds, the Patriot way: Australia first. Every Australian innings gets a bonus, and the Border to Ponting years get more. Same innings, different order. #TestCricket",
+      "card": {
+        "type": "rankings",
+        "o": "mi,cl,na,co,hi,pg",
+        "bonus": "au",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 34,
+      "day": 12,
+      "slot": "A",
+      "text": "Bradman v Smith: whose hundreds did the team actually need? Gold = ton of consequence. #TestCricket",
+      "card": {
+        "type": "compare",
+        "b": "don-bradman,steve-smith",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 35,
+      "day": 12,
+      "slot": "B",
+      "text": "Law 12 of 13 for what makes a Test hundred a ton of consequence: An elite attack. Agree, or would you change it? #TestCricket",
+      "card": {
+        "type": "laws",
+        "law": "12",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 36,
+      "day": 12,
+      "slot": "C",
+      "text": "Steve Waugh's 200 v West Indies in 1995. Did the side need it? The card shows the call and the reason. #TestCricket",
+      "card": {
+        "type": "innings",
+        "id": "413",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 37,
+      "day": 13,
+      "slot": "A",
+      "text": "Every Test hundred by Kumar Sangakkara, sorted into the ones that mattered and the good tons that didn't change the result. Which one would you move? #TestCricket",
+      "card": {
+        "type": "batter",
+        "b": "kumar-sangakkara",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 38,
+      "day": 13,
+      "slot": "B",
+      "text": "Law 13 of 13 for what makes a Test hundred a ton of consequence: Who it was scored against. Agree, or would you change it? #TestCricket",
+      "card": {
+        "type": "laws",
+        "law": "13",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 39,
+      "day": 13,
+      "slot": "C",
+      "text": "Ricky Ponting, 156 v England, 2005: a great innings, but was it a ton of consequence? See the reason. #TestCricket",
+      "card": {
+        "type": "innings",
+        "id": "1075",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 40,
+      "day": 14,
+      "slot": "A",
+      "text": "Sharma v Kohli: whose hundreds did the team actually need? Gold = ton of consequence. #TestCricket",
+      "card": {
+        "type": "compare",
+        "b": "rohit-sharma,virat-kohli",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 41,
+      "day": 14,
+      "slot": "B",
+      "text": "All 13 laws for what makes a Test hundred a ton of consequence, in one picture. Which one would you change? #TestCricket",
+      "card": {
+        "type": "laws",
+        "size": "square"
+      },
+      "approved": false
+    },
+    {
+      "id": 42,
+      "day": 14,
+      "slot": "C",
+      "text": "Two weeks of tons of consequence. Still the question: which Test hundreds did the side actually need? #TestCricket",
+      "card": {
+        "type": "board",
+        "size": "square"
+      },
+      "approved": false
+    }
+  ]
+}
