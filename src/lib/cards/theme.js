@@ -1,7 +1,7 @@
 export const SIZES = {
   wide: { width: 1200, height: 630, label: 'Wide', note: 'Reddit, X, link previews' },
-  square: { width: 1080, height: 1080, label: 'Square', note: 'Instagram, WhatsApp, Facebook' },
-  story: { width: 1080, height: 1920, label: 'Story', note: 'Stories, Reels, TikTok' },
+  square: { width: 1080, height: 1080, label: 'Square', note: 'Instagram, WhatsApp, X' },
+  portrait: { width: 1080, height: 1350, label: '4:5 portrait', note: 'Instagram and Facebook feeds' },
 };
 export const C = {
   bg: '#0b1c13', edge: '#2a4d3b', cream: '#f2ead4', red: '#e85a40', gold: '#f0c23c',

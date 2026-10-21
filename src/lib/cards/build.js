@@ -44,7 +44,14 @@ const col = (extra = {}) => flex({ flexDirection: 'column', ...extra });
 function Frame({ size, k, link, children }) {
   const pad = Math.round(54 * k);
   return (
-    <div style={col({ width: '100%', height: '100%', background: C.bg, border: `${Math.round(10 * k)}px solid ${C.edge}`, padding: `${pad * 0.8}px ${pad}px`, color: C.cream, justifyContent: 'space-between' })}>
+    <div style={col({ position: 'relative', width: '100%', height: '100%', background: C.bg, border: `${Math.round(10 * k)}px solid ${C.edge}`, padding: `${pad * 0.8}px ${pad}px`, color: C.cream, justifyContent: 'space-between' })}>
+      {/* Mown-pitch stripes, a gold glow and a large faint ball, so the tile has some depth. */}
+      {Array.from({ length: Math.ceil(size.width / 200) }, (_, i) => (
+        <div key={i} style={flex({ position: 'absolute', top: 0, bottom: 0, left: i * 200 + 100, width: 100, background: 'rgba(98,208,140,0.05)' })} />
+      ))}
+      <div style={flex({ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'radial-gradient(circle at 88% 8%, rgba(240,194,60,0.20), rgba(0,0,0,0) 52%)' })} />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img alt="" width={Math.round(size.width * 0.62)} height={Math.round(size.width * 0.62)} style={{ position: 'absolute', right: -Math.round(size.width * 0.14), bottom: -Math.round(size.width * 0.14), opacity: 0.10 }} src={`data:image/svg+xml;utf8,${encodeURIComponent(ballSvg(400))}`} />
       <div style={flex({ alignItems: 'center', gap: 14 * k, fontSize: 24 * k, letterSpacing: 6 * k, color: C.muted })}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img alt="" width={Math.round(38 * k)} height={Math.round(38 * k)} src={`data:image/svg+xml;utf8,${encodeURIComponent(ballSvg(38))}`} />
@@ -96,7 +103,7 @@ function batterStats(b) {
 function cellFor(size, count) {
   // Largest square that fits `count` cells in the strip area for this card size.
   const area = size.width - 150;
-  const rows = size.height > 1500 ? 9 : size.height > 1000 ? 6 : 3;
+  const rows = size.height > 1200 ? 8 : size.height > 1000 ? 6 : 3;
   const per = Math.ceil(count / rows);
   return Math.max(8, Math.min(40, Math.floor(area / Math.max(per, 1)) - 4));
 }
@@ -143,7 +150,7 @@ function InningsCard({ size, k, params }) {
   const tier = tierOf(toc);
   const rank = rankAll(order, bias).findIndex((x) => x.id === c.id) + 1;
   const v = verdictOf(c.id);
-  const tall = size.height > size.width;
+  const tall = size.height >= size.width;
   const nameBlock = (
     <div style={col()}>
       <div style={flex({ fontSize: (c.name.length > 16 ? 56 : 66) * k, fontWeight: 700, textTransform: 'uppercase', lineHeight: 1 })}>{c.name}</div>
@@ -184,25 +191,25 @@ function InningsCard({ size, k, params }) {
 function CompareCard({ size, k, params }) {
   const list = String(params.b || '').split(',').map((s) => BATTER_BY_SLUG.get(s.trim())).filter(Boolean).slice(0, 3);
   if (list.length < 2) return null;
-  const tall = size.height > size.width;
+  const tall = size.height >= size.width;
   const most = Math.max(...list.map((b) => b.tons));
   return {
     link: `/compare?batters=${list.map((b) => b.slug).join(',')}`,
     jsx: (
       <Frame size={size} k={k} link="">
         {size.width > size.height ? null : <div style={flex({ fontSize: 30 * k, letterSpacing: 5 * k, color: C.muted, marginBottom: 16 * k })}>HEAD TO HEAD</div>}
-        <div style={flex({ flexDirection: tall ? 'column' : 'row', gap: (tall ? 30 : 36) * k })}>
+        <div style={flex({ flexDirection: size.height > 1200 ? 'column' : 'row', gap: (tall ? 24 : 36) * k, flexGrow: tall ? 1 : 0 })}>
           {list.map((b) => {
             const s = batterStats(b);
             const lead = b.tons === most;
             return (
-              <div key={b.slug} style={col({ flex: 1, padding: `${18 * k}px ${22 * k}px`, border: `3px solid ${lead ? C.gold : C.edge}`, borderRadius: 12 * k })}>
-                <div style={flex({ fontSize: (b.name.length > 14 ? 34 : 42) * k, fontWeight: 700, textTransform: 'uppercase' })}>{b.name}</div>
-                <div style={flex({ fontSize: 120 * k, fontWeight: 700, lineHeight: 1, color: C.gold, marginTop: 6 * k })}>{b.tons}</div>
-                <div style={flex({ fontSize: 22 * k, color: C.muted })}>{b.measured === b.hundreds ? `ToCs, from ${b.hundreds} hundreds` : `ToCs, ${b.measured} of ${b.hundreds} measured`}</div>
-                <div style={flex({ alignItems: 'baseline', gap: 10 * k, marginTop: 12 * k })}><div style={flex({ fontSize: 44 * k, fontWeight: 700 })}>{`${s.share}%`}</div><div style={flex({ fontSize: 22 * k, color: C.soft })}>were ToCs</div></div>
-                {s.known >= 5 && <div style={flex({ fontSize: 22 * k, color: C.soft })}>{`Team won ${s.wins} of ${s.known}`}</div>}
-                <div style={flex({ marginTop: 16 * k })}><Strip innings={b.innings} cell={Math.round((tall ? 18 : 12) * k)} gap={Math.round(3 * k)} /></div>
+              <div key={b.slug} style={col({ flex: 1, justifyContent: 'space-between', padding: `${18 * k}px ${22 * k}px`, border: `3px solid ${lead ? C.gold : C.edge}`, borderRadius: 12 * k })}>
+                <div style={flex({ fontSize: (b.name.length > 14 ? 34 : 42) * k, fontWeight: 700, textTransform: 'uppercase', flexShrink: 0 })}>{b.name}</div>
+                <div style={flex({ fontSize: 120 * k, fontWeight: 700, lineHeight: 1, color: C.gold, marginTop: 6 * k, flexShrink: 0 })}>{b.tons}</div>
+                <div style={flex({ fontSize: 22 * k, color: C.muted, flexShrink: 0 })}>{b.measured === b.hundreds ? `ToCs, from ${b.hundreds} hundreds` : `ToCs, ${b.measured} of ${b.hundreds} measured`}</div>
+                <div style={flex({ alignItems: 'baseline', gap: 10 * k, marginTop: 12 * k, flexShrink: 0 })}><div style={flex({ fontSize: 44 * k, fontWeight: 700 })}>{`${s.share}%`}</div><div style={flex({ fontSize: 22 * k, color: C.soft, flexShrink: 0 })}>were ToCs</div></div>
+                {s.known >= 5 && <div style={flex({ fontSize: 22 * k, color: C.soft, flexShrink: 0 })}>{`Team won ${s.wins} of ${s.known}`}</div>}
+                <div style={flex({ marginTop: 16 * k, flexShrink: 0 })}><Strip innings={b.innings} cell={Math.round((tall ? 18 : 12) * k)} gap={Math.round(3 * k)} /></div>
               </div>
             );
           })}
@@ -215,7 +222,7 @@ function CompareCard({ size, k, params }) {
 
 function BoardCard({ size, k, params }) {
   const byShare = params.sort === 'share';
-  const rows = (byShare ? LEADERS.filter((b) => b.measured >= 10).sort((a, b) => b.tons / b.measured - a.tons / a.measured) : LEADERS).slice(0, size.height > 1000 ? 12 : 5);
+  const rows = (byShare ? LEADERS.filter((b) => b.measured >= 10).sort((a, b) => b.tons / b.measured - a.tons / a.measured) : LEADERS).slice(0, size.height > 1200 ? 12 : size.height > 1000 ? 10 : 5);
   const top = byShare ? 100 : rows[0].tons;
   const val = (b) => (byShare ? pct(b.tons, b.measured) : b.tons);
   return {
@@ -241,7 +248,7 @@ function BoardCard({ size, k, params }) {
 
 function RankingsCard({ size, k, params }) {
   const { order, bias } = weightingOf(params);
-  const rows = rankAll(order, bias).slice(0, size.height > 1000 ? 9 : 3);
+  const rows = rankAll(order, bias).slice(0, size.height > 1200 ? 10 : size.height > 1000 ? 8 : 3);
   return {
     link: '/',
     jsx: (
@@ -305,10 +312,11 @@ export const CARD_TYPES = Object.keys(TYPES);
 /** { jsx, link, size } or null when the card cannot be made (unknown type or batter). */
 export function buildCard(type, params = {}) {
   const make = TYPES[type];
-  const size = SIZES[params.size] || SIZES.wide;
+  const size = SIZES[params.size === 'story' ? 'portrait' : params.size] || SIZES.wide;
   if (!make) return null;
-  const tall = size.height > size.width;
-  const boost = !tall ? 1 : size.height > 1500 ? (type === 'batter' || type === 'innings' || type === 'compare' ? 1.5 : 1.4) : (type === 'compare' ? 1.0 : 1.25);
+  const tall = size.height >= size.width;
+  const portrait = size.height > 1200;
+  const boost = !tall ? 1 : portrait ? (type === 'compare' ? 1.1 : 1.45) : (type === 'compare' ? 1.05 : 1.3);
   const out = make({ size, k: (size.width / 1200) * boost, params });
   return out ? { ...out, size } : null;
 }
