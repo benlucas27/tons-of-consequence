@@ -4505,23 +4505,6 @@
   "result": "win"
  },
  {
-  "id": 4041,
-  "name": "Nasser Hussain",
-  "runs": 103,
-  "year": 2004,
-  "opponent": "New Zealand",
-  "venue": "Lord's",
-  "score": 50,
-  "stable": 0.86,
-  "gate": true,
-  "why": "",
-  "evidence": "p",
-  "today": null,
-  "parts": "need 20, carry 14, finish 10, stakes 6",
-  "facts": "His side trailed by 281 when the innings began. He made 37% of the team's 282. The team won by 7 wickets.",
-  "result": "win"
- },
- {
   "id": 4180,
   "name": "Mohammad Hafeez",
   "runs": 102,

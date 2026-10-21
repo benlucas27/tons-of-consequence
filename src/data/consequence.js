@@ -668,7 +668,7 @@ export const CONSEQUENCE = {
   668: [0,null,"A loss: even a great hundred can't be a ton of consequence in a defeat.","p"],
   669: [0,null,"His side trailed by 98 when his innings began. He made 46% of the team's 384. The match was drawn. On the facts we have, the hundred didn't save the match.","r"],
   670: [0,null,"A loss: even a great hundred can't be a ton of consequence in a defeat.","r"],
-  671: [1,"Carried the innings","His side trailed by 402 when the innings began. He made 45% of the team's 394. The team won by 2 wickets.","p"],
+  671: [1,"Carried the innings","His side trailed by 402 when the innings began. He made 45% of the team's 394. The team won by 2 wickets. Simpson returned to Test cricket at 41, ten years after retiring, to captain Australia when the World Series Cricket signings left the side short. He made 176 at Perth.","p"],
   672: [0,null,"A draw: without a ball-by-ball record we cannot say the hundred saved it.","p"],
   673: [0,null,"He made 50% of the team's runs. On the facts we have, the match didn't hinge on it.","p"],
   674: [0,null,"The match was drawn and the hundred didn't save it.","r"],
