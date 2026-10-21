@@ -1,3 +1,5 @@
+> Updated 21 Oct 2026: the list of 57 hundreds that still have no verdict is at the end of `docs/drafts/data-work-2026-10-21.md`. The table below is the 20 Oct version.
+
 # Hundreds still without a verdict, and why (20 Oct 2026)
 
 Each of these is by a batter on the ToCs leaderboard. The rules need three things for a win: which innings the hundred was in, that innings' team total, and the lead when it began. Wikipedia's tour pages and match boxes (the only free source with these for pre-2001 Tests) give them for most Tests, but for these hundreds the page either has no match box, or the box does not say which of the side's innings he batted in (both innings had a top score at least as big as his), or the ground hosted two Tests in the series and the pages do not separate them. Biographies of about thirty of these batters were also read; they rarely give the innings, the total or the lead, so none of them settled a verdict. Nothing was guessed.
