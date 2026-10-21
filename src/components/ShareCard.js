@@ -13,7 +13,7 @@ const cardUrl = (params, size, extra = '') => `/card?${new URLSearchParams({ ...
 
 /** The card preview with size choice, download, native share and copy link. `params` is the card's query (type plus whatever it needs). */
 export function CardPanel({ params, pageUrl, shareText }) {
-  const [size, setSize] = useState('wide');
+  const [size, setSize] = useState('portrait');
   const src = cardUrl(params, size);
   const link = `${SITE_URL}${pageUrl}`;
 
