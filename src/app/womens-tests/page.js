@@ -48,6 +48,7 @@ export default function WomensTests() {
           <li key={h.no} id={h.slug} className={h.ton ? 'toc-yes' : 'toc-no'}>
             <h3>{h.name} {h.runs} <small>{h.team} v {h.opponent}, {h.ground.split(',')[0]}, {dateText(h.date)} &middot; {RESULT_WORD[h.result]}</small></h3>
             <p><b>{h.ton ? 'A ton of consequence.' : 'A good ton.'}</b>{h.historic ? <> <b>Historic:</b> {h.historic}</> : null} {h.reason}</p>
+            {h.sources.length > 0 && <p className="conn-note">Sources: {h.sources.map((s, i) => <span key={s.url}>{i > 0 && ', '}<a href={s.url} rel="noopener noreferrer">{s.label}</a></span>)}</p>}
           </li>
         ))}
       </ol>

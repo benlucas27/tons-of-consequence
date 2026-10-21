@@ -1,5 +1,6 @@
 /** Reading the women's Test hundreds (src/data/womens-hundreds.js): the hundreds, the batters, and the tons of consequence. */
 import { WOMENS_HUNDREDS } from '../data/womens-hundreds.js';
+import { WOMENS_SOURCES } from '../data/womens-sources.js';
 import { slugify } from './dataset.js';
 
 export const RESULT_WORD = { win: 'Won', draw: 'Drawn', loss: 'Lost' };
@@ -26,6 +27,7 @@ export const HISTORIC = {
   80: 'A world-record score at the time.',
 };
 for (const h of WOMENS) h.historic = HISTORIC[h.no] || null;
+for (const h of WOMENS) h.sources = WOMENS_SOURCES[h.no] || [];
 
 export const WOMENS_TOTAL = WOMENS.length;
 export const WOMENS_TONS = WOMENS.filter((h) => h.ton);
