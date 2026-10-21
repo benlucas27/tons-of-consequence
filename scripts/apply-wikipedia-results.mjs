@@ -10,9 +10,10 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { WIKIPEDIA_FACTS } from '../src/data/wikipedia-facts.js';
 import { SERIES_FACTS } from '../src/data/series-facts.js';
+import { HAND_SERIES_FACTS } from '../src/data/hand-series-facts.js';
 
 // results from the per-player century lists first, then from the tour pages
-const RESULTS = { ...Object.fromEntries(Object.entries(SERIES_FACTS).map(([id, f]) => [id, f])), ...WIKIPEDIA_FACTS };
+const RESULTS = { ...Object.fromEntries(Object.entries({ ...SERIES_FACTS, ...HAND_SERIES_FACTS }).map(([id, f]) => [id, f])), ...WIKIPEDIA_FACTS };
 import { BY_ID } from '../src/lib/dataset.js';
 import { factsStory } from '../src/lib/factsStory.js';
 

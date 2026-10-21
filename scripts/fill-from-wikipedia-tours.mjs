@@ -6,7 +6,7 @@
  * by ground, and works out the series score before the Test and whether the series was already decided.
  * Writes src/data/series-facts.js. Never overwrites a known result. Do not point this at ESPNcricinfo.
  *
- *   node scripts/fill-from-wikipedia-tours.mjs [--limit N]
+ *   node scripts/fill-from-wikipedia-tours.mjs [--limit N] [--ids 12,34]   (--ids prints what it finds for those hundreds and changes no file)
  */
 import fs from 'node:fs';
 import os from 'node:os';
@@ -24,6 +24,15 @@ const args = process.argv.slice(2);
 const limit = Number(args[args.indexOf('--limit') + 1]) || Infinity;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 let last = 0;
+// a 429 is Wikipedia asking for a slower pace (not a block): wait as long as it says, then ask again, up to five times
+async function politeFetch(url) {
+  for (let tries = 0; ; tries++) {
+    const res = await fetch(url, { headers: { 'User-Agent': UA } });
+    if (res.status !== 429 || tries >= 5) return res;
+    await sleep((Number(res.headers.get('retry-after')) || 20) * 1000 + 1000);
+    last = Date.now();
+  }
+}
 async function page(title) {
   const f = path.join(cacheDir, title.replace(/[^a-z0-9]+/gi, '_') + '.json');
   if (fs.existsSync(f)) return JSON.parse(fs.readFileSync(f, 'utf8'));
@@ -32,7 +41,7 @@ async function page(title) {
   last = Date.now();
   let v = null;
   try {
-    const res = await fetch(`${API}?${new URLSearchParams({ action: 'parse', format: 'json', prop: 'wikitext', page: title, redirects: '1', origin: '*' })}`, { headers: { 'User-Agent': UA } });
+    const res = await politeFetch(`${API}?${new URLSearchParams({ action: 'parse', format: 'json', prop: 'wikitext', page: title, redirects: '1', origin: '*' })}`);
     const j = await res.json();
     v = j.parse ? j.parse.wikitext['*'] : null;
   } catch { v = null; }
@@ -48,7 +57,7 @@ async function searchTitles(q) {
   last = Date.now();
   let v = [];
   try {
-    const res = await fetch(`${API}?${new URLSearchParams({ action: 'query', list: 'search', srsearch: q, srlimit: '6', format: 'json', origin: '*' })}`, { headers: { 'User-Agent': UA } });
+    const res = await politeFetch(`${API}?${new URLSearchParams({ action: 'query', list: 'search', srsearch: q, srlimit: '6', format: 'json', origin: '*' })}`);
     v = (await res.json()).query.search.map((x) => x.title);
   } catch { v = []; }
   fs.writeFileSync(f, JSON.stringify(v));
@@ -87,7 +96,7 @@ function parseTests(wt, teamNames) {
   const underTest = (pos) => {
     let near = null;
     for (const h of heads) { if (h.at > pos) break; near = h; }
-    return near ? /\btest\b|tests\b|\bfinal\b/i.test(near.name) && !/tour|first-class|county|warm|one day|odi|t20/i.test(near.name) : false;
+    return near ? /\btest\b|tests\b|\bfinal\b|\b(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth) match\b/i.test(near.name) && !/tour|first-class|county|warm|one day|odi|t20/i.test(near.name) : false;
   };
   const starts = [...wt.matchAll(/\{\{\s*(?:Two-innings cricket match|Cricket scorebox|Test cricket match|Test match|Cricket match summary)/gi)].map((m) => m.index);
   for (let k = 0; k < starts.length; k++) {
@@ -99,7 +108,7 @@ function parseTests(wt, teamNames) {
     const r = resultOf(res);
     // innings in the order they were played: team1 bats first; a team marked f/o followed on
     const SUMMARY = { '1-1': 'score1', '1-2': 'score1_2nd', '2-1': 'score2', '2-2': 'score2_2nd' }; // the "Cricket match summary" template: totals only, no top scorers
-    const cell = (name, t, i) => new RegExp(`\\|\\s*${name}-team${t}-inns${i}\\s*=\\s*([^\\n]*)`, 'i').exec(body)?.[1] || (name === 'score' ? new RegExp(`\\|\\s*${SUMMARY[`${t}-${i}`]}\\s*=\\s*([^\\n]*)`, 'i').exec(body)?.[1] || '' : '');
+    const cell = (name, t, i) => new RegExp(`\\|\\s*${name}-team${t}-inns${i}\\s*=[ \\t]*([^\\n]*)`, 'i').exec(body)?.[1] || (name === 'score' ? new RegExp(`\\|\\s*${SUMMARY[`${t}-${i}`]}\\s*=[ \\t]*([^\\n]*)`, 'i').exec(body)?.[1] || '' : '');
     const total = (txt) => { const m = /(\d+)(?:\/(\d+))?/.exec(strip(txt).replace(/\(.*?\)/g, '')); if (!m) return null; const x = Number(m[1]), y = m[2] == null ? null : Number(m[2]); return y != null && x <= 10 && y > x ? y : x; }; // '8/342' and '342/8' both mean 342 runs
     const order = [[1, 1], [2, 1], [1, 2], [2, 2]];
     const fo = /f\/o|follow-?on/i;
@@ -156,7 +165,8 @@ const teamName = (c) => NATIONS[c.country] || c.country;
 const validate = args.includes('--validate'); // test the method on hundreds whose result we already know
 const isKnown = (c) => ['win', 'draw', 'loss', 'tie'].includes(c.matchResult);
 // unknown results are filled; known pre-2006 results are checked too, and a disagreement is reported so it can be corrected
-const unknown = ALL.filter((c) => (validate ? isKnown(c) && c.year <= 2006 : !isKnown(c) || c.year <= 2006) && c.opponent !== 'ICC World XI');
+const onlyIds = args.includes('--ids') ? new Set(args[args.indexOf('--ids') + 1].split(',').map(Number)) : null; // try just these hundreds, and print what was found instead of rewriting series-facts.js
+const unknown = ALL.filter((c) => (!onlyIds || onlyIds.has(c.id)) && (validate ? isKnown(c) && c.year <= 2006 : !isKnown(c) || c.year <= 2006) && c.opponent !== 'ICC World XI');
 const combos = new Map();
 for (const c of unknown) {
   const pair = [teamName(c), c.opponent].sort().join(' v ');
@@ -179,6 +189,7 @@ for (const cb of [...combos.values()].slice(0, limit)) {
     for (const s of seasons(cb.year)) {
       cands.push(`${DEM[vis] || vis} cricket team in ${host} in ${s}`);
       if (ashes) cands.push(`${s} Ashes series`);
+      if (cb.year === 1912 && [cb.a, cb.b].every((n) => ['England', 'Australia', 'South Africa'].includes(n))) cands.push('1912 Triangular Tournament');
       if (host === 'the United Arab Emirates' && [cb.a, cb.b].includes('Pakistan') && cb.year >= 1995) cands.push(`${DEM[vis] || vis} cricket team against ${other} in the UAE in ${s}`, `${DEM[vis] || vis} cricket team against ${other} in the United Arab Emirates in ${s}`);
       if (['Pakistan', 'India', 'Sri Lanka', 'Bangladesh'].includes(cb.a) && ['Pakistan', 'India', 'Sri Lanka', 'Bangladesh'].includes(cb.b)) cands.push(`${s} Asian Test Championship`);
     }
@@ -200,6 +211,13 @@ for (const cb of [...combos.values()].slice(0, limit)) {
       for (const c of pending) {
         const words = venueWords(c.venue);
         let idx = tests.map((t, i) => (words.some((w) => w && t.venueText.includes(w)) ? i : -1)).filter((i) => i >= 0);
+        if (idx.length > 1) {
+          // a tournament article (the 1912 Triangular Tournament) lists Tests between other pairs of sides at the same ground: keep the ones between this hundred's two teams
+          const isTeam = (x, n) => x && ((x.code && CODES[x.code] === n) || (x.text && x.text.includes(stem(n))));
+          const pairOk = (t) => !(t.t1 && t.t2 && (t.t1.code || t.t1.text) && (t.t2.code || t.t2.text)) || (isTeam(t.t1, cb.a) && isTeam(t.t2, cb.b)) || (isTeam(t.t1, cb.b) && isTeam(t.t2, cb.a));
+          const both = idx.filter((i) => pairOk(tests[i]));
+          if (both.length >= 1 && both.length < idx.length) idx = both;
+        }
         if (idx.length > 1) {
           // two Tests at the same ground (or two grounds in one city): the one whose box lists this batter and score is the one
           const sur0 = c.name.split(' ').slice(-1)[0].toLowerCase().replace(/[^a-z]/g, '');
@@ -289,6 +307,7 @@ for (const cb of [...combos.values()].slice(0, limit)) {
 }
 if (process.env.VALIDATE_INF) console.log('inference check [had a name hit, inference gave one answer, agreed]:', global.vi);
 if (validate) { console.log(`validation: ${vagree} of ${vtotal} agree with the known result`); process.exit(0); }
+if (onlyIds) { console.log(JSON.stringify({ facts, sources }, null, 1)); process.exit(0); }
 const ids = Object.keys(facts).map(Number).sort((a, b) => a - b);
 fs.writeFileSync(path.join(root, 'src/data/series-facts.js'), `/** id -> [result for the batter's team, Test number in the series, Tests in the series, the batter's team's series lead going in (wins minus losses), 1 if the series was already decided, innings of the match, the team's total in that innings, the lead when it began, the margin as 'r120' runs, 'w5' wickets or 'i48' innings and runs, the first day of the Test as MMDD], from Wikipedia's tour pages (scripts/fill-from-wikipedia-tours.mjs). Generated: do not edit by hand. */\nexport const SERIES_FACTS = {\n${ids.map((id) => `  ${id}: ${JSON.stringify(facts[id])},`).join('\n')}\n};\n`);
 fs.writeFileSync(path.join(root, 'src/data/series-sources.js'), `/** id -> the title of the Wikipedia tour page the result and series state came from (https://en.wikipedia.org/wiki/<title>). Generated by scripts/fill-from-wikipedia-tours.mjs: do not edit by hand. */\nexport const SERIES_SOURCES = ${JSON.stringify(Object.fromEntries(ids.map((id) => [id, sources[id]])))};\n`);
