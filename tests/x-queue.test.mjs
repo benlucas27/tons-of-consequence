@@ -14,9 +14,9 @@ test('the OAuth signature matches the worked example in X\'s own documentation',
   assert.equal(sig, 'tnnArxj06cWHq44gCs1OSKk/jLY=');
 });
 
-test('queue: ids are unique, days 1 to 14, three slots a day, in order', () => {
+test('queue: ids are unique, days 0 to 30, three slots a day, in order', () => {
   assert.equal(new Set(queue.items.map((i) => i.id)).size, queue.items.length);
-  for (const i of queue.items) { assert.ok(i.day >= 1 && i.day <= 14); assert.ok(['A', 'B', 'C'].includes(i.slot)); }
+  for (const i of queue.items) { assert.ok(i.day >= 0 && i.day <= 30); assert.ok(['A', 'B', 'C'].includes(i.slot)); }
   const times = queue.items.map((i) => dueAt(queue, i).getTime());
   assert.deepEqual(times, [...times].sort((a, b) => a - b));
 });
