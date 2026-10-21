@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { View, Text, Pressable, StyleSheet } from 'react-native';
-import { QUESTIONS, getPersona, rankingsFor } from '../../../src/lib/quiz';
+import { QUESTIONS, getPersona, rankingsFor, tally, PICKS } from '../../../src/lib/quiz';
+import { shareCard } from '../share';
 import { PRESETS } from '../../../src/lib/scoring';
 import { useWeighting } from '../weighting';
 import { Screen, H, P, Small, Button, WeightBar, Legend } from '../ui';
@@ -26,6 +27,7 @@ export default function PubTest({ navigation }) {
         <P>{persona.description}</P>
         <WeightBar order={r.order} /><Legend order={r.order} />
         <Button label="See the rankings your way" primary onPress={() => { setWeighting(r.order, r.bias); navigation.navigate('Tabs', { screen: 'Rankings' }); }} />
+        <Button label="Share my result as an image" onPress={() => { const c = tally(answers); shareCard(`/card/persona/${persona.id}?c=${PICKS.map((id) => c[id]).join(',')}`, `toc-pub-test-${persona.id}`); }} />
         <Button label="Take it again" onPress={() => { setRound(round + 1); setI(0); setAnswers([]); }} />
       </Screen>
     );

@@ -2,9 +2,13 @@ import React, { useMemo, useState } from 'react';
 import { View, Text, TextInput, FlatList, Pressable, StyleSheet } from 'react-native';
 // The site's own leaderboard code, unchanged.
 import { BOARD } from '../../../src/lib/batterBoard';
+import { ALL } from '../../../src/lib/dataset';
+import { verdictOf } from '../../../src/lib/consequence';
+import { runsText } from '../../../src/lib/format';
 import { SORTS, sortBoard } from '../../../src/lib/boardSort';
 import { C, F } from '../theme';
 
+const LATEST = [...ALL].filter((c) => c.year >= 2026).sort((a, b) => b.id - a.id).slice(0, 6);
 const pct = (a, b) => (b ? `${Math.round((100 * a) / b)}%` : '–');
 const VALUE = {
   tons: (r) => `${r.tons} of ${r.measured}`,
@@ -28,6 +32,21 @@ export default function Leaderboard({ navigation }) {
         ))}
       </View>
       <FlatList
+        ListHeaderComponent={query ? null : (
+          <View style={s.latest}>
+            <Text style={s.latestTitle}>LATEST HUNDREDS</Text>
+            {LATEST.map((c) => {
+              const v = verdictOf(c.id);
+              return (
+                <Pressable key={c.id} onPress={() => navigation.navigate('Innings', { id: c.id })} style={s.latestRow}>
+                  <Text style={s.latestName}>{c.name} {runsText(c)}</Text>
+                  <Text style={s.latestSub}>v {c.opponent}, {c.year}</Text>
+                  <Text style={[s.latestVerdict, v && v.passes && { color: C.gold }]}>{v ? (v.passes ? 'ToC' : 'good ton') : 'not measured yet'}</Text>
+                </Pressable>
+              );
+            })}
+          </View>
+        )}
         data={rows}
         keyExtractor={(r) => r.slug}
         keyboardDismissMode="on-drag"
@@ -60,5 +79,11 @@ const s = StyleSheet.create({
   name: { color: C.ink, fontFamily: F.displayBold, fontSize: 20 },
   sub: { color: C.mute, fontFamily: F.ui, fontSize: 12 },
   value: { color: C.gold, fontFamily: F.display, fontSize: 16, maxWidth: 150, textAlign: 'right' },
+  latest: { marginHorizontal: 12, marginBottom: 8, padding: 12, backgroundColor: C.panel, borderRadius: 10, gap: 6 },
+  latestTitle: { color: C.mute, fontFamily: F.displayBold, fontSize: 13, letterSpacing: 2 },
+  latestRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  latestName: { color: C.ink, fontFamily: F.displayBold, fontSize: 16 },
+  latestSub: { flex: 1, color: C.mute, fontFamily: F.ui, fontSize: 12 },
+  latestVerdict: { color: C.soft, fontFamily: F.uiMed, fontSize: 12 },
   empty: { color: C.mute, textAlign: 'center', marginTop: 40, fontFamily: F.ui },
 });
