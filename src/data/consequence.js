@@ -4527,7 +4527,7 @@ export const CONSEQUENCE = {
   4596: [0,null,"He came in comfortably, and the team did not depend on him.","b"],
   4597: [0,null,"He made 17% of the team's runs. The match didn't hinge on it: he came in at 2 for 341.","b"],
   4598: [0,null,"He came in comfortably, and the team did not depend on him.","b"],
-  4599: [1,"Carried the innings","In at 3 for 84, 84 ahead. He made 49% of the team's 390, and no one else came close. The team won by 214 runs. It was the decider of a level series. He added 134 for the 9th wicket. He faced an elite attack.","b"],
+  4599: [1,"Carried the innings","In at 3 for 84, 84 ahead. He made 49% of the team's 390, and no one else came close. The team won by 214 runs in the first Test of a three-Test series. He added 134 for the 9th wicket. He faced an elite attack.","b"],
   4600: [0,null,"He made 25% of the team's runs. The match didn't hinge on it: he came in at 2 for 31.","b"],
   4601: [0,null,"A loss: even a great hundred can't be a ton of consequence in a defeat.","b"],
   4602: [1,"Carried the innings","In at 4 for 106, 106 ahead. He made 45% of the team's 278, and no one else came close. The team won by 78 runs. The series was still to be settled in this Test. He added 64 for the 9th wicket. He faced an elite attack.","b"],

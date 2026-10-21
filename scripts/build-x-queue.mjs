@@ -47,7 +47,7 @@ const rankingsCaption = (preset, v = 0) => (preset === 'Default' && v > 0
   : `The greatest Test hundreds, the ${preset} way: ${PRESETS[preset].blurb} Same innings, different order. ${TAG}`);
 const lawCaption = (n) => `Law ${n} of 13 for what makes a Test hundred a ton of consequence: ${LAWS[n - 1][0]}. Agree, or would you change it? ${TAG}`;
 
-const LIVE = new Set([4599]); // an innings in a Test still being played is not posted
+const LIVE = new Set(); // ids of innings in a Test still being played: not posted until the match is over
 const top = rankAll(DEFAULT_ORDER).filter((c) => !LIVE.has(c.id)).slice(0, 5).map((c) => c.id);
 const presetParams = (p) => ({ type: 'rankings', ...(p === 'Default' ? {} : { o: formatOrder(PRESETS[p].order), ...(PRESETS[p].bias ? { bonus: PRESETS[p].bias } : {}) }) });
 
@@ -112,8 +112,8 @@ const C = [
 
 const items = [];
 let id = 1;
-// Day 0 is the launch post, due the moment the job first runs, so the first live post doubles as the test.
-items.push({ id: id++, day: 0, slot: 'A', text: `Every Test hundred, ranked: which ones did the side actually need? New cards here a few times a day. ${TAG}`, card: { type: 'rankings', size: 'square' }, approved: false });
+// Day 0 is the launch post (Renshaw's 190), due the moment the job first runs, so the first live post doubles as the test.
+items.push({ id: id++, day: 0, slot: 'A', text: `Matt Renshaw's 190 v South Africa in Durban. Australia won the first Test by 214 runs. Did the side need it? The card shows the call and the reason. ${TAG}`, card: { type: 'innings', id: '4599', size: 'square' }, approved: false });
 for (let d = 1; d <= 30; d++) {
   for (const [slot, list] of [['A', A], ['B', B], ['C', C]]) {
     const e = list[d - 1];
