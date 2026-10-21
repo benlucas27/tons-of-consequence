@@ -15,6 +15,7 @@ const NAV = [
 ];
 const MORE = [
   { href: '/hello-cricket', label: 'Hello Cricket' },
+  { href: '/reviews', label: 'Under review' },
   { href: '/share', label: 'Share cards' },
   { href: '/connect', label: 'Connect to Claude' },
   { href: '/about', label: 'About' },

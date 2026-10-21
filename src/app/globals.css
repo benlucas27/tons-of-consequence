@@ -638,3 +638,21 @@ body[data-door="1"] .s-bar { display: none; }
 .toc-latest { list-style: none; padding: 0; margin: 0 0 8px; display: grid; gap: 6px; font: 400 16px/1.5 var(--prose); color: var(--ink-2); }
 .toc-latest a { color: var(--sky); text-decoration: none; }
 .toc-latest b { color: var(--ink); font-weight: 600; }
+
+/* Challenge and the review list */
+.challenge-box { margin: 14px 0; }
+.challenge-chip { margin: 0 0 8px; font: 600 14px var(--ui); color: var(--ink-2); }
+.challenge-chip a { color: var(--gold, #f0c23c); }
+.challenge-form { margin-top: 12px; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+.challenge-form fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 10px; }
+.challenge-form legend { font: 600 15px var(--ui); margin-bottom: 8px; }
+.challenge-opt { display: flex; gap: 8px; align-items: flex-start; font: 400 15px/1.4 var(--ui); }
+.challenge-note { display: grid; gap: 4px; font: 500 14px var(--ui); color: var(--ink-2); }
+.challenge-note textarea { padding: 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-2); color: var(--ink); font: 400 16px var(--ui); resize: vertical; }
+.challenge-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.review-counter { font: 500 16px var(--ui); color: var(--ink-2); }
+.review-table td { vertical-align: top; }
+.review-chips { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+.review-chip { padding: 2px 8px; border: 1px solid var(--line); border-radius: 999px; font: 500 12px var(--ui); color: var(--ink-2); }
+.review-evidence { display: block; color: var(--ink-3); margin-top: 4px; }
+.review-decided { display: grid; gap: 8px; padding-left: 18px; }

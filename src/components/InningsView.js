@@ -16,6 +16,7 @@ import ConsequenceNote from './ConsequenceStamp';
 import { storyStatus } from '@/lib/stories';
 import BiasNote from './BiasNote';
 import ShareCard, { cardWeighting } from './ShareCard';
+import ChallengeButton from './ChallengeButton';
 import { SITE_URL } from '@/lib/site';
 import { weightQuery } from '@/lib/scoring';
 
@@ -165,6 +166,7 @@ export default function InningsView({ id, consequence = null, facts = null }) {
               <p>Opens straight to this innings, with your weighting.</p>
             </div>
             <ShareCard params={{ type: 'innings', id: String(c.id), ...cardWeighting(order, bias) }} pageUrl={inningsPath(c, order, bias)} shareText={`${c.name} ${runsText(c)} v ${c.opponent}, ${c.year}:`} />
+            <ChallengeButton id={c.id} />
           </div>
         </aside>
       </article>
