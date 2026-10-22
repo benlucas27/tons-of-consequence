@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { loadQueue, dueAt, cardUrl, oauthSignature, postText, postLength } from '../scripts/x-post.mjs';
+import { loadQueue, dueAt, cardUrl, oauthSignature, postText, postLength, hasLink } from '../scripts/x-post.mjs';
 import { BATTER_BY_SLUG } from '../src/lib/consequence.js';
 import { BY_ID } from '../src/lib/dataset.js';
 
@@ -44,4 +44,12 @@ test('queue: every card points at something real', () => {
     if (i.card.law) assert.ok(Number(i.card.law) >= 1 && Number(i.card.law) <= 13);
     assert.match(cardUrl(i, 'https://example.test'), /^https:\/\/example\.test\/card\?type=/);
   }
+});
+
+test('the live-series hooks carry the series hashtag and the link, and no day has more than one linked post', () => {
+  const hooks = queue.items.filter((i) => i.slot === 'B' && i.day >= 1 && i.day <= 9);
+  for (const h of hooks) { assert.match(h.text, /#SAvAUS/); assert.ok(hasLink(queue, h), `#${h.id} should carry the link`); }
+  const perDay = {};
+  for (const i of queue.items) if (hasLink(queue, i)) perDay[i.day] = (perDay[i.day] || 0) + 1;
+  assert.ok(Math.max(...Object.values(perDay)) <= 1, 'X charges extra for links: at most one a day');
 });
