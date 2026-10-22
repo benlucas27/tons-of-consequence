@@ -29,10 +29,11 @@ const LINK_CHARS = 23; // X counts every link as 23 characters
 
 /** The post text: the caption, then (for the slots in queue.linkSlots) the page it points to. Links cost more on X, so slots can be switched off. */
 export function postText(queue, item, site = 'https://tonsofconsequence.com') {
-  const linked = item.link && (queue.linkSlots || ['A', 'B', 'C']).includes(item.slot);
-  return linked ? `${item.text}\n\n${site}${item.link}` : item.text;
+  return hasLink(queue, item) ? `${item.text}\n\n${site}${item.link}` : item.text;
 }
-export const postLength = (queue, item) => item.text.length + ((item.link && (queue.linkSlots || ['A', 'B', 'C']).includes(item.slot)) ? 2 + LINK_CHARS : 0);
+/** An item's own `linked` flag wins; otherwise its slot decides (queue.linkSlots). */
+export const hasLink = (queue, item) => Boolean(item.link) && (item.linked !== undefined ? item.linked : (queue.linkSlots || ['A', 'B', 'C']).includes(item.slot));
+export const postLength = (queue, item) => item.text.length + (hasLink(queue, item) ? 2 + LINK_CHARS : 0);
 
 export const loadQueue = () => JSON.parse(fs.readFileSync(QUEUE_FILE, 'utf8'));
 const saveQueue = (q) => fs.writeFileSync(QUEUE_FILE, `${JSON.stringify(q, null, 2)}\n`);

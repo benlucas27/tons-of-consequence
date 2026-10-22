@@ -1,15 +1,14 @@
 # Posts the next approved item from social/x-queue.json to X, three times a day.
 # Runs in GitHub's cloud, so it does not depend on anyone being signed in to anything.
-# Times are UTC and sit a few minutes after the queue's slots (A 03:35, B 09:05, C 15:35); GitHub can start a run late,
-# and the script posts anything due, so a late start is fine.
+# GitHub's scheduler is unreliable: on 21 to 22 Oct only one of three fixed-time runs fired, four hours late. So the job runs
+# every 20 minutes and the script posts only what is due (queue slots are UTC: A 03:35, B 09:05, C 15:35), which keeps any
+# delay to about the length of a gap. The repo is public, so the extra runs cost nothing.
 # By hand: GitHub > Actions > "Post to X" > Run workflow, then pick preview, verify or dry-run to test without posting.
 name: Post to X
 
 on:
   schedule:
-    - cron: '40 3 * * *'
-    - cron: '10 9 * * *'
-    - cron: '40 15 * * *'
+    - cron: '7,27,47 * * * *'
   workflow_dispatch:
     inputs:
       mode:
