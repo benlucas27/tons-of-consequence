@@ -11,7 +11,7 @@ export default function Privacy() {
     <article className="prose">
       <h1>Privacy</h1>
       <p className="lede">Short version: there are no accounts, no ads and no tracking across other sites. We count page views anonymously, with no cookies. We don&rsquo;t ask who you are and we don&rsquo;t keep what you ask.</p>
-      <p className="conn-note">Last updated 21 October 2026. Tons of Consequence is an independent project run by Ben Lucas.</p>
+      <p className="conn-note">Last updated 22 October 2026. Tons of Consequence is an independent project run by Ben Lucas.</p>
 
       <h2>On the website</h2>
       <ul>
@@ -21,6 +21,16 @@ export default function Privacy() {
         <li><strong>Voice questions.</strong> If you use the microphone on the Search page, your browser turns your speech into text. In Chrome and Safari that means the audio goes to the browser maker&rsquo;s own speech service. We never receive the audio.</li>
         <li><strong>Videos.</strong> Nothing from YouTube loads until you press play, and then it uses YouTube&rsquo;s privacy-enhanced player. Once it plays, YouTube&rsquo;s own privacy policy applies.</li>
         <li><strong>Hosting.</strong> The site is hosted by Vercel, which keeps standard server logs (such as the page requested, the time and your IP address) to run and secure the service, under its own policy.</li>
+      </ul>
+
+      <h2>If you challenge a ruling</h2>
+      <p>Every innings page has a <strong>Challenge this ruling</strong> button. It is optional, and it is the one place the site keeps something you send us.</p>
+      <ul>
+        <li><strong>What we keep:</strong> which innings, the reason you pick from the list, your note if you write one (up to 280 characters), the date, and a scrambled version of your internet address (a salted hash).</li>
+        <li><strong>Why the scrambled address:</strong> only to stop one person sending many challenges (three an hour, one per innings a day). We can&rsquo;t turn it back into your address, and we don&rsquo;t use it for anything else.</li>
+        <li><strong>Your note is private.</strong> It is never shown on the site. Only the site&rsquo;s owner reads it, to check a ruling. Please don&rsquo;t put your name, email or other personal details in it.</li>
+        <li><strong>What is public:</strong> only counts and the reasons people picked, on the Under review page. Nothing you write is published, and a challenge never changes a ruling by itself.</li>
+        <li><strong>No account, no sign-in.</strong> Challenges are stored in a database run for us by Neon, hosted in Sydney through Vercel. Email <a href="mailto:ben@haveaplan.xyz">ben@haveaplan.xyz</a> if you want one removed.</li>
       </ul>
 
       <h2>In the iPhone app</h2>
