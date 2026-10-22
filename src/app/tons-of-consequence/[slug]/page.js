@@ -8,8 +8,9 @@ import { careerMomentsFor } from '@/lib/helloSport';
 import HelloSportMoments from '@/components/HelloSportMoments';
 import ShareCard from '@/components/ShareCard';
 
-export function generateMetadata({ params }) {
-  const b = BATTER_BY_SLUG.get(params.slug);
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const b = BATTER_BY_SLUG.get(slug);
   if (!b) return { title: 'Batter not found' };
   return {
     title: `${b.name}: tons of consequence`,
@@ -25,8 +26,9 @@ function notMeasuredSummary(b) {
   return Object.entries(n).map(([k, v]) => `${v} ${NOT_MEASURED_LABEL[k]}`).join(', ');
 }
 
-export default function BatterPage({ params }) {
-  const b = BATTER_BY_SLUG.get(params.slug);
+export default async function BatterPage({ params }) {
+  const { slug } = await params;
+  const b = BATTER_BY_SLUG.get(slug);
   if (!b) notFound();
   return (
     <article className="prose toc-page">

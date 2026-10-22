@@ -12,7 +12,8 @@ export const alt = 'A Test century ranked by Tons of Consequence';
 const TIER_COLOUR = { legendary: '#f0c23c', elite: '#62d08c', great: '#5fb8e8', notable: '#a9b7ae' };
 
 export default async function Image({ params }) {
-  const c = BY_ID.get(parseInningsId(params.slug));
+  const { slug } = await params;
+  const c = BY_ID.get(parseInningsId(slug));
   if (!c) {
     return new ImageResponse(<div style={{ width: '100%', height: '100%', display: 'flex', background: '#0b1c13', color: '#f2ead4', alignItems: 'center', justifyContent: 'center', fontSize: 64 }}>Tons of Consequence</div>, size);
   }

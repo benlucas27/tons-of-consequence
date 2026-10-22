@@ -7,24 +7,24 @@
     "prebuild": "node scripts/build-hello-sport.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "test": "node --test \"tests/*.test.mjs\""
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.1",
     "@neondatabase/serverless": "^1.2.0",
     "@vercel/analytics": "^2.0.1",
-    "next": "14.2.35",
-    "react": "^18",
-    "react-dom": "^18",
+    "next": "^16.4.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "zod": "^4.6.7"
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "adm-zip": "^0.5.18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3"
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.2"
   }
 }

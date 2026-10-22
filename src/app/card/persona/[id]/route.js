@@ -7,7 +7,8 @@ export const runtime = 'nodejs';
 /** The Pub Test result as a card: /card/persona/purist?c=3,2,2,1 (counts in the order purist, analyst, romantic, patriot). */
 export async function GET(req, { params }) {
   const sp = new URL(req.url).searchParams;
-  const persona = PERSONA_BY_ID[params.id];
+  const { id } = await params;
+  const persona = PERSONA_BY_ID[id];
   if (!persona) return new Response('No such persona', { status: 404 });
   const fmt = formatOf(sp);
   const big = fmt === 'portrait';

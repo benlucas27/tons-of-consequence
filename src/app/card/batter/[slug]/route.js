@@ -12,7 +12,8 @@ const Stat = ({ big, value, label }) => (
 
 export async function GET(req, { params }) {
   const sp = new URL(req.url).searchParams;
-  const r = BOARD.find((x) => x.slug === params.slug);
+  const { slug } = await params;
+  const r = BOARD.find((x) => x.slug === slug);
   if (!r) return new Response('No such batter', { status: 404 });
   const fmt = formatOf(sp);
   const big = fmt === 'portrait';
@@ -37,5 +38,5 @@ export async function GET(req, { params }) {
       <Footer text="Every Test hundred, and why it counted" />
     </Frame>
   );
-  return cardImage(el, fmt, sp, `toc-${params.slug}`);
+  return cardImage(el, fmt, sp, `toc-${slug}`);
 }

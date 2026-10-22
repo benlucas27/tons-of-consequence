@@ -8,7 +8,8 @@ export const metadata = {
   description: 'Make a picture of any batter, innings, head-to-head or leaderboard to post anywhere: square or 4:5 portrait size.',
 };
 
-export default function SharePage({ searchParams }) {
+export default async function SharePage({ searchParams: sp }) {
+  const searchParams = await sp;
   const batters = BATTERS.filter((b) => b.hundreds >= 1).map((b) => ({ name: b.name, slug: b.slug }));
   const innings = ALL.map((c) => ({ id: c.id, label: `${c.name} ${runsText(c)} v ${c.opponent} ${c.year}` }));
   return (

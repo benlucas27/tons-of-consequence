@@ -5,7 +5,8 @@ export const runtime = 'nodejs';
 
 /** App icon: the ball on the dark green, square. ?maskable=1 keeps the ball inside the safe zone for round or squircle masks. */
 export async function GET(req, { params }) {
-  const size = [180, 192, 512].includes(Number(params.size)) ? Number(params.size) : 512;
+  const { size: sizeParam } = await params;
+  const size = [180, 192, 512].includes(Number(sizeParam)) ? Number(sizeParam) : 512;
   const maskable = new URL(req.url).searchParams.get('maskable') === '1';
   const ball = Math.round(size * (maskable ? 0.52 : 0.68));
   return new ImageResponse(

@@ -6,7 +6,8 @@ const metadata = {
   description: 'Pick any two Test centuries for a verdict on your weighting, or compare whole careers, starting with The Big Four: Smith, Kohli, Root and Williamson.',
 };
 
-export function generateMetadata({ searchParams }) {
+export async function generateMetadata({ searchParams: sp }) {
+  const searchParams = await sp;
   const a = Number(searchParams?.a);
   const b = Number(searchParams?.b);
   if (!a || !b || searchParams?.women || searchParams?.set) return metadata;

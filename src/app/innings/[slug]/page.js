@@ -10,8 +10,9 @@ import { NIGHT_WATCHMAN } from '@/data/night-watchman';
 
 const find = (slug) => BY_ID.get(parseInningsId(slug));
 
-export function generateMetadata({ params }) {
-  const c = find(params.slug);
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const c = find(slug);
   if (!c) return { title: 'Innings not found' };
   const title = `${c.name} ${runsText(c)} v ${c.opponent}, ${c.year}`;
   const description = c.story ? c.story.split('. ').slice(0, 2).join('. ').replace(/\.?$/, '.') : `${c.name} made ${runsText(c)} against ${c.opponent} in ${c.year}. See how it ranks among every Test century.`;
@@ -35,8 +36,9 @@ function Skeleton({ c }) {
   );
 }
 
-export default function Page({ params }) {
-  const c = find(params.slug);
+export default async function Page({ params }) {
+  const { slug } = await params;
+  const c = find(slug);
   if (!c) notFound();
   return (
     <Suspense fallback={<Skeleton c={c} />}>

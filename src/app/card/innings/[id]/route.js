@@ -8,7 +8,8 @@ export const runtime = 'nodejs';
 
 export async function GET(req, { params }) {
   const sp = new URL(req.url).searchParams;
-  const base = BY_ID.get(Number(params.id));
+  const { id } = await params;
+  const base = BY_ID.get(Number(id));
   if (!base) return new Response('No such innings', { status: 404 });
   const fmt = formatOf(sp);
   const big = fmt === 'portrait';
