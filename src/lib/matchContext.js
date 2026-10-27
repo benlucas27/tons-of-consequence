@@ -132,6 +132,9 @@ export function hundredsIn(match) {
  * 'single' when the match has no series. `matches` are Cricsheet match objects.
  */
 export function seriesStakes(matches) {
+  // The archive only shows matches already played, so the length of a series that is still being played cannot be read from
+  // it. A series whose latest match is within ONGOING_DAYS of the newest match in the archive may not be over: its matches are
+  // all 'live', never a 'decider' or 'dead', and a one-match group is 'single' only once it is clearly finished.
   // The archive names a series inconsistently (the first Test can carry the trophy's name and the rest the tour's),
   // so a series is found from the two teams and the dates: matches between the same two sides, in date order, with
   // a new series starting when the match number goes back to 1 or there is a gap of more than 60 days.
@@ -144,6 +147,8 @@ export function seriesStakes(matches) {
     byPair.get(key).push(m);
   }
   const day = (m) => Date.parse(m.info.dates?.[0] || '1970-01-01') / 86400000;
+  const ONGOING_DAYS = 21;
+  const archiveEnd = Math.max(0, ...matches.filter((m) => m.info?.gender === 'male').map(day));
   const stakes = new Map(); // match -> { stakes, played, of, score }
   for (const list of byPair.values()) {
     list.sort((a, b) => day(a) - day(b));
@@ -155,6 +160,7 @@ export function seriesStakes(matches) {
       if (fresh) groups.push([m]); else cur.push(m);
     }
     for (const g of groups) {
+      const ongoing = day(g[g.length - 1]) >= archiveEnd - ONGOING_DAYS;
       const n = Math.max(g.length, ...g.map((m) => m.info.event.match_number || 0));
       const wins = {};
       g.forEach((m, idx) => {
@@ -162,7 +168,9 @@ export function seriesStakes(matches) {
         const diff = Math.abs((wins[a] || 0) - (wins[b] || 0));
         const remaining = n - idx; // matches left including this one
         let s = 'live';
-        if (diff > remaining) s = 'dead';
+        if (ongoing) s = 'live';
+        else if (g.length === 1) s = 'single';
+        else if (diff > remaining) s = 'dead';
         else if (remaining === 1 && diff === 0) s = 'decider';
         else if (remaining === 1 && diff === 1) s = 'on the line';
         stakes.set(m, { stakes: s, played: idx, of: n, score: `${wins[a] || 0}-${wins[b] || 0}`, teams: [a, b] });

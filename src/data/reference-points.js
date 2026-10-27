@@ -22,7 +22,7 @@ export const REFERENCE_POINTS = {
    0,
    0
   ],
-  "away": 16,
+  "away": 17,
   "home": 19,
   "awayTons": 4
  },
@@ -491,7 +491,7 @@ export const REFERENCE_POINTS = {
    0
   ],
   "away": 0,
-  "home": 10,
+  "home": 11,
   "awayTons": 0
  },
  "Marnus Labuschagne|AUS": {

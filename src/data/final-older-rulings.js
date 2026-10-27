@@ -3,6 +3,11 @@
  * Made under the 12 laws, so they stand over the rules. id -> [1 if a ton of consequence else 0, scenario or null, reason, evidence].
  */
 export const FINAL_OLDER_RULINGS = {
+  // Pinned 27 Oct 2026, pending Ben's decision: the series-stakes fix (a one-off Test or the first Test of a series is no longer
+  // called a decider) would turn these three from tons of consequence into good tons. They stay as they were until he rules.
+  106: [1, "Carried the innings", "He scored 47% of the team's runs.", "b"],
+  2294: [1, "Carried the innings", "He scored 41% of the team's runs.", "b"],
+  4605: [1, "Rescued the innings", "He came in at 4 for 86.", "b"],
   // Renshaw 190 v South Africa, Durban 2026: the model called the first Test of an unfinished series "the decider" because it only knows the matches played so far.
   4599: [1, "Carried the innings", "In at 3 for 84, 84 ahead. He made 49% of the team's 390, and no one else came close. The team won by 214 runs in the first Test of a three-Test series. He added 134 for the 9th wicket. He faced an elite attack.", "b"],
   396: [1, "Carried the innings", "The match reports back it up as a ton of consequence.", "r"],
