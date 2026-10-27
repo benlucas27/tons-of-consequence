@@ -4,7 +4,12 @@ import { BY_ID, parseInningsId, rankAll, TOTAL, inningsPath } from '../dataset.j
 import { tocForOrder, DEFAULT_ORDER, tierOf, LEVER_BY_KEY, RANK_WEIGHTS, activePreset, parseOrder, parseBias, BIASES } from '../scoring.js';
 import { BATTER_BY_SLUG, LEADERS, BATTERS, verdictOf, MEASURED_TOTAL, TONS_TOTAL } from '../consequence.js';
 import { LAWS } from '../laws.js';
-import { runsText, ord, context } from '../format.js';
+import { runsText, ord, context, fmt1 } from '../format.js';
+import { BOARD } from '../batterBoard.js';
+import { SORTS, sortBoard } from '../boardSort.js';
+import { compareInnings } from '../ask.js';
+import { PERSONA_BY_ID, PICKS } from '../quiz.js';
+import { PRESETS } from '../scoring.js';
 import { C, SIZES, WIDE, cut, pct, up, fit } from './theme.js';
 
 const SITE = 'tonsofconsequence.com';
@@ -270,31 +275,37 @@ function CompareCard({ size, params }) {
 
 function BoardCard({ size, params }) {
   const tall = size.height > 1200;
-  const byShare = params.sort === 'share';
-  const rows = (byShare ? LEADERS.filter((b) => b.measured >= 10).sort((a, b) => b.tons / b.measured - a.tons / a.measured) : LEADERS).slice(0, tall ? 10 : 9);
-  const top = byShare ? 100 : rows[0].tons;
-  const val = (b) => (byShare ? pct(b.tons, b.measured) : b.tons);
-  const titleLines = byShare ? ['Highest share of', 'hundreds that were ToCs'] : ['Most tons of', 'consequence'];
-  const ts = fit(titleLines, 940, tall ? 124 : 104);
+  const sort = SORTS[params.sort] ? params.sort : 'tons';
+  const min = Math.min(20, Math.max(1, Number(params.min) || (sort === 'share' ? 10 : 8)));
+  const rows = sortBoard(BOARD, { sort, min }).slice(0, tall ? 10 : 9);
+  const titles = { tons: ['Most tons of', 'consequence'], share: ['Highest share of', 'hundreds that were ToCs'], peak: ['Best single', 'innings'], wins: ['Highest team', 'win rate'] }[sort];
+  const val = { tons: (r) => r.tons, share: (r) => pct(r.tons, r.measured), peak: (r) => (r.peak ? r.peak.score : 0), wins: (r) => pct(r.wins, r.resultsKnown) }[sort];
+  const show = { tons: (r) => r.tons, share: (r) => `${val(r)}%`, peak: (r) => val(r).toFixed(1), wins: (r) => `${val(r)}%` }[sort];
+  const top = sort === 'tons' ? Math.max(1, rows[0]?.tons || 1) : 100;
+  const sub = { tons: `${TONS_TOTAL} ToCs found across ${MEASURED_TOTAL.toLocaleString()} measured Test hundreds`, share: `${min} or more measured hundreds`, peak: 'The highest Greatness score of any one innings', wins: `${min} or more hundreds with a known result` }[sort];
+  const ts = fit(titles, 940, tall ? 124 : 104);
   return {
     link: '/tons-of-consequence',
     jsx: (
       <Frame size={size}>
         <div style={col({ gap: 8 })}>
           <div style={col()}>
-            {titleLines.map((t, i) => <div key={t} style={head(ts, { color: i ? C.gold : C.cream, lineHeight: 0.95 })}>{up(t)}</div>)}
+            {titles.map((t, i) => <div key={t} style={head(ts, { color: i ? C.gold : C.cream, lineHeight: 0.95 })}>{up(t)}</div>)}
           </div>
-          <div style={flex({ fontSize: tall ? 26 : 24, color: C.muted })}>{byShare ? '10 or more measured hundreds' : `${TONS_TOTAL} ToCs found across ${MEASURED_TOTAL.toLocaleString()} measured Test hundreds`}</div>
+          <div style={flex({ fontSize: tall ? 26 : 24, color: C.muted })}>{sub}</div>
         </div>
         <div style={col({ gap: tall ? 14 : 9 })}>
           {rows.map((b, i) => (
             <div key={b.slug} style={flex({ alignItems: 'center', gap: 18 })}>
               <div style={head(tall ? 38 : 34, { width: tall ? 46 : 40, flexShrink: 0, fontWeight: 600, color: C.muted })}>{i + 1}</div>
-              <div style={head(tall ? 44 : 38, { width: tall ? 310 : 280, flexShrink: 0, textTransform: 'uppercase', whiteSpace: 'nowrap' })}>{cut(b.name, 20)}</div>
+              <div style={col({ width: tall ? 310 : 280, flexShrink: 0 })}>
+                <div style={head(tall ? 44 : 38, { textTransform: 'uppercase', whiteSpace: 'nowrap' })}>{cut(b.name, 20)}</div>
+                {sort === 'peak' && b.peak && <div style={flex({ fontSize: 20, color: C.muted, whiteSpace: 'nowrap' })}>{`${b.peak.runs}${b.peak.notOut ? '*' : ''} v ${b.peak.opponent} ${b.peak.year}`}</div>}
+              </div>
               <div style={flex({ flexGrow: 1, flexShrink: 1, minWidth: 0, height: tall ? 44 : 40, background: C.track, borderRadius: 6 })}>
                 <div style={flex({ width: `${Math.max(3, (val(b) / top) * 100)}%`, height: '100%', background: i === 0 ? C.red : C.green, borderRadius: 6 })} />
               </div>
-              <div style={head(tall ? 58 : 50, { width: tall ? 96 : 90, flexShrink: 0, justifyContent: 'flex-end', color: i === 0 ? C.red : C.green })}>{byShare ? `${val(b)}%` : val(b)}</div>
+              <div style={head(tall ? 58 : 50, { width: tall ? 118 : 104, flexShrink: 0, justifyContent: 'flex-end', color: i === 0 ? C.red : C.green })}>{show(b)}</div>
             </div>
           ))}
         </div>
@@ -391,7 +402,99 @@ function LawsCard({ size, params }) {
   };
 }
 
-const TYPES = { batter: BatterCard, innings: InningsCard, compare: CompareCard, board: BoardCard, rankings: RankingsCard, laws: LawsCard };
+const rgba = (hex, a) => { const n = parseInt(String(hex).replace('#', ''), 16); return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${a})`; };
+
+/** Two innings side by side: who scores higher on a weighting, and how firm that is across the presets. */
+function VersusCard({ size, params }) {
+  const a = BY_ID.get(parseInningsId(params.a || ''));
+  const b = BY_ID.get(parseInningsId(params.b || ''));
+  if (!a || !b) return null;
+  const { order, bias } = weightingOf(params);
+  const cmp = compareInnings(a, b, order, bias);
+  const margin = Math.abs(cmp.a.toc - cmp.b.toc);
+  const close = margin < 0.1;
+  const holds = cmp.presets.length - cmp.flips.length;
+  const preset = activePreset(order, bias);
+  const tall = size.height > 1200;
+  const headline = close ? 'Too close to call' : `${cmp.winner.name.split(' ').slice(-1)[0]} by ${fmt1(margin)} points`;
+  const sub = `${preset ? `${preset} weighting` : 'Custom weighting'} · ${close ? 'level' : `holds under ${holds} of ${cmp.presets.length} presets`}`;
+  const side = (c) => {
+    const v = verdictOf(c.id);
+    const win = !close && cmp.winner.id === c.id;
+    return (
+      <div key={c.id} style={col({ flexGrow: 1, justifyContent: 'center', gap: tall ? 6 : 2, padding: tall ? '24px 32px' : '14px 28px', border: `3px solid ${win ? C.red : C.line}`, borderRadius: 16, background: win ? 'rgba(238,90,62,0.08)' : C.panel })}>
+        <div style={flex({ justifyContent: 'space-between', alignItems: 'center', fontSize: 22, letterSpacing: 4, color: C.gold })}>
+          <div style={flex()}>{win ? 'HIGHER' : ''}</div>
+          <div style={flex({ color: v && v.passes ? C.red : C.muted })}>{v ? (v.passes ? 'TON OF CONSEQUENCE' : 'GOOD TON') : 'NOT MEASURED YET'}</div>
+        </div>
+        <div style={flex({ alignItems: 'flex-end', justifyContent: 'space-between' })}>
+          <div style={col({ gap: 2 })}>
+            <div style={head(fit([c.name], 560, tall ? 80 : 62), { textTransform: 'uppercase' })}>{c.name}</div>
+            <div style={flex({ fontSize: tall ? 28 : 24, color: C.soft })}>{context(c)}</div>
+          </div>
+          <div style={head(tall ? 190 : 140, { color: win ? C.red : C.cream, lineHeight: 0.8 })}>{runsText(c)}</div>
+        </div>
+        <div style={flex({ alignItems: 'baseline', gap: 16 })}>
+          <div style={head(tall ? 84 : 62)}>{fmt1(c.toc)}</div>
+          <div style={flex({ fontSize: 22, letterSpacing: 4, color: C.muted })}>GREATNESS SCORE</div>
+        </div>
+      </div>
+    );
+  };
+  return {
+    link: `/compare?a=${a.id}&b=${b.id}`,
+    jsx: (
+      <Frame size={size} glow="rgba(240,100,60,0.30)">
+        <div style={head(tall ? 104 : 70, { color: C.cream })}>{up('Head to head')}</div>
+        <div style={col({ gap: tall ? 20 : 14, flexGrow: 1, justifyContent: 'center' })}>{[cmp.a, cmp.b].map(side)}</div>
+        <div style={col({ gap: 4 })}>
+          <div style={head(tall ? 92 : 64, { color: C.gold, textTransform: 'uppercase' })}>{headline}</div>
+          <div style={flex({ fontSize: tall ? 28 : 24, color: C.soft })}>{sub}</div>
+        </div>
+      </Frame>
+    ),
+  };
+}
+
+/** The Pub Test result: which cricket fan someone is, and how their answers split. */
+function PersonaCard({ size, params }) {
+  const persona = PERSONA_BY_ID[params.id];
+  if (!persona) return null;
+  const tall = size.height > 1200;
+  const counts = String(params.c || '').split(',').map((n) => Math.max(0, Math.min(8, Number(n) || 0)));
+  const showCounts = counts.length === PICKS.length;
+  const preset = PRESETS[persona.preset];
+  const nameLines = persona.name.toUpperCase().split(' ');
+  const ns = fit(nameLines, 940, tall ? 210 : 150);
+  return {
+    link: '/quiz',
+    jsx: (
+      <Frame size={size} glow={rgba(persona.colour, 0.34)}>
+        <div style={col({ gap: 6 })}>
+          <div style={flex({ fontFamily: 'Barlow Condensed', fontWeight: 600, fontSize: tall ? 44 : 36, letterSpacing: 8, color: C.muted })}>{up("I'M")}</div>
+          <div style={col()}>{nameLines.map((l) => <div key={l} style={head(ns, { color: persona.colour, lineHeight: 0.9 })}>{l}</div>)}</div>
+          <div style={flex({ fontSize: tall ? 40 : 30, color: C.cream, lineHeight: 1.25, marginTop: 14, maxWidth: 960 })}>{cut(persona.tagline, tall ? 120 : 96)}</div>
+          <div style={flex({ fontSize: tall ? 28 : 24, color: C.soft, marginTop: 8, lineHeight: 1.3, maxWidth: 960 })}>{cut(`My ranking: ${persona.preset}.${preset && preset.blurb ? ` ${preset.blurb}` : ''}`, tall ? 150 : 110)}</div>
+        </div>
+        <div style={col({ gap: 18 })}>
+          {showCounts && (
+            <div style={flex({ gap: 14 })}>
+              {PICKS.map((id, i) => (
+                <div key={id} style={col({ flex: 1, padding: '14px 18px', background: C.panel, border: `2px solid ${id === persona.id ? persona.colour : C.line}`, borderRadius: 12 })}>
+                  <div style={head(tall ? 72 : 52)}>{counts[i]}</div>
+                  <div style={flex({ fontSize: 20, letterSpacing: 2, color: C.muted, textTransform: 'uppercase' })}>{PERSONA_BY_ID[id].name.replace('The ', '')}</div>
+                </div>
+              ))}
+            </div>
+          )}
+          <div style={head(tall ? 52 : 38, { color: C.gold, textTransform: 'uppercase' })}>Which cricket fan are you? Take the Pub Test.</div>
+        </div>
+      </Frame>
+    ),
+  };
+}
+
+const TYPES = { batter: BatterCard, innings: InningsCard, compare: CompareCard, board: BoardCard, rankings: RankingsCard, laws: LawsCard, versus: VersusCard, persona: PersonaCard };
 export const CARD_TYPES = Object.keys(TYPES);
 
 /**
