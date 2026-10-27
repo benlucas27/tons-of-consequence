@@ -24,7 +24,7 @@ const opt = (n, d) => { const i = args.indexOf(`--${n}`); return i >= 0 ? args[i
 const BASE = opt('base', 'https://tonsofconsequence.com').replace(/\/$/, '');
 const SLOT_HOURS = { A: [3, 35], B: [9, 5], C: [15, 35] }; // UTC [hour, minute]
 const STALE_HOURS = 36; // an item that is this late is skipped, not posted out of context
-const MAX_PER_DAY = 3;
+const MAX_PER_DAY = 5; // a safety stop, not the plan (the plan is 3 a day): GitHub runs late, so posts bunch up and a tighter cap would only add lag
 const LINK_CHARS = 23; // X counts every link as 23 characters
 
 /** The post text: the caption, then (for the slots in queue.linkSlots) the page it points to. Links cost more on X, so slots can be switched off. */
