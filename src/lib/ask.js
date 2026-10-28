@@ -290,6 +290,14 @@ export const EXAMPLE_QUESTIONS = [
   'Best innings against Australia in the 1990s',
   'Which centuries divide opinion the most?',
   'Matt Renshaw’s 190',
+  'Joe Root vs Virat Kohli',
+  'Top 10 hundreds at the MCG',
+  'Best hundreds in England since 2015',
+  'Best not out hundreds since 2010',
+  'Top 5 as a Romantic would see it',
+  'Best double hundreds by a New Zealander',
+  'Greatest hundreds against India in the 2000s',
+  'Steve Waugh’s best hundreds',
 ];
 
 /**

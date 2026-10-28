@@ -5,6 +5,11 @@
 export const FINAL_OLDER_RULINGS = {
   // Renshaw 190 v South Africa, Durban 2026: the model called the first Test of an unfinished series "the decider" because it only knows the matches played so far.
   4599: [1, "Carried the innings", "In at 3 for 84, 84 ahead. He made 49% of the team's 390, and no one else came close. The team won by 214 runs in the first Test of a three-Test series. He added 134 for the 9th wicket. He faced an elite attack.", "b"],
+  // The four hundreds that had no verdict (Langer, Hammond, G Chappell x2), settled from Wikipedia's series pages and lists of centuries (29 Oct 2026).
+  2896: [0, null, "Australia won by 246 runs in the first Test of a three-Test series. He opened and made 116 of the team's 439, 26%, and another hundred came in the same innings. On the facts we have, the match didn't hinge on it.", "p"],
+  2845: [0, null, "Australia won by 92 runs in the second Test of a three-Test series, already 1-0 up. He made 116 not out of the team's 441 for 5 declared, 26%, and another hundred came in the same innings. On the facts we have, the match didn't hinge on it.", "p"],
+  4230: [0, null, "The match was lost: England won by an innings and 4 runs.", "p"],
+  2566: [0, null, "England won by an innings and 13 runs in the third Test of five, with the series level. He made 120 of the team's 469 for 4 declared, 26%, and a bigger hundred came in the same innings. On the facts we have, the match didn't hinge on it.", "p"],
   396: [1, "Carried the innings", "The match reports back it up as a ton of consequence.", "r"],
   466: [1, "Made it count", "His side won the match, and the hundred mattered to it.", "r"],
   653: [0, null, "The match was won by an innings and 29 runs. On the facts we have, the match didn't hinge on it.", "r"],

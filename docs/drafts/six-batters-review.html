@@ -1,0 +1,127 @@
+<title>Six Batters Review</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+/* Layout: one column of batter blocks, each a short summary then a table of the hundreds that could swing. */
+:root {
+  --bg: #f4f6f2; --panel: #ffffff; --ink: #14201a; --ink2: #4a5a50; --line: #d5ddd4;
+  --yes: #1d7a46; --no: #8a3a2a; --maybe: #8a6a10;
+  --display: "Barlow Condensed", "Arial Narrow", sans-serif; --body: "Barlow", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #0e1712; --panel: #16221b; --ink: #e8efe9; --ink2: #9db0a3; --line: #2a3a30; --yes: #5fcf8e; --no: #e8917f; --maybe: #e2c25a; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg: #0e1712; --panel: #16221b; --ink: #e8efe9; --ink2: #9db0a3; --line: #2a3a30; --yes: #5fcf8e; --no: #e8917f; --maybe: #e2c25a; color-scheme: dark; }
+body { background: var(--bg); color: var(--ink); font: 400 16px/1.5 var(--body); padding-block: 28px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+main { max-width: 860px; margin: 0 auto; display: grid; gap: 28px; }
+h1 { font: 700 40px/1 var(--display); text-transform: uppercase; margin: 0 0 8px; text-wrap: balance; }
+h2 { font: 700 26px/1.1 var(--display); text-transform: uppercase; margin: 0; }
+p { margin: 0; } .lede { color: var(--ink2); max-width: 64ch; }
+.box { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 12px; min-width: 0; }
+.sum { color: var(--ink2); font-size: 14px; }
+.sum b { color: var(--ink); }
+.wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; min-width: 620px; }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px 8px 0; border-top: 1px solid var(--line); }
+th { font: 600 11px var(--body); letter-spacing: .1em; text-transform: uppercase; color: var(--ink2); border-top: 0; }
+td:first-child { white-space: nowrap; font-weight: 600; }
+.lean { font: 700 14px var(--display); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.yes { color: var(--yes); } .no { color: var(--no); } .maybe { color: var(--maybe); }
+.note { font-size: 13px; color: var(--ink2); }
+ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+</style>
+<main>
+  <header>
+    <h1>Six batters review</h1>
+    <p class="lede">Warner, Border, Hayden, Cook, Williamson and Stokes: every hundred checked, and the good tons most likely to swing to a ToC. Scores are the 13-law points (a hundred needs 45). My lean is a suggestion from the facts shown; the call is yours. Dates 29 Oct 2026.</p>
+  </header>
+
+  <section class="box">
+    <h2>What I checked across all six</h2>
+    <ul>
+      <li>Hundreds counted per batter: Warner 26, Border 27, Hayden 30, Cook 33, Williamson 33, Stokes 14. Every one has a verdict. The totals match the career figures I know; I did not re-read every scorecard.</li>
+      <li>Hayden's 380 v Zimbabwe (2003) is a good ton but his 101* v Zimbabwe the same year is a ToC. Law 13 takes points off hundreds against newer sides, so the 380 fits; the 101* is the one to look at.</li>
+      <li>Three were ToCs when you answered on 14 to 16 Oct, then the 13 laws turned them into good tons: Warner 102 Adelaide 2014, Warner 115 Centurion 2014 and Cook 235* Brisbane 2010. They are in the tables below.</li>
+      <li>Border's hundreds all rest on match reports (medium confidence). There is no ball-by-ball record before about 2006, so a drawn Test cannot be called a save without hand-checking reports.</li>
+    </ul>
+  </section>
+
+  <section class="box">
+    <h2>David Warner</h2>
+    <p class="sum"><b>26 hundreds, 4 ToCs:</b> 180 v India 2012, 145 v South Africa 2014, 335* and 154 v Pakistan 2019.</p>
+    <div class="wrap"><table>
+      <tr><th>Innings</th><th>What we know</th><th>Score</th><th>Lean</th></tr>
+      <tr><td>102 v India, Adelaide 2014</td><td>Opened, 35% of 290, side led by 73, won by 48 runs. A close finish (law 4). You said yes before the 13 laws.</td><td>no score kept</td><td class="lean yes">Yes</td></tr>
+      <tr><td>200 v South Africa, MCG 2022</td><td>In at 0 for 0, 35% of 575, won by 182, Boxing Day, faced an elite attack.</td><td>48, not firm</td><td class="lean yes">Yes</td></tr>
+      <tr><td>115 v South Africa, Centurion 2014</td><td>40% of 290, side led by 191 when he started, won by 281. You said yes earlier.</td><td>no score kept</td><td class="lean no">No</td></tr>
+      <tr><td>116 v New Zealand, Brisbane 2015</td><td>237 opening stand, side 239 ahead already (law 8 takes points off).</td><td>48</td><td class="lean no">No</td></tr>
+    </table></div>
+    <p class="note">Left alone because they are losses or dead rubbers: 123* Hobart 2011 (lost), 133 Dubai 2014 (lost), 112 Mirpur 2017 (lost), 122* Sydney 2016 (dead rubber).</p>
+  </section>
+
+  <section class="box">
+    <h2>Allan Border</h2>
+    <p class="sum"><b>27 hundreds, 4 ToCs:</b> 115 v England 1979, 196 v England 1985, 110 v West Indies 1992, 200* v England 1993.</p>
+    <div class="wrap"><table>
+      <tr><th>Innings</th><th>What we know</th><th>Score</th><th>Lean</th></tr>
+      <tr><td>106 v India, Chennai 1986</td><td>The tied Test. A tie passes law 1. Jones made 210 and carried it; Border's hundred was in a 574 for 7 declared.</td><td>no score kept</td><td class="lean maybe">Your call</td></tr>
+      <tr><td>153 and 150* v Pakistan, Lahore 1980</td><td>Drawn. A draw only counts with proof the hundred saved it, and we have no ball-by-ball for 1980. I need to read the match reports before leaning either way.</td><td>none</td><td class="lean maybe">Needs facts</td></tr>
+      <tr><td>105 v New Zealand, Brisbane 1993</td><td>Won by an innings and 96 runs.</td><td>none</td><td class="lean no">No</td></tr>
+    </table></div>
+    <p class="note">Most of Border's good tons are draws or losses that nothing here can prove either way. If you want, I can read the Wikipedia series pages for his draws and bring back the ones where Australia were in danger.</p>
+  </section>
+
+  <section class="box">
+    <h2>Matthew Hayden</h2>
+    <p class="sum"><b>30 hundreds, 4 ToCs:</b> 101* v Zimbabwe 2003, 137 v South Africa 2005, 111 v ICC World XI 2005, 110 v West Indies 2005.</p>
+    <div class="wrap"><table>
+      <tr><th>Innings</th><th>What we know</th><th>Score</th><th>Lean</th></tr>
+      <tr><td>153 v England, MCG 2006</td><td>In at 0 for 0, 37% of the team's runs, Ashes already won 3-0, a won dead rubber.</td><td>40</td><td class="lean no">No</td></tr>
+      <tr><td>138 v South Africa, MCG 2001</td><td>28% of the team's runs, won.</td><td>36</td><td class="lean no">No</td></tr>
+      <tr><td>136 v India, MCG 2003</td><td>24% of the team's runs, won.</td><td>36</td><td class="lean no">No</td></tr>
+      <tr><td>197 v England, Brisbane 2002</td><td>Ashes opener, won by 384 runs, no pressure on.</td><td>30</td><td class="lean no">No</td></tr>
+    </table></div>
+    <p class="note">Hayden has no strong swing. His best claims were the 203 at Chennai 2001 (a loss) and the 380 (a weaker side), and both are ruled out by the laws.</p>
+  </section>
+
+  <section class="box">
+    <h2>Alastair Cook</h2>
+    <p class="sum"><b>33 hundreds, 4 ToCs:</b> 118 v South Africa 2009, 109* v Bangladesh 2010, 294 v India 2011, 190 v India 2012. The 118 (Durban) and 190 (Eden Gardens) are in your rulings; the 109* v Bangladesh is the odd one.</p>
+    <div class="wrap"><table>
+      <tr><th>Innings</th><th>What we know</th><th>Score</th><th>Lean</th></tr>
+      <tr><td>235* v Australia, Brisbane 2010</td><td>Drawn Ashes opener. England replied to Australia's 481 with 1 for 517 declared. You said yes (saved the match), then a later ruling made it no. Worth checking the first-innings deficit.</td><td>no score kept</td><td class="lean yes">Yes, check</td></tr>
+      <tr><td>147 v India, The Oval 2018</td><td>His last Test, opened, 35% of the team's runs, England won by 118. Farewell adds 8 points; the series was already won.</td><td>33</td><td class="lean maybe">Your call</td></tr>
+      <tr><td>263 v Pakistan, Abu Dhabi 2015</td><td>Drawn against a lower-tier side, where law 1 says a hundred doesn't save a draw.</td><td>52</td><td class="lean no">No</td></tr>
+      <tr><td>244* v Australia, MCG 2017</td><td>Drawn dead rubber after the Ashes were lost.</td><td>65</td><td class="lean no">No</td></tr>
+    </table></div>
+    <p class="note">Left alone: 130 Rajkot 2016 (never in danger), 243 Birmingham 2017 (won, 47% of runs, no pressure), plus six losses.</p>
+  </section>
+
+  <section class="box">
+    <h2>Kane Williamson</h2>
+    <p class="sum"><b>33 hundreds, 4 ToCs:</b> 161* v West Indies 2014, 242* v Sri Lanka 2015, 121* v Sri Lanka 2023, 133* v South Africa 2024.</p>
+    <div class="wrap"><table>
+      <tr><th>Innings</th><th>What we know</th><th>Score</th><th>Lean</th></tr>
+      <tr><td>130 v South Africa, Dunedin 2017</td><td>Drawn. The model says New Zealand were never in danger. Worth a look at how the match went.</td><td>58</td><td class="lean maybe">Needs facts</td></tr>
+      <tr><td>200* v Pakistan, Karachi 2022</td><td>Drawn against a lower-tier side (law 1).</td><td>50</td><td class="lean no">No</td></tr>
+      <tr><td>176 v South Africa, Hamilton 2017</td><td>Drawn, cut short by weather.</td><td>54</td><td class="lean no">No</td></tr>
+      <tr><td>192 v Pakistan, Sharjah 2014</td><td>In at 1 for 51, 28% of the team's runs, won.</td><td>26</td><td class="lean no">No</td></tr>
+    </table></div>
+    <p class="note">The big wins (251, 238, 215) are shared with other hundreds in the same innings. Losses: 140 Brisbane 2015, 132 Lord's 2015, 104 Sylhet 2023.</p>
+  </section>
+
+  <section class="box">
+    <h2>Ben Stokes</h2>
+    <p class="sum"><b>14 hundreds, 3 ToCs:</b> 112 v South Africa 2017, 135* v Australia 2019, 176 v West Indies 2020.</p>
+    <div class="wrap"><table>
+      <tr><th>Innings</th><th>What we know</th><th>Score</th><th>Lean</th></tr>
+      <tr><td>101 v New Zealand, Lord's 2015</td><td>England won by 124. Off 92 balls, at number 6 in the third innings. A fast hundred.</td><td>no score kept</td><td class="lean maybe">Your call</td></tr>
+      <tr><td>115* v Australia, Lord's 2019</td><td>Drawn, weather cut the match short.</td><td>71</td><td class="lean no">No</td></tr>
+      <tr><td>103 v South Africa, Manchester 2022</td><td>In at 4 for 134, 25% of the team's runs, won.</td><td>23</td><td class="lean no">No</td></tr>
+    </table></div>
+    <p class="note">Left alone: 155 Lord's 2023, 120 Perth 2013 and 100 Leeds 2017 (all losses), 258 Cape Town 2016 (never in danger).</p>
+  </section>
+
+  <section class="box">
+    <h2>Also fixed today</h2>
+    <p class="note">Four hundreds had no verdict: Langer 116 Adelaide 2001, Hammond 120 Durban 1939, and Greg Chappell 116* Melbourne 1972 and 102 Melbourne 1975. All four are good tons. Langer, Hammond and the 116* were wins where the match did not hinge on them (26% of the runs, another hundred in the innings); the 102 was a loss.</p>
+  </section>
+</main>

@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 /** Share or save a designed card (a PNG made by a /card route). Shares the image itself where the phone allows it. */
-export default function CardButtons({ src, name, label = 'Share card' }) {
+export default function CardButtons({ src, name, label = 'Share image', small = false }) {
   const [msg, setMsg] = useState('');
   const url = (extra = '') => `${src}${src.includes('?') ? '&' : '?'}${extra}`;
   async function share() {
@@ -17,15 +17,15 @@ export default function CardButtons({ src, name, label = 'Share card' }) {
       a.href = URL.createObjectURL(blob);
       a.download = `${name}.png`;
       a.click();
-      setMsg('Card saved to your downloads.');
+      setMsg('Image saved to your downloads.');
     } catch (e) {
       if (e && e.name === 'AbortError') return;
-      setMsg('Could not make the card. Try again in a moment.');
+      setMsg('Could not make the image. Try again in a moment.');
     }
   }
   return (
     <span className="card-buttons">
-      <button type="button" className="btn" onClick={share}>{label}</button>
+      <button type="button" className={small ? 'btn small' : 'btn'} onClick={share}>{label}</button>
       <span role="status" className="conn-note">{msg}</span>
     </span>
   );

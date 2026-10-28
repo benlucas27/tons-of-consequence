@@ -43,7 +43,7 @@ export function CardPanel({ params, pageUrl, shareText }) {
         ))}
       </div>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img className={`share-preview share-${size}`} src={src} alt="Preview of the share card" />
+      <img className={`share-preview share-${size}`} src={src} alt="Preview of the share image" />
       <div className="share-actions">
         <a className="btn" href={cardUrl(params, size, '&download=1')} download>Download picture</a>
         <button className="btn" onClick={share}>Share</button>
@@ -53,12 +53,12 @@ export function CardPanel({ params, pageUrl, shareText }) {
   );
 }
 
-/** A "Share card" button that opens the panel in place. */
-export default function ShareCard({ params, pageUrl, shareText, label = 'Share card' }) {
+/** A "Share image" button that opens the panel in place. */
+export default function ShareCard({ params, pageUrl, shareText, label = 'Share image' }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="share-box">
-      <button className="btn" aria-expanded={open} onClick={() => setOpen(!open)}>{open ? 'Close share card' : label}</button>
+      <button className="btn" aria-expanded={open} onClick={() => setOpen(!open)}>{open ? 'Close' : label}</button>
       {open && <CardPanel params={params} pageUrl={pageUrl} shareText={shareText} />}
     </div>
   );

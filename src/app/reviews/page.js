@@ -3,10 +3,11 @@ import { challengeCounts, buildReviewLists } from '@/lib/reviewList';
 import { SHORT_REASON } from '@/lib/challenges';
 import { inningsPath } from '@/lib/dataset';
 import { runsText } from '@/lib/format';
+import ReviewPicker from '@/components/ReviewPicker';
 
 export const revalidate = 60;
 export const metadata = {
-  title: 'Under review',
+  title: 'Review',
   description: 'The Test hundreds readers have challenged, most challenged first, and what was decided.',
 };
 
@@ -23,8 +24,10 @@ export default async function Reviews() {
   const { under, decided, totalChallenges } = buildReviewLists(counts);
   return (
     <article className="prose toc-page">
-      <h1>Under review</h1>
+      <h1>Review</h1>
       <p className="lede">Hundreds where readers have challenged the call, most challenged first. A challenge asks us to look at the facts again. Only a ruling changes a verdict.</p>
+      <ReviewPicker />
+      <h2>Under review</h2>
       <p className="review-counter"><b>{under.length}</b> {under.length === 1 ? 'innings' : 'innings'} under review · <b>{totalChallenges}</b> {totalChallenges === 1 ? 'challenge' : 'challenges'} so far</p>
       {counts === null && <p className="conn-note">The review list is not available right now. Try again soon.</p>}
       {counts !== null && under.length === 0 && <p>Nothing is under review yet. Open any innings and press <b>Challenge this ruling</b> to add one.</p>}

@@ -120,4 +120,52 @@ export const COMPARE_SETS = [
       { name: 'Ollie Pope', country: 'ENG', cricsheet: 'e94bc520' },
     ],
   },
+  {
+    id: 'australian-core',
+    name: 'Australia\'s Modern Core',
+    kicker: 'Careers',
+    blurb: 'Smith, Warner, Labuschagne and Head: the four Australians who have carried the batting in the 2020s.',
+    players: [
+      { name: 'Steve Smith', country: 'AUS', cricsheet: '30a45b23' },
+      { name: 'David Warner', country: 'AUS', cricsheet: 'dcce6f09' },
+      { name: 'Marnus Labuschagne', country: 'AUS', cricsheet: 'fa433be6' },
+      { name: 'Travis Head', country: 'AUS', cricsheet: '12b610c2' },
+    ],
+  },
+  {
+    id: 'australian-captains',
+    name: 'Australian Captains',
+    kicker: 'Careers',
+    blurb: 'Ponting, Clarke and Smith: three Australian captains who also scored the runs. Ponting and Clarke began before ball-by-ball records are complete, so some career numbers are partial.',
+    players: [
+      { name: 'Ricky Ponting', country: 'AUS', cricsheet: '7d415ea5' },
+      { name: 'Michael Clarke', country: 'AUS', cricsheet: 'f842c2cf' },
+      { name: 'Steve Smith', country: 'AUS', cricsheet: '30a45b23' },
+    ],
+  },
+  {
+    id: 'england-modern-greats',
+    name: 'England\'s Modern Greats',
+    kicker: 'Careers',
+    blurb: 'Cook, Root, Pietersen and Stokes: the England batters who defined the last two decades.',
+    players: [
+      { name: 'Alastair Cook', country: 'ENG', cricsheet: 'f41598c1' },
+      { name: 'Joe Root', country: 'ENG', cricsheet: 'a343262c' },
+      { name: 'Kevin Pietersen', country: 'ENG', cricsheet: '39f01cdb' },
+      { name: 'Ben Stokes', country: 'ENG', cricsheet: 'e087956b' },
+    ],
+  },
+  {
+    id: 'left-handers',
+    name: 'The Left-Handers',
+    kicker: 'Careers',
+    blurb: 'Sangakkara, Cook, Warner, Graeme Smith and Pant: five left-handers with a lot of hundreds between them.',
+    players: [
+      { name: 'Kumar Sangakkara', country: 'SL', cricsheet: '6b71e6cf' },
+      { name: 'Alastair Cook', country: 'ENG', cricsheet: 'f41598c1' },
+      { name: 'David Warner', country: 'AUS', cricsheet: 'dcce6f09' },
+      { name: 'Graeme Smith', country: 'SA', cricsheet: '72861603' },
+      { name: 'Rishabh Pant', country: 'IND', cricsheet: '919a3be2' },
+    ],
+  },
 ];
