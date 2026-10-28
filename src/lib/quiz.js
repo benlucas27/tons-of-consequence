@@ -15,7 +15,7 @@ export const CLEAR_RESULT_MIN = 3;
 export const QUESTIONS = [
   {
     id: 1,
-    question: 'Four innings of 140. Which one goes highest?',
+    question: 'Four hundreds, all 140 runs. Which one ranks highest?',
     options: [
       { persona: 'purist', text: 'A debut hundred on a damp, seaming pitch against a world-class attack.' },
       { persona: 'analyst', text: 'A fourth-innings chase that wins the Test.' },
@@ -25,37 +25,37 @@ export const QUESTIONS = [
   },
   {
     id: 2,
-    question: 'Which would you rather watch again?',
+    question: 'Your side is in trouble. Which hundred do you want to see?',
     options: [
-      { persona: 'purist', text: "Tendulkar's 241* at the SCG in 2004, with the cover drive left out of his game." },
-      { persona: 'analyst', text: "Lara's 153* at Bridgetown, dragging West Indies to a one-wicket win." },
-      { persona: 'romantic', text: "Smith's 144 at Edgbaston, his first Test back after the ball-tampering ban." },
-      { persona: 'patriot', text: "Ponting's 156 at Old Trafford, saving the Test for Australia." },
+      { persona: 'purist', text: 'A long, hard grind against a great attack on a pitch that is doing everything.' },
+      { persona: 'analyst', text: 'One that turns a likely defeat into a draw or a win.' },
+      { persona: 'romantic', text: 'One by a batter in his final Test, with the crowd on its feet.' },
+      { persona: 'patriot', text: 'One by an Australian, in an Ashes Test, with the urn on the line.' },
     ],
   },
   {
     id: 3,
-    question: 'You tell a mate "great innings". What are you really saying?',
+    question: 'The scorecard says: a hundred, and a win. What do you want to know next?',
     options: [
-      { persona: 'purist', text: '"That was hard. Anyone can score on a flat one."' },
-      { persona: 'analyst', text: '"That decided the match. The numbers don\'t lie."' },
-      { persona: 'romantic', text: '"That meant everything to him."' },
-      { persona: 'patriot', text: '"He played it in the baggy green."' },
+      { persona: 'purist', text: 'What was the pitch like, and how good was the bowling?' },
+      { persona: 'analyst', text: 'How far behind was his side when he came in?' },
+      { persona: 'romantic', text: 'Who was he, and what had he been through to get there?' },
+      { persona: 'patriot', text: 'Was it against England?' },
     ],
   },
   {
     id: 4,
-    question: 'A brilliant hundred in a Test his side lost. How much does it count?',
+    question: 'A great hundred in a Test his side lost. How highly should it rank for greatness?',
     options: [
-      { persona: 'purist', text: "Plenty. Runs against a great attack on a hard pitch are hard runs, whatever the scoreboard says." },
-      { persona: 'analyst', text: 'Not much. If it did not win or save the match, it is a good ton, not a ton of consequence.' },
-      { persona: 'romantic', text: 'It counts if it meant something: a farewell, a comeback, a stand against the odds.' },
-      { persona: 'patriot', text: 'It counts if he was one of ours and it was against England.' },
+      { persona: 'purist', text: 'High. Runs against a great attack on a hard pitch are hard runs, whatever the scoreboard says.' },
+      { persona: 'analyst', text: 'Lower. If it did not win or save the match, it is a good ton, not a ton of consequence.' },
+      { persona: 'romantic', text: 'High, if it meant something: a farewell, a comeback, a stand against the odds.' },
+      { persona: 'patriot', text: 'High, if he was one of ours and it was against England.' },
     ],
   },
   {
     id: 5,
-    question: 'Which huge score means the most to you?',
+    question: 'Which huge score would you rank highest?',
     options: [
       { persona: 'purist', text: "Hanif Mohammad's 337 over 16 hours, saving a Test West Indies looked certain to win." },
       { persona: 'analyst', text: "Astle's 222 off 168 balls against England, even in a losing chase. The numbers are absurd." },
@@ -65,7 +65,7 @@ export const QUESTIONS = [
   },
   {
     id: 6,
-    question: 'Which kind of pressure makes an innings?',
+    question: 'Which kind of pressure makes an innings the greatest?',
     options: [
       { persona: 'purist', text: 'Last pair together, 20 overs to survive, the draw on the line.' },
       { persona: 'analyst', text: 'Chasing 300 in the fourth innings.' },
@@ -75,7 +75,7 @@ export const QUESTIONS = [
   },
   {
     id: 7,
-    question: 'What should a ranking reward most?',
+    question: 'If you were setting the ranking, what should it reward most?',
     options: [
       { persona: 'purist', text: 'How hard it was: the pitch, the weather and the attack.' },
       { persona: 'analyst', text: 'What it changed: win probability, partnerships and the result.' },
@@ -85,7 +85,7 @@ export const QUESTIONS = [
   },
   {
     id: 8,
-    question: 'Which headline would you click?',
+    question: 'Which headline would make you stop and read?',
     options: [
       { persona: 'purist', text: '"The pitch nobody could bat on, and the one man who did."' },
       { persona: 'analyst', text: '"Win probability swung from 4 per cent to 96 per cent."' },

@@ -17,6 +17,10 @@ export const FINAL_OLDER_RULINGS = {
   141: [1, "Saved the match", "England replied to Australia's 481 with 1 for 517 declared, and he made 235 not out. The match was drawn, and his hundred saved it.", "b"],
   1359: [1, "Carried the innings", "His last Test. He opened and made 147, 35% of the team's runs, and England won by 118 runs.", "b"],
   4413: [1, "Set up the win", "He made 101 off 92 balls at number 6, a fast hundred that changed the pace of the match. England won by 124 runs.", "b"],
+  // Ben's rulings after the scorecard check, 29 Oct 2026 (Hayden 197 and Williamson's other draws stay good tons).
+  1789: [1, "Set up the win", "Australia trailed by 366 when he came in and were 1-0 down in the series. He opened and made 136 of the team's 558, 24%, and Australia won by 9 wickets to level it. Another hundred came in the same innings.", "p"],
+  1682: [1, "Set up the win", "Australia were 1-0 up in a three-Test series. He opened and made 138 of the team's 487, 28%, the only hundred in the match, and gave Australia a 210-run lead. Australia won by 9 wickets.", "p"],
+  4188: [1, "Saved the match", "New Zealand were chasing 389 in the fourth innings and were 1 for 2 when he came in. He made 102 not out, 51% of the team's 200 for 6, and the match was drawn with his side in danger of losing.", "b"],
   396: [1, "Carried the innings", "The match reports back it up as a ton of consequence.", "r"],
   466: [1, "Made it count", "His side won the match, and the hundred mattered to it.", "r"],
   653: [0, null, "The match was won by an innings and 29 runs. On the facts we have, the match didn't hinge on it.", "r"],
@@ -139,7 +143,6 @@ export const FINAL_OLDER_RULINGS = {
   3735: [0, null, "On the facts we have, the match didn't hinge on it.", "r"],
   3917: [0, null, "The match was won. On the facts we have, the match didn't hinge on it.", "r"],
   3919: [0, null, "The match was drawn. On the facts we have, the match didn't hinge on it.", "r"],
-  4188: [0, null, "The match was drawn. On the facts we have, the match didn't hinge on it.", "r"],
   4234: [0, null, "The match was won. On the facts we have, the match didn't hinge on it.", "r"],
   4445: [0, null, "His side trailed by 213 when his innings began. He made 33% of the team's 299. The match was drawn. On the facts we have, the match didn't hinge on it.", "r"],
   447: [1, "Rescued the innings", "His side trailed by 290 when his innings began. He made 46% of the team's 425. The match was won by 4 wickets.", "r"],
