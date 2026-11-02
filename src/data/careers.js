@@ -2,15 +2,15 @@
  * Career batting figures for the players in src/data/compare-sets.js, worked out from Cricsheet's ball-by-ball
  * archive by scripts/build-careers.mjs. Generated: do not edit by hand. Hundreds are checked against the dataset.
  */
-export const CAREERS_AS_OF = "2026-09-12";
+export const CAREERS_AS_OF = "2026-10-22";
 export const CAREERS = {
   "Steve Smith|AUS": {
     "name": "Steve Smith",
-    "matches": 125,
-    "innings": 223,
+    "matches": 127,
+    "innings": 227,
     "notOuts": 28,
-    "runs": 10920,
-    "balls": 20237,
+    "runs": 11003,
+    "balls": 20439,
     "highScore": 239,
     "highScoreNotOut": false,
     "hundreds": 37,
@@ -18,7 +18,7 @@ export const CAREERS = {
     "fifties": 45,
     "ducks": 11,
     "firstTest": "2010-07-13",
-    "lastTest": "2026-08-22"
+    "lastTest": "2026-10-18"
   },
   "Virat Kohli|IND": {
     "name": "Virat Kohli",
@@ -310,27 +310,27 @@ export const CAREERS = {
   },
   "Travis Head|AUS": {
     "name": "Travis Head",
-    "matches": 67,
-    "innings": 114,
+    "matches": 69,
+    "innings": 118,
     "notOuts": 6,
-    "runs": 4653,
-    "balls": 6677,
+    "runs": 4808,
+    "balls": 6928,
     "highScore": 175,
     "highScoreNotOut": false,
-    "hundreds": 12,
+    "hundreds": 13,
     "doubleHundreds": 0,
     "fifties": 20,
     "ducks": 7,
     "firstTest": "2018-10-07",
-    "lastTest": "2026-08-22"
+    "lastTest": "2026-10-18"
   },
   "Marnus Labuschagne|AUS": {
     "name": "Marnus Labuschagne",
-    "matches": 65,
-    "innings": 117,
+    "matches": 67,
+    "innings": 121,
     "notOuts": 9,
-    "runs": 4730,
-    "balls": 9075,
+    "runs": 4857,
+    "balls": 9314,
     "highScore": 215,
     "highScoreNotOut": false,
     "hundreds": 11,
@@ -338,7 +338,7 @@ export const CAREERS = {
     "fifties": 25,
     "ducks": 4,
     "firstTest": "2018-10-07",
-    "lastTest": "2026-08-22"
+    "lastTest": "2026-10-18"
   },
   "Yashasvi Jaiswal|IND": {
     "name": "Yashasvi Jaiswal",
