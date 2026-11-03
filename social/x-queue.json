@@ -573,7 +573,8 @@
       },
       "approved": true,
       "link": "/tons-of-consequence",
-      "linked": false
+      "linked": false,
+      "skipped": "Too late (2026-11-02T09:05:00.000Z)"
     },
     {
       "id": 37,
@@ -587,7 +588,9 @@
       },
       "approved": true,
       "link": "/innings/413-steve-waugh-200-1995",
-      "linked": false
+      "linked": false,
+      "tweetId": "2117745482386551197",
+      "postedAt": "2026-11-03T22:27:23.694Z"
     },
     {
       "id": 38,
