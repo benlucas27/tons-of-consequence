@@ -4569,6 +4569,10 @@ export const CONSEQUENCE = {
   4627: [0,null,"A draw, and his side was never in danger of losing, so the hundred didn't save anything.","b"],
   4628: [0,null,"The match was drawn. On the facts we have, the match didn't hinge on it.","b"],
   4629: [0,null,"A loss: even a great hundred can't be a ton of consequence in a defeat.","b"],
-  4630: [1,"Carried the innings","In at 2 for 12, 12 ahead. He made 42% of the team's 425, and no one else came close. The team won by 31 runs. The series was still to be settled in this Test. He added 183 for the 8th wicket. He faced an elite attack.","b"],
+  4630: [1,"Carried the innings","In at 2 for 12, 12 ahead. He made 42% of the team's 425, and no one else came close. The team won by 31 runs. He added 183 for the 8th wicket. He faced an elite attack.","b"],
   4631: [0,null,"A loss: even a great hundred can't be a ton of consequence in a defeat.","b"],
+  4632: [0,null,"A loss: even a great hundred can't be a ton of consequence in a defeat.","b"],
+  4633: [0,null,"He made 26% of the team's runs. The match didn't hinge on it: he came in at 4 for 131.","b"],
+  4634: [0,null,"He made 30% of the team's runs. The match didn't hinge on it: he came in at 5 for 181.","b"],
+  4635: [0,null,"A loss: even a great hundred can't be a ton of consequence in a defeat.","b"],
 };

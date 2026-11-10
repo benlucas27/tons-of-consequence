@@ -22,7 +22,7 @@ export const REFERENCE_POINTS = {
    0,
    0
   ],
-  "away": 16,
+  "away": 17,
   "home": 19,
   "awayTons": 4
  },
@@ -87,7 +87,7 @@ export const REFERENCE_POINTS = {
    "lost": 3
   },
   "measured": 33,
-  "tons": 4,
+  "tons": 5,
   "byTier": [
    9,
    6,
@@ -96,7 +96,7 @@ export const REFERENCE_POINTS = {
   ],
   "tonsByTier": [
    0,
-   1,
+   2,
    3,
    0
   ],
@@ -113,7 +113,7 @@ export const REFERENCE_POINTS = {
    "lost": 5
   },
   "measured": 33,
-  "tons": 4,
+  "tons": 6,
   "byTier": [
    12,
    6,
@@ -121,14 +121,14 @@ export const REFERENCE_POINTS = {
    2
   ],
   "tonsByTier": [
-   2,
+   4,
    1,
    0,
    1
   ],
   "away": 17,
   "home": 15,
-  "awayTons": 3
+  "awayTons": 4
  },
  "David Warner|AUS": {
   "hundreds": 26,
@@ -139,7 +139,7 @@ export const REFERENCE_POINTS = {
    "lost": 3
   },
   "measured": 26,
-  "tons": 4,
+  "tons": 6,
   "byTier": [
    7,
    10,
@@ -147,8 +147,8 @@ export const REFERENCE_POINTS = {
    2
   ],
   "tonsByTier": [
-   1,
-   1,
+   2,
+   2,
    2,
    0
   ],
@@ -469,18 +469,18 @@ export const REFERENCE_POINTS = {
   "awayTons": 3
  },
  "Travis Head|AUS": {
-  "hundreds": 12,
+  "hundreds": 13,
   "results": {
-   "known": 12,
+   "known": 13,
    "won": 11,
    "drawn": 1,
-   "lost": 0
+   "lost": 1
   },
-  "measured": 12,
+  "measured": 13,
   "tons": 6,
   "byTier": [
    8,
-   1,
+   2,
    3,
    0
   ],
@@ -490,8 +490,8 @@ export const REFERENCE_POINTS = {
    2,
    0
   ],
-  "away": 0,
-  "home": 10,
+  "away": 1,
+  "home": 11,
   "awayTons": 0
  },
  "Marnus Labuschagne|AUS": {
@@ -737,7 +737,7 @@ export const REFERENCE_POINTS = {
    "lost": 3
   },
   "measured": 14,
-  "tons": 3,
+  "tons": 4,
   "byTier": [
    6,
    5,
@@ -746,7 +746,7 @@ export const REFERENCE_POINTS = {
   ],
   "tonsByTier": [
    1,
-   1,
+   2,
    1,
    0
   ],
