@@ -1,4 +1,12 @@
-# Mobile app: where things stand (21 Oct 2026, afternoon; paused in case credits run out)
+# Mobile app: where things stand
+
+## UPDATE 19 Nov 2026: RELEASED
+Version 1.0 (App Store Connect app id 6825257483) was rejected once on 31 Oct, approved by Apple on 7 Nov (Pending Developer Release) and released
+by Ben on 19 Nov 2026 (status now Ready for Distribution, 175 countries). The `mobile-app` branch is already fully contained in origin/main, so the "unmerged" notes below are out of date.
+The site had been paused on Vercel since 17 Nov (failed $22 Pro payment); Ben fixed the card the same day it was noticed. The app feed depends on tonsofconsequence.com being live.
+Still to do: install from the App Store and test alerts, add the App Store link to the site, X and Reddit. The notes below are the history up to 22 Oct.
+
+# Earlier status (21 Oct 2026, afternoon; paused in case credits run out)
 
 Branch `mobile-app` (NOT pushed to GitHub; main has only the feed + push sender + ToC spelling rule). App ID `com.tonsofconsequence.app`,
 Expo SDK 57, Expo project linked, Ben signed in to Expo (blucas27). Test in Expo Go: `cd mobile && npx expo start --no-dev --minify`.
