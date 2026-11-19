@@ -58,7 +58,7 @@ export default function ShareBuilder({ batters, innings, initial }) {
       {(type === 'innings' || type === 'rankings') && <label>Point of view<select value={preset} onChange={(e) => setPreset(e.target.value)}>{Object.keys(PRESETS).map((n) => <option key={n} value={n}>{n}: {PRESETS[n].blurb}</option>)}</select></label>}
       {type === 'board' && <label>Order by<select value={sort} onChange={(e) => setSort(e.target.value)}><option value="tons">Most tons of consequence</option><option value="share">Highest share of hundreds</option></select></label>}
       {type === 'laws' && <label>Which law<select value={law} onChange={(e) => setLaw(e.target.value)}><option value="">All 13 laws</option>{Array.from({ length: 13 }, (_, i) => <option key={i} value={i + 1}>Law {i + 1}</option>)}</select></label>}
-      {params ? <CardPanel key={JSON.stringify(params)} params={params} pageUrl={pageUrl} shareText={text} /> : <p className="conn-note">Pick a name from the suggestions to see the card.</p>}
+      {params ? <CardPanel key={JSON.stringify(params)} params={params} pageUrl={pageUrl} shareText={text} /> : <p className="conn-note">Pick a name from the suggestions to see the image.</p>}
     </div>
   );
 }

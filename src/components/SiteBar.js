@@ -7,16 +7,16 @@ import Logo from './Logo';
 const NAV = [
   { href: '/', label: 'Rankings' },
   { href: '/tons-of-consequence', label: 'ToCs' },
-  { href: '/womens-tests', label: "Women's ToCs" },
   { href: '/compare', label: 'Compare' },
   { href: '/search', label: 'Search' },
-  { href: '/the-don', label: 'The Don' },
-  { href: '/quiz', label: 'Pub Test' },
+  { href: '/reviews', label: 'Review' },
+  { href: '/share', label: 'Share' },
 ];
 const MORE = [
+  { href: '/womens-tests', label: "Women's ToCs" },
+  { href: '/the-don', label: 'The Don' },
+  { href: '/quiz', label: 'Pub Test' },
   { href: '/hello-cricket', label: 'Hello Cricket' },
-  { href: '/reviews', label: 'Under review' },
-  { href: '/share', label: 'Share cards' },
   { href: '/connect', label: 'Connect to Claude' },
   { href: '/about', label: 'About' },
   { href: '/privacy', label: 'Privacy' },

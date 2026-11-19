@@ -67,7 +67,8 @@ export default function PubTest() {
       <div className="quiz">
         <div className="quiz-top"><span>The Pub Test</span></div>
         <h1>What kind of cricket fan are you?</h1>
-        <p className="lead">Eight questions, no right answers. At the end you get your own ranking of every Test century, built around what you value, not what we do.</p>
+        <p className="lead">This sets up your own ranking of every Test century. Each of the eight questions gives you four scenarios or outcomes. Choose the one you value most. There are no right answers.</p>
+        <p className="lead" style={{ fontSize: 17 }}>The ranking rates every hundred on six things: match impact, clutchness, narrative, conditions and opposition, historical weight, and perceived greatness. What you choose here decides which of the six count most, so the rankings fit your taste and not ours. At the end you get a ranking to start from, and you can change it any time.</p>
         <div className="quiz-actions">
           <button type="button" className="btn primary" style={{ minHeight: 52 }} onClick={begin}>Start the Pub Test</button>
           <Link className="btn" href="/">Skip it and go to the rankings</Link>
@@ -113,6 +114,7 @@ export default function PubTest() {
       <div className="quiz-top"><span>The Pub Test</span><span>{step} of {QUESTIONS.length}</span></div>
       <div className="progress" role="progressbar" aria-valuemin={0} aria-valuemax={QUESTIONS.length} aria-valuenow={step - 1}><i style={{ width: `${((step - 1) / QUESTIONS.length) * 100}%` }} /></div>
       <h1 className="q">{current.question}</h1>
+      <p className="hint">Choose the scenario or outcome you value most.</p>
       <div className="answers">
         {(layout[step - 1] || current.options).map((option) => (
           <button key={option.persona} type="button" disabled={Boolean(chosen)} className={`ans${chosen === option.persona ? ' chosen' : ''}${chosen && chosen !== option.persona ? ' other' : ''}`} onClick={() => answer(option)}>

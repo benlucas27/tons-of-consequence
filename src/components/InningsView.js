@@ -64,6 +64,11 @@ export default function InningsView({ id, consequence = null, facts = null }) {
             <span aria-hidden="true">·</span><span>{c.year}</span>
           </div>
           {c.tags && c.tags.length > 0 && <div className="tags">{c.tags.map((t) => <span key={t}>{t}</span>)}</div>}
+          <div className="inn-actions" id="challenge">
+            <ChallengeButton id={c.id} />
+            <ShareCard params={{ type: 'innings', id: String(c.id), ...cardWeighting(order, bias) }} pageUrl={inningsPath(c, order, bias)} shareText={`${c.name} ${runsText(c)} v ${c.opponent}, ${c.year}:`} label="Share" />
+            <button type="button" className="btn" onClick={copy}>Copy link</button>
+          </div>
         </header>
 
         <div className="inn-main">
@@ -165,8 +170,6 @@ export default function InningsView({ id, consequence = null, facts = null }) {
               <code>{shown}</code>
               <p>Opens straight to this innings, with your weighting.</p>
             </div>
-            <ShareCard params={{ type: 'innings', id: String(c.id), ...cardWeighting(order, bias) }} pageUrl={inningsPath(c, order, bias)} shareText={`${c.name} ${runsText(c)} v ${c.opponent}, ${c.year}:`} />
-            <ChallengeButton id={c.id} />
           </div>
         </aside>
       </article>

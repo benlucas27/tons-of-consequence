@@ -1650,31 +1650,6 @@
   ]
  },
  {
-  "id": 4278,
-  "name": "David Warner",
-  "runs": 102,
-  "year": 2014,
-  "opponent": "India",
-  "venue": "Adelaide",
-  "evidence": "b",
-  "yours": {
-   "verdict": "yes",
-   "note": "He made 102, 35% of Australia's 290, after coming in at 0 for 0 with the team 73 ahead. Australia won by 48 runs."
-  },
-  "rules": "no",
-  "score": 41.9,
-  "gate": "",
-  "parts": "carry 20.9, stakes 6, occasion 15",
-  "reason": "He made 35% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
-  "scenario": null,
-  "verdict": [
-   0,
-   null,
-   "He made 35% of the team's runs. The match didn't hinge on it: he came in at 0 for 0.",
-   "b"
-  ]
- },
- {
   "id": 4401,
   "name": "Kevin Pietersen",
   "runs": 101,

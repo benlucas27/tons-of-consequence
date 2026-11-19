@@ -36,7 +36,9 @@ export default function PubTest({ navigation }) {
   return (
     <Screen>
       <Small>Question {i + 1} of {qs.length}</Small>
+      {i === 0 && <P>This sets up your own ranking of every Test century. Each of the eight questions gives you four scenarios or outcomes. Choose the one you value most. There are no right answers. What you choose decides which of the six things we rate count most, so the rankings fit your taste, and you can change them any time.</P>}
       <H style={{ fontSize: 26 }}>{q.question}</H>
+      <Small>Choose the scenario or outcome you value most.</Small>
       {q.options.map((o) => (
         <Pressable key={o.text} style={s.opt} onPress={() => { setAnswers([...answers, o.persona]); setI(i + 1); }}>
           <Text style={s.optText}>{o.text}</Text>

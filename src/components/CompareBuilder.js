@@ -150,11 +150,11 @@ export default function CompareBuilder() {
         <WomensCompare />
       ) : careerSet ? (
         <>
-          <div className="chips" role="group" aria-label="Preset comparisons">
-            {COMPARE_SETS.map((s) => (
-              <button key={s.id} type="button" className="chip" aria-pressed={s.id === careerSet.id} onClick={() => chooseSet(s.id)}>{s.name}</button>
-            ))}
-          </div>
+          <label className="preset-pick">Choose a comparison
+            <select value={careerSet.id} onChange={(e) => chooseSet(e.target.value)}>
+              {COMPARE_SETS.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
+            </select>
+          </label>
           <p className="preset-note">{careerSet.blurb}</p>
           <WeightNote order={order} bias={bias} />
           <BiasNote bias={bias} />
@@ -177,7 +177,7 @@ export default function CompareBuilder() {
           <div className="cmp-actions">
             <button type="button" className="btn" onClick={() => setBoth(b, a)}>Swap sides</button>
             <button type="button" className="btn" onClick={share}>Copy link</button>
-            <CardButtons src={`/card/compare?a=${left.id}&b=${right.id}${weightQuery(order, bias).replace('?', '&')}`} name={`toc-${left.id}-v-${right.id}`} label="Share as a card" />
+            <CardButtons src={`/card/compare?a=${left.id}&b=${right.id}${weightQuery(order, bias).replace('?', '&')}`} name={`toc-${left.id}-v-${right.id}`} label="Share as an image" />
           </div>
           <CompareResult items={[left, right]} order={order} bias={bias} />
         </section>

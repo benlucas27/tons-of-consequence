@@ -1,78 +1,63 @@
 import Link from 'next/link';
-import { MOMENTS, EPISODES, ORIGIN, episodeLabel, clock, watchUrl } from '@/lib/helloSport';
+import { MOMENTS, ORIGIN, episodeLabel, clock, watchUrl } from '@/lib/helloSport';
 import { BY_ID, inningsPath } from '@/lib/dataset';
 import { runsText } from '@/lib/format';
 
 export const metadata = {
   title: 'Hello Cricket',
-  description: 'An archive of the moments the Hello Sport hosts talk about Test hundreds and tons of consequence, timestamped so you can hear them, and tagged to the innings.',
+  description: 'The moments the Hello Sport hosts talk about Test hundreds and tons of consequence, newest first, timestamped so you can hear them.',
 };
 
 const KIND = { innings: 'Innings', historic: 'Older innings, mentioned', career: 'Career', concept: 'Tons of consequence' };
 
-/** The moments grouped by episode, newest episode first, each group in the order the hosts get to them. */
-function byEpisode() {
-  const groups = new Map();
-  for (const m of MOMENTS) {
-    if (!groups.has(m.youtubeId)) groups.set(m.youtubeId, { youtubeId: m.youtubeId, date: m.date, moments: [] });
+/** Every moment in one rolling list: newest episode first, and within an episode in the order the hosts get to them. */
+function rolling() {
+  return MOMENTS
     // the episode that has its own timestamped list below doesn't also need the one-line concept row
-    if (m.type === 'concept' && m.youtubeId === ORIGIN.youtubeId) continue;
-    groups.get(m.youtubeId).moments.push(m);
-  }
-  const list = [...groups.values()];
-  list.forEach((g) => g.moments.sort((a, b) => a.start - b.start));
-  return list.sort((a, b) => b.date.localeCompare(a.date));
+    .filter((m) => !(m.type === 'concept' && m.youtubeId === ORIGIN.youtubeId))
+    .sort((a, b) => b.date.localeCompare(a.date) || a.youtubeId.localeCompare(b.youtubeId) || a.start - b.start);
 }
 
 export default function HelloSportPage() {
-  const groups = byEpisode();
+  const list = rolling();
+  const extra = ORIGIN.points || [];
   return (
     <article className="prose hs-page">
       <h1>Hello Cricket</h1>
-      <p className="lede">A Hello Sport cricketing archive: the moments the Hello Sport hosts talk about Test hundreds and tons of consequence. Each one has the timestamp, so you can hear what they said, and is tagged to the innings in Tons of Consequence where there is one.</p>
+      <p className="lede">The moments the Hello Sport hosts talk about Test hundreds and tons of consequence, newest first. Each one links to the exact second, and to the innings in Tons of Consequence where there is one.</p>
 
-      {groups.map((g) => {
-        const ep = EPISODES[g.youtubeId];
-        const label = episodeLabel(g.moments[0]);
-        const extra = g.youtubeId === ORIGIN.youtubeId ? ORIGIN.points : [];
-        // the innings the hosts talk about in this episode, each linking to its page
-        const tons = [...new Map(g.moments.filter((m) => m.inningsId && BY_ID.get(m.inningsId)).map((m) => [m.inningsId, BY_ID.get(m.inningsId)])).values()];
-        return (
-          <section key={g.youtubeId} className="hs-episode" aria-label={label}>
-            <h2>{label}</h2>
-            {tons.length > 0 && (
-              <p className="hs-tons">Tons mentioned: {tons.map((c, i) => (
-                <span key={c.id}>{i > 0 ? ', ' : ''}<Link href={inningsPath(c)}>{c.name} {runsText(c)}</Link></span>
-              ))}</p>
-            )}
-            <ul className="hs-all">
-              {g.moments.map((m) => {
-                const c = m.inningsId ? BY_ID.get(m.inningsId) : null;
-                return (
-                  <li key={`${m.start}-${m.player}-${m.inningsId ?? m.type}`}>
-                    <div className="hs-when">
-                      <b>{c ? <Link href={inningsPath(c)}>{c.name} {runsText(c)}</Link> : m.type === 'concept' ? KIND.concept : m.player}</b>
-                      <span>{c ? `v ${c.opponent}, ${c.venue}, ${c.year}` : (KIND[m.type] || '')}</span>
-                    </div>
-                    <p>{m.note}</p>
-                    <a className="link-btn" href={watchUrl(m.youtubeId, m.start)} target="_blank" rel="noopener noreferrer">Listen from {clock(m.start)}</a>
-                  </li>
-                );
-              })}
-            </ul>
-            {extra.length > 0 && (
-              <ul className="hs-origin" aria-label="More from this episode">
-                {extra.map((p) => (
-                  <li key={p.start}>
-                    <a href={watchUrl(ep?.youtubeId || g.youtubeId, p.start)} target="_blank" rel="noopener noreferrer">{clock(p.start)}{p.end ? ` to ${clock(p.end)}` : ''}</a>
-                    <span>{p.text}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </section>
-        );
-      })}
+      <ul className="hs-roll">
+        {list.map((m) => {
+          const c = m.inningsId ? BY_ID.get(m.inningsId) : null;
+          return (
+            <li key={`${m.youtubeId}-${m.start}-${m.player}-${m.inningsId ?? m.type}`}>
+              <div className="hs-roll-head">
+                <b>{c ? <Link href={inningsPath(c)}>{c.name} {runsText(c)}</Link> : m.type === 'concept' ? KIND.concept : m.player}</b>
+                <span>{c ? `v ${c.opponent}, ${c.year}` : (KIND[m.type] || '')}</span>
+              </div>
+              <p>{m.note}</p>
+              <div className="hs-roll-meta">
+                <span>{episodeLabel(m)}</span>
+                <a className="link-btn" href={watchUrl(m.youtubeId, m.start)} target="_blank" rel="noopener noreferrer">Listen from {clock(m.start)}</a>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+
+      {extra.length > 0 && (
+        <details className="hs-started">
+          <summary>The episode that started it: {episodeLabel(MOMENTS.find((m) => m.youtubeId === ORIGIN.youtubeId) || { youtubeId: ORIGIN.youtubeId, date: '' })}</summary>
+          <ul className="hs-origin" aria-label="More from this episode">
+            {extra.map((p) => (
+              <li key={p.start}>
+                <a href={watchUrl(ORIGIN.youtubeId, p.start)} target="_blank" rel="noopener noreferrer">{clock(p.start)}{p.end ? ` to ${clock(p.end)}` : ''}</a>
+                <span>{p.text}</span>
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
     </article>
   );
 }

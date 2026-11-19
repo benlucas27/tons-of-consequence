@@ -617,6 +617,9 @@ body[data-door="1"] .s-bar { display: none; }
 .toc-controls { display: flex; flex-wrap: wrap; gap: 12px 18px; margin: 8px 0; font: 500 14px var(--ui); color: var(--ink-2); }
 .toc-controls label { display: grid; gap: 4px; }
 .toc-controls input, .toc-controls select { padding: 8px 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; min-width: 160px; }
+.toc-controls { align-items: flex-end; }
+.toc-controls .card-buttons { margin-left: auto; display: grid; justify-items: end; gap: 4px; }
+.toc-controls .card-buttons .conn-note { margin: 0; }
 .toc-boardwrap { overflow-x: auto; }
 .toc-more { margin-top: 12px; padding: 10px 16px; font: 600 14px var(--ui); background: var(--panel-2); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; cursor: pointer; }
 
@@ -675,3 +678,28 @@ body[data-door="1"] .s-bar { display: none; }
 .review-chip { padding: 2px 8px; border: 1px solid var(--line); border-radius: 999px; font: 500 12px var(--ui); color: var(--ink-2); }
 .review-evidence { display: block; color: var(--ink-3); margin-top: 4px; }
 .review-decided { display: grid; gap: 8px; padding-left: 18px; }
+
+/* Innings page: the Challenge, Share and Copy link buttons sit under the headline, not at the bottom */
+.inn-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 16px; }
+.inn-actions .challenge-box, .inn-actions .share-box { display: contents; }
+.inn-actions .challenge-btn { width: auto; }
+.inn-actions .challenge-chip { order: 5; flex-basis: 100%; margin: 0; }
+.inn-actions .share-panel { order: 6; flex-basis: 100%; margin-top: 4px; }
+.review-picker { display: grid; gap: 12px; margin: 4px 0 20px; max-width: 560px; }
+.review-picker .combo { display: grid; gap: 8px; }
+.preset-pick { display: grid; gap: 6px; max-width: 360px; font: 600 13px var(--ui); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+.preset-pick select { min-height: 48px; padding: 0 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); font: 500 16px var(--ui); letter-spacing: 0; text-transform: none; }
+
+/* Hello Cricket: one rolling list */
+.hs-roll { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 0; }
+.hs-roll li { display: grid; gap: 4px; padding: 12px 0; border-top: 1px solid var(--line-soft); }
+.hs-roll-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+.hs-roll-head b { font: 700 20px/1.15 var(--display); text-transform: uppercase; }
+.hs-roll-head b a { text-decoration: none; color: var(--ink); }
+.hs-roll-head b a:hover { text-decoration: underline; }
+.hs-roll-head span { font: 500 13px var(--ui); color: var(--ink-3); }
+.hs-roll p { margin: 0; font: 400 15px/1.5 var(--prose); color: var(--ink-2); max-width: 70ch; }
+.hs-roll-meta { display: flex; flex-wrap: wrap; gap: 2px 14px; align-items: baseline; font: 500 12px var(--ui); color: var(--ink-3); }
+.hs-roll-meta .link-btn { padding: 0; font-size: 13px; }
+.hs-started { margin-top: 20px; }
+.hs-started summary { cursor: pointer; font: 600 14px var(--ui); color: var(--ink-2); padding: 8px 0; }

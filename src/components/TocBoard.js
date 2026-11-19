@@ -26,8 +26,8 @@ export default function TocBoard({ rows }) {
         {SORTS[sort].needsMin && (
           <label>At least <select value={min} onChange={(e) => setMin(Number(e.target.value))}>{[1, 5, 8, 10, 15, 20].map((n) => <option key={n} value={n}>{n}</option>)}</select> {sort === 'wins' ? 'hundreds with a known result' : 'measured hundreds'}</label>
         )}
+        <CardButtons src={`/card/leaders?sort=${sort}&min=${min}`} name={`toc-leaders-${sort}`} label="Share this ranking" small />
       </div>
-      <CardButtons src={`/card/leaders?sort=${sort}&min=${min}`} name={`toc-leaders-${sort}`} label="Share this leaderboard" />
       <p className="conn-note">{list.length.toLocaleString()} {list.length === 1 ? 'batter' : 'batters'}. Team win rate counts matches won out of hundreds with a known result. Best innings is the Greatness score on the Default weighting.</p>
       <table className="toc-board">
         <thead><tr><th>Batter</th><th>ToCs</th><th>Measured</th><th>Share</th><th>Best innings</th><th>Team won</th></tr></thead>
