@@ -1289,7 +1289,8 @@
       },
       "approved": true,
       "link": "/innings/16-michael-clarke-329-2012",
-      "linked": false
+      "linked": false,
+      "skipped": "Too late (2026-11-17T15:35:00.000Z)"
     },
     {
       "id": 83,
@@ -1303,7 +1304,9 @@
       },
       "approved": true,
       "link": "/tons-of-consequence/shubman-gill",
-      "linked": true
+      "linked": true,
+      "tweetId": "2123411261756944876",
+      "postedAt": "2026-11-19T13:41:10.884Z"
     },
     {
       "id": 84,
