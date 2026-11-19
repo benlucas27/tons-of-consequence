@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { validateChallenge, personHash, REASONS, NOTE_MAX } from '../src/lib/challenges.js';
 import { buildReviewLists, evidenceBadge } from '../src/lib/reviewList.js';
-import { REVIEW_THRESHOLD } from '../src/data/reviews.js';
+import { REVIEW_THRESHOLD, REVIEW_STATUS } from '../src/data/reviews.js';
 
 test('a good challenge passes and a note is tidied', () => {
   const r = validateChallenge({ inningsId: 144, reason: 'facts', note: '  He came   in at 2 for 22.  ' });
@@ -43,7 +43,8 @@ test('an innings appears under review once it has enough challenges, most challe
   assert.match(evidenceBadge(1969), /Full match record|Not a lot of data/);
 });
 
-test('no database means an empty, harmless list', () => {
+test('no database means no under-review list or counts, but decided rulings (kept in the repo) still show', () => {
   const { under, decided, totalChallenges } = buildReviewLists(null);
-  assert.deepEqual([under.length, decided.length, totalChallenges], [0, 0, 0]);
+  const kept = Object.values(REVIEW_STATUS).filter((s) => s.status === 'decided').length;
+  assert.deepEqual([under.length, decided.length, totalChallenges], [0, kept, 0]);
 });

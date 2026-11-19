@@ -3,6 +3,14 @@
  * Made under the 12 laws, so they stand over the rules. id -> [1 if a ton of consequence else 0, scenario or null, reason, evidence].
  */
 export const FINAL_OLDER_RULINGS = {
+  // Rulings from the challenge review, 29 Oct 2026 (Faf's replaces an older "no" that was recorded without the ball-by-ball facts).
+  3333: [1, "Saved the match", "South Africa were 4 for 45 chasing 430 when he came in. He made 110 not out off 376 balls on his debut, 44% of the team's 248, and South Africa batted 148 overs to draw the Test with two wickets in hand.", "b"],
+  413: [1, "Rescued the innings", "Australia were 3 for 73 replying to West Indies' 265 when he came in. He made 200 in 555 minutes, 38% of the team's 531, and added 231 with Mark Waugh (126) for the fourth wicket. Australia won by an innings and 53 runs, took the decider and the series 2-1.", "h"],
+  // Pinned 27 Oct 2026, pending Ben's decision: the series-stakes fix (a one-off Test or the first Test of a series is no longer
+  // called a decider) would turn these three from tons of consequence into good tons. They stay as they were until he rules.
+  106: [1, "Carried the innings", "He scored 47% of the team's runs.", "b"],
+  2294: [1, "Carried the innings", "He scored 41% of the team's runs.", "b"],
+  4605: [1, "Rescued the innings", "He came in at 4 for 86.", "b"],
   // Renshaw 190 v South Africa, Durban 2026: the model called the first Test of an unfinished series "the decider" because it only knows the matches played so far.
   4599: [1, "Carried the innings", "In at 3 for 84, 84 ahead. He made 49% of the team's 390, and no one else came close. The team won by 214 runs in the first Test of a three-Test series. He added 134 for the 9th wicket. He faced an elite attack.", "b"],
   // The four hundreds that had no verdict (Langer, Hammond, G Chappell x2), settled from Wikipedia's series pages and lists of centuries (29 Oct 2026).
@@ -375,7 +383,6 @@ export const FINAL_OLDER_RULINGS = {
   2837: [0, null, "The match was drawn. On the facts we have, the match didn't hinge on it.", "r"],
   2849: [0, null, "The match was drawn. On the facts we have, the match didn't hinge on it.", "r"],
   33: [0, null, "The match was drawn. On the facts we have, the match didn't hinge on it.", "r"],
-  3333: [0, null, "The match was drawn. On the facts we have, the match didn't hinge on it.", "r"],
   3334: [0, null, "The match was drawn. On the facts we have, the match didn't hinge on it.", "r"],
   3392: [0, null, "The match was drawn. On the facts we have, the match didn't hinge on it.", "r"],
   3619: [0, null, "The match was drawn. On the facts we have, the match didn't hinge on it.", "r"],

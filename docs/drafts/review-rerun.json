@@ -737,9 +737,9 @@
    "note": "A slow grind: 35 runs per 100 balls off 408 balls, 100th run off ball 345, batted 3, innings 2. The match was won."
   },
   "rules": "no",
-  "score": 43,
+  "score": 44,
   "gate": "",
-  "parts": "need 15, carry -3, stakes 6, tempo 25",
+  "parts": "need 15, carry -3, stakes 7, tempo 25",
   "reason": "He made 23% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match didn't hinge on it: he came in at 1 for 71.",
   "scenario": null,
   "verdict": [
@@ -1312,15 +1312,15 @@
    "note": "A slow grind: 44 runs per 100 balls off 250 balls, 100th run off ball 230, batted 4, innings 3. The match was won."
   },
   "rules": "no",
-  "score": 41,
+  "score": 33,
   "gate": "",
-  "parts": "carry 1, stakes 15, tempo 25",
-  "reason": "He made 22% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match didn't hinge on it: he came in at 2 for 175.",
+  "parts": "carry 1, stakes 7, tempo 25",
+  "reason": "He made 22% of the team's runs. The match didn't hinge on it: he came in at 2 for 175.",
   "scenario": null,
   "verdict": [
    0,
    null,
-   "He made 22% of the team's runs. Another hundred came in the same innings, which counted against it a little. The match didn't hinge on it: he came in at 2 for 175.",
+   "He made 22% of the team's runs. The match didn't hinge on it: he came in at 2 for 175.",
    "b"
   ]
  },

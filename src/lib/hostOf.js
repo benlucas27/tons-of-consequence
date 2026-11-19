@@ -4,6 +4,8 @@
  * Returns the home team's name, or null when the match was on neutral ground (a final, or the UAE) or cannot be told.
  */
 const NEUTRAL_GROUNDS = /Dubai|Sheikh Zayed|Abu Dhabi|Sharjah/;
+/** Grounds that have hosted too few Tests for the rules below to learn their home side (a trophy series does not name the host). */
+const KNOWN_GROUNDS = [[/Bellerive|Hobart/, 'Australia'], [/Dharamsala|Himachal/, 'India']];
 
 export function hostOf(match, venueCounts) {
   const { teams, venue, event } = match.info;
@@ -12,6 +14,8 @@ export function hostOf(match, venueCounts) {
   if (NEUTRAL_GROUNDS.test(venue || '')) return null;
   const fromEvent = hostFromEvent(match.info);
   if (fromEvent) return fromEvent;
+  const known = KNOWN_GROUNDS.find(([re, team]) => re.test(venue || '') && teams.includes(team));
+  if (known) return known[1];
   const v = venueCounts[venue];
   if (v) {
     // a trophy series (the Ashes, the Border-Gavaskar Trophy) does not name the host: use who hosts at this ground in tours
