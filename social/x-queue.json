@@ -1434,7 +1434,7 @@
         "type": "rankings",
         "size": "square"
       },
-      "approved": false,
+      "approved": true,
       "link": "/",
       "linked": false
     }
