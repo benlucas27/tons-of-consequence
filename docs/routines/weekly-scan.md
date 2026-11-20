@@ -21,9 +21,15 @@ first. Read `docs/routines/README.md` for how the whole system fits together.
 
 1. **What the site has.** Run `node scripts/weekly-review-context.mjs` (newest rows, rows marked In progress, the Latest century
    card). For a player, `node scripts/weekly-review-context.mjs --player <surname>` shows the dataset's spelling of their name.
-2. **What was played.** From Wikipedia's "International cricket in 2026-27" page and the series pages it links, list every
-   MEN'S Test that started in the last 28 days or is still under way (include Afghanistan: Cricsheet withholds those). Ignore
-   women's, A-team and first-class matches. For each, find status (in progress / finished), the result, and every hundred scored.
+2. **What was played.** The window is NOT "the last few weeks". It is every MEN'S Test that started on or after the date of the
+   Test behind the site's newest hundred (step 1: the newest rows and the Latest century card; at the time of writing that is
+   Matt Renshaw's 190 at Durban, South Africa v Australia, the Test that started 10 Oct 2026), up to and including any Test
+   still under way. Build the full list from Wikipedia's "International cricket in 2026-27" page and every series page it links
+   (include Afghanistan: Cricsheet withholds those). Ignore women's, A-team and first-class matches. For EVERY Test in the list,
+   not just the recent ones, open its series page or scorecard and find: status (in progress / finished), the result, and every
+   hundred scored. Do not stop at the fixtures list: a Test with no hundreds found must be one you actually checked. If the site's
+   newest row is later than this, use the later date; if any Test in the window is not on the site and has hundreds, those
+   hundreds are items.
 3. **For each hundred**, record: batter, runs, balls faced, out or not out, which innings of the match it came in (1 to 4 across the
    whole match), the team and opponent (full team names), the venue city, the series name in Wikipedia's style ("India tour of
    New Zealand", like the rows already on the site), and the match result.
@@ -39,7 +45,8 @@ first. Read `docs/routines/README.md` for how the whole system fits together.
      `kicker` ("Latest century · <city> · <d Mon yyyy>") and a `blurb` (one or two sentences, under 200 characters, facts only,
      no superlatives, ends with the result if known).
    Give each item a plain-English `summary` and `sources` (two URLs) and a `suggest` of "y" or "n".
-5. **Do not repeat yourself.** Search Gmail (`subject:"ToC weekly review" newer_than:35d`), read earlier reviews and Ben's replies,
+5. **Do not repeat yourself.** (A run Ben starts by hand, or a second run on the same day, still does the whole job and sends a
+   fresh email: never skip because a review was already sent today. Only skip items he has already answered.) Search Gmail (`subject:"ToC weekly review" newer_than:35d`), read earlier reviews and Ben's replies,
    and do not propose an item he declined unless the facts have changed (say so). Items from last week that he has not answered
    can be listed again once, marked "(asked last week)".
 6. **Check your own items.** Write the items to `review.json` in the scratchpad as `{"week":"YYYY-MM-DD","items":[...]}`, numbered
