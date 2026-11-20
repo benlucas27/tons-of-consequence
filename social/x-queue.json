@@ -1422,6 +1422,19 @@
       "approved": true,
       "link": "/innings/51-gary-kirsten-275-1999",
       "linked": false
+    },
+    {
+      "id": 92,
+      "day": 31,
+      "slot": "A",
+      "text": "The Tons of Consequence app is out on the App Store. Free, no ads, no accounts. Every Test hundred ranked on your weighting, with an alert when a new ton of consequence is added. #TestCricket",
+      "card": {
+        "type": "rankings",
+        "size": "square"
+      },
+      "approved": false,
+      "link": "/",
+      "linked": false
     }
   ],
   "linkSlots": []
