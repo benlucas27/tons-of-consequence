@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Text } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer, DarkTheme, createNavigationContainerRef } from '@react-navigation/native';
-import { startPush } from './push';
+import { startPush, offerAlerts } from './push';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -45,7 +45,12 @@ function Tabs() {
 
 export default function App({ feedVersion, feedSource, counts }) {
   // tapping a push notification opens that innings
-  useEffect(() => { startPush((id) => { if (navRef.isReady()) navRef.navigate('Innings', { id }); }); }, []);
+  useEffect(() => {
+    startPush((id) => { if (navRef.isReady()) navRef.navigate('Innings', { id }); });
+    // alerts are on by default: the first launch shows iOS's "Allow notifications" pop-up, once the first screen is up
+    const t = setTimeout(offerAlerts, 1500);
+    return () => clearTimeout(t);
+  }, []);
   return (
     <SafeAreaProvider>
       <StatusBar style="light" />

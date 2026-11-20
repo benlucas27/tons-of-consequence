@@ -22,7 +22,7 @@ function load() {
 
 export const pushAvailable = () => !!load();
 
-/** Starts OneSignal (does not ask for permission) and calls onOpen(inningsId) when a notification is tapped. */
+/** Starts OneSignal (does not ask for permission; see offerAlerts) and calls onOpen(inningsId) when a notification is tapped. */
 export function startPush(onOpen) {
   const os = load();
   if (!os || started) return;
@@ -34,6 +34,17 @@ export function startPush(onOpen) {
       if (id) onOpen(id);
     });
   } catch (e) { /* ignore */ }
+}
+
+/**
+ * Alerts are on by default: on launch, ask iOS for permission. iOS only shows its "Allow notifications" pop-up the first
+ * time (while the answer is still undecided); after that this does nothing, so it never nags. Allowing opts the reader in,
+ * and switching alerts off under More (an opt-out) is remembered, because this never opts anyone back in.
+ */
+export async function offerAlerts() {
+  const os = load();
+  if (!os) return;
+  try { await os.Notifications.requestPermission(false); } catch (e) { /* ignore */ }
 }
 
 /** Is the reader currently set up to get alerts? */

@@ -62,10 +62,10 @@ Take these on Ben's iPhone from the TestFlight build (a plain phone screenshot i
 6. Batter page showing "Not measured" reasons, or the share image preview
 
 ## App Review notes (private, for Apple's reviewer)
-No sign-in is needed. The app has native rankings, search, compare, offline data, share and push notifications. The data is public cricket records plus the author's own opinion, with sources shown. Push notifications are optional and requested only when the reader switches on the alerts switch under More. Contact: ben@haveaplan.xyz.
+No sign-in is needed. The app has native rankings, search, compare, offline data, share and push notifications. The data is public cricket records plus the author's own opinion, with sources shown. Push notifications are on by default once the reader allows them in the standard iOS prompt shown on first launch (from version 1.0.1); they can be switched off under More or in iOS Settings. Contact: ben@haveaplan.xyz.
 
 ## App Privacy answers (App Store Connect > App Privacy)
-- **Do you or your third-party partners collect data from this app?** Yes (push notifications through OneSignal, only if the reader switches alerts on).
+- **Do you or your third-party partners collect data from this app?** Yes (push notifications through OneSignal, only if the reader allows notifications in the iOS prompt).
 - **Data type: Identifiers > Device ID** (the push token). Used for: **App Functionality**. Linked to the user's identity: **No**. Used for tracking: **No**.
 - **Nothing else collected:** no contact info, no location, no usage analytics inside the app, no purchases, no diagnostics.
 - **Tracking (ATT):** none, so no tracking permission prompt.
@@ -73,4 +73,4 @@ No sign-in is needed. The app has native rankings, search, compare, offline data
 - Check at submission time against OneSignal's own "Apple privacy" guidance, since the SDK may also collect country, language and IP for delivery.
 
 ## Privacy page: paragraph to add on the website before release (Ben's OK needed, it is live text)
-> **In the iPhone app.** The app has no accounts. It keeps the whole database and your chosen weighting on your phone. If you switch on New ToC alerts, we use OneSignal to send them: it receives an anonymous device code (a push token) and basic device details such as your country and language, only to deliver the notification. Switch the alerts off under More, or in iOS Settings, and it stops. We don't use the app to track you, and we don't show ads. Share images are made on our server when you ask for one.
+> **In the iPhone app.** The app has no accounts. It keeps the whole database and your chosen weighting on your phone. If you allow notifications when the app first asks, we use OneSignal to send New ToC alerts: it receives an anonymous device code (a push token) and basic device details such as your country and language, only to deliver the notification. Switch the alerts off under More, or in iOS Settings, and it stops. We don't use the app to track you, and we don't show ads. Share images are made on our server when you ask for one.

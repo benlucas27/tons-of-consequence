@@ -15,7 +15,11 @@ const nextConfig = {
   },
   // The Hello Cricket page used to live at /hello-sport: keep old links working.
   async redirects() {
-    return [{ source: '/hello-sport', destination: '/hello-cricket', permanent: true }];
+    return [
+      { source: '/hello-sport', destination: '/hello-cricket', permanent: true },
+      // A short address to share for the iPhone app (APP_STORE_URL in src/lib/site.js). Not permanent, so the target can change.
+      { source: '/app', destination: 'https://apps.apple.com/app/id6825257483', permanent: false },
+    ];
   },
 };
 

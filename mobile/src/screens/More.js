@@ -20,7 +20,7 @@ function Alerts() {
     <View style={s.item}>
       <View style={{ flex: 1 }}>
         <Text style={s.title}>New ToC alerts</Text>
-        <Small>{can ? 'Get a notification when a new ton of consequence is added.' : 'Alerts work in the full app from the App Store or TestFlight, not in Expo Go.'}</Small>
+        <Small>{can ? 'Get a notification when a new ton of consequence is added. Switch off any time.' : 'Alerts work in the full app from the App Store or TestFlight, not in Expo Go.'}</Small>
       </View>
       <Switch value={on} onValueChange={change} disabled={!can} trackColor={{ true: C.gold }} />
     </View>

@@ -36,7 +36,7 @@ export default function Privacy() {
       <h2>In the iPhone app</h2>
       <ul>
         <li><strong>No accounts, no ads, no tracking.</strong> The app keeps the whole ranking and your chosen weighting on your phone, and it asks nobody who you are.</li>
-        <li><strong>New ToC alerts are optional.</strong> If you switch them on, we use OneSignal to send them. OneSignal receives an anonymous device code (a push token) and basic device details such as your country and language, only to deliver the notification. Switch the alerts off under More in the app, or in iOS Settings, and they stop.</li>
+        <li><strong>New ToC alerts are on unless you say no.</strong> The first time you open the app, iOS asks whether to allow notifications. If you allow them, we use OneSignal to send them. OneSignal receives an anonymous device code (a push token) and basic device details such as your country and language, only to deliver the notification. Switch the alerts off under More in the app, or in iOS Settings, and they stop.</li>
         <li><strong>Share images.</strong> When you share an innings, a batter or a result as an image, the app asks our server to draw it. The request names the innings or batter and your weighting, nothing about you.</li>
         <li><strong>Updates.</strong> The app checks our server for new data and downloads it when there is some. Like the website, our host keeps standard server logs of those requests.</li>
         <li><strong>Location.</strong> The app does not use your location.</li>
