@@ -4,7 +4,7 @@ import SiteBar from '@/components/SiteBar';
 import Footer from '@/components/Footer';
 import Toaster from '@/components/Toaster';
 import RegisterSW from '@/components/RegisterSW';
-import { SITE_URL } from '@/lib/site';
+import { SITE_URL, APP_STORE_ID } from '@/lib/site';
 import { Analytics } from '@vercel/analytics/next';
 
 const display = Barlow_Condensed({ subsets: ['latin'], weight: ['500', '600', '700'], variable: '--font-display', display: 'swap' });
@@ -15,6 +15,8 @@ export const metadata = {
   applicationName: 'Tons of Consequence',
   appleWebApp: { capable: true, title: 'Tons of ToC', statusBarStyle: 'black-translucent' },
   icons: { apple: '/pwa-icon/180' },
+  // Safari on iPhone shows a "View in the App Store" banner. It is hidden once the site is added to the home screen.
+  itunes: { appId: APP_STORE_ID },
   metadataBase: new URL(SITE_URL),
   title: {
     default: 'Tons of Consequence — The Unofficial Ranking of Test Cricket Centuries',

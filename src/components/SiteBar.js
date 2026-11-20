@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Logo from './Logo';
+import { APP_STORE_URL } from '@/lib/site';
 
 const NAV = [
   { href: '/', label: 'Rankings' },
@@ -17,6 +18,7 @@ const MORE = [
   { href: '/the-don', label: 'The Don' },
   { href: '/quiz', label: 'Pub Test' },
   { href: '/hello-cricket', label: 'Hello Cricket' },
+  { href: APP_STORE_URL, label: 'iPhone app', external: true },
   { href: '/connect', label: 'Connect to Claude' },
   { href: '/about', label: 'About' },
   { href: '/privacy', label: 'Privacy' },
@@ -25,7 +27,9 @@ const MORE = [
 export default function SiteBar() {
   const path = usePathname();
   const current = (href) => (href === '/' ? (path === '/' || path.startsWith('/innings') ? 'page' : undefined) : path === href || path.startsWith(`${href}/`) ? 'page' : undefined);
-  const link = (n) => <Link key={n.href} href={n.href} aria-current={current(n.href)}>{n.label}</Link>;
+  const link = (n) => n.external
+    ? <a key={n.href} href={n.href}>{n.label}</a>
+    : <Link key={n.href} href={n.href} aria-current={current(n.href)}>{n.label}</Link>;
   const links = NAV.map(link);
   const moreLinks = MORE.map(link);
   const moreActive = MORE.some((n) => current(n.href));
