@@ -1,0 +1,82 @@
+# Publishes the changes Ben approved by email (the weekly review; see docs/routines/README.md).
+#
+# The cloud routine that reads his reply can only push a branch named claude/toc-approved-<date>, and it only ever changes
+# src/data/sample.js. This workflow does the rest on GitHub's machines: it refuses anything that touches another file,
+# refreshes the Consequence Test verdicts, runs the tests and the build, and only then puts the change on main (Vercel
+# deploys main). If anything fails nothing is published, the branch is left in place, and GitHub emails the failure.
+name: Publish approved review
+
+on:
+  push:
+    branches:
+      - 'claude/toc-approved-**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-approved
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref_name != 'main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Only the dataset may change
+        run: |
+          git fetch origin main
+          CHANGED=$(git diff --name-only origin/main...HEAD)
+          echo "Changed against main:"; echo "$CHANGED"
+          if [ -z "$CHANGED" ]; then echo "Nothing to publish."; exit 0; fi
+          if echo "$CHANGED" | grep -qvx 'src/data/sample.js'; then
+            echo "::error::This branch changes more than src/data/sample.js, so it will not be published automatically."
+            exit 1
+          fi
+
+      - name: Sit on top of the latest main
+        run: |
+          git config user.name "tons-of-consequence-bot"
+          git config user.email "tons-of-consequence-bot@users.noreply.github.com"
+          git rebase origin/main
+
+      - run: npm ci
+
+      # Verdicts are only rebuilt when the dataset changed, and never published if an existing yes/no changes.
+      - name: Refresh the Consequence Test verdicts
+        run: |
+          if git diff --quiet origin/main -- src/data/sample.js; then echo "No dataset change."; exit 0; fi
+          node scripts/build-consequence.mjs --download
+          node scripts/check-verdict-flips.mjs
+
+      - run: npm test
+      - run: npm run build
+
+      - name: Publish to main
+        id: publish
+        run: |
+          if git diff --quiet origin/main -- src; then echo "Nothing new."; exit 0; fi
+          echo "base=$(git rev-parse origin/main)" >> "$GITHUB_OUTPUT"
+          git add src/data docs/drafts
+          git commit -m "data: approved weekly review (verdicts refreshed)" || true
+          git push origin HEAD:main
+          git push origin --delete "${GITHUB_REF_NAME}" || true
+          echo "published=true" >> "$GITHUB_OUTPUT"
+
+      # New tons of consequence go out as push notifications, same as the season update. Never fails the run.
+      - name: Notify the app about new tons of consequence
+        if: steps.publish.outputs.published == 'true'
+        continue-on-error: true
+        env:
+          ONESIGNAL_APP_ID: ${{ secrets.ONESIGNAL_APP_ID }}
+          ONESIGNAL_API_KEY: ${{ secrets.ONESIGNAL_API_KEY }}
+        run: node scripts/notify-new-tons.mjs --from ${{ steps.publish.outputs.base }}
