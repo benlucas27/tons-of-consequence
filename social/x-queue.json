@@ -1446,7 +1446,9 @@
       },
       "approved": true,
       "link": "/",
-      "linked": false
+      "linked": false,
+      "tweetId": "2124258316842852495",
+      "postedAt": "2026-11-21T21:47:04.507Z"
     }
   ],
   "linkSlots": []
