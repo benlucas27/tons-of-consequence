@@ -102,10 +102,11 @@ test('the Latest century card moves to the chosen innings and stays unique', asy
 });
 
 test('removing a featured card keeps the row intact', () => {
-  const line = SRC.split('\n').find((l) => l.includes('featured:true,spotlight:{'));
+  // A made-up row, so the test never depends on which hundred the live site currently features.
+  const line = '  {id:1,player:"X",runs:100,featured:true,spotlight:{kicker:"K",blurb:"B, with a {brace} and a \\"quote\\""},levers:{a:1},facts:["f"]},';
   const cleaned = unfeature(line);
-  assert.ok(!cleaned.includes('spotlight'));
-  assert.ok(cleaned.includes('levers:{') && cleaned.includes('facts:['));
+  assert.ok(!cleaned.includes('spotlight') && !cleaned.includes('featured'));
+  assert.equal(cleaned, '  {id:1,player:"X",runs:100,levers:{a:1},facts:["f"]},');
 });
 
 test('the card can point at a hundred added in the same review, and fails clearly if that was not approved', async () => {
