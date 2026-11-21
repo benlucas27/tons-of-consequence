@@ -4575,4 +4575,10 @@ export const CONSEQUENCE = {
   4633: [0,null,"He made 26% of the team's runs. The match didn't hinge on it: he came in at 4 for 131.","b"],
   4634: [0,null,"He made 30% of the team's runs. The match didn't hinge on it: he came in at 5 for 181.","b"],
   4635: [0,null,"A loss: even a great hundred can't be a ton of consequence in a defeat.","b"],
+  4636: [0,null,"A draw: without a ball-by-ball record we cannot say the hundred saved it.","p"],
+  4637: [0,null,"A draw: without a ball-by-ball record we cannot say the hundred saved it.","p"],
+  4638: [0,null,"A loss: even a great hundred can't be a ton of consequence in a defeat.","p"],
+  4640: [0,null,"A draw: without a ball-by-ball record we cannot say the hundred saved it.","p"],
+  4641: [0,null,"A draw: without a ball-by-ball record we cannot say the hundred saved it.","p"],
+  4642: [0,null,"A draw: without a ball-by-ball record we cannot say the hundred saved it.","p"],
 };
