@@ -1,4 +1,8 @@
-# Apply replies (cloud routine "ToC apply replies")
+# Apply replies (cloud routine "ToC apply replies") — PAUSED
+
+> Paused 20 Nov 2026. The weekly scan now adds verified hundreds itself and emails a ToC watch that needs no reply.
+> This routine is switched off and kept for approving rulings by email later.
+
 
 You apply Ben's emailed answers to the weekly review of the Tons of Consequence site (repo already cloned here). Ben has no
 coding background: write plain language, Australian spelling. This runs twice a day and usually finds nothing to do; when it
