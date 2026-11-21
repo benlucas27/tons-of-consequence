@@ -35,12 +35,16 @@ it. If you are unsure whether something is allowed, do not do it, and say so in 
 
 1. **What the site has.** Run `node scripts/weekly-review-context.mjs` (newest rows, rows marked In progress, the Latest century
    card). For a player, `node scripts/weekly-review-context.mjs --player <surname>` shows the dataset's spelling of their name.
-2. **What was played.** The window is every MEN'S Test that started on or after the Test behind the site's newest hundred
-   (step 1; at the time of writing Matt Renshaw's 190 at Durban, South Africa v Australia, the Test that started 10 Oct 2026),
-   up to and including any Test still under way. Build the full list from Wikipedia's "International cricket in 2026-27" page and
-   every series page it links (include Afghanistan: Cricsheet withholds those). Ignore women's, A-team and first-class matches.
-   For EVERY Test in the list, open its series page or scorecard and find status (in progress / finished), the result and every
-   hundred scored. A Test with no hundreds found must be one you actually checked.
+2. **What was played.** Look at EVERY men's Test that started on or after 1 Oct 2026, plus every Afghanistan Test of the 2026-27
+   season whatever its date (Cricsheet withholds Afghanistan's Tests, so the site is missing all of them), up to and including
+   any Test still under way. Do not shrink the window to "since the newest row": duplicates are caught later by comparing with
+   the site (step 4), so looking too far back costs nothing. Build the list from Wikipedia's "International cricket in 2026-27"
+   page, and open each series page by FOLLOWING THE LINK on that page. Never guess a series URL. If a link 404s or the page is
+   cut off, find the series page with a search (allowed sites only) or open the match's ICC report; do not give up on a
+   series. Ignore women's, A-team and first-class matches. For EVERY Test in the list, open its series page or scorecard and
+   find status (in progress / finished), the result and every hundred scored. A Test with no hundreds found must be one you
+   actually checked. Before step 3, count the series on the 2026-27 page and make sure each one has been opened; any you could
+   not read goes under NOT CHECKED in the email with the reason, never silently dropped.
 3. **For each hundred**, record: batter, runs, balls faced, out or not out, which innings of the match it came in (1 to 4 across
    the whole match), the team and opponent (full team names), the venue city, the series name in Wikipedia's style ("India tour of
    New Zealand", like the rows already on the site) and the match result. ALSO record, when the scorecard or fall of wickets gives
