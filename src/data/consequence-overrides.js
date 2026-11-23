@@ -525,4 +525,6 @@ export const CONSEQUENCE_OVERRIDES = {
 
   // law 13 review, Ben's answers
 
+  // Durban, 9 to 13 Oct 2026: finished (Australia won by 214 runs, 1-0 up in the three-Test series). The text is kept as written.
+  "MT Renshaw|190|2026|4599": { verdict: 'yes', final: true, scenario: "Rescued the innings", note: "Australia were 6 for 124 on the first day with him at the crease. He made 190 of their 390 and added 134 for the ninth wicket with Nathan Lyon. Australia won by 214 runs in the first Test of a three-Test series." },
 };
