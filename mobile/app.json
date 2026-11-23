@@ -8,7 +8,8 @@
     "userInterfaceStyle": "dark",
     "backgroundColor": "#0b1c13",
     "ios": {
-      "supportsTablet": false,
+      "supportsTablet": true,
+      "requireFullScreen": true,
       "bundleIdentifier": "com.tonsofconsequence.app",
       "buildNumber": "1",
       "infoPlist": {
