@@ -16,7 +16,9 @@ import { fileURLToPath } from 'node:url';
 import AdmZip from 'adm-zip';
 import { hundredsIn, inningsOf, seriesStakes } from '../src/lib/matchContext.js';
 import { modelV3, robustness, describeTon, describeGoodTon, THRESHOLD } from '../src/lib/consequenceModel.js';
-import { SERIES_FACTS } from '../src/data/series-facts.js';
+import { SERIES_FACTS as GENERATED_SERIES_FACTS } from '../src/data/series-facts.js';
+import { HAND_SERIES_FACTS } from '../src/data/hand-series-facts.js';
+const SERIES_FACTS = { ...GENERATED_SERIES_FACTS, ...HAND_SERIES_FACTS }; // facts found by hand from two sources win over the generated ones
 import { WIKIPEDIA_FACTS } from '../src/data/wikipedia-facts.js';
 import { OCCASIONS } from '../src/data/occasions.js';
 import { CONSEQUENCE_OVERRIDES } from '../src/data/consequence-overrides.js';

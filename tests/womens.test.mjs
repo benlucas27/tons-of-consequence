@@ -34,3 +34,11 @@ test("the women's search finds a hundred by batter and year", async () => {
   assert.equal(WOMENS_BY_NO.get(80).name, 'Karen Rolton');
   assert.ok(searchWomens('sutherland 2025').length >= 1);
 });
+
+test('every women\'s hundred carries at least two sources, all real links', async () => {
+  const { WOMENS } = await import('../src/lib/womens.js');
+  for (const h of WOMENS) {
+    assert.ok(h.sources.length >= 2, `#${h.no} has ${h.sources.length} sources`);
+    for (const s of h.sources) assert.match(s.url, /^https:\/\//);
+  }
+});
