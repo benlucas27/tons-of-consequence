@@ -4581,4 +4581,5 @@ export const CONSEQUENCE = {
   4640: [0,null,"A draw: without a ball-by-ball record we cannot say the hundred saved it.","p"],
   4641: [0,null,"A draw: without a ball-by-ball record we cannot say the hundred saved it.","p"],
   4642: [0,null,"A draw: without a ball-by-ball record we cannot say the hundred saved it.","p"],
+  4643: [0,null,"A draw: without a ball-by-ball record we cannot say the hundred saved it.","p"],
 };
